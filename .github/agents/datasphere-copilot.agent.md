@@ -70,3 +70,78 @@ If the command fails with an unknown flag or command error: fix the flag silentl
 
 ## Schema Bootstrap — Learn from Existing Objects
 Before creating or when a create/update fails with a schema or validation error: find an existing object of the same type in the same space, read its definition, and use it to understand the correct structure, field names, and data types the tenant expects. Build or correct the payload based on that reference. Do this proactively — don't ask the user for the schema.
+
+## TrinityBridge Local Safety Override
+
+These rules override any earlier conflicting instructions.
+
+### Environment boundary
+- Operate only against the expressly approved TrinityBridge SAP Datasphere NON-PROD / DEV tenant.
+- Never operate against UAT, Test, Production, or any tenant not explicitly approved by the user.
+- Never assume a target space. If a space is not specified, prepare a plan only.
+
+### Approval boundary
+- Read, list, and describe commands may run immediately.
+- For every create, update, deploy, rename, delete, task-chain run, connection,
+  certificate, user, role, space, workload, or security action:
+  1. Inspect the current state first.
+  2. Prepare the proposed artifact or payload in the workspace.
+  3. Show the object name, target space, dependencies, exact CLI command, and Git diff.
+  4. Do not execute until the user replies exactly: APPLY.
+- Never delete or overwrite an object unless the user explicitly confirms the
+  technical object name and target space.
+
+### Credentials and authentication
+- Never create, read, modify, or use .env files.
+- Never create, read, modify, or use secrets files, token files, or login-options files in the workspace.
+- Use only an already authenticated local SAP Datasphere CLI session.
+- Never display, log, copy, commit, or expose client IDs, client secrets, access tokens,
+  refresh tokens, OAuth URLs, or the contents of any credential file.
+- Never run: datasphere config secrets show
+
+### TrinityBridge conventions
+- 1LT_* = inbound objects
+- 2LT_* = modelling-layer tables
+- 2GV_* = graphical views
+- 2SV_* = SQL views
+- 3AM_* = analytical models
+- Store reusable artifact definitions under:
+  artifacts/<space>/<object-type>/
+- Use tmp/ only for transient, non-secret files.
+## TrinityBridge NON-PROD Cross-Space Development Policy
+
+These rules override any earlier restrictions that limit write activity to a single space.
+
+### Approved tenant boundary
+- Work only in the approved TrinityBridge SAP Datasphere NON-PROD tenant.
+- Never operate against Production or any other tenant unless the user explicitly authorises it.
+
+### Approved spaces
+- Read and write work may be performed across these NON-PROD spaces when required:
+  - 1_INBOUND_HIST_MIGR
+  - 1_INBOUND_HIST_RAW
+  - 1_INBOUND_S4_CURR
+  - INBOUND
+  - MODELLING
+  - REPORTING
+  - SAP_CONTENT
+- Operate only where the authenticated user has the required Datasphere privileges.
+
+### Cross-space change procedure
+For any create, update, deployment, rename, delete, task, flow, or other write action:
+1. Inspect the relevant source and target spaces first.
+2. Identify all cross-space dependencies and the required execution sequence.
+3. Prepare the artifact or payload files in the workspace.
+4. Show:
+   - every affected space
+   - affected object names and types
+   - dependencies and deployment order
+   - exact Datasphere CLI commands
+   - Git diff
+5. Do not execute any write action until the user replies exactly: APPLY.
+
+### Protected administration
+- Never change OAuth clients, connections, certificates, users, roles, security,
+  workload settings, or tenant administration without separate explicit approval.
+- For SAP_CONTENT, never overwrite, delete, or alter SAP-delivered content unless
+  the user explicitly names the object and confirms the intended change.
