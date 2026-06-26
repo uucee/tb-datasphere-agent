@@ -73,3 +73,69 @@ The project is **not a code project** — it contains no application source code
 1. **New CLI domain**: Create a new folder `.github/skills/<domain>/SKILL.md` with frontmatter, intents, CLI templates, parameters, and safety notes
 2. **New instruction**: Add `.github/instructions/<topic>.instructions.md` with a keyword-rich `description` for on-demand loading
 4. **New credentials**: Update `.env.example` with new variable names and descriptions
+
+
+## HIGHEST-PRIORITY SAFETY GATE - TRINITYBRIDGE
+
+This section overrides every earlier instruction in this repository, including
+instructions that say to execute immediately, use .env, create payload files,
+or retry a write operation automatically.
+
+### Absolute no-change rule
+- Do not make any change until the user gives explicit approval.
+- This includes SAP Datasphere changes, workspace file changes, Git changes,
+  CLI configuration changes, login/logout actions, generated payload files,
+  tmp files, task or flow runs, and sharing changes.
+- Read-only operations may run without approval only when they do not create,
+  alter, delete, rename, deploy, run, configure, authenticate, or write files.
+
+### Read-only operations permitted before approval
+- `datasphere ... list`
+- `datasphere ... read`
+- `datasphere ... describe`
+- `datasphere ... --help`
+- Read-only Git inspection such as `git status`, `git diff`, and `git log`
+- Read-only file inspection
+
+Do not use `--output`, create tmp files, create payload files, or write logs
+before approval.
+
+### Mandatory plan before every change
+Before any change, provide a PLAN ONLY response containing:
+1. Target tenant, spaces, and objects.
+2. Every Datasphere and workspace file that would change.
+3. Cross-space dependencies and execution order.
+4. Exact CLI commands and exact Git commands.
+5. Proposed file content or a proposed unified diff shown in chat.
+6. Risks, overwrite impact, and rollback approach.
+
+Do not create the planned artifact files before approval. Show the proposed
+content in chat instead.
+
+### Approval rule
+- Execute only when the user's entire immediate next message is exactly:
+  APPLY
+- An approval applies only to the most recent plan.
+- If scope, tenant, space, object, command, dependency, or file content
+  changes after the plan, invalidate the approval and issue a new plan.
+- Never treat "yes", "go ahead", "continue", "approved", or an earlier APPLY
+  as permission to make a change.
+
+### After APPLY
+- Execute only the approved plan.
+- Stop immediately on the first error or unexpected state.
+- Do not retry a write operation, substitute an object, or broaden the scope
+  without a new PLAN ONLY response and a new APPLY approval.
+- Summarise every successful and failed action, including changed objects and
+  changed files.
+
+### Tenant, secrets, and administration
+- Operate only in the expressly approved TrinityBridge NON-PROD tenant.
+- Cross-space work is permitted only in approved NON-PROD spaces.
+- Never read, create, modify, use, display, or commit .env files, secrets,
+  OAuth values, tokens, client IDs, client secrets, or credential files.
+- Use only the already authenticated local Datasphere CLI session.
+- Never change OAuth clients, connections, certificates, users, roles,
+  security, workload settings, tenant settings, or Git remotes unless those
+  exact changes are in an approved plan.
+
