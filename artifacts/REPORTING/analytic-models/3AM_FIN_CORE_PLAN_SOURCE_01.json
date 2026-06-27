@@ -1,0 +1,308 @@
+{
+  "definitions": {
+    "3AM_FIN_CORE_PLAN_SOURCE_01": {
+      "kind": "entity",
+      "@EndUserText.label": "3AM_FIN_CORE_PLAN_SOURCE_01",
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date_CALMONTH"
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID"
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID"
+        },
+        "D_COST_CENTER_ID": {
+          "@EndUserText.label": "D_COST_CENTER_ID"
+        },
+        "D_PROFIT_CENTER_ID": {
+          "@EndUserText.label": "D_PROFIT_CENTER_ID"
+        },
+        "D_TRADING_PARTNER_ID": {
+          "@EndUserText.label": "D_TRADING_PARTNER_ID"
+        },
+        "D_FUNCTIONAL_AREA": {
+          "@EndUserText.label": "D_FUNCTIONAL_AREA"
+        },
+        "Version_ID": {
+          "@EndUserText.label": "Version_ID"
+        },
+        "D_SCENARIO_ID": {
+          "@EndUserText.label": "D_SCENARIO_ID"
+        },
+        "D_AUDIT_TRAIL_ID": {
+          "@EndUserText.label": "D_AUDIT_TRAIL_ID"
+        },
+        "MEAS_FLOW_OPENING": {
+          "@EndUserText.label": "MEAS_FLOW_OPENING"
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING"
+        }
+      },
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_CUBE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "ANALYTICAL_PROVIDER"
+        },
+        {
+          "#": "_DWC_AM_EDITABLE_DIMENSION_NAMES"
+        }
+      ],
+      "@DataWarehouse.editorType": {
+        "#": "DWCQueryModelEditor"
+      },
+      "@DataWarehouse.hanaCatalog.viewType": {
+        "#": "CALCULATION_VIEW"
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "3SV_FIN_CORE_PLAN_SOURCE_01"
+            ],
+            "as": "PLAN_SRC"
+          },
+          "columns": [
+            {
+              "ref": [
+                "PLAN_SRC",
+                "Date_CALMONTH"
+              ],
+              "as": "Date_CALMONTH"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_XPA_COMPANY_CODE_ID"
+              ],
+              "as": "D_XPA_COMPANY_CODE_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_XPA_GL_ACCOUNT_ID"
+              ],
+              "as": "D_XPA_GL_ACCOUNT_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_COST_CENTER_ID"
+              ],
+              "as": "D_COST_CENTER_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_PROFIT_CENTER_ID"
+              ],
+              "as": "D_PROFIT_CENTER_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_TRADING_PARTNER_ID"
+              ],
+              "as": "D_TRADING_PARTNER_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_FUNCTIONAL_AREA"
+              ],
+              "as": "D_FUNCTIONAL_AREA"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "Version_ID"
+              ],
+              "as": "Version_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_SCENARIO_ID"
+              ],
+              "as": "D_SCENARIO_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "D_AUDIT_TRAIL_ID"
+              ],
+              "as": "D_AUDIT_TRAIL_ID"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "MEAS_FLOW_OPENING"
+              ],
+              "as": "MEAS_FLOW_OPENING"
+            },
+            {
+              "ref": [
+                "PLAN_SRC",
+                "MEAS_FLOW_CHANGING"
+              ],
+              "as": "MEAS_FLOW_CHANGING"
+            }
+          ],
+          "mixin": {}
+        }
+      }
+    }
+  },
+  "businessLayerDefinitions": {
+    "3AM_FIN_CORE_PLAN_SOURCE_01": {
+      "identifier": {
+        "key": "3AM_FIN_CORE_PLAN_SOURCE_01"
+      },
+      "text": "3AM_FIN_CORE_PLAN_SOURCE_01",
+      "sourceModel": {
+        "factSources": {
+          "PLAN_SRC": {
+            "text": "3SV_FIN_CORE_PLAN_SOURCE_01",
+            "dataEntity": {
+              "key": "3SV_FIN_CORE_PLAN_SOURCE_01"
+            }
+          }
+        },
+        "dimensionSources": {}
+      },
+      "exposedAssociations": {},
+      "attributes": {
+        "Date_CALMONTH": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "Date_CALMONTH"
+            }
+          },
+          "text": "Date_CALMONTH",
+          "duplicated": false
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_XPA_COMPANY_CODE_ID"
+            }
+          },
+          "text": "D_XPA_COMPANY_CODE_ID",
+          "duplicated": false
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_XPA_GL_ACCOUNT_ID"
+            }
+          },
+          "text": "D_XPA_GL_ACCOUNT_ID",
+          "duplicated": false
+        },
+        "D_COST_CENTER_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_COST_CENTER_ID"
+            }
+          },
+          "text": "D_COST_CENTER_ID",
+          "duplicated": false
+        },
+        "D_PROFIT_CENTER_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_PROFIT_CENTER_ID"
+            }
+          },
+          "text": "D_PROFIT_CENTER_ID",
+          "duplicated": false
+        },
+        "D_TRADING_PARTNER_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_TRADING_PARTNER_ID"
+            }
+          },
+          "text": "D_TRADING_PARTNER_ID",
+          "duplicated": false
+        },
+        "D_FUNCTIONAL_AREA": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_FUNCTIONAL_AREA"
+            }
+          },
+          "text": "D_FUNCTIONAL_AREA",
+          "duplicated": false
+        },
+        "Version_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "Version_ID"
+            }
+          },
+          "text": "Version_ID",
+          "duplicated": false
+        },
+        "D_SCENARIO_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_SCENARIO_ID"
+            }
+          },
+          "text": "D_SCENARIO_ID",
+          "duplicated": false
+        },
+        "D_AUDIT_TRAIL_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "PLAN_SRC": {
+              "key": "D_AUDIT_TRAIL_ID"
+            }
+          },
+          "text": "D_AUDIT_TRAIL_ID",
+          "duplicated": false
+        }
+      },
+      "measures": {
+        "MEAS_FLOW_OPENING": {
+          "measureType": "AnalyticModelMeasureType.FactSourceMeasure",
+          "measureMapping": {
+            "PLAN_SRC": {
+              "key": "MEAS_FLOW_OPENING"
+            }
+          },
+          "text": "MEAS_FLOW_OPENING",
+          "isAuxiliary": false
+        },
+        "MEAS_FLOW_CHANGING": {
+          "measureType": "AnalyticModelMeasureType.FactSourceMeasure",
+          "measureMapping": {
+            "PLAN_SRC": {
+              "key": "MEAS_FLOW_CHANGING"
+            }
+          },
+          "text": "MEAS_FLOW_CHANGING",
+          "isAuxiliary": false
+        }
+      },
+      "crossCalculations": {},
+      "variables": {},
+      "version": "1.7.2",
+      "supportedCapabilities": {}
+    }
+  }
+}
