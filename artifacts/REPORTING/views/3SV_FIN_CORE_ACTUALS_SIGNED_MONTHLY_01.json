@@ -1,0 +1,708 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_SIGNED_MONTHLY_01": {
+      "kind": "entity",
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_SIGNED_MONTHLY_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_FACT"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "join": "left",
+                "args": [
+                  {
+                    "ref": [
+                      "3SV_FIN_CORE_ACTUALS_MONTHLY_01"
+                    ],
+                    "as": "RAW"
+                  },
+                  {
+                    "ref": [
+                      "MODELLING.2LT_CTRL_FIN_GL_ACCOUNT_CLASS_01"
+                    ],
+                    "as": "GLCLASS"
+                  }
+                ],
+                "on": [
+                  {
+                    "ref": [
+                      "RAW",
+                      "D_XPA_GL_ACCOUNT_ID"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "GLCLASS",
+                      "GL_ACCOUNT_ID"
+                    ]
+                  },
+                  "and",
+                  {
+                    "ref": [
+                      "GLCLASS",
+                      "IS_ACTIVE"
+                    ]
+                  },
+                  "=",
+                  {
+                    "val": true
+                  },
+                  "and",
+                  {
+                    "xpr": [
+                      {
+                        "ref": [
+                          "GLCLASS",
+                          "VALID_FROM"
+                        ]
+                      },
+                      "is",
+                      "null",
+                      "or",
+                      {
+                        "ref": [
+                          "GLCLASS",
+                          "VALID_FROM"
+                        ]
+                      },
+                      "<=",
+                      {
+                        "ref": [
+                          "RAW",
+                          "FISCAL_PERIOD_END_DATE"
+                        ]
+                      }
+                    ]
+                  },
+                  "and",
+                  {
+                    "xpr": [
+                      {
+                        "ref": [
+                          "GLCLASS",
+                          "VALID_TO"
+                        ]
+                      },
+                      "is",
+                      "null",
+                      "or",
+                      {
+                        "ref": [
+                          "GLCLASS",
+                          "VALID_TO"
+                        ]
+                      },
+                      ">=",
+                      {
+                        "ref": [
+                          "RAW",
+                          "FISCAL_PERIOD_END_DATE"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "ref": [
+                  "MODELLING.2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01"
+                ],
+                "as": "SIGNRULE"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "GLCLASS",
+                  "ACCOUNT_CLASS"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "SIGNRULE",
+                  "ACCOUNT_CLASS"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "SIGNRULE",
+                  "IS_ACTIVE"
+                ]
+              },
+              "=",
+              {
+                "val": true
+              },
+              "and",
+              {
+                "xpr": [
+                  {
+                    "ref": [
+                      "SIGNRULE",
+                      "VALID_FROM"
+                    ]
+                  },
+                  "is",
+                  "null",
+                  "or",
+                  {
+                    "ref": [
+                      "SIGNRULE",
+                      "VALID_FROM"
+                    ]
+                  },
+                  "<=",
+                  {
+                    "ref": [
+                      "RAW",
+                      "FISCAL_PERIOD_END_DATE"
+                    ]
+                  }
+                ]
+              },
+              "and",
+              {
+                "xpr": [
+                  {
+                    "ref": [
+                      "SIGNRULE",
+                      "VALID_TO"
+                    ]
+                  },
+                  "is",
+                  "null",
+                  "or",
+                  {
+                    "ref": [
+                      "SIGNRULE",
+                      "VALID_TO"
+                    ]
+                  },
+                  ">=",
+                  {
+                    "ref": [
+                      "RAW",
+                      "FISCAL_PERIOD_END_DATE"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "RAW",
+                "Date_CALMONTH"
+              ],
+              "as": "Date_CALMONTH"
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_XPA_COMPANY_CODE_ID"
+              ],
+              "as": "D_XPA_COMPANY_CODE_ID"
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_XPA_GL_ACCOUNT_ID"
+              ],
+              "as": "D_XPA_GL_ACCOUNT_ID"
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_COST_CENTER_ID"
+              ],
+              "as": "D_COST_CENTER_ID"
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_PROFIT_CENTER_ID"
+              ],
+              "as": "D_PROFIT_CENTER_ID"
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_TRADING_PARTNER_ID"
+              ],
+              "as": "D_TRADING_PARTNER_ID"
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_FUNCTIONAL_AREA_ID"
+              ],
+              "as": "D_FUNCTIONAL_AREA_ID"
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_YEAR_VARIANT"
+              ],
+              "as": "FISCAL_YEAR_VARIANT"
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_YEAR"
+              ],
+              "as": "FISCAL_YEAR"
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_PERIOD"
+              ],
+              "as": "FISCAL_PERIOD"
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_YEAR_PERIOD"
+              ],
+              "as": "FISCAL_YEAR_PERIOD"
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_PERIOD_START_DATE"
+              ],
+              "as": "FISCAL_PERIOD_START_DATE"
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_PERIOD_END_DATE"
+              ],
+              "as": "FISCAL_PERIOD_END_DATE"
+            },
+            {
+              "ref": [
+                "GLCLASS",
+                "ACCOUNT_CLASS"
+              ],
+              "as": "ACCOUNT_CLASS"
+            },
+            {
+              "ref": [
+                "SIGNRULE",
+                "REPORTING_SIGN_FACTOR"
+              ],
+              "as": "REPORTING_SIGN_FACTOR"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "GLCLASS",
+                    "ACCOUNT_CLASS"
+                  ]
+                },
+                "is",
+                "null",
+                "then",
+                {
+                  "val": "UNCLASSIFIED_GL"
+                },
+                "when",
+                {
+                  "ref": [
+                    "SIGNRULE",
+                    "REPORTING_SIGN_FACTOR"
+                  ]
+                },
+                "is",
+                "null",
+                "then",
+                {
+                  "val": "MISSING_SIGN_RULE"
+                },
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "ref": [
+                        "SIGNRULE",
+                        "REPORTING_SIGN_FACTOR"
+                      ]
+                    },
+                    "<>",
+                    {
+                      "val": -1
+                    },
+                    "and",
+                    {
+                      "ref": [
+                        "SIGNRULE",
+                        "REPORTING_SIGN_FACTOR"
+                      ]
+                    },
+                    "<>",
+                    {
+                      "val": 1
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "val": "INVALID_SIGN_RULE"
+                },
+                "else",
+                {
+                  "val": "SIGNED"
+                },
+                "end"
+              ],
+              "as": "SIGN_CONFORMANCE_STATUS"
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "RAW",
+                    "MEAS_FLOW_CHANGING"
+                  ]
+                }
+              ],
+              "as": "MEAS_FLOW_CHANGING_RAW"
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "xpr": [
+                    {
+                      "ref": [
+                        "RAW",
+                        "MEAS_FLOW_CHANGING"
+                      ]
+                    },
+                    "*",
+                    {
+                      "xpr": [
+                        "case",
+                        "when",
+                        {
+                          "ref": [
+                            "SIGNRULE",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        },
+                        "=",
+                        {
+                          "val": -1
+                        },
+                        "or",
+                        {
+                          "ref": [
+                            "SIGNRULE",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        },
+                        "=",
+                        {
+                          "val": 1
+                        },
+                        "then",
+                        {
+                          "ref": [
+                            "SIGNRULE",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        },
+                        "else",
+                        {
+                          "val": 1
+                        },
+                        "end"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "MEAS_FLOW_CHANGING"
+            }
+          ],
+          "groupBy": [
+            {
+              "ref": [
+                "RAW",
+                "Date_CALMONTH"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_XPA_COMPANY_CODE_ID"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_XPA_GL_ACCOUNT_ID"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_COST_CENTER_ID"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_PROFIT_CENTER_ID"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_TRADING_PARTNER_ID"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "D_FUNCTIONAL_AREA_ID"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_YEAR_VARIANT"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_PERIOD"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_YEAR_PERIOD"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_PERIOD_START_DATE"
+              ]
+            },
+            {
+              "ref": [
+                "RAW",
+                "FISCAL_PERIOD_END_DATE"
+              ]
+            },
+            {
+              "ref": [
+                "GLCLASS",
+                "ACCOUNT_CLASS"
+              ]
+            },
+            {
+              "ref": [
+                "SIGNRULE",
+                "REPORTING_SIGN_FACTOR"
+              ]
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "GLCLASS",
+                    "ACCOUNT_CLASS"
+                  ]
+                },
+                "is",
+                "null",
+                "then",
+                {
+                  "val": "UNCLASSIFIED_GL"
+                },
+                "when",
+                {
+                  "ref": [
+                    "SIGNRULE",
+                    "REPORTING_SIGN_FACTOR"
+                  ]
+                },
+                "is",
+                "null",
+                "then",
+                {
+                  "val": "MISSING_SIGN_RULE"
+                },
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "ref": [
+                        "SIGNRULE",
+                        "REPORTING_SIGN_FACTOR"
+                      ]
+                    },
+                    "<>",
+                    {
+                      "val": -1
+                    },
+                    "and",
+                    {
+                      "ref": [
+                        "SIGNRULE",
+                        "REPORTING_SIGN_FACTOR"
+                      ]
+                    },
+                    "<>",
+                    {
+                      "val": 1
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "val": "INVALID_SIGN_RULE"
+                },
+                "else",
+                {
+                  "val": "SIGNED"
+                },
+                "end"
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.sqlEditor.query": "SELECT RAW.\"Date_CALMONTH\" AS \"Date_CALMONTH\", RAW.\"D_XPA_COMPANY_CODE_ID\" AS \"D_XPA_COMPANY_CODE_ID\", RAW.\"D_XPA_GL_ACCOUNT_ID\" AS \"D_XPA_GL_ACCOUNT_ID\", RAW.\"D_COST_CENTER_ID\" AS \"D_COST_CENTER_ID\", RAW.\"D_PROFIT_CENTER_ID\" AS \"D_PROFIT_CENTER_ID\", RAW.\"D_TRADING_PARTNER_ID\" AS \"D_TRADING_PARTNER_ID\", RAW.\"D_FUNCTIONAL_AREA_ID\" AS \"D_FUNCTIONAL_AREA_ID\", RAW.\"FISCAL_YEAR_VARIANT\" AS \"FISCAL_YEAR_VARIANT\", RAW.\"FISCAL_YEAR\" AS \"FISCAL_YEAR\", RAW.\"FISCAL_PERIOD\" AS \"FISCAL_PERIOD\", RAW.\"FISCAL_YEAR_PERIOD\" AS \"FISCAL_YEAR_PERIOD\", RAW.\"FISCAL_PERIOD_START_DATE\" AS \"FISCAL_PERIOD_START_DATE\", RAW.\"FISCAL_PERIOD_END_DATE\" AS \"FISCAL_PERIOD_END_DATE\", GLCLASS.\"ACCOUNT_CLASS\" AS \"ACCOUNT_CLASS\", SIGNRULE.\"REPORTING_SIGN_FACTOR\" AS \"REPORTING_SIGN_FACTOR\", CASE WHEN GLCLASS.\"ACCOUNT_CLASS\" IS NULL THEN 'UNCLASSIFIED_GL' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IS NULL THEN 'MISSING_SIGN_RULE' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" NOT IN (-1, 1) THEN 'INVALID_SIGN_RULE' ELSE 'SIGNED' END AS \"SIGN_CONFORMANCE_STATUS\", SUM(RAW.\"MEAS_FLOW_CHANGING\") AS \"MEAS_FLOW_CHANGING_RAW\", SUM(RAW.\"MEAS_FLOW_CHANGING\" * CASE WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IN (-1, 1) THEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" ELSE 1 END) AS \"MEAS_FLOW_CHANGING\" FROM \"3SV_FIN_CORE_ACTUALS_MONTHLY_01\" RAW LEFT JOIN \"MODELLING.2LT_CTRL_FIN_GL_ACCOUNT_CLASS_01\" GLCLASS ON RAW.\"D_XPA_GL_ACCOUNT_ID\" = GLCLASS.\"GL_ACCOUNT_ID\" AND GLCLASS.\"IS_ACTIVE\" = true AND (GLCLASS.\"VALID_FROM\" IS NULL OR GLCLASS.\"VALID_FROM\" <= RAW.\"FISCAL_PERIOD_END_DATE\") AND (GLCLASS.\"VALID_TO\" IS NULL OR GLCLASS.\"VALID_TO\" >= RAW.\"FISCAL_PERIOD_END_DATE\") LEFT JOIN \"MODELLING.2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01\" SIGNRULE ON GLCLASS.\"ACCOUNT_CLASS\" = SIGNRULE.\"ACCOUNT_CLASS\" AND SIGNRULE.\"IS_ACTIVE\" = true AND (SIGNRULE.\"VALID_FROM\" IS NULL OR SIGNRULE.\"VALID_FROM\" <= RAW.\"FISCAL_PERIOD_END_DATE\") AND (SIGNRULE.\"VALID_TO\" IS NULL OR SIGNRULE.\"VALID_TO\" >= RAW.\"FISCAL_PERIOD_END_DATE\") GROUP BY RAW.\"Date_CALMONTH\", RAW.\"D_XPA_COMPANY_CODE_ID\", RAW.\"D_XPA_GL_ACCOUNT_ID\", RAW.\"D_COST_CENTER_ID\", RAW.\"D_PROFIT_CENTER_ID\", RAW.\"D_TRADING_PARTNER_ID\", RAW.\"D_FUNCTIONAL_AREA_ID\", RAW.\"FISCAL_YEAR_VARIANT\", RAW.\"FISCAL_YEAR\", RAW.\"FISCAL_PERIOD\", RAW.\"FISCAL_YEAR_PERIOD\", RAW.\"FISCAL_PERIOD_START_DATE\", RAW.\"FISCAL_PERIOD_END_DATE\", GLCLASS.\"ACCOUNT_CLASS\", SIGNRULE.\"REPORTING_SIGN_FACTOR\", CASE WHEN GLCLASS.\"ACCOUNT_CLASS\" IS NULL THEN 'UNCLASSIFIED_GL' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IS NULL THEN 'MISSING_SIGN_RULE' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" NOT IN (-1, 1) THEN 'INVALID_SIGN_RULE' ELSE 'SIGNED' END",
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date_CALMONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_COST_CENTER_ID": {
+          "@EndUserText.label": "D_COST_CENTER_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_PROFIT_CENTER_ID": {
+          "@EndUserText.label": "D_PROFIT_CENTER_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_TRADING_PARTNER_ID": {
+          "@EndUserText.label": "D_TRADING_PARTNER_ID",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_FUNCTIONAL_AREA_ID": {
+          "@EndUserText.label": "D_FUNCTIONAL_AREA_ID",
+          "type": "cds.String",
+          "length": 16
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "FISCAL_YEAR_VARIANT",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "FISCAL_YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "FISCAL_PERIOD",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "FISCAL_YEAR_PERIOD",
+          "type": "cds.String",
+          "length": 7
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_START_DATE",
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
+          "type": "cds.Date"
+        },
+        "ACCOUNT_CLASS": {
+          "@EndUserText.label": "ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100
+        },
+        "REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "REPORTING_SIGN_FACTOR",
+          "type": "cds.Integer"
+        },
+        "SIGN_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "SIGN_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 50
+        },
+        "MEAS_FLOW_CHANGING_RAW": {
+          "@EndUserText.label": "Actual Movement Raw - S/4 Accounting Sign",
+          "type": "cds.DecimalFloat",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "Actual Movement - Core Finance Sign",
+          "type": "cds.DecimalFloat",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        }
+      }
+    }
+  }
+}
