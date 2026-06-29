@@ -2,15 +2,122 @@
   "definitions": {
     "3SV_FIN_CORE_PLAN_MONTHLY_01": {
       "kind": "entity",
-      "@EndUserText.label": "3SV_FIN_CORE_PLAN_MONTHLY_01",
-      "@ObjectModel.modelingPattern": {
-        "#": "ANALYTICAL_FACT"
-      },
-      "@ObjectModel.supportedCapabilities": [
-        {
-          "#": "DATA_STRUCTURE"
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE",
+          "type": "cds.String",
+          "length": 256
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT",
+          "type": "cds.String",
+          "length": 256
+        },
+        "D_COST_CENTER_ID": {
+          "@EndUserText.label": "D_COST_CENTER",
+          "type": "cds.String",
+          "length": 256
+        },
+        "D_PROFIT_CENTER_ID": {
+          "@EndUserText.label": "D_PROFIT_CENTER",
+          "type": "cds.String",
+          "length": 256
+        },
+        "D_TRADING_PARTNER_ID": {
+          "@EndUserText.label": "D_TRADING_PARTNER",
+          "type": "cds.String",
+          "length": 256
+        },
+        "D_FUNCTIONAL_AREA_ID": {
+          "@EndUserText.label": "D_FUNCTIONAL_AREA",
+          "type": "cds.String",
+          "length": 256
+        },
+        "Version_ID": {
+          "@EndUserText.label": "Version",
+          "type": "cds.String",
+          "length": 300
+        },
+        "D_SCENARIO_ID": {
+          "@EndUserText.label": "D_SCENARIO",
+          "type": "cds.String",
+          "length": 256
+        },
+        "D_AUDIT_TRAIL_ID": {
+          "@EndUserText.label": "D_AUDIT_TRAIL",
+          "type": "cds.String",
+          "length": 256
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "length": 4,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "length": 3,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "Fiscal year + fiscal period",
+          "type": "cds.String",
+          "length": 7,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_START_DATE",
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
+          "type": "cds.Date"
+        },
+        "MEAS_FLOW_OPENING": {
+          "@EndUserText.label": "MEAS_FLOW_OPENING",
+          "precision": 38,
+          "scale": 7,
+          "type": "cds.Decimal",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING",
+          "precision": 38,
+          "scale": 7,
+          "type": "cds.Decimal",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_TOTAL": {
+          "@EndUserText.label": "MEAS_FLOW_TOTAL",
+          "precision": 38,
+          "scale": 7,
+          "type": "cds.Decimal"
         }
-      ],
+      },
       "query": {
         "SELECT": {
           "from": {
@@ -18,7 +125,7 @@
             "args": [
               {
                 "ref": [
-                  "3SV_FIN_CORE_PLAN_SOURCE_01"
+                  "sap.sac.TB_MDL_FIN_CORE"
                 ],
                 "as": "PLAN"
               },
@@ -76,57 +183,165 @@
             ]
           },
           "columns": [
-            { "ref": ["PLAN", "Date_CALMONTH"], "as": "Date_CALMONTH" },
-            { "ref": ["PLAN", "D_XPA_COMPANY_CODE_ID"], "as": "D_XPA_COMPANY_CODE_ID" },
-            { "ref": ["PLAN", "D_XPA_GL_ACCOUNT_ID"], "as": "D_XPA_GL_ACCOUNT_ID" },
-            { "ref": ["PLAN", "D_COST_CENTER_ID"], "as": "D_COST_CENTER_ID" },
-            { "ref": ["PLAN", "D_PROFIT_CENTER_ID"], "as": "D_PROFIT_CENTER_ID" },
-            { "ref": ["PLAN", "D_TRADING_PARTNER_ID"], "as": "D_TRADING_PARTNER_ID" },
-            { "ref": ["PLAN", "D_FUNCTIONAL_AREA"], "as": "D_FUNCTIONAL_AREA" },
-            { "ref": ["PLAN", "Version_ID"], "as": "Version_ID" },
-            { "ref": ["PLAN", "D_SCENARIO_ID"], "as": "D_SCENARIO_ID" },
-            { "ref": ["PLAN", "D_AUDIT_TRAIL_ID"], "as": "D_AUDIT_TRAIL_ID" },
-
-            { "ref": ["FISCAL", "FiscalYearVariant"], "as": "FISCAL_YEAR_VARIANT" },
-            { "ref": ["FISCAL", "FiscalYear"], "as": "FISCAL_YEAR" },
-            { "ref": ["FISCAL", "FiscalPeriod"], "as": "FISCAL_PERIOD" },
-            { "ref": ["FISCAL", "FiscalYearPeriod"], "as": "FISCAL_YEAR_PERIOD" },
-
+            {
+              "ref": [
+                "PLAN",
+                "Date_CALMONTH"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_XPA_COMPANY_CODE_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_XPA_GL_ACCOUNT_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_COST_CENTER_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_PROFIT_CENTER_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_TRADING_PARTNER_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_FUNCTIONAL_AREA_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "Version_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_SCENARIO_ID"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "D_AUDIT_TRAIL_ID"
+              ]
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYearVariant"
+              ],
+              "as": "FISCAL_YEAR_VARIANT"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYear"
+              ],
+              "as": "FISCAL_YEAR"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalPeriod"
+              ],
+              "as": "FISCAL_PERIOD"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYearPeriod"
+              ],
+              "as": "FISCAL_YEAR_PERIOD"
+            },
             {
               "func": "TO_DATE",
               "args": [
-                { "ref": ["FISCAL", "FiscalPeriodStartDate"] },
-                { "val": "YYYYMMDD" }
+                {
+                  "ref": [
+                    "FISCAL",
+                    "FiscalPeriodStartDate"
+                  ]
+                },
+                {
+                  "val": "YYYYMMDD"
+                }
               ],
               "as": "FISCAL_PERIOD_START_DATE"
             },
             {
               "func": "TO_DATE",
               "args": [
-                { "ref": ["FISCAL", "FiscalPeriodEndDate"] },
-                { "val": "YYYYMMDD" }
+                {
+                  "ref": [
+                    "FISCAL",
+                    "FiscalPeriodEndDate"
+                  ]
+                },
+                {
+                  "val": "YYYYMMDD"
+                }
               ],
               "as": "FISCAL_PERIOD_END_DATE"
             },
-
-            { "ref": ["PLAN", "MEAS_FLOW_OPENING"], "as": "MEAS_FLOW_OPENING" },
-            { "ref": ["PLAN", "MEAS_FLOW_CHANGING"], "as": "MEAS_FLOW_CHANGING" },
-
+            {
+              "ref": [
+                "PLAN",
+                "MEAS_FLOW_OPENING"
+              ]
+            },
+            {
+              "ref": [
+                "PLAN",
+                "MEAS_FLOW_CHANGING"
+              ]
+            },
             {
               "xpr": [
                 {
                   "func": "COALESCE",
                   "args": [
-                    { "ref": ["PLAN", "MEAS_FLOW_OPENING"] },
-                    { "val": 0 }
+                    {
+                      "ref": [
+                        "PLAN",
+                        "MEAS_FLOW_OPENING"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
                   ]
                 },
                 "+",
                 {
                   "func": "COALESCE",
                   "args": [
-                    { "ref": ["PLAN", "MEAS_FLOW_CHANGING"] },
-                    { "val": 0 }
+                    {
+                      "ref": [
+                        "PLAN",
+                        "MEAS_FLOW_CHANGING"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
                   ]
                 }
               ],
@@ -135,51 +350,17 @@
           ]
         }
       },
-      "@DataWarehouse.sqlEditor.query": "SELECT PLAN.\"Date_CALMONTH\", PLAN.\"D_XPA_COMPANY_CODE_ID\", PLAN.\"D_XPA_GL_ACCOUNT_ID\", PLAN.\"D_COST_CENTER_ID\", PLAN.\"D_PROFIT_CENTER_ID\", PLAN.\"D_TRADING_PARTNER_ID\", PLAN.\"D_FUNCTIONAL_AREA\", PLAN.\"Version_ID\", PLAN.\"D_SCENARIO_ID\", PLAN.\"D_AUDIT_TRAIL_ID\", FISCAL.\"FiscalYearVariant\" AS \"FISCAL_YEAR_VARIANT\", FISCAL.\"FiscalYear\" AS \"FISCAL_YEAR\", FISCAL.\"FiscalPeriod\" AS \"FISCAL_PERIOD\", FISCAL.\"FiscalYearPeriod\" AS \"FISCAL_YEAR_PERIOD\", TO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\", TO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_END_DATE\", PLAN.\"MEAS_FLOW_OPENING\", PLAN.\"MEAS_FLOW_CHANGING\", COALESCE(PLAN.\"MEAS_FLOW_OPENING\", 0) + COALESCE(PLAN.\"MEAS_FLOW_CHANGING\", 0) AS \"MEAS_FLOW_TOTAL\" FROM \"3SV_FIN_CORE_PLAN_SOURCE_01\" PLAN LEFT JOIN \"3GV_DIM_FISCALCALENDAR_01\" FISCAL ON FISCAL.\"FiscalYearVariant\" = 'V3' AND FISCAL.\"Language\" = 'EN' AND FISCAL.\"CalendarDate\" = CONCAT(PLAN.\"Date_CALMONTH\", '01')",
-      "elements": {
-        "Date_CALMONTH": { "@EndUserText.label": "Date", "type": "cds.String", "length": 6 },
-        "D_XPA_COMPANY_CODE_ID": { "@EndUserText.label": "D_XPA_COMPANY_CODE", "type": "cds.String", "length": 256 },
-        "D_XPA_GL_ACCOUNT_ID": { "@EndUserText.label": "D_XPA_GL_ACCOUNT", "type": "cds.String", "length": 256 },
-        "D_COST_CENTER_ID": { "@EndUserText.label": "D_COST_CENTER", "type": "cds.String", "length": 256 },
-        "D_PROFIT_CENTER_ID": { "@EndUserText.label": "D_PROFIT_CENTER", "type": "cds.String", "length": 256 },
-        "D_TRADING_PARTNER_ID": { "@EndUserText.label": "D_TRADING_PARTNER", "type": "cds.String", "length": 256 },
-        "D_FUNCTIONAL_AREA": { "@EndUserText.label": "D_FUNCTIONAL_AREA", "type": "cds.String", "length": 256 },
-        "Version_ID": { "@EndUserText.label": "Version", "type": "cds.String", "length": 300 },
-        "D_SCENARIO_ID": { "@EndUserText.label": "D_SCENARIO", "type": "cds.String", "length": 256 },
-        "D_AUDIT_TRAIL_ID": { "@EndUserText.label": "D_AUDIT_TRAIL", "type": "cds.String", "length": 256 },
-
-        "FISCAL_YEAR_VARIANT": { "@EndUserText.label": "Fiscal Year Variant", "type": "cds.String", "length": 2 },
-        "FISCAL_YEAR": { "@EndUserText.label": "Fiscal Year", "type": "cds.String", "length": 4 },
-        "FISCAL_PERIOD": { "@EndUserText.label": "Fiscal Period", "type": "cds.String", "length": 3 },
-        "FISCAL_YEAR_PERIOD": { "@EndUserText.label": "Fiscal Year Period", "type": "cds.String", "length": 7 },
-        "FISCAL_PERIOD_START_DATE": { "@EndUserText.label": "Fiscal Period Start Date", "type": "cds.Date" },
-        "FISCAL_PERIOD_END_DATE": { "@EndUserText.label": "Fiscal Period End Date", "type": "cds.Date" },
-
-        "MEAS_FLOW_OPENING": {
-          "@EndUserText.label": "MEAS_FLOW_OPENING",
-          "type": "cds.Decimal",
-          "precision": 38,
-          "scale": 7,
-          "@AnalyticsDetails.measureType": { "#": "BASE" },
-          "@Aggregation.default": { "#": "SUM" }
-        },
-        "MEAS_FLOW_CHANGING": {
-          "@EndUserText.label": "MEAS_FLOW_CHANGING",
-          "type": "cds.Decimal",
-          "precision": 38,
-          "scale": 7,
-          "@AnalyticsDetails.measureType": { "#": "BASE" },
-          "@Aggregation.default": { "#": "SUM" }
-        },
-        "MEAS_FLOW_TOTAL": {
-          "@EndUserText.label": "MEAS_FLOW_TOTAL",
-          "type": "cds.Decimal",
-          "precision": 38,
-          "scale": 7,
-          "@AnalyticsDetails.measureType": { "#": "BASE" },
-          "@Aggregation.default": { "#": "SUM" }
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
         }
-      }
+      ],
+      "@EndUserText.label": "3SV_FIN_CORE_PLAN_MONTHLY_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_FACT"
+      },
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT PLAN.\"Date_CALMONTH\", PLAN.\"D_XPA_COMPANY_CODE_ID\", PLAN.\"D_XPA_GL_ACCOUNT_ID\", PLAN.\"D_COST_CENTER_ID\", PLAN.\"D_PROFIT_CENTER_ID\", PLAN.\"D_TRADING_PARTNER_ID\", PLAN.\"D_FUNCTIONAL_AREA_ID\", PLAN.\"Version_ID\", PLAN.\"D_SCENARIO_ID\", PLAN.\"D_AUDIT_TRAIL_ID\", FISCAL.\"FiscalYearVariant\" AS \"FISCAL_YEAR_VARIANT\", FISCAL.\"FiscalYear\" AS \"FISCAL_YEAR\", FISCAL.\"FiscalPeriod\" AS \"FISCAL_PERIOD\", FISCAL.\"FiscalYearPeriod\" AS \"FISCAL_YEAR_PERIOD\", TO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\", TO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_END_DATE\", PLAN.\"MEAS_FLOW_OPENING\", PLAN.\"MEAS_FLOW_CHANGING\", COALESCE(PLAN.\"MEAS_FLOW_OPENING\", 0) + COALESCE(PLAN.\"MEAS_FLOW_CHANGING\", 0) AS \"MEAS_FLOW_TOTAL\" FROM \"sap.sac.TB_MDL_FIN_CORE\" PLAN LEFT JOIN \"3GV_DIM_FISCALCALENDAR_01\" FISCAL ON FISCAL.\"FiscalYearVariant\" = 'V3' AND FISCAL.\"Language\" = 'EN' AND FISCAL.\"CalendarDate\" = CONCAT(PLAN.\"Date_CALMONTH\", '01')"
     }
   }
 }
