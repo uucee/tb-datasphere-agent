@@ -1,0 +1,395 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_MONTHLY_01": {
+      "kind": "entity",
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_MONTHLY_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_FACT"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "ref": [
+                  "3SV_FIN_JOURNAL_DETAIL_LIVE_01"
+                ],
+                "as": "ACTUAL"
+              },
+              {
+                "ref": [
+                  "3GV_DIM_FISCALCALENDAR_01"
+                ],
+                "as": "FISCAL"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "FISCAL",
+                  "FiscalYearVariant"
+                ]
+              },
+              "=",
+              {
+                "val": "V3"
+              },
+              "and",
+              {
+                "ref": [
+                  "FISCAL",
+                  "Language"
+                ]
+              },
+              "=",
+              {
+                "val": "EN"
+              },
+              "and",
+              {
+                "ref": [
+                  "FISCAL",
+                  "CalendarDate"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "ACTUAL",
+                  "PostingDate"
+                ]
+              }
+            ]
+          },
+          "where": [
+            {
+              "ref": [
+                "ACTUAL",
+                "SourceLedger"
+              ]
+            },
+            "=",
+            {
+              "val": "0L"
+            }
+          ],
+          "columns": [
+            {
+              "func": "LEFT",
+              "args": [
+                {
+                  "ref": [
+                    "ACTUAL",
+                    "PostingDate"
+                  ]
+                },
+                {
+                  "val": 6
+                }
+              ],
+              "as": "Date_CALMONTH"
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "CompanyCode"
+              ],
+              "as": "D_XPA_COMPANY_CODE_ID"
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "GLAccount"
+              ],
+              "as": "D_XPA_GL_ACCOUNT_ID"
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "CostCenter"
+              ],
+              "as": "D_COST_CENTER_ID"
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "ProfitCenter"
+              ],
+              "as": "D_PROFIT_CENTER_ID"
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "PartnerCompany"
+              ],
+              "as": "D_TRADING_PARTNER_ID"
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "FunctionalArea"
+              ],
+              "as": "D_FUNCTIONAL_AREA_ID"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYearVariant"
+              ],
+              "as": "FISCAL_YEAR_VARIANT"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYear"
+              ],
+              "as": "FISCAL_YEAR"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalPeriod"
+              ],
+              "as": "FISCAL_PERIOD"
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYearPeriod"
+              ],
+              "as": "FISCAL_YEAR_PERIOD"
+            },
+            {
+              "func": "TO_DATE",
+              "args": [
+                {
+                  "ref": [
+                    "FISCAL",
+                    "FiscalPeriodStartDate"
+                  ]
+                },
+                {
+                  "val": "YYYYMMDD"
+                }
+              ],
+              "as": "FISCAL_PERIOD_START_DATE"
+            },
+            {
+              "func": "TO_DATE",
+              "args": [
+                {
+                  "ref": [
+                    "FISCAL",
+                    "FiscalPeriodEndDate"
+                  ]
+                },
+                {
+                  "val": "YYYYMMDD"
+                }
+              ],
+              "as": "FISCAL_PERIOD_END_DATE"
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "ACTUAL",
+                    "AmountInCompanyCodeCurrency"
+                  ]
+                }
+              ],
+              "as": "MEAS_FLOW_CHANGING"
+            }
+          ],
+          "groupBy": [
+            {
+              "func": "LEFT",
+              "args": [
+                {
+                  "ref": [
+                    "ACTUAL",
+                    "PostingDate"
+                  ]
+                },
+                {
+                  "val": 6
+                }
+              ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "GLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "CostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "ProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "PartnerCompany"
+              ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "FunctionalArea"
+              ]
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYearVariant"
+              ]
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "FISCAL",
+                "FiscalYearPeriod"
+              ]
+            },
+            {
+              "func": "TO_DATE",
+              "args": [
+                {
+                  "ref": [
+                    "FISCAL",
+                    "FiscalPeriodStartDate"
+                  ]
+                },
+                {
+                  "val": "YYYYMMDD"
+                }
+              ]
+            },
+            {
+              "func": "TO_DATE",
+              "args": [
+                {
+                  "ref": [
+                    "FISCAL",
+                    "FiscalPeriodEndDate"
+                  ]
+                },
+                {
+                  "val": "YYYYMMDD"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.sqlEditor.query": "SELECT LEFT(ACTUAL.\"PostingDate\", 6) AS \"Date_CALMONTH\", ACTUAL.\"CompanyCode\" AS \"D_XPA_COMPANY_CODE_ID\", ACTUAL.\"GLAccount\" AS \"D_XPA_GL_ACCOUNT_ID\", ACTUAL.\"CostCenter\" AS \"D_COST_CENTER_ID\", ACTUAL.\"ProfitCenter\" AS \"D_PROFIT_CENTER_ID\", ACTUAL.\"PartnerCompany\" AS \"D_TRADING_PARTNER_ID\", ACTUAL.\"FunctionalArea\" AS \"D_FUNCTIONAL_AREA_ID\", FISCAL.\"FiscalYearVariant\" AS \"FISCAL_YEAR_VARIANT\", FISCAL.\"FiscalYear\" AS \"FISCAL_YEAR\", FISCAL.\"FiscalPeriod\" AS \"FISCAL_PERIOD\", FISCAL.\"FiscalYearPeriod\" AS \"FISCAL_YEAR_PERIOD\", TO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\", TO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_END_DATE\", SUM(ACTUAL.\"AmountInCompanyCodeCurrency\") AS \"MEAS_FLOW_CHANGING\" FROM \"3SV_FIN_JOURNAL_DETAIL_LIVE_01\" ACTUAL LEFT JOIN \"3GV_DIM_FISCALCALENDAR_01\" FISCAL ON FISCAL.\"FiscalYearVariant\" = 'V3' AND FISCAL.\"Language\" = 'EN' AND FISCAL.\"CalendarDate\" = ACTUAL.\"PostingDate\" WHERE ACTUAL.\"SourceLedger\" = '0L' GROUP BY LEFT(ACTUAL.\"PostingDate\", 6), ACTUAL.\"CompanyCode\", ACTUAL.\"GLAccount\", ACTUAL.\"CostCenter\", ACTUAL.\"ProfitCenter\", ACTUAL.\"PartnerCompany\", ACTUAL.\"FunctionalArea\", FISCAL.\"FiscalYearVariant\", FISCAL.\"FiscalYear\", FISCAL.\"FiscalPeriod\", FISCAL.\"FiscalYearPeriod\", TO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD'), TO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD')",
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date_CALMONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_COST_CENTER_ID": {
+          "@EndUserText.label": "D_COST_CENTER_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_PROFIT_CENTER_ID": {
+          "@EndUserText.label": "D_PROFIT_CENTER_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_TRADING_PARTNER_ID": {
+          "@EndUserText.label": "D_TRADING_PARTNER_ID",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_FUNCTIONAL_AREA_ID": {
+          "@EndUserText.label": "D_FUNCTIONAL_AREA_ID",
+          "type": "cds.String",
+          "length": 16
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "FISCAL_YEAR_VARIANT",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "FISCAL_YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "FISCAL_PERIOD",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "FISCAL_YEAR_PERIOD",
+          "type": "cds.String",
+          "length": 7
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_START_DATE",
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
+          "type": "cds.Date"
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "Actual Movement — S/4 Accounting Sign",
+          "type": "cds.DecimalFloat",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        }
+      }
+    }
+  }
+}
