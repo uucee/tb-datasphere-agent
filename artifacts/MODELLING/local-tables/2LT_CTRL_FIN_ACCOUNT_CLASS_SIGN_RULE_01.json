@@ -1,0 +1,63 @@
+{
+  "definitions": {
+    "2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01": {
+      "kind": "entity",
+      "@EndUserText.label": "2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "ACCOUNT_CLASS": {
+          "@EndUserText.label": "ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100,
+          "key": true,
+          "notNull": true
+        },
+        "REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "REPORTING_SIGN_FACTOR",
+          "type": "cds.Integer",
+          "notNull": true
+        },
+        "IS_ACTIVE": {
+          "@EndUserText.label": "IS_ACTIVE",
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        },
+        "VALID_FROM": {
+          "@EndUserText.label": "VALID_FROM",
+          "type": "cds.Date"
+        },
+        "VALID_TO": {
+          "@EndUserText.label": "VALID_TO",
+          "type": "cds.Date",
+          "default": {
+            "val": "2096-01-31",
+            "literal": "date"
+          }
+        },
+        "UPDATED_BY": {
+          "@EndUserText.label": "UPDATED_BY",
+          "type": "cds.String",
+          "length": 100
+        },
+        "UPDATED_TS": {
+          "@EndUserText.label": "UPDATED_TS",
+          "type": "cds.DateTime"
+        },
+        "COMMENTS": {
+          "@EndUserText.label": "COMMENTS",
+          "type": "cds.String",
+          "length": 500
+        }
+      }
+    }
+  }
+}
