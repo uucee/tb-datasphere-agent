@@ -1,0 +1,466 @@
+{
+  "definitions": {
+    "3AM_FIN_CORE_PLAN_MONTHLY_01": {
+      "kind": "entity",
+      "@EndUserText.label": "3AM_FIN_CORE_PLAN_MONTHLY_01",
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date_CALMONTH"
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID"
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID"
+        },
+        "D_COST_CENTER_ID": {
+          "@EndUserText.label": "D_COST_CENTER_ID"
+        },
+        "D_PROFIT_CENTER_ID": {
+          "@EndUserText.label": "D_PROFIT_CENTER_ID"
+        },
+        "D_TRADING_PARTNER_ID": {
+          "@EndUserText.label": "D_TRADING_PARTNER_ID"
+        },
+        "D_FUNCTIONAL_AREA_ID": {
+          "@EndUserText.label": "D_FUNCTIONAL_AREA_ID"
+        },
+        "Version_ID": {
+          "@EndUserText.label": "Version_ID"
+        },
+        "D_SCENARIO_ID": {
+          "@EndUserText.label": "D_SCENARIO_ID"
+        },
+        "D_AUDIT_TRAIL_ID": {
+          "@EndUserText.label": "D_AUDIT_TRAIL_ID"
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "FISCAL_YEAR_VARIANT"
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "FISCAL_YEAR"
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "FISCAL_PERIOD"
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "FISCAL_YEAR_PERIOD"
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_START_DATE"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_END_DATE"
+        },
+        "MEAS_FLOW_OPENING": {
+          "@EndUserText.label": "MEAS_FLOW_OPENING",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_TOTAL": {
+          "@EndUserText.label": "MEAS_FLOW_TOTAL",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        }
+      },
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_CUBE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "ANALYTICAL_PROVIDER"
+        },
+        {
+          "#": "_DWC_AM_EDITABLE_DIMENSION_NAMES"
+        }
+      ],
+      "@DataWarehouse.editorType": {
+        "#": "DWCQueryModelEditor"
+      },
+      "@DataWarehouse.hanaCatalog.viewType": {
+        "#": "CALCULATION_VIEW"
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "3SV_FIN_CORE_PLAN_MONTHLY_01"
+            ],
+            "as": "REPORTING3SV"
+          },
+          "columns": [
+            {
+              "ref": [
+                "REPORTING3SV",
+                "Date_CALMONTH"
+              ],
+              "as": "Date_CALMONTH"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_XPA_COMPANY_CODE_ID"
+              ],
+              "as": "D_XPA_COMPANY_CODE_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_XPA_GL_ACCOUNT_ID"
+              ],
+              "as": "D_XPA_GL_ACCOUNT_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_COST_CENTER_ID"
+              ],
+              "as": "D_COST_CENTER_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_PROFIT_CENTER_ID"
+              ],
+              "as": "D_PROFIT_CENTER_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_TRADING_PARTNER_ID"
+              ],
+              "as": "D_TRADING_PARTNER_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_FUNCTIONAL_AREA_ID"
+              ],
+              "as": "D_FUNCTIONAL_AREA_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "Version_ID"
+              ],
+              "as": "Version_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_SCENARIO_ID"
+              ],
+              "as": "D_SCENARIO_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "D_AUDIT_TRAIL_ID"
+              ],
+              "as": "D_AUDIT_TRAIL_ID"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "FISCAL_YEAR_VARIANT"
+              ],
+              "as": "FISCAL_YEAR_VARIANT"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "FISCAL_YEAR"
+              ],
+              "as": "FISCAL_YEAR"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "FISCAL_PERIOD"
+              ],
+              "as": "FISCAL_PERIOD"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "FISCAL_YEAR_PERIOD"
+              ],
+              "as": "FISCAL_YEAR_PERIOD"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "FISCAL_PERIOD_START_DATE"
+              ],
+              "as": "FISCAL_PERIOD_START_DATE"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "FISCAL_PERIOD_END_DATE"
+              ],
+              "as": "FISCAL_PERIOD_END_DATE"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "MEAS_FLOW_OPENING"
+              ],
+              "as": "MEAS_FLOW_OPENING"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "MEAS_FLOW_CHANGING"
+              ],
+              "as": "MEAS_FLOW_CHANGING"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "MEAS_FLOW_TOTAL"
+              ],
+              "as": "MEAS_FLOW_TOTAL"
+            }
+          ],
+          "mixin": {}
+        }
+      }
+    }
+  },
+  "businessLayerDefinitions": {
+    "3AM_FIN_CORE_PLAN_MONTHLY_01": {
+      "identifier": {
+        "key": "3AM_FIN_CORE_PLAN_MONTHLY_01"
+      },
+      "text": "3AM_FIN_CORE_PLAN_MONTHLY_01",
+      "sourceModel": {
+        "factSources": {
+          "REPORTING3SV": {
+            "text": "3SV_FIN_CORE_PLAN_MONTHLY_01",
+            "dataEntity": {
+              "key": "3SV_FIN_CORE_PLAN_MONTHLY_01"
+            }
+          }
+        },
+        "dimensionSources": {}
+      },
+      "exposedAssociations": {},
+      "attributes": {
+        "Date_CALMONTH": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "Date_CALMONTH"
+            }
+          },
+          "text": "Date_CALMONTH",
+          "duplicated": false
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_XPA_COMPANY_CODE_ID"
+            }
+          },
+          "text": "D_XPA_COMPANY_CODE_ID",
+          "duplicated": false
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_XPA_GL_ACCOUNT_ID"
+            }
+          },
+          "text": "D_XPA_GL_ACCOUNT_ID",
+          "duplicated": false
+        },
+        "D_COST_CENTER_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_COST_CENTER_ID"
+            }
+          },
+          "text": "D_COST_CENTER_ID",
+          "duplicated": false
+        },
+        "D_PROFIT_CENTER_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_PROFIT_CENTER_ID"
+            }
+          },
+          "text": "D_PROFIT_CENTER_ID",
+          "duplicated": false
+        },
+        "D_TRADING_PARTNER_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_TRADING_PARTNER_ID"
+            }
+          },
+          "text": "D_TRADING_PARTNER_ID",
+          "duplicated": false
+        },
+        "D_FUNCTIONAL_AREA_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_FUNCTIONAL_AREA_ID"
+            }
+          },
+          "text": "D_FUNCTIONAL_AREA_ID",
+          "duplicated": false
+        },
+        "Version_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "Version_ID"
+            }
+          },
+          "text": "Version_ID",
+          "duplicated": false
+        },
+        "D_SCENARIO_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_SCENARIO_ID"
+            }
+          },
+          "text": "D_SCENARIO_ID",
+          "duplicated": false
+        },
+        "D_AUDIT_TRAIL_ID": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "D_AUDIT_TRAIL_ID"
+            }
+          },
+          "text": "D_AUDIT_TRAIL_ID",
+          "duplicated": false
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "FISCAL_YEAR_VARIANT"
+            }
+          },
+          "text": "FISCAL_YEAR_VARIANT",
+          "duplicated": false
+        },
+        "FISCAL_YEAR": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "FISCAL_YEAR"
+            }
+          },
+          "text": "FISCAL_YEAR",
+          "duplicated": false
+        },
+        "FISCAL_PERIOD": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "FISCAL_PERIOD"
+            }
+          },
+          "text": "FISCAL_PERIOD",
+          "duplicated": false
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "FISCAL_YEAR_PERIOD"
+            }
+          },
+          "text": "FISCAL_YEAR_PERIOD",
+          "duplicated": false
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "FISCAL_PERIOD_START_DATE"
+            }
+          },
+          "text": "FISCAL_PERIOD_START_DATE",
+          "duplicated": false
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "FISCAL_PERIOD_END_DATE"
+            }
+          },
+          "text": "FISCAL_PERIOD_END_DATE",
+          "duplicated": false
+        }
+      },
+      "measures": {
+        "MEAS_FLOW_OPENING": {
+          "measureType": "AnalyticModelMeasureType.FactSourceMeasure",
+          "measureMapping": {
+            "REPORTING3SV": {
+              "key": "MEAS_FLOW_OPENING"
+            }
+          },
+          "text": "MEAS_FLOW_OPENING",
+          "isAuxiliary": false
+        },
+        "MEAS_FLOW_CHANGING": {
+          "measureType": "AnalyticModelMeasureType.FactSourceMeasure",
+          "measureMapping": {
+            "REPORTING3SV": {
+              "key": "MEAS_FLOW_CHANGING"
+            }
+          },
+          "text": "MEAS_FLOW_CHANGING",
+          "isAuxiliary": false
+        },
+        "MEAS_FLOW_TOTAL": {
+          "measureType": "AnalyticModelMeasureType.FactSourceMeasure",
+          "measureMapping": {
+            "REPORTING3SV": {
+              "key": "MEAS_FLOW_TOTAL"
+            }
+          },
+          "text": "MEAS_FLOW_TOTAL",
+          "isAuxiliary": false
+        }
+      },
+      "crossCalculations": {},
+      "variables": {},
+      "version": "1.7.2",
+      "supportedCapabilities": {}
+    }
+  }
+}
