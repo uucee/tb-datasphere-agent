@@ -2,15 +2,86 @@
   "definitions": {
     "3SV_FIN_CORE_ACTUALS_MONTHLY_01": {
       "kind": "entity",
-      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_MONTHLY_01",
-      "@ObjectModel.modelingPattern": {
-        "#": "ANALYTICAL_FACT"
-      },
-      "@ObjectModel.supportedCapabilities": [
-        {
-          "#": "DATA_STRUCTURE"
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date_CALMONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_COST_CENTER_ID": {
+          "@EndUserText.label": "D_COST_CENTER_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_PROFIT_CENTER_ID": {
+          "@EndUserText.label": "D_PROFIT_CENTER_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "D_TRADING_PARTNER_ID": {
+          "@EndUserText.label": "D_TRADING_PARTNER_ID",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_FUNCTIONAL_AREA_ID": {
+          "@EndUserText.label": "D_FUNCTIONAL_AREA_ID",
+          "type": "cds.String",
+          "length": 16
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "FISCAL_YEAR_VARIANT",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "FISCAL_YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "FISCAL_PERIOD",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "FISCAL_YEAR_PERIOD",
+          "type": "cds.String",
+          "length": 7
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_START_DATE",
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
+          "type": "cds.Date"
+        },
+        "DEBIT_CREDIT_CODE": {
+          "@EndUserText.label": "DEBIT_CREDIT_CODE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "Actual Movement ÔÇö S/4 Accounting Sign",
+          "type": "cds.DecimalFloat",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
         }
-      ],
+      },
       "query": {
         "SELECT": {
           "from": {
@@ -67,18 +138,6 @@
               }
             ]
           },
-          "where": [
-            {
-              "ref": [
-                "ACTUAL",
-                "SourceLedger"
-              ]
-            },
-            "=",
-            {
-              "val": "0L"
-            }
-          ],
           "columns": [
             {
               "func": "LEFT",
@@ -196,6 +255,13 @@
               "as": "FISCAL_PERIOD_END_DATE"
             },
             {
+              "ref": [
+                "ACTUAL",
+                "DebitCreditCode"
+              ],
+              "as": "DEBIT_CREDIT_CODE"
+            },
+            {
               "func": "SUM",
               "args": [
                 {
@@ -310,86 +376,39 @@
                   "val": "YYYYMMDD"
                 }
               ]
+            },
+            {
+              "ref": [
+                "ACTUAL",
+                "DebitCreditCode"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "ACTUAL",
+                "SourceLedger"
+              ]
+            },
+            "=",
+            {
+              "val": "0L"
             }
           ]
         }
       },
-      "@DataWarehouse.sqlEditor.query": "SELECT LEFT(ACTUAL.\"PostingDate\", 6) AS \"Date_CALMONTH\", ACTUAL.\"CompanyCode\" AS \"D_XPA_COMPANY_CODE_ID\", ACTUAL.\"GLAccount\" AS \"D_XPA_GL_ACCOUNT_ID\", ACTUAL.\"CostCenter\" AS \"D_COST_CENTER_ID\", ACTUAL.\"ProfitCenter\" AS \"D_PROFIT_CENTER_ID\", ACTUAL.\"PartnerCompany\" AS \"D_TRADING_PARTNER_ID\", ACTUAL.\"FunctionalArea\" AS \"D_FUNCTIONAL_AREA_ID\", FISCAL.\"FiscalYearVariant\" AS \"FISCAL_YEAR_VARIANT\", FISCAL.\"FiscalYear\" AS \"FISCAL_YEAR\", FISCAL.\"FiscalPeriod\" AS \"FISCAL_PERIOD\", FISCAL.\"FiscalYearPeriod\" AS \"FISCAL_YEAR_PERIOD\", TO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\", TO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_END_DATE\", SUM(ACTUAL.\"AmountInCompanyCodeCurrency\") AS \"MEAS_FLOW_CHANGING\" FROM \"3SV_FIN_JOURNAL_DETAIL_LIVE_01\" ACTUAL LEFT JOIN \"3GV_DIM_FISCALCALENDAR_01\" FISCAL ON FISCAL.\"FiscalYearVariant\" = 'V3' AND FISCAL.\"Language\" = 'EN' AND FISCAL.\"CalendarDate\" = ACTUAL.\"PostingDate\" WHERE ACTUAL.\"SourceLedger\" = '0L' GROUP BY LEFT(ACTUAL.\"PostingDate\", 6), ACTUAL.\"CompanyCode\", ACTUAL.\"GLAccount\", ACTUAL.\"CostCenter\", ACTUAL.\"ProfitCenter\", ACTUAL.\"PartnerCompany\", ACTUAL.\"FunctionalArea\", FISCAL.\"FiscalYearVariant\", FISCAL.\"FiscalYear\", FISCAL.\"FiscalPeriod\", FISCAL.\"FiscalYearPeriod\", TO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD'), TO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD')",
-      "elements": {
-        "Date_CALMONTH": {
-          "@EndUserText.label": "Date_CALMONTH",
-          "type": "cds.String",
-          "length": 6
-        },
-        "D_XPA_COMPANY_CODE_ID": {
-          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID",
-          "type": "cds.String",
-          "length": 4
-        },
-        "D_XPA_GL_ACCOUNT_ID": {
-          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID",
-          "type": "cds.String",
-          "length": 10
-        },
-        "D_COST_CENTER_ID": {
-          "@EndUserText.label": "D_COST_CENTER_ID",
-          "type": "cds.String",
-          "length": 10
-        },
-        "D_PROFIT_CENTER_ID": {
-          "@EndUserText.label": "D_PROFIT_CENTER_ID",
-          "type": "cds.String",
-          "length": 10
-        },
-        "D_TRADING_PARTNER_ID": {
-          "@EndUserText.label": "D_TRADING_PARTNER_ID",
-          "type": "cds.String",
-          "length": 6
-        },
-        "D_FUNCTIONAL_AREA_ID": {
-          "@EndUserText.label": "D_FUNCTIONAL_AREA_ID",
-          "type": "cds.String",
-          "length": 16
-        },
-        "FISCAL_YEAR_VARIANT": {
-          "@EndUserText.label": "FISCAL_YEAR_VARIANT",
-          "type": "cds.String",
-          "length": 2
-        },
-        "FISCAL_YEAR": {
-          "@EndUserText.label": "FISCAL_YEAR",
-          "type": "cds.String",
-          "length": 4
-        },
-        "FISCAL_PERIOD": {
-          "@EndUserText.label": "FISCAL_PERIOD",
-          "type": "cds.String",
-          "length": 3
-        },
-        "FISCAL_YEAR_PERIOD": {
-          "@EndUserText.label": "FISCAL_YEAR_PERIOD",
-          "type": "cds.String",
-          "length": 7
-        },
-        "FISCAL_PERIOD_START_DATE": {
-          "@EndUserText.label": "FISCAL_PERIOD_START_DATE",
-          "type": "cds.Date"
-        },
-        "FISCAL_PERIOD_END_DATE": {
-          "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
-          "type": "cds.Date"
-        },
-        "MEAS_FLOW_CHANGING": {
-          "@EndUserText.label": "Actual Movement — S/4 Accounting Sign",
-          "type": "cds.DecimalFloat",
-          "@AnalyticsDetails.measureType": {
-            "#": "BASE"
-          },
-          "@Aggregation.default": {
-            "#": "SUM"
-          }
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
         }
-      }
+      ],
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_MONTHLY_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_FACT"
+      },
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT LEFT(ACTUAL.\"PostingDate\", 6) AS \"Date_CALMONTH\",\n\tACTUAL.\"CompanyCode\" AS \"D_XPA_COMPANY_CODE_ID\",\n\tACTUAL.\"GLAccount\" AS \"D_XPA_GL_ACCOUNT_ID\",\n\tACTUAL.\"CostCenter\" AS \"D_COST_CENTER_ID\",\n\tACTUAL.\"ProfitCenter\" AS \"D_PROFIT_CENTER_ID\",\n\tACTUAL.\"PartnerCompany\" AS \"D_TRADING_PARTNER_ID\",\n\tACTUAL.\"FunctionalArea\" AS \"D_FUNCTIONAL_AREA_ID\",\n\tFISCAL.\"FiscalYearVariant\" AS \"FISCAL_YEAR_VARIANT\",\n\tFISCAL.\"FiscalYear\" AS \"FISCAL_YEAR\",\n\tFISCAL.\"FiscalPeriod\" AS \"FISCAL_PERIOD\",\n\tFISCAL.\"FiscalYearPeriod\" AS \"FISCAL_YEAR_PERIOD\",\n\tTO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\",\n\tTO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_END_DATE\",\n\tACTUAL.\"DebitCreditCode\" As \"DEBIT_CREDIT_CODE\" ,\n\tSUM(ACTUAL.\"AmountInCompanyCodeCurrency\") AS \"MEAS_FLOW_CHANGING\"\nFROM \"3SV_FIN_JOURNAL_DETAIL_LIVE_01\" ACTUAL\n\tLEFT JOIN \"3GV_DIM_FISCALCALENDAR_01\" FISCAL ON FISCAL.\"FiscalYearVariant\" = 'V3' AND FISCAL.\"Language\" = 'EN' AND FISCAL.\"CalendarDate\" = ACTUAL.\"PostingDate\"\nWHERE ACTUAL.\"SourceLedger\" = '0L'\nGROUP BY LEFT(ACTUAL.\"PostingDate\", 6),\n\tACTUAL.\"CompanyCode\",\n\tACTUAL.\"GLAccount\",\n\tACTUAL.\"CostCenter\",\n\tACTUAL.\"ProfitCenter\",\n\tACTUAL.\"PartnerCompany\",\n\tACTUAL.\"FunctionalArea\",\n\tFISCAL.\"FiscalYearVariant\",\n\tFISCAL.\"FiscalYear\",\n\tFISCAL.\"FiscalPeriod\",\n\tFISCAL.\"FiscalYearPeriod\",\n\tTO_DATE(FISCAL.\"FiscalPeriodStartDate\", 'YYYYMMDD'),\n\tTO_DATE(FISCAL.\"FiscalPeriodEndDate\", 'YYYYMMDD') ,\n\tACTUAL.\"DebitCreditCode\""
     }
   }
 }

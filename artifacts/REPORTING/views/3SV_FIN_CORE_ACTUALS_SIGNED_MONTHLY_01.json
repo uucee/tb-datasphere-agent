@@ -66,6 +66,16 @@
           "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
           "type": "cds.Date"
         },
+        "DEBIT_CREDIT_CODE": {
+          "@EndUserText.label": "DEBIT_CREDIT_CODE",
+          "type": "cds.String",
+          "length": 1
+        },
+        "DEBIT_CREDIT_STATUS": {
+          "@EndUserText.label": "DEBIT_CREDIT_STATUS",
+          "type": "cds.String",
+          "length": 24
+        },
         "ACCOUNT_CLASS": {
           "@EndUserText.label": "ACCOUNT_CLASS",
           "type": "cds.String",
@@ -81,7 +91,7 @@
           "length": 17
         },
         "MEAS_FLOW_CHANGING_RAW": {
-          "@EndUserText.label": "Actual Movement Raw - S/4 Accounting Sign",
+          "@EndUserText.label": "Actual Movement ÔÇö S/4 Accounting Sign / Trial Balance Control",
           "type": "cds.DecimalFloat",
           "@AnalyticsDetails.measureType": {
             "#": "BASE"
@@ -91,8 +101,8 @@
           }
         },
         "MEAS_FLOW_CHANGING": {
-          "@EndUserText.label": "Actual Movement - Core Finance Sign",
-          "type": "cds.Double",
+          "@EndUserText.label": "Actual Movement ÔÇö Core Finance Presentation Sign / Actual vs Plan",
+          "type": "cds.DecimalFloat",
           "@AnalyticsDetails.measureType": {
             "#": "BASE"
           },
@@ -384,6 +394,84 @@
               "as": "FISCAL_PERIOD_END_DATE"
             },
             {
+              "func": "UPPER",
+              "args": [
+                {
+                  "func": "TRIM",
+                  "args": [
+                    {
+                      "ref": [
+                        "RAW",
+                        "DEBIT_CREDIT_CODE"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "DEBIT_CREDIT_CODE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "func": "UPPER",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "RAW",
+                            "DEBIT_CREDIT_CODE"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "=",
+                {
+                  "val": "S"
+                },
+                "then",
+                {
+                  "val": "DEBIT"
+                },
+                "when",
+                {
+                  "func": "UPPER",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "RAW",
+                            "DEBIT_CREDIT_CODE"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "=",
+                {
+                  "val": "H"
+                },
+                "then",
+                {
+                  "val": "CREDIT"
+                },
+                "else",
+                {
+                  "val": "INVALID_OR_MISSING_DC"
+                },
+                "end"
+              ],
+              "as": "DEBIT_CREDIT_STATUS"
+            },
+            {
               "ref": [
                 "GLCLASS",
                 "ACCOUNT_CLASS"
@@ -474,15 +562,36 @@
               "args": [
                 {
                   "xpr": [
-                    {
-                      "ref": [
-                        "RAW",
-                        "MEAS_FLOW_CHANGING"
-                      ]
-                    },
-                    "*",
                     "case",
                     "when",
+                    {
+                      "func": "UPPER",
+                      "args": [
+                        {
+                          "func": "TRIM",
+                          "args": [
+                            {
+                              "ref": [
+                                "RAW",
+                                "DEBIT_CREDIT_CODE"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "in",
+                    {
+                      "list": [
+                        {
+                          "val": "S"
+                        },
+                        {
+                          "val": "H"
+                        }
+                      ]
+                    },
+                    "and",
                     {
                       "ref": [
                         "SIGNRULE",
@@ -501,6 +610,76 @@
                       ]
                     },
                     "then",
+                    "case",
+                    "when",
+                    {
+                      "func": "UPPER",
+                      "args": [
+                        {
+                          "func": "TRIM",
+                          "args": [
+                            {
+                              "ref": [
+                                "RAW",
+                                "DEBIT_CREDIT_CODE"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": "S"
+                    },
+                    "then",
+                    {
+                      "func": "ABS",
+                      "args": [
+                        {
+                          "ref": [
+                            "RAW",
+                            "MEAS_FLOW_CHANGING"
+                          ]
+                        }
+                      ]
+                    },
+                    "when",
+                    {
+                      "func": "UPPER",
+                      "args": [
+                        {
+                          "func": "TRIM",
+                          "args": [
+                            {
+                              "ref": [
+                                "RAW",
+                                "DEBIT_CREDIT_CODE"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": "H"
+                    },
+                    "then",
+                    "-",
+                    {
+                      "func": "ABS",
+                      "args": [
+                        {
+                          "ref": [
+                            "RAW",
+                            "MEAS_FLOW_CHANGING"
+                          ]
+                        }
+                      ]
+                    },
+                    "end",
+                    "*",
                     {
                       "ref": [
                         "SIGNRULE",
@@ -509,7 +688,10 @@
                     },
                     "else",
                     {
-                      "val": 1
+                      "ref": [
+                        "RAW",
+                        "MEAS_FLOW_CHANGING"
+                      ]
                     },
                     "end"
                   ]
@@ -598,6 +780,22 @@
               ]
             },
             {
+              "func": "UPPER",
+              "args": [
+                {
+                  "func": "TRIM",
+                  "args": [
+                    {
+                      "ref": [
+                        "RAW",
+                        "DEBIT_CREDIT_CODE"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "ref": [
                 "GLCLASS",
                 "ACCOUNT_CLASS"
@@ -607,65 +805,6 @@
               "ref": [
                 "SIGNRULE",
                 "REPORTING_SIGN_FACTOR"
-              ]
-            },
-            {
-              "xpr": [
-                "case",
-                "when",
-                {
-                  "ref": [
-                    "GLCLASS",
-                    "ACCOUNT_CLASS"
-                  ]
-                },
-                "is",
-                "null",
-                "then",
-                {
-                  "val": "UNCLASSIFIED_GL"
-                },
-                "when",
-                {
-                  "ref": [
-                    "SIGNRULE",
-                    "REPORTING_SIGN_FACTOR"
-                  ]
-                },
-                "is",
-                "null",
-                "then",
-                {
-                  "val": "MISSING_SIGN_RULE"
-                },
-                "when",
-                {
-                  "ref": [
-                    "SIGNRULE",
-                    "REPORTING_SIGN_FACTOR"
-                  ]
-                },
-                "not",
-                "in",
-                {
-                  "list": [
-                    {
-                      "val": -1
-                    },
-                    {
-                      "val": 1
-                    }
-                  ]
-                },
-                "then",
-                {
-                  "val": "INVALID_SIGN_RULE"
-                },
-                "else",
-                {
-                  "val": "SIGNED"
-                },
-                "end"
               ]
             }
           ]
@@ -681,7 +820,7 @@
         "#": "ANALYTICAL_FACT"
       },
       "@DataWarehouse.consumption.external": false,
-      "@DataWarehouse.sqlEditor.query": "SELECT RAW.\"Date_CALMONTH\" AS \"Date_CALMONTH\", RAW.\"D_XPA_COMPANY_CODE_ID\" AS \"D_XPA_COMPANY_CODE_ID\", RAW.\"D_XPA_GL_ACCOUNT_ID\" AS \"D_XPA_GL_ACCOUNT_ID\", RAW.\"D_COST_CENTER_ID\" AS \"D_COST_CENTER_ID\", RAW.\"D_PROFIT_CENTER_ID\" AS \"D_PROFIT_CENTER_ID\", RAW.\"D_TRADING_PARTNER_ID\" AS \"D_TRADING_PARTNER_ID\", RAW.\"D_FUNCTIONAL_AREA_ID\" AS \"D_FUNCTIONAL_AREA_ID\", RAW.\"FISCAL_YEAR_VARIANT\" AS \"FISCAL_YEAR_VARIANT\", RAW.\"FISCAL_YEAR\" AS \"FISCAL_YEAR\", RAW.\"FISCAL_PERIOD\" AS \"FISCAL_PERIOD\", RAW.\"FISCAL_YEAR_PERIOD\" AS \"FISCAL_YEAR_PERIOD\", RAW.\"FISCAL_PERIOD_START_DATE\" AS \"FISCAL_PERIOD_START_DATE\", RAW.\"FISCAL_PERIOD_END_DATE\" AS \"FISCAL_PERIOD_END_DATE\", GLCLASS.\"ACCOUNT_CLASS\" AS \"ACCOUNT_CLASS\", SIGNRULE.\"REPORTING_SIGN_FACTOR\" AS \"REPORTING_SIGN_FACTOR\", CASE WHEN GLCLASS.\"ACCOUNT_CLASS\" IS NULL THEN 'UNCLASSIFIED_GL' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IS NULL THEN 'MISSING_SIGN_RULE' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" NOT IN (-1, 1) THEN 'INVALID_SIGN_RULE' ELSE 'SIGNED' END AS \"SIGN_CONFORMANCE_STATUS\", SUM(RAW.\"MEAS_FLOW_CHANGING\") AS \"MEAS_FLOW_CHANGING_RAW\", SUM(RAW.\"MEAS_FLOW_CHANGING\" * CASE WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IN (-1, 1) THEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" ELSE 1 END) AS \"MEAS_FLOW_CHANGING\" FROM \"3SV_FIN_CORE_ACTUALS_MONTHLY_01\" RAW LEFT JOIN \"MODELLING.2LT_CTRL_FIN_GL_ACCOUNT_CLASS_01\" GLCLASS ON RAW.\"D_XPA_GL_ACCOUNT_ID\" = GLCLASS.\"GL_ACCOUNT_ID\" AND GLCLASS.\"IS_ACTIVE\" = true AND (GLCLASS.\"VALID_FROM\" IS NULL OR GLCLASS.\"VALID_FROM\" <= RAW.\"FISCAL_PERIOD_END_DATE\") AND (GLCLASS.\"VALID_TO\" IS NULL OR GLCLASS.\"VALID_TO\" >= RAW.\"FISCAL_PERIOD_END_DATE\") LEFT JOIN \"MODELLING.2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01\" SIGNRULE ON GLCLASS.\"ACCOUNT_CLASS\" = SIGNRULE.\"ACCOUNT_CLASS\" AND SIGNRULE.\"IS_ACTIVE\" = true AND (SIGNRULE.\"VALID_FROM\" IS NULL OR SIGNRULE.\"VALID_FROM\" <= RAW.\"FISCAL_PERIOD_END_DATE\") AND (SIGNRULE.\"VALID_TO\" IS NULL OR SIGNRULE.\"VALID_TO\" >= RAW.\"FISCAL_PERIOD_END_DATE\") GROUP BY RAW.\"Date_CALMONTH\", RAW.\"D_XPA_COMPANY_CODE_ID\", RAW.\"D_XPA_GL_ACCOUNT_ID\", RAW.\"D_COST_CENTER_ID\", RAW.\"D_PROFIT_CENTER_ID\", RAW.\"D_TRADING_PARTNER_ID\", RAW.\"D_FUNCTIONAL_AREA_ID\", RAW.\"FISCAL_YEAR_VARIANT\", RAW.\"FISCAL_YEAR\", RAW.\"FISCAL_PERIOD\", RAW.\"FISCAL_YEAR_PERIOD\", RAW.\"FISCAL_PERIOD_START_DATE\", RAW.\"FISCAL_PERIOD_END_DATE\", GLCLASS.\"ACCOUNT_CLASS\", SIGNRULE.\"REPORTING_SIGN_FACTOR\", CASE WHEN GLCLASS.\"ACCOUNT_CLASS\" IS NULL THEN 'UNCLASSIFIED_GL' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IS NULL THEN 'MISSING_SIGN_RULE' WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" NOT IN (-1, 1) THEN 'INVALID_SIGN_RULE' ELSE 'SIGNED' END"
+      "@DataWarehouse.sqlEditor.query": "\nSELECT\n    RAW.\"Date_CALMONTH\" AS \"Date_CALMONTH\",\n    RAW.\"D_XPA_COMPANY_CODE_ID\" AS \"D_XPA_COMPANY_CODE_ID\",\n    RAW.\"D_XPA_GL_ACCOUNT_ID\" AS \"D_XPA_GL_ACCOUNT_ID\",\n    RAW.\"D_COST_CENTER_ID\" AS \"D_COST_CENTER_ID\",\n    RAW.\"D_PROFIT_CENTER_ID\" AS \"D_PROFIT_CENTER_ID\",\n    RAW.\"D_TRADING_PARTNER_ID\" AS \"D_TRADING_PARTNER_ID\",\n    RAW.\"D_FUNCTIONAL_AREA_ID\" AS \"D_FUNCTIONAL_AREA_ID\",\n    RAW.\"FISCAL_YEAR_VARIANT\" AS \"FISCAL_YEAR_VARIANT\",\n    RAW.\"FISCAL_YEAR\" AS \"FISCAL_YEAR\",\n    RAW.\"FISCAL_PERIOD\" AS \"FISCAL_PERIOD\",\n    RAW.\"FISCAL_YEAR_PERIOD\" AS \"FISCAL_YEAR_PERIOD\",\n    RAW.\"FISCAL_PERIOD_START_DATE\" AS \"FISCAL_PERIOD_START_DATE\",\n    RAW.\"FISCAL_PERIOD_END_DATE\" AS \"FISCAL_PERIOD_END_DATE\",\n\n    UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")) AS \"DEBIT_CREDIT_CODE\",\n\n    CASE\n        WHEN UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")) = 'S' THEN 'DEBIT'\n        WHEN UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")) = 'H' THEN 'CREDIT'\n        ELSE 'INVALID_OR_MISSING_DC'\n    END AS \"DEBIT_CREDIT_STATUS\",\n\n    GLCLASS.\"ACCOUNT_CLASS\" AS \"ACCOUNT_CLASS\",\n    SIGNRULE.\"REPORTING_SIGN_FACTOR\" AS \"REPORTING_SIGN_FACTOR\",\n\n    CASE\n        WHEN GLCLASS.\"ACCOUNT_CLASS\" IS NULL THEN 'UNCLASSIFIED_GL'\n        WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" IS NULL THEN 'MISSING_SIGN_RULE'\n        WHEN SIGNRULE.\"REPORTING_SIGN_FACTOR\" NOT IN (-1, 1) THEN 'INVALID_SIGN_RULE'\n        ELSE 'SIGNED'\n    END AS \"SIGN_CONFORMANCE_STATUS\",\n\n    SUM(RAW.\"MEAS_FLOW_CHANGING\") AS \"MEAS_FLOW_CHANGING_RAW\",\n\n    SUM(\n        CASE\n            WHEN UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")) IN ('S', 'H')\n             AND SIGNRULE.\"REPORTING_SIGN_FACTOR\" IN (-1, 1)\n            THEN\n                CASE\n                    WHEN UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")) = 'S'\n                        THEN ABS(RAW.\"MEAS_FLOW_CHANGING\")\n                    WHEN UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")) = 'H'\n                        THEN -ABS(RAW.\"MEAS_FLOW_CHANGING\")\n                END\n                * SIGNRULE.\"REPORTING_SIGN_FACTOR\"\n\n            ELSE RAW.\"MEAS_FLOW_CHANGING\"\n        END\n    ) AS \"MEAS_FLOW_CHANGING\"\n\nFROM \"3SV_FIN_CORE_ACTUALS_MONTHLY_01\" RAW\n\nLEFT JOIN \"MODELLING.2LT_CTRL_FIN_GL_ACCOUNT_CLASS_01\" GLCLASS\n    ON RAW.\"D_XPA_GL_ACCOUNT_ID\" = GLCLASS.\"GL_ACCOUNT_ID\"\n    AND GLCLASS.\"IS_ACTIVE\" = TRUE\n    AND (\n        GLCLASS.\"VALID_FROM\" IS NULL\n        OR GLCLASS.\"VALID_FROM\" <= RAW.\"FISCAL_PERIOD_END_DATE\"\n    )\n    AND (\n        GLCLASS.\"VALID_TO\" IS NULL\n        OR GLCLASS.\"VALID_TO\" >= RAW.\"FISCAL_PERIOD_END_DATE\"\n    )\n\nLEFT JOIN \"MODELLING.2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01\" SIGNRULE\n    ON GLCLASS.\"ACCOUNT_CLASS\" = SIGNRULE.\"ACCOUNT_CLASS\"\n    AND SIGNRULE.\"IS_ACTIVE\" = TRUE\n    AND (\n        SIGNRULE.\"VALID_FROM\" IS NULL\n        OR SIGNRULE.\"VALID_FROM\" <= RAW.\"FISCAL_PERIOD_END_DATE\"\n    )\n    AND (\n        SIGNRULE.\"VALID_TO\" IS NULL\n        OR SIGNRULE.\"VALID_TO\" >= RAW.\"FISCAL_PERIOD_END_DATE\"\n    )\n\nGROUP BY\n    RAW.\"Date_CALMONTH\",\n    RAW.\"D_XPA_COMPANY_CODE_ID\",\n    RAW.\"D_XPA_GL_ACCOUNT_ID\",\n    RAW.\"D_COST_CENTER_ID\",\n    RAW.\"D_PROFIT_CENTER_ID\",\n    RAW.\"D_TRADING_PARTNER_ID\",\n    RAW.\"D_FUNCTIONAL_AREA_ID\",\n    RAW.\"FISCAL_YEAR_VARIANT\",\n    RAW.\"FISCAL_YEAR\",\n    RAW.\"FISCAL_PERIOD\",\n    RAW.\"FISCAL_YEAR_PERIOD\",\n    RAW.\"FISCAL_PERIOD_START_DATE\",\n    RAW.\"FISCAL_PERIOD_END_DATE\",\n    UPPER(TRIM(RAW.\"DEBIT_CREDIT_CODE\")),\n    GLCLASS.\"ACCOUNT_CLASS\",\n    SIGNRULE.\"REPORTING_SIGN_FACTOR\""
     },
     "MODELLING": {
       "kind": "context",

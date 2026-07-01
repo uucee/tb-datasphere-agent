@@ -52,22 +52,22 @@
         "SIGN_CONFORMANCE_STATUS": {
           "@EndUserText.label": "SIGN_CONFORMANCE_STATUS"
         },
+        "DEBIT_CREDIT_CODE": {
+          "@EndUserText.label": "DEBIT_CREDIT_CODE"
+        },
+        "DEBIT_CREDIT_STATUS": {
+          "@EndUserText.label": "DEBIT_CREDIT_STATUS"
+        },
         "MEAS_FLOW_CHANGING_RAW": {
           "@EndUserText.label": "Actual Movement Raw - S/4 Accounting Sign",
           "@AnalyticsDetails.measureType": {
             "#": "BASE"
-          },
-          "@Aggregation.default": {
-            "#": "SUM"
           }
         },
         "MEAS_FLOW_CHANGING": {
           "@EndUserText.label": "Actual Movement - Core Finance Sign",
           "@AnalyticsDetails.measureType": {
             "#": "BASE"
-          },
-          "@Aggregation.default": {
-            "#": "SUM"
           }
         }
       },
@@ -208,6 +208,20 @@
                 "SIGN_CONFORMANCE_STATUS"
               ],
               "as": "SIGN_CONFORMANCE_STATUS"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "DEBIT_CREDIT_CODE"
+              ],
+              "as": "DEBIT_CREDIT_CODE"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "DEBIT_CREDIT_STATUS"
+              ],
+              "as": "DEBIT_CREDIT_STATUS"
             },
             {
               "ref": [
@@ -406,6 +420,26 @@
             }
           },
           "text": "SIGN_CONFORMANCE_STATUS",
+          "duplicated": false
+        },
+        "DEBIT_CREDIT_CODE": {
+          "text": "DEBIT_CREDIT_CODE",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "DEBIT_CREDIT_CODE"
+            }
+          },
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "duplicated": false
+        },
+        "DEBIT_CREDIT_STATUS": {
+          "text": "DEBIT_CREDIT_STATUS",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "DEBIT_CREDIT_STATUS"
+            }
+          },
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
           "duplicated": false
         }
       },

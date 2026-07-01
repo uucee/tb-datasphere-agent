@@ -43,13 +43,13 @@
         "FISCAL_PERIOD_END_DATE": {
           "@EndUserText.label": "FISCAL_PERIOD_END_DATE"
         },
+        "DEBIT_CREDIT_CODE": {
+          "@EndUserText.label": "DEBIT_CREDIT_CODE"
+        },
         "MEAS_FLOW_CHANGING": {
-          "@EndUserText.label": "Actual Movement — S/4 Accounting Sign",
+          "@EndUserText.label": "Actual Movement ÔÇö S/4 Accounting Sign",
           "@AnalyticsDetails.measureType": {
             "#": "BASE"
-          },
-          "@Aggregation.default": {
-            "#": "SUM"
           }
         }
       },
@@ -169,6 +169,13 @@
                 "FISCAL_PERIOD_END_DATE"
               ],
               "as": "FISCAL_PERIOD_END_DATE"
+            },
+            {
+              "ref": [
+                "REPORTING3SV",
+                "DEBIT_CREDIT_CODE"
+              ],
+              "as": "DEBIT_CREDIT_CODE"
             },
             {
               "ref": [
@@ -331,6 +338,16 @@
           },
           "text": "FISCAL_PERIOD_END_DATE",
           "duplicated": false
+        },
+        "DEBIT_CREDIT_CODE": {
+          "text": "DEBIT_CREDIT_CODE",
+          "attributeMapping": {
+            "REPORTING3SV": {
+              "key": "DEBIT_CREDIT_CODE"
+            }
+          },
+          "attributeType": "AnalyticModelAttributeType.FactSourceAttribute",
+          "duplicated": false
         }
       },
       "measures": {
@@ -341,7 +358,7 @@
               "key": "MEAS_FLOW_CHANGING"
             }
           },
-          "text": "Actual Movement — S/4 Accounting Sign",
+          "text": "Actual Movement ÔÇö S/4 Accounting Sign",
           "isAuxiliary": false
         }
       },
