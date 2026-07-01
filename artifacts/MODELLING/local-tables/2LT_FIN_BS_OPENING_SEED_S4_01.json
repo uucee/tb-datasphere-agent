@@ -1,0 +1,129 @@
+{
+  "definitions": {
+    "2LT_FIN_BS_OPENING_SEED_S4_01": {
+      "kind": "entity",
+      "@EndUserText.label": "S/4 Migrated Balance Sheet Opening Seed",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "elements": {
+        "SEED_RECORD_ID": {
+          "@EndUserText.label": "SEED_RECORD_ID",
+          "type": "cds.String",
+          "length": 100,
+          "key": true,
+          "notNull": true
+        },
+        "COMPANY_CODE": {
+          "@EndUserText.label": "COMPANY_CODE",
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "GL_ACCOUNT": {
+          "@EndUserText.label": "GL_ACCOUNT",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "SOURCE_LEDGER": {
+          "@EndUserText.label": "SOURCE_LEDGER",
+          "type": "cds.String",
+          "length": 2,
+          "notNull": true
+        },
+        "COMPANY_CODE_CURRENCY": {
+          "@EndUserText.label": "COMPANY_CODE_CURRENCY",
+          "type": "cds.String",
+          "length": 5
+        },
+        "OPENING_DATE": {
+          "@EndUserText.label": "OPENING_DATE",
+          "type": "cds.Date",
+          "notNull": true
+        },
+        "OPENING_BALANCE_RAW": {
+          "@EndUserText.label": "OPENING_BALANCE_RAW",
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 2,
+          "notNull": true
+        },
+        "MIGRATION_SOURCE_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_SOURCE_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_POSTING_DATE": {
+          "@EndUserText.label": "MIGRATION_POSTING_DATE",
+          "type": "cds.Date"
+        },
+        "MIGRATION_POSTING_MONTH": {
+          "@EndUserText.label": "MIGRATION_POSTING_MONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "MIGRATION_MOVEMENT_EXCLUSION_RAW": {
+          "@EndUserText.label": "MIGRATION_MOVEMENT_EXCLUSION_RAW",
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 2
+        },
+        "MIGRATION_MOVEMENT_EXCLUSION_SIGNED": {
+          "@EndUserText.label": "MIGRATION_MOVEMENT_EXCLUSION_SIGNED",
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 2
+        },
+        "SEED_MOVEMENT_TREATMENT": {
+          "@EndUserText.label": "SEED_MOVEMENT_TREATMENT",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "MIGRATION_RECONCILIATION_STATUS": {
+          "@EndUserText.label": "MIGRATION_RECONCILIATION_STATUS",
+          "type": "cds.String",
+          "length": 20
+        },
+        "MIGRATION_RECONCILIATION_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_RECONCILIATION_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_RECONCILED_TIMESTAMP": {
+          "@EndUserText.label": "MIGRATION_RECONCILED_TIMESTAMP",
+          "type": "cds.DateTime"
+        },
+        "IS_ACTIVE": {
+          "@EndUserText.label": "IS_ACTIVE",
+          "type": "cds.Boolean",
+          "default": {
+            "val": true
+          }
+        },
+        "VALID_FROM": {
+          "@EndUserText.label": "VALID_FROM",
+          "type": "cds.Date"
+        },
+        "VALID_TO": {
+          "@EndUserText.label": "VALID_TO",
+          "type": "cds.Date",
+          "default": {
+            "val": "2096-01-31",
+            "literal": "date"
+          }
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.DateTime"
+        }
+      }
+    }
+  }
+}
