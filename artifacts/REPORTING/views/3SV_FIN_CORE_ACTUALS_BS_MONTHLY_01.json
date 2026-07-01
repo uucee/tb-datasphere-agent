@@ -1,0 +1,1731 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_BS_MONTHLY_01": {
+      "kind": "entity",
+      "@EndUserText.label": "Core Finance Actual Balance Sheet Monthly Aggregation",
+      "@ObjectModel.modelingPattern": {
+        "#": "ANALYTICAL_FACT"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@DataWarehouse.consumption.external": false,
+      "elements": {
+        "Date_CALMONTH": {
+          "@EndUserText.label": "Date_CALMONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "D_XPA_COMPANY_CODE_ID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "D_XPA_GL_ACCOUNT_ID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "SOURCE_LEDGER": {
+          "@EndUserText.label": "SOURCE_LEDGER",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "FISCAL_YEAR_VARIANT",
+          "type": "cds.String",
+          "length": 2
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "FISCAL_YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "FISCAL_PERIOD",
+          "type": "cds.String",
+          "length": 3
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "FISCAL_YEAR_PERIOD",
+          "type": "cds.String",
+          "length": 7
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_START_DATE",
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "@EndUserText.label": "FISCAL_PERIOD_END_DATE",
+          "type": "cds.Date"
+        },
+        "ACCOUNT_CLASS": {
+          "@EndUserText.label": "ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100
+        },
+        "REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "REPORTING_SIGN_FACTOR",
+          "type": "cds.Integer"
+        },
+        "SIGN_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "SIGN_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 17
+        },
+        "AGGREGATION_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "AGGREGATION_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 32
+        },
+        "SOURCE_RECORD_COUNT": {
+          "@EndUserText.label": "SOURCE_RECORD_COUNT",
+          "type": "cds.Integer64",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_CHANGING_RAW": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING_RAW",
+          "type": "cds.DecimalFloat",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING",
+          "type": "cds.DecimalFloat",
+          "@AnalyticsDetails.measureType": {
+            "#": "BASE"
+          },
+          "@Aggregation.default": {
+            "#": "SUM"
+          }
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "3SV_FIN_CORE_ACTUALS_SIGNED_MONTHLY_01"
+            ],
+            "as": "SRC"
+          },
+          "columns": [
+            {
+              "ref": [
+                "SRC",
+                "Date_CALMONTH"
+              ],
+              "as": "Date_CALMONTH"
+            },
+            {
+              "ref": [
+                "SRC",
+                "D_XPA_COMPANY_CODE_ID"
+              ],
+              "as": "D_XPA_COMPANY_CODE_ID"
+            },
+            {
+              "ref": [
+                "SRC",
+                "D_XPA_GL_ACCOUNT_ID"
+              ],
+              "as": "D_XPA_GL_ACCOUNT_ID"
+            },
+            {
+              "val": "0L",
+              "as": "SOURCE_LEDGER"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "FISCAL_YEAR_VARIANT"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "FISCAL_YEAR_VARIANT"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "FISCAL_YEAR"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "FISCAL_YEAR"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "FISCAL_PERIOD"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "FISCAL_PERIOD"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "FISCAL_YEAR_PERIOD"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "FISCAL_YEAR_PERIOD"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "FISCAL_PERIOD_START_DATE"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "FISCAL_PERIOD_START_DATE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "FISCAL_PERIOD_END_DATE"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "FISCAL_PERIOD_END_DATE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "ACCOUNT_CLASS"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "ACCOUNT_CLASS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "func": "MIN",
+                  "args": [
+                    {
+                      "ref": [
+                        "SRC",
+                        "REPORTING_SIGN_FACTOR"
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "REPORTING_SIGN_FACTOR"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "val": "CONFORMANT"
+                },
+                "else",
+                {
+                  "val": "INCONSISTENT_MAPPING_ATTRIBUTES"
+                },
+                "end"
+              ],
+              "as": "AGGREGATION_CONFORMANCE_STATUS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "xpr": [
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_VARIANT"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_YEAR_PERIOD"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_START_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "FISCAL_PERIOD_END_DATE"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "ACCOUNT_CLASS"
+                          ]
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "and",
+                    {
+                      "func": "MIN",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "SRC",
+                            "REPORTING_SIGN_FACTOR"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "then",
+                {
+                  "xpr": [
+                    "case",
+                    "when",
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "xpr": [
+                            "case",
+                            "when",
+                            {
+                              "ref": [
+                                "SRC",
+                                "SIGN_CONFORMANCE_STATUS"
+                              ]
+                            },
+                            "=",
+                            {
+                              "val": "UNCLASSIFIED_GL"
+                            },
+                            "then",
+                            {
+                              "val": 1
+                            },
+                            "else",
+                            {
+                              "val": 0
+                            },
+                            "end"
+                          ]
+                        }
+                      ]
+                    },
+                    ">",
+                    {
+                      "val": 0
+                    },
+                    "then",
+                    {
+                      "val": "UNCLASSIFIED_GL"
+                    },
+                    "when",
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "xpr": [
+                            "case",
+                            "when",
+                            {
+                              "ref": [
+                                "SRC",
+                                "SIGN_CONFORMANCE_STATUS"
+                              ]
+                            },
+                            "=",
+                            {
+                              "val": "INVALID_SIGN_RULE"
+                            },
+                            "then",
+                            {
+                              "val": 1
+                            },
+                            "else",
+                            {
+                              "val": 0
+                            },
+                            "end"
+                          ]
+                        }
+                      ]
+                    },
+                    ">",
+                    {
+                      "val": 0
+                    },
+                    "then",
+                    {
+                      "val": "INVALID_SIGN_RULE"
+                    },
+                    "when",
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "xpr": [
+                            "case",
+                            "when",
+                            {
+                              "ref": [
+                                "SRC",
+                                "SIGN_CONFORMANCE_STATUS"
+                              ]
+                            },
+                            "=",
+                            {
+                              "val": "MISSING_SIGN_RULE"
+                            },
+                            "then",
+                            {
+                              "val": 1
+                            },
+                            "else",
+                            {
+                              "val": 0
+                            },
+                            "end"
+                          ]
+                        }
+                      ]
+                    },
+                    ">",
+                    {
+                      "val": 0
+                    },
+                    "then",
+                    {
+                      "val": "MISSING_SIGN_RULE"
+                    },
+                    "when",
+                    {
+                      "func": "SUM",
+                      "args": [
+                        {
+                          "xpr": [
+                            "case",
+                            "when",
+                            {
+                              "ref": [
+                                "SRC",
+                                "SIGN_CONFORMANCE_STATUS"
+                              ]
+                            },
+                            "=",
+                            {
+                              "val": "SIGNED"
+                            },
+                            "then",
+                            {
+                              "val": 1
+                            },
+                            "else",
+                            {
+                              "val": 0
+                            },
+                            "end"
+                          ]
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "func": "COUNT",
+                      "args": [
+                        {
+                          "val": 1
+                        }
+                      ]
+                    },
+                    "then",
+                    {
+                      "val": "SIGNED"
+                    },
+                    "else",
+                    {
+                      "val": "INVALID_SIGN_RULE"
+                    },
+                    "end"
+                  ]
+                },
+                "else",
+                {
+                  "val": "INVALID_SIGN_RULE"
+                },
+                "end"
+              ],
+              "as": "SIGN_CONFORMANCE_STATUS"
+            },
+            {
+              "func": "COUNT",
+              "args": [
+                {
+                  "val": 1
+                }
+              ],
+              "as": "SOURCE_RECORD_COUNT"
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "SRC",
+                    "MEAS_FLOW_CHANGING_RAW"
+                  ]
+                }
+              ],
+              "as": "MEAS_FLOW_CHANGING_RAW"
+            },
+            {
+              "func": "SUM",
+              "args": [
+                {
+                  "ref": [
+                    "SRC",
+                    "MEAS_FLOW_CHANGING"
+                  ]
+                }
+              ],
+              "as": "MEAS_FLOW_CHANGING"
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "SRC",
+                "ACCOUNT_CLASS"
+              ]
+            },
+            "in",
+            {
+              "list": [
+                {
+                  "val": "ASSET"
+                },
+                {
+                  "val": "LIABILITY"
+                },
+                {
+                  "val": "EQUITY"
+                }
+              ]
+            }
+          ],
+          "groupBy": [
+            {
+              "ref": [
+                "SRC",
+                "Date_CALMONTH"
+              ]
+            },
+            {
+              "ref": [
+                "SRC",
+                "D_XPA_COMPANY_CODE_ID"
+              ]
+            },
+            {
+              "ref": [
+                "SRC",
+                "D_XPA_GL_ACCOUNT_ID"
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.sqlEditor.query": "SELECT\n  SRC.\"Date_CALMONTH\" AS \"Date_CALMONTH\",\n  SRC.\"D_XPA_COMPANY_CODE_ID\" AS \"D_XPA_COMPANY_CODE_ID\",\n  SRC.\"D_XPA_GL_ACCOUNT_ID\" AS \"D_XPA_GL_ACCOUNT_ID\",\n  '0L' AS \"SOURCE_LEDGER\",\n\n  CASE WHEN COUNT(SRC.\"FISCAL_YEAR_VARIANT\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR_VARIANT\") = MAX(SRC.\"FISCAL_YEAR_VARIANT\")\n       THEN MIN(SRC.\"FISCAL_YEAR_VARIANT\") ELSE NULL END AS \"FISCAL_YEAR_VARIANT\",\n  CASE WHEN COUNT(SRC.\"FISCAL_YEAR\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR\") = MAX(SRC.\"FISCAL_YEAR\")\n       THEN MIN(SRC.\"FISCAL_YEAR\") ELSE NULL END AS \"FISCAL_YEAR\",\n  CASE WHEN COUNT(SRC.\"FISCAL_PERIOD\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD\") = MAX(SRC.\"FISCAL_PERIOD\")\n       THEN MIN(SRC.\"FISCAL_PERIOD\") ELSE NULL END AS \"FISCAL_PERIOD\",\n  CASE WHEN COUNT(SRC.\"FISCAL_YEAR_PERIOD\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR_PERIOD\") = MAX(SRC.\"FISCAL_YEAR_PERIOD\")\n       THEN MIN(SRC.\"FISCAL_YEAR_PERIOD\") ELSE NULL END AS \"FISCAL_YEAR_PERIOD\",\n  CASE WHEN COUNT(SRC.\"FISCAL_PERIOD_START_DATE\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD_START_DATE\") = MAX(SRC.\"FISCAL_PERIOD_START_DATE\")\n       THEN MIN(SRC.\"FISCAL_PERIOD_START_DATE\") ELSE NULL END AS \"FISCAL_PERIOD_START_DATE\",\n  CASE WHEN COUNT(SRC.\"FISCAL_PERIOD_END_DATE\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD_END_DATE\") = MAX(SRC.\"FISCAL_PERIOD_END_DATE\")\n       THEN MIN(SRC.\"FISCAL_PERIOD_END_DATE\") ELSE NULL END AS \"FISCAL_PERIOD_END_DATE\",\n  CASE WHEN COUNT(SRC.\"ACCOUNT_CLASS\") = COUNT(1) AND MIN(SRC.\"ACCOUNT_CLASS\") = MAX(SRC.\"ACCOUNT_CLASS\")\n       THEN MIN(SRC.\"ACCOUNT_CLASS\") ELSE NULL END AS \"ACCOUNT_CLASS\",\n  CASE WHEN COUNT(SRC.\"REPORTING_SIGN_FACTOR\") = COUNT(1) AND MIN(SRC.\"REPORTING_SIGN_FACTOR\") = MAX(SRC.\"REPORTING_SIGN_FACTOR\")\n       THEN MIN(SRC.\"REPORTING_SIGN_FACTOR\") ELSE NULL END AS \"REPORTING_SIGN_FACTOR\",\n\n  CASE\n    WHEN COUNT(SRC.\"FISCAL_YEAR_VARIANT\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR_VARIANT\") = MAX(SRC.\"FISCAL_YEAR_VARIANT\")\n     AND COUNT(SRC.\"FISCAL_YEAR\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR\") = MAX(SRC.\"FISCAL_YEAR\")\n     AND COUNT(SRC.\"FISCAL_PERIOD\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD\") = MAX(SRC.\"FISCAL_PERIOD\")\n     AND COUNT(SRC.\"FISCAL_YEAR_PERIOD\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR_PERIOD\") = MAX(SRC.\"FISCAL_YEAR_PERIOD\")\n     AND COUNT(SRC.\"FISCAL_PERIOD_START_DATE\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD_START_DATE\") = MAX(SRC.\"FISCAL_PERIOD_START_DATE\")\n     AND COUNT(SRC.\"FISCAL_PERIOD_END_DATE\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD_END_DATE\") = MAX(SRC.\"FISCAL_PERIOD_END_DATE\")\n     AND COUNT(SRC.\"ACCOUNT_CLASS\") = COUNT(1) AND MIN(SRC.\"ACCOUNT_CLASS\") = MAX(SRC.\"ACCOUNT_CLASS\")\n     AND COUNT(SRC.\"REPORTING_SIGN_FACTOR\") = COUNT(1) AND MIN(SRC.\"REPORTING_SIGN_FACTOR\") = MAX(SRC.\"REPORTING_SIGN_FACTOR\")\n      THEN 'CONFORMANT'\n    ELSE 'INCONSISTENT_MAPPING_ATTRIBUTES'\n  END AS \"AGGREGATION_CONFORMANCE_STATUS\",\n\n  CASE\n    WHEN COUNT(SRC.\"FISCAL_YEAR_VARIANT\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR_VARIANT\") = MAX(SRC.\"FISCAL_YEAR_VARIANT\")\n     AND COUNT(SRC.\"FISCAL_YEAR\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR\") = MAX(SRC.\"FISCAL_YEAR\")\n     AND COUNT(SRC.\"FISCAL_PERIOD\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD\") = MAX(SRC.\"FISCAL_PERIOD\")\n     AND COUNT(SRC.\"FISCAL_YEAR_PERIOD\") = COUNT(1) AND MIN(SRC.\"FISCAL_YEAR_PERIOD\") = MAX(SRC.\"FISCAL_YEAR_PERIOD\")\n     AND COUNT(SRC.\"FISCAL_PERIOD_START_DATE\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD_START_DATE\") = MAX(SRC.\"FISCAL_PERIOD_START_DATE\")\n     AND COUNT(SRC.\"FISCAL_PERIOD_END_DATE\") = COUNT(1) AND MIN(SRC.\"FISCAL_PERIOD_END_DATE\") = MAX(SRC.\"FISCAL_PERIOD_END_DATE\")\n     AND COUNT(SRC.\"ACCOUNT_CLASS\") = COUNT(1) AND MIN(SRC.\"ACCOUNT_CLASS\") = MAX(SRC.\"ACCOUNT_CLASS\")\n     AND COUNT(SRC.\"REPORTING_SIGN_FACTOR\") = COUNT(1) AND MIN(SRC.\"REPORTING_SIGN_FACTOR\") = MAX(SRC.\"REPORTING_SIGN_FACTOR\")\n      THEN CASE\n             WHEN SUM(CASE WHEN SRC.\"SIGN_CONFORMANCE_STATUS\" = 'UNCLASSIFIED_GL' THEN 1 ELSE 0 END) > 0 THEN 'UNCLASSIFIED_GL'\n             WHEN SUM(CASE WHEN SRC.\"SIGN_CONFORMANCE_STATUS\" = 'INVALID_SIGN_RULE' THEN 1 ELSE 0 END) > 0 THEN 'INVALID_SIGN_RULE'\n             WHEN SUM(CASE WHEN SRC.\"SIGN_CONFORMANCE_STATUS\" = 'MISSING_SIGN_RULE' THEN 1 ELSE 0 END) > 0 THEN 'MISSING_SIGN_RULE'\n             WHEN SUM(CASE WHEN SRC.\"SIGN_CONFORMANCE_STATUS\" = 'SIGNED' THEN 1 ELSE 0 END) = COUNT(1) THEN 'SIGNED'\n             ELSE 'INVALID_SIGN_RULE'\n           END\n    ELSE 'INVALID_SIGN_RULE'\n  END AS \"SIGN_CONFORMANCE_STATUS\",\n\n  COUNT(1) AS \"SOURCE_RECORD_COUNT\",\n  SUM(SRC.\"MEAS_FLOW_CHANGING_RAW\") AS \"MEAS_FLOW_CHANGING_RAW\",\n  SUM(SRC.\"MEAS_FLOW_CHANGING\") AS \"MEAS_FLOW_CHANGING\"\nFROM \"3SV_FIN_CORE_ACTUALS_SIGNED_MONTHLY_01\" SRC\nWHERE SRC.\"ACCOUNT_CLASS\" IN ('ASSET', 'LIABILITY', 'EQUITY')\nGROUP BY SRC.\"Date_CALMONTH\", SRC.\"D_XPA_COMPANY_CODE_ID\", SRC.\"D_XPA_GL_ACCOUNT_ID\""
+    }
+  }
+}
