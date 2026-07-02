@@ -1,0 +1,950 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_BS_SEEDED_SPINE_01": {
+      "kind": "entity",
+      "elements": {
+        "Date_CALMONTH": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "COMPANY_CODE",
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "GL_ACCOUNT",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "SOURCE_LEDGER": {
+          "@EndUserText.label": "SOURCE_LEDGER",
+          "type": "cds.String",
+          "length": 2,
+          "notNull": true
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "length": 4,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "length": 3,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "Fiscal year + fiscal period",
+          "type": "cds.String",
+          "length": 7,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "type": "cds.Date"
+        },
+        "ACCOUNT_CLASS": {
+          "@EndUserText.label": "ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100
+        },
+        "REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "REPORTING_SIGN_FACTOR",
+          "type": "cds.Integer"
+        },
+        "AGGREGATION_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "AGGREGATION_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 31
+        },
+        "SIGN_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "SIGN_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 17
+        },
+        "VALID_SEED_RECORD_ID": {
+          "@EndUserText.label": "VALID_SEED_RECORD_ID",
+          "type": "cds.String",
+          "length": 100
+        },
+        "OPENING_DATE": {
+          "@EndUserText.label": "OPENING_DATE",
+          "type": "cds.Date",
+          "notNull": true
+        },
+        "OPENING_BALANCE_RAW": {
+          "@EndUserText.label": "OPENING_BALANCE_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal",
+          "notNull": true
+        },
+        "SEED_MOVEMENT_TREATMENT": {
+          "@EndUserText.label": "SEED_MOVEMENT_TREATMENT",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "MIGRATION_SOURCE_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_SOURCE_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_POSTING_DATE": {
+          "@EndUserText.label": "MIGRATION_POSTING_DATE",
+          "type": "cds.Date"
+        },
+        "MIGRATION_POSTING_MONTH": {
+          "@EndUserText.label": "MIGRATION_POSTING_MONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "MIGRATION_MOVEMENT_EXCLUSION_RAW": {
+          "@EndUserText.label": "MIGRATION_MOVEMENT_EXCLUSION_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MIGRATION_MOVEMENT_EXCLUSION_SIGNED": {
+          "@EndUserText.label": "MIGRATION_MOVEMENT_EXCLUSION_SIGNED",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MIGRATION_RECONCILIATION_STATUS": {
+          "@EndUserText.label": "MIGRATION_RECONCILIATION_STATUS",
+          "type": "cds.String",
+          "length": 20
+        },
+        "MIGRATION_RECONCILIATION_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_RECONCILIATION_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_RECONCILED_TIMESTAMP": {
+          "@EndUserText.label": "MIGRATION_RECONCILED_TIMESTAMP",
+          "type": "cds.DateTime"
+        },
+        "MIGRATION_EXCLUSION_STATUS": {
+          "@EndUserText.label": "MIGRATION_EXCLUSION_STATUS",
+          "type": "cds.String",
+          "length": 22
+        },
+        "SEED_ACCOUNT_CLASS": {
+          "@EndUserText.label": "SEED_ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100
+        },
+        "SEED_REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "SEED_REPORTING_SIGN_FACTOR",
+          "type": "cds.String",
+          "length": 100
+        },
+        "OPENING_SEED_STATUS": {
+          "@EndUserText.label": "OPENING_SEED_STATUS",
+          "type": "cds.String",
+          "length": 25
+        },
+        "HAS_ACTUAL_ROW": {
+          "@EndUserText.label": "HAS_ACTUAL_ROW",
+          "type": "cds.Integer"
+        },
+        "ACTUAL_MOVEMENT_RAW": {
+          "@EndUserText.label": "ACTUAL_MOVEMENT_RAW",
+          "type": "cds.DecimalFloat"
+        },
+        "ACTUAL_MOVEMENT_SIGNED": {
+          "@EndUserText.label": "ACTUAL_MOVEMENT_SIGNED",
+          "type": "cds.DecimalFloat"
+        },
+        "EFFECTIVE_MOVEMENT_RAW": {
+          "@EndUserText.label": "EFFECTIVE_MOVEMENT_RAW",
+          "type": "cds.DecimalFloat"
+        },
+        "EFFECTIVE_MOVEMENT_SIGNED": {
+          "@EndUserText.label": "EFFECTIVE_MOVEMENT_SIGNED",
+          "type": "cds.DecimalFloat"
+        },
+        "SEED_OPENING_BALANCE_RAW": {
+          "@EndUserText.label": "SEED_OPENING_BALANCE_RAW",
+          "type": "cds.DecimalFloat"
+        },
+        "SEED_OPENING_BALANCE_SIGNED": {
+          "@EndUserText.label": "SEED_OPENING_BALANCE_SIGNED",
+          "type": "cds.DecimalFloat"
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "left",
+            "args": [
+              {
+                "join": "inner",
+                "args": [
+                  {
+                    "ref": [
+                      "3SV_FIN_CORE_ACTUALS_BS_SEED_ENRICHED_01"
+                    ],
+                    "as": "SE"
+                  },
+                  {
+                    "ref": [
+                      "3SV_FIN_CORE_ACTUALS_BS_MONTH_SCOPE_01"
+                    ],
+                    "as": "MS"
+                  }
+                ],
+                "on": [
+                  {
+                    "ref": [
+                      "MS",
+                      "FISCAL_PERIOD_START_DATE"
+                    ]
+                  },
+                  ">=",
+                  {
+                    "ref": [
+                      "SE",
+                      "OPENING_DATE"
+                    ]
+                  }
+                ]
+              },
+              {
+                "ref": [
+                  "3SV_FIN_CORE_ACTUALS_BS_MONTHLY_01"
+                ],
+                "as": "A"
+              }
+            ],
+            "on": [
+              {
+                "ref": [
+                  "A",
+                  "Date_CALMONTH"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "MS",
+                  "Date_CALMONTH"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "A",
+                  "D_XPA_COMPANY_CODE_ID"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "SE",
+                  "D_XPA_COMPANY_CODE_ID"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "A",
+                  "D_XPA_GL_ACCOUNT_ID"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "SE",
+                  "D_XPA_GL_ACCOUNT_ID"
+                ]
+              },
+              "and",
+              {
+                "ref": [
+                  "A",
+                  "SOURCE_LEDGER"
+                ]
+              },
+              "=",
+              {
+                "ref": [
+                  "SE",
+                  "SOURCE_LEDGER"
+                ]
+              }
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "MS",
+                "Date_CALMONTH"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "D_XPA_COMPANY_CODE_ID"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "D_XPA_GL_ACCOUNT_ID"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "SOURCE_LEDGER"
+              ]
+            },
+            {
+              "ref": [
+                "MS",
+                "FISCAL_YEAR_VARIANT"
+              ]
+            },
+            {
+              "ref": [
+                "MS",
+                "FISCAL_YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "MS",
+                "FISCAL_PERIOD"
+              ]
+            },
+            {
+              "ref": [
+                "MS",
+                "FISCAL_YEAR_PERIOD"
+              ]
+            },
+            {
+              "ref": [
+                "MS",
+                "FISCAL_PERIOD_START_DATE"
+              ]
+            },
+            {
+              "ref": [
+                "MS",
+                "FISCAL_PERIOD_END_DATE"
+              ]
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "ref": [
+                    "A",
+                    "ACCOUNT_CLASS"
+                  ]
+                },
+                "else",
+                {
+                  "ref": [
+                    "SE",
+                    "SEED_ACCOUNT_CLASS"
+                  ]
+                },
+                "end"
+              ],
+              "as": "ACCOUNT_CLASS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "ref": [
+                    "A",
+                    "REPORTING_SIGN_FACTOR"
+                  ]
+                },
+                "else",
+                {
+                  "ref": [
+                    "SE",
+                    "SEED_REPORTING_SIGN_FACTOR"
+                  ]
+                },
+                "end"
+              ],
+              "as": "REPORTING_SIGN_FACTOR"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "ref": [
+                    "A",
+                    "AGGREGATION_CONFORMANCE_STATUS"
+                  ]
+                },
+                "else",
+                {
+                  "val": "NOT_APPLICABLE"
+                },
+                "end"
+              ],
+              "as": "AGGREGATION_CONFORMANCE_STATUS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "ref": [
+                    "A",
+                    "SIGN_CONFORMANCE_STATUS"
+                  ]
+                },
+                "else",
+                {
+                  "val": "NOT_APPLICABLE"
+                },
+                "end"
+              ],
+              "as": "SIGN_CONFORMANCE_STATUS"
+            },
+            {
+              "ref": [
+                "SE",
+                "VALID_SEED_RECORD_ID"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "OPENING_DATE"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "OPENING_BALANCE_RAW"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "SEED_MOVEMENT_TREATMENT"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_SOURCE_REFERENCE"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_POSTING_DATE"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_POSTING_MONTH"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_RECONCILIATION_STATUS"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_RECONCILIATION_REFERENCE"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_RECONCILED_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "MIGRATION_EXCLUSION_STATUS"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "SEED_ACCOUNT_CLASS"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "SEED_REPORTING_SIGN_FACTOR"
+              ]
+            },
+            {
+              "ref": [
+                "SE",
+                "OPENING_SEED_STATUS"
+              ]
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "val": 1
+                },
+                "else",
+                {
+                  "val": 0
+                },
+                "end"
+              ],
+              "as": "HAS_ACTUAL_ROW"
+            },
+            {
+              "func": "TO_DECIMAL",
+              "args": [
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "A",
+                        "MEAS_FLOW_CHANGING_RAW"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ]
+                }
+              ],
+              "as": "ACTUAL_MOVEMENT_RAW"
+            },
+            {
+              "func": "TO_DECIMAL",
+              "args": [
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "A",
+                        "MEAS_FLOW_CHANGING"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ]
+                }
+              ],
+              "as": "ACTUAL_MOVEMENT_SIGNED"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "SE",
+                    "MIGRATION_EXCLUSION_STATUS"
+                  ]
+                },
+                "=",
+                {
+                  "val": "RECONCILED"
+                },
+                "and",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "=",
+                {
+                  "ref": [
+                    "SE",
+                    "MIGRATION_POSTING_MONTH"
+                  ]
+                },
+                "then",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "A",
+                            "MEAS_FLOW_CHANGING_RAW"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "-",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "SE",
+                            "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "A",
+                            "MEAS_FLOW_CHANGING_RAW"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "end"
+              ],
+              "as": "EFFECTIVE_MOVEMENT_RAW"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "SE",
+                    "MIGRATION_EXCLUSION_STATUS"
+                  ]
+                },
+                "=",
+                {
+                  "val": "RECONCILED"
+                },
+                "and",
+                {
+                  "ref": [
+                    "A",
+                    "Date_CALMONTH"
+                  ]
+                },
+                "=",
+                {
+                  "ref": [
+                    "SE",
+                    "MIGRATION_POSTING_MONTH"
+                  ]
+                },
+                "then",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "A",
+                            "MEAS_FLOW_CHANGING"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "-",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "SE",
+                            "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "else",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "A",
+                            "MEAS_FLOW_CHANGING"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "end"
+              ],
+              "as": "EFFECTIVE_MOVEMENT_SIGNED"
+            },
+            {
+              "func": "TO_DECIMAL",
+              "args": [
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "SE",
+                        "OPENING_BALANCE_RAW"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ]
+                }
+              ],
+              "as": "SEED_OPENING_BALANCE_RAW"
+            },
+            {
+              "xpr": [
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "SE",
+                            "OPENING_BALANCE_RAW"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "*",
+                {
+                  "func": "TO_DECIMAL",
+                  "args": [
+                    {
+                      "xpr": [
+                        "case",
+                        "when",
+                        {
+                          "ref": [
+                            "SE",
+                            "SEED_REPORTING_SIGN_FACTOR"
+                          ]
+                        },
+                        "in",
+                        {
+                          "list": [
+                            {
+                              "val": 1
+                            },
+                            {
+                              "val": -1
+                            }
+                          ]
+                        },
+                        "then",
+                        {
+                          "ref": [
+                            "SE",
+                            "SEED_REPORTING_SIGN_FACTOR"
+                          ]
+                        },
+                        "else",
+                        {
+                          "val": 1
+                        },
+                        "end"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "as": "SEED_OPENING_BALANCE_SIGNED"
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "SE",
+                "OPENING_SEED_STATUS"
+              ]
+            },
+            "=",
+            {
+              "val": "SEED_AVAILABLE"
+            }
+          ]
+        }
+      },
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_BS_SEEDED_SPINE_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT\r\n    MS.\"Date_CALMONTH\",\r\n    SE.\"D_XPA_COMPANY_CODE_ID\",\r\n    SE.\"D_XPA_GL_ACCOUNT_ID\",\r\n    SE.\"SOURCE_LEDGER\",\r\n    MS.\"FISCAL_YEAR_VARIANT\",\r\n    MS.\"FISCAL_YEAR\",\r\n    MS.\"FISCAL_PERIOD\",\r\n    MS.\"FISCAL_YEAR_PERIOD\",\r\n    MS.\"FISCAL_PERIOD_START_DATE\",\r\n    MS.\"FISCAL_PERIOD_END_DATE\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL THEN A.\"ACCOUNT_CLASS\"\r\n        ELSE SE.\"SEED_ACCOUNT_CLASS\"\r\n    END AS \"ACCOUNT_CLASS\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL THEN A.\"REPORTING_SIGN_FACTOR\"\r\n        ELSE SE.\"SEED_REPORTING_SIGN_FACTOR\"\r\n    END AS \"REPORTING_SIGN_FACTOR\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL THEN A.\"AGGREGATION_CONFORMANCE_STATUS\"\r\n        ELSE 'NOT_APPLICABLE'\r\n    END AS \"AGGREGATION_CONFORMANCE_STATUS\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL THEN A.\"SIGN_CONFORMANCE_STATUS\"\r\n        ELSE 'NOT_APPLICABLE'\r\n    END AS \"SIGN_CONFORMANCE_STATUS\",\r\n\r\n    SE.\"VALID_SEED_RECORD_ID\",\r\n    SE.\"OPENING_DATE\",\r\n    SE.\"OPENING_BALANCE_RAW\",\r\n    SE.\"SEED_MOVEMENT_TREATMENT\",\r\n    SE.\"MIGRATION_SOURCE_REFERENCE\",\r\n    SE.\"MIGRATION_POSTING_DATE\",\r\n    SE.\"MIGRATION_POSTING_MONTH\",\r\n    SE.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\",\r\n    SE.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\",\r\n    SE.\"MIGRATION_RECONCILIATION_STATUS\",\r\n    SE.\"MIGRATION_RECONCILIATION_REFERENCE\",\r\n    SE.\"MIGRATION_RECONCILED_TIMESTAMP\",\r\n    SE.\"MIGRATION_EXCLUSION_STATUS\",\r\n    SE.\"SEED_ACCOUNT_CLASS\",\r\n    SE.\"SEED_REPORTING_SIGN_FACTOR\",\r\n    SE.\"OPENING_SEED_STATUS\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL THEN 1\r\n        ELSE 0\r\n    END AS \"HAS_ACTUAL_ROW\",\r\n\r\n    TO_DECIMAL(COALESCE(A.\"MEAS_FLOW_CHANGING_RAW\", 0)) AS \"ACTUAL_MOVEMENT_RAW\",\r\n    TO_DECIMAL(COALESCE(A.\"MEAS_FLOW_CHANGING\", 0)) AS \"ACTUAL_MOVEMENT_SIGNED\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL\r\n         AND SE.\"MIGRATION_EXCLUSION_STATUS\" = 'RECONCILED'\r\n         AND A.\"Date_CALMONTH\" = SE.\"MIGRATION_POSTING_MONTH\"\r\n            THEN TO_DECIMAL(COALESCE(A.\"MEAS_FLOW_CHANGING_RAW\", 0))\r\n               - TO_DECIMAL(COALESCE(SE.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\", 0))\r\n        ELSE TO_DECIMAL(COALESCE(A.\"MEAS_FLOW_CHANGING_RAW\", 0))\r\n    END AS \"EFFECTIVE_MOVEMENT_RAW\",\r\n\r\n    CASE\r\n        WHEN A.\"Date_CALMONTH\" IS NOT NULL\r\n         AND SE.\"MIGRATION_EXCLUSION_STATUS\" = 'RECONCILED'\r\n         AND A.\"Date_CALMONTH\" = SE.\"MIGRATION_POSTING_MONTH\"\r\n            THEN TO_DECIMAL(COALESCE(A.\"MEAS_FLOW_CHANGING\", 0))\r\n               - TO_DECIMAL(COALESCE(SE.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\", 0))\r\n        ELSE TO_DECIMAL(COALESCE(A.\"MEAS_FLOW_CHANGING\", 0))\r\n    END AS \"EFFECTIVE_MOVEMENT_SIGNED\",\r\n\r\n    TO_DECIMAL(COALESCE(SE.\"OPENING_BALANCE_RAW\", 0)) AS \"SEED_OPENING_BALANCE_RAW\",\r\n\r\n    TO_DECIMAL(COALESCE(SE.\"OPENING_BALANCE_RAW\", 0))\r\n        * TO_DECIMAL(\r\n            CASE\r\n                WHEN SE.\"SEED_REPORTING_SIGN_FACTOR\" IN (1, -1)\r\n                    THEN SE.\"SEED_REPORTING_SIGN_FACTOR\"\r\n                ELSE 1\r\n            END\r\n        ) AS \"SEED_OPENING_BALANCE_SIGNED\"\r\n\r\nFROM \"3SV_FIN_CORE_ACTUALS_BS_SEED_ENRICHED_01\" SE\r\n\r\nINNER JOIN \"3SV_FIN_CORE_ACTUALS_BS_MONTH_SCOPE_01\" MS\r\n    ON MS.\"FISCAL_PERIOD_START_DATE\" >= SE.\"OPENING_DATE\"\r\n\r\nLEFT JOIN \"3SV_FIN_CORE_ACTUALS_BS_MONTHLY_01\" A\r\n    ON A.\"Date_CALMONTH\" = MS.\"Date_CALMONTH\"\r\n   AND A.\"D_XPA_COMPANY_CODE_ID\" = SE.\"D_XPA_COMPANY_CODE_ID\"\r\n   AND A.\"D_XPA_GL_ACCOUNT_ID\" = SE.\"D_XPA_GL_ACCOUNT_ID\"\r\n   AND A.\"SOURCE_LEDGER\" = SE.\"SOURCE_LEDGER\"\r\n\r\nWHERE SE.\"OPENING_SEED_STATUS\" = 'SEED_AVAILABLE'"
+    }
+  }
+}

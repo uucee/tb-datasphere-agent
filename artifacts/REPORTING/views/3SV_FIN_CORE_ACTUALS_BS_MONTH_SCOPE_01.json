@@ -1,0 +1,315 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_BS_MONTH_SCOPE_01": {
+      "kind": "entity",
+      "elements": {
+        "Date_CALMONTH": {
+          "isCalculated": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "length": 4,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "length": 3,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "Fiscal year + fiscal period",
+          "type": "cds.String",
+          "length": 7,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "isCalculated": true,
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "isCalculated": true,
+          "type": "cds.Date"
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "join": "cross",
+            "args": [
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "3GV_DIM_FISCALCALENDAR_01"
+                    ],
+                    "as": "CAL"
+                  },
+                  "columns": [
+                    {
+                      "func": "SUBSTRING",
+                      "args": [
+                        {
+                          "ref": [
+                            "CAL",
+                            "CalendarDate"
+                          ]
+                        },
+                        {
+                          "val": 1
+                        },
+                        {
+                          "val": 6
+                        }
+                      ],
+                      "as": "Date_CALMONTH"
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYearVariant"
+                      ],
+                      "as": "FISCAL_YEAR_VARIANT"
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYear"
+                      ],
+                      "as": "FISCAL_YEAR"
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalPeriod"
+                      ],
+                      "as": "FISCAL_PERIOD"
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYearPeriod"
+                      ],
+                      "as": "FISCAL_YEAR_PERIOD"
+                    },
+                    {
+                      "func": "TO_DATE",
+                      "args": [
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "CAL",
+                                "FiscalPeriodStartDate"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "val": "YYYYMMDD"
+                        }
+                      ],
+                      "as": "FISCAL_PERIOD_START_DATE"
+                    },
+                    {
+                      "func": "TO_DATE",
+                      "args": [
+                        {
+                          "func": "MAX",
+                          "args": [
+                            {
+                              "ref": [
+                                "CAL",
+                                "FiscalPeriodEndDate"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "val": "YYYYMMDD"
+                        }
+                      ],
+                      "as": "FISCAL_PERIOD_END_DATE"
+                    }
+                  ],
+                  "groupBy": [
+                    {
+                      "func": "SUBSTRING",
+                      "args": [
+                        {
+                          "ref": [
+                            "CAL",
+                            "CalendarDate"
+                          ]
+                        },
+                        {
+                          "val": 1
+                        },
+                        {
+                          "val": 6
+                        }
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYearVariant"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYear"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalPeriod"
+                      ]
+                    },
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYearPeriod"
+                      ]
+                    }
+                  ],
+                  "where": [
+                    {
+                      "ref": [
+                        "CAL",
+                        "FiscalYearVariant"
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": "V3"
+                    },
+                    "and",
+                    {
+                      "ref": [
+                        "CAL",
+                        "Language"
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": "EN"
+                    }
+                  ]
+                },
+                "as": "M"
+              },
+              {
+                "SELECT": {
+                  "from": {
+                    "ref": [
+                      "3SV_FIN_CORE_ACTUALS_SIGNED_MONTHLY_01"
+                    ]
+                  },
+                  "columns": [
+                    {
+                      "func": "MAX",
+                      "args": [
+                        {
+                          "ref": [
+                            "Date_CALMONTH"
+                          ]
+                        }
+                      ],
+                      "as": "MAX_CALMONTH"
+                    }
+                  ]
+                },
+                "as": "L"
+              }
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "M",
+                "Date_CALMONTH"
+              ]
+            },
+            {
+              "ref": [
+                "M",
+                "FISCAL_YEAR_VARIANT"
+              ]
+            },
+            {
+              "ref": [
+                "M",
+                "FISCAL_YEAR"
+              ]
+            },
+            {
+              "ref": [
+                "M",
+                "FISCAL_PERIOD"
+              ]
+            },
+            {
+              "ref": [
+                "M",
+                "FISCAL_YEAR_PERIOD"
+              ]
+            },
+            {
+              "ref": [
+                "M",
+                "FISCAL_PERIOD_START_DATE"
+              ]
+            },
+            {
+              "ref": [
+                "M",
+                "FISCAL_PERIOD_END_DATE"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "M",
+                "Date_CALMONTH"
+              ]
+            },
+            "<=",
+            {
+              "ref": [
+                "L",
+                "MAX_CALMONTH"
+              ]
+            }
+          ]
+        }
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_BS_MONTH_SCOPE_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT\r\n    M.\"Date_CALMONTH\",\r\n    M.\"FISCAL_YEAR_VARIANT\",\r\n    M.\"FISCAL_YEAR\",\r\n    M.\"FISCAL_PERIOD\",\r\n    M.\"FISCAL_YEAR_PERIOD\",\r\n    M.\"FISCAL_PERIOD_START_DATE\",\r\n    M.\"FISCAL_PERIOD_END_DATE\"\r\nFROM (\r\n    SELECT\r\n        SUBSTRING(CAL.\"CalendarDate\", 1, 6) AS \"Date_CALMONTH\",\r\n        CAL.\"FiscalYearVariant\" AS \"FISCAL_YEAR_VARIANT\",\r\n        CAL.\"FiscalYear\" AS \"FISCAL_YEAR\",\r\n        CAL.\"FiscalPeriod\" AS \"FISCAL_PERIOD\",\r\n        CAL.\"FiscalYearPeriod\" AS \"FISCAL_YEAR_PERIOD\",\r\n        TO_DATE(MIN(CAL.\"FiscalPeriodStartDate\"), 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\",\r\n        TO_DATE(MAX(CAL.\"FiscalPeriodEndDate\"), 'YYYYMMDD') AS \"FISCAL_PERIOD_END_DATE\"\r\n    FROM \"3GV_DIM_FISCALCALENDAR_01\" CAL\r\n    WHERE CAL.\"FiscalYearVariant\" = 'V3'\r\n      AND CAL.\"Language\" = 'EN'\r\n    GROUP BY\r\n        SUBSTRING(CAL.\"CalendarDate\", 1, 6),\r\n        CAL.\"FiscalYearVariant\",\r\n        CAL.\"FiscalYear\",\r\n        CAL.\"FiscalPeriod\",\r\n        CAL.\"FiscalYearPeriod\"\r\n) M\r\nCROSS JOIN (\r\n    SELECT MAX(\"Date_CALMONTH\") AS \"MAX_CALMONTH\"\r\n    FROM \"3SV_FIN_CORE_ACTUALS_SIGNED_MONTHLY_01\"\r\n) L\r\nWHERE M.\"Date_CALMONTH\" <= L.\"MAX_CALMONTH\""
+    }
+  }
+}

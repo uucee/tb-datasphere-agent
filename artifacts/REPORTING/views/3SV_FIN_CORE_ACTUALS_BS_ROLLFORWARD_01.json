@@ -1,0 +1,479 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_BS_ROLLFORWARD_01": {
+      "kind": "entity",
+      "elements": {
+        "Date_CALMONTH": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "COMPANY_CODE",
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "GL_ACCOUNT",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "SOURCE_LEDGER": {
+          "@EndUserText.label": "SOURCE_LEDGER",
+          "type": "cds.String",
+          "length": 2,
+          "notNull": true
+        },
+        "FISCAL_YEAR_VARIANT": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "length": 4,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "length": 3,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_YEAR_PERIOD": {
+          "@EndUserText.label": "Fiscal year + fiscal period",
+          "type": "cds.String",
+          "length": 7,
+          "@Analytics.dimension": true
+        },
+        "FISCAL_PERIOD_START_DATE": {
+          "type": "cds.Date"
+        },
+        "FISCAL_PERIOD_END_DATE": {
+          "type": "cds.Date"
+        },
+        "ACCOUNT_CLASS": {
+          "@EndUserText.label": "ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100
+        },
+        "REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "REPORTING_SIGN_FACTOR",
+          "type": "cds.Integer"
+        },
+        "AGGREGATION_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "AGGREGATION_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 31
+        },
+        "SIGN_CONFORMANCE_STATUS": {
+          "@EndUserText.label": "SIGN_CONFORMANCE_STATUS",
+          "type": "cds.String",
+          "length": 17
+        },
+        "VALID_SEED_RECORD_ID": {
+          "@EndUserText.label": "VALID_SEED_RECORD_ID",
+          "type": "cds.String",
+          "length": 100
+        },
+        "OPENING_DATE": {
+          "@EndUserText.label": "OPENING_DATE",
+          "type": "cds.Date",
+          "notNull": true
+        },
+        "MIGRATION_SOURCE_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_SOURCE_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_POSTING_DATE": {
+          "@EndUserText.label": "MIGRATION_POSTING_DATE",
+          "type": "cds.Date"
+        },
+        "MIGRATION_POSTING_MONTH": {
+          "@EndUserText.label": "MIGRATION_POSTING_MONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "SEED_MOVEMENT_TREATMENT": {
+          "@EndUserText.label": "SEED_MOVEMENT_TREATMENT",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "OPENING_SEED_STATUS": {
+          "@EndUserText.label": "OPENING_SEED_STATUS",
+          "type": "cds.String",
+          "length": 25
+        },
+        "MIGRATION_EXCLUSION_STATUS": {
+          "@EndUserText.label": "MIGRATION_EXCLUSION_STATUS",
+          "type": "cds.String",
+          "length": 22
+        },
+        "MEAS_FLOW_OPENING_RAW": {
+          "@EndUserText.label": "MEAS_FLOW_OPENING_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MEAS_FLOW_CHANGING_RAW": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MEAS_FLOW_TOTAL_RAW": {
+          "@EndUserText.label": "MEAS_FLOW_TOTAL_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MEAS_FLOW_OPENING": {
+          "@EndUserText.label": "MEAS_FLOW_OPENING",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MEAS_FLOW_CHANGING": {
+          "@EndUserText.label": "MEAS_FLOW_CHANGING",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MEAS_FLOW_TOTAL": {
+          "@EndUserText.label": "MEAS_FLOW_TOTAL",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        }
+      },
+      "query": {
+        "SET": {
+          "op": "union",
+          "all": true,
+          "args": [
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "3SV_FIN_CORE_ACTUALS_BS_SEEDED_ROLL_01"
+                  ]
+                },
+                "columns": [
+                  {
+                    "ref": [
+                      "Date_CALMONTH"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "D_XPA_COMPANY_CODE_ID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "D_XPA_GL_ACCOUNT_ID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "SOURCE_LEDGER"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_YEAR_VARIANT"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_YEAR"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_PERIOD"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_YEAR_PERIOD"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_PERIOD_START_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_PERIOD_END_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "ACCOUNT_CLASS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "REPORTING_SIGN_FACTOR"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "AGGREGATION_CONFORMANCE_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "SIGN_CONFORMANCE_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "VALID_SEED_RECORD_ID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "OPENING_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_SOURCE_REFERENCE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_POSTING_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_POSTING_MONTH"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "SEED_MOVEMENT_TREATMENT"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "OPENING_SEED_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_EXCLUSION_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_OPENING_RAW"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_CHANGING_RAW"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_TOTAL_RAW"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_OPENING"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_CHANGING"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_TOTAL"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "SELECT": {
+                "from": {
+                  "ref": [
+                    "3SV_FIN_CORE_ACTUALS_BS_ACTUAL_ONLY_01"
+                  ]
+                },
+                "columns": [
+                  {
+                    "ref": [
+                      "Date_CALMONTH"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "D_XPA_COMPANY_CODE_ID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "D_XPA_GL_ACCOUNT_ID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "SOURCE_LEDGER"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_YEAR_VARIANT"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_YEAR"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_PERIOD"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_YEAR_PERIOD"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_PERIOD_START_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "FISCAL_PERIOD_END_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "ACCOUNT_CLASS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "REPORTING_SIGN_FACTOR"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "AGGREGATION_CONFORMANCE_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "SIGN_CONFORMANCE_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "VALID_SEED_RECORD_ID"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "OPENING_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_SOURCE_REFERENCE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_POSTING_DATE"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_POSTING_MONTH"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "SEED_MOVEMENT_TREATMENT"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "OPENING_SEED_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MIGRATION_EXCLUSION_STATUS"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_OPENING_RAW"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_CHANGING_RAW"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_TOTAL_RAW"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_OPENING"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_CHANGING"
+                    ]
+                  },
+                  {
+                    "ref": [
+                      "MEAS_FLOW_TOTAL"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_BS_ROLLFORWARD_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT\r\n    \"Date_CALMONTH\",\r\n    \"D_XPA_COMPANY_CODE_ID\",\r\n    \"D_XPA_GL_ACCOUNT_ID\",\r\n    \"SOURCE_LEDGER\",\r\n    \"FISCAL_YEAR_VARIANT\",\r\n    \"FISCAL_YEAR\",\r\n    \"FISCAL_PERIOD\",\r\n    \"FISCAL_YEAR_PERIOD\",\r\n    \"FISCAL_PERIOD_START_DATE\",\r\n    \"FISCAL_PERIOD_END_DATE\",\r\n    \"ACCOUNT_CLASS\",\r\n    \"REPORTING_SIGN_FACTOR\",\r\n    \"AGGREGATION_CONFORMANCE_STATUS\",\r\n    \"SIGN_CONFORMANCE_STATUS\",\r\n    \"VALID_SEED_RECORD_ID\",\r\n    \"OPENING_DATE\",\r\n    \"MIGRATION_SOURCE_REFERENCE\",\r\n    \"MIGRATION_POSTING_DATE\",\r\n    \"MIGRATION_POSTING_MONTH\",\r\n    \"SEED_MOVEMENT_TREATMENT\",\r\n    \"OPENING_SEED_STATUS\",\r\n    \"MIGRATION_EXCLUSION_STATUS\",\r\n    \"MEAS_FLOW_OPENING_RAW\",\r\n    \"MEAS_FLOW_CHANGING_RAW\",\r\n    \"MEAS_FLOW_TOTAL_RAW\",\r\n    \"MEAS_FLOW_OPENING\",\r\n    \"MEAS_FLOW_CHANGING\",\r\n    \"MEAS_FLOW_TOTAL\"\r\nFROM \"3SV_FIN_CORE_ACTUALS_BS_SEEDED_ROLL_01\"\r\n\r\nUNION ALL\r\n\r\nSELECT\r\n    \"Date_CALMONTH\",\r\n    \"D_XPA_COMPANY_CODE_ID\",\r\n    \"D_XPA_GL_ACCOUNT_ID\",\r\n    \"SOURCE_LEDGER\",\r\n    \"FISCAL_YEAR_VARIANT\",\r\n    \"FISCAL_YEAR\",\r\n    \"FISCAL_PERIOD\",\r\n    \"FISCAL_YEAR_PERIOD\",\r\n    \"FISCAL_PERIOD_START_DATE\",\r\n    \"FISCAL_PERIOD_END_DATE\",\r\n    \"ACCOUNT_CLASS\",\r\n    \"REPORTING_SIGN_FACTOR\",\r\n    \"AGGREGATION_CONFORMANCE_STATUS\",\r\n    \"SIGN_CONFORMANCE_STATUS\",\r\n    \"VALID_SEED_RECORD_ID\",\r\n    \"OPENING_DATE\",\r\n    \"MIGRATION_SOURCE_REFERENCE\",\r\n    \"MIGRATION_POSTING_DATE\",\r\n    \"MIGRATION_POSTING_MONTH\",\r\n    \"SEED_MOVEMENT_TREATMENT\",\r\n    \"OPENING_SEED_STATUS\",\r\n    \"MIGRATION_EXCLUSION_STATUS\",\r\n    \"MEAS_FLOW_OPENING_RAW\",\r\n    \"MEAS_FLOW_CHANGING_RAW\",\r\n    \"MEAS_FLOW_TOTAL_RAW\",\r\n    \"MEAS_FLOW_OPENING\",\r\n    \"MEAS_FLOW_CHANGING\",\r\n    \"MEAS_FLOW_TOTAL\"\r\nFROM \"3SV_FIN_CORE_ACTUALS_BS_ACTUAL_ONLY_01\""
+    }
+  }
+}

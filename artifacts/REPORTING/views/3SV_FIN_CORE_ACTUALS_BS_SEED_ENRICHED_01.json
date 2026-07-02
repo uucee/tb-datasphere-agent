@@ -1,0 +1,3411 @@
+{
+  "definitions": {
+    "3SV_FIN_CORE_ACTUALS_BS_SEED_ENRICHED_01": {
+      "kind": "entity",
+      "elements": {
+        "D_XPA_COMPANY_CODE_ID": {
+          "@EndUserText.label": "COMPANY_CODE",
+          "type": "cds.String",
+          "length": 4,
+          "notNull": true
+        },
+        "D_XPA_GL_ACCOUNT_ID": {
+          "@EndUserText.label": "GL_ACCOUNT",
+          "type": "cds.String",
+          "length": 10,
+          "notNull": true
+        },
+        "SOURCE_LEDGER": {
+          "@EndUserText.label": "SOURCE_LEDGER",
+          "type": "cds.String",
+          "length": 2,
+          "notNull": true
+        },
+        "OPENING_SEED_STATUS": {
+          "@EndUserText.label": "OPENING_SEED_STATUS",
+          "type": "cds.String",
+          "length": 25
+        },
+        "VALID_SEED_RECORD_ID": {
+          "@EndUserText.label": "VALID_SEED_RECORD_ID",
+          "type": "cds.String",
+          "length": 100
+        },
+        "OPENING_DATE": {
+          "@EndUserText.label": "OPENING_DATE",
+          "type": "cds.Date",
+          "notNull": true
+        },
+        "OPENING_BALANCE_RAW": {
+          "@EndUserText.label": "OPENING_BALANCE_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal",
+          "notNull": true
+        },
+        "SEED_MOVEMENT_TREATMENT": {
+          "@EndUserText.label": "SEED_MOVEMENT_TREATMENT",
+          "type": "cds.String",
+          "length": 40,
+          "notNull": true
+        },
+        "MIGRATION_SOURCE_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_SOURCE_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_POSTING_DATE": {
+          "@EndUserText.label": "MIGRATION_POSTING_DATE",
+          "type": "cds.Date"
+        },
+        "MIGRATION_POSTING_MONTH": {
+          "@EndUserText.label": "MIGRATION_POSTING_MONTH",
+          "type": "cds.String",
+          "length": 6
+        },
+        "MIGRATION_MOVEMENT_EXCLUSION_RAW": {
+          "@EndUserText.label": "MIGRATION_MOVEMENT_EXCLUSION_RAW",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MIGRATION_MOVEMENT_EXCLUSION_SIGNED": {
+          "@EndUserText.label": "MIGRATION_MOVEMENT_EXCLUSION_SIGNED",
+          "precision": 23,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "MIGRATION_RECONCILIATION_STATUS": {
+          "@EndUserText.label": "MIGRATION_RECONCILIATION_STATUS",
+          "type": "cds.String",
+          "length": 20
+        },
+        "MIGRATION_RECONCILIATION_REFERENCE": {
+          "@EndUserText.label": "MIGRATION_RECONCILIATION_REFERENCE",
+          "type": "cds.String",
+          "length": 200
+        },
+        "MIGRATION_RECONCILED_TIMESTAMP": {
+          "@EndUserText.label": "MIGRATION_RECONCILED_TIMESTAMP",
+          "type": "cds.DateTime"
+        },
+        "MIGRATION_EXCLUSION_STATUS": {
+          "@EndUserText.label": "MIGRATION_EXCLUSION_STATUS",
+          "type": "cds.String",
+          "length": 22
+        },
+        "SEED_ACCOUNT_CLASS": {
+          "@EndUserText.label": "SEED_ACCOUNT_CLASS",
+          "type": "cds.String",
+          "length": 100
+        },
+        "SEED_REPORTING_SIGN_FACTOR": {
+          "@EndUserText.label": "SEED_REPORTING_SIGN_FACTOR",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DIAG_SEED_ROW_COUNT": {
+          "isCalculated": true,
+          "@EndUserText.label": "DIAG_SEED_ROW_COUNT",
+          "type": "cds.Integer"
+        },
+        "DIAG_ACTIVE_EFFECTIVE_ROW_COUNT": {
+          "isCalculated": true,
+          "@EndUserText.label": "DIAG_ACTIVE_EFFECTIVE_ROW_COUNT",
+          "type": "cds.Integer"
+        },
+        "DIAG_VALID_LEDGER_COUNT": {
+          "isCalculated": true,
+          "@EndUserText.label": "DIAG_VALID_LEDGER_COUNT",
+          "type": "cds.Integer"
+        },
+        "DIAG_VALID_TREATMENT_COUNT": {
+          "isCalculated": true,
+          "@EndUserText.label": "DIAG_VALID_TREATMENT_COUNT",
+          "type": "cds.Integer"
+        },
+        "DIAG_VALID_V3_START_COUNT": {
+          "isCalculated": true,
+          "@EndUserText.label": "DIAG_VALID_V3_START_COUNT",
+          "type": "cds.Integer"
+        },
+        "DIAG_VALID_RECORD_COUNT": {
+          "isCalculated": true,
+          "@EndUserText.label": "DIAG_VALID_RECORD_COUNT",
+          "type": "cds.Integer"
+        },
+        "DIAG_SEED_VALIDATION_REASON": {
+          "@EndUserText.label": "DIAG_SEED_VALIDATION_REASON",
+          "type": "cds.String",
+          "length": 37
+        }
+      },
+      "query": {
+        "SELECT": {
+          "from": {
+            "SELECT": {
+              "from": {
+                "join": "left",
+                "args": [
+                  {
+                    "join": "left",
+                    "args": [
+                      {
+                        "join": "left",
+                        "args": [
+                          {
+                            "SET": {
+                              "op": "union",
+                              "args": [
+                                {
+                                  "SELECT": {
+                                    "from": {
+                                      "ref": [
+                                        "MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01"
+                                      ],
+                                      "as": "S"
+                                    },
+                                    "columns": [
+                                      {
+                                        "ref": [
+                                          "S",
+                                          "COMPANY_CODE"
+                                        ]
+                                      },
+                                      {
+                                        "ref": [
+                                          "S",
+                                          "GL_ACCOUNT"
+                                        ]
+                                      },
+                                      {
+                                        "ref": [
+                                          "S",
+                                          "SOURCE_LEDGER"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "SELECT": {
+                                    "from": {
+                                      "ref": [
+                                        "3SV_FIN_CORE_ACTUALS_BS_MONTHLY_01"
+                                      ],
+                                      "as": "A"
+                                    },
+                                    "columns": [
+                                      {
+                                        "ref": [
+                                          "A",
+                                          "D_XPA_COMPANY_CODE_ID"
+                                        ],
+                                        "as": "COMPANY_CODE"
+                                      },
+                                      {
+                                        "ref": [
+                                          "A",
+                                          "D_XPA_GL_ACCOUNT_ID"
+                                        ],
+                                        "as": "GL_ACCOUNT"
+                                      },
+                                      {
+                                        "ref": [
+                                          "A",
+                                          "SOURCE_LEDGER"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            "as": "D"
+                          },
+                          {
+                            "SELECT": {
+                              "from": {
+                                "ref": [
+                                  "MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01"
+                                ],
+                                "as": "S"
+                              },
+                              "columns": [
+                                {
+                                  "ref": [
+                                    "S",
+                                    "COMPANY_CODE"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "S",
+                                    "GL_ACCOUNT"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "S",
+                                    "SOURCE_LEDGER"
+                                  ]
+                                },
+                                {
+                                  "func": "COUNT",
+                                  "args": [
+                                    "*"
+                                  ],
+                                  "as": "SEED_ROW_COUNT"
+                                },
+                                {
+                                  "func": "SUM",
+                                  "args": [
+                                    {
+                                      "xpr": [
+                                        "case",
+                                        "when",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "IS_ACTIVE"
+                                          ]
+                                        },
+                                        "=",
+                                        {
+                                          "val": true
+                                        },
+                                        "and",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "OPENING_DATE"
+                                          ]
+                                        },
+                                        "is",
+                                        "not",
+                                        "null",
+                                        "and",
+                                        {
+                                          "xpr": [
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_FROM"
+                                              ]
+                                            },
+                                            "is",
+                                            "null",
+                                            "or",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_FROM"
+                                              ]
+                                            },
+                                            "<=",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "OPENING_DATE"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "and",
+                                        {
+                                          "xpr": [
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_TO"
+                                              ]
+                                            },
+                                            "is",
+                                            "null",
+                                            "or",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_TO"
+                                              ]
+                                            },
+                                            ">=",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "OPENING_DATE"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "then",
+                                        {
+                                          "val": 1
+                                        },
+                                        "else",
+                                        {
+                                          "val": 0
+                                        },
+                                        "end"
+                                      ]
+                                    }
+                                  ],
+                                  "as": "ACTIVE_EFFECTIVE_ROW_COUNT"
+                                }
+                              ],
+                              "groupBy": [
+                                {
+                                  "ref": [
+                                    "S",
+                                    "COMPANY_CODE"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "S",
+                                    "GL_ACCOUNT"
+                                  ]
+                                },
+                                {
+                                  "ref": [
+                                    "S",
+                                    "SOURCE_LEDGER"
+                                  ]
+                                }
+                              ]
+                            },
+                            "as": "AC"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "AC",
+                              "COMPANY_CODE"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "D",
+                              "COMPANY_CODE"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "AC",
+                              "GL_ACCOUNT"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "D",
+                              "GL_ACCOUNT"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "AC",
+                              "SOURCE_LEDGER"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "D",
+                              "SOURCE_LEDGER"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "SELECT": {
+                          "from": {
+                            "join": "left",
+                            "args": [
+                              {
+                                "SELECT": {
+                                  "from": {
+                                    "ref": [
+                                      "MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01"
+                                    ],
+                                    "as": "S"
+                                  },
+                                  "columns": [
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "COMPANY_CODE"
+                                      ]
+                                    },
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "GL_ACCOUNT"
+                                      ]
+                                    },
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "SOURCE_LEDGER"
+                                      ]
+                                    },
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "OPENING_DATE"
+                                      ]
+                                    },
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "SEED_MOVEMENT_TREATMENT"
+                                      ]
+                                    }
+                                  ],
+                                  "where": [
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "IS_ACTIVE"
+                                      ]
+                                    },
+                                    "=",
+                                    {
+                                      "val": true
+                                    },
+                                    "and",
+                                    {
+                                      "ref": [
+                                        "S",
+                                        "OPENING_DATE"
+                                      ]
+                                    },
+                                    "is",
+                                    "not",
+                                    "null",
+                                    "and",
+                                    {
+                                      "xpr": [
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "VALID_FROM"
+                                          ]
+                                        },
+                                        "is",
+                                        "null",
+                                        "or",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "VALID_FROM"
+                                          ]
+                                        },
+                                        "<=",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "OPENING_DATE"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "and",
+                                    {
+                                      "xpr": [
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "VALID_TO"
+                                          ]
+                                        },
+                                        "is",
+                                        "null",
+                                        "or",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "VALID_TO"
+                                          ]
+                                        },
+                                        ">=",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "OPENING_DATE"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "as": "E"
+                              },
+                              {
+                                "SELECT": {
+                                  "from": {
+                                    "ref": [
+                                      "3GV_DIM_FISCALCALENDAR_01"
+                                    ],
+                                    "as": "CAL"
+                                  },
+                                  "distinct": true,
+                                  "columns": [
+                                    {
+                                      "func": "TO_DATE",
+                                      "args": [
+                                        {
+                                          "ref": [
+                                            "CAL",
+                                            "FiscalPeriodStartDate"
+                                          ]
+                                        },
+                                        {
+                                          "val": "YYYYMMDD"
+                                        }
+                                      ],
+                                      "as": "FISCAL_PERIOD_START_DATE"
+                                    }
+                                  ],
+                                  "where": [
+                                    {
+                                      "ref": [
+                                        "CAL",
+                                        "FiscalYearVariant"
+                                      ]
+                                    },
+                                    "=",
+                                    {
+                                      "val": "V3"
+                                    },
+                                    "and",
+                                    {
+                                      "ref": [
+                                        "CAL",
+                                        "Language"
+                                      ]
+                                    },
+                                    "=",
+                                    {
+                                      "val": "EN"
+                                    }
+                                  ]
+                                },
+                                "as": "VC"
+                              }
+                            ],
+                            "on": [
+                              {
+                                "ref": [
+                                  "VC",
+                                  "FISCAL_PERIOD_START_DATE"
+                                ]
+                              },
+                              "=",
+                              {
+                                "ref": [
+                                  "E",
+                                  "OPENING_DATE"
+                                ]
+                              }
+                            ]
+                          },
+                          "columns": [
+                            {
+                              "ref": [
+                                "E",
+                                "COMPANY_CODE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "GL_ACCOUNT"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "SOURCE_LEDGER"
+                              ]
+                            },
+                            {
+                              "func": "SUM",
+                              "args": [
+                                {
+                                  "xpr": [
+                                    "case",
+                                    "when",
+                                    {
+                                      "ref": [
+                                        "E",
+                                        "SOURCE_LEDGER"
+                                      ]
+                                    },
+                                    "=",
+                                    {
+                                      "val": "0L"
+                                    },
+                                    "then",
+                                    {
+                                      "val": 1
+                                    },
+                                    "else",
+                                    {
+                                      "val": 0
+                                    },
+                                    "end"
+                                  ]
+                                }
+                              ],
+                              "as": "VALID_LEDGER_COUNT"
+                            },
+                            {
+                              "func": "SUM",
+                              "args": [
+                                {
+                                  "xpr": [
+                                    "case",
+                                    "when",
+                                    {
+                                      "ref": [
+                                        "E",
+                                        "SEED_MOVEMENT_TREATMENT"
+                                      ]
+                                    },
+                                    "in",
+                                    {
+                                      "list": [
+                                        {
+                                          "val": "EXCLUDE_MIGRATION_POSTING"
+                                        },
+                                        {
+                                          "val": "NO_MOVEMENT_EXCLUSION_REQUIRED"
+                                        }
+                                      ]
+                                    },
+                                    "then",
+                                    {
+                                      "val": 1
+                                    },
+                                    "else",
+                                    {
+                                      "val": 0
+                                    },
+                                    "end"
+                                  ]
+                                }
+                              ],
+                              "as": "VALID_TREATMENT_COUNT"
+                            },
+                            {
+                              "func": "SUM",
+                              "args": [
+                                {
+                                  "xpr": [
+                                    "case",
+                                    "when",
+                                    {
+                                      "ref": [
+                                        "VC",
+                                        "FISCAL_PERIOD_START_DATE"
+                                      ]
+                                    },
+                                    "is",
+                                    "not",
+                                    "null",
+                                    "then",
+                                    {
+                                      "val": 1
+                                    },
+                                    "else",
+                                    {
+                                      "val": 0
+                                    },
+                                    "end"
+                                  ]
+                                }
+                              ],
+                              "as": "VALID_V3_START_COUNT"
+                            }
+                          ],
+                          "groupBy": [
+                            {
+                              "ref": [
+                                "E",
+                                "COMPANY_CODE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "GL_ACCOUNT"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "SOURCE_LEDGER"
+                              ]
+                            }
+                          ]
+                        },
+                        "as": "EC"
+                      }
+                    ],
+                    "on": [
+                      {
+                        "ref": [
+                          "EC",
+                          "COMPANY_CODE"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "D",
+                          "COMPANY_CODE"
+                        ]
+                      },
+                      "and",
+                      {
+                        "ref": [
+                          "EC",
+                          "GL_ACCOUNT"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "D",
+                          "GL_ACCOUNT"
+                        ]
+                      },
+                      "and",
+                      {
+                        "ref": [
+                          "EC",
+                          "SOURCE_LEDGER"
+                        ]
+                      },
+                      "=",
+                      {
+                        "ref": [
+                          "D",
+                          "SOURCE_LEDGER"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "SELECT": {
+                      "from": {
+                        "SELECT": {
+                          "from": {
+                            "join": "inner",
+                            "args": [
+                              {
+                                "join": "inner",
+                                "args": [
+                                  {
+                                    "SELECT": {
+                                      "from": {
+                                        "ref": [
+                                          "MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01"
+                                        ],
+                                        "as": "S"
+                                      },
+                                      "columns": [
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "SEED_RECORD_ID"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "COMPANY_CODE"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "GL_ACCOUNT"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "SOURCE_LEDGER"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "OPENING_DATE"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "OPENING_BALANCE_RAW"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "SEED_MOVEMENT_TREATMENT"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_SOURCE_REFERENCE"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_POSTING_DATE"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_POSTING_MONTH"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_RECONCILIATION_STATUS"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_RECONCILIATION_REFERENCE"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "MIGRATION_RECONCILED_TIMESTAMP"
+                                          ]
+                                        }
+                                      ],
+                                      "where": [
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "IS_ACTIVE"
+                                          ]
+                                        },
+                                        "=",
+                                        {
+                                          "val": true
+                                        },
+                                        "and",
+                                        {
+                                          "ref": [
+                                            "S",
+                                            "OPENING_DATE"
+                                          ]
+                                        },
+                                        "is",
+                                        "not",
+                                        "null",
+                                        "and",
+                                        {
+                                          "xpr": [
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_FROM"
+                                              ]
+                                            },
+                                            "is",
+                                            "null",
+                                            "or",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_FROM"
+                                              ]
+                                            },
+                                            "<=",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "OPENING_DATE"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "and",
+                                        {
+                                          "xpr": [
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_TO"
+                                              ]
+                                            },
+                                            "is",
+                                            "null",
+                                            "or",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "VALID_TO"
+                                              ]
+                                            },
+                                            ">=",
+                                            {
+                                              "ref": [
+                                                "S",
+                                                "OPENING_DATE"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "as": "E"
+                                  },
+                                  {
+                                    "SELECT": {
+                                      "from": {
+                                        "SELECT": {
+                                          "from": {
+                                            "join": "left",
+                                            "args": [
+                                              {
+                                                "join": "left",
+                                                "args": [
+                                                  {
+                                                    "SELECT": {
+                                                      "from": {
+                                                        "ref": [
+                                                          "MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01"
+                                                        ],
+                                                        "as": "S"
+                                                      },
+                                                      "columns": [
+                                                        {
+                                                          "ref": [
+                                                            "S",
+                                                            "SEED_RECORD_ID"
+                                                          ]
+                                                        },
+                                                        {
+                                                          "ref": [
+                                                            "S",
+                                                            "GL_ACCOUNT"
+                                                          ]
+                                                        },
+                                                        {
+                                                          "ref": [
+                                                            "S",
+                                                            "OPENING_DATE"
+                                                          ]
+                                                        }
+                                                      ],
+                                                      "where": [
+                                                        {
+                                                          "ref": [
+                                                            "S",
+                                                            "IS_ACTIVE"
+                                                          ]
+                                                        },
+                                                        "=",
+                                                        {
+                                                          "val": true
+                                                        },
+                                                        "and",
+                                                        {
+                                                          "ref": [
+                                                            "S",
+                                                            "OPENING_DATE"
+                                                          ]
+                                                        },
+                                                        "is",
+                                                        "not",
+                                                        "null",
+                                                        "and",
+                                                        {
+                                                          "xpr": [
+                                                            {
+                                                              "ref": [
+                                                                "S",
+                                                                "VALID_FROM"
+                                                              ]
+                                                            },
+                                                            "is",
+                                                            "null",
+                                                            "or",
+                                                            {
+                                                              "ref": [
+                                                                "S",
+                                                                "VALID_FROM"
+                                                              ]
+                                                            },
+                                                            "<=",
+                                                            {
+                                                              "ref": [
+                                                                "S",
+                                                                "OPENING_DATE"
+                                                              ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        "and",
+                                                        {
+                                                          "xpr": [
+                                                            {
+                                                              "ref": [
+                                                                "S",
+                                                                "VALID_TO"
+                                                              ]
+                                                            },
+                                                            "is",
+                                                            "null",
+                                                            "or",
+                                                            {
+                                                              "ref": [
+                                                                "S",
+                                                                "VALID_TO"
+                                                              ]
+                                                            },
+                                                            ">=",
+                                                            {
+                                                              "ref": [
+                                                                "S",
+                                                                "OPENING_DATE"
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    "as": "E2"
+                                                  },
+                                                  {
+                                                    "ref": [
+                                                      "MODELLING.2LT_CTRL_FIN_GL_ACCOUNT_CLASS_01"
+                                                    ],
+                                                    "as": "GL"
+                                                  }
+                                                ],
+                                                "on": [
+                                                  {
+                                                    "ref": [
+                                                      "GL",
+                                                      "GL_ACCOUNT_ID"
+                                                    ]
+                                                  },
+                                                  "=",
+                                                  {
+                                                    "ref": [
+                                                      "E2",
+                                                      "GL_ACCOUNT"
+                                                    ]
+                                                  },
+                                                  "and",
+                                                  {
+                                                    "ref": [
+                                                      "GL",
+                                                      "IS_ACTIVE"
+                                                    ]
+                                                  },
+                                                  "=",
+                                                  {
+                                                    "val": true
+                                                  },
+                                                  "and",
+                                                  {
+                                                    "xpr": [
+                                                      {
+                                                        "ref": [
+                                                          "GL",
+                                                          "VALID_FROM"
+                                                        ]
+                                                      },
+                                                      "is",
+                                                      "null",
+                                                      "or",
+                                                      {
+                                                        "ref": [
+                                                          "GL",
+                                                          "VALID_FROM"
+                                                        ]
+                                                      },
+                                                      "<=",
+                                                      {
+                                                        "ref": [
+                                                          "E2",
+                                                          "OPENING_DATE"
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  "and",
+                                                  {
+                                                    "xpr": [
+                                                      {
+                                                        "ref": [
+                                                          "GL",
+                                                          "VALID_TO"
+                                                        ]
+                                                      },
+                                                      "is",
+                                                      "null",
+                                                      "or",
+                                                      {
+                                                        "ref": [
+                                                          "GL",
+                                                          "VALID_TO"
+                                                        ]
+                                                      },
+                                                      ">=",
+                                                      {
+                                                        "ref": [
+                                                          "E2",
+                                                          "OPENING_DATE"
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "ref": [
+                                                  "MODELLING.2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01"
+                                                ],
+                                                "as": "SR"
+                                              }
+                                            ],
+                                            "on": [
+                                              {
+                                                "ref": [
+                                                  "SR",
+                                                  "ACCOUNT_CLASS"
+                                                ]
+                                              },
+                                              "=",
+                                              {
+                                                "ref": [
+                                                  "GL",
+                                                  "ACCOUNT_CLASS"
+                                                ]
+                                              },
+                                              "and",
+                                              {
+                                                "ref": [
+                                                  "SR",
+                                                  "IS_ACTIVE"
+                                                ]
+                                              },
+                                              "=",
+                                              {
+                                                "val": true
+                                              },
+                                              "and",
+                                              {
+                                                "xpr": [
+                                                  {
+                                                    "ref": [
+                                                      "SR",
+                                                      "VALID_FROM"
+                                                    ]
+                                                  },
+                                                  "is",
+                                                  "null",
+                                                  "or",
+                                                  {
+                                                    "ref": [
+                                                      "SR",
+                                                      "VALID_FROM"
+                                                    ]
+                                                  },
+                                                  "<=",
+                                                  {
+                                                    "ref": [
+                                                      "E2",
+                                                      "OPENING_DATE"
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              "and",
+                                              {
+                                                "xpr": [
+                                                  {
+                                                    "ref": [
+                                                      "SR",
+                                                      "VALID_TO"
+                                                    ]
+                                                  },
+                                                  "is",
+                                                  "null",
+                                                  "or",
+                                                  {
+                                                    "ref": [
+                                                      "SR",
+                                                      "VALID_TO"
+                                                    ]
+                                                  },
+                                                  ">=",
+                                                  {
+                                                    "ref": [
+                                                      "E2",
+                                                      "OPENING_DATE"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          "columns": [
+                                            {
+                                              "ref": [
+                                                "E2",
+                                                "SEED_RECORD_ID"
+                                              ]
+                                            },
+                                            {
+                                              "xpr": [
+                                                "case",
+                                                "when",
+                                                {
+                                                  "func": "COUNT",
+                                                  "args": [
+                                                    "*"
+                                                  ]
+                                                },
+                                                "=",
+                                                {
+                                                  "val": 1
+                                                },
+                                                "and",
+                                                {
+                                                  "func": "SUM",
+                                                  "args": [
+                                                    {
+                                                      "xpr": [
+                                                        "case",
+                                                        "when",
+                                                        {
+                                                          "ref": [
+                                                            "GL",
+                                                            "ACCOUNT_CLASS"
+                                                          ]
+                                                        },
+                                                        "in",
+                                                        {
+                                                          "list": [
+                                                            {
+                                                              "val": "ASSET"
+                                                            },
+                                                            {
+                                                              "val": "LIABILITY"
+                                                            },
+                                                            {
+                                                              "val": "EQUITY"
+                                                            }
+                                                          ]
+                                                        },
+                                                        "then",
+                                                        {
+                                                          "val": 1
+                                                        },
+                                                        "else",
+                                                        {
+                                                          "val": 0
+                                                        },
+                                                        "end"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "=",
+                                                {
+                                                  "val": 1
+                                                },
+                                                "and",
+                                                {
+                                                  "func": "SUM",
+                                                  "args": [
+                                                    {
+                                                      "xpr": [
+                                                        "case",
+                                                        "when",
+                                                        {
+                                                          "ref": [
+                                                            "SR",
+                                                            "REPORTING_SIGN_FACTOR"
+                                                          ]
+                                                        },
+                                                        "in",
+                                                        {
+                                                          "list": [
+                                                            {
+                                                              "val": 1
+                                                            },
+                                                            {
+                                                              "val": -1
+                                                            }
+                                                          ]
+                                                        },
+                                                        "then",
+                                                        {
+                                                          "val": 1
+                                                        },
+                                                        "else",
+                                                        {
+                                                          "val": 0
+                                                        },
+                                                        "end"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "=",
+                                                {
+                                                  "val": 1
+                                                },
+                                                "then",
+                                                {
+                                                  "func": "MIN",
+                                                  "args": [
+                                                    {
+                                                      "ref": [
+                                                        "GL",
+                                                        "ACCOUNT_CLASS"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "else",
+                                                {
+                                                  "val": null
+                                                },
+                                                "end"
+                                              ],
+                                              "as": "SEED_ACCOUNT_CLASS"
+                                            },
+                                            {
+                                              "xpr": [
+                                                "case",
+                                                "when",
+                                                {
+                                                  "func": "COUNT",
+                                                  "args": [
+                                                    "*"
+                                                  ]
+                                                },
+                                                "=",
+                                                {
+                                                  "val": 1
+                                                },
+                                                "and",
+                                                {
+                                                  "func": "SUM",
+                                                  "args": [
+                                                    {
+                                                      "xpr": [
+                                                        "case",
+                                                        "when",
+                                                        {
+                                                          "ref": [
+                                                            "GL",
+                                                            "ACCOUNT_CLASS"
+                                                          ]
+                                                        },
+                                                        "in",
+                                                        {
+                                                          "list": [
+                                                            {
+                                                              "val": "ASSET"
+                                                            },
+                                                            {
+                                                              "val": "LIABILITY"
+                                                            },
+                                                            {
+                                                              "val": "EQUITY"
+                                                            }
+                                                          ]
+                                                        },
+                                                        "then",
+                                                        {
+                                                          "val": 1
+                                                        },
+                                                        "else",
+                                                        {
+                                                          "val": 0
+                                                        },
+                                                        "end"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "=",
+                                                {
+                                                  "val": 1
+                                                },
+                                                "and",
+                                                {
+                                                  "func": "SUM",
+                                                  "args": [
+                                                    {
+                                                      "xpr": [
+                                                        "case",
+                                                        "when",
+                                                        {
+                                                          "ref": [
+                                                            "SR",
+                                                            "REPORTING_SIGN_FACTOR"
+                                                          ]
+                                                        },
+                                                        "in",
+                                                        {
+                                                          "list": [
+                                                            {
+                                                              "val": 1
+                                                            },
+                                                            {
+                                                              "val": -1
+                                                            }
+                                                          ]
+                                                        },
+                                                        "then",
+                                                        {
+                                                          "val": 1
+                                                        },
+                                                        "else",
+                                                        {
+                                                          "val": 0
+                                                        },
+                                                        "end"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "=",
+                                                {
+                                                  "val": 1
+                                                },
+                                                "then",
+                                                {
+                                                  "func": "MIN",
+                                                  "args": [
+                                                    {
+                                                      "ref": [
+                                                        "SR",
+                                                        "REPORTING_SIGN_FACTOR"
+                                                      ]
+                                                    }
+                                                  ]
+                                                },
+                                                "else",
+                                                {
+                                                  "val": null
+                                                },
+                                                "end"
+                                              ],
+                                              "as": "SEED_REPORTING_SIGN_FACTOR"
+                                            }
+                                          ],
+                                          "groupBy": [
+                                            {
+                                              "ref": [
+                                                "E2",
+                                                "SEED_RECORD_ID"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "as": "MR"
+                                      },
+                                      "columns": [
+                                        {
+                                          "ref": [
+                                            "MR",
+                                            "SEED_RECORD_ID"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "MR",
+                                            "SEED_ACCOUNT_CLASS"
+                                          ]
+                                        },
+                                        {
+                                          "ref": [
+                                            "MR",
+                                            "SEED_REPORTING_SIGN_FACTOR"
+                                          ]
+                                        }
+                                      ],
+                                      "where": [
+                                        {
+                                          "ref": [
+                                            "MR",
+                                            "SEED_ACCOUNT_CLASS"
+                                          ]
+                                        },
+                                        "is",
+                                        "not",
+                                        "null",
+                                        "and",
+                                        {
+                                          "ref": [
+                                            "MR",
+                                            "SEED_REPORTING_SIGN_FACTOR"
+                                          ]
+                                        },
+                                        "is",
+                                        "not",
+                                        "null"
+                                      ]
+                                    },
+                                    "as": "C"
+                                  }
+                                ],
+                                "on": [
+                                  {
+                                    "ref": [
+                                      "C",
+                                      "SEED_RECORD_ID"
+                                    ]
+                                  },
+                                  "=",
+                                  {
+                                    "ref": [
+                                      "E",
+                                      "SEED_RECORD_ID"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "SELECT": {
+                                  "from": {
+                                    "ref": [
+                                      "3GV_DIM_FISCALCALENDAR_01"
+                                    ],
+                                    "as": "CAL"
+                                  },
+                                  "distinct": true,
+                                  "columns": [
+                                    {
+                                      "func": "TO_DATE",
+                                      "args": [
+                                        {
+                                          "ref": [
+                                            "CAL",
+                                            "FiscalPeriodStartDate"
+                                          ]
+                                        },
+                                        {
+                                          "val": "YYYYMMDD"
+                                        }
+                                      ],
+                                      "as": "FISCAL_PERIOD_START_DATE"
+                                    }
+                                  ],
+                                  "where": [
+                                    {
+                                      "ref": [
+                                        "CAL",
+                                        "FiscalYearVariant"
+                                      ]
+                                    },
+                                    "=",
+                                    {
+                                      "val": "V3"
+                                    },
+                                    "and",
+                                    {
+                                      "ref": [
+                                        "CAL",
+                                        "Language"
+                                      ]
+                                    },
+                                    "=",
+                                    {
+                                      "val": "EN"
+                                    }
+                                  ]
+                                },
+                                "as": "VC"
+                              }
+                            ],
+                            "on": [
+                              {
+                                "ref": [
+                                  "VC",
+                                  "FISCAL_PERIOD_START_DATE"
+                                ]
+                              },
+                              "=",
+                              {
+                                "ref": [
+                                  "E",
+                                  "OPENING_DATE"
+                                ]
+                              }
+                            ]
+                          },
+                          "columns": [
+                            {
+                              "ref": [
+                                "E",
+                                "COMPANY_CODE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "GL_ACCOUNT"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "SOURCE_LEDGER"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "SEED_RECORD_ID"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "OPENING_DATE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "OPENING_BALANCE_RAW"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "SEED_MOVEMENT_TREATMENT"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_SOURCE_REFERENCE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_POSTING_DATE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_POSTING_MONTH"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_RECONCILIATION_STATUS"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_RECONCILIATION_REFERENCE"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "E",
+                                "MIGRATION_RECONCILED_TIMESTAMP"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "C",
+                                "SEED_ACCOUNT_CLASS"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "C",
+                                "SEED_REPORTING_SIGN_FACTOR"
+                              ]
+                            }
+                          ],
+                          "where": [
+                            {
+                              "ref": [
+                                "E",
+                                "SOURCE_LEDGER"
+                              ]
+                            },
+                            "=",
+                            {
+                              "val": "0L"
+                            },
+                            "and",
+                            {
+                              "ref": [
+                                "E",
+                                "SEED_MOVEMENT_TREATMENT"
+                              ]
+                            },
+                            "in",
+                            {
+                              "list": [
+                                {
+                                  "val": "EXCLUDE_MIGRATION_POSTING"
+                                },
+                                {
+                                  "val": "NO_MOVEMENT_EXCLUSION_REQUIRED"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "as": "X"
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "X",
+                            "COMPANY_CODE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "X",
+                            "GL_ACCOUNT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "X",
+                            "SOURCE_LEDGER"
+                          ]
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "SEED_RECORD_ID"
+                              ]
+                            }
+                          ],
+                          "as": "VALID_SEED_RECORD_ID"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "OPENING_DATE"
+                              ]
+                            }
+                          ],
+                          "as": "OPENING_DATE"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "OPENING_BALANCE_RAW"
+                              ]
+                            }
+                          ],
+                          "as": "OPENING_BALANCE_RAW"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "SEED_MOVEMENT_TREATMENT"
+                              ]
+                            }
+                          ],
+                          "as": "SEED_MOVEMENT_TREATMENT"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_SOURCE_REFERENCE"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_SOURCE_REFERENCE"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_POSTING_DATE"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_POSTING_DATE"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_POSTING_MONTH"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_POSTING_MONTH"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_RECONCILIATION_STATUS"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_RECONCILIATION_STATUS"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_RECONCILIATION_REFERENCE"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_RECONCILIATION_REFERENCE"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "MIGRATION_RECONCILED_TIMESTAMP"
+                              ]
+                            }
+                          ],
+                          "as": "MIGRATION_RECONCILED_TIMESTAMP"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "SEED_ACCOUNT_CLASS"
+                              ]
+                            }
+                          ],
+                          "as": "SEED_ACCOUNT_CLASS"
+                        },
+                        {
+                          "func": "MIN",
+                          "args": [
+                            {
+                              "ref": [
+                                "X",
+                                "SEED_REPORTING_SIGN_FACTOR"
+                              ]
+                            }
+                          ],
+                          "as": "SEED_REPORTING_SIGN_FACTOR"
+                        },
+                        {
+                          "func": "COUNT",
+                          "args": [
+                            "*"
+                          ],
+                          "as": "VALID_RECORD_COUNT"
+                        }
+                      ],
+                      "groupBy": [
+                        {
+                          "ref": [
+                            "X",
+                            "COMPANY_CODE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "X",
+                            "GL_ACCOUNT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "X",
+                            "SOURCE_LEDGER"
+                          ]
+                        }
+                      ]
+                    },
+                    "as": "VR"
+                  }
+                ],
+                "on": [
+                  {
+                    "ref": [
+                      "VR",
+                      "COMPANY_CODE"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "D",
+                      "COMPANY_CODE"
+                    ]
+                  },
+                  "and",
+                  {
+                    "ref": [
+                      "VR",
+                      "GL_ACCOUNT"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "D",
+                      "GL_ACCOUNT"
+                    ]
+                  },
+                  "and",
+                  {
+                    "ref": [
+                      "VR",
+                      "SOURCE_LEDGER"
+                    ]
+                  },
+                  "=",
+                  {
+                    "ref": [
+                      "D",
+                      "SOURCE_LEDGER"
+                    ]
+                  }
+                ]
+              },
+              "columns": [
+                {
+                  "ref": [
+                    "D",
+                    "COMPANY_CODE"
+                  ]
+                },
+                {
+                  "ref": [
+                    "D",
+                    "GL_ACCOUNT"
+                  ]
+                },
+                {
+                  "ref": [
+                    "D",
+                    "SOURCE_LEDGER"
+                  ]
+                },
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "AC",
+                        "SEED_ROW_COUNT"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "as": "SEED_ROW_COUNT"
+                },
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "AC",
+                        "ACTIVE_EFFECTIVE_ROW_COUNT"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "as": "ACTIVE_EFFECTIVE_ROW_COUNT"
+                },
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "EC",
+                        "VALID_LEDGER_COUNT"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "as": "VALID_LEDGER_COUNT"
+                },
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "EC",
+                        "VALID_TREATMENT_COUNT"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "as": "VALID_TREATMENT_COUNT"
+                },
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "EC",
+                        "VALID_V3_START_COUNT"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "as": "VALID_V3_START_COUNT"
+                },
+                {
+                  "func": "COALESCE",
+                  "args": [
+                    {
+                      "ref": [
+                        "VR",
+                        "VALID_RECORD_COUNT"
+                      ]
+                    },
+                    {
+                      "val": 0
+                    }
+                  ],
+                  "as": "VALID_RECORD_COUNT"
+                },
+                {
+                  "xpr": [
+                    "case",
+                    "when",
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "AC",
+                            "ACTIVE_EFFECTIVE_ROW_COUNT"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": 1
+                    },
+                    "and",
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "EC",
+                            "VALID_LEDGER_COUNT"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": 1
+                    },
+                    "and",
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "EC",
+                            "VALID_TREATMENT_COUNT"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": 1
+                    },
+                    "and",
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "EC",
+                            "VALID_V3_START_COUNT"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": 1
+                    },
+                    "and",
+                    {
+                      "func": "COALESCE",
+                      "args": [
+                        {
+                          "ref": [
+                            "VR",
+                            "VALID_RECORD_COUNT"
+                          ]
+                        },
+                        {
+                          "val": 0
+                        }
+                      ]
+                    },
+                    "=",
+                    {
+                      "val": 1
+                    },
+                    "then",
+                    {
+                      "val": 1
+                    },
+                    "else",
+                    {
+                      "val": 0
+                    },
+                    "end"
+                  ],
+                  "as": "IS_VALID_SEED"
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "VALID_SEED_RECORD_ID"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "OPENING_DATE"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "OPENING_BALANCE_RAW"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "SEED_MOVEMENT_TREATMENT"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_SOURCE_REFERENCE"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_POSTING_DATE"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_POSTING_MONTH"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_RECONCILIATION_STATUS"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_RECONCILIATION_REFERENCE"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "MIGRATION_RECONCILED_TIMESTAMP"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "SEED_ACCOUNT_CLASS"
+                  ]
+                },
+                {
+                  "ref": [
+                    "VR",
+                    "SEED_REPORTING_SIGN_FACTOR"
+                  ]
+                }
+              ]
+            },
+            "as": "Q"
+          },
+          "columns": [
+            {
+              "ref": [
+                "Q",
+                "COMPANY_CODE"
+              ],
+              "as": "D_XPA_COMPANY_CODE_ID"
+            },
+            {
+              "ref": [
+                "Q",
+                "GL_ACCOUNT"
+              ],
+              "as": "D_XPA_GL_ACCOUNT_ID"
+            },
+            {
+              "ref": [
+                "Q",
+                "SOURCE_LEDGER"
+              ],
+              "as": "SOURCE_LEDGER"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_ROW_COUNT"
+                  ]
+                },
+                "=",
+                {
+                  "val": 0
+                },
+                "then",
+                {
+                  "val": "SEED_PENDING_MIGRATED_S4"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "SEED_AVAILABLE"
+                },
+                "else",
+                {
+                  "val": "INVALID_OR_DUPLICATE_SEED"
+                },
+                "end"
+              ],
+              "as": "OPENING_SEED_STATUS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "VALID_SEED_RECORD_ID"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "VALID_SEED_RECORD_ID"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "OPENING_DATE"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "OPENING_DATE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "OPENING_BALANCE_RAW"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "OPENING_BALANCE_RAW"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_MOVEMENT_TREATMENT"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "SEED_MOVEMENT_TREATMENT"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_SOURCE_REFERENCE"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_SOURCE_REFERENCE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_POSTING_DATE"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_POSTING_DATE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_POSTING_MONTH"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_POSTING_MONTH"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_RECONCILIATION_STATUS"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_RECONCILIATION_STATUS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_RECONCILIATION_REFERENCE"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_RECONCILIATION_REFERENCE"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_RECONCILED_TIMESTAMP"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "MIGRATION_RECONCILED_TIMESTAMP"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 0
+                },
+                "then",
+                {
+                  "val": "NOT_REQUIRED"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_MOVEMENT_TREATMENT"
+                  ]
+                },
+                "=",
+                {
+                  "val": "NO_MOVEMENT_EXCLUSION_REQUIRED"
+                },
+                "then",
+                {
+                  "val": "NOT_REQUIRED"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_MOVEMENT_TREATMENT"
+                  ]
+                },
+                "=",
+                {
+                  "val": "EXCLUDE_MIGRATION_POSTING"
+                },
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_SOURCE_REFERENCE"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_POSTING_DATE"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_POSTING_MONTH"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "func": "TO_NVARCHAR",
+                  "args": [
+                    {
+                      "ref": [
+                        "Q",
+                        "MIGRATION_POSTING_DATE"
+                      ]
+                    },
+                    {
+                      "val": "YYYYMM"
+                    }
+                  ]
+                },
+                "=",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_POSTING_MONTH"
+                  ]
+                },
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_RECONCILIATION_STATUS"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "=",
+                {
+                  "val": "RECONCILED"
+                },
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_RECONCILIATION_REFERENCE"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_RECONCILED_TIMESTAMP"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "then",
+                {
+                  "val": "RECONCILED"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_MOVEMENT_TREATMENT"
+                  ]
+                },
+                "=",
+                {
+                  "val": "EXCLUDE_MIGRATION_POSTING"
+                },
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_SOURCE_REFERENCE"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_POSTING_DATE"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_POSTING_MONTH"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "func": "TO_NVARCHAR",
+                  "args": [
+                    {
+                      "ref": [
+                        "Q",
+                        "MIGRATION_POSTING_DATE"
+                      ]
+                    },
+                    {
+                      "val": "YYYYMM"
+                    }
+                  ]
+                },
+                "=",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_POSTING_MONTH"
+                  ]
+                },
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_MOVEMENT_EXCLUSION_RAW"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "ref": [
+                    "Q",
+                    "MIGRATION_MOVEMENT_EXCLUSION_SIGNED"
+                  ]
+                },
+                "is",
+                "not",
+                "null",
+                "and",
+                {
+                  "func": "NULLIF",
+                  "args": [
+                    {
+                      "func": "TRIM",
+                      "args": [
+                        {
+                          "ref": [
+                            "Q",
+                            "MIGRATION_RECONCILIATION_STATUS"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "val": ""
+                    }
+                  ]
+                },
+                "=",
+                {
+                  "val": "PENDING"
+                },
+                "then",
+                {
+                  "val": "PENDING_RECONCILIATION"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_MOVEMENT_TREATMENT"
+                  ]
+                },
+                "=",
+                {
+                  "val": "EXCLUDE_MIGRATION_POSTING"
+                },
+                "then",
+                {
+                  "val": "INVALID_EXCLUSION"
+                },
+                "else",
+                {
+                  "val": "NOT_REQUIRED"
+                },
+                "end"
+              ],
+              "as": "MIGRATION_EXCLUSION_STATUS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_ACCOUNT_CLASS"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "SEED_ACCOUNT_CLASS"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_REPORTING_SIGN_FACTOR"
+                  ]
+                },
+                "else",
+                {
+                  "val": null
+                },
+                "end"
+              ],
+              "as": "SEED_REPORTING_SIGN_FACTOR"
+            },
+            {
+              "ref": [
+                "Q",
+                "SEED_ROW_COUNT"
+              ],
+              "as": "DIAG_SEED_ROW_COUNT"
+            },
+            {
+              "ref": [
+                "Q",
+                "ACTIVE_EFFECTIVE_ROW_COUNT"
+              ],
+              "as": "DIAG_ACTIVE_EFFECTIVE_ROW_COUNT"
+            },
+            {
+              "ref": [
+                "Q",
+                "VALID_LEDGER_COUNT"
+              ],
+              "as": "DIAG_VALID_LEDGER_COUNT"
+            },
+            {
+              "ref": [
+                "Q",
+                "VALID_TREATMENT_COUNT"
+              ],
+              "as": "DIAG_VALID_TREATMENT_COUNT"
+            },
+            {
+              "ref": [
+                "Q",
+                "VALID_V3_START_COUNT"
+              ],
+              "as": "DIAG_VALID_V3_START_COUNT"
+            },
+            {
+              "ref": [
+                "Q",
+                "VALID_RECORD_COUNT"
+              ],
+              "as": "DIAG_VALID_RECORD_COUNT"
+            },
+            {
+              "xpr": [
+                "case",
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "IS_VALID_SEED"
+                  ]
+                },
+                "=",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "VALID"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "SEED_ROW_COUNT"
+                  ]
+                },
+                "=",
+                {
+                  "val": 0
+                },
+                "then",
+                {
+                  "val": "NO_SEED_ROWS"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "ACTIVE_EFFECTIVE_ROW_COUNT"
+                  ]
+                },
+                "=",
+                {
+                  "val": 0
+                },
+                "then",
+                {
+                  "val": "NO_ACTIVE_EFFECTIVE_ROW"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "ACTIVE_EFFECTIVE_ROW_COUNT"
+                  ]
+                },
+                ">",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "DUPLICATE_ACTIVE_EFFECTIVE_ROWS"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "VALID_LEDGER_COUNT"
+                  ]
+                },
+                "<>",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "NON_0L_LEDGER"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "VALID_TREATMENT_COUNT"
+                  ]
+                },
+                "<>",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "INVALID_MOVEMENT_TREATMENT"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "VALID_V3_START_COUNT"
+                  ]
+                },
+                "<>",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "OPENING_DATE_NOT_V3_PERIOD_START"
+                },
+                "when",
+                {
+                  "ref": [
+                    "Q",
+                    "VALID_RECORD_COUNT"
+                  ]
+                },
+                "<>",
+                {
+                  "val": 1
+                },
+                "then",
+                {
+                  "val": "ACCOUNT_CLASS_OR_SIGN_RULE_UNRESOLVED"
+                },
+                "else",
+                {
+                  "val": "UNCLASSIFIED_INVALID"
+                },
+                "end"
+              ],
+              "as": "DIAG_SEED_VALIDATION_REASON"
+            }
+          ]
+        }
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@EndUserText.label": "3SV_FIN_CORE_ACTUALS_BS_SEED_ENRICHED_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@DataWarehouse.consumption.external": false,
+      "@DataWarehouse.sqlEditor.query": "SELECT\r\n    Q.\"COMPANY_CODE\"  AS \"D_XPA_COMPANY_CODE_ID\",\r\n    Q.\"GL_ACCOUNT\"    AS \"D_XPA_GL_ACCOUNT_ID\",\r\n    Q.\"SOURCE_LEDGER\" AS \"SOURCE_LEDGER\",\r\n\r\n    CASE\r\n        WHEN Q.\"SEED_ROW_COUNT\" = 0 THEN 'SEED_PENDING_MIGRATED_S4'\r\n        WHEN Q.\"IS_VALID_SEED\"  = 1 THEN 'SEED_AVAILABLE'\r\n        ELSE 'INVALID_OR_DUPLICATE_SEED'\r\n    END AS \"OPENING_SEED_STATUS\",\r\n\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"VALID_SEED_RECORD_ID\"                ELSE NULL END AS \"VALID_SEED_RECORD_ID\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"OPENING_DATE\"                        ELSE NULL END AS \"OPENING_DATE\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"OPENING_BALANCE_RAW\"                 ELSE NULL END AS \"OPENING_BALANCE_RAW\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"SEED_MOVEMENT_TREATMENT\"             ELSE NULL END AS \"SEED_MOVEMENT_TREATMENT\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_SOURCE_REFERENCE\"          ELSE NULL END AS \"MIGRATION_SOURCE_REFERENCE\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_POSTING_DATE\"              ELSE NULL END AS \"MIGRATION_POSTING_DATE\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_POSTING_MONTH\"             ELSE NULL END AS \"MIGRATION_POSTING_MONTH\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\"    ELSE NULL END AS \"MIGRATION_MOVEMENT_EXCLUSION_RAW\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\" ELSE NULL END AS \"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_RECONCILIATION_STATUS\"     ELSE NULL END AS \"MIGRATION_RECONCILIATION_STATUS\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_RECONCILIATION_REFERENCE\"  ELSE NULL END AS \"MIGRATION_RECONCILIATION_REFERENCE\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"MIGRATION_RECONCILED_TIMESTAMP\"      ELSE NULL END AS \"MIGRATION_RECONCILED_TIMESTAMP\",\r\n\r\n    /* Migration-exclusion classification (logic unchanged).\r\n       DATA CONTRACT: MIGRATION_POSTING_MONTH is a 'YYYYMM' string. */\r\n    CASE\r\n        WHEN Q.\"IS_VALID_SEED\" = 0\r\n            THEN 'NOT_REQUIRED'\r\n\r\n        WHEN Q.\"SEED_MOVEMENT_TREATMENT\" = 'NO_MOVEMENT_EXCLUSION_REQUIRED'\r\n            THEN 'NOT_REQUIRED'\r\n\r\n        WHEN Q.\"SEED_MOVEMENT_TREATMENT\" = 'EXCLUDE_MIGRATION_POSTING'\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_SOURCE_REFERENCE\"), '') IS NOT NULL\r\n         AND Q.\"MIGRATION_POSTING_DATE\" IS NOT NULL\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_POSTING_MONTH\"), '') IS NOT NULL\r\n         AND TO_NVARCHAR(Q.\"MIGRATION_POSTING_DATE\", 'YYYYMM') = Q.\"MIGRATION_POSTING_MONTH\"\r\n         AND Q.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\" IS NOT NULL\r\n         AND Q.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\" IS NOT NULL\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_RECONCILIATION_STATUS\"), '') = 'RECONCILED'\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_RECONCILIATION_REFERENCE\"), '') IS NOT NULL\r\n         AND Q.\"MIGRATION_RECONCILED_TIMESTAMP\" IS NOT NULL\r\n            THEN 'RECONCILED'\r\n\r\n        WHEN Q.\"SEED_MOVEMENT_TREATMENT\" = 'EXCLUDE_MIGRATION_POSTING'\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_SOURCE_REFERENCE\"), '') IS NOT NULL\r\n         AND Q.\"MIGRATION_POSTING_DATE\" IS NOT NULL\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_POSTING_MONTH\"), '') IS NOT NULL\r\n         AND TO_NVARCHAR(Q.\"MIGRATION_POSTING_DATE\", 'YYYYMM') = Q.\"MIGRATION_POSTING_MONTH\"\r\n         AND Q.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\" IS NOT NULL\r\n         AND Q.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\" IS NOT NULL\r\n         AND NULLIF(TRIM(Q.\"MIGRATION_RECONCILIATION_STATUS\"), '') = 'PENDING'\r\n            THEN 'PENDING_RECONCILIATION'\r\n\r\n        WHEN Q.\"SEED_MOVEMENT_TREATMENT\" = 'EXCLUDE_MIGRATION_POSTING'\r\n            THEN 'INVALID_EXCLUSION'\r\n\r\n        ELSE 'NOT_REQUIRED'\r\n    END AS \"MIGRATION_EXCLUSION_STATUS\",\r\n\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"SEED_ACCOUNT_CLASS\"         ELSE NULL END AS \"SEED_ACCOUNT_CLASS\",\r\n    CASE WHEN Q.\"IS_VALID_SEED\" = 1 THEN Q.\"SEED_REPORTING_SIGN_FACTOR\" ELSE NULL END AS \"SEED_REPORTING_SIGN_FACTOR\",\r\n\r\n    /* ===== OPTIONAL DIAGNOSTICS ÔÇö delete this block (and the comma\r\n       above) to keep the original output signature unchanged. ===== */\r\n    Q.\"SEED_ROW_COUNT\"             AS \"DIAG_SEED_ROW_COUNT\",\r\n    Q.\"ACTIVE_EFFECTIVE_ROW_COUNT\" AS \"DIAG_ACTIVE_EFFECTIVE_ROW_COUNT\",\r\n    Q.\"VALID_LEDGER_COUNT\"         AS \"DIAG_VALID_LEDGER_COUNT\",\r\n    Q.\"VALID_TREATMENT_COUNT\"      AS \"DIAG_VALID_TREATMENT_COUNT\",\r\n    Q.\"VALID_V3_START_COUNT\"       AS \"DIAG_VALID_V3_START_COUNT\",\r\n    Q.\"VALID_RECORD_COUNT\"         AS \"DIAG_VALID_RECORD_COUNT\",\r\n    CASE\r\n        WHEN Q.\"IS_VALID_SEED\" = 1              THEN 'VALID'\r\n        WHEN Q.\"SEED_ROW_COUNT\" = 0             THEN 'NO_SEED_ROWS'\r\n        WHEN Q.\"ACTIVE_EFFECTIVE_ROW_COUNT\" = 0 THEN 'NO_ACTIVE_EFFECTIVE_ROW'\r\n        WHEN Q.\"ACTIVE_EFFECTIVE_ROW_COUNT\" > 1 THEN 'DUPLICATE_ACTIVE_EFFECTIVE_ROWS'\r\n        WHEN Q.\"VALID_LEDGER_COUNT\" <> 1        THEN 'NON_0L_LEDGER'\r\n        WHEN Q.\"VALID_TREATMENT_COUNT\" <> 1     THEN 'INVALID_MOVEMENT_TREATMENT'\r\n        WHEN Q.\"VALID_V3_START_COUNT\" <> 1      THEN 'OPENING_DATE_NOT_V3_PERIOD_START'\r\n        WHEN Q.\"VALID_RECORD_COUNT\" <> 1        THEN 'ACCOUNT_CLASS_OR_SIGN_RULE_UNRESOLVED'\r\n        ELSE 'UNCLASSIFIED_INVALID'\r\n    END AS \"DIAG_SEED_VALIDATION_REASON\"\r\n    /* ===== end optional diagnostics block ===== */\r\n\r\nFROM (\r\n    /* QUALIFIED: validity gate computed EXACTLY ONCE. */\r\n    SELECT\r\n        D.\"COMPANY_CODE\",\r\n        D.\"GL_ACCOUNT\",\r\n        D.\"SOURCE_LEDGER\",\r\n        COALESCE(AC.\"SEED_ROW_COUNT\", 0)             AS \"SEED_ROW_COUNT\",\r\n        COALESCE(AC.\"ACTIVE_EFFECTIVE_ROW_COUNT\", 0) AS \"ACTIVE_EFFECTIVE_ROW_COUNT\",\r\n        COALESCE(EC.\"VALID_LEDGER_COUNT\", 0)         AS \"VALID_LEDGER_COUNT\",\r\n        COALESCE(EC.\"VALID_TREATMENT_COUNT\", 0)      AS \"VALID_TREATMENT_COUNT\",\r\n        COALESCE(EC.\"VALID_V3_START_COUNT\", 0)       AS \"VALID_V3_START_COUNT\",\r\n        COALESCE(VR.\"VALID_RECORD_COUNT\", 0)         AS \"VALID_RECORD_COUNT\",\r\n        CASE\r\n            WHEN COALESCE(AC.\"ACTIVE_EFFECTIVE_ROW_COUNT\", 0) = 1\r\n             AND COALESCE(EC.\"VALID_LEDGER_COUNT\", 0)         = 1\r\n             AND COALESCE(EC.\"VALID_TREATMENT_COUNT\", 0)      = 1\r\n             AND COALESCE(EC.\"VALID_V3_START_COUNT\", 0)       = 1\r\n             AND COALESCE(VR.\"VALID_RECORD_COUNT\", 0)         = 1\r\n                THEN 1\r\n            ELSE 0\r\n        END AS \"IS_VALID_SEED\",\r\n        VR.\"VALID_SEED_RECORD_ID\",\r\n        VR.\"OPENING_DATE\",\r\n        VR.\"OPENING_BALANCE_RAW\",\r\n        VR.\"SEED_MOVEMENT_TREATMENT\",\r\n        VR.\"MIGRATION_SOURCE_REFERENCE\",\r\n        VR.\"MIGRATION_POSTING_DATE\",\r\n        VR.\"MIGRATION_POSTING_MONTH\",\r\n        VR.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\",\r\n        VR.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\",\r\n        VR.\"MIGRATION_RECONCILIATION_STATUS\",\r\n        VR.\"MIGRATION_RECONCILIATION_REFERENCE\",\r\n        VR.\"MIGRATION_RECONCILED_TIMESTAMP\",\r\n        VR.\"SEED_ACCOUNT_CLASS\",\r\n        VR.\"SEED_REPORTING_SIGN_FACTOR\"\r\n\r\n    FROM (\r\n        /* Driver key set. UNION already de-duplicates.\r\n           NOTE (open design point): non-0L actuals keys can never reach\r\n           SEED_AVAILABLE ÔÇö add SOURCE_LEDGER = '0L' filters here if only\r\n           0L is in scope for the opening seed. */\r\n        SELECT\r\n            S.\"COMPANY_CODE\",\r\n            S.\"GL_ACCOUNT\",\r\n            S.\"SOURCE_LEDGER\"\r\n        FROM \"MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01\" S\r\n\r\n        UNION\r\n\r\n        SELECT\r\n            A.\"D_XPA_COMPANY_CODE_ID\" AS \"COMPANY_CODE\",\r\n            A.\"D_XPA_GL_ACCOUNT_ID\"   AS \"GL_ACCOUNT\",\r\n            A.\"SOURCE_LEDGER\"\r\n        FROM \"3SV_FIN_CORE_ACTUALS_BS_MONTHLY_01\" A\r\n    ) D\r\n\r\n    LEFT JOIN (\r\n        /* AC: total and active-effective seed row counts per key. */\r\n        SELECT\r\n            S.\"COMPANY_CODE\",\r\n            S.\"GL_ACCOUNT\",\r\n            S.\"SOURCE_LEDGER\",\r\n            COUNT(*) AS \"SEED_ROW_COUNT\",\r\n            SUM(\r\n                CASE\r\n                    WHEN S.\"IS_ACTIVE\" = TRUE\r\n                     AND S.\"OPENING_DATE\" IS NOT NULL\r\n                     AND (S.\"VALID_FROM\" IS NULL OR S.\"VALID_FROM\" <= S.\"OPENING_DATE\")\r\n                     AND (S.\"VALID_TO\"   IS NULL OR S.\"VALID_TO\"   >= S.\"OPENING_DATE\")\r\n                        THEN 1\r\n                    ELSE 0\r\n                END\r\n            ) AS \"ACTIVE_EFFECTIVE_ROW_COUNT\"\r\n        FROM \"MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01\" S\r\n        GROUP BY\r\n            S.\"COMPANY_CODE\",\r\n            S.\"GL_ACCOUNT\",\r\n            S.\"SOURCE_LEDGER\"\r\n    ) AC\r\n        ON  AC.\"COMPANY_CODE\"  = D.\"COMPANY_CODE\"\r\n        AND AC.\"GL_ACCOUNT\"    = D.\"GL_ACCOUNT\"\r\n        AND AC.\"SOURCE_LEDGER\" = D.\"SOURCE_LEDGER\"\r\n\r\n    LEFT JOIN (\r\n        /* EC: eligibility counts over active-effective rows. */\r\n        SELECT\r\n            E.\"COMPANY_CODE\",\r\n            E.\"GL_ACCOUNT\",\r\n            E.\"SOURCE_LEDGER\",\r\n            SUM(CASE WHEN E.\"SOURCE_LEDGER\" = '0L' THEN 1 ELSE 0 END) AS \"VALID_LEDGER_COUNT\",\r\n            SUM(CASE WHEN E.\"SEED_MOVEMENT_TREATMENT\" IN ('EXCLUDE_MIGRATION_POSTING', 'NO_MOVEMENT_EXCLUSION_REQUIRED')\r\n                     THEN 1 ELSE 0 END) AS \"VALID_TREATMENT_COUNT\",\r\n            SUM(CASE WHEN VC.\"FISCAL_PERIOD_START_DATE\" IS NOT NULL THEN 1 ELSE 0 END) AS \"VALID_V3_START_COUNT\"\r\n        FROM (\r\n            SELECT\r\n                S.\"COMPANY_CODE\",\r\n                S.\"GL_ACCOUNT\",\r\n                S.\"SOURCE_LEDGER\",\r\n                S.\"OPENING_DATE\",\r\n                S.\"SEED_MOVEMENT_TREATMENT\"\r\n            FROM \"MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01\" S\r\n            WHERE S.\"IS_ACTIVE\" = TRUE\r\n              AND S.\"OPENING_DATE\" IS NOT NULL\r\n              AND (S.\"VALID_FROM\" IS NULL OR S.\"VALID_FROM\" <= S.\"OPENING_DATE\")\r\n              AND (S.\"VALID_TO\"   IS NULL OR S.\"VALID_TO\"   >= S.\"OPENING_DATE\")\r\n        ) E\r\n        LEFT JOIN (\r\n            SELECT DISTINCT\r\n                TO_DATE(CAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\"\r\n            FROM \"3GV_DIM_FISCALCALENDAR_01\" CAL\r\n            WHERE CAL.\"FiscalYearVariant\" = 'V3'\r\n              AND CAL.\"Language\"          = 'EN'\r\n        ) VC\r\n            ON VC.\"FISCAL_PERIOD_START_DATE\" = E.\"OPENING_DATE\"\r\n        GROUP BY\r\n            E.\"COMPANY_CODE\",\r\n            E.\"GL_ACCOUNT\",\r\n            E.\"SOURCE_LEDGER\"\r\n    ) EC\r\n        ON  EC.\"COMPANY_CODE\"  = D.\"COMPANY_CODE\"\r\n        AND EC.\"GL_ACCOUNT\"    = D.\"GL_ACCOUNT\"\r\n        AND EC.\"SOURCE_LEDGER\" = D.\"SOURCE_LEDGER\"\r\n\r\n    LEFT JOIN (\r\n        /* VR: fully qualified candidate seed records per key.\r\n           INVARIANT: MIN() is only safe because the outer gate enforces\r\n           VALID_RECORD_COUNT = 1. Do not relax that gate without\r\n           replacing MIN() with an explicit single-record pick. */\r\n        SELECT\r\n            X.\"COMPANY_CODE\",\r\n            X.\"GL_ACCOUNT\",\r\n            X.\"SOURCE_LEDGER\",\r\n            MIN(X.\"SEED_RECORD_ID\")                      AS \"VALID_SEED_RECORD_ID\",\r\n            MIN(X.\"OPENING_DATE\")                        AS \"OPENING_DATE\",\r\n            MIN(X.\"OPENING_BALANCE_RAW\")                 AS \"OPENING_BALANCE_RAW\",\r\n            MIN(X.\"SEED_MOVEMENT_TREATMENT\")             AS \"SEED_MOVEMENT_TREATMENT\",\r\n            MIN(X.\"MIGRATION_SOURCE_REFERENCE\")          AS \"MIGRATION_SOURCE_REFERENCE\",\r\n            MIN(X.\"MIGRATION_POSTING_DATE\")              AS \"MIGRATION_POSTING_DATE\",\r\n            MIN(X.\"MIGRATION_POSTING_MONTH\")             AS \"MIGRATION_POSTING_MONTH\",\r\n            MIN(X.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\")    AS \"MIGRATION_MOVEMENT_EXCLUSION_RAW\",\r\n            MIN(X.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\") AS \"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\",\r\n            MIN(X.\"MIGRATION_RECONCILIATION_STATUS\")     AS \"MIGRATION_RECONCILIATION_STATUS\",\r\n            MIN(X.\"MIGRATION_RECONCILIATION_REFERENCE\")  AS \"MIGRATION_RECONCILIATION_REFERENCE\",\r\n            MIN(X.\"MIGRATION_RECONCILED_TIMESTAMP\")      AS \"MIGRATION_RECONCILED_TIMESTAMP\",\r\n            MIN(X.\"SEED_ACCOUNT_CLASS\")                  AS \"SEED_ACCOUNT_CLASS\",\r\n            MIN(X.\"SEED_REPORTING_SIGN_FACTOR\")          AS \"SEED_REPORTING_SIGN_FACTOR\",\r\n            COUNT(*)                                     AS \"VALID_RECORD_COUNT\"\r\n        FROM (\r\n            SELECT\r\n                E.\"COMPANY_CODE\",\r\n                E.\"GL_ACCOUNT\",\r\n                E.\"SOURCE_LEDGER\",\r\n                E.\"SEED_RECORD_ID\",\r\n                E.\"OPENING_DATE\",\r\n                E.\"OPENING_BALANCE_RAW\",\r\n                E.\"SEED_MOVEMENT_TREATMENT\",\r\n                E.\"MIGRATION_SOURCE_REFERENCE\",\r\n                E.\"MIGRATION_POSTING_DATE\",\r\n                E.\"MIGRATION_POSTING_MONTH\",\r\n                E.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\",\r\n                E.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\",\r\n                E.\"MIGRATION_RECONCILIATION_STATUS\",\r\n                E.\"MIGRATION_RECONCILIATION_REFERENCE\",\r\n                E.\"MIGRATION_RECONCILED_TIMESTAMP\",\r\n                C.\"SEED_ACCOUNT_CLASS\",\r\n                C.\"SEED_REPORTING_SIGN_FACTOR\"\r\n            FROM (\r\n                SELECT\r\n                    S.\"SEED_RECORD_ID\",\r\n                    S.\"COMPANY_CODE\",\r\n                    S.\"GL_ACCOUNT\",\r\n                    S.\"SOURCE_LEDGER\",\r\n                    S.\"OPENING_DATE\",\r\n                    S.\"OPENING_BALANCE_RAW\",\r\n                    S.\"SEED_MOVEMENT_TREATMENT\",\r\n                    S.\"MIGRATION_SOURCE_REFERENCE\",\r\n                    S.\"MIGRATION_POSTING_DATE\",\r\n                    S.\"MIGRATION_POSTING_MONTH\",\r\n                    S.\"MIGRATION_MOVEMENT_EXCLUSION_RAW\",\r\n                    S.\"MIGRATION_MOVEMENT_EXCLUSION_SIGNED\",\r\n                    S.\"MIGRATION_RECONCILIATION_STATUS\",\r\n                    S.\"MIGRATION_RECONCILIATION_REFERENCE\",\r\n                    S.\"MIGRATION_RECONCILED_TIMESTAMP\"\r\n                FROM \"MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01\" S\r\n                WHERE S.\"IS_ACTIVE\" = TRUE\r\n                  AND S.\"OPENING_DATE\" IS NOT NULL\r\n                  AND (S.\"VALID_FROM\" IS NULL OR S.\"VALID_FROM\" <= S.\"OPENING_DATE\")\r\n                  AND (S.\"VALID_TO\"   IS NULL OR S.\"VALID_TO\"   >= S.\"OPENING_DATE\")\r\n            ) E\r\n\r\n            INNER JOIN (\r\n                /* Account class + sign factor per seed record: valid only\r\n                   where exactly ONE unambiguous effective-dated mapping\r\n                   resolves to a BS class AND a sign factor of 1 / -1. */\r\n                SELECT\r\n                    MR.\"SEED_RECORD_ID\",\r\n                    MR.\"SEED_ACCOUNT_CLASS\",\r\n                    MR.\"SEED_REPORTING_SIGN_FACTOR\"\r\n                FROM (\r\n                    SELECT\r\n                        E2.\"SEED_RECORD_ID\",\r\n                        CASE\r\n                            WHEN COUNT(*) = 1\r\n                             AND SUM(CASE WHEN GL.\"ACCOUNT_CLASS\" IN ('ASSET', 'LIABILITY', 'EQUITY') THEN 1 ELSE 0 END) = 1\r\n                             AND SUM(CASE WHEN SR.\"REPORTING_SIGN_FACTOR\" IN (1, -1) THEN 1 ELSE 0 END) = 1\r\n                                THEN MIN(GL.\"ACCOUNT_CLASS\")\r\n                            ELSE NULL\r\n                        END AS \"SEED_ACCOUNT_CLASS\",\r\n                        CASE\r\n                            WHEN COUNT(*) = 1\r\n                             AND SUM(CASE WHEN GL.\"ACCOUNT_CLASS\" IN ('ASSET', 'LIABILITY', 'EQUITY') THEN 1 ELSE 0 END) = 1\r\n                             AND SUM(CASE WHEN SR.\"REPORTING_SIGN_FACTOR\" IN (1, -1) THEN 1 ELSE 0 END) = 1\r\n                                THEN MIN(SR.\"REPORTING_SIGN_FACTOR\")\r\n                            ELSE NULL\r\n                        END AS \"SEED_REPORTING_SIGN_FACTOR\"\r\n                    FROM (\r\n                        SELECT\r\n                            S.\"SEED_RECORD_ID\",\r\n                            S.\"GL_ACCOUNT\",\r\n                            S.\"OPENING_DATE\"\r\n                        FROM \"MODELLING.2LT_FIN_BS_OPENING_SEED_S4_01\" S\r\n                        WHERE S.\"IS_ACTIVE\" = TRUE\r\n                          AND S.\"OPENING_DATE\" IS NOT NULL\r\n                          AND (S.\"VALID_FROM\" IS NULL OR S.\"VALID_FROM\" <= S.\"OPENING_DATE\")\r\n                          AND (S.\"VALID_TO\"   IS NULL OR S.\"VALID_TO\"   >= S.\"OPENING_DATE\")\r\n                    ) E2\r\n\r\n                    LEFT JOIN \"MODELLING.2LT_CTRL_FIN_GL_ACCOUNT_CLASS_01\" GL\r\n                        ON GL.\"GL_ACCOUNT_ID\" = E2.\"GL_ACCOUNT\"\r\n                       AND GL.\"IS_ACTIVE\" = TRUE\r\n                       AND (GL.\"VALID_FROM\" IS NULL OR GL.\"VALID_FROM\" <= E2.\"OPENING_DATE\")\r\n                       AND (GL.\"VALID_TO\"   IS NULL OR GL.\"VALID_TO\"   >= E2.\"OPENING_DATE\")\r\n\r\n                    LEFT JOIN \"MODELLING.2LT_CTRL_FIN_ACCOUNT_CLASS_SIGN_RULE_01\" SR\r\n                        ON SR.\"ACCOUNT_CLASS\" = GL.\"ACCOUNT_CLASS\"\r\n                       AND SR.\"IS_ACTIVE\" = TRUE\r\n                       AND (SR.\"VALID_FROM\" IS NULL OR SR.\"VALID_FROM\" <= E2.\"OPENING_DATE\")\r\n                       AND (SR.\"VALID_TO\"   IS NULL OR SR.\"VALID_TO\"   >= E2.\"OPENING_DATE\")\r\n\r\n                    GROUP BY\r\n                        E2.\"SEED_RECORD_ID\"\r\n                ) MR\r\n                WHERE MR.\"SEED_ACCOUNT_CLASS\"         IS NOT NULL\r\n                  AND MR.\"SEED_REPORTING_SIGN_FACTOR\" IS NOT NULL\r\n            ) C\r\n                ON C.\"SEED_RECORD_ID\" = E.\"SEED_RECORD_ID\"\r\n\r\n            INNER JOIN (\r\n                SELECT DISTINCT\r\n                    TO_DATE(CAL.\"FiscalPeriodStartDate\", 'YYYYMMDD') AS \"FISCAL_PERIOD_START_DATE\"\r\n                FROM \"3GV_DIM_FISCALCALENDAR_01\" CAL\r\n                WHERE CAL.\"FiscalYearVariant\" = 'V3'\r\n                  AND CAL.\"Language\"          = 'EN'\r\n            ) VC\r\n                ON VC.\"FISCAL_PERIOD_START_DATE\" = E.\"OPENING_DATE\"\r\n\r\n            WHERE E.\"SOURCE_LEDGER\" = '0L'\r\n              AND E.\"SEED_MOVEMENT_TREATMENT\" IN (\r\n                  'EXCLUDE_MIGRATION_POSTING',\r\n                  'NO_MOVEMENT_EXCLUSION_REQUIRED'\r\n              )\r\n        ) X\r\n        GROUP BY\r\n            X.\"COMPANY_CODE\",\r\n            X.\"GL_ACCOUNT\",\r\n            X.\"SOURCE_LEDGER\"\r\n    ) VR\r\n        ON  VR.\"COMPANY_CODE\"  = D.\"COMPANY_CODE\"\r\n        AND VR.\"GL_ACCOUNT\"    = D.\"GL_ACCOUNT\"\r\n        AND VR.\"SOURCE_LEDGER\" = D.\"SOURCE_LEDGER\"\r\n) Q"
+    },
+    "MODELLING": {
+      "kind": "context",
+      "@EndUserText.label": "MODELLING",
+      "@DataWarehouse.space.schema": "MODELLING",
+      "@DataWarehouse.space.name": "MODELLING"
+    }
+  }
+}
