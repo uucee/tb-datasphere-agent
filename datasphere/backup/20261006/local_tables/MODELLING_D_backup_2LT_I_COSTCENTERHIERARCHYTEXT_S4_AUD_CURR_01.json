@@ -1,0 +1,79 @@
+{
+  "definitions": {
+    "2LT_I_COSTCENTERHIERARCHYTEXT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Hierarchy class",
+          "type": "cds.String",
+          "key": true,
+          "length": 12,
+          "notNull": true
+        },
+        "CostCenterHierarchy": {
+          "@EndUserText.label": "Cost center hierarchy",
+          "type": "cds.String",
+          "key": true,
+          "length": 40,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Valid to date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Valid-from date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CostCenterHierarchyName": {
+          "@EndUserText.label": "Hierarchy description",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_COSTCENTERHIERARCHYTEXT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_BDXBVPLD"
+        }
+      }
+    }
+  }
+}

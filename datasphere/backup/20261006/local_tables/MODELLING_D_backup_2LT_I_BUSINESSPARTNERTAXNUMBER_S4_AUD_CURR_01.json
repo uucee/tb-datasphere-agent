@@ -1,0 +1,256 @@
+{
+  "definitions": {
+    "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "BusinessPartner": {
+          "@EndUserText.label": "Business partner number",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "BPTaxType": {
+          "@EndUserText.label": "Tax number category",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "BPTaxNumber": {
+          "@EndUserText.label": "Business partner tax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "BPTaxLongNumber": {
+          "@EndUserText.label": "Business partner tax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "AuthorizationGroup": {
+          "@EndUserText.label": "Authorization group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartner"
+              ]
+            },
+            {
+              "ref": [
+                "BPTaxType"
+              ]
+            },
+            {
+              "ref": [
+                "BPTaxNumber"
+              ]
+            },
+            {
+              "ref": [
+                "BPTaxLongNumber"
+              ]
+            },
+            {
+              "ref": [
+                "AuthorizationGroup"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_USVEZENW"
+        }
+      }
+    },
+    "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "BusinessPartner": {
+          "@EndUserText.label": "Business partner number",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "BPTaxType": {
+          "@EndUserText.label": "Tax number category",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "BPTaxNumber": {
+          "@EndUserText.label": "Business partner tax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "BPTaxLongNumber": {
+          "@EndUserText.label": "Business partner tax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "AuthorizationGroup": {
+          "@EndUserText.label": "Authorization group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_BUSINESSPARTNERTAXNUMBER_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_USVEZENW"
+        }
+      }
+    }
+  }
+}

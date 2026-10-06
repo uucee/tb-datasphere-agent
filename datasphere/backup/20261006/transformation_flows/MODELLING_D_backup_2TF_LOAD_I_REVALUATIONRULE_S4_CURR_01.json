@@ -1,0 +1,894 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_REVALUATIONRULE_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_REVALUATIONRULE_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR_D": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D"
+                  },
+                  "1_INBOUND_S4_CURR_D.1LT_I_REVALUATIONRULE_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_REVALUATIONRULE_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "REValuationRule": {
+                        "@EndUserText.label": "Valuation rule",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "AccountingPrinciple": {
+                        "@EndUserText.label": "Accounting principle",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REValuationType": {
+                        "@EndUserText.label": "Valuation type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsValuationPerformAutomatic": {
+                        "@EndUserText.label": "Perform automatic valuation?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsValuationCompleteAutomatic": {
+                        "@EndUserText.label": "Automatically set to complete?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationConditionGroup": {
+                        "@EndUserText.label": "Condition valuation group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "REValuationLinearType": {
+                        "@EndUserText.label": "Linearization type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REFlowTypeLinear": {
+                        "@EndUserText.label": "Linearization flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REFlowTypeLinearNegative": {
+                        "@EndUserText.label": "Linearization flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REFlowTypeInterest": {
+                        "@EndUserText.label": "Flow type interest",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REFlowTypeClearing": {
+                        "@EndUserText.label": "Clearing flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REFlowTypeRepayment": {
+                        "@EndUserText.label": "Flow type repayment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REFlowTypeAsset": {
+                        "@EndUserText.label": "Assets flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REFlowTypeDepreciation": {
+                        "@EndUserText.label": "Flow type depreciation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REValuationClassification": {
+                        "@EndUserText.label": "Valuation classification",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsCndnAndRmngShareLinearize": {
+                        "@EndUserText.label": "Linearize conditions and remaining shares?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationIntegrationType": {
+                        "@EndUserText.label": "Integration type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsExclForNewAssgmt": {
+                        "@EndUserText.label": "No new creation or assignment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsValuationRuleInformational": {
+                        "@EndUserText.label": "Informational valuation rule",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "InterestCalculationMethod": {
+                        "@EndUserText.label": "Interest calculation method",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.businessName": "1. Inbound S4 Curr (Dev)"
+                  }
+                },
+                "name": "2TF_LOAD_I_REVALUATIONRULE_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20,
+                      "notNull": true,
+                      "default": {
+                        "val": "SCHEDULED"
+                      }
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "REValuationRule": {
+                      "@EndUserText.label": "Valuation rule",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "AccountingPrinciple": {
+                      "@EndUserText.label": "Accounting principle",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REValuationType": {
+                      "@EndUserText.label": "Valuation type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsValuationPerformAutomatic": {
+                      "@EndUserText.label": "Perform automatic valuation?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsValuationCompleteAutomatic": {
+                      "@EndUserText.label": "Automatically set to complete?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationConditionGroup": {
+                      "@EndUserText.label": "Condition valuation group",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REValuationLinearType": {
+                      "@EndUserText.label": "Linearization type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REFlowTypeLinear": {
+                      "@EndUserText.label": "Linearization flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeLinearNegative": {
+                      "@EndUserText.label": "Linearization flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeInterest": {
+                      "@EndUserText.label": "Flow type interest",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeClearing": {
+                      "@EndUserText.label": "Clearing flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeRepayment": {
+                      "@EndUserText.label": "Flow type repayment",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeAsset": {
+                      "@EndUserText.label": "Assets flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeDepreciation": {
+                      "@EndUserText.label": "Flow type depreciation",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REValuationClassification": {
+                      "@EndUserText.label": "Valuation classification",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsCndnAndRmngShareLinearize": {
+                      "@EndUserText.label": "Linearize conditions and remaining shares?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationIntegrationType": {
+                      "@EndUserText.label": "Integration type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsExclForNewAssgmt": {
+                      "@EndUserText.label": "No new creation or assignment",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsValuationRuleInformational": {
+                      "@EndUserText.label": "Informational valuation rule",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "InterestCalculationMethod": {
+                      "@EndUserText.label": "Interest calculation method",
+                      "type": "cds.String",
+                      "length": 1
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR_D.1LT_I_REVALUATIONRULE_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_CTRL_ACTIVE_BATCH_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_REVALUATIONRULE"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ],
+                          "as": "BATCH_ID"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_TYPE"
+                          ],
+                          "as": "BATCH_TYPE"
+                        },
+                        {
+                          "func": "COALESCE",
+                          "args": [
+                            {
+                              "ref": [
+                                "o",
+                                "LOAD_START_TS"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "b",
+                                "BATCH_OPENED_TS"
+                              ]
+                            }
+                          ],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ],
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "LOAD_FLOW"
+                          ],
+                          "as": "LOAD_FLOW"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "OBJECT_NAME"
+                          ],
+                          "as": "OBJECT_NAME"
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountingPrinciple"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsValuationPerformAutomatic"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsValuationCompleteAutomatic"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationConditionGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationLinearType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeLinear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeLinearNegative"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeInterest"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeClearing"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeRepayment"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowTypeDepreciation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationClassification"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsCndnAndRmngShareLinearize"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationIntegrationType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsExclForNewAssgmt"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsValuationRuleInformational"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InterestCalculationMethod"
+                          ]
+                        }
+                      ],
+                      "where": [
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ]
+                        },
+                        "=",
+                        {
+                          "val": "S4_CURR"
+                        }
+                      ]
+                    }
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "/* ==========================================================================\r\n   2TF_LOAD_I_REVALUATIONRULE_S4_CURR_01  -  transformation flow source SQL\r\n   Target         : 2LT_I_REVALUATIONRULE_S4_AUD_CURR_01\r\n   Batch control  : revised framework. Stamps rows with the batch open for\r\n                    S4_CURR at load time. Fail-closed: with no open batch, or\r\n                    with I_REVALUATIONRULE not registered in the load manifest\r\n                    for that batch, the flow stages nothing.\r\n   ------------------------------------------------------------------------ */\r\nSELECT\r\n    b.\"BATCH_ID\"                                       AS \"BATCH_ID\",\r\n    b.\"BATCH_TYPE\"                                     AS \"BATCH_TYPE\",\r\n    COALESCE(o.\"LOAD_START_TS\", b.\"BATCH_OPENED_TS\")   AS \"LOAD_TIMESTAMP\",\r\n    b.\"SOURCE_SYSTEM\"                                  AS \"SOURCE_SYSTEM\",\r\n    o.\"LOAD_FLOW\"                                      AS \"LOAD_FLOW\",\r\n    o.\"OBJECT_NAME\"                                    AS \"OBJECT_NAME\",\r\n    d.\"REValuationRule\",\r\n    d.\"AccountingPrinciple\",\r\n    d.\"REValuationType\",\r\n    d.\"REIsValuationPerformAutomatic\",\r\n    d.\"REIsValuationCompleteAutomatic\",\r\n    d.\"REValuationConditionGroup\",\r\n    d.\"REValuationLinearType\",\r\n    d.\"REFlowTypeLinear\",\r\n    d.\"REFlowTypeLinearNegative\",\r\n    d.\"REFlowTypeInterest\",\r\n    d.\"REFlowTypeClearing\",\r\n    d.\"REFlowTypeRepayment\",\r\n    d.\"REFlowTypeAsset\",\r\n    d.\"REFlowTypeDepreciation\",\r\n    d.\"REValuationClassification\",\r\n    d.\"REIsCndnAndRmngShareLinearize\",\r\n    d.\"REValuationIntegrationType\",\r\n    d.\"REIsExclForNewAssgmt\",\r\n    d.\"REIsValuationRuleInformational\",\r\n    d.\"InterestCalculationMethod\"\r\nFROM \"1_INBOUND_S4_CURR_D\".\"1LT_I_REVALUATIONRULE_S4_CURR\" AS d\r\nCROSS JOIN \"2SV_CTRL_ACTIVE_BATCH_01\" AS b\r\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" AS o\r\n    ON  o.\"BATCH_ID\"      = b.\"BATCH_ID\"\r\n    AND o.\"SOURCE_SYSTEM\" = b.\"SOURCE_SYSTEM\"\r\n    AND o.\"OBJECT_NAME\"   = 'I_REVALUATIONRULE'\r\nWHERE b.\"SOURCE_SYSTEM\" = 'S4_CURR'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_REVALUATIONRULE_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "REValuationRule",
+                    "target": "REValuationRule"
+                  },
+                  {
+                    "source": "AccountingPrinciple",
+                    "target": "AccountingPrinciple"
+                  },
+                  {
+                    "source": "REValuationType",
+                    "target": "REValuationType"
+                  },
+                  {
+                    "source": "REIsValuationPerformAutomatic",
+                    "target": "REIsValuationPerformAutomatic"
+                  },
+                  {
+                    "source": "REIsValuationCompleteAutomatic",
+                    "target": "REIsValuationCompleteAutomatic"
+                  },
+                  {
+                    "source": "REValuationConditionGroup",
+                    "target": "REValuationConditionGroup"
+                  },
+                  {
+                    "source": "REValuationLinearType",
+                    "target": "REValuationLinearType"
+                  },
+                  {
+                    "source": "REFlowTypeLinear",
+                    "target": "REFlowTypeLinear"
+                  },
+                  {
+                    "source": "REFlowTypeLinearNegative",
+                    "target": "REFlowTypeLinearNegative"
+                  },
+                  {
+                    "source": "REFlowTypeInterest",
+                    "target": "REFlowTypeInterest"
+                  },
+                  {
+                    "source": "REFlowTypeClearing",
+                    "target": "REFlowTypeClearing"
+                  },
+                  {
+                    "source": "REFlowTypeRepayment",
+                    "target": "REFlowTypeRepayment"
+                  },
+                  {
+                    "source": "REFlowTypeAsset",
+                    "target": "REFlowTypeAsset"
+                  },
+                  {
+                    "source": "REFlowTypeDepreciation",
+                    "target": "REFlowTypeDepreciation"
+                  },
+                  {
+                    "source": "REValuationClassification",
+                    "target": "REValuationClassification"
+                  },
+                  {
+                    "source": "REIsCndnAndRmngShareLinearize",
+                    "target": "REIsCndnAndRmngShareLinearize"
+                  },
+                  {
+                    "source": "REValuationIntegrationType",
+                    "target": "REValuationIntegrationType"
+                  },
+                  {
+                    "source": "REIsExclForNewAssgmt",
+                    "target": "REIsExclForNewAssgmt"
+                  },
+                  {
+                    "source": "REIsValuationRuleInformational",
+                    "target": "REIsValuationRuleInformational"
+                  },
+                  {
+                    "source": "InterestCalculationMethod",
+                    "target": "InterestCalculationMethod"
+                  },
+                  {
+                    "source": "BATCH_TYPE",
+                    "target": "BATCH_TYPE"
+                  },
+                  {
+                    "source": "LOAD_FLOW",
+                    "target": "LOAD_FLOW"
+                  },
+                  {
+                    "source": "OBJECT_NAME",
+                    "target": "OBJECT_NAME"
+                  }
+                ],
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "REValuationRule": {
+                      "@EndUserText.label": "Valuation rule",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "AccountingPrinciple": {
+                      "@EndUserText.label": "Accounting principle",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REValuationType": {
+                      "@EndUserText.label": "Valuation type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsValuationPerformAutomatic": {
+                      "@EndUserText.label": "Perform automatic valuation?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsValuationCompleteAutomatic": {
+                      "@EndUserText.label": "Automatically set to complete?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationConditionGroup": {
+                      "@EndUserText.label": "Condition valuation group",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REValuationLinearType": {
+                      "@EndUserText.label": "Linearization type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REFlowTypeLinear": {
+                      "@EndUserText.label": "Linearization flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeLinearNegative": {
+                      "@EndUserText.label": "Linearization flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeInterest": {
+                      "@EndUserText.label": "Flow type interest",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeClearing": {
+                      "@EndUserText.label": "Clearing flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeRepayment": {
+                      "@EndUserText.label": "Flow type repayment",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeAsset": {
+                      "@EndUserText.label": "Assets flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REFlowTypeDepreciation": {
+                      "@EndUserText.label": "Flow type depreciation",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REValuationClassification": {
+                      "@EndUserText.label": "Valuation classification",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsCndnAndRmngShareLinearize": {
+                      "@EndUserText.label": "Linearize conditions and remaining shares?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationIntegrationType": {
+                      "@EndUserText.label": "Integration type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsExclForNewAssgmt": {
+                      "@EndUserText.label": "No new creation or assignment",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsValuationRuleInformational": {
+                      "@EndUserText.label": "Informational valuation rule",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "InterestCalculationMethod": {
+                      "@EndUserText.label": "Interest calculation method",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120
+                    }
+                  },
+                  "@EndUserText.label": "2LT_I_REVALUATIONRULE_S4_AUD_CURR_01",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_IJPUIXQL"
+                    }
+                  }
+                },
+                "name": "2LT_I_REVALUATIONRULE_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

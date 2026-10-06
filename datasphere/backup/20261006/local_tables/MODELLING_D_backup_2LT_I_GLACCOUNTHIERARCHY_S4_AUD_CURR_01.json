@@ -1,0 +1,109 @@
+{
+  "definitions": {
+    "2LT_I_GLACCOUNTHIERARCHY_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "GLAccountHierarchy": {
+          "@EndUserText.label": "G/l account hierarchy",
+          "type": "cds.String",
+          "key": true,
+          "length": 42,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Valid to date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Valid-from date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "HierarchyType": {
+          "@EndUserText.label": "Hierarchy type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Last changed by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeTime": {
+          "@EndUserText.label": "Last updated at (timestamp)",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Last updated at (timestamp)",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "HierarchyShortID": {
+          "@EndUserText.label": "Hierarchy id",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "FunctionalAreaIsUsed": {
+          "@EndUserText.label": "Indicator: functional area enabled",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SemanticTagIsUsed": {
+          "@EndUserText.label": "Indicator: semantic tag assigned",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ChartOfAccounts": {
+          "@EndUserText.label": "Chart of accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_GLACCOUNTHIERARCHY_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_CODDGANF"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "definitions": {
+    "2LT_SKAT_HIST_RAW_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "SPRAS": {
+          "@EndUserText.label": "SPRAS",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "KTOPL": {
+          "@EndUserText.label": "KTOPL",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "SAKNR": {
+          "@EndUserText.label": "SAKNR",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "TXT20": {
+          "@EndUserText.label": "TXT20",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "TXT50": {
+          "@EndUserText.label": "TXT50",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "MCOD1": {
+          "@EndUserText.label": "MCOD1",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_SKAT_HIST_RAW_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_WBDEWMRA"
+        }
+      }
+    }
+  }
+}

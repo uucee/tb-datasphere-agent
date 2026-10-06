@@ -1,0 +1,158 @@
+{
+  "definitions": {
+    "2LT_I_REUSBLOBJLDNGACCTASSGMTOBJ_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "RealEstateUsableObjectUUID": {
+          "@EndUserText.label": "Uuid for generic rental object",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "REStatusObjectSource": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": true,
+          "length": 22,
+          "notNull": true
+        },
+        "REObjectAssignmentType": {
+          "@EndUserText.label": "Type of object assignment",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "REStatusObjectTarget": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": true,
+          "length": 22,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REOnlyInfoAssgmt": {
+          "@EndUserText.label": "Informational assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REStatusObjectSourceIsArchived": {
+          "@EndUserText.label": "Source object was archived",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REGenerationType": {
+          "@EndUserText.label": "Generation type functional location",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REIsMainAsset": {
+          "@EndUserText.label": "Asset is leading asset",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REAssignmentHasMultiple": {
+          "@EndUserText.label": "Generated entry for multiple assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REObjectPossessionStartDate": {
+          "@EndUserText.label": "Date from which the object is made available for use",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REObjectPossessionEndDate": {
+          "@EndUserText.label": "Date up to which the object is used",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REIsLeadingObject": {
+          "@EndUserText.label": "Leading object indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REObjectTypeTarget": {
+          "@EndUserText.label": "Object type of assigned object",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "InternalOrder": {
+          "@EndUserText.label": "Internal order",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "WBSElementExternalID": {
+          "@EndUserText.label": "Work breakdown structure element (wbs element) edited",
+          "type": "cds.String",
+          "key": false,
+          "length": 24
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_REUSBLOBJLDNGACCTASSGMTOBJ_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

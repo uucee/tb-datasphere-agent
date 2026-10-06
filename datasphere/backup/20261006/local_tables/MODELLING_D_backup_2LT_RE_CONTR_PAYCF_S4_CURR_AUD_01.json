@@ -1,0 +1,591 @@
+{
+  "definitions": {
+    "2LT_RE_CONTR_PAYCF_S4_CURR_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "PayRelatedCashFlowRecordUUID": {
+          "@EndUserText.label": "Guid (raw16) for payment-related cash flow",
+          "type": "cds.String",
+          "key": true,
+          "length": 500,
+          "notNull": true
+        },
+        "REConditionUUID": {
+          "@EndUserText.label": "Guid (raw16) for conditions",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Date from when condition is valid",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REDocumentReferenceUUID": {
+          "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "InternalRealEstateNumber": {
+          "@EndUserText.label": "Internal key of real estate object",
+          "type": "cds.String",
+          "key": false,
+          "length": 13
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Entered by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDate": {
+          "@EndUserText.label": "First entered on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreationTime": {
+          "@EndUserText.label": "Time of creation",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "RESourceOfCreation": {
+          "@EndUserText.label": "Source of initial entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Employee id",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDate": {
+          "@EndUserText.label": "Last edited on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LastChangeTime": {
+          "@EndUserText.label": "Last edited at",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "RESourceOfChange": {
+          "@EndUserText.label": "Editing source",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CalculationPeriodStartDate": {
+          "@EndUserText.label": "Start of calculation period",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CalcPeriodStartDateIsExclusive": {
+          "@EndUserText.label": "Calculation period start is excluded",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CalcPeriodStartDateIsMonthEnd": {
+          "@EndUserText.label": "Month-end indicator for start of a calculation period",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CalculationPeriodEndDate": {
+          "@EndUserText.label": "End of calculation period",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CalcPeriodEndDateIsInclusive": {
+          "@EndUserText.label": "Calculation period end is included",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CalcPeriodEndDateIsMonthEnd": {
+          "@EndUserText.label": "Month-end indicator for the end of a calculation period",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CalculationDate": {
+          "@EndUserText.label": "Calculation date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CalcDateIsAsEndDateInclusive": {
+          "@EndUserText.label": "Calculation period end is included",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CalculationDateIsMonthEnd": {
+          "@EndUserText.label": "Month-end indicator for value date",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PaymentDueDate": {
+          "@EndUserText.label": "Due date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "DueDateIsMonthEnd": {
+          "@EndUserText.label": "Month-end indicator for due date",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "NextWorkingDateForPayDueDate": {
+          "@EndUserText.label": "Payment date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "NumberOfDays": {
+          "@EndUserText.label": "Number of days",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "NumberOfCalculationDays": {
+          "@EndUserText.label": "No. of days of a (calculation) period in cash flow",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "InterestBaseDaysMethod": {
+          "@EndUserText.label": "Base days method",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InterestCalculationMethod": {
+          "@EndUserText.label": "Interest calculation method",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REBeginOfPeriodDate": {
+          "@EndUserText.label": "Period start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PeriodStartDateIsExclusive": {
+          "@EndUserText.label": "Period start is excluded",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PeriodStartDateIsMonthEnd": {
+          "@EndUserText.label": "Month-end indicator for start date of a period",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REEndOfPeriodDate": {
+          "@EndUserText.label": "Period end",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PeriodEndDateIsInclusive": {
+          "@EndUserText.label": "Period end is included",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PeriodEndDateIsMonthEnd": {
+          "@EndUserText.label": "Month-end indicator for end of a period",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REConditionCurrency": {
+          "@EndUserText.label": "Currency of condition item",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "REUnitPrice": {
+          "@EndUserText.label": "Condition item currency amount",
+          "type": "cds.DecimalFloat",
+          "key": false
+        },
+        "REProRataMethod": {
+          "@EndUserText.label": "Pro rata method",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REPaymentStatus": {
+          "@EndUserText.label": "Indicator for debit position/incoming pmnt (internal fima)",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CashFlowConditionGroup": {
+          "@EndUserText.label": "Condition group in cash flow calculator",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RECashFlowPositionAmount": {
+          "@EndUserText.label": "RECashFlowPositionAmount",
+          "type": "cds.DecimalFloat",
+          "key": false
+        },
+        "RETaxType": {
+          "@EndUserText.label": "Tax type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RETaxGroup": {
+          "@EndUserText.label": "Tax group",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "REIsConditionGrossAmount": {
+          "@EndUserText.label": "Condition amount is gross amount",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxCountry": {
+          "@EndUserText.label": "Alternative tax reporting country/region",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CashFlowItemOrigin": {
+          "@EndUserText.label": "Flow origin",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REFlowType": {
+          "@EndUserText.label": "Flow type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REOriginalFlowType": {
+          "@EndUserText.label": "Original flow type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RERelshpOriglToFlowType": {
+          "@EndUserText.label": "Type of relationship between flow type and original flow typ",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CashFlowPostingStatus": {
+          "@EndUserText.label": "Indicates status of flow",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PlanningLevel": {
+          "@EndUserText.label": "Planning level",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "REHasEnteredCashMgmtForecast": {
+          "@EndUserText.label": "Flag as to whether record enters cash management + forecast",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsToBeArchived": {
+          "@EndUserText.label": "Deletion indicator for archiving",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REOriglDueDate": {
+          "@EndUserText.label": "Original due date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "BusinessPartner": {
+          "@EndUserText.label": "Business partner number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "REPartnerStatusObject": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "REConditionType": {
+          "@EndUserText.label": "Condition type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REPostingTerm": {
+          "@EndUserText.label": "Number of posting term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RERhythmTerm": {
+          "@EndUserText.label": "Number of frequency term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REAdjustmentNumber": {
+          "@EndUserText.label": "Number of adjustment term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REOrgAssignmentTerm": {
+          "@EndUserText.label": "Number of organizational assignment term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RESalesTerm": {
+          "@EndUserText.label": "Number of sales term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REPeakSalesTerm": {
+          "@EndUserText.label": "Number of peak sales term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REWithholdingTaxTerm": {
+          "@EndUserText.label": "Number of withholding tax term",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REOriglExDueDate": {
+          "@EndUserText.label": "Original due date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REAdvancePaymentRelevantStatus": {
+          "@EndUserText.label": "Status of advance payment relevant to scs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PostingDate": {
+          "@EndUserText.label": "Posting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "DocumentDate": {
+          "@EndUserText.label": "Document date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ExchangeRateDate": {
+          "@EndUserText.label": "Date for translation of contract currency to local currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REReversalForUUID": {
+          "@EndUserText.label": "Guid (raw16) for 'reversal for' references",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "REReversalByUUID": {
+          "@EndUserText.label": "Guid (raw16) for 'reversed by' references",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "REFollowUpPostingUUID": {
+          "@EndUserText.label": "Guid (raw16) for 'follow-up posting for' references",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "REBookedFlowType": {
+          "@EndUserText.label": "Booked flow type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RERelshpBookedToFlowType": {
+          "@EndUserText.label": "Type of relationship between flow type and booked flow type",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "RETaxCalcDate": {
+          "@EndUserText.label": "Date of calculation of sales/purchase tax",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REModifiedDueDate": {
+          "@EndUserText.label": "Modified due date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "RECalcDueDate": {
+          "@EndUserText.label": "Calculated due date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SplitCashFlowRecordUUID": {
+          "@EndUserText.label": "Guid (raw16) of cash flow record that was split",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "RecordIsBasisForSplit": {
+          "@EndUserText.label": "Cash flow record was basis for split",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REConditionSplitNumber": {
+          "@EndUserText.label": "Number of condition split",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CashPlanningGroup": {
+          "@EndUserText.label": "Planning group",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RECurrencyTranslationRule": {
+          "@EndUserText.label": "Currency translation rule",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "ExchangeRate": {
+          "@EndUserText.label": "Exchange rate for fi postings",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "REOriginExchangeRate": {
+          "@EndUserText.label": "Exchange rate for fi postings",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "REIsPostInConditionCurrency": {
+          "@EndUserText.label": "Post in condition currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REPlndTranslationDate": {
+          "@EndUserText.label": "Planned translation date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REActlTranslationDate": {
+          "@EndUserText.label": "Actual translation date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REOriglActlTranslationDate": {
+          "@EndUserText.label": "Actual translation date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REIsTranslationDateFrmCashFlow": {
+          "@EndUserText.label": "Use translation date from cash flow",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REStatusObject": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_RE_CONTR_PAYCF_S4_CURR_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

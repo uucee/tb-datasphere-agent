@@ -1,0 +1,2662 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_PROJECTDATA_2_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_PROJECTDATA_2_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 197.99999904632568,
+              "y": 114.5,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_PROJECTDATA_2_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_PROJECTDATA_2_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_PROJECTDATA_2_S4_CURR",
+                    "elements": {
+                      "ProjectInternalID": {
+                        "@EndUserText.label": "Project (internal)",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 8
+                      },
+                      "ProjectExternalID": {
+                        "@EndUserText.label": "Project number (external) edited",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 24
+                      },
+                      "Project": {
+                        "@EndUserText.label": "Project definition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 24
+                      },
+                      "ProjectDescription": {
+                        "@EndUserText.label": "Project name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "ProjectProfileCode": {
+                        "@EndUserText.label": "Project profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 7
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ControllingArea": {
+                        "@EndUserText.label": "Controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "FunctionalArea": {
+                        "@EndUserText.label": "Functional area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "ProfitCenter": {
+                        "@EndUserText.label": "Profit center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProjectObject": {
+                        "@EndUserText.label": "Object number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "PlannedStartDate": {
+                        "@EndUserText.label": "Project planned start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PlannedEndDate": {
+                        "@EndUserText.label": "Project planned finish date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "WorkCenterLocation": {
+                        "@EndUserText.label": "Location",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "TaxJurisdiction": {
+                        "@EndUserText.label": "Tax jurisdiction",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "ResponsiblePerson": {
+                        "@EndUserText.label": "Number of the responsible person (project manager)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ResponsiblePersonName": {
+                        "@EndUserText.label": "Name of responsible person (project manager)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "ApplicantCode": {
+                        "@EndUserText.label": "Applicant number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ApplicantName": {
+                        "@EndUserText.label": "Applicant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Name of person responsible for creating the object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "Record creation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Name of person who changed object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Changed on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "BasicDatesLastScheduledDate": {
+                        "@EndUserText.label": "Date of last scheduling of the overall network (basic dates)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FcstdDatesLastScheduledDate": {
+                        "@EndUserText.label": "Date of last scheduling of the overall network (forecast)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FactoryCalendar": {
+                        "@EndUserText.label": "Appointments: calendar",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "SchedulingDurationUnit": {
+                        "@EndUserText.label": "Time unit for execution duration",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ForecastedStartDate": {
+                        "@EndUserText.label": "Forecast start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ForecastedEndDate": {
+                        "@EndUserText.label": "Forecast finish date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "BusinessArea": {
+                        "@EndUserText.label": "Business area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Plant": {
+                        "@EndUserText.label": "Plant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Currency": {
+                        "@EndUserText.label": "Wbs currency (project definition)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "BudgetProfile": {
+                        "@EndUserText.label": "Budget profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "PlanningProfile": {
+                        "@EndUserText.label": "Planning profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "InvestmentProfile": {
+                        "@EndUserText.label": "Investment measure profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "ProjInterestCalcProfile": {
+                        "@EndUserText.label": "Interest profile for project/order interest calculation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 7
+                      },
+                      "ResultAnalysisInternalID": {
+                        "@EndUserText.label": "Results analysis key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "PartnerDeterminationProcedure": {
+                        "@EndUserText.label": "Partner determination procedure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ControllingObjectClass": {
+                        "@EndUserText.label": "Object class",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "NetworkProfile": {
+                        "@EndUserText.label": "Network profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 7
+                      },
+                      "WBSSchedulingProfile": {
+                        "@EndUserText.label": "Profile for wbs scheduling",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "PlanningMethForProjBasicDate": {
+                        "@EndUserText.label": "Planning method for project basic dates",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PlanningMethForProjFcstdDate": {
+                        "@EndUserText.label": "Planning method for project forecast dates",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "NetworkAssignmentType": {
+                        "@EndUserText.label": "Network assignment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "WBSIsStatisticalWBSElement": {
+                        "@EndUserText.label": "Statistical wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "WBSIsMarkedForIntegratedPlng": {
+                        "@EndUserText.label": "Indicator for integrated planning",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProjectHasOwnStock": {
+                        "@EndUserText.label": "Project stock",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "InventorySpecialStockValnType": {
+                        "@EndUserText.label": "Valuation of special stock",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "WBSIsMarkedForAutomReqmtGrpg": {
+                        "@EndUserText.label": "Indicator: automatic requirements grouping",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SalesOrganization": {
+                        "@EndUserText.label": "Sales organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "DistributionChannel": {
+                        "@EndUserText.label": "Distribution channel",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "Language": {
+                        "@EndUserText.label": "Language key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "WBSElementMaskID": {
+                        "@EndUserText.label": "Selection mask for wbs element short ids",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 24
+                      },
+                      "Division": {
+                        "@EndUserText.label": "Division",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "DynItemProcessorPrfl": {
+                        "@EndUserText.label": "Dynamic item processor profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "StatusProfile": {
+                        "@EndUserText.label": "Status profile for project definition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "WBSStatusProfile": {
+                        "@EndUserText.label": "Status profile for wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "SimulationProfile": {
+                        "@EndUserText.label": "Simulation profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 7
+                      },
+                      "SchedulingScenario": {
+                        "@EndUserText.label": "Scheduling scenario",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "DistributionProfile": {
+                        "@EndUserText.label": "Distribution profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "JointVenture": {
+                        "@EndUserText.label": "Joint venture",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "JointVentureCostRecoveryCode": {
+                        "@EndUserText.label": "Recovery indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "JointVentureEquityType": {
+                        "@EndUserText.label": "Equity type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "JointVentureObjectType": {
+                        "@EndUserText.label": "Joint venture object type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "JntIntrstBillgClass": {
+                        "@EndUserText.label": "Jib/jibe class",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "JntIntrstBillgSubClass": {
+                        "@EndUserText.label": "Jib/jibe subclass a",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "FreeDefinedTableFieldSemantic": {
+                        "@EndUserText.label": "Key word id for user-defined fields",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 7
+                      },
+                      "FreeDefinedAttribute01": {
+                        "@EndUserText.label": "1st user field for 20 characters - wbs element-",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "FreeDefinedAttribute02": {
+                        "@EndUserText.label": "2nd user field 20 digits - wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "FreeDefinedAttribute03": {
+                        "@EndUserText.label": "3rd user-defined field 10 digits -wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "FreeDefinedAttribute04": {
+                        "@EndUserText.label": "4th user-defined field 10 digits -wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "FreeDefinedQuantity1": {
+                        "@EndUserText.label": "1st user-defined field for quantity(length 10,3) wbs element",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "FreeDefinedQuantity1Unit": {
+                        "@EndUserText.label": "1st user defined field for quantity field unit - wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "FreeDefinedQuantity2": {
+                        "@EndUserText.label": "2nd use field for quantity (length 10,3) wbs element",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "FreeDefinedQuantity2Unit": {
+                        "@EndUserText.label": "2nd user defined field for quantity field unit - wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "FreeDefinedAmount1": {
+                        "@EndUserText.label": "FreeDefinedAmount1",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "FreeDefinedAmount1Currency": {
+                        "@EndUserText.label": "1st user defined field for value field unit - wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "FreeDefinedAmount2": {
+                        "@EndUserText.label": "FreeDefinedAmount2",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "FreeDefinedAmount2Currency": {
+                        "@EndUserText.label": "2nd user defined field for value field unit - wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "FreeDefinedDate1": {
+                        "@EndUserText.label": "1st user field for date -wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FreeDefinedDate2": {
+                        "@EndUserText.label": "2nd user field for date -wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FreeDefinedIndicator1": {
+                        "@EndUserText.label": "1st user field for 'ind. for evaluations' wbs elem.",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "FreeDefinedIndicator2": {
+                        "@EndUserText.label": "2nd user field for 'indicator for eval.s' wbs elemnt",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "StatusCombinationCode": {
+                        "@EndUserText.label": "Status combination",
+                        "type": "cds.hana.TINYINT",
+                        "key": false
+                      },
+                      "IsMarkedForDeletion": {
+                        "@EndUserText.label": "Deletion indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_PROJECTDATA_2_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "ProjectInternalID": {
+                      "@EndUserText.label": "Project (internal)",
+                      "type": "cds.String",
+                      "length": 8,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ProjectExternalID": {
+                      "@EndUserText.label": "Project number (external) edited",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "Project": {
+                      "@EndUserText.label": "Project definition",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "ProjectDescription": {
+                      "@EndUserText.label": "Project name",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "ProjectProfileCode": {
+                      "@EndUserText.label": "Project profile",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProjectObject": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "PlannedStartDate": {
+                      "@EndUserText.label": "Project planned start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PlannedEndDate": {
+                      "@EndUserText.label": "Project planned finish date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "WorkCenterLocation": {
+                      "@EndUserText.label": "Location",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "ResponsiblePerson": {
+                      "@EndUserText.label": "Number of the responsible person (project manager)",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ResponsiblePersonName": {
+                      "@EndUserText.label": "Name of responsible person (project manager)",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "ApplicantCode": {
+                      "@EndUserText.label": "Applicant number",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ApplicantName": {
+                      "@EndUserText.label": "Applicant",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person responsible for creating the object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Record creation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Name of person who changed object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Changed on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "BasicDatesLastScheduledDate": {
+                      "@EndUserText.label": "Date of last scheduling of the overall network (basic dates)",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FcstdDatesLastScheduledDate": {
+                      "@EndUserText.label": "Date of last scheduling of the overall network (forecast)",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FactoryCalendar": {
+                      "@EndUserText.label": "Appointments: calendar",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "SchedulingDurationUnit": {
+                      "@EndUserText.label": "Time unit for execution duration",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ForecastedStartDate": {
+                      "@EndUserText.label": "Forecast start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ForecastedEndDate": {
+                      "@EndUserText.label": "Forecast finish date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "BusinessArea": {
+                      "@EndUserText.label": "Business area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Plant": {
+                      "@EndUserText.label": "Plant",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Currency": {
+                      "@EndUserText.label": "Wbs currency (project definition)",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "BudgetProfile": {
+                      "@EndUserText.label": "Budget profile",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "PlanningProfile": {
+                      "@EndUserText.label": "Planning profile",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "InvestmentProfile": {
+                      "@EndUserText.label": "Investment measure profile",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "ProjInterestCalcProfile": {
+                      "@EndUserText.label": "Interest profile for project/order interest calculation",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "ResultAnalysisInternalID": {
+                      "@EndUserText.label": "Results analysis key",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "PartnerDeterminationProcedure": {
+                      "@EndUserText.label": "Partner determination procedure",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ControllingObjectClass": {
+                      "@EndUserText.label": "Object class",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "NetworkProfile": {
+                      "@EndUserText.label": "Network profile",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "WBSSchedulingProfile": {
+                      "@EndUserText.label": "Profile for wbs scheduling",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "PlanningMethForProjBasicDate": {
+                      "@EndUserText.label": "Planning method for project basic dates",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PlanningMethForProjFcstdDate": {
+                      "@EndUserText.label": "Planning method for project forecast dates",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "NetworkAssignmentType": {
+                      "@EndUserText.label": "Network assignment",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "WBSIsStatisticalWBSElement": {
+                      "@EndUserText.label": "Statistical wbs element",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "WBSIsMarkedForIntegratedPlng": {
+                      "@EndUserText.label": "Indicator for integrated planning",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProjectHasOwnStock": {
+                      "@EndUserText.label": "Project stock",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "InventorySpecialStockValnType": {
+                      "@EndUserText.label": "Valuation of special stock",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "WBSIsMarkedForAutomReqmtGrpg": {
+                      "@EndUserText.label": "Indicator: automatic requirements grouping",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SalesOrganization": {
+                      "@EndUserText.label": "Sales organization",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "DistributionChannel": {
+                      "@EndUserText.label": "Distribution channel",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "Language": {
+                      "@EndUserText.label": "Language key",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "WBSElementMaskID": {
+                      "@EndUserText.label": "Selection mask for wbs element short ids",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "Division": {
+                      "@EndUserText.label": "Division",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "DynItemProcessorPrfl": {
+                      "@EndUserText.label": "Dynamic item processor profile",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "StatusProfile": {
+                      "@EndUserText.label": "Status profile for project definition",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "WBSStatusProfile": {
+                      "@EndUserText.label": "Status profile for wbs element",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SimulationProfile": {
+                      "@EndUserText.label": "Simulation profile",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SchedulingScenario": {
+                      "@EndUserText.label": "Scheduling scenario",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "DistributionProfile": {
+                      "@EndUserText.label": "Distribution profile",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "JointVenture": {
+                      "@EndUserText.label": "Joint venture",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "JointVentureCostRecoveryCode": {
+                      "@EndUserText.label": "Recovery indicator",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "JointVentureEquityType": {
+                      "@EndUserText.label": "Equity type",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "JointVentureObjectType": {
+                      "@EndUserText.label": "Joint venture object type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "JntIntrstBillgClass": {
+                      "@EndUserText.label": "Jib/jibe class",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "JntIntrstBillgSubClass": {
+                      "@EndUserText.label": "Jib/jibe subclass a",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "FreeDefinedTableFieldSemantic": {
+                      "@EndUserText.label": "Key word id for user-defined fields",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "FreeDefinedAttribute01": {
+                      "@EndUserText.label": "1st user field for 20 characters - wbs element-",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "FreeDefinedAttribute02": {
+                      "@EndUserText.label": "2nd user field 20 digits - wbs element",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "FreeDefinedAttribute03": {
+                      "@EndUserText.label": "3rd user-defined field 10 digits -wbs element",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FreeDefinedAttribute04": {
+                      "@EndUserText.label": "4th user-defined field 10 digits -wbs element",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FreeDefinedQuantity1": {
+                      "@EndUserText.label": "1st user-defined field for quantity(length 10,3) wbs element",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "FreeDefinedQuantity1Unit": {
+                      "@EndUserText.label": "1st user defined field for quantity field unit - wbs element",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "FreeDefinedQuantity2": {
+                      "@EndUserText.label": "2nd use field for quantity (length 10,3) wbs element",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "FreeDefinedQuantity2Unit": {
+                      "@EndUserText.label": "2nd user defined field for quantity field unit - wbs element",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "FreeDefinedAmount1": {
+                      "@EndUserText.label": "FreeDefinedAmount1",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "FreeDefinedAmount1Currency": {
+                      "@EndUserText.label": "1st user defined field for value field unit - wbs element",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "FreeDefinedAmount2": {
+                      "@EndUserText.label": "FreeDefinedAmount2",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "FreeDefinedAmount2Currency": {
+                      "@EndUserText.label": "2nd user defined field for value field unit - wbs element",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "FreeDefinedDate1": {
+                      "@EndUserText.label": "1st user field for date -wbs element",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FreeDefinedDate2": {
+                      "@EndUserText.label": "2nd user field for date -wbs element",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FreeDefinedIndicator1": {
+                      "@EndUserText.label": "1st user field for 'ind. for evaluations' wbs elem.",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "FreeDefinedIndicator2": {
+                      "@EndUserText.label": "2nd user field for 'indicator for eval.s' wbs elemnt",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "StatusCombinationCode": {
+                      "@EndUserText.label": "Status combination",
+                      "type": "cds.hana.TINYINT"
+                    },
+                    "IsMarkedForDeletion": {
+                      "@EndUserText.label": "Deletion indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_PROJECTDATA_2_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_PROJECTDATA_2"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectExternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Project"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectDescription"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectProfileCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FunctionalArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PlannedStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PlannedEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WorkCenterLocation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxJurisdiction"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ResponsiblePerson"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ResponsiblePersonName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ApplicantCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ApplicantName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BasicDatesLastScheduledDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FcstdDatesLastScheduledDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FactoryCalendar"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SchedulingDurationUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ForecastedStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ForecastedEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Plant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Currency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BudgetProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PlanningProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvestmentProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjInterestCalcProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ResultAnalysisInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PartnerDeterminationProcedure"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingObjectClass"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NetworkProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSSchedulingProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PlanningMethForProjBasicDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PlanningMethForProjFcstdDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NetworkAssignmentType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSIsStatisticalWBSElement"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSIsMarkedForIntegratedPlng"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectHasOwnStock"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InventorySpecialStockValnType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSIsMarkedForAutomReqmtGrpg"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesOrganization"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DistributionChannel"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Language"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSElementMaskID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Division"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DynItemProcessorPrfl"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "StatusProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSStatusProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SimulationProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SchedulingScenario"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DistributionProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JointVenture"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JointVentureCostRecoveryCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JointVentureEquityType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JointVentureObjectType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JntIntrstBillgClass"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JntIntrstBillgSubClass"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedTableFieldSemantic"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAttribute01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAttribute02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAttribute03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAttribute04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedQuantity1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedQuantity1Unit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedQuantity2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedQuantity2Unit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAmount1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAmount1Currency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAmount2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedAmount2Currency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedDate1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedDate2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedIndicator1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedIndicator2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "StatusCombinationCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsMarkedForDeletion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\n  b.\"BATCH_ID\",\n  CURRENT_UTCTIMESTAMP() AS \"LOAD_TIMESTAMP\",\n  'S4_CURR'            AS \"SOURCE_SYSTEM\",\n  o.\"SOURCE_FILE\",\n  \"d\".\"ProjectInternalID\",\"d\".\"ProjectExternalID\",\"d\".\"Project\",\"d\".\"ProjectDescription\",\"d\".\"ProjectProfileCode\",\"d\".\"CompanyCode\",\"d\".\"ControllingArea\",\"d\".\"FunctionalArea\",\"d\".\"ProfitCenter\",\"d\".\"ProjectObject\",\"d\".\"PlannedStartDate\",\"d\".\"PlannedEndDate\",\"d\".\"WorkCenterLocation\",\"d\".\"TaxJurisdiction\",\"d\".\"ResponsiblePerson\",\"d\".\"ResponsiblePersonName\",\"d\".\"ApplicantCode\",\"d\".\"ApplicantName\",\"d\".\"CreatedByUser\",\"d\".\"CreationDate\",\"d\".\"LastChangedByUser\",\"d\".\"LastChangeDate\",\"d\".\"BasicDatesLastScheduledDate\",\"d\".\"FcstdDatesLastScheduledDate\",\"d\".\"FactoryCalendar\",\"d\".\"SchedulingDurationUnit\",\"d\".\"ForecastedStartDate\",\"d\".\"ForecastedEndDate\",\"d\".\"BusinessArea\",\"d\".\"Plant\",\"d\".\"Currency\",\"d\".\"BudgetProfile\",\"d\".\"PlanningProfile\",\"d\".\"InvestmentProfile\",\"d\".\"ProjInterestCalcProfile\",\"d\".\"ResultAnalysisInternalID\",\"d\".\"PartnerDeterminationProcedure\",\"d\".\"ControllingObjectClass\",\"d\".\"NetworkProfile\",\"d\".\"WBSSchedulingProfile\",\"d\".\"PlanningMethForProjBasicDate\",\"d\".\"PlanningMethForProjFcstdDate\",\"d\".\"NetworkAssignmentType\",\"d\".\"WBSIsStatisticalWBSElement\",\"d\".\"WBSIsMarkedForIntegratedPlng\",\"d\".\"ProjectHasOwnStock\",\"d\".\"InventorySpecialStockValnType\",\"d\".\"WBSIsMarkedForAutomReqmtGrpg\",\"d\".\"SalesOrganization\",\"d\".\"DistributionChannel\",\"d\".\"Language\",\"d\".\"WBSElementMaskID\",\"d\".\"Division\",\"d\".\"DynItemProcessorPrfl\",\"d\".\"StatusProfile\",\"d\".\"WBSStatusProfile\",\"d\".\"SimulationProfile\",\"d\".\"SchedulingScenario\",\"d\".\"DistributionProfile\",\"d\".\"JointVenture\",\"d\".\"JointVentureCostRecoveryCode\",\"d\".\"JointVentureEquityType\",\"d\".\"JointVentureObjectType\",\"d\".\"JntIntrstBillgClass\",\"d\".\"JntIntrstBillgSubClass\",\"d\".\"FreeDefinedTableFieldSemantic\",\"d\".\"FreeDefinedAttribute01\",\"d\".\"FreeDefinedAttribute02\",\"d\".\"FreeDefinedAttribute03\",\"d\".\"FreeDefinedAttribute04\",\"d\".\"FreeDefinedQuantity1\",\"d\".\"FreeDefinedQuantity1Unit\",\"d\".\"FreeDefinedQuantity2\",\"d\".\"FreeDefinedQuantity2Unit\",\"d\".\"FreeDefinedAmount1\",\"d\".\"FreeDefinedAmount1Currency\",\"d\".\"FreeDefinedAmount2\",\"d\".\"FreeDefinedAmount2Currency\",\"d\".\"FreeDefinedDate1\",\"d\".\"FreeDefinedDate2\",\"d\".\"FreeDefinedIndicator1\",\"d\".\"FreeDefinedIndicator2\",\"d\".\"StatusCombinationCode\",\"d\".\"IsMarkedForDeletion\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\nFROM\n\"1_INBOUND_S4_CURR.1LT_I_PROJECTDATA_2_S4_CURR_Delta\" d\nCROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o\n  ON o.\"BATCH_ID\"      = b.\"BATCH_ID\"\n AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\n AND o.\"OBJECT_NAME\"   = 'I_PROJECTDATA_2'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_PROJECTDATA_2_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_PROJECTDATA_2_S4_AUD_CURR_01",
+              "x": 367.9999990463257,
+              "y": 114.5,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "ProjectInternalID",
+                    "target": "ProjectInternalID"
+                  },
+                  {
+                    "source": "ProjectExternalID",
+                    "target": "ProjectExternalID"
+                  },
+                  {
+                    "source": "Project",
+                    "target": "Project"
+                  },
+                  {
+                    "source": "ProjectDescription",
+                    "target": "ProjectDescription"
+                  },
+                  {
+                    "source": "ProjectProfileCode",
+                    "target": "ProjectProfileCode"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "ControllingArea",
+                    "target": "ControllingArea"
+                  },
+                  {
+                    "source": "FunctionalArea",
+                    "target": "FunctionalArea"
+                  },
+                  {
+                    "source": "ProfitCenter",
+                    "target": "ProfitCenter"
+                  },
+                  {
+                    "source": "ProjectObject",
+                    "target": "ProjectObject"
+                  },
+                  {
+                    "source": "PlannedStartDate",
+                    "target": "PlannedStartDate"
+                  },
+                  {
+                    "source": "PlannedEndDate",
+                    "target": "PlannedEndDate"
+                  },
+                  {
+                    "source": "WorkCenterLocation",
+                    "target": "WorkCenterLocation"
+                  },
+                  {
+                    "source": "TaxJurisdiction",
+                    "target": "TaxJurisdiction"
+                  },
+                  {
+                    "source": "ResponsiblePerson",
+                    "target": "ResponsiblePerson"
+                  },
+                  {
+                    "source": "ResponsiblePersonName",
+                    "target": "ResponsiblePersonName"
+                  },
+                  {
+                    "source": "ApplicantCode",
+                    "target": "ApplicantCode"
+                  },
+                  {
+                    "source": "ApplicantName",
+                    "target": "ApplicantName"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "BasicDatesLastScheduledDate",
+                    "target": "BasicDatesLastScheduledDate"
+                  },
+                  {
+                    "source": "FcstdDatesLastScheduledDate",
+                    "target": "FcstdDatesLastScheduledDate"
+                  },
+                  {
+                    "source": "FactoryCalendar",
+                    "target": "FactoryCalendar"
+                  },
+                  {
+                    "source": "SchedulingDurationUnit",
+                    "target": "SchedulingDurationUnit"
+                  },
+                  {
+                    "source": "ForecastedStartDate",
+                    "target": "ForecastedStartDate"
+                  },
+                  {
+                    "source": "ForecastedEndDate",
+                    "target": "ForecastedEndDate"
+                  },
+                  {
+                    "source": "BusinessArea",
+                    "target": "BusinessArea"
+                  },
+                  {
+                    "source": "Plant",
+                    "target": "Plant"
+                  },
+                  {
+                    "source": "Currency",
+                    "target": "Currency"
+                  },
+                  {
+                    "source": "BudgetProfile",
+                    "target": "BudgetProfile"
+                  },
+                  {
+                    "source": "PlanningProfile",
+                    "target": "PlanningProfile"
+                  },
+                  {
+                    "source": "InvestmentProfile",
+                    "target": "InvestmentProfile"
+                  },
+                  {
+                    "source": "ProjInterestCalcProfile",
+                    "target": "ProjInterestCalcProfile"
+                  },
+                  {
+                    "source": "ResultAnalysisInternalID",
+                    "target": "ResultAnalysisInternalID"
+                  },
+                  {
+                    "source": "PartnerDeterminationProcedure",
+                    "target": "PartnerDeterminationProcedure"
+                  },
+                  {
+                    "source": "ControllingObjectClass",
+                    "target": "ControllingObjectClass"
+                  },
+                  {
+                    "source": "NetworkProfile",
+                    "target": "NetworkProfile"
+                  },
+                  {
+                    "source": "WBSSchedulingProfile",
+                    "target": "WBSSchedulingProfile"
+                  },
+                  {
+                    "source": "PlanningMethForProjBasicDate",
+                    "target": "PlanningMethForProjBasicDate"
+                  },
+                  {
+                    "source": "PlanningMethForProjFcstdDate",
+                    "target": "PlanningMethForProjFcstdDate"
+                  },
+                  {
+                    "source": "NetworkAssignmentType",
+                    "target": "NetworkAssignmentType"
+                  },
+                  {
+                    "source": "WBSIsStatisticalWBSElement",
+                    "target": "WBSIsStatisticalWBSElement"
+                  },
+                  {
+                    "source": "WBSIsMarkedForIntegratedPlng",
+                    "target": "WBSIsMarkedForIntegratedPlng"
+                  },
+                  {
+                    "source": "ProjectHasOwnStock",
+                    "target": "ProjectHasOwnStock"
+                  },
+                  {
+                    "source": "InventorySpecialStockValnType",
+                    "target": "InventorySpecialStockValnType"
+                  },
+                  {
+                    "source": "WBSIsMarkedForAutomReqmtGrpg",
+                    "target": "WBSIsMarkedForAutomReqmtGrpg"
+                  },
+                  {
+                    "source": "SalesOrganization",
+                    "target": "SalesOrganization"
+                  },
+                  {
+                    "source": "DistributionChannel",
+                    "target": "DistributionChannel"
+                  },
+                  {
+                    "source": "Language",
+                    "target": "Language"
+                  },
+                  {
+                    "source": "WBSElementMaskID",
+                    "target": "WBSElementMaskID"
+                  },
+                  {
+                    "source": "Division",
+                    "target": "Division"
+                  },
+                  {
+                    "source": "DynItemProcessorPrfl",
+                    "target": "DynItemProcessorPrfl"
+                  },
+                  {
+                    "source": "StatusProfile",
+                    "target": "StatusProfile"
+                  },
+                  {
+                    "source": "WBSStatusProfile",
+                    "target": "WBSStatusProfile"
+                  },
+                  {
+                    "source": "SimulationProfile",
+                    "target": "SimulationProfile"
+                  },
+                  {
+                    "source": "SchedulingScenario",
+                    "target": "SchedulingScenario"
+                  },
+                  {
+                    "source": "DistributionProfile",
+                    "target": "DistributionProfile"
+                  },
+                  {
+                    "source": "JointVenture",
+                    "target": "JointVenture"
+                  },
+                  {
+                    "source": "JointVentureCostRecoveryCode",
+                    "target": "JointVentureCostRecoveryCode"
+                  },
+                  {
+                    "source": "JointVentureEquityType",
+                    "target": "JointVentureEquityType"
+                  },
+                  {
+                    "source": "JointVentureObjectType",
+                    "target": "JointVentureObjectType"
+                  },
+                  {
+                    "source": "JntIntrstBillgClass",
+                    "target": "JntIntrstBillgClass"
+                  },
+                  {
+                    "source": "JntIntrstBillgSubClass",
+                    "target": "JntIntrstBillgSubClass"
+                  },
+                  {
+                    "source": "FreeDefinedTableFieldSemantic",
+                    "target": "FreeDefinedTableFieldSemantic"
+                  },
+                  {
+                    "source": "FreeDefinedAttribute01",
+                    "target": "FreeDefinedAttribute01"
+                  },
+                  {
+                    "source": "FreeDefinedAttribute02",
+                    "target": "FreeDefinedAttribute02"
+                  },
+                  {
+                    "source": "FreeDefinedAttribute03",
+                    "target": "FreeDefinedAttribute03"
+                  },
+                  {
+                    "source": "FreeDefinedAttribute04",
+                    "target": "FreeDefinedAttribute04"
+                  },
+                  {
+                    "source": "FreeDefinedQuantity1",
+                    "target": "FreeDefinedQuantity1"
+                  },
+                  {
+                    "source": "FreeDefinedQuantity1Unit",
+                    "target": "FreeDefinedQuantity1Unit"
+                  },
+                  {
+                    "source": "FreeDefinedQuantity2",
+                    "target": "FreeDefinedQuantity2"
+                  },
+                  {
+                    "source": "FreeDefinedQuantity2Unit",
+                    "target": "FreeDefinedQuantity2Unit"
+                  },
+                  {
+                    "source": "FreeDefinedAmount1",
+                    "target": "FreeDefinedAmount1"
+                  },
+                  {
+                    "source": "FreeDefinedAmount1Currency",
+                    "target": "FreeDefinedAmount1Currency"
+                  },
+                  {
+                    "source": "FreeDefinedAmount2",
+                    "target": "FreeDefinedAmount2"
+                  },
+                  {
+                    "source": "FreeDefinedAmount2Currency",
+                    "target": "FreeDefinedAmount2Currency"
+                  },
+                  {
+                    "source": "FreeDefinedDate1",
+                    "target": "FreeDefinedDate1"
+                  },
+                  {
+                    "source": "FreeDefinedDate2",
+                    "target": "FreeDefinedDate2"
+                  },
+                  {
+                    "source": "FreeDefinedIndicator1",
+                    "target": "FreeDefinedIndicator1"
+                  },
+                  {
+                    "source": "FreeDefinedIndicator2",
+                    "target": "FreeDefinedIndicator2"
+                  },
+                  {
+                    "source": "StatusCombinationCode",
+                    "target": "StatusCombinationCode"
+                  },
+                  {
+                    "source": "IsMarkedForDeletion",
+                    "target": "IsMarkedForDeletion"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "ProjectInternalID": {
+                      "@EndUserText.label": "Project (internal)",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 8,
+                      "notNull": true
+                    },
+                    "ProjectExternalID": {
+                      "@EndUserText.label": "Project number (external) edited",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 24
+                    },
+                    "Project": {
+                      "@EndUserText.label": "Project definition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 24
+                    },
+                    "ProjectDescription": {
+                      "@EndUserText.label": "Project name",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "ProjectProfileCode": {
+                      "@EndUserText.label": "Project profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProjectObject": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "PlannedStartDate": {
+                      "@EndUserText.label": "Project planned start date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PlannedEndDate": {
+                      "@EndUserText.label": "Project planned finish date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "WorkCenterLocation": {
+                      "@EndUserText.label": "Location",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "ResponsiblePerson": {
+                      "@EndUserText.label": "Number of the responsible person (project manager)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ResponsiblePersonName": {
+                      "@EndUserText.label": "Name of responsible person (project manager)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "ApplicantCode": {
+                      "@EndUserText.label": "Applicant number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ApplicantName": {
+                      "@EndUserText.label": "Applicant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person responsible for creating the object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Record creation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Name of person who changed object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Changed on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "BasicDatesLastScheduledDate": {
+                      "@EndUserText.label": "Date of last scheduling of the overall network (basic dates)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FcstdDatesLastScheduledDate": {
+                      "@EndUserText.label": "Date of last scheduling of the overall network (forecast)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FactoryCalendar": {
+                      "@EndUserText.label": "Appointments: calendar",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "SchedulingDurationUnit": {
+                      "@EndUserText.label": "Time unit for execution duration",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ForecastedStartDate": {
+                      "@EndUserText.label": "Forecast start date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ForecastedEndDate": {
+                      "@EndUserText.label": "Forecast finish date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "BusinessArea": {
+                      "@EndUserText.label": "Business area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Plant": {
+                      "@EndUserText.label": "Plant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Currency": {
+                      "@EndUserText.label": "Wbs currency (project definition)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "BudgetProfile": {
+                      "@EndUserText.label": "Budget profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "PlanningProfile": {
+                      "@EndUserText.label": "Planning profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "InvestmentProfile": {
+                      "@EndUserText.label": "Investment measure profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "ProjInterestCalcProfile": {
+                      "@EndUserText.label": "Interest profile for project/order interest calculation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "ResultAnalysisInternalID": {
+                      "@EndUserText.label": "Results analysis key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "PartnerDeterminationProcedure": {
+                      "@EndUserText.label": "Partner determination procedure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ControllingObjectClass": {
+                      "@EndUserText.label": "Object class",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "NetworkProfile": {
+                      "@EndUserText.label": "Network profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "WBSSchedulingProfile": {
+                      "@EndUserText.label": "Profile for wbs scheduling",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "PlanningMethForProjBasicDate": {
+                      "@EndUserText.label": "Planning method for project basic dates",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PlanningMethForProjFcstdDate": {
+                      "@EndUserText.label": "Planning method for project forecast dates",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "NetworkAssignmentType": {
+                      "@EndUserText.label": "Network assignment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "WBSIsStatisticalWBSElement": {
+                      "@EndUserText.label": "Statistical wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "WBSIsMarkedForIntegratedPlng": {
+                      "@EndUserText.label": "Indicator for integrated planning",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProjectHasOwnStock": {
+                      "@EndUserText.label": "Project stock",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "InventorySpecialStockValnType": {
+                      "@EndUserText.label": "Valuation of special stock",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "WBSIsMarkedForAutomReqmtGrpg": {
+                      "@EndUserText.label": "Indicator: automatic requirements grouping",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SalesOrganization": {
+                      "@EndUserText.label": "Sales organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "DistributionChannel": {
+                      "@EndUserText.label": "Distribution channel",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "Language": {
+                      "@EndUserText.label": "Language key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "WBSElementMaskID": {
+                      "@EndUserText.label": "Selection mask for wbs element short ids",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 24
+                    },
+                    "Division": {
+                      "@EndUserText.label": "Division",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "DynItemProcessorPrfl": {
+                      "@EndUserText.label": "Dynamic item processor profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "StatusProfile": {
+                      "@EndUserText.label": "Status profile for project definition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "WBSStatusProfile": {
+                      "@EndUserText.label": "Status profile for wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SimulationProfile": {
+                      "@EndUserText.label": "Simulation profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SchedulingScenario": {
+                      "@EndUserText.label": "Scheduling scenario",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "DistributionProfile": {
+                      "@EndUserText.label": "Distribution profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "JointVenture": {
+                      "@EndUserText.label": "Joint venture",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "JointVentureCostRecoveryCode": {
+                      "@EndUserText.label": "Recovery indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "JointVentureEquityType": {
+                      "@EndUserText.label": "Equity type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "JointVentureObjectType": {
+                      "@EndUserText.label": "Joint venture object type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "JntIntrstBillgClass": {
+                      "@EndUserText.label": "Jib/jibe class",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "JntIntrstBillgSubClass": {
+                      "@EndUserText.label": "Jib/jibe subclass a",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "FreeDefinedTableFieldSemantic": {
+                      "@EndUserText.label": "Key word id for user-defined fields",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "FreeDefinedAttribute01": {
+                      "@EndUserText.label": "1st user field for 20 characters - wbs element-",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "FreeDefinedAttribute02": {
+                      "@EndUserText.label": "2nd user field 20 digits - wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "FreeDefinedAttribute03": {
+                      "@EndUserText.label": "3rd user-defined field 10 digits -wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "FreeDefinedAttribute04": {
+                      "@EndUserText.label": "4th user-defined field 10 digits -wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "FreeDefinedQuantity1": {
+                      "@EndUserText.label": "1st user-defined field for quantity(length 10,3) wbs element",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "FreeDefinedQuantity1Unit": {
+                      "@EndUserText.label": "1st user defined field for quantity field unit - wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "FreeDefinedQuantity2": {
+                      "@EndUserText.label": "2nd use field for quantity (length 10,3) wbs element",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "FreeDefinedQuantity2Unit": {
+                      "@EndUserText.label": "2nd user defined field for quantity field unit - wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "FreeDefinedAmount1": {
+                      "@EndUserText.label": "FreeDefinedAmount1",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "FreeDefinedAmount1Currency": {
+                      "@EndUserText.label": "1st user defined field for value field unit - wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "FreeDefinedAmount2": {
+                      "@EndUserText.label": "FreeDefinedAmount2",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "FreeDefinedAmount2Currency": {
+                      "@EndUserText.label": "2nd user defined field for value field unit - wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "FreeDefinedDate1": {
+                      "@EndUserText.label": "1st user field for date -wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FreeDefinedDate2": {
+                      "@EndUserText.label": "2nd user field for date -wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FreeDefinedIndicator1": {
+                      "@EndUserText.label": "1st user field for 'ind. for evaluations' wbs elem.",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "FreeDefinedIndicator2": {
+                      "@EndUserText.label": "2nd user field for 'indicator for eval.s' wbs elemnt",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "StatusCombinationCode": {
+                      "@EndUserText.label": "Status combination",
+                      "type": "cds.hana.TINYINT",
+                      "key": false
+                    },
+                    "IsMarkedForDeletion": {
+                      "@EndUserText.label": "Deletion indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_PROJECTDATA_2_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_PROJECTDATA_2_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_LWUFGFID"
+                    }
+                  }
+                },
+                "name": "2LT_I_PROJECTDATA_2_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "317.9999990463257,134.5 364.4999990463257,134.5"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

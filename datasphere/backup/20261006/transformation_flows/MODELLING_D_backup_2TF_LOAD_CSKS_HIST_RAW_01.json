@@ -1,0 +1,2504 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_CSKS_HIST_RAW_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_CSKS_HIST_RAW_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_HIST_RAW": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW"
+                  },
+                  "1_INBOUND_HIST_RAW.1LT_CSKS_HIST_RAW": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_CSKS_HIST_RAW",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "KOKRS": {
+                        "@EndUserText.label": "KOKRS",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "KOSTL": {
+                        "@EndUserText.label": "KOSTL",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 8
+                      },
+                      "DATBI": {
+                        "@EndUserText.label": "DATBI",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "DATAB": {
+                        "@EndUserText.label": "DATAB",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "BKZKP": {
+                        "@EndUserText.label": "BKZKP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PKZKP": {
+                        "@EndUserText.label": "PKZKP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BUKRS": {
+                        "@EndUserText.label": "BUKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "GSBER": {
+                        "@EndUserText.label": "GSBER",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KOSAR": {
+                        "@EndUserText.label": "KOSAR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "VERAK": {
+                        "@EndUserText.label": "VERAK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 11
+                      },
+                      "VERAK_USER": {
+                        "@EndUserText.label": "VERAK_USER",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 11
+                      },
+                      "WAERS": {
+                        "@EndUserText.label": "WAERS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "KALSM": {
+                        "@EndUserText.label": "KALSM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TXJCD": {
+                        "@EndUserText.label": "TXJCD",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PRCTR": {
+                        "@EndUserText.label": "PRCTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "WERKS": {
+                        "@EndUserText.label": "WERKS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "LOGSYSTEM": {
+                        "@EndUserText.label": "LOGSYSTEM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ERSDA": {
+                        "@EndUserText.label": "ERSDA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "USNAM": {
+                        "@EndUserText.label": "USNAM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      },
+                      "BKZKS": {
+                        "@EndUserText.label": "BKZKS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BKZER": {
+                        "@EndUserText.label": "BKZER",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BKZOB": {
+                        "@EndUserText.label": "BKZOB",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PKZKS": {
+                        "@EndUserText.label": "PKZKS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PKZER": {
+                        "@EndUserText.label": "PKZER",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "VMETH": {
+                        "@EndUserText.label": "VMETH",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "MGEFL": {
+                        "@EndUserText.label": "MGEFL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ABTEI": {
+                        "@EndUserText.label": "ABTEI",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "NKOST": {
+                        "@EndUserText.label": "NKOST",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KVEWE": {
+                        "@EndUserText.label": "KVEWE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KAPPL": {
+                        "@EndUserText.label": "KAPPL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KOSZSCHL": {
+                        "@EndUserText.label": "KOSZSCHL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "LAND1": {
+                        "@EndUserText.label": "LAND1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ANRED": {
+                        "@EndUserText.label": "ANRED",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "NAME1": {
+                        "@EndUserText.label": "NAME1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "NAME2": {
+                        "@EndUserText.label": "NAME2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "NAME3": {
+                        "@EndUserText.label": "NAME3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "NAME4": {
+                        "@EndUserText.label": "NAME4",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ORT01": {
+                        "@EndUserText.label": "ORT01",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ORT02": {
+                        "@EndUserText.label": "ORT02",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "STRAS": {
+                        "@EndUserText.label": "STRAS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PFACH": {
+                        "@EndUserText.label": "PFACH",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSTLZ": {
+                        "@EndUserText.label": "PSTLZ",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSTL2": {
+                        "@EndUserText.label": "PSTL2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "REGIO": {
+                        "@EndUserText.label": "REGIO",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SPRAS": {
+                        "@EndUserText.label": "SPRAS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "TELBX": {
+                        "@EndUserText.label": "TELBX",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TELF1": {
+                        "@EndUserText.label": "TELF1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TELF2": {
+                        "@EndUserText.label": "TELF2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TELFX": {
+                        "@EndUserText.label": "TELFX",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TELTX": {
+                        "@EndUserText.label": "TELTX",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TELX1": {
+                        "@EndUserText.label": "TELX1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "DATLT": {
+                        "@EndUserText.label": "DATLT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "DRNAM": {
+                        "@EndUserText.label": "DRNAM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KHINR": {
+                        "@EndUserText.label": "KHINR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "CCKEY": {
+                        "@EndUserText.label": "CCKEY",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KOMPL": {
+                        "@EndUserText.label": "KOMPL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "STAKZ": {
+                        "@EndUserText.label": "STAKZ",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "OBJNR": {
+                        "@EndUserText.label": "OBJNR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 14
+                      },
+                      "FUNKT": {
+                        "@EndUserText.label": "FUNKT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "AFUNK": {
+                        "@EndUserText.label": "AFUNK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "CPI_TEMPL": {
+                        "@EndUserText.label": "CPI_TEMPL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "CPD_TEMPL": {
+                        "@EndUserText.label": "CPD_TEMPL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "FUNC_AREA": {
+                        "@EndUserText.label": "FUNC_AREA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SCI_TEMPL": {
+                        "@EndUserText.label": "SCI_TEMPL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SCD_TEMPL": {
+                        "@EndUserText.label": "SCD_TEMPL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ZZAD_SMTPADR": {
+                        "@EndUserText.label": "ZZAD_SMTPADR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ZPOAPPR_USR_1": {
+                        "@EndUserText.label": "ZPOAPPR_USR_1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 11
+                      },
+                      "ZPOAPPR_US_NM_1": {
+                        "@EndUserText.label": "ZPOAPPR_US_NM_1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 17
+                      },
+                      "ZPOAPPR_USR_3": {
+                        "@EndUserText.label": "ZPOAPPR_USR_3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 11
+                      },
+                      "ZPOAPPR_US_NM_3": {
+                        "@EndUserText.label": "ZPOAPPR_US_NM_3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 17
+                      },
+                      "ZPOAPPR_USR_4": {
+                        "@EndUserText.label": "ZPOAPPR_USR_4",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 11
+                      },
+                      "ZPOAPPR_US_NM_4": {
+                        "@EndUserText.label": "ZPOAPPR_US_NM_4",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 17
+                      },
+                      "VNAME": {
+                        "@EndUserText.label": "VNAME",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RECID": {
+                        "@EndUserText.label": "RECID",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ETYPE": {
+                        "@EndUserText.label": "ETYPE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "JV_OTYPE": {
+                        "@EndUserText.label": "JV_OTYPE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "JV_JIBCL": {
+                        "@EndUserText.label": "JV_JIBCL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "JV_JIBSA": {
+                        "@EndUserText.label": "JV_JIBSA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "FERC_IND": {
+                        "@EndUserText.label": "FERC_IND",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KTEXT": {
+                        "@EndUserText.label": "KTEXT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "LTEXT": {
+                        "@EndUserText.label": "LTEXT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "MCTXT": {
+                        "@EndUserText.label": "MCTXT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.businessName": "1 INBOUND HIST RAW"
+                  }
+                },
+                "name": "2TF_LOAD_CSKS_HIST_RAW_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "KOKRS": {
+                      "@EndUserText.label": "KOKRS",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "KOSTL": {
+                      "@EndUserText.label": "KOSTL",
+                      "type": "cds.String",
+                      "length": 8,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DATBI": {
+                      "@EndUserText.label": "DATBI",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DATAB": {
+                      "@EndUserText.label": "DATAB",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "BKZKP": {
+                      "@EndUserText.label": "BKZKP",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PKZKP": {
+                      "@EndUserText.label": "PKZKP",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BUKRS": {
+                      "@EndUserText.label": "BUKRS",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "GSBER": {
+                      "@EndUserText.label": "GSBER",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KOSAR": {
+                      "@EndUserText.label": "KOSAR",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "VERAK": {
+                      "@EndUserText.label": "VERAK",
+                      "type": "cds.String",
+                      "length": 11
+                    },
+                    "VERAK_USER": {
+                      "@EndUserText.label": "VERAK_USER",
+                      "type": "cds.String",
+                      "length": 11
+                    },
+                    "WAERS": {
+                      "@EndUserText.label": "WAERS",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "KALSM": {
+                      "@EndUserText.label": "KALSM",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TXJCD": {
+                      "@EndUserText.label": "TXJCD",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PRCTR": {
+                      "@EndUserText.label": "PRCTR",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "WERKS": {
+                      "@EndUserText.label": "WERKS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "LOGSYSTEM": {
+                      "@EndUserText.label": "LOGSYSTEM",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ERSDA": {
+                      "@EndUserText.label": "ERSDA",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "USNAM": {
+                      "@EndUserText.label": "USNAM",
+                      "type": "cds.String",
+                      "length": 50
+                    },
+                    "BKZKS": {
+                      "@EndUserText.label": "BKZKS",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BKZER": {
+                      "@EndUserText.label": "BKZER",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BKZOB": {
+                      "@EndUserText.label": "BKZOB",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PKZKS": {
+                      "@EndUserText.label": "PKZKS",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PKZER": {
+                      "@EndUserText.label": "PKZER",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "VMETH": {
+                      "@EndUserText.label": "VMETH",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "MGEFL": {
+                      "@EndUserText.label": "MGEFL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ABTEI": {
+                      "@EndUserText.label": "ABTEI",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "NKOST": {
+                      "@EndUserText.label": "NKOST",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KVEWE": {
+                      "@EndUserText.label": "KVEWE",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KAPPL": {
+                      "@EndUserText.label": "KAPPL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KOSZSCHL": {
+                      "@EndUserText.label": "KOSZSCHL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "LAND1": {
+                      "@EndUserText.label": "LAND1",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ANRED": {
+                      "@EndUserText.label": "ANRED",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "NAME1": {
+                      "@EndUserText.label": "NAME1",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "NAME2": {
+                      "@EndUserText.label": "NAME2",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "NAME3": {
+                      "@EndUserText.label": "NAME3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "NAME4": {
+                      "@EndUserText.label": "NAME4",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ORT01": {
+                      "@EndUserText.label": "ORT01",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ORT02": {
+                      "@EndUserText.label": "ORT02",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "STRAS": {
+                      "@EndUserText.label": "STRAS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PFACH": {
+                      "@EndUserText.label": "PFACH",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSTLZ": {
+                      "@EndUserText.label": "PSTLZ",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSTL2": {
+                      "@EndUserText.label": "PSTL2",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "REGIO": {
+                      "@EndUserText.label": "REGIO",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SPRAS": {
+                      "@EndUserText.label": "SPRAS",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "TELBX": {
+                      "@EndUserText.label": "TELBX",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TELF1": {
+                      "@EndUserText.label": "TELF1",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TELF2": {
+                      "@EndUserText.label": "TELF2",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TELFX": {
+                      "@EndUserText.label": "TELFX",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TELTX": {
+                      "@EndUserText.label": "TELTX",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TELX1": {
+                      "@EndUserText.label": "TELX1",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "DATLT": {
+                      "@EndUserText.label": "DATLT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "DRNAM": {
+                      "@EndUserText.label": "DRNAM",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KHINR": {
+                      "@EndUserText.label": "KHINR",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "CCKEY": {
+                      "@EndUserText.label": "CCKEY",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KOMPL": {
+                      "@EndUserText.label": "KOMPL",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "STAKZ": {
+                      "@EndUserText.label": "STAKZ",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "OBJNR": {
+                      "@EndUserText.label": "OBJNR",
+                      "type": "cds.String",
+                      "length": 14
+                    },
+                    "FUNKT": {
+                      "@EndUserText.label": "FUNKT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "AFUNK": {
+                      "@EndUserText.label": "AFUNK",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "CPI_TEMPL": {
+                      "@EndUserText.label": "CPI_TEMPL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "CPD_TEMPL": {
+                      "@EndUserText.label": "CPD_TEMPL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "FUNC_AREA": {
+                      "@EndUserText.label": "FUNC_AREA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SCI_TEMPL": {
+                      "@EndUserText.label": "SCI_TEMPL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SCD_TEMPL": {
+                      "@EndUserText.label": "SCD_TEMPL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ZZAD_SMTPADR": {
+                      "@EndUserText.label": "ZZAD_SMTPADR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ZPOAPPR_USR_1": {
+                      "@EndUserText.label": "ZPOAPPR_USR_1",
+                      "type": "cds.String",
+                      "length": 11
+                    },
+                    "ZPOAPPR_US_NM_1": {
+                      "@EndUserText.label": "ZPOAPPR_US_NM_1",
+                      "type": "cds.String",
+                      "length": 17
+                    },
+                    "ZPOAPPR_USR_3": {
+                      "@EndUserText.label": "ZPOAPPR_USR_3",
+                      "type": "cds.String",
+                      "length": 11
+                    },
+                    "ZPOAPPR_US_NM_3": {
+                      "@EndUserText.label": "ZPOAPPR_US_NM_3",
+                      "type": "cds.String",
+                      "length": 17
+                    },
+                    "ZPOAPPR_USR_4": {
+                      "@EndUserText.label": "ZPOAPPR_USR_4",
+                      "type": "cds.String",
+                      "length": 11
+                    },
+                    "ZPOAPPR_US_NM_4": {
+                      "@EndUserText.label": "ZPOAPPR_US_NM_4",
+                      "type": "cds.String",
+                      "length": 17
+                    },
+                    "VNAME": {
+                      "@EndUserText.label": "VNAME",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RECID": {
+                      "@EndUserText.label": "RECID",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ETYPE": {
+                      "@EndUserText.label": "ETYPE",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "JV_OTYPE": {
+                      "@EndUserText.label": "JV_OTYPE",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "JV_JIBCL": {
+                      "@EndUserText.label": "JV_JIBCL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "JV_JIBSA": {
+                      "@EndUserText.label": "JV_JIBSA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "FERC_IND": {
+                      "@EndUserText.label": "FERC_IND",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KTEXT": {
+                      "@EndUserText.label": "KTEXT",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "LTEXT": {
+                      "@EndUserText.label": "LTEXT",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "MCTXT": {
+                      "@EndUserText.label": "MCTXT",
+                      "type": "cds.String",
+                      "length": 20
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_HIST_RAW.1LT_CSKS_HIST_RAW"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_HIST_RAW_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "HIST_RAW"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "CSKS"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "HIST_RAW",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOSTL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DATBI"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DATAB"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BKZKP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PKZKP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BUKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GSBER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOSAR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VERAK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VERAK_USER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WAERS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KALSM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TXJCD"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PRCTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WERKS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LOGSYSTEM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ERSDA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "USNAM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BKZKS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BKZER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BKZOB"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PKZKS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PKZER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VMETH"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MGEFL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ABTEI"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NKOST"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KVEWE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KAPPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOSZSCHL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LAND1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ANRED"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NAME1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NAME2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NAME3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NAME4"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ORT01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ORT02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "STRAS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PFACH"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSTLZ"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSTL2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REGIO"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SPRAS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TELBX"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TELF1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TELF2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TELFX"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TELTX"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TELX1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DATLT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DRNAM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KHINR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CCKEY"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOMPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "STAKZ"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FUNKT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AFUNK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CPI_TEMPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CPD_TEMPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FUNC_AREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SCI_TEMPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SCD_TEMPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZZAD_SMTPADR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZPOAPPR_USR_1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZPOAPPR_US_NM_1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZPOAPPR_USR_3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZPOAPPR_US_NM_3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZPOAPPR_USR_4"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZPOAPPR_US_NM_4"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VNAME"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ETYPE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JV_OTYPE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JV_JIBCL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JV_JIBSA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FERC_IND"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KTEXT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LTEXT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MCTXT"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT \r\n    b.\"BATCH_ID\",\r\n    CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n    'HIST_RAW' AS \"SOURCE_SYSTEM\",\r\n    o.\"SOURCE_FILE\",\r\n    \"d\".\"KOKRS\",\"d\".\"KOSTL\",\"d\".\"DATBI\",\"d\".\"DATAB\",\"d\".\"BKZKP\",\"d\".\"PKZKP\",\"d\".\"BUKRS\",\"d\".\"GSBER\",\"d\".\"KOSAR\",\"d\".\"VERAK\",\"d\".\"VERAK_USER\",\"d\".\"WAERS\",\"d\".\"KALSM\",\"d\".\"TXJCD\",\"d\".\"PRCTR\",\"d\".\"WERKS\",\"d\".\"LOGSYSTEM\",\"d\".\"ERSDA\",\"d\".\"USNAM\",\"d\".\"BKZKS\",\"d\".\"BKZER\",\"d\".\"BKZOB\",\"d\".\"PKZKS\",\"d\".\"PKZER\",\"d\".\"VMETH\",\"d\".\"MGEFL\",\"d\".\"ABTEI\",\"d\".\"NKOST\",\"d\".\"KVEWE\",\"d\".\"KAPPL\",\"d\".\"KOSZSCHL\",\"d\".\"LAND1\",\"d\".\"ANRED\",\"d\".\"NAME1\",\"d\".\"NAME2\",\"d\".\"NAME3\",\"d\".\"NAME4\",\"d\".\"ORT01\",\"d\".\"ORT02\",\"d\".\"STRAS\",\"d\".\"PFACH\",\"d\".\"PSTLZ\",\"d\".\"PSTL2\",\"d\".\"REGIO\",\"d\".\"SPRAS\",\"d\".\"TELBX\",\"d\".\"TELF1\",\"d\".\"TELF2\",\"d\".\"TELFX\",\"d\".\"TELTX\",\"d\".\"TELX1\",\"d\".\"DATLT\",\"d\".\"DRNAM\",\"d\".\"KHINR\",\"d\".\"CCKEY\",\"d\".\"KOMPL\",\"d\".\"STAKZ\",\"d\".\"OBJNR\",\"d\".\"FUNKT\",\"d\".\"AFUNK\",\"d\".\"CPI_TEMPL\",\"d\".\"CPD_TEMPL\",\"d\".\"FUNC_AREA\",\"d\".\"SCI_TEMPL\",\"d\".\"SCD_TEMPL\",\"d\".\"ZZAD_SMTPADR\",\"d\".\"ZPOAPPR_USR_1\",\"d\".\"ZPOAPPR_US_NM_1\",\"d\".\"ZPOAPPR_USR_3\",\"d\".\"ZPOAPPR_US_NM_3\",\"d\".\"ZPOAPPR_USR_4\",\"d\".\"ZPOAPPR_US_NM_4\",\"d\".\"VNAME\",\"d\".\"RECID\",\"d\".\"ETYPE\",\"d\".\"JV_OTYPE\",\"d\".\"JV_JIBCL\",\"d\".\"JV_JIBSA\",\"d\".\"FERC_IND\",\"d\".\"KTEXT\",\"d\".\"LTEXT\",\"d\".\"MCTXT\"\r\nFROM \"1_INBOUND_HIST_RAW.1LT_CSKS_HIST_RAW\" d\r\n\tCROSS JOIN \"2SV_ACTIVE_BATCH_HIST_RAW_01\" b\r\n\tJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o \r\n\t    ON o.\"BATCH_ID\" = b.\"BATCH_ID\" \r\n\t        AND o.\"SOURCE_SYSTEM\" = 'HIST_RAW' \r\n\t        AND o.\"OBJECT_NAME\" = 'CSKS'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_CSKS_HIST_RAW_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "KOKRS",
+                    "target": "KOKRS"
+                  },
+                  {
+                    "source": "KOSTL",
+                    "target": "KOSTL"
+                  },
+                  {
+                    "source": "DATBI",
+                    "target": "DATBI"
+                  },
+                  {
+                    "source": "DATAB",
+                    "target": "DATAB"
+                  },
+                  {
+                    "source": "BKZKP",
+                    "target": "BKZKP"
+                  },
+                  {
+                    "source": "PKZKP",
+                    "target": "PKZKP"
+                  },
+                  {
+                    "source": "BUKRS",
+                    "target": "BUKRS"
+                  },
+                  {
+                    "source": "GSBER",
+                    "target": "GSBER"
+                  },
+                  {
+                    "source": "KOSAR",
+                    "target": "KOSAR"
+                  },
+                  {
+                    "source": "VERAK",
+                    "target": "VERAK"
+                  },
+                  {
+                    "source": "VERAK_USER",
+                    "target": "VERAK_USER"
+                  },
+                  {
+                    "source": "WAERS",
+                    "target": "WAERS"
+                  },
+                  {
+                    "source": "KALSM",
+                    "target": "KALSM"
+                  },
+                  {
+                    "source": "TXJCD",
+                    "target": "TXJCD"
+                  },
+                  {
+                    "source": "PRCTR",
+                    "target": "PRCTR"
+                  },
+                  {
+                    "source": "WERKS",
+                    "target": "WERKS"
+                  },
+                  {
+                    "source": "LOGSYSTEM",
+                    "target": "LOGSYSTEM"
+                  },
+                  {
+                    "source": "ERSDA",
+                    "target": "ERSDA"
+                  },
+                  {
+                    "source": "USNAM",
+                    "target": "USNAM"
+                  },
+                  {
+                    "source": "BKZKS",
+                    "target": "BKZKS"
+                  },
+                  {
+                    "source": "BKZER",
+                    "target": "BKZER"
+                  },
+                  {
+                    "source": "BKZOB",
+                    "target": "BKZOB"
+                  },
+                  {
+                    "source": "PKZKS",
+                    "target": "PKZKS"
+                  },
+                  {
+                    "source": "PKZER",
+                    "target": "PKZER"
+                  },
+                  {
+                    "source": "VMETH",
+                    "target": "VMETH"
+                  },
+                  {
+                    "source": "MGEFL",
+                    "target": "MGEFL"
+                  },
+                  {
+                    "source": "ABTEI",
+                    "target": "ABTEI"
+                  },
+                  {
+                    "source": "NKOST",
+                    "target": "NKOST"
+                  },
+                  {
+                    "source": "KVEWE",
+                    "target": "KVEWE"
+                  },
+                  {
+                    "source": "KAPPL",
+                    "target": "KAPPL"
+                  },
+                  {
+                    "source": "KOSZSCHL",
+                    "target": "KOSZSCHL"
+                  },
+                  {
+                    "source": "LAND1",
+                    "target": "LAND1"
+                  },
+                  {
+                    "source": "ANRED",
+                    "target": "ANRED"
+                  },
+                  {
+                    "source": "NAME1",
+                    "target": "NAME1"
+                  },
+                  {
+                    "source": "NAME2",
+                    "target": "NAME2"
+                  },
+                  {
+                    "source": "NAME3",
+                    "target": "NAME3"
+                  },
+                  {
+                    "source": "NAME4",
+                    "target": "NAME4"
+                  },
+                  {
+                    "source": "ORT01",
+                    "target": "ORT01"
+                  },
+                  {
+                    "source": "ORT02",
+                    "target": "ORT02"
+                  },
+                  {
+                    "source": "STRAS",
+                    "target": "STRAS"
+                  },
+                  {
+                    "source": "PFACH",
+                    "target": "PFACH"
+                  },
+                  {
+                    "source": "PSTLZ",
+                    "target": "PSTLZ"
+                  },
+                  {
+                    "source": "PSTL2",
+                    "target": "PSTL2"
+                  },
+                  {
+                    "source": "REGIO",
+                    "target": "REGIO"
+                  },
+                  {
+                    "source": "SPRAS",
+                    "target": "SPRAS"
+                  },
+                  {
+                    "source": "TELBX",
+                    "target": "TELBX"
+                  },
+                  {
+                    "source": "TELF1",
+                    "target": "TELF1"
+                  },
+                  {
+                    "source": "TELF2",
+                    "target": "TELF2"
+                  },
+                  {
+                    "source": "TELFX",
+                    "target": "TELFX"
+                  },
+                  {
+                    "source": "TELTX",
+                    "target": "TELTX"
+                  },
+                  {
+                    "source": "TELX1",
+                    "target": "TELX1"
+                  },
+                  {
+                    "source": "DATLT",
+                    "target": "DATLT"
+                  },
+                  {
+                    "source": "DRNAM",
+                    "target": "DRNAM"
+                  },
+                  {
+                    "source": "KHINR",
+                    "target": "KHINR"
+                  },
+                  {
+                    "source": "CCKEY",
+                    "target": "CCKEY"
+                  },
+                  {
+                    "source": "KOMPL",
+                    "target": "KOMPL"
+                  },
+                  {
+                    "source": "STAKZ",
+                    "target": "STAKZ"
+                  },
+                  {
+                    "source": "OBJNR",
+                    "target": "OBJNR"
+                  },
+                  {
+                    "source": "FUNKT",
+                    "target": "FUNKT"
+                  },
+                  {
+                    "source": "AFUNK",
+                    "target": "AFUNK"
+                  },
+                  {
+                    "source": "CPI_TEMPL",
+                    "target": "CPI_TEMPL"
+                  },
+                  {
+                    "source": "CPD_TEMPL",
+                    "target": "CPD_TEMPL"
+                  },
+                  {
+                    "source": "FUNC_AREA",
+                    "target": "FUNC_AREA"
+                  },
+                  {
+                    "source": "SCI_TEMPL",
+                    "target": "SCI_TEMPL"
+                  },
+                  {
+                    "source": "SCD_TEMPL",
+                    "target": "SCD_TEMPL"
+                  },
+                  {
+                    "source": "ZZAD_SMTPADR",
+                    "target": "ZZAD_SMTPADR"
+                  },
+                  {
+                    "source": "ZPOAPPR_USR_1",
+                    "target": "ZPOAPPR_USR_1"
+                  },
+                  {
+                    "source": "ZPOAPPR_US_NM_1",
+                    "target": "ZPOAPPR_US_NM_1"
+                  },
+                  {
+                    "source": "ZPOAPPR_USR_3",
+                    "target": "ZPOAPPR_USR_3"
+                  },
+                  {
+                    "source": "ZPOAPPR_US_NM_3",
+                    "target": "ZPOAPPR_US_NM_3"
+                  },
+                  {
+                    "source": "ZPOAPPR_USR_4",
+                    "target": "ZPOAPPR_USR_4"
+                  },
+                  {
+                    "source": "ZPOAPPR_US_NM_4",
+                    "target": "ZPOAPPR_US_NM_4"
+                  },
+                  {
+                    "source": "VNAME",
+                    "target": "VNAME"
+                  },
+                  {
+                    "source": "RECID",
+                    "target": "RECID"
+                  },
+                  {
+                    "source": "ETYPE",
+                    "target": "ETYPE"
+                  },
+                  {
+                    "source": "JV_OTYPE",
+                    "target": "JV_OTYPE"
+                  },
+                  {
+                    "source": "JV_JIBCL",
+                    "target": "JV_JIBCL"
+                  },
+                  {
+                    "source": "JV_JIBSA",
+                    "target": "JV_JIBSA"
+                  },
+                  {
+                    "source": "FERC_IND",
+                    "target": "FERC_IND"
+                  },
+                  {
+                    "source": "KTEXT",
+                    "target": "KTEXT"
+                  },
+                  {
+                    "source": "LTEXT",
+                    "target": "LTEXT"
+                  },
+                  {
+                    "source": "MCTXT",
+                    "target": "MCTXT"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "KOKRS": {
+                      "@EndUserText.label": "KOKRS",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "KOSTL": {
+                      "@EndUserText.label": "KOSTL",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 8,
+                      "notNull": true
+                    },
+                    "DATBI": {
+                      "@EndUserText.label": "DATBI",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "DATAB": {
+                      "@EndUserText.label": "DATAB",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "BKZKP": {
+                      "@EndUserText.label": "BKZKP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PKZKP": {
+                      "@EndUserText.label": "PKZKP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BUKRS": {
+                      "@EndUserText.label": "BUKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "GSBER": {
+                      "@EndUserText.label": "GSBER",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KOSAR": {
+                      "@EndUserText.label": "KOSAR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "VERAK": {
+                      "@EndUserText.label": "VERAK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 11
+                    },
+                    "VERAK_USER": {
+                      "@EndUserText.label": "VERAK_USER",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 11
+                    },
+                    "WAERS": {
+                      "@EndUserText.label": "WAERS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "KALSM": {
+                      "@EndUserText.label": "KALSM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TXJCD": {
+                      "@EndUserText.label": "TXJCD",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PRCTR": {
+                      "@EndUserText.label": "PRCTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "WERKS": {
+                      "@EndUserText.label": "WERKS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "LOGSYSTEM": {
+                      "@EndUserText.label": "LOGSYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ERSDA": {
+                      "@EndUserText.label": "ERSDA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "USNAM": {
+                      "@EndUserText.label": "USNAM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    },
+                    "BKZKS": {
+                      "@EndUserText.label": "BKZKS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BKZER": {
+                      "@EndUserText.label": "BKZER",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BKZOB": {
+                      "@EndUserText.label": "BKZOB",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PKZKS": {
+                      "@EndUserText.label": "PKZKS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PKZER": {
+                      "@EndUserText.label": "PKZER",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "VMETH": {
+                      "@EndUserText.label": "VMETH",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "MGEFL": {
+                      "@EndUserText.label": "MGEFL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ABTEI": {
+                      "@EndUserText.label": "ABTEI",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "NKOST": {
+                      "@EndUserText.label": "NKOST",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KVEWE": {
+                      "@EndUserText.label": "KVEWE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KAPPL": {
+                      "@EndUserText.label": "KAPPL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KOSZSCHL": {
+                      "@EndUserText.label": "KOSZSCHL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "LAND1": {
+                      "@EndUserText.label": "LAND1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ANRED": {
+                      "@EndUserText.label": "ANRED",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "NAME1": {
+                      "@EndUserText.label": "NAME1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "NAME2": {
+                      "@EndUserText.label": "NAME2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "NAME3": {
+                      "@EndUserText.label": "NAME3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "NAME4": {
+                      "@EndUserText.label": "NAME4",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ORT01": {
+                      "@EndUserText.label": "ORT01",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ORT02": {
+                      "@EndUserText.label": "ORT02",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "STRAS": {
+                      "@EndUserText.label": "STRAS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PFACH": {
+                      "@EndUserText.label": "PFACH",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSTLZ": {
+                      "@EndUserText.label": "PSTLZ",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSTL2": {
+                      "@EndUserText.label": "PSTL2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "REGIO": {
+                      "@EndUserText.label": "REGIO",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SPRAS": {
+                      "@EndUserText.label": "SPRAS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "TELBX": {
+                      "@EndUserText.label": "TELBX",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TELF1": {
+                      "@EndUserText.label": "TELF1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TELF2": {
+                      "@EndUserText.label": "TELF2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TELFX": {
+                      "@EndUserText.label": "TELFX",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TELTX": {
+                      "@EndUserText.label": "TELTX",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TELX1": {
+                      "@EndUserText.label": "TELX1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "DATLT": {
+                      "@EndUserText.label": "DATLT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "DRNAM": {
+                      "@EndUserText.label": "DRNAM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KHINR": {
+                      "@EndUserText.label": "KHINR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "CCKEY": {
+                      "@EndUserText.label": "CCKEY",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KOMPL": {
+                      "@EndUserText.label": "KOMPL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "STAKZ": {
+                      "@EndUserText.label": "STAKZ",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "OBJNR": {
+                      "@EndUserText.label": "OBJNR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 14
+                    },
+                    "FUNKT": {
+                      "@EndUserText.label": "FUNKT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "AFUNK": {
+                      "@EndUserText.label": "AFUNK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "CPI_TEMPL": {
+                      "@EndUserText.label": "CPI_TEMPL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "CPD_TEMPL": {
+                      "@EndUserText.label": "CPD_TEMPL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "FUNC_AREA": {
+                      "@EndUserText.label": "FUNC_AREA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SCI_TEMPL": {
+                      "@EndUserText.label": "SCI_TEMPL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SCD_TEMPL": {
+                      "@EndUserText.label": "SCD_TEMPL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ZZAD_SMTPADR": {
+                      "@EndUserText.label": "ZZAD_SMTPADR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ZPOAPPR_USR_1": {
+                      "@EndUserText.label": "ZPOAPPR_USR_1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 11
+                    },
+                    "ZPOAPPR_US_NM_1": {
+                      "@EndUserText.label": "ZPOAPPR_US_NM_1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 17
+                    },
+                    "ZPOAPPR_USR_3": {
+                      "@EndUserText.label": "ZPOAPPR_USR_3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 11
+                    },
+                    "ZPOAPPR_US_NM_3": {
+                      "@EndUserText.label": "ZPOAPPR_US_NM_3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 17
+                    },
+                    "ZPOAPPR_USR_4": {
+                      "@EndUserText.label": "ZPOAPPR_USR_4",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 11
+                    },
+                    "ZPOAPPR_US_NM_4": {
+                      "@EndUserText.label": "ZPOAPPR_US_NM_4",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 17
+                    },
+                    "VNAME": {
+                      "@EndUserText.label": "VNAME",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RECID": {
+                      "@EndUserText.label": "RECID",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ETYPE": {
+                      "@EndUserText.label": "ETYPE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "JV_OTYPE": {
+                      "@EndUserText.label": "JV_OTYPE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "JV_JIBCL": {
+                      "@EndUserText.label": "JV_JIBCL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "JV_JIBSA": {
+                      "@EndUserText.label": "JV_JIBSA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "FERC_IND": {
+                      "@EndUserText.label": "FERC_IND",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KTEXT": {
+                      "@EndUserText.label": "KTEXT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "LTEXT": {
+                      "@EndUserText.label": "LTEXT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "MCTXT": {
+                      "@EndUserText.label": "MCTXT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_CSKS_HIST_RAW_AUD_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_WWKXUJFL"
+                    }
+                  }
+                },
+                "name": "2LT_CSKS_HIST_RAW_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

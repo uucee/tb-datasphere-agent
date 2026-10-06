@@ -1,0 +1,143 @@
+{
+  "definitions": {
+    "2LT_I_LEDGERCOMPANYCODECRCYROLES_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "Ledger": {
+          "@EndUserText.label": "Ledger in general ledger accounting",
+          "type": "cds.String",
+          "key": true,
+          "length": 100,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 100,
+          "notNull": true
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "CompanyCodeCurrencyRole": {
+          "@EndUserText.label": "Company code currency role",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "GlobalCurrencyRole": {
+          "@EndUserText.label": "Global currency role",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency1Role": {
+          "@EndUserText.label": "Freely defined currency 1 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency2Role": {
+          "@EndUserText.label": "Freely defined currency 2 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency3Role": {
+          "@EndUserText.label": "Freely defined currency 3 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency4Role": {
+          "@EndUserText.label": "Freely defined currency 4 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency5Role": {
+          "@EndUserText.label": "Freely defined currency 5 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency6Role": {
+          "@EndUserText.label": "Freely defined currency 6 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency7Role": {
+          "@EndUserText.label": "Freely defined currency 7 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FreeDefinedCurrency8Role": {
+          "@EndUserText.label": "Freely defined currency 8 role  (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "AccountingPrinciple": {
+          "@EndUserText.label": "Accounting principle",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "FunctionalCurrencyRole": {
+          "@EndUserText.label": "Functional currency role (currency type)",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "AdditionalCurrency1Field": {
+          "@EndUserText.label": "Additional currency 1 field",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "AdditionalCurrency2Field": {
+          "@EndUserText.label": "Additional currency 2 field",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_LEDGERCOMPANYCODECRCYROLES_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LCJBNTMP"
+        }
+      }
+    }
+  }
+}

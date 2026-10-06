@@ -1,0 +1,495 @@
+{
+  "definitions": {
+    "2LT_BSEG_HIST_RAW_AUD_01": {
+      "kind": "entity",
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "length": 500
+        },
+        "BUKRS": {
+          "@EndUserText.label": "BUKRS",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "BELNR": {
+          "@EndUserText.label": "BELNR",
+          "type": "cds.String",
+          "length": 10,
+          "key": true,
+          "notNull": true
+        },
+        "GJAHR": {
+          "@EndUserText.label": "GJAHR",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "BUZEI": {
+          "@EndUserText.label": "BUZEI",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "BUZID": {
+          "@EndUserText.label": "BUZID",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "AUGDT": {
+          "@EndUserText.label": "AUGDT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AUGCP": {
+          "@EndUserText.label": "AUGCP",
+          "type": "cds.String",
+          "length": 10
+        },
+        "AUGBL": {
+          "@EndUserText.label": "AUGBL",
+          "type": "cds.Integer"
+        },
+        "BSCHL": {
+          "@EndUserText.label": "BSCHL",
+          "type": "cds.Integer"
+        },
+        "KOART": {
+          "@EndUserText.label": "KOART",
+          "type": "cds.String",
+          "length": 1
+        },
+        "UMSKZ": {
+          "@EndUserText.label": "UMSKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "UMSKS": {
+          "@EndUserText.label": "UMSKS",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ZUMSK": {
+          "@EndUserText.label": "ZUMSK",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "SHKZG": {
+          "@EndUserText.label": "SHKZG",
+          "type": "cds.String",
+          "length": 1
+        },
+        "GSBER": {
+          "@EndUserText.label": "GSBER",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "PARGB": {
+          "@EndUserText.label": "PARGB",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MWSKZ": {
+          "@EndUserText.label": "MWSKZ",
+          "type": "cds.String",
+          "length": 2
+        },
+        "QSSKZ": {
+          "@EndUserText.label": "QSSKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DMBTR": {
+          "@EndUserText.label": "DMBTR",
+          "precision": 15,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "WRBTR": {
+          "@EndUserText.label": "WRBTR",
+          "precision": 15,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "KZBTR": {
+          "@EndUserText.label": "KZBTR",
+          "type": "cds.Integer"
+        },
+        "PSWBT": {
+          "@EndUserText.label": "PSWBT",
+          "precision": 15,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "PSWSL": {
+          "@EndUserText.label": "PSWSL",
+          "type": "cds.String",
+          "length": 3
+        },
+        "VALUT": {
+          "@EndUserText.label": "VALUT",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ZUONR": {
+          "@EndUserText.label": "ZUONR",
+          "type": "cds.String",
+          "length": 50
+        },
+        "SGTXT": {
+          "@EndUserText.label": "SGTXT",
+          "type": "cds.String",
+          "length": 50
+        },
+        "ZINKZ": {
+          "@EndUserText.label": "ZINKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "VBUND": {
+          "@EndUserText.label": "VBUND",
+          "type": "cds.String",
+          "length": 4
+        },
+        "BEWAR": {
+          "@EndUserText.label": "BEWAR",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "KOKRS": {
+          "@EndUserText.label": "KOKRS",
+          "type": "cds.String",
+          "length": 4
+        },
+        "KOSTL": {
+          "@EndUserText.label": "KOSTL",
+          "type": "cds.String",
+          "length": 8
+        },
+        "SAKNR": {
+          "@EndUserText.label": "SAKNR",
+          "type": "cds.String",
+          "length": 100,
+          "key": true,
+          "notNull": true
+        },
+        "HKCONT": {
+          "@EndUserText.label": "HKCONT",
+          "type": "cds.Integer"
+        },
+        "KUNNR": {
+          "@EndUserText.label": "KUNNR",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "LIFNR": {
+          "@EndUserText.label": "LIFNR",
+          "type": "cds.String",
+          "length": 10
+        },
+        "MWSK1": {
+          "@EndUserText.label": "MWSK1",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DMBT1": {
+          "@EndUserText.label": "DMBT1",
+          "type": "cds.String",
+          "length": 100
+        },
+        "WRBT1": {
+          "@EndUserText.label": "WRBT1",
+          "type": "cds.String",
+          "length": 100
+        },
+        "MWSK2": {
+          "@EndUserText.label": "MWSK2",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DMBT2": {
+          "@EndUserText.label": "DMBT2",
+          "type": "cds.String",
+          "length": 100
+        },
+        "WRBT2": {
+          "@EndUserText.label": "WRBT2",
+          "type": "cds.Integer"
+        },
+        "MWSK3": {
+          "@EndUserText.label": "MWSK3",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DMBT3": {
+          "@EndUserText.label": "DMBT3",
+          "type": "cds.String",
+          "length": 100
+        },
+        "WRBT3": {
+          "@EndUserText.label": "WRBT3",
+          "type": "cds.Integer"
+        },
+        "REBZG": {
+          "@EndUserText.label": "REBZG",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "REBZJ": {
+          "@EndUserText.label": "REBZJ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "REBZZ": {
+          "@EndUserText.label": "REBZZ",
+          "type": "cds.Integer"
+        },
+        "REBZT": {
+          "@EndUserText.label": "REBZT",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ZOLLT": {
+          "@EndUserText.label": "ZOLLT",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ZOLLD": {
+          "@EndUserText.label": "ZOLLD",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "LZBKZ": {
+          "@EndUserText.label": "LZBKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "LANDL": {
+          "@EndUserText.label": "LANDL",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DIEKZ": {
+          "@EndUserText.label": "DIEKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "SAMNR": {
+          "@EndUserText.label": "SAMNR",
+          "type": "cds.Integer"
+        },
+        "ABPER": {
+          "@EndUserText.label": "ABPER",
+          "type": "cds.Integer"
+        },
+        "VRSKZ": {
+          "@EndUserText.label": "VRSKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "VRSDT": {
+          "@EndUserText.label": "VRSDT",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DISBN": {
+          "@EndUserText.label": "DISBN",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DISBJ": {
+          "@EndUserText.label": "DISBJ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DISBZ": {
+          "@EndUserText.label": "DISBZ",
+          "type": "cds.Integer"
+        },
+        "WVERW": {
+          "@EndUserText.label": "WVERW",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ANFBN": {
+          "@EndUserText.label": "ANFBN",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ANFBJ": {
+          "@EndUserText.label": "ANFBJ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ANFBU": {
+          "@EndUserText.label": "ANFBU",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ANFAE": {
+          "@EndUserText.label": "ANFAE",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BLNBT": {
+          "@EndUserText.label": "BLNBT",
+          "type": "cds.Integer"
+        },
+        "BLNKZ": {
+          "@EndUserText.label": "BLNKZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "BLNPZ": {
+          "@EndUserText.label": "BLNPZ",
+          "type": "cds.Integer"
+        },
+        "MSCHL": {
+          "@EndUserText.label": "MSCHL",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MANSP": {
+          "@EndUserText.label": "MANSP",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MADAT": {
+          "@EndUserText.label": "MADAT",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "MANST": {
+          "@EndUserText.label": "MANST",
+          "type": "cds.Integer"
+        },
+        "MABER": {
+          "@EndUserText.label": "MABER",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ESRNR": {
+          "@EndUserText.label": "ESRNR",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ESRRE": {
+          "@EndUserText.label": "ESRRE",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "ESRPZ": {
+          "@EndUserText.label": "ESRPZ",
+          "type": "cds.String",
+          "length": 5000
+        },
+        "DMBE2": {
+          "@EndUserText.label": "DMBE2",
+          "precision": 15,
+          "scale": 2,
+          "type": "cds.Decimal"
+        },
+        "DMBE3": {
+          "@EndUserText.label": "DMBE3",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DMB21": {
+          "@EndUserText.label": "DMB21",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DMB22": {
+          "@EndUserText.label": "DMB22",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DMB23": {
+          "@EndUserText.label": "DMB23",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DMB31": {
+          "@EndUserText.label": "DMB31",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DMB32": {
+          "@EndUserText.label": "DMB32",
+          "type": "cds.String",
+          "length": 100
+        },
+        "DMB33": {
+          "@EndUserText.label": "DMB33",
+          "type": "cds.String",
+          "length": 100
+        },
+        "MWST2": {
+          "@EndUserText.label": "MWST2",
+          "type": "cds.String",
+          "length": 100
+        },
+        "MWST3": {
+          "@EndUserText.label": "MWST3",
+          "type": "cds.Integer"
+        },
+        "NAVH2": {
+          "@EndUserText.label": "NAVH2",
+          "type": "cds.Integer"
+        },
+        "NAVH3": {
+          "@EndUserText.label": "NAVH3",
+          "type": "cds.Integer"
+        },
+        "SKNT2": {
+          "@EndUserText.label": "SKNT2",
+          "type": "cds.Integer"
+        },
+        "SKNT3": {
+          "@EndUserText.label": "SKNT3",
+          "type": "cds.Integer"
+        },
+        "BDIF3": {
+          "@EndUserText.label": "BDIF3",
+          "type": "cds.Integer"
+        },
+        "RDIF3": {
+          "@EndUserText.label": "RDIF3",
+          "type": "cds.Integer"
+        }
+      },
+      "@EndUserText.label": "2LT_BSEG_HIST_RAW_AUD_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ATGQGPAH"
+        }
+      }
+    }
+  }
+}

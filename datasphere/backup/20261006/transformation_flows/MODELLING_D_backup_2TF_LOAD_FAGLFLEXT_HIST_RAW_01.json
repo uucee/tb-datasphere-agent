@@ -1,0 +1,3731 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_FAGLFLEXT_HIST_RAW_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_FAGLFLEXT_HIST_RAW_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_HIST_RAW": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW"
+                  },
+                  "1_INBOUND_HIST_RAW.1LT_FAGLFLEXT_HIST_RAW": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_FAGLFLEXT_HIST_RAW",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "RYEAR": {
+                        "@EndUserText.label": "RYEAR",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR00": {
+                        "@EndUserText.label": "OBJNR00",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR01": {
+                        "@EndUserText.label": "OBJNR01",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR02": {
+                        "@EndUserText.label": "OBJNR02",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR03": {
+                        "@EndUserText.label": "OBJNR03",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR04": {
+                        "@EndUserText.label": "OBJNR04",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR05": {
+                        "@EndUserText.label": "OBJNR05",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR06": {
+                        "@EndUserText.label": "OBJNR06",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR07": {
+                        "@EndUserText.label": "OBJNR07",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "OBJNR08": {
+                        "@EndUserText.label": "OBJNR08",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "DRCRK": {
+                        "@EndUserText.label": "DRCRK",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 1
+                      },
+                      "RPMAX": {
+                        "@EndUserText.label": "RPMAX",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "ACTIV": {
+                        "@EndUserText.label": "ACTIV",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RMVCT": {
+                        "@EndUserText.label": "RMVCT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "RTCUR": {
+                        "@EndUserText.label": "RTCUR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "RUNIT": {
+                        "@EndUserText.label": "RUNIT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "AWTYP": {
+                        "@EndUserText.label": "AWTYP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "RLDNR": {
+                        "@EndUserText.label": "RLDNR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "RRCTY": {
+                        "@EndUserText.label": "RRCTY",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "RVERS": {
+                        "@EndUserText.label": "RVERS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "LOGSYS": {
+                        "@EndUserText.label": "LOGSYS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RACCT": {
+                        "@EndUserText.label": "RACCT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "COST_ELEM": {
+                        "@EndUserText.label": "COST_ELEM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RBUKRS": {
+                        "@EndUserText.label": "RBUKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RCNTR": {
+                        "@EndUserText.label": "RCNTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PRCTR": {
+                        "@EndUserText.label": "PRCTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RFAREA": {
+                        "@EndUserText.label": "RFAREA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RBUSA": {
+                        "@EndUserText.label": "RBUSA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KOKRS": {
+                        "@EndUserText.label": "KOKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SEGMENT": {
+                        "@EndUserText.label": "SEGMENT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ZZMATNR": {
+                        "@EndUserText.label": "ZZMATNR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "SCNTR": {
+                        "@EndUserText.label": "SCNTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PPRCTR": {
+                        "@EndUserText.label": "PPRCTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SFAREA": {
+                        "@EndUserText.label": "SFAREA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SBUSA": {
+                        "@EndUserText.label": "SBUSA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RASSC": {
+                        "@EndUserText.label": "RASSC",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PSEGMENT": {
+                        "@EndUserText.label": "PSEGMENT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TSLVT": {
+                        "@EndUserText.label": "TSLVT",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL01": {
+                        "@EndUserText.label": "TSL01",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL02": {
+                        "@EndUserText.label": "TSL02",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL03": {
+                        "@EndUserText.label": "TSL03",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL04": {
+                        "@EndUserText.label": "TSL04",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL05": {
+                        "@EndUserText.label": "TSL05",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL06": {
+                        "@EndUserText.label": "TSL06",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL07": {
+                        "@EndUserText.label": "TSL07",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL08": {
+                        "@EndUserText.label": "TSL08",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL09": {
+                        "@EndUserText.label": "TSL09",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL10": {
+                        "@EndUserText.label": "TSL10",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL11": {
+                        "@EndUserText.label": "TSL11",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL12": {
+                        "@EndUserText.label": "TSL12",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "TSL13": {
+                        "@EndUserText.label": "TSL13",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "TSL14": {
+                        "@EndUserText.label": "TSL14",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "TSL15": {
+                        "@EndUserText.label": "TSL15",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "TSL16": {
+                        "@EndUserText.label": "TSL16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "HSLVT": {
+                        "@EndUserText.label": "HSLVT",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL01": {
+                        "@EndUserText.label": "HSL01",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL02": {
+                        "@EndUserText.label": "HSL02",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL03": {
+                        "@EndUserText.label": "HSL03",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL04": {
+                        "@EndUserText.label": "HSL04",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL05": {
+                        "@EndUserText.label": "HSL05",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL06": {
+                        "@EndUserText.label": "HSL06",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL07": {
+                        "@EndUserText.label": "HSL07",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL08": {
+                        "@EndUserText.label": "HSL08",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL09": {
+                        "@EndUserText.label": "HSL09",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL10": {
+                        "@EndUserText.label": "HSL10",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL11": {
+                        "@EndUserText.label": "HSL11",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL12": {
+                        "@EndUserText.label": "HSL12",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "HSL13": {
+                        "@EndUserText.label": "HSL13",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "HSL14": {
+                        "@EndUserText.label": "HSL14",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "HSL15": {
+                        "@EndUserText.label": "HSL15",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "HSL16": {
+                        "@EndUserText.label": "HSL16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "KSLVT": {
+                        "@EndUserText.label": "KSLVT",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL01": {
+                        "@EndUserText.label": "KSL01",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL02": {
+                        "@EndUserText.label": "KSL02",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL03": {
+                        "@EndUserText.label": "KSL03",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL04": {
+                        "@EndUserText.label": "KSL04",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL05": {
+                        "@EndUserText.label": "KSL05",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL06": {
+                        "@EndUserText.label": "KSL06",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL07": {
+                        "@EndUserText.label": "KSL07",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL08": {
+                        "@EndUserText.label": "KSL08",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL09": {
+                        "@EndUserText.label": "KSL09",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL10": {
+                        "@EndUserText.label": "KSL10",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL11": {
+                        "@EndUserText.label": "KSL11",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL12": {
+                        "@EndUserText.label": "KSL12",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 23,
+                        "scale": 2
+                      },
+                      "KSL13": {
+                        "@EndUserText.label": "KSL13",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "KSL14": {
+                        "@EndUserText.label": "KSL14",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "KSL15": {
+                        "@EndUserText.label": "KSL15",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "KSL16": {
+                        "@EndUserText.label": "KSL16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSLVT": {
+                        "@EndUserText.label": "OSLVT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL01": {
+                        "@EndUserText.label": "OSL01",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL02": {
+                        "@EndUserText.label": "OSL02",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL03": {
+                        "@EndUserText.label": "OSL03",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL04": {
+                        "@EndUserText.label": "OSL04",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL05": {
+                        "@EndUserText.label": "OSL05",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL06": {
+                        "@EndUserText.label": "OSL06",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL07": {
+                        "@EndUserText.label": "OSL07",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL08": {
+                        "@EndUserText.label": "OSL08",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL09": {
+                        "@EndUserText.label": "OSL09",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL10": {
+                        "@EndUserText.label": "OSL10",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL11": {
+                        "@EndUserText.label": "OSL11",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL12": {
+                        "@EndUserText.label": "OSL12",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL13": {
+                        "@EndUserText.label": "OSL13",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL14": {
+                        "@EndUserText.label": "OSL14",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL15": {
+                        "@EndUserText.label": "OSL15",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "OSL16": {
+                        "@EndUserText.label": "OSL16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSLVT": {
+                        "@EndUserText.label": "MSLVT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL01": {
+                        "@EndUserText.label": "MSL01",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL02": {
+                        "@EndUserText.label": "MSL02",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL03": {
+                        "@EndUserText.label": "MSL03",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL04": {
+                        "@EndUserText.label": "MSL04",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL05": {
+                        "@EndUserText.label": "MSL05",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL06": {
+                        "@EndUserText.label": "MSL06",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL07": {
+                        "@EndUserText.label": "MSL07",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL08": {
+                        "@EndUserText.label": "MSL08",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL09": {
+                        "@EndUserText.label": "MSL09",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL10": {
+                        "@EndUserText.label": "MSL10",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL11": {
+                        "@EndUserText.label": "MSL11",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL12": {
+                        "@EndUserText.label": "MSL12",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL13": {
+                        "@EndUserText.label": "MSL13",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL14": {
+                        "@EndUserText.label": "MSL14",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL15": {
+                        "@EndUserText.label": "MSL15",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "MSL16": {
+                        "@EndUserText.label": "MSL16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 27
+                      },
+                      "TIMESTAMP": {
+                        "@EndUserText.label": "TIMESTAMP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.businessName": "1 INBOUND HIST RAW"
+                  }
+                },
+                "name": "2TF_LOAD_FAGLFLEXT_HIST_RAW_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "RYEAR": {
+                      "@EndUserText.label": "RYEAR",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR00": {
+                      "@EndUserText.label": "OBJNR00",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR01": {
+                      "@EndUserText.label": "OBJNR01",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR02": {
+                      "@EndUserText.label": "OBJNR02",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR03": {
+                      "@EndUserText.label": "OBJNR03",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR04": {
+                      "@EndUserText.label": "OBJNR04",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR05": {
+                      "@EndUserText.label": "OBJNR05",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR06": {
+                      "@EndUserText.label": "OBJNR06",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR07": {
+                      "@EndUserText.label": "OBJNR07",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR08": {
+                      "@EndUserText.label": "OBJNR08",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DRCRK": {
+                      "@EndUserText.label": "DRCRK",
+                      "type": "cds.String",
+                      "length": 1,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RPMAX": {
+                      "@EndUserText.label": "RPMAX",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ACTIV": {
+                      "@EndUserText.label": "ACTIV",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RMVCT": {
+                      "@EndUserText.label": "RMVCT",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "RTCUR": {
+                      "@EndUserText.label": "RTCUR",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "RUNIT": {
+                      "@EndUserText.label": "RUNIT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "AWTYP": {
+                      "@EndUserText.label": "AWTYP",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "RLDNR": {
+                      "@EndUserText.label": "RLDNR",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "RRCTY": {
+                      "@EndUserText.label": "RRCTY",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "RVERS": {
+                      "@EndUserText.label": "RVERS",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "LOGSYS": {
+                      "@EndUserText.label": "LOGSYS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RACCT": {
+                      "@EndUserText.label": "RACCT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "COST_ELEM": {
+                      "@EndUserText.label": "COST_ELEM",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RBUKRS": {
+                      "@EndUserText.label": "RBUKRS",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RCNTR": {
+                      "@EndUserText.label": "RCNTR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PRCTR": {
+                      "@EndUserText.label": "PRCTR",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RFAREA": {
+                      "@EndUserText.label": "RFAREA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RBUSA": {
+                      "@EndUserText.label": "RBUSA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KOKRS": {
+                      "@EndUserText.label": "KOKRS",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SEGMENT": {
+                      "@EndUserText.label": "SEGMENT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ZZMATNR": {
+                      "@EndUserText.label": "ZZMATNR",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "SCNTR": {
+                      "@EndUserText.label": "SCNTR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PPRCTR": {
+                      "@EndUserText.label": "PPRCTR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SFAREA": {
+                      "@EndUserText.label": "SFAREA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SBUSA": {
+                      "@EndUserText.label": "SBUSA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RASSC": {
+                      "@EndUserText.label": "RASSC",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PSEGMENT": {
+                      "@EndUserText.label": "PSEGMENT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TSLVT": {
+                      "@EndUserText.label": "TSLVT",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL01": {
+                      "@EndUserText.label": "TSL01",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL02": {
+                      "@EndUserText.label": "TSL02",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL03": {
+                      "@EndUserText.label": "TSL03",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL04": {
+                      "@EndUserText.label": "TSL04",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL05": {
+                      "@EndUserText.label": "TSL05",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL06": {
+                      "@EndUserText.label": "TSL06",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL07": {
+                      "@EndUserText.label": "TSL07",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL08": {
+                      "@EndUserText.label": "TSL08",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL09": {
+                      "@EndUserText.label": "TSL09",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL10": {
+                      "@EndUserText.label": "TSL10",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL11": {
+                      "@EndUserText.label": "TSL11",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL12": {
+                      "@EndUserText.label": "TSL12",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "TSL13": {
+                      "@EndUserText.label": "TSL13",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "TSL14": {
+                      "@EndUserText.label": "TSL14",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "TSL15": {
+                      "@EndUserText.label": "TSL15",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "TSL16": {
+                      "@EndUserText.label": "TSL16",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "HSLVT": {
+                      "@EndUserText.label": "HSLVT",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL01": {
+                      "@EndUserText.label": "HSL01",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL02": {
+                      "@EndUserText.label": "HSL02",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL03": {
+                      "@EndUserText.label": "HSL03",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL04": {
+                      "@EndUserText.label": "HSL04",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL05": {
+                      "@EndUserText.label": "HSL05",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL06": {
+                      "@EndUserText.label": "HSL06",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL07": {
+                      "@EndUserText.label": "HSL07",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL08": {
+                      "@EndUserText.label": "HSL08",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL09": {
+                      "@EndUserText.label": "HSL09",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL10": {
+                      "@EndUserText.label": "HSL10",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL11": {
+                      "@EndUserText.label": "HSL11",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL12": {
+                      "@EndUserText.label": "HSL12",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL13": {
+                      "@EndUserText.label": "HSL13",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "HSL14": {
+                      "@EndUserText.label": "HSL14",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "HSL15": {
+                      "@EndUserText.label": "HSL15",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "HSL16": {
+                      "@EndUserText.label": "HSL16",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "KSLVT": {
+                      "@EndUserText.label": "KSLVT",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL01": {
+                      "@EndUserText.label": "KSL01",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL02": {
+                      "@EndUserText.label": "KSL02",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL03": {
+                      "@EndUserText.label": "KSL03",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL04": {
+                      "@EndUserText.label": "KSL04",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL05": {
+                      "@EndUserText.label": "KSL05",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL06": {
+                      "@EndUserText.label": "KSL06",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL07": {
+                      "@EndUserText.label": "KSL07",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL08": {
+                      "@EndUserText.label": "KSL08",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL09": {
+                      "@EndUserText.label": "KSL09",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL10": {
+                      "@EndUserText.label": "KSL10",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL11": {
+                      "@EndUserText.label": "KSL11",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL12": {
+                      "@EndUserText.label": "KSL12",
+                      "precision": 23,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL13": {
+                      "@EndUserText.label": "KSL13",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "KSL14": {
+                      "@EndUserText.label": "KSL14",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "KSL15": {
+                      "@EndUserText.label": "KSL15",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "KSL16": {
+                      "@EndUserText.label": "KSL16",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSLVT": {
+                      "@EndUserText.label": "OSLVT",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL01": {
+                      "@EndUserText.label": "OSL01",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL02": {
+                      "@EndUserText.label": "OSL02",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL03": {
+                      "@EndUserText.label": "OSL03",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL04": {
+                      "@EndUserText.label": "OSL04",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL05": {
+                      "@EndUserText.label": "OSL05",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL06": {
+                      "@EndUserText.label": "OSL06",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL07": {
+                      "@EndUserText.label": "OSL07",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL08": {
+                      "@EndUserText.label": "OSL08",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL09": {
+                      "@EndUserText.label": "OSL09",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL10": {
+                      "@EndUserText.label": "OSL10",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL11": {
+                      "@EndUserText.label": "OSL11",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL12": {
+                      "@EndUserText.label": "OSL12",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL13": {
+                      "@EndUserText.label": "OSL13",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL14": {
+                      "@EndUserText.label": "OSL14",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL15": {
+                      "@EndUserText.label": "OSL15",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "OSL16": {
+                      "@EndUserText.label": "OSL16",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSLVT": {
+                      "@EndUserText.label": "MSLVT",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL01": {
+                      "@EndUserText.label": "MSL01",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL02": {
+                      "@EndUserText.label": "MSL02",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL03": {
+                      "@EndUserText.label": "MSL03",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL04": {
+                      "@EndUserText.label": "MSL04",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL05": {
+                      "@EndUserText.label": "MSL05",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL06": {
+                      "@EndUserText.label": "MSL06",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL07": {
+                      "@EndUserText.label": "MSL07",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL08": {
+                      "@EndUserText.label": "MSL08",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL09": {
+                      "@EndUserText.label": "MSL09",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL10": {
+                      "@EndUserText.label": "MSL10",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL11": {
+                      "@EndUserText.label": "MSL11",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL12": {
+                      "@EndUserText.label": "MSL12",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL13": {
+                      "@EndUserText.label": "MSL13",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL14": {
+                      "@EndUserText.label": "MSL14",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL15": {
+                      "@EndUserText.label": "MSL15",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "MSL16": {
+                      "@EndUserText.label": "MSL16",
+                      "type": "cds.String",
+                      "length": 27
+                    },
+                    "TIMESTAMP": {
+                      "@EndUserText.label": "TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 16
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_HIST_RAW.1LT_FAGLFLEXT_HIST_RAW"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_HIST_RAW_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "HIST_RAW"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "FAGLFLEXT"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "HIST_RAW",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RYEAR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR00"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR05"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR06"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR07"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OBJNR08"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DRCRK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RPMAX"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ACTIV"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RMVCT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RTCUR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RUNIT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AWTYP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RLDNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RRCTY"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RVERS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LOGSYS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RACCT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "COST_ELEM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RBUKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RCNTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PRCTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RFAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RBUSA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SEGMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZZMATNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SCNTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PPRCTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SFAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SBUSA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RASSC"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSEGMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSLVT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL05"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL06"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL07"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL08"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL09"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL10"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL11"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL12"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL13"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL14"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL15"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL16"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSLVT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL05"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL06"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL07"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL08"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL09"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL10"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL11"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL12"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL13"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL14"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL15"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL16"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSLVT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL05"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL06"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL07"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL08"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL09"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL10"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL11"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL12"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL13"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL14"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL15"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL16"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSLVT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL05"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL06"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL07"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL08"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL09"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL10"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL11"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL12"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL13"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL14"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL15"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL16"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSLVT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL01"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL02"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL03"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL04"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL05"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL06"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL07"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL08"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL09"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL10"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL11"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL12"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL13"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL14"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL15"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL16"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TIMESTAMP"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "  SELECT \r\n    b.\"BATCH_ID\",\r\n    CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n    'HIST_RAW' AS \"SOURCE_SYSTEM\",\r\n    o.\"SOURCE_FILE\",\r\n    \"d\".\"RYEAR\",\"d\".\"OBJNR00\",\"d\".\"OBJNR01\",\"d\".\"OBJNR02\",\"d\".\"OBJNR03\",\"d\".\"OBJNR04\",\"d\".\"OBJNR05\",\"d\".\"OBJNR06\",\"d\".\"OBJNR07\",\"d\".\"OBJNR08\",\"d\".\"DRCRK\",\"d\".\"RPMAX\",\"d\".\"ACTIV\",\"d\".\"RMVCT\",\"d\".\"RTCUR\",\"d\".\"RUNIT\",\"d\".\"AWTYP\",\"d\".\"RLDNR\",\"d\".\"RRCTY\",\"d\".\"RVERS\",\"d\".\"LOGSYS\",\"d\".\"RACCT\",\"d\".\"COST_ELEM\",\"d\".\"RBUKRS\",\"d\".\"RCNTR\",\"d\".\"PRCTR\",\"d\".\"RFAREA\",\"d\".\"RBUSA\",\"d\".\"KOKRS\",\"d\".\"SEGMENT\",\"d\".\"ZZMATNR\",\"d\".\"SCNTR\",\"d\".\"PPRCTR\",\"d\".\"SFAREA\",\"d\".\"SBUSA\",\"d\".\"RASSC\",\"d\".\"PSEGMENT\",\"d\".\"TSLVT\",\"d\".\"TSL01\",\"d\".\"TSL02\",\"d\".\"TSL03\",\"d\".\"TSL04\",\"d\".\"TSL05\",\"d\".\"TSL06\",\"d\".\"TSL07\",\"d\".\"TSL08\",\"d\".\"TSL09\",\"d\".\"TSL10\",\"d\".\"TSL11\",\"d\".\"TSL12\",\"d\".\"TSL13\",\"d\".\"TSL14\",\"d\".\"TSL15\",\"d\".\"TSL16\",\"d\".\"HSLVT\",\"d\".\"HSL01\",\"d\".\"HSL02\",\"d\".\"HSL03\",\"d\".\"HSL04\",\"d\".\"HSL05\",\"d\".\"HSL06\",\"d\".\"HSL07\",\"d\".\"HSL08\",\"d\".\"HSL09\",\"d\".\"HSL10\",\"d\".\"HSL11\",\"d\".\"HSL12\",\"d\".\"HSL13\",\"d\".\"HSL14\",\"d\".\"HSL15\",\"d\".\"HSL16\",\"d\".\"KSLVT\",\"d\".\"KSL01\",\"d\".\"KSL02\",\"d\".\"KSL03\",\"d\".\"KSL04\",\"d\".\"KSL05\",\"d\".\"KSL06\",\"d\".\"KSL07\",\"d\".\"KSL08\",\"d\".\"KSL09\",\"d\".\"KSL10\",\"d\".\"KSL11\",\"d\".\"KSL12\",\"d\".\"KSL13\",\"d\".\"KSL14\",\"d\".\"KSL15\",\"d\".\"KSL16\",\"d\".\"OSLVT\",\"d\".\"OSL01\",\"d\".\"OSL02\",\"d\".\"OSL03\",\"d\".\"OSL04\",\"d\".\"OSL05\",\"d\".\"OSL06\",\"d\".\"OSL07\",\"d\".\"OSL08\",\"d\".\"OSL09\",\"d\".\"OSL10\",\"d\".\"OSL11\",\"d\".\"OSL12\",\"d\".\"OSL13\",\"d\".\"OSL14\",\"d\".\"OSL15\",\"d\".\"OSL16\",\"d\".\"MSLVT\",\"d\".\"MSL01\",\"d\".\"MSL02\",\"d\".\"MSL03\",\"d\".\"MSL04\",\"d\".\"MSL05\",\"d\".\"MSL06\",\"d\".\"MSL07\",\"d\".\"MSL08\",\"d\".\"MSL09\",\"d\".\"MSL10\",\"d\".\"MSL11\",\"d\".\"MSL12\",\"d\".\"MSL13\",\"d\".\"MSL14\",\"d\".\"MSL15\",\"d\".\"MSL16\",\"d\".\"TIMESTAMP\"\r\nFROM \"1_INBOUND_HIST_RAW.1LT_FAGLFLEXT_HIST_RAW\" d\r\n\tCROSS JOIN \"2SV_ACTIVE_BATCH_HIST_RAW_01\" b\r\n\tJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o \r\n\t    ON o.\"BATCH_ID\" = b.\"BATCH_ID\" \r\n\t        AND o.\"SOURCE_SYSTEM\" = 'HIST_RAW' \r\n\t        AND o.\"OBJECT_NAME\" = 'FAGLFLEXT'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_FAGLFLEXT_HIST_RAW_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "RYEAR",
+                    "target": "RYEAR"
+                  },
+                  {
+                    "source": "OBJNR00",
+                    "target": "OBJNR00"
+                  },
+                  {
+                    "source": "OBJNR01",
+                    "target": "OBJNR01"
+                  },
+                  {
+                    "source": "OBJNR02",
+                    "target": "OBJNR02"
+                  },
+                  {
+                    "source": "OBJNR03",
+                    "target": "OBJNR03"
+                  },
+                  {
+                    "source": "OBJNR04",
+                    "target": "OBJNR04"
+                  },
+                  {
+                    "source": "OBJNR05",
+                    "target": "OBJNR05"
+                  },
+                  {
+                    "source": "OBJNR06",
+                    "target": "OBJNR06"
+                  },
+                  {
+                    "source": "OBJNR07",
+                    "target": "OBJNR07"
+                  },
+                  {
+                    "source": "OBJNR08",
+                    "target": "OBJNR08"
+                  },
+                  {
+                    "source": "DRCRK",
+                    "target": "DRCRK"
+                  },
+                  {
+                    "source": "RPMAX",
+                    "target": "RPMAX"
+                  },
+                  {
+                    "source": "ACTIV",
+                    "target": "ACTIV"
+                  },
+                  {
+                    "source": "RMVCT",
+                    "target": "RMVCT"
+                  },
+                  {
+                    "source": "RTCUR",
+                    "target": "RTCUR"
+                  },
+                  {
+                    "source": "RUNIT",
+                    "target": "RUNIT"
+                  },
+                  {
+                    "source": "AWTYP",
+                    "target": "AWTYP"
+                  },
+                  {
+                    "source": "RLDNR",
+                    "target": "RLDNR"
+                  },
+                  {
+                    "source": "RRCTY",
+                    "target": "RRCTY"
+                  },
+                  {
+                    "source": "RVERS",
+                    "target": "RVERS"
+                  },
+                  {
+                    "source": "LOGSYS",
+                    "target": "LOGSYS"
+                  },
+                  {
+                    "source": "RACCT",
+                    "target": "RACCT"
+                  },
+                  {
+                    "source": "COST_ELEM",
+                    "target": "COST_ELEM"
+                  },
+                  {
+                    "source": "RBUKRS",
+                    "target": "RBUKRS"
+                  },
+                  {
+                    "source": "RCNTR",
+                    "target": "RCNTR"
+                  },
+                  {
+                    "source": "PRCTR",
+                    "target": "PRCTR"
+                  },
+                  {
+                    "source": "RFAREA",
+                    "target": "RFAREA"
+                  },
+                  {
+                    "source": "RBUSA",
+                    "target": "RBUSA"
+                  },
+                  {
+                    "source": "KOKRS",
+                    "target": "KOKRS"
+                  },
+                  {
+                    "source": "SEGMENT",
+                    "target": "SEGMENT"
+                  },
+                  {
+                    "source": "ZZMATNR",
+                    "target": "ZZMATNR"
+                  },
+                  {
+                    "source": "SCNTR",
+                    "target": "SCNTR"
+                  },
+                  {
+                    "source": "PPRCTR",
+                    "target": "PPRCTR"
+                  },
+                  {
+                    "source": "SFAREA",
+                    "target": "SFAREA"
+                  },
+                  {
+                    "source": "SBUSA",
+                    "target": "SBUSA"
+                  },
+                  {
+                    "source": "RASSC",
+                    "target": "RASSC"
+                  },
+                  {
+                    "source": "PSEGMENT",
+                    "target": "PSEGMENT"
+                  },
+                  {
+                    "source": "TSLVT",
+                    "target": "TSLVT"
+                  },
+                  {
+                    "source": "TSL01",
+                    "target": "TSL01"
+                  },
+                  {
+                    "source": "TSL02",
+                    "target": "TSL02"
+                  },
+                  {
+                    "source": "TSL03",
+                    "target": "TSL03"
+                  },
+                  {
+                    "source": "TSL04",
+                    "target": "TSL04"
+                  },
+                  {
+                    "source": "TSL05",
+                    "target": "TSL05"
+                  },
+                  {
+                    "source": "TSL06",
+                    "target": "TSL06"
+                  },
+                  {
+                    "source": "TSL07",
+                    "target": "TSL07"
+                  },
+                  {
+                    "source": "TSL08",
+                    "target": "TSL08"
+                  },
+                  {
+                    "source": "TSL09",
+                    "target": "TSL09"
+                  },
+                  {
+                    "source": "TSL10",
+                    "target": "TSL10"
+                  },
+                  {
+                    "source": "TSL11",
+                    "target": "TSL11"
+                  },
+                  {
+                    "source": "TSL12",
+                    "target": "TSL12"
+                  },
+                  {
+                    "source": "TSL13",
+                    "target": "TSL13"
+                  },
+                  {
+                    "source": "TSL14",
+                    "target": "TSL14"
+                  },
+                  {
+                    "source": "TSL15",
+                    "target": "TSL15"
+                  },
+                  {
+                    "source": "TSL16",
+                    "target": "TSL16"
+                  },
+                  {
+                    "source": "HSLVT",
+                    "target": "HSLVT"
+                  },
+                  {
+                    "source": "HSL01",
+                    "target": "HSL01"
+                  },
+                  {
+                    "source": "HSL02",
+                    "target": "HSL02"
+                  },
+                  {
+                    "source": "HSL03",
+                    "target": "HSL03"
+                  },
+                  {
+                    "source": "HSL04",
+                    "target": "HSL04"
+                  },
+                  {
+                    "source": "HSL05",
+                    "target": "HSL05"
+                  },
+                  {
+                    "source": "HSL06",
+                    "target": "HSL06"
+                  },
+                  {
+                    "source": "HSL07",
+                    "target": "HSL07"
+                  },
+                  {
+                    "source": "HSL08",
+                    "target": "HSL08"
+                  },
+                  {
+                    "source": "HSL09",
+                    "target": "HSL09"
+                  },
+                  {
+                    "source": "HSL10",
+                    "target": "HSL10"
+                  },
+                  {
+                    "source": "HSL11",
+                    "target": "HSL11"
+                  },
+                  {
+                    "source": "HSL12",
+                    "target": "HSL12"
+                  },
+                  {
+                    "source": "HSL13",
+                    "target": "HSL13"
+                  },
+                  {
+                    "source": "HSL14",
+                    "target": "HSL14"
+                  },
+                  {
+                    "source": "HSL15",
+                    "target": "HSL15"
+                  },
+                  {
+                    "source": "HSL16",
+                    "target": "HSL16"
+                  },
+                  {
+                    "source": "KSLVT",
+                    "target": "KSLVT"
+                  },
+                  {
+                    "source": "KSL01",
+                    "target": "KSL01"
+                  },
+                  {
+                    "source": "KSL02",
+                    "target": "KSL02"
+                  },
+                  {
+                    "source": "KSL03",
+                    "target": "KSL03"
+                  },
+                  {
+                    "source": "KSL04",
+                    "target": "KSL04"
+                  },
+                  {
+                    "source": "KSL05",
+                    "target": "KSL05"
+                  },
+                  {
+                    "source": "KSL06",
+                    "target": "KSL06"
+                  },
+                  {
+                    "source": "KSL07",
+                    "target": "KSL07"
+                  },
+                  {
+                    "source": "KSL08",
+                    "target": "KSL08"
+                  },
+                  {
+                    "source": "KSL09",
+                    "target": "KSL09"
+                  },
+                  {
+                    "source": "KSL10",
+                    "target": "KSL10"
+                  },
+                  {
+                    "source": "KSL11",
+                    "target": "KSL11"
+                  },
+                  {
+                    "source": "KSL12",
+                    "target": "KSL12"
+                  },
+                  {
+                    "source": "KSL13",
+                    "target": "KSL13"
+                  },
+                  {
+                    "source": "KSL14",
+                    "target": "KSL14"
+                  },
+                  {
+                    "source": "KSL15",
+                    "target": "KSL15"
+                  },
+                  {
+                    "source": "KSL16",
+                    "target": "KSL16"
+                  },
+                  {
+                    "source": "OSLVT",
+                    "target": "OSLVT"
+                  },
+                  {
+                    "source": "OSL01",
+                    "target": "OSL01"
+                  },
+                  {
+                    "source": "OSL02",
+                    "target": "OSL02"
+                  },
+                  {
+                    "source": "OSL03",
+                    "target": "OSL03"
+                  },
+                  {
+                    "source": "OSL04",
+                    "target": "OSL04"
+                  },
+                  {
+                    "source": "OSL05",
+                    "target": "OSL05"
+                  },
+                  {
+                    "source": "OSL06",
+                    "target": "OSL06"
+                  },
+                  {
+                    "source": "OSL07",
+                    "target": "OSL07"
+                  },
+                  {
+                    "source": "OSL08",
+                    "target": "OSL08"
+                  },
+                  {
+                    "source": "OSL09",
+                    "target": "OSL09"
+                  },
+                  {
+                    "source": "OSL10",
+                    "target": "OSL10"
+                  },
+                  {
+                    "source": "OSL11",
+                    "target": "OSL11"
+                  },
+                  {
+                    "source": "OSL12",
+                    "target": "OSL12"
+                  },
+                  {
+                    "source": "OSL13",
+                    "target": "OSL13"
+                  },
+                  {
+                    "source": "OSL14",
+                    "target": "OSL14"
+                  },
+                  {
+                    "source": "OSL15",
+                    "target": "OSL15"
+                  },
+                  {
+                    "source": "OSL16",
+                    "target": "OSL16"
+                  },
+                  {
+                    "source": "MSLVT",
+                    "target": "MSLVT"
+                  },
+                  {
+                    "source": "MSL01",
+                    "target": "MSL01"
+                  },
+                  {
+                    "source": "MSL02",
+                    "target": "MSL02"
+                  },
+                  {
+                    "source": "MSL03",
+                    "target": "MSL03"
+                  },
+                  {
+                    "source": "MSL04",
+                    "target": "MSL04"
+                  },
+                  {
+                    "source": "MSL05",
+                    "target": "MSL05"
+                  },
+                  {
+                    "source": "MSL06",
+                    "target": "MSL06"
+                  },
+                  {
+                    "source": "MSL07",
+                    "target": "MSL07"
+                  },
+                  {
+                    "source": "MSL08",
+                    "target": "MSL08"
+                  },
+                  {
+                    "source": "MSL09",
+                    "target": "MSL09"
+                  },
+                  {
+                    "source": "MSL10",
+                    "target": "MSL10"
+                  },
+                  {
+                    "source": "MSL11",
+                    "target": "MSL11"
+                  },
+                  {
+                    "source": "MSL12",
+                    "target": "MSL12"
+                  },
+                  {
+                    "source": "MSL13",
+                    "target": "MSL13"
+                  },
+                  {
+                    "source": "MSL14",
+                    "target": "MSL14"
+                  },
+                  {
+                    "source": "MSL15",
+                    "target": "MSL15"
+                  },
+                  {
+                    "source": "MSL16",
+                    "target": "MSL16"
+                  },
+                  {
+                    "source": "TIMESTAMP",
+                    "target": "TIMESTAMP"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "RYEAR": {
+                      "@EndUserText.label": "RYEAR",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR00": {
+                      "@EndUserText.label": "OBJNR00",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR01": {
+                      "@EndUserText.label": "OBJNR01",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR02": {
+                      "@EndUserText.label": "OBJNR02",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR03": {
+                      "@EndUserText.label": "OBJNR03",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR04": {
+                      "@EndUserText.label": "OBJNR04",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR05": {
+                      "@EndUserText.label": "OBJNR05",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR06": {
+                      "@EndUserText.label": "OBJNR06",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR07": {
+                      "@EndUserText.label": "OBJNR07",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "OBJNR08": {
+                      "@EndUserText.label": "OBJNR08",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DRCRK": {
+                      "@EndUserText.label": "DRCRK",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 1,
+                      "notNull": true
+                    },
+                    "RPMAX": {
+                      "@EndUserText.label": "RPMAX",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ACTIV": {
+                      "@EndUserText.label": "ACTIV",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RMVCT": {
+                      "@EndUserText.label": "RMVCT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "RTCUR": {
+                      "@EndUserText.label": "RTCUR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "RUNIT": {
+                      "@EndUserText.label": "RUNIT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "AWTYP": {
+                      "@EndUserText.label": "AWTYP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "RLDNR": {
+                      "@EndUserText.label": "RLDNR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "RRCTY": {
+                      "@EndUserText.label": "RRCTY",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "RVERS": {
+                      "@EndUserText.label": "RVERS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "LOGSYS": {
+                      "@EndUserText.label": "LOGSYS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RACCT": {
+                      "@EndUserText.label": "RACCT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "COST_ELEM": {
+                      "@EndUserText.label": "COST_ELEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "RBUKRS": {
+                      "@EndUserText.label": "RBUKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RCNTR": {
+                      "@EndUserText.label": "RCNTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PRCTR": {
+                      "@EndUserText.label": "PRCTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "RFAREA": {
+                      "@EndUserText.label": "RFAREA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RBUSA": {
+                      "@EndUserText.label": "RBUSA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KOKRS": {
+                      "@EndUserText.label": "KOKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SEGMENT": {
+                      "@EndUserText.label": "SEGMENT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ZZMATNR": {
+                      "@EndUserText.label": "ZZMATNR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "SCNTR": {
+                      "@EndUserText.label": "SCNTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PPRCTR": {
+                      "@EndUserText.label": "PPRCTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SFAREA": {
+                      "@EndUserText.label": "SFAREA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SBUSA": {
+                      "@EndUserText.label": "SBUSA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RASSC": {
+                      "@EndUserText.label": "RASSC",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PSEGMENT": {
+                      "@EndUserText.label": "PSEGMENT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TSLVT": {
+                      "@EndUserText.label": "TSLVT",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL01": {
+                      "@EndUserText.label": "TSL01",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL02": {
+                      "@EndUserText.label": "TSL02",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL03": {
+                      "@EndUserText.label": "TSL03",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL04": {
+                      "@EndUserText.label": "TSL04",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL05": {
+                      "@EndUserText.label": "TSL05",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL06": {
+                      "@EndUserText.label": "TSL06",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL07": {
+                      "@EndUserText.label": "TSL07",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL08": {
+                      "@EndUserText.label": "TSL08",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL09": {
+                      "@EndUserText.label": "TSL09",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL10": {
+                      "@EndUserText.label": "TSL10",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL11": {
+                      "@EndUserText.label": "TSL11",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL12": {
+                      "@EndUserText.label": "TSL12",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "TSL13": {
+                      "@EndUserText.label": "TSL13",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "TSL14": {
+                      "@EndUserText.label": "TSL14",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "TSL15": {
+                      "@EndUserText.label": "TSL15",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "TSL16": {
+                      "@EndUserText.label": "TSL16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "HSLVT": {
+                      "@EndUserText.label": "HSLVT",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL01": {
+                      "@EndUserText.label": "HSL01",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL02": {
+                      "@EndUserText.label": "HSL02",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL03": {
+                      "@EndUserText.label": "HSL03",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL04": {
+                      "@EndUserText.label": "HSL04",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL05": {
+                      "@EndUserText.label": "HSL05",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL06": {
+                      "@EndUserText.label": "HSL06",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL07": {
+                      "@EndUserText.label": "HSL07",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL08": {
+                      "@EndUserText.label": "HSL08",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL09": {
+                      "@EndUserText.label": "HSL09",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL10": {
+                      "@EndUserText.label": "HSL10",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL11": {
+                      "@EndUserText.label": "HSL11",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL12": {
+                      "@EndUserText.label": "HSL12",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "HSL13": {
+                      "@EndUserText.label": "HSL13",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "HSL14": {
+                      "@EndUserText.label": "HSL14",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "HSL15": {
+                      "@EndUserText.label": "HSL15",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "HSL16": {
+                      "@EndUserText.label": "HSL16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "KSLVT": {
+                      "@EndUserText.label": "KSLVT",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL01": {
+                      "@EndUserText.label": "KSL01",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL02": {
+                      "@EndUserText.label": "KSL02",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL03": {
+                      "@EndUserText.label": "KSL03",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL04": {
+                      "@EndUserText.label": "KSL04",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL05": {
+                      "@EndUserText.label": "KSL05",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL06": {
+                      "@EndUserText.label": "KSL06",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL07": {
+                      "@EndUserText.label": "KSL07",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL08": {
+                      "@EndUserText.label": "KSL08",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL09": {
+                      "@EndUserText.label": "KSL09",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL10": {
+                      "@EndUserText.label": "KSL10",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL11": {
+                      "@EndUserText.label": "KSL11",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL12": {
+                      "@EndUserText.label": "KSL12",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 23,
+                      "scale": 2
+                    },
+                    "KSL13": {
+                      "@EndUserText.label": "KSL13",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "KSL14": {
+                      "@EndUserText.label": "KSL14",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "KSL15": {
+                      "@EndUserText.label": "KSL15",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "KSL16": {
+                      "@EndUserText.label": "KSL16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSLVT": {
+                      "@EndUserText.label": "OSLVT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL01": {
+                      "@EndUserText.label": "OSL01",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL02": {
+                      "@EndUserText.label": "OSL02",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL03": {
+                      "@EndUserText.label": "OSL03",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL04": {
+                      "@EndUserText.label": "OSL04",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL05": {
+                      "@EndUserText.label": "OSL05",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL06": {
+                      "@EndUserText.label": "OSL06",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL07": {
+                      "@EndUserText.label": "OSL07",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL08": {
+                      "@EndUserText.label": "OSL08",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL09": {
+                      "@EndUserText.label": "OSL09",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL10": {
+                      "@EndUserText.label": "OSL10",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL11": {
+                      "@EndUserText.label": "OSL11",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL12": {
+                      "@EndUserText.label": "OSL12",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL13": {
+                      "@EndUserText.label": "OSL13",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL14": {
+                      "@EndUserText.label": "OSL14",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL15": {
+                      "@EndUserText.label": "OSL15",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "OSL16": {
+                      "@EndUserText.label": "OSL16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSLVT": {
+                      "@EndUserText.label": "MSLVT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL01": {
+                      "@EndUserText.label": "MSL01",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL02": {
+                      "@EndUserText.label": "MSL02",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL03": {
+                      "@EndUserText.label": "MSL03",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL04": {
+                      "@EndUserText.label": "MSL04",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL05": {
+                      "@EndUserText.label": "MSL05",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL06": {
+                      "@EndUserText.label": "MSL06",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL07": {
+                      "@EndUserText.label": "MSL07",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL08": {
+                      "@EndUserText.label": "MSL08",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL09": {
+                      "@EndUserText.label": "MSL09",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL10": {
+                      "@EndUserText.label": "MSL10",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL11": {
+                      "@EndUserText.label": "MSL11",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL12": {
+                      "@EndUserText.label": "MSL12",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL13": {
+                      "@EndUserText.label": "MSL13",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL14": {
+                      "@EndUserText.label": "MSL14",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL15": {
+                      "@EndUserText.label": "MSL15",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "MSL16": {
+                      "@EndUserText.label": "MSL16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 27
+                    },
+                    "TIMESTAMP": {
+                      "@EndUserText.label": "TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_FAGLFLEXT_HIST_RAW_AUD_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_ATGQGPAH"
+                    }
+                  }
+                },
+                "name": "2LT_FAGLFLEXT_HIST_RAW_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,3235 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_BKPF_HIST_RAW_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_BKPF_HIST_RAW_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_HIST_RAW": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW"
+                  },
+                  "1_INBOUND_HIST_RAW.1LT_BKPF_HIST_RAW": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_BKPF_HIST_RAW",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "BUKRS": {
+                        "@EndUserText.label": "BUKRS",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "BELNR": {
+                        "@EndUserText.label": "BELNR",
+                        "type": "cds.Integer64",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "GJAHR": {
+                        "@EndUserText.label": "GJAHR",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "BLART": {
+                        "@EndUserText.label": "BLART",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "BLDAT": {
+                        "@EndUserText.label": "BLDAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 255
+                      },
+                      "BUDAT": {
+                        "@EndUserText.label": "BUDAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "MONAT": {
+                        "@EndUserText.label": "MONAT",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "CPUDT": {
+                        "@EndUserText.label": "CPUDT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "CPUTM": {
+                        "@EndUserText.label": "CPUTM",
+                        "type": "cds.Time",
+                        "key": false
+                      },
+                      "AEDAT": {
+                        "@EndUserText.label": "AEDAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "UPDDT": {
+                        "@EndUserText.label": "UPDDT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "WWERT": {
+                        "@EndUserText.label": "WWERT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "USNAM": {
+                        "@EndUserText.label": "USNAM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "TCODE": {
+                        "@EndUserText.label": "TCODE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "BVORG": {
+                        "@EndUserText.label": "BVORG",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "XBLNR": {
+                        "@EndUserText.label": "XBLNR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "DBBLG": {
+                        "@EndUserText.label": "DBBLG",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "STBLG": {
+                        "@EndUserText.label": "STBLG",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "STJAH": {
+                        "@EndUserText.label": "STJAH",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "BKTXT": {
+                        "@EndUserText.label": "BKTXT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "WAERS": {
+                        "@EndUserText.label": "WAERS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "KURSF": {
+                        "@EndUserText.label": "KURSF",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KZWRS": {
+                        "@EndUserText.label": "KZWRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KZKRS": {
+                        "@EndUserText.label": "KZKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "BSTAT": {
+                        "@EndUserText.label": "BSTAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "XNETB": {
+                        "@EndUserText.label": "XNETB",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "FRATH": {
+                        "@EndUserText.label": "FRATH",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "XRUEB": {
+                        "@EndUserText.label": "XRUEB",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GLVOR": {
+                        "@EndUserText.label": "GLVOR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "GRPID": {
+                        "@EndUserText.label": "GRPID",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "DOKID": {
+                        "@EndUserText.label": "DOKID",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ARCID": {
+                        "@EndUserText.label": "ARCID",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "IBLAR": {
+                        "@EndUserText.label": "IBLAR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "AWTYP": {
+                        "@EndUserText.label": "AWTYP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AWKEY": {
+                        "@EndUserText.label": "AWKEY",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "FIKRS": {
+                        "@EndUserText.label": "FIKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "HWAER": {
+                        "@EndUserText.label": "HWAER",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "HWAE2": {
+                        "@EndUserText.label": "HWAE2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "HWAE3": {
+                        "@EndUserText.label": "HWAE3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KURS2": {
+                        "@EndUserText.label": "KURS2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KURS3": {
+                        "@EndUserText.label": "KURS3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "BASW2": {
+                        "@EndUserText.label": "BASW2",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "BASW3": {
+                        "@EndUserText.label": "BASW3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "UMRD2": {
+                        "@EndUserText.label": "UMRD2",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "UMRD3": {
+                        "@EndUserText.label": "UMRD3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XSTOV": {
+                        "@EndUserText.label": "XSTOV",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "STODT": {
+                        "@EndUserText.label": "STODT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XMWST": {
+                        "@EndUserText.label": "XMWST",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "CURT2": {
+                        "@EndUserText.label": "CURT2",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "CURT3": {
+                        "@EndUserText.label": "CURT3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KUTY2": {
+                        "@EndUserText.label": "KUTY2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "KUTY3": {
+                        "@EndUserText.label": "KUTY3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XSNET": {
+                        "@EndUserText.label": "XSNET",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "AUSBK": {
+                        "@EndUserText.label": "AUSBK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "XUSVR": {
+                        "@EndUserText.label": "XUSVR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "DUEFL": {
+                        "@EndUserText.label": "DUEFL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "AWSYS": {
+                        "@EndUserText.label": "AWSYS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TXKRS": {
+                        "@EndUserText.label": "TXKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "LOTKZ": {
+                        "@EndUserText.label": "LOTKZ",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XWVOF": {
+                        "@EndUserText.label": "XWVOF",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "STGRD": {
+                        "@EndUserText.label": "STGRD",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "PPNAM": {
+                        "@EndUserText.label": "PPNAM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "BRNCH": {
+                        "@EndUserText.label": "BRNCH",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "NUMPG": {
+                        "@EndUserText.label": "NUMPG",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "ADISC": {
+                        "@EndUserText.label": "ADISC",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XREF1_HD": {
+                        "@EndUserText.label": "XREF1_HD",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XREF2_HD": {
+                        "@EndUserText.label": "XREF2_HD",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XREVERSAL": {
+                        "@EndUserText.label": "XREVERSAL",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "REINDAT": {
+                        "@EndUserText.label": "REINDAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RLDNR": {
+                        "@EndUserText.label": "RLDNR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "LDGRP": {
+                        "@EndUserText.label": "LDGRP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "PROPMANO": {
+                        "@EndUserText.label": "PROPMANO",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XBLNR_ALT": {
+                        "@EndUserText.label": "XBLNR_ALT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "VATDATE": {
+                        "@EndUserText.label": "VATDATE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "DOCCAT": {
+                        "@EndUserText.label": "DOCCAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XSPLIT": {
+                        "@EndUserText.label": "XSPLIT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "CASH_ALLOC": {
+                        "@EndUserText.label": "CASH_ALLOC",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "FOLLOW_ON": {
+                        "@EndUserText.label": "FOLLOW_ON",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XREORG": {
+                        "@EndUserText.label": "XREORG",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SUBSET": {
+                        "@EndUserText.label": "SUBSET",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "KURST": {
+                        "@EndUserText.label": "KURST",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "KURSX": {
+                        "@EndUserText.label": "KURSX",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KUR2X": {
+                        "@EndUserText.label": "KUR2X",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KUR3X": {
+                        "@EndUserText.label": "KUR3X",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XMCA": {
+                        "@EndUserText.label": "XMCA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "/SAPF15/STATUS": {
+                        "@EndUserText.label": "/SAPF15/STATUS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOTY": {
+                        "@EndUserText.label": "PSOTY",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOAK": {
+                        "@EndUserText.label": "PSOAK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOKS": {
+                        "@EndUserText.label": "PSOKS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOSG": {
+                        "@EndUserText.label": "PSOSG",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOFN": {
+                        "@EndUserText.label": "PSOFN",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "INTFORM": {
+                        "@EndUserText.label": "INTFORM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "INTDATE": {
+                        "@EndUserText.label": "INTDATE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOBT": {
+                        "@EndUserText.label": "PSOBT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOZL": {
+                        "@EndUserText.label": "PSOZL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSODT": {
+                        "@EndUserText.label": "PSODT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PSOTM": {
+                        "@EndUserText.label": "PSOTM",
+                        "type": "cds.Time",
+                        "key": false
+                      },
+                      "FM_UMART": {
+                        "@EndUserText.label": "FM_UMART",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "CCINS": {
+                        "@EndUserText.label": "CCINS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "CCNUM": {
+                        "@EndUserText.label": "CCNUM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SSBLK": {
+                        "@EndUserText.label": "SSBLK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "BATCH": {
+                        "@EndUserText.label": "BATCH",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SNAME": {
+                        "@EndUserText.label": "SNAME",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SAMPLED": {
+                        "@EndUserText.label": "SAMPLED",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "EXCLUDE_FLAG": {
+                        "@EndUserText.label": "EXCLUDE_FLAG",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "BLIND": {
+                        "@EndUserText.label": "BLIND",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "OFFSET_STATUS": {
+                        "@EndUserText.label": "OFFSET_STATUS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "OFFSET_REFER_DAT": {
+                        "@EndUserText.label": "OFFSET_REFER_DAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PENRC": {
+                        "@EndUserText.label": "PENRC",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KNUMV": {
+                        "@EndUserText.label": "KNUMV",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.businessName": "1 INBOUND HIST RAW"
+                  }
+                },
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "BUKRS": {
+                      "@EndUserText.label": "BUKRS",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "BELNR": {
+                      "@EndUserText.label": "BELNR",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "GJAHR": {
+                      "@EndUserText.label": "GJAHR",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "BLART": {
+                      "@EndUserText.label": "BLART",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "BLDAT": {
+                      "@EndUserText.label": "BLDAT",
+                      "type": "cds.String",
+                      "length": 255
+                    },
+                    "BUDAT": {
+                      "@EndUserText.label": "BUDAT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "MONAT": {
+                      "@EndUserText.label": "MONAT",
+                      "type": "cds.Integer"
+                    },
+                    "CPUDT": {
+                      "@EndUserText.label": "CPUDT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "CPUTM": {
+                      "@EndUserText.label": "CPUTM",
+                      "type": "cds.Time"
+                    },
+                    "AEDAT": {
+                      "@EndUserText.label": "AEDAT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "UPDDT": {
+                      "@EndUserText.label": "UPDDT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "WWERT": {
+                      "@EndUserText.label": "WWERT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "USNAM": {
+                      "@EndUserText.label": "USNAM",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "TCODE": {
+                      "@EndUserText.label": "TCODE",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "BVORG": {
+                      "@EndUserText.label": "BVORG",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "XBLNR": {
+                      "@EndUserText.label": "XBLNR",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "DBBLG": {
+                      "@EndUserText.label": "DBBLG",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "STBLG": {
+                      "@EndUserText.label": "STBLG",
+                      "type": "cds.Integer"
+                    },
+                    "STJAH": {
+                      "@EndUserText.label": "STJAH",
+                      "type": "cds.Integer"
+                    },
+                    "BKTXT": {
+                      "@EndUserText.label": "BKTXT",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "WAERS": {
+                      "@EndUserText.label": "WAERS",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "KURSF": {
+                      "@EndUserText.label": "KURSF",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KZWRS": {
+                      "@EndUserText.label": "KZWRS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KZKRS": {
+                      "@EndUserText.label": "KZKRS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "BSTAT": {
+                      "@EndUserText.label": "BSTAT",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "XNETB": {
+                      "@EndUserText.label": "XNETB",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "FRATH": {
+                      "@EndUserText.label": "FRATH",
+                      "type": "cds.Integer"
+                    },
+                    "XRUEB": {
+                      "@EndUserText.label": "XRUEB",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GLVOR": {
+                      "@EndUserText.label": "GLVOR",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "GRPID": {
+                      "@EndUserText.label": "GRPID",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "DOKID": {
+                      "@EndUserText.label": "DOKID",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ARCID": {
+                      "@EndUserText.label": "ARCID",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "IBLAR": {
+                      "@EndUserText.label": "IBLAR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "AWTYP": {
+                      "@EndUserText.label": "AWTYP",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AWKEY": {
+                      "@EndUserText.label": "AWKEY",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "FIKRS": {
+                      "@EndUserText.label": "FIKRS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "HWAER": {
+                      "@EndUserText.label": "HWAER",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "HWAE2": {
+                      "@EndUserText.label": "HWAE2",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "HWAE3": {
+                      "@EndUserText.label": "HWAE3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KURS2": {
+                      "@EndUserText.label": "KURS2",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KURS3": {
+                      "@EndUserText.label": "KURS3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "BASW2": {
+                      "@EndUserText.label": "BASW2",
+                      "type": "cds.Integer"
+                    },
+                    "BASW3": {
+                      "@EndUserText.label": "BASW3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "UMRD2": {
+                      "@EndUserText.label": "UMRD2",
+                      "type": "cds.Integer"
+                    },
+                    "UMRD3": {
+                      "@EndUserText.label": "UMRD3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XSTOV": {
+                      "@EndUserText.label": "XSTOV",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "STODT": {
+                      "@EndUserText.label": "STODT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XMWST": {
+                      "@EndUserText.label": "XMWST",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CURT2": {
+                      "@EndUserText.label": "CURT2",
+                      "type": "cds.Integer"
+                    },
+                    "CURT3": {
+                      "@EndUserText.label": "CURT3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KUTY2": {
+                      "@EndUserText.label": "KUTY2",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "KUTY3": {
+                      "@EndUserText.label": "KUTY3",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XSNET": {
+                      "@EndUserText.label": "XSNET",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "AUSBK": {
+                      "@EndUserText.label": "AUSBK",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "XUSVR": {
+                      "@EndUserText.label": "XUSVR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "DUEFL": {
+                      "@EndUserText.label": "DUEFL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "AWSYS": {
+                      "@EndUserText.label": "AWSYS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TXKRS": {
+                      "@EndUserText.label": "TXKRS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "LOTKZ": {
+                      "@EndUserText.label": "LOTKZ",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XWVOF": {
+                      "@EndUserText.label": "XWVOF",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "STGRD": {
+                      "@EndUserText.label": "STGRD",
+                      "type": "cds.Integer"
+                    },
+                    "PPNAM": {
+                      "@EndUserText.label": "PPNAM",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "BRNCH": {
+                      "@EndUserText.label": "BRNCH",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "NUMPG": {
+                      "@EndUserText.label": "NUMPG",
+                      "type": "cds.Integer"
+                    },
+                    "ADISC": {
+                      "@EndUserText.label": "ADISC",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XREF1_HD": {
+                      "@EndUserText.label": "XREF1_HD",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XREF2_HD": {
+                      "@EndUserText.label": "XREF2_HD",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XREVERSAL": {
+                      "@EndUserText.label": "XREVERSAL",
+                      "type": "cds.Integer"
+                    },
+                    "REINDAT": {
+                      "@EndUserText.label": "REINDAT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RLDNR": {
+                      "@EndUserText.label": "RLDNR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "LDGRP": {
+                      "@EndUserText.label": "LDGRP",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "PROPMANO": {
+                      "@EndUserText.label": "PROPMANO",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XBLNR_ALT": {
+                      "@EndUserText.label": "XBLNR_ALT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "VATDATE": {
+                      "@EndUserText.label": "VATDATE",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "DOCCAT": {
+                      "@EndUserText.label": "DOCCAT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XSPLIT": {
+                      "@EndUserText.label": "XSPLIT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "CASH_ALLOC": {
+                      "@EndUserText.label": "CASH_ALLOC",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "FOLLOW_ON": {
+                      "@EndUserText.label": "FOLLOW_ON",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XREORG": {
+                      "@EndUserText.label": "XREORG",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SUBSET": {
+                      "@EndUserText.label": "SUBSET",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "KURST": {
+                      "@EndUserText.label": "KURST",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "KURSX": {
+                      "@EndUserText.label": "KURSX",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KUR2X": {
+                      "@EndUserText.label": "KUR2X",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KUR3X": {
+                      "@EndUserText.label": "KUR3X",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XMCA": {
+                      "@EndUserText.label": "XMCA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "/SAPF15/STATUS": {
+                      "@EndUserText.label": "/SAPF15/STATUS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOTY": {
+                      "@EndUserText.label": "PSOTY",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOAK": {
+                      "@EndUserText.label": "PSOAK",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOKS": {
+                      "@EndUserText.label": "PSOKS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOSG": {
+                      "@EndUserText.label": "PSOSG",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOFN": {
+                      "@EndUserText.label": "PSOFN",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "INTFORM": {
+                      "@EndUserText.label": "INTFORM",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "INTDATE": {
+                      "@EndUserText.label": "INTDATE",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOBT": {
+                      "@EndUserText.label": "PSOBT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOZL": {
+                      "@EndUserText.label": "PSOZL",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSODT": {
+                      "@EndUserText.label": "PSODT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PSOTM": {
+                      "@EndUserText.label": "PSOTM",
+                      "type": "cds.Time"
+                    },
+                    "FM_UMART": {
+                      "@EndUserText.label": "FM_UMART",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "CCINS": {
+                      "@EndUserText.label": "CCINS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "CCNUM": {
+                      "@EndUserText.label": "CCNUM",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SSBLK": {
+                      "@EndUserText.label": "SSBLK",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "BATCH": {
+                      "@EndUserText.label": "BATCH",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SNAME": {
+                      "@EndUserText.label": "SNAME",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SAMPLED": {
+                      "@EndUserText.label": "SAMPLED",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "EXCLUDE_FLAG": {
+                      "@EndUserText.label": "EXCLUDE_FLAG",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "BLIND": {
+                      "@EndUserText.label": "BLIND",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "OFFSET_STATUS": {
+                      "@EndUserText.label": "OFFSET_STATUS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "OFFSET_REFER_DAT": {
+                      "@EndUserText.label": "OFFSET_REFER_DAT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PENRC": {
+                      "@EndUserText.label": "PENRC",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KNUMV": {
+                      "@EndUserText.label": "KNUMV",
+                      "type": "cds.String",
+                      "length": 5000
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_HIST_RAW.1LT_BKPF_HIST_RAW"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_HIST_RAW_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "HIST_RAW"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "BKPF"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "HIST_RAW",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BUKRS"
+                          ]
+                        },
+                        {
+                          "xpr": [
+                            {
+                              "ref": [
+                                "d",
+                                "BELNR"
+                              ],
+                              "cast": {
+                                "type": "cds.String",
+                                "length": 10
+                              }
+                            }
+                          ],
+                          "as": "BELNR"
+                        },
+                        {
+                          "xpr": [
+                            {
+                              "ref": [
+                                "d",
+                                "GJAHR"
+                              ],
+                              "cast": {
+                                "type": "cds.String",
+                                "length": 4
+                              }
+                            }
+                          ],
+                          "as": "GJAHR"
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BLART"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BLDAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BUDAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MONAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CPUDT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CPUTM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AEDAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "UPDDT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WWERT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "USNAM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TCODE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BVORG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XBLNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DBBLG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "STBLG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "STJAH"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BKTXT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WAERS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KURSF"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KZWRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KZKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BSTAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XNETB"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FRATH"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XRUEB"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLVOR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GRPID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DOKID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ARCID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IBLAR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AWTYP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AWKEY"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FIKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HWAER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HWAE2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HWAE3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KURS2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KURS3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BASW2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BASW3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "UMRD2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "UMRD3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSTOV"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "STODT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XMWST"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CURT2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CURT3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KUTY2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KUTY3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSNET"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AUSBK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XUSVR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DUEFL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AWSYS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TXKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LOTKZ"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XWVOF"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "STGRD"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PPNAM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BRNCH"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NUMPG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ADISC"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XREF1_HD"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XREF2_HD"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XREVERSAL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REINDAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RLDNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LDGRP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PROPMANO"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XBLNR_ALT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VATDATE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DOCCAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSPLIT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CASH_ALLOC"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FOLLOW_ON"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XREORG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SUBSET"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KURST"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KURSX"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KUR2X"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KUR3X"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XMCA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAPF15/STATUS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOTY"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOAK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOKS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOSG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOFN"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "INTFORM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "INTDATE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOBT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOZL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSODT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSOTM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FM_UMART"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CCINS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CCNUM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SSBLK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BATCH"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SNAME"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SAMPLED"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "EXCLUDE_FLAG"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BLIND"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OFFSET_STATUS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OFFSET_REFER_DAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PENRC"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KNUMV"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "  SELECT \r\n    b.\"BATCH_ID\",\r\n    CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n    'HIST_RAW' AS \"SOURCE_SYSTEM\",\r\n    o.\"SOURCE_FILE\",\r\n    \"d\".\"BUKRS\",\r\n    CAST(\"d\".\"BELNR\" AS VARCHAR(10)) AS BELNR,\r\n    CAST(\"d\".\"GJAHR\" AS VARCHAR(4)) AS GJAHR,\r\n    \"d\".\"BLART\",\"d\".\"BLDAT\",\"d\".\"BUDAT\",\"d\".\"MONAT\",\"d\".\"CPUDT\",\"d\".\"CPUTM\",\"d\".\"AEDAT\",\"d\".\"UPDDT\",\"d\".\"WWERT\",\"d\".\"USNAM\",\"d\".\"TCODE\",\"d\".\"BVORG\",\"d\".\"XBLNR\",\"d\".\"DBBLG\",\"d\".\"STBLG\",\"d\".\"STJAH\",\"d\".\"BKTXT\",\"d\".\"WAERS\",\"d\".\"KURSF\",\"d\".\"KZWRS\",\"d\".\"KZKRS\",\"d\".\"BSTAT\",\"d\".\"XNETB\",\"d\".\"FRATH\",\"d\".\"XRUEB\",\"d\".\"GLVOR\",\"d\".\"GRPID\",\"d\".\"DOKID\",\"d\".\"ARCID\",\"d\".\"IBLAR\",\"d\".\"AWTYP\",\"d\".\"AWKEY\",\"d\".\"FIKRS\",\"d\".\"HWAER\",\"d\".\"HWAE2\",\"d\".\"HWAE3\",\"d\".\"KURS2\",\"d\".\"KURS3\",\"d\".\"BASW2\",\"d\".\"BASW3\",\"d\".\"UMRD2\",\"d\".\"UMRD3\",\"d\".\"XSTOV\",\"d\".\"STODT\",\"d\".\"XMWST\",\"d\".\"CURT2\",\"d\".\"CURT3\",\"d\".\"KUTY2\",\"d\".\"KUTY3\",\"d\".\"XSNET\",\"d\".\"AUSBK\",\"d\".\"XUSVR\",\"d\".\"DUEFL\",\"d\".\"AWSYS\",\"d\".\"TXKRS\",\"d\".\"LOTKZ\",\"d\".\"XWVOF\",\"d\".\"STGRD\",\"d\".\"PPNAM\",\"d\".\"BRNCH\",\"d\".\"NUMPG\",\"d\".\"ADISC\",\"d\".\"XREF1_HD\",\"d\".\"XREF2_HD\",\"d\".\"XREVERSAL\",\"d\".\"REINDAT\",\"d\".\"RLDNR\",\"d\".\"LDGRP\",\"d\".\"PROPMANO\",\"d\".\"XBLNR_ALT\",\"d\".\"VATDATE\",\"d\".\"DOCCAT\",\"d\".\"XSPLIT\",\"d\".\"CASH_ALLOC\",\"d\".\"FOLLOW_ON\",\"d\".\"XREORG\",\"d\".\"SUBSET\",\"d\".\"KURST\",\"d\".\"KURSX\",\"d\".\"KUR2X\",\"d\".\"KUR3X\",\"d\".\"XMCA\",\"d\".\"/SAPF15/STATUS\",\"d\".\"PSOTY\",\"d\".\"PSOAK\",\"d\".\"PSOKS\",\"d\".\"PSOSG\",\"d\".\"PSOFN\",\"d\".\"INTFORM\",\"d\".\"INTDATE\",\"d\".\"PSOBT\",\"d\".\"PSOZL\",\"d\".\"PSODT\",\"d\".\"PSOTM\",\"d\".\"FM_UMART\",\"d\".\"CCINS\",\"d\".\"CCNUM\",\"d\".\"SSBLK\",\"d\".\"BATCH\",\"d\".\"SNAME\",\"d\".\"SAMPLED\",\"d\".\"EXCLUDE_FLAG\",\"d\".\"BLIND\",\"d\".\"OFFSET_STATUS\",\"d\".\"OFFSET_REFER_DAT\",\"d\".\"PENRC\",\"d\".\"KNUMV\"\r\nFROM \"1_INBOUND_HIST_RAW.1LT_BKPF_HIST_RAW\" d\r\n\tCROSS JOIN \"2SV_ACTIVE_BATCH_HIST_RAW_01\" b\r\n\tJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o \r\n\t    ON o.\"BATCH_ID\" = b.\"BATCH_ID\" \r\n\t        AND o.\"SOURCE_SYSTEM\" = 'HIST_RAW' \r\n\t        AND o.\"OBJECT_NAME\" = 'BKPF'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0",
+                "name": "2TF_LOAD_BKPF_HIST_RAW_01$TRF_TV_sqltransform1"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_BKPF_HIST_RAW_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "BUKRS",
+                    "target": "BUKRS"
+                  },
+                  {
+                    "source": "BELNR",
+                    "target": "BELNR"
+                  },
+                  {
+                    "source": "GJAHR",
+                    "target": "GJAHR"
+                  },
+                  {
+                    "source": "BLART",
+                    "target": "BLART"
+                  },
+                  {
+                    "source": "BLDAT",
+                    "target": "BLDAT"
+                  },
+                  {
+                    "source": "BUDAT",
+                    "target": "BUDAT"
+                  },
+                  {
+                    "source": "MONAT",
+                    "target": "MONAT"
+                  },
+                  {
+                    "source": "CPUDT",
+                    "target": "CPUDT"
+                  },
+                  {
+                    "source": "CPUTM",
+                    "target": "CPUTM"
+                  },
+                  {
+                    "source": "AEDAT",
+                    "target": "AEDAT"
+                  },
+                  {
+                    "source": "UPDDT",
+                    "target": "UPDDT"
+                  },
+                  {
+                    "source": "WWERT",
+                    "target": "WWERT"
+                  },
+                  {
+                    "source": "USNAM",
+                    "target": "USNAM"
+                  },
+                  {
+                    "source": "TCODE",
+                    "target": "TCODE"
+                  },
+                  {
+                    "source": "BVORG",
+                    "target": "BVORG"
+                  },
+                  {
+                    "source": "XBLNR",
+                    "target": "XBLNR"
+                  },
+                  {
+                    "source": "DBBLG",
+                    "target": "DBBLG"
+                  },
+                  {
+                    "source": "STBLG",
+                    "target": "STBLG"
+                  },
+                  {
+                    "source": "STJAH",
+                    "target": "STJAH"
+                  },
+                  {
+                    "source": "BKTXT",
+                    "target": "BKTXT"
+                  },
+                  {
+                    "source": "WAERS",
+                    "target": "WAERS"
+                  },
+                  {
+                    "source": "KURSF",
+                    "target": "KURSF"
+                  },
+                  {
+                    "source": "KZWRS",
+                    "target": "KZWRS"
+                  },
+                  {
+                    "source": "KZKRS",
+                    "target": "KZKRS"
+                  },
+                  {
+                    "source": "BSTAT",
+                    "target": "BSTAT"
+                  },
+                  {
+                    "source": "XNETB",
+                    "target": "XNETB"
+                  },
+                  {
+                    "source": "FRATH",
+                    "target": "FRATH"
+                  },
+                  {
+                    "source": "XRUEB",
+                    "target": "XRUEB"
+                  },
+                  {
+                    "source": "GLVOR",
+                    "target": "GLVOR"
+                  },
+                  {
+                    "source": "GRPID",
+                    "target": "GRPID"
+                  },
+                  {
+                    "source": "DOKID",
+                    "target": "DOKID"
+                  },
+                  {
+                    "source": "ARCID",
+                    "target": "ARCID"
+                  },
+                  {
+                    "source": "IBLAR",
+                    "target": "IBLAR"
+                  },
+                  {
+                    "source": "AWTYP",
+                    "target": "AWTYP"
+                  },
+                  {
+                    "source": "AWKEY",
+                    "target": "AWKEY"
+                  },
+                  {
+                    "source": "FIKRS",
+                    "target": "FIKRS"
+                  },
+                  {
+                    "source": "HWAER",
+                    "target": "HWAER"
+                  },
+                  {
+                    "source": "HWAE2",
+                    "target": "HWAE2"
+                  },
+                  {
+                    "source": "HWAE3",
+                    "target": "HWAE3"
+                  },
+                  {
+                    "source": "KURS2",
+                    "target": "KURS2"
+                  },
+                  {
+                    "source": "KURS3",
+                    "target": "KURS3"
+                  },
+                  {
+                    "source": "BASW2",
+                    "target": "BASW2"
+                  },
+                  {
+                    "source": "BASW3",
+                    "target": "BASW3"
+                  },
+                  {
+                    "source": "UMRD2",
+                    "target": "UMRD2"
+                  },
+                  {
+                    "source": "UMRD3",
+                    "target": "UMRD3"
+                  },
+                  {
+                    "source": "XSTOV",
+                    "target": "XSTOV"
+                  },
+                  {
+                    "source": "STODT",
+                    "target": "STODT"
+                  },
+                  {
+                    "source": "XMWST",
+                    "target": "XMWST"
+                  },
+                  {
+                    "source": "CURT2",
+                    "target": "CURT2"
+                  },
+                  {
+                    "source": "CURT3",
+                    "target": "CURT3"
+                  },
+                  {
+                    "source": "KUTY2",
+                    "target": "KUTY2"
+                  },
+                  {
+                    "source": "KUTY3",
+                    "target": "KUTY3"
+                  },
+                  {
+                    "source": "XSNET",
+                    "target": "XSNET"
+                  },
+                  {
+                    "source": "AUSBK",
+                    "target": "AUSBK"
+                  },
+                  {
+                    "source": "XUSVR",
+                    "target": "XUSVR"
+                  },
+                  {
+                    "source": "DUEFL",
+                    "target": "DUEFL"
+                  },
+                  {
+                    "source": "AWSYS",
+                    "target": "AWSYS"
+                  },
+                  {
+                    "source": "TXKRS",
+                    "target": "TXKRS"
+                  },
+                  {
+                    "source": "LOTKZ",
+                    "target": "LOTKZ"
+                  },
+                  {
+                    "source": "XWVOF",
+                    "target": "XWVOF"
+                  },
+                  {
+                    "source": "STGRD",
+                    "target": "STGRD"
+                  },
+                  {
+                    "source": "PPNAM",
+                    "target": "PPNAM"
+                  },
+                  {
+                    "source": "BRNCH",
+                    "target": "BRNCH"
+                  },
+                  {
+                    "source": "NUMPG",
+                    "target": "NUMPG"
+                  },
+                  {
+                    "source": "ADISC",
+                    "target": "ADISC"
+                  },
+                  {
+                    "source": "XREF1_HD",
+                    "target": "XREF1_HD"
+                  },
+                  {
+                    "source": "XREF2_HD",
+                    "target": "XREF2_HD"
+                  },
+                  {
+                    "source": "XREVERSAL",
+                    "target": "XREVERSAL"
+                  },
+                  {
+                    "source": "REINDAT",
+                    "target": "REINDAT"
+                  },
+                  {
+                    "source": "RLDNR",
+                    "target": "RLDNR"
+                  },
+                  {
+                    "source": "LDGRP",
+                    "target": "LDGRP"
+                  },
+                  {
+                    "source": "PROPMANO",
+                    "target": "PROPMANO"
+                  },
+                  {
+                    "source": "XBLNR_ALT",
+                    "target": "XBLNR_ALT"
+                  },
+                  {
+                    "source": "VATDATE",
+                    "target": "VATDATE"
+                  },
+                  {
+                    "source": "DOCCAT",
+                    "target": "DOCCAT"
+                  },
+                  {
+                    "source": "XSPLIT",
+                    "target": "XSPLIT"
+                  },
+                  {
+                    "source": "CASH_ALLOC",
+                    "target": "CASH_ALLOC"
+                  },
+                  {
+                    "source": "FOLLOW_ON",
+                    "target": "FOLLOW_ON"
+                  },
+                  {
+                    "source": "XREORG",
+                    "target": "XREORG"
+                  },
+                  {
+                    "source": "SUBSET",
+                    "target": "SUBSET"
+                  },
+                  {
+                    "source": "KURST",
+                    "target": "KURST"
+                  },
+                  {
+                    "source": "KURSX",
+                    "target": "KURSX"
+                  },
+                  {
+                    "source": "KUR2X",
+                    "target": "KUR2X"
+                  },
+                  {
+                    "source": "KUR3X",
+                    "target": "KUR3X"
+                  },
+                  {
+                    "source": "XMCA",
+                    "target": "XMCA"
+                  },
+                  {
+                    "source": "/SAPF15/STATUS",
+                    "target": "/SAPF15/STATUS"
+                  },
+                  {
+                    "source": "PSOTY",
+                    "target": "PSOTY"
+                  },
+                  {
+                    "source": "PSOAK",
+                    "target": "PSOAK"
+                  },
+                  {
+                    "source": "PSOKS",
+                    "target": "PSOKS"
+                  },
+                  {
+                    "source": "PSOSG",
+                    "target": "PSOSG"
+                  },
+                  {
+                    "source": "PSOFN",
+                    "target": "PSOFN"
+                  },
+                  {
+                    "source": "INTFORM",
+                    "target": "INTFORM"
+                  },
+                  {
+                    "source": "INTDATE",
+                    "target": "INTDATE"
+                  },
+                  {
+                    "source": "PSOBT",
+                    "target": "PSOBT"
+                  },
+                  {
+                    "source": "PSOZL",
+                    "target": "PSOZL"
+                  },
+                  {
+                    "source": "PSODT",
+                    "target": "PSODT"
+                  },
+                  {
+                    "source": "PSOTM",
+                    "target": "PSOTM"
+                  },
+                  {
+                    "source": "FM_UMART",
+                    "target": "FM_UMART"
+                  },
+                  {
+                    "source": "CCINS",
+                    "target": "CCINS"
+                  },
+                  {
+                    "source": "CCNUM",
+                    "target": "CCNUM"
+                  },
+                  {
+                    "source": "SSBLK",
+                    "target": "SSBLK"
+                  },
+                  {
+                    "source": "BATCH",
+                    "target": "BATCH"
+                  },
+                  {
+                    "source": "SNAME",
+                    "target": "SNAME"
+                  },
+                  {
+                    "source": "SAMPLED",
+                    "target": "SAMPLED"
+                  },
+                  {
+                    "source": "EXCLUDE_FLAG",
+                    "target": "EXCLUDE_FLAG"
+                  },
+                  {
+                    "source": "BLIND",
+                    "target": "BLIND"
+                  },
+                  {
+                    "source": "OFFSET_STATUS",
+                    "target": "OFFSET_STATUS"
+                  },
+                  {
+                    "source": "OFFSET_REFER_DAT",
+                    "target": "OFFSET_REFER_DAT"
+                  },
+                  {
+                    "source": "PENRC",
+                    "target": "PENRC"
+                  },
+                  {
+                    "source": "KNUMV",
+                    "target": "KNUMV"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "BUKRS": {
+                      "@EndUserText.label": "BUKRS",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "BELNR": {
+                      "@EndUserText.label": "BELNR",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "GJAHR": {
+                      "@EndUserText.label": "GJAHR",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "BLART": {
+                      "@EndUserText.label": "BLART",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "BLDAT": {
+                      "@EndUserText.label": "BLDAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 255
+                    },
+                    "BUDAT": {
+                      "@EndUserText.label": "BUDAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "MONAT": {
+                      "@EndUserText.label": "MONAT",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "CPUDT": {
+                      "@EndUserText.label": "CPUDT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "CPUTM": {
+                      "@EndUserText.label": "CPUTM",
+                      "type": "cds.Time",
+                      "key": false
+                    },
+                    "AEDAT": {
+                      "@EndUserText.label": "AEDAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "UPDDT": {
+                      "@EndUserText.label": "UPDDT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "WWERT": {
+                      "@EndUserText.label": "WWERT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "USNAM": {
+                      "@EndUserText.label": "USNAM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "TCODE": {
+                      "@EndUserText.label": "TCODE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "BVORG": {
+                      "@EndUserText.label": "BVORG",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "XBLNR": {
+                      "@EndUserText.label": "XBLNR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "DBBLG": {
+                      "@EndUserText.label": "DBBLG",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "STBLG": {
+                      "@EndUserText.label": "STBLG",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "STJAH": {
+                      "@EndUserText.label": "STJAH",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "BKTXT": {
+                      "@EndUserText.label": "BKTXT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "WAERS": {
+                      "@EndUserText.label": "WAERS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "KURSF": {
+                      "@EndUserText.label": "KURSF",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KZWRS": {
+                      "@EndUserText.label": "KZWRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KZKRS": {
+                      "@EndUserText.label": "KZKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "BSTAT": {
+                      "@EndUserText.label": "BSTAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "XNETB": {
+                      "@EndUserText.label": "XNETB",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "FRATH": {
+                      "@EndUserText.label": "FRATH",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "XRUEB": {
+                      "@EndUserText.label": "XRUEB",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GLVOR": {
+                      "@EndUserText.label": "GLVOR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "GRPID": {
+                      "@EndUserText.label": "GRPID",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "DOKID": {
+                      "@EndUserText.label": "DOKID",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ARCID": {
+                      "@EndUserText.label": "ARCID",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "IBLAR": {
+                      "@EndUserText.label": "IBLAR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "AWTYP": {
+                      "@EndUserText.label": "AWTYP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AWKEY": {
+                      "@EndUserText.label": "AWKEY",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "FIKRS": {
+                      "@EndUserText.label": "FIKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "HWAER": {
+                      "@EndUserText.label": "HWAER",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "HWAE2": {
+                      "@EndUserText.label": "HWAE2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "HWAE3": {
+                      "@EndUserText.label": "HWAE3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KURS2": {
+                      "@EndUserText.label": "KURS2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KURS3": {
+                      "@EndUserText.label": "KURS3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "BASW2": {
+                      "@EndUserText.label": "BASW2",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "BASW3": {
+                      "@EndUserText.label": "BASW3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "UMRD2": {
+                      "@EndUserText.label": "UMRD2",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "UMRD3": {
+                      "@EndUserText.label": "UMRD3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XSTOV": {
+                      "@EndUserText.label": "XSTOV",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "STODT": {
+                      "@EndUserText.label": "STODT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XMWST": {
+                      "@EndUserText.label": "XMWST",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "CURT2": {
+                      "@EndUserText.label": "CURT2",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "CURT3": {
+                      "@EndUserText.label": "CURT3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KUTY2": {
+                      "@EndUserText.label": "KUTY2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "KUTY3": {
+                      "@EndUserText.label": "KUTY3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XSNET": {
+                      "@EndUserText.label": "XSNET",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "AUSBK": {
+                      "@EndUserText.label": "AUSBK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "XUSVR": {
+                      "@EndUserText.label": "XUSVR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "DUEFL": {
+                      "@EndUserText.label": "DUEFL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "AWSYS": {
+                      "@EndUserText.label": "AWSYS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TXKRS": {
+                      "@EndUserText.label": "TXKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "LOTKZ": {
+                      "@EndUserText.label": "LOTKZ",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XWVOF": {
+                      "@EndUserText.label": "XWVOF",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "STGRD": {
+                      "@EndUserText.label": "STGRD",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "PPNAM": {
+                      "@EndUserText.label": "PPNAM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "BRNCH": {
+                      "@EndUserText.label": "BRNCH",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "NUMPG": {
+                      "@EndUserText.label": "NUMPG",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "ADISC": {
+                      "@EndUserText.label": "ADISC",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XREF1_HD": {
+                      "@EndUserText.label": "XREF1_HD",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XREF2_HD": {
+                      "@EndUserText.label": "XREF2_HD",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XREVERSAL": {
+                      "@EndUserText.label": "XREVERSAL",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "REINDAT": {
+                      "@EndUserText.label": "REINDAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RLDNR": {
+                      "@EndUserText.label": "RLDNR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "LDGRP": {
+                      "@EndUserText.label": "LDGRP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "PROPMANO": {
+                      "@EndUserText.label": "PROPMANO",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XBLNR_ALT": {
+                      "@EndUserText.label": "XBLNR_ALT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "VATDATE": {
+                      "@EndUserText.label": "VATDATE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "DOCCAT": {
+                      "@EndUserText.label": "DOCCAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XSPLIT": {
+                      "@EndUserText.label": "XSPLIT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "CASH_ALLOC": {
+                      "@EndUserText.label": "CASH_ALLOC",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "FOLLOW_ON": {
+                      "@EndUserText.label": "FOLLOW_ON",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XREORG": {
+                      "@EndUserText.label": "XREORG",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SUBSET": {
+                      "@EndUserText.label": "SUBSET",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "KURST": {
+                      "@EndUserText.label": "KURST",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "KURSX": {
+                      "@EndUserText.label": "KURSX",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KUR2X": {
+                      "@EndUserText.label": "KUR2X",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KUR3X": {
+                      "@EndUserText.label": "KUR3X",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XMCA": {
+                      "@EndUserText.label": "XMCA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "/SAPF15/STATUS": {
+                      "@EndUserText.label": "/SAPF15/STATUS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOTY": {
+                      "@EndUserText.label": "PSOTY",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOAK": {
+                      "@EndUserText.label": "PSOAK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOKS": {
+                      "@EndUserText.label": "PSOKS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOSG": {
+                      "@EndUserText.label": "PSOSG",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOFN": {
+                      "@EndUserText.label": "PSOFN",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "INTFORM": {
+                      "@EndUserText.label": "INTFORM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "INTDATE": {
+                      "@EndUserText.label": "INTDATE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOBT": {
+                      "@EndUserText.label": "PSOBT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOZL": {
+                      "@EndUserText.label": "PSOZL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSODT": {
+                      "@EndUserText.label": "PSODT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PSOTM": {
+                      "@EndUserText.label": "PSOTM",
+                      "type": "cds.Time",
+                      "key": false
+                    },
+                    "FM_UMART": {
+                      "@EndUserText.label": "FM_UMART",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "CCINS": {
+                      "@EndUserText.label": "CCINS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "CCNUM": {
+                      "@EndUserText.label": "CCNUM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SSBLK": {
+                      "@EndUserText.label": "SSBLK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "BATCH": {
+                      "@EndUserText.label": "BATCH",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SNAME": {
+                      "@EndUserText.label": "SNAME",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SAMPLED": {
+                      "@EndUserText.label": "SAMPLED",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "EXCLUDE_FLAG": {
+                      "@EndUserText.label": "EXCLUDE_FLAG",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "BLIND": {
+                      "@EndUserText.label": "BLIND",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "OFFSET_STATUS": {
+                      "@EndUserText.label": "OFFSET_STATUS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "OFFSET_REFER_DAT": {
+                      "@EndUserText.label": "OFFSET_REFER_DAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PENRC": {
+                      "@EndUserText.label": "PENRC",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KNUMV": {
+                      "@EndUserText.label": "KNUMV",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_BKPF_HIST_RAW_AUD_01"
+                },
+                "name": "2LT_BKPF_HIST_RAW_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {},
+        "parameters": {}
+      }
+    }
+  }
+}

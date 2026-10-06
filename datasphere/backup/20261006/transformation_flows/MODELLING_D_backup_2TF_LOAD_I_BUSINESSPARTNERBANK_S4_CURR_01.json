@@ -1,0 +1,1085 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_BUSINESSPARTNERBANK_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_BUSINESSPARTNERBANK_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNERBANK_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_BUSINESSPARTNERBANK_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_BUSINESSPARTNERBANK_S4_CURR",
+                    "elements": {
+                      "BusinessPartner": {
+                        "@EndUserText.label": "Business partner number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "BankIdentification": {
+                        "@EndUserText.label": "Bank details id",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "BankCountryKey": {
+                        "@EndUserText.label": "Bank country/region key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "BankName": {
+                        "@EndUserText.label": "Name of financial institution",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 60
+                      },
+                      "BankNumber": {
+                        "@EndUserText.label": "Bank key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "SWIFTCode": {
+                        "@EndUserText.label": "Swift/bic for international payments",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 11
+                      },
+                      "BankControlKey": {
+                        "@EndUserText.label": "Bank control key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "BankAccountHolderName": {
+                        "@EndUserText.label": "Account holder name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 60
+                      },
+                      "BankAccountName": {
+                        "@EndUserText.label": "Name of bank account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "ValidityStartDate": {
+                        "@EndUserText.label": "Validity start of business partner bank details",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 0
+                      },
+                      "ValidityEndDate": {
+                        "@EndUserText.label": "Validity end of business partner bank details",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 0
+                      },
+                      "IsActualDate": {
+                        "@EndUserText.label": "Data element for domain boole: true (='x') and false (=' ')",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BPIsActualDate": {
+                        "@EndUserText.label": "Data element for domain boole: true (='x') and false (=' ')",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IBAN": {
+                        "@EndUserText.label": "Iban (international bank account number)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 34
+                      },
+                      "IBANValidityStartDate": {
+                        "@EndUserText.label": "Validity start of iban",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "BankAccount": {
+                        "@EndUserText.label": "Bank account number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "BankAccountReferenceText": {
+                        "@EndUserText.label": "Reference details for bank details",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "CollectionAuthInd": {
+                        "@EndUserText.label": "Indicator: collection authorization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BusinessPartnerExternalBankID": {
+                        "@EndUserText.label": "Bank details id in external system",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "BPBankDetailsChangeDate": {
+                        "@EndUserText.label": "Date of change to bank details (bp)",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 0
+                      },
+                      "BPBankDetailsChangeTargetID": {
+                        "@EndUserText.label": "Id of target details for change of bank details (bp)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "BPBankIsProtected": {
+                        "@EndUserText.label": "Bp: sensitivity indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BPBankUUID": {
+                        "@EndUserText.label": "Bp: bank account alias guid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 36
+                      },
+                      "CityName": {
+                        "@EndUserText.label": "City",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 35
+                      },
+                      "AuthorizationGroup": {
+                        "@EndUserText.label": "Authorization group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_BUSINESSPARTNERBANK_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "BusinessPartner": {
+                      "@EndUserText.label": "Business partner number",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "BankIdentification": {
+                      "@EndUserText.label": "Bank details id",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "BankCountryKey": {
+                      "@EndUserText.label": "Bank country/region key",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "BankName": {
+                      "@EndUserText.label": "Name of financial institution",
+                      "type": "cds.String",
+                      "length": 60
+                    },
+                    "BankNumber": {
+                      "@EndUserText.label": "Bank key",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "SWIFTCode": {
+                      "@EndUserText.label": "Swift/bic for international payments",
+                      "type": "cds.String",
+                      "length": 11
+                    },
+                    "BankControlKey": {
+                      "@EndUserText.label": "Bank control key",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "BankAccountHolderName": {
+                      "@EndUserText.label": "Account holder name",
+                      "type": "cds.String",
+                      "length": 60
+                    },
+                    "BankAccountName": {
+                      "@EndUserText.label": "Name of bank account",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start of business partner bank details",
+                      "precision": 15,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end of business partner bank details",
+                      "precision": 15,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "IsActualDate": {
+                      "@EndUserText.label": "Data element for domain boole: true (='x') and false (=' ')",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BPIsActualDate": {
+                      "@EndUserText.label": "Data element for domain boole: true (='x') and false (=' ')",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IBAN": {
+                      "@EndUserText.label": "Iban (international bank account number)",
+                      "type": "cds.String",
+                      "length": 34
+                    },
+                    "IBANValidityStartDate": {
+                      "@EndUserText.label": "Validity start of iban",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "BankAccount": {
+                      "@EndUserText.label": "Bank account number",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "BankAccountReferenceText": {
+                      "@EndUserText.label": "Reference details for bank details",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "CollectionAuthInd": {
+                      "@EndUserText.label": "Indicator: collection authorization",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BusinessPartnerExternalBankID": {
+                      "@EndUserText.label": "Bank details id in external system",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "BPBankDetailsChangeDate": {
+                      "@EndUserText.label": "Date of change to bank details (bp)",
+                      "precision": 15,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "BPBankDetailsChangeTargetID": {
+                      "@EndUserText.label": "Id of target details for change of bank details (bp)",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "BPBankIsProtected": {
+                      "@EndUserText.label": "Bp: sensitivity indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BPBankUUID": {
+                      "@EndUserText.label": "Bp: bank account alias guid",
+                      "type": "cds.String",
+                      "length": 36
+                    },
+                    "CityName": {
+                      "@EndUserText.label": "City",
+                      "type": "cds.String",
+                      "length": 35
+                    },
+                    "AuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNERBANK_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_BUSINESSPARTNERBANK"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartner"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankIdentification"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankCountryKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SWIFTCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankControlKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankAccountHolderName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankAccountName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsActualDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPIsActualDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IBAN"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IBANValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankAccountReferenceText"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CollectionAuthInd"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerExternalBankID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPBankDetailsChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPBankDetailsChangeTargetID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPBankIsProtected"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPBankUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CityName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AuthorizationGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "\n  SELECT\n  b.\"BATCH_ID\",\n  CURRENT_UTCTIMESTAMP() AS \"LOAD_TIMESTAMP\",\n  'S4_CURR'            AS \"SOURCE_SYSTEM\",\n  o.\"SOURCE_FILE\",\n\"d\".\"BusinessPartner\",\"d\".\"BankIdentification\",\"d\".\"BankCountryKey\",\"d\".\"BankName\",\"d\".\"BankNumber\",\"d\".\"SWIFTCode\",\"d\".\"BankControlKey\",\"d\".\"BankAccountHolderName\",\"d\".\"BankAccountName\",\"d\".\"ValidityStartDate\",\"d\".\"ValidityEndDate\",\"d\".\"IsActualDate\",\"d\".\"BPIsActualDate\",\"d\".\"IBAN\",\"d\".\"IBANValidityStartDate\",\"d\".\"BankAccount\",\"d\".\"BankAccountReferenceText\",\"d\".\"CollectionAuthInd\",\"d\".\"BusinessPartnerExternalBankID\",\"d\".\"BPBankDetailsChangeDate\",\"d\".\"BPBankDetailsChangeTargetID\",\"d\".\"BPBankIsProtected\",\"d\".\"BPBankUUID\",\"d\".\"CityName\",\"d\".\"AuthorizationGroup\",\"d\".\"Change_Type\",\"d\".\"Change_Date\" from \"1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNERBANK_S4_CURR_Delta\" d\nCROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o\n  ON o.\"BATCH_ID\"      = b.\"BATCH_ID\"\n AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\n AND o.\"OBJECT_NAME\"   = 'I_BUSINESSPARTNERBANK'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNERBANK_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_BUSINESSPARTNERBANK_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "BusinessPartner",
+                    "target": "BusinessPartner"
+                  },
+                  {
+                    "source": "BankIdentification",
+                    "target": "BankIdentification"
+                  },
+                  {
+                    "source": "BankCountryKey",
+                    "target": "BankCountryKey"
+                  },
+                  {
+                    "source": "BankName",
+                    "target": "BankName"
+                  },
+                  {
+                    "source": "BankNumber",
+                    "target": "BankNumber"
+                  },
+                  {
+                    "source": "SWIFTCode",
+                    "target": "SWIFTCode"
+                  },
+                  {
+                    "source": "BankControlKey",
+                    "target": "BankControlKey"
+                  },
+                  {
+                    "source": "BankAccountHolderName",
+                    "target": "BankAccountHolderName"
+                  },
+                  {
+                    "source": "BankAccountName",
+                    "target": "BankAccountName"
+                  },
+                  {
+                    "source": "ValidityStartDate",
+                    "target": "ValidityStartDate"
+                  },
+                  {
+                    "source": "ValidityEndDate",
+                    "target": "ValidityEndDate"
+                  },
+                  {
+                    "source": "IsActualDate",
+                    "target": "IsActualDate"
+                  },
+                  {
+                    "source": "BPIsActualDate",
+                    "target": "BPIsActualDate"
+                  },
+                  {
+                    "source": "IBAN",
+                    "target": "IBAN"
+                  },
+                  {
+                    "source": "IBANValidityStartDate",
+                    "target": "IBANValidityStartDate"
+                  },
+                  {
+                    "source": "BankAccount",
+                    "target": "BankAccount"
+                  },
+                  {
+                    "source": "BankAccountReferenceText",
+                    "target": "BankAccountReferenceText"
+                  },
+                  {
+                    "source": "CollectionAuthInd",
+                    "target": "CollectionAuthInd"
+                  },
+                  {
+                    "source": "BusinessPartnerExternalBankID",
+                    "target": "BusinessPartnerExternalBankID"
+                  },
+                  {
+                    "source": "BPBankDetailsChangeDate",
+                    "target": "BPBankDetailsChangeDate"
+                  },
+                  {
+                    "source": "BPBankDetailsChangeTargetID",
+                    "target": "BPBankDetailsChangeTargetID"
+                  },
+                  {
+                    "source": "BPBankIsProtected",
+                    "target": "BPBankIsProtected"
+                  },
+                  {
+                    "source": "BPBankUUID",
+                    "target": "BPBankUUID"
+                  },
+                  {
+                    "source": "CityName",
+                    "target": "CityName"
+                  },
+                  {
+                    "source": "AuthorizationGroup",
+                    "target": "AuthorizationGroup"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "BusinessPartner": {
+                      "@EndUserText.label": "Business partner number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "BankIdentification": {
+                      "@EndUserText.label": "Bank details id",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "BankCountryKey": {
+                      "@EndUserText.label": "Bank country/region key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "BankName": {
+                      "@EndUserText.label": "Name of financial institution",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 60
+                    },
+                    "BankNumber": {
+                      "@EndUserText.label": "Bank key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "SWIFTCode": {
+                      "@EndUserText.label": "Swift/bic for international payments",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 11
+                    },
+                    "BankControlKey": {
+                      "@EndUserText.label": "Bank control key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "BankAccountHolderName": {
+                      "@EndUserText.label": "Account holder name",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 60
+                    },
+                    "BankAccountName": {
+                      "@EndUserText.label": "Name of bank account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start of business partner bank details",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 0
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end of business partner bank details",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 0
+                    },
+                    "IsActualDate": {
+                      "@EndUserText.label": "Data element for domain boole: true (='x') and false (=' ')",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BPIsActualDate": {
+                      "@EndUserText.label": "Data element for domain boole: true (='x') and false (=' ')",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IBAN": {
+                      "@EndUserText.label": "Iban (international bank account number)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 34
+                    },
+                    "IBANValidityStartDate": {
+                      "@EndUserText.label": "Validity start of iban",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "BankAccount": {
+                      "@EndUserText.label": "Bank account number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "BankAccountReferenceText": {
+                      "@EndUserText.label": "Reference details for bank details",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "CollectionAuthInd": {
+                      "@EndUserText.label": "Indicator: collection authorization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BusinessPartnerExternalBankID": {
+                      "@EndUserText.label": "Bank details id in external system",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "BPBankDetailsChangeDate": {
+                      "@EndUserText.label": "Date of change to bank details (bp)",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 0
+                    },
+                    "BPBankDetailsChangeTargetID": {
+                      "@EndUserText.label": "Id of target details for change of bank details (bp)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "BPBankIsProtected": {
+                      "@EndUserText.label": "Bp: sensitivity indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BPBankUUID": {
+                      "@EndUserText.label": "Bp: bank account alias guid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 36
+                    },
+                    "CityName": {
+                      "@EndUserText.label": "City",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 35
+                    },
+                    "AuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_BUSINESSPARTNERBANK_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_BUSINESSPARTNERBANK_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_USVEZENW"
+                    }
+                  }
+                },
+                "name": "2LT_I_BUSINESSPARTNERBANK_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

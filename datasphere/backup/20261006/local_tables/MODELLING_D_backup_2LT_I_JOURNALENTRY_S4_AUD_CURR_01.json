@@ -1,0 +1,1980 @@
+{
+  "definitions": {
+    "2LT_I_JOURNALENTRY_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "FiscalYear": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "AccountingDocument": {
+          "@EndUserText.label": "Journal entry",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "AccountingDocumentType": {
+          "@EndUserText.label": "Journal entry type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "DocumentDate": {
+          "@EndUserText.label": "Journal entry date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PostingDate": {
+          "@EndUserText.label": "Posting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalPeriod": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "AccountingDocumentCreationDate": {
+          "@EndUserText.label": "Accounting document entry date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreationTime": {
+          "@EndUserText.label": "Creation time",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "LastManualChangeDate": {
+          "@EndUserText.label": "Calendar date of the last manual change in document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LastAutomaticChangeDate": {
+          "@EndUserText.label": "Calendar date of the last automatic change in document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LastChangeDate": {
+          "@EndUserText.label": "Last change date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ExchangeRateDate": {
+          "@EndUserText.label": "Exchange rate date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "AccountingDocCreatedByUser": {
+          "@EndUserText.label": "User that created the journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "TransactionCode": {
+          "@EndUserText.label": "Transaction code",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "IntercompanyTransaction": {
+          "@EndUserText.label": "Intercompany transaction number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "DocumentReferenceID": {
+          "@EndUserText.label": "Document reference id",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "RecurringAccountingDocument": {
+          "@EndUserText.label": "Recurring journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RecrrgJournalEntryCompanyCode": {
+          "@EndUserText.label": "Recurring journal entry company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RecrrgJournalEntryFiscalYear": {
+          "@EndUserText.label": "Recurring journal entry fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ReverseDocument": {
+          "@EndUserText.label": "Reverse document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ReverseDocumentFiscalYear": {
+          "@EndUserText.label": "Reverse document fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AccountingDocumentHeaderText": {
+          "@EndUserText.label": "Document header text",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "TransactionCurrency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "ExchangeRate": {
+          "@EndUserText.label": "Exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "ExchRateIsIndirectQuotation": {
+          "@EndUserText.label": "Exchange rate is indirect quotation",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EffectiveExchangeRate": {
+          "@EndUserText.label": "Effective exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 5
+        },
+        "AccountingDocumentCategory": {
+          "@EndUserText.label": "Journal entry category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "NetAmountIsPosted": {
+          "@EndUserText.label": "Net amount is posted",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JrnlEntryIsPostedToPrevPeriod": {
+          "@EndUserText.label": "Journal entry is posted to previous period",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BusinessTransactionType": {
+          "@EndUserText.label": "Business transaction category",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "JrnlEntryBusinessTransType": {
+          "@EndUserText.label": "Business transaction type of journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "BatchInputSession": {
+          "@EndUserText.label": "Batch input session",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ReferenceDocumentType": {
+          "@EndUserText.label": "Reference document type",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "OriginalReferenceDocument": {
+          "@EndUserText.label": "Object key",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CompanyCodeCurrency": {
+          "@EndUserText.label": "Company code currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AdditionalCurrency1": {
+          "@EndUserText.label": "Additional currency 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AdditionalCurrency2": {
+          "@EndUserText.label": "Additional currency 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ReversalIsPlanned": {
+          "@EndUserText.label": "Indicator: reversal is planned for document",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PlannedReversalDate": {
+          "@EndUserText.label": "Planned date for the reversal posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "TaxIsCalculatedAutomatically": {
+          "@EndUserText.label": "Tax is automatically calculated",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AdditionalCurrency1Role": {
+          "@EndUserText.label": "Currency type of second local currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AdditionalCurrency2Role": {
+          "@EndUserText.label": "Currency type of third local currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TaxBaseAmountIsNetAmount": {
+          "@EndUserText.label": "Tax base amount is net amount",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SourceCompanyCode": {
+          "@EndUserText.label": "Source company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ReferenceDocumentLogicalSystem": {
+          "@EndUserText.label": "Logical system of reference document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "TaxAbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute tax exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "TaxExchangeRate": {
+          "@EndUserText.label": "Tax exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "TaxExchRateIsIndirectQuotation": {
+          "@EndUserText.label": "Tax exchange rate is indirect quotation",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxEffectiveExchangeRate": {
+          "@EndUserText.label": "Effective tax exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 5
+        },
+        "CtryCrcyTxAbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute exch. rate for tax in country/region cur.",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "CtryCrcyTaxEffctvExchangeRate": {
+          "@EndUserText.label": "Effective exch. rate for tax in country/region cur.",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 5
+        },
+        "ReversalReason": {
+          "@EndUserText.label": "Reason for reversal or inverse posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ParkedByUser": {
+          "@EndUserText.label": "Name of user who parked this document",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ParkingDate": {
+          "@EndUserText.label": "Day of parking of accounting document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ParkingTime": {
+          "@EndUserText.label": "Time of parking",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "ParkingTransactionCode": {
+          "@EndUserText.label": "Parking transaction code",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "Branch": {
+          "@EndUserText.label": "Branch",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "NmbrOfPages": {
+          "@EndUserText.label": "Number of pages of invoice",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "IsDiscountDocument": {
+          "@EndUserText.label": "Indicator: entry represents a discount document",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Reference1InDocumentHeader": {
+          "@EndUserText.label": "Internal id of reference key 1 in document header",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "Reference2InDocumentHeader": {
+          "@EndUserText.label": "Internal id of reference key 2 in document header",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "InvoiceReceiptDate": {
+          "@EndUserText.label": "Invoice receipt date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "Ledger": {
+          "@EndUserText.label": "Ledger",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "LedgerGroup": {
+          "@EndUserText.label": "Ledger group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AlternativeReferenceDocument": {
+          "@EndUserText.label": "Alternative reference document",
+          "type": "cds.String",
+          "key": false,
+          "length": 26
+        },
+        "TaxReportingDate": {
+          "@EndUserText.label": "Tax reporting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "TaxFulfillmentDate": {
+          "@EndUserText.label": "Tax fulfillment date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "AccountingDocumentClass": {
+          "@EndUserText.label": "Accounting document class",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "ExchangeRateType": {
+          "@EndUserText.label": "Exchange rate type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "MarketDataAbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute market data exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 29,
+          "scale": 14
+        },
+        "MktDataEffectiveExchangeRate": {
+          "@EndUserText.label": "Effective market data exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 31,
+          "scale": 14
+        },
+        "SenderLogicalSystem": {
+          "@EndUserText.label": "Sender logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SenderCompanyCode": {
+          "@EndUserText.label": "Company code in sender system",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SenderAccountingDocument": {
+          "@EndUserText.label": "Sender journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SenderFiscalYear": {
+          "@EndUserText.label": "Fiscal year in sender system",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ReversalReferenceDocumentCntxt": {
+          "@EndUserText.label": "Reversal: reference organizations of document to be reversed",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ReversalReferenceDocument": {
+          "@EndUserText.label": "Reversal: reference document no. of document to be reversed",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LatePaymentReason": {
+          "@EndUserText.label": "Late payment reason",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SalesDocumentCondition": {
+          "@EndUserText.label": "Sales document condition",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IsReversal": {
+          "@EndUserText.label": "Indicator: item is reversing another item",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsReversed": {
+          "@EndUserText.label": "Indicator: item is reversed",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "GLBusinessTransactionGroup": {
+          "@EndUserText.label": "General ledger business transaction group",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostAccountingValuationDate": {
+          "@EndUserText.label": "Special valuation date for cost  accounting",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "TaxCountry": {
+          "@EndUserText.label": "Tax country/region",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JournalEntryLastChangeDateTime": {
+          "@EndUserText.label": "Journal entry last change date time",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "JournalEntryIsSecondaryEntry": {
+          "@EndUserText.label": "Journal entry is secondary entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JournalEntryReprocessingStatus": {
+          "@EndUserText.label": "Journal entry reprocessing status",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JrnlEntryCntrySpecificRef1": {
+          "@EndUserText.label": "Country/region specific reference 1 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 80
+        },
+        "JrnlEntryCntrySpecificDate1": {
+          "@EndUserText.label": "Country/region specific date 1 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef2": {
+          "@EndUserText.label": "Country/region specific reference 2 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "JrnlEntryCntrySpecificDate2": {
+          "@EndUserText.label": "Country/region specific date 2 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef3": {
+          "@EndUserText.label": "Country/region specific reference 3 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "JrnlEntryCntrySpecificDate3": {
+          "@EndUserText.label": "Country/region specific date 3 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef4": {
+          "@EndUserText.label": "Country/region specific reference 4 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "JrnlEntryCntrySpecificDate4": {
+          "@EndUserText.label": "Country/region specific date 4 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef5": {
+          "@EndUserText.label": "Country/region specific reference 5 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "JrnlEntryCntrySpecificDate5": {
+          "@EndUserText.label": "Country/region specific date 5 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificBP1": {
+          "@EndUserText.label": "Country/region specific business partner 1 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "JrnlEntryCntrySpecificBP2": {
+          "@EndUserText.label": "Country/region specific business partner 2 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "WithholdingTaxReportingDate": {
+          "@EndUserText.label": "Withholding tax reporting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "EntryViewPostingControl": {
+          "@EndUserText.label": "Control posting of entry view",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_JOURNALENTRY_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_JOURNALENTRY_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_JOURNALENTRY_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocument"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "DocumentDate"
+              ]
+            },
+            {
+              "ref": [
+                "PostingDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentCreationDate"
+              ]
+            },
+            {
+              "ref": [
+                "CreationTime"
+              ]
+            },
+            {
+              "ref": [
+                "LastManualChangeDate"
+              ]
+            },
+            {
+              "ref": [
+                "LastAutomaticChangeDate"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangeDate"
+              ]
+            },
+            {
+              "ref": [
+                "ExchangeRateDate"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocCreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "TransactionCode"
+              ]
+            },
+            {
+              "ref": [
+                "IntercompanyTransaction"
+              ]
+            },
+            {
+              "ref": [
+                "DocumentReferenceID"
+              ]
+            },
+            {
+              "ref": [
+                "RecurringAccountingDocument"
+              ]
+            },
+            {
+              "ref": [
+                "RecrrgJournalEntryCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "RecrrgJournalEntryFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "ReverseDocument"
+              ]
+            },
+            {
+              "ref": [
+                "ReverseDocumentFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentHeaderText"
+              ]
+            },
+            {
+              "ref": [
+                "TransactionCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AbsoluteExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "ExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "ExchRateIsIndirectQuotation"
+              ]
+            },
+            {
+              "ref": [
+                "EffectiveExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentCategory"
+              ]
+            },
+            {
+              "ref": [
+                "NetAmountIsPosted"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryIsPostedToPrevPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessTransactionType"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryBusinessTransType"
+              ]
+            },
+            {
+              "ref": [
+                "BatchInputSession"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocumentType"
+              ]
+            },
+            {
+              "ref": [
+                "OriginalReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialManagementArea"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCodeCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalCurrency1"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalCurrency2"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalIsPlanned"
+              ]
+            },
+            {
+              "ref": [
+                "PlannedReversalDate"
+              ]
+            },
+            {
+              "ref": [
+                "TaxIsCalculatedAutomatically"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalCurrency1Role"
+              ]
+            },
+            {
+              "ref": [
+                "AdditionalCurrency2Role"
+              ]
+            },
+            {
+              "ref": [
+                "TaxBaseAmountIsNetAmount"
+              ]
+            },
+            {
+              "ref": [
+                "SourceCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "LogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceDocumentLogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "TaxAbsoluteExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "TaxExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "TaxExchRateIsIndirectQuotation"
+              ]
+            },
+            {
+              "ref": [
+                "TaxEffectiveExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "CtryCrcyTxAbsoluteExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "CtryCrcyTaxEffctvExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalReason"
+              ]
+            },
+            {
+              "ref": [
+                "ParkedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "ParkingDate"
+              ]
+            },
+            {
+              "ref": [
+                "ParkingTime"
+              ]
+            },
+            {
+              "ref": [
+                "ParkingTransactionCode"
+              ]
+            },
+            {
+              "ref": [
+                "Branch"
+              ]
+            },
+            {
+              "ref": [
+                "NmbrOfPages"
+              ]
+            },
+            {
+              "ref": [
+                "IsDiscountDocument"
+              ]
+            },
+            {
+              "ref": [
+                "Reference1InDocumentHeader"
+              ]
+            },
+            {
+              "ref": [
+                "Reference2InDocumentHeader"
+              ]
+            },
+            {
+              "ref": [
+                "InvoiceReceiptDate"
+              ]
+            },
+            {
+              "ref": [
+                "Ledger"
+              ]
+            },
+            {
+              "ref": [
+                "LedgerGroup"
+              ]
+            },
+            {
+              "ref": [
+                "AlternativeReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "TaxReportingDate"
+              ]
+            },
+            {
+              "ref": [
+                "TaxFulfillmentDate"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingDocumentClass"
+              ]
+            },
+            {
+              "ref": [
+                "ExchangeRateType"
+              ]
+            },
+            {
+              "ref": [
+                "MarketDataAbsoluteExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "MktDataEffectiveExchangeRate"
+              ]
+            },
+            {
+              "ref": [
+                "SenderLogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "SenderCompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "SenderAccountingDocument"
+              ]
+            },
+            {
+              "ref": [
+                "SenderFiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalReferenceDocumentCntxt"
+              ]
+            },
+            {
+              "ref": [
+                "ReversalReferenceDocument"
+              ]
+            },
+            {
+              "ref": [
+                "LatePaymentReason"
+              ]
+            },
+            {
+              "ref": [
+                "SalesDocumentCondition"
+              ]
+            },
+            {
+              "ref": [
+                "IsReversal"
+              ]
+            },
+            {
+              "ref": [
+                "IsReversed"
+              ]
+            },
+            {
+              "ref": [
+                "GLBusinessTransactionGroup"
+              ]
+            },
+            {
+              "ref": [
+                "CostAccountingValuationDate"
+              ]
+            },
+            {
+              "ref": [
+                "TaxCountry"
+              ]
+            },
+            {
+              "ref": [
+                "JournalEntryLastChangeDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "JournalEntryIsSecondaryEntry"
+              ]
+            },
+            {
+              "ref": [
+                "JournalEntryReprocessingStatus"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificRef1"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificDate1"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificRef2"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificDate2"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificRef3"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificDate3"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificRef4"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificDate4"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificRef5"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificDate5"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificBP1"
+              ]
+            },
+            {
+              "ref": [
+                "JrnlEntryCntrySpecificBP2"
+              ]
+            },
+            {
+              "ref": [
+                "WithholdingTaxReportingDate"
+              ]
+            },
+            {
+              "ref": [
+                "EntryViewPostingControl"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JZMKKMIZ"
+        }
+      }
+    },
+    "2LT_I_JOURNALENTRY_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "FiscalYear": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "AccountingDocument": {
+          "@EndUserText.label": "Journal entry",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "AccountingDocumentType": {
+          "@EndUserText.label": "Journal entry type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "DocumentDate": {
+          "@EndUserText.label": "Journal entry date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PostingDate": {
+          "@EndUserText.label": "Posting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalPeriod": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "AccountingDocumentCreationDate": {
+          "@EndUserText.label": "Accounting document entry date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreationTime": {
+          "@EndUserText.label": "Creation time",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "LastManualChangeDate": {
+          "@EndUserText.label": "Calendar date of the last manual change in document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LastAutomaticChangeDate": {
+          "@EndUserText.label": "Calendar date of the last automatic change in document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LastChangeDate": {
+          "@EndUserText.label": "Last change date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ExchangeRateDate": {
+          "@EndUserText.label": "Exchange rate date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "AccountingDocCreatedByUser": {
+          "@EndUserText.label": "User that created the journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "TransactionCode": {
+          "@EndUserText.label": "Transaction code",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "IntercompanyTransaction": {
+          "@EndUserText.label": "Intercompany transaction number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "DocumentReferenceID": {
+          "@EndUserText.label": "Document reference id",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "RecurringAccountingDocument": {
+          "@EndUserText.label": "Recurring journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RecrrgJournalEntryCompanyCode": {
+          "@EndUserText.label": "Recurring journal entry company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RecrrgJournalEntryFiscalYear": {
+          "@EndUserText.label": "Recurring journal entry fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ReverseDocument": {
+          "@EndUserText.label": "Reverse document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ReverseDocumentFiscalYear": {
+          "@EndUserText.label": "Reverse document fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AccountingDocumentHeaderText": {
+          "@EndUserText.label": "Document header text",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "TransactionCurrency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "ExchangeRate": {
+          "@EndUserText.label": "Exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "ExchRateIsIndirectQuotation": {
+          "@EndUserText.label": "Exchange rate is indirect quotation",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EffectiveExchangeRate": {
+          "@EndUserText.label": "Effective exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 5
+        },
+        "AccountingDocumentCategory": {
+          "@EndUserText.label": "Journal entry category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "NetAmountIsPosted": {
+          "@EndUserText.label": "Net amount is posted",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JrnlEntryIsPostedToPrevPeriod": {
+          "@EndUserText.label": "Journal entry is posted to previous period",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BusinessTransactionType": {
+          "@EndUserText.label": "Business transaction category",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "JrnlEntryBusinessTransType": {
+          "@EndUserText.label": "Business transaction type of journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "BatchInputSession": {
+          "@EndUserText.label": "Batch input session",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ReferenceDocumentType": {
+          "@EndUserText.label": "Reference document type",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "OriginalReferenceDocument": {
+          "@EndUserText.label": "Object key",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CompanyCodeCurrency": {
+          "@EndUserText.label": "Company code currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AdditionalCurrency1": {
+          "@EndUserText.label": "Additional currency 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AdditionalCurrency2": {
+          "@EndUserText.label": "Additional currency 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ReversalIsPlanned": {
+          "@EndUserText.label": "Indicator: reversal is planned for document",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PlannedReversalDate": {
+          "@EndUserText.label": "Planned date for the reversal posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "TaxIsCalculatedAutomatically": {
+          "@EndUserText.label": "Tax is automatically calculated",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AdditionalCurrency1Role": {
+          "@EndUserText.label": "Currency type of second local currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AdditionalCurrency2Role": {
+          "@EndUserText.label": "Currency type of third local currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TaxBaseAmountIsNetAmount": {
+          "@EndUserText.label": "Tax base amount is net amount",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SourceCompanyCode": {
+          "@EndUserText.label": "Source company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ReferenceDocumentLogicalSystem": {
+          "@EndUserText.label": "Logical system of reference document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "TaxAbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute tax exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "TaxExchangeRate": {
+          "@EndUserText.label": "Tax exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "TaxExchRateIsIndirectQuotation": {
+          "@EndUserText.label": "Tax exchange rate is indirect quotation",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxEffectiveExchangeRate": {
+          "@EndUserText.label": "Effective tax exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 5
+        },
+        "CtryCrcyTxAbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute exch. rate for tax in country/region cur.",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 9,
+          "scale": 5
+        },
+        "CtryCrcyTaxEffctvExchangeRate": {
+          "@EndUserText.label": "Effective exch. rate for tax in country/region cur.",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 13,
+          "scale": 5
+        },
+        "ReversalReason": {
+          "@EndUserText.label": "Reason for reversal or inverse posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ParkedByUser": {
+          "@EndUserText.label": "Name of user who parked this document",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ParkingDate": {
+          "@EndUserText.label": "Day of parking of accounting document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ParkingTime": {
+          "@EndUserText.label": "Time of parking",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "ParkingTransactionCode": {
+          "@EndUserText.label": "Parking transaction code",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "Branch": {
+          "@EndUserText.label": "Branch",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "NmbrOfPages": {
+          "@EndUserText.label": "Number of pages of invoice",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "IsDiscountDocument": {
+          "@EndUserText.label": "Indicator: entry represents a discount document",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Reference1InDocumentHeader": {
+          "@EndUserText.label": "Internal id of reference key 1 in document header",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "Reference2InDocumentHeader": {
+          "@EndUserText.label": "Internal id of reference key 2 in document header",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "InvoiceReceiptDate": {
+          "@EndUserText.label": "Invoice receipt date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "Ledger": {
+          "@EndUserText.label": "Ledger",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "LedgerGroup": {
+          "@EndUserText.label": "Ledger group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AlternativeReferenceDocument": {
+          "@EndUserText.label": "Alternative reference document",
+          "type": "cds.String",
+          "key": false,
+          "length": 26
+        },
+        "TaxReportingDate": {
+          "@EndUserText.label": "Tax reporting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "TaxFulfillmentDate": {
+          "@EndUserText.label": "Tax fulfillment date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "AccountingDocumentClass": {
+          "@EndUserText.label": "Accounting document class",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "ExchangeRateType": {
+          "@EndUserText.label": "Exchange rate type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "MarketDataAbsoluteExchangeRate": {
+          "@EndUserText.label": "Absolute market data exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 29,
+          "scale": 14
+        },
+        "MktDataEffectiveExchangeRate": {
+          "@EndUserText.label": "Effective market data exchange rate",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 31,
+          "scale": 14
+        },
+        "SenderLogicalSystem": {
+          "@EndUserText.label": "Sender logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SenderCompanyCode": {
+          "@EndUserText.label": "Company code in sender system",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SenderAccountingDocument": {
+          "@EndUserText.label": "Sender journal entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SenderFiscalYear": {
+          "@EndUserText.label": "Fiscal year in sender system",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ReversalReferenceDocumentCntxt": {
+          "@EndUserText.label": "Reversal: reference organizations of document to be reversed",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ReversalReferenceDocument": {
+          "@EndUserText.label": "Reversal: reference document no. of document to be reversed",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LatePaymentReason": {
+          "@EndUserText.label": "Late payment reason",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SalesDocumentCondition": {
+          "@EndUserText.label": "Sales document condition",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IsReversal": {
+          "@EndUserText.label": "Indicator: item is reversing another item",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsReversed": {
+          "@EndUserText.label": "Indicator: item is reversed",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "GLBusinessTransactionGroup": {
+          "@EndUserText.label": "General ledger business transaction group",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostAccountingValuationDate": {
+          "@EndUserText.label": "Special valuation date for cost  accounting",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "TaxCountry": {
+          "@EndUserText.label": "Tax country/region",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JournalEntryLastChangeDateTime": {
+          "@EndUserText.label": "Journal entry last change date time",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "JournalEntryIsSecondaryEntry": {
+          "@EndUserText.label": "Journal entry is secondary entry",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JournalEntryReprocessingStatus": {
+          "@EndUserText.label": "Journal entry reprocessing status",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JrnlEntryCntrySpecificRef1": {
+          "@EndUserText.label": "Country/region specific reference 1 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 80
+        },
+        "JrnlEntryCntrySpecificDate1": {
+          "@EndUserText.label": "Country/region specific date 1 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef2": {
+          "@EndUserText.label": "Country/region specific reference 2 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "JrnlEntryCntrySpecificDate2": {
+          "@EndUserText.label": "Country/region specific date 2 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef3": {
+          "@EndUserText.label": "Country/region specific reference 3 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "JrnlEntryCntrySpecificDate3": {
+          "@EndUserText.label": "Country/region specific date 3 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef4": {
+          "@EndUserText.label": "Country/region specific reference 4 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "JrnlEntryCntrySpecificDate4": {
+          "@EndUserText.label": "Country/region specific date 4 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificRef5": {
+          "@EndUserText.label": "Country/region specific reference 5 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "JrnlEntryCntrySpecificDate5": {
+          "@EndUserText.label": "Country/region specific date 5 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "JrnlEntryCntrySpecificBP1": {
+          "@EndUserText.label": "Country/region specific business partner 1 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "JrnlEntryCntrySpecificBP2": {
+          "@EndUserText.label": "Country/region specific business partner 2 in the document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "WithholdingTaxReportingDate": {
+          "@EndUserText.label": "Withholding tax reporting date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "EntryViewPostingControl": {
+          "@EndUserText.label": "Control posting of entry view",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_JOURNALENTRY_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_JOURNALENTRY_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_JZMKKMIZ"
+        }
+      }
+    }
+  }
+}

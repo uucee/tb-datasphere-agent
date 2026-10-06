@@ -1,0 +1,2908 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_BUSINESSPARTNER_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_BUSINESSPARTNER_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNER_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_BUSINESSPARTNER_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_BUSINESSPARTNER_S4_CURR",
+                    "elements": {
+                      "BusinessPartner": {
+                        "@EndUserText.label": "Business partner number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "BusinessPartnerCategory": {
+                        "@EndUserText.label": "Business partner category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AuthorizationGroup": {
+                        "@EndUserText.label": "Authorization group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "BusinessPartnerUUID": {
+                        "@EndUserText.label": "Business partner guid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 36
+                      },
+                      "PersonNumber": {
+                        "@EndUserText.label": "Person number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ETag": {
+                        "@EndUserText.label": "ETag",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 26
+                      },
+                      "BusinessPartnerName": {
+                        "@EndUserText.label": "BusinessPartnerName",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 81
+                      },
+                      "BusinessPartnerFullName": {
+                        "@EndUserText.label": "BusinessPartnerFullName",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 81
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "User who created the object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "Date on which the object was created",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreationTime": {
+                        "@EndUserText.label": "Time at which the object was created",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Last user to change object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Date when object was last changed",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangeTime": {
+                        "@EndUserText.label": "Time at which object was last changed",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "BusinessPartnerIsBlocked": {
+                        "@EndUserText.label": "Central block for business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsBusinessPurposeCompleted": {
+                        "@EndUserText.label": "Business purpose completed flag",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "FirstName": {
+                        "@EndUserText.label": "First name of business partner (person)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "LastName": {
+                        "@EndUserText.label": "Last name of business partner (person)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "PersonFullName": {
+                        "@EndUserText.label": "Full name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 80
+                      },
+                      "OrganizationBPName1": {
+                        "@EndUserText.label": "Name 1 of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "OrganizationBPName2": {
+                        "@EndUserText.label": "Name 2 of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "OrganizationBPName3": {
+                        "@EndUserText.label": "Name 3 of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "OrganizationBPName4": {
+                        "@EndUserText.label": "Name 4 of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "InternationalLocationNumber1": {
+                        "@EndUserText.label": "International location number  (part 1)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 7
+                      },
+                      "InternationalLocationNumber2": {
+                        "@EndUserText.label": "International location number (part 2)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "InternationalLocationNumber3": {
+                        "@EndUserText.label": "Check digit for the international location number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "LegalForm": {
+                        "@EndUserText.label": "Bp: legal form of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "OrganizationFoundationDate": {
+                        "@EndUserText.label": "Date organization founded",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "OrganizationLiquidationDate": {
+                        "@EndUserText.label": "Liquidation date of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "Industry": {
+                        "@EndUserText.label": "Industry sector",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "IsNaturalPerson": {
+                        "@EndUserText.label": "Business partner is a natural person under the tax laws",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsFemale": {
+                        "@EndUserText.label": "Selection: business partner is female",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsMale": {
+                        "@EndUserText.label": "Selection: business partner is male",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsSexUnknown": {
+                        "@EndUserText.label": "Selection: sex of business partner is not known",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "FormOfAddress": {
+                        "@EndUserText.label": "Form-of-address key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AcademicTitle": {
+                        "@EndUserText.label": "Academic title: key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AcademicTitle2": {
+                        "@EndUserText.label": "Second academic title (key)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "NameFormat": {
+                        "@EndUserText.label": "Name format",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "NameCountry": {
+                        "@EndUserText.label": "Country/region for name format rule",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "BusinessPartnerGrouping": {
+                        "@EndUserText.label": "Business partner grouping",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "BusinessPartnerType": {
+                        "@EndUserText.label": "Business partner type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "MiddleName": {
+                        "@EndUserText.label": "Middle name or second forename of a person",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "AdditionalLastName": {
+                        "@EndUserText.label": "Other last name of a person",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "GroupBusinessPartnerName1": {
+                        "@EndUserText.label": "Name 1 (group)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "GroupBusinessPartnerName2": {
+                        "@EndUserText.label": "Name 2 (group)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "CorrespondenceLanguage": {
+                        "@EndUserText.label": "Business partner: correspondence language",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "Language": {
+                        "@EndUserText.label": "Business partner: language",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "SearchTerm1": {
+                        "@EndUserText.label": "Search term 1 for business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "SearchTerm2": {
+                        "@EndUserText.label": "Search term 2 for business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "BPLastNameSearchHelp": {
+                        "@EndUserText.label": "Search help field 1 (name 1/last name)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 35
+                      },
+                      "BPFirstNameSearchHelp": {
+                        "@EndUserText.label": "Search help field 2 (name 2/first name)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 35
+                      },
+                      "BusinessPartnerNicknameLabel": {
+                        "@EndUserText.label": "Nickname of business partner (person)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "IndependentAddressID": {
+                        "@EndUserText.label": "Address number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "IsActiveEntity": {
+                        "@EndUserText.label": "Draft - indicator - is active document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BirthDate": {
+                        "@EndUserText.label": "Date of birth of business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "IsMarkedForArchiving": {
+                        "@EndUserText.label": "Central archiving flag",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ContactPermission": {
+                        "@EndUserText.label": "Business partner: contact permission",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BusinessPartnerIDByExtSystem": {
+                        "@EndUserText.label": "Business partner number in external system",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "LegalEntityOfOrganization": {
+                        "@EndUserText.label": "Legal entity of organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "BusinessPartnerPrintFormat": {
+                        "@EndUserText.label": "Business partner print format",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BusinessPartnerDataOriginType": {
+                        "@EndUserText.label": "Data origin types",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "BusinessPartnerIsNotReleased": {
+                        "@EndUserText.label": "Indicator: not released",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsNotContractuallyCapable": {
+                        "@EndUserText.label": "Indicator: not legally competent",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BusinessPartnerOccupation": {
+                        "@EndUserText.label": "Occupation/group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "BusPartMaritalStatus": {
+                        "@EndUserText.label": "Marital status of business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BusPartNationality": {
+                        "@EndUserText.label": "Nationality",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "NonResidentCompanyOriginCntry": {
+                        "@EndUserText.label": "Country/region of origin: non-resident companies",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "BusinessPartnerSalutation": {
+                        "@EndUserText.label": "Salutation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      },
+                      "BusinessPartnerBirthName": {
+                        "@EndUserText.label": "Name at birth of business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "BusinessPartnerSupplementName": {
+                        "@EndUserText.label": "Name supplement, e.g. noble title (key)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "BusinessPartnerBirthplaceName": {
+                        "@EndUserText.label": "Birthplace of business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "NaturalPersonEmployerName": {
+                        "@EndUserText.label": "Name of employer of a natural person",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 35
+                      },
+                      "BusinessPartnerDeathDate": {
+                        "@EndUserText.label": "Date of death of business partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "BusinessPartnerBirthDateStatus": {
+                        "@EndUserText.label": "Date of birth: status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "BusinessPartnerGroupType": {
+                        "@EndUserText.label": "Group type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "LastNamePrefix": {
+                        "@EndUserText.label": "Name prefix (key)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "LastNameSecondPrefix": {
+                        "@EndUserText.label": "2nd name prefix (key)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Initials": {
+                        "@EndUserText.label": "\"middle initial\" or personal initials",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "GenderCodeName": {
+                        "@EndUserText.label": "Gender of business partner (person)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "DataControllerSet": {
+                        "@EndUserText.label": "Bp: data controller set flag",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "DataController1": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController2": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController3": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController4": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController5": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController6": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController7": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController8": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController9": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "DataController10": {
+                        "@EndUserText.label": "Bp: data controller (internal use only)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "BPDataControllerIsNotRequired": {
+                        "@EndUserText.label": "Bp: data controller not required",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "TrdCmplncLicenseIsMilitarySctr": {
+                        "@EndUserText.label": "Id for mainly military use",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "TrdCmplncLicenseIsNuclearSctr": {
+                        "@EndUserText.label": "Nuclear sector (indicator)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_BUSINESSPARTNER_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "BusinessPartner": {
+                      "@EndUserText.label": "Business partner number",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "BusinessPartnerCategory": {
+                      "@EndUserText.label": "Business partner category",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "BusinessPartnerUUID": {
+                      "@EndUserText.label": "Business partner guid",
+                      "type": "cds.String",
+                      "length": 36
+                    },
+                    "PersonNumber": {
+                      "@EndUserText.label": "Person number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ETag": {
+                      "@EndUserText.label": "ETag",
+                      "type": "cds.String",
+                      "length": 26
+                    },
+                    "BusinessPartnerName": {
+                      "@EndUserText.label": "BusinessPartnerName",
+                      "type": "cds.String",
+                      "length": 81
+                    },
+                    "BusinessPartnerFullName": {
+                      "@EndUserText.label": "BusinessPartnerFullName",
+                      "type": "cds.String",
+                      "length": 81
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "User who created the object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Date on which the object was created",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time at which the object was created",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Last user to change object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Date when object was last changed",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Time at which object was last changed",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "BusinessPartnerIsBlocked": {
+                      "@EndUserText.label": "Central block for business partner",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsBusinessPurposeCompleted": {
+                      "@EndUserText.label": "Business purpose completed flag",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "FirstName": {
+                      "@EndUserText.label": "First name of business partner (person)",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "LastName": {
+                      "@EndUserText.label": "Last name of business partner (person)",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "PersonFullName": {
+                      "@EndUserText.label": "Full name",
+                      "type": "cds.String",
+                      "length": 80
+                    },
+                    "OrganizationBPName1": {
+                      "@EndUserText.label": "Name 1 of organization",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "OrganizationBPName2": {
+                      "@EndUserText.label": "Name 2 of organization",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "OrganizationBPName3": {
+                      "@EndUserText.label": "Name 3 of organization",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "OrganizationBPName4": {
+                      "@EndUserText.label": "Name 4 of organization",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "InternationalLocationNumber1": {
+                      "@EndUserText.label": "International location number  (part 1)",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "InternationalLocationNumber2": {
+                      "@EndUserText.label": "International location number (part 2)",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "InternationalLocationNumber3": {
+                      "@EndUserText.label": "Check digit for the international location number",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "LegalForm": {
+                      "@EndUserText.label": "Bp: legal form of organization",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "OrganizationFoundationDate": {
+                      "@EndUserText.label": "Date organization founded",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "OrganizationLiquidationDate": {
+                      "@EndUserText.label": "Liquidation date of organization",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "Industry": {
+                      "@EndUserText.label": "Industry sector",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "IsNaturalPerson": {
+                      "@EndUserText.label": "Business partner is a natural person under the tax laws",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsFemale": {
+                      "@EndUserText.label": "Selection: business partner is female",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsMale": {
+                      "@EndUserText.label": "Selection: business partner is male",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsSexUnknown": {
+                      "@EndUserText.label": "Selection: sex of business partner is not known",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "FormOfAddress": {
+                      "@EndUserText.label": "Form-of-address key",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AcademicTitle": {
+                      "@EndUserText.label": "Academic title: key",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AcademicTitle2": {
+                      "@EndUserText.label": "Second academic title (key)",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "NameFormat": {
+                      "@EndUserText.label": "Name format",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "NameCountry": {
+                      "@EndUserText.label": "Country/region for name format rule",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "BusinessPartnerGrouping": {
+                      "@EndUserText.label": "Business partner grouping",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "BusinessPartnerType": {
+                      "@EndUserText.label": "Business partner type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "MiddleName": {
+                      "@EndUserText.label": "Middle name or second forename of a person",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "AdditionalLastName": {
+                      "@EndUserText.label": "Other last name of a person",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "GroupBusinessPartnerName1": {
+                      "@EndUserText.label": "Name 1 (group)",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "GroupBusinessPartnerName2": {
+                      "@EndUserText.label": "Name 2 (group)",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "CorrespondenceLanguage": {
+                      "@EndUserText.label": "Business partner: correspondence language",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "Language": {
+                      "@EndUserText.label": "Business partner: language",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "SearchTerm1": {
+                      "@EndUserText.label": "Search term 1 for business partner",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "SearchTerm2": {
+                      "@EndUserText.label": "Search term 2 for business partner",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "BPLastNameSearchHelp": {
+                      "@EndUserText.label": "Search help field 1 (name 1/last name)",
+                      "type": "cds.String",
+                      "length": 35
+                    },
+                    "BPFirstNameSearchHelp": {
+                      "@EndUserText.label": "Search help field 2 (name 2/first name)",
+                      "type": "cds.String",
+                      "length": 35
+                    },
+                    "BusinessPartnerNicknameLabel": {
+                      "@EndUserText.label": "Nickname of business partner (person)",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "IndependentAddressID": {
+                      "@EndUserText.label": "Address number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "IsActiveEntity": {
+                      "@EndUserText.label": "Draft - indicator - is active document",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BirthDate": {
+                      "@EndUserText.label": "Date of birth of business partner",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "IsMarkedForArchiving": {
+                      "@EndUserText.label": "Central archiving flag",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ContactPermission": {
+                      "@EndUserText.label": "Business partner: contact permission",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BusinessPartnerIDByExtSystem": {
+                      "@EndUserText.label": "Business partner number in external system",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "LegalEntityOfOrganization": {
+                      "@EndUserText.label": "Legal entity of organization",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "BusinessPartnerPrintFormat": {
+                      "@EndUserText.label": "Business partner print format",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BusinessPartnerDataOriginType": {
+                      "@EndUserText.label": "Data origin types",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "BusinessPartnerIsNotReleased": {
+                      "@EndUserText.label": "Indicator: not released",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsNotContractuallyCapable": {
+                      "@EndUserText.label": "Indicator: not legally competent",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BusinessPartnerOccupation": {
+                      "@EndUserText.label": "Occupation/group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "BusPartMaritalStatus": {
+                      "@EndUserText.label": "Marital status of business partner",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BusPartNationality": {
+                      "@EndUserText.label": "Nationality",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "NonResidentCompanyOriginCntry": {
+                      "@EndUserText.label": "Country/region of origin: non-resident companies",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "BusinessPartnerSalutation": {
+                      "@EndUserText.label": "Salutation",
+                      "type": "cds.String",
+                      "length": 50
+                    },
+                    "BusinessPartnerBirthName": {
+                      "@EndUserText.label": "Name at birth of business partner",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "BusinessPartnerSupplementName": {
+                      "@EndUserText.label": "Name supplement, e.g. noble title (key)",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "BusinessPartnerBirthplaceName": {
+                      "@EndUserText.label": "Birthplace of business partner",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "NaturalPersonEmployerName": {
+                      "@EndUserText.label": "Name of employer of a natural person",
+                      "type": "cds.String",
+                      "length": 35
+                    },
+                    "BusinessPartnerDeathDate": {
+                      "@EndUserText.label": "Date of death of business partner",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "BusinessPartnerBirthDateStatus": {
+                      "@EndUserText.label": "Date of birth: status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "BusinessPartnerGroupType": {
+                      "@EndUserText.label": "Group type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "LastNamePrefix": {
+                      "@EndUserText.label": "Name prefix (key)",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "LastNameSecondPrefix": {
+                      "@EndUserText.label": "2nd name prefix (key)",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Initials": {
+                      "@EndUserText.label": "\"middle initial\" or personal initials",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "GenderCodeName": {
+                      "@EndUserText.label": "Gender of business partner (person)",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "DataControllerSet": {
+                      "@EndUserText.label": "Bp: data controller set flag",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "DataController1": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController2": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController3": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController4": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController5": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController6": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController7": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController8": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController9": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "DataController10": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "BPDataControllerIsNotRequired": {
+                      "@EndUserText.label": "Bp: data controller not required",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "TrdCmplncLicenseIsMilitarySctr": {
+                      "@EndUserText.label": "Id for mainly military use",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "TrdCmplncLicenseIsNuclearSctr": {
+                      "@EndUserText.label": "Nuclear sector (indicator)",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNER_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_BUSINESSPARTNER"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartner"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AuthorizationGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PersonNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ETag"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerFullName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerIsBlocked"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsBusinessPurposeCompleted"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FirstName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PersonFullName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrganizationBPName1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrganizationBPName2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrganizationBPName3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrganizationBPName4"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternationalLocationNumber1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternationalLocationNumber2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternationalLocationNumber3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegalForm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrganizationFoundationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrganizationLiquidationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Industry"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsNaturalPerson"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsFemale"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsMale"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsSexUnknown"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FormOfAddress"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AcademicTitle"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AcademicTitle2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NameFormat"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NameCountry"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerGrouping"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MiddleName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AdditionalLastName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GroupBusinessPartnerName1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GroupBusinessPartnerName2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CorrespondenceLanguage"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Language"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SearchTerm1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SearchTerm2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPLastNameSearchHelp"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPFirstNameSearchHelp"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerNicknameLabel"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IndependentAddressID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsActiveEntity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BirthDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsMarkedForArchiving"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ContactPermission"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerIDByExtSystem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegalEntityOfOrganization"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerPrintFormat"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerDataOriginType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerIsNotReleased"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsNotContractuallyCapable"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerOccupation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusPartMaritalStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusPartNationality"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NonResidentCompanyOriginCntry"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerSalutation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerBirthName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerSupplementName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerBirthplaceName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NaturalPersonEmployerName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerDeathDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerBirthDateStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessPartnerGroupType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastNamePrefix"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastNameSecondPrefix"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Initials"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GenderCodeName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataControllerSet"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController4"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController5"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController6"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController7"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController8"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController9"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DataController10"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BPDataControllerIsNotRequired"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TrdCmplncLicenseIsMilitarySctr"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TrdCmplncLicenseIsNuclearSctr"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "\n\n SELECT\n  b.\"BATCH_ID\",\n  CURRENT_UTCTIMESTAMP() AS \"LOAD_TIMESTAMP\",\n  'S4_CURR'            AS \"SOURCE_SYSTEM\",\n  o.\"SOURCE_FILE\",\n\"d\".\"BusinessPartner\",\"d\".\"BusinessPartnerCategory\",\"d\".\"AuthorizationGroup\",\"d\".\"BusinessPartnerUUID\",\"d\".\"PersonNumber\",\"d\".\"ETag\",\"d\".\"BusinessPartnerName\",\"d\".\"BusinessPartnerFullName\",\"d\".\"CreatedByUser\",\"d\".\"CreationDate\",\"d\".\"CreationTime\",\"d\".\"LastChangedByUser\",\"d\".\"LastChangeDate\",\"d\".\"LastChangeTime\",\"d\".\"BusinessPartnerIsBlocked\",\"d\".\"IsBusinessPurposeCompleted\",\"d\".\"FirstName\",\"d\".\"LastName\",\"d\".\"PersonFullName\",\"d\".\"OrganizationBPName1\",\"d\".\"OrganizationBPName2\",\"d\".\"OrganizationBPName3\",\"d\".\"OrganizationBPName4\",\"d\".\"InternationalLocationNumber1\",\"d\".\"InternationalLocationNumber2\",\"d\".\"InternationalLocationNumber3\",\"d\".\"LegalForm\",\"d\".\"OrganizationFoundationDate\",\"d\".\"OrganizationLiquidationDate\",\"d\".\"Industry\",\"d\".\"IsNaturalPerson\",\"d\".\"IsFemale\",\"d\".\"IsMale\",\"d\".\"IsSexUnknown\",\"d\".\"FormOfAddress\",\"d\".\"AcademicTitle\",\"d\".\"AcademicTitle2\",\"d\".\"NameFormat\",\"d\".\"NameCountry\",\"d\".\"BusinessPartnerGrouping\",\"d\".\"BusinessPartnerType\",\"d\".\"MiddleName\",\"d\".\"AdditionalLastName\",\"d\".\"GroupBusinessPartnerName1\",\"d\".\"GroupBusinessPartnerName2\",\"d\".\"CorrespondenceLanguage\",\"d\".\"Language\",\"d\".\"SearchTerm1\",\"d\".\"SearchTerm2\",\"d\".\"BPLastNameSearchHelp\",\"d\".\"BPFirstNameSearchHelp\",\"d\".\"BusinessPartnerNicknameLabel\",\"d\".\"IndependentAddressID\",\"d\".\"IsActiveEntity\",\"d\".\"BirthDate\",\"d\".\"IsMarkedForArchiving\",\"d\".\"ContactPermission\",\"d\".\"BusinessPartnerIDByExtSystem\",\"d\".\"LegalEntityOfOrganization\",\"d\".\"BusinessPartnerPrintFormat\",\"d\".\"BusinessPartnerDataOriginType\",\"d\".\"BusinessPartnerIsNotReleased\",\"d\".\"IsNotContractuallyCapable\",\"d\".\"BusinessPartnerOccupation\",\"d\".\"BusPartMaritalStatus\",\"d\".\"BusPartNationality\",\"d\".\"NonResidentCompanyOriginCntry\",\"d\".\"BusinessPartnerSalutation\",\"d\".\"BusinessPartnerBirthName\",\"d\".\"BusinessPartnerSupplementName\",\"d\".\"BusinessPartnerBirthplaceName\",\"d\".\"NaturalPersonEmployerName\",\"d\".\"BusinessPartnerDeathDate\",\"d\".\"BusinessPartnerBirthDateStatus\",\"d\".\"BusinessPartnerGroupType\",\"d\".\"LastNamePrefix\",\"d\".\"LastNameSecondPrefix\",\"d\".\"Initials\",\"d\".\"GenderCodeName\",\"d\".\"DataControllerSet\",\"d\".\"DataController1\",\"d\".\"DataController2\",\"d\".\"DataController3\",\"d\".\"DataController4\",\"d\".\"DataController5\",\"d\".\"DataController6\",\"d\".\"DataController7\",\"d\".\"DataController8\",\"d\".\"DataController9\",\"d\".\"DataController10\",\"d\".\"BPDataControllerIsNotRequired\",\"d\".\"TrdCmplncLicenseIsMilitarySctr\",\"d\".\"TrdCmplncLicenseIsNuclearSctr\",\"d\".\"Change_Type\",\"d\".\"Change_Date\" from \"1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNER_S4_CURR_Delta\" d\nCROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o\n  ON o.\"BATCH_ID\"      = b.\"BATCH_ID\"\n AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\n AND o.\"OBJECT_NAME\"   = 'I_BUSINESSPARTNER'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_BUSINESSPARTNER_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_BUSINESSPARTNER_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "BusinessPartner",
+                    "target": "BusinessPartner"
+                  },
+                  {
+                    "source": "BusinessPartnerCategory",
+                    "target": "BusinessPartnerCategory"
+                  },
+                  {
+                    "source": "AuthorizationGroup",
+                    "target": "AuthorizationGroup"
+                  },
+                  {
+                    "source": "BusinessPartnerUUID",
+                    "target": "BusinessPartnerUUID"
+                  },
+                  {
+                    "source": "PersonNumber",
+                    "target": "PersonNumber"
+                  },
+                  {
+                    "source": "ETag",
+                    "target": "ETag"
+                  },
+                  {
+                    "source": "BusinessPartnerName",
+                    "target": "BusinessPartnerName"
+                  },
+                  {
+                    "source": "BusinessPartnerFullName",
+                    "target": "BusinessPartnerFullName"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreationTime",
+                    "target": "CreationTime"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "LastChangeTime",
+                    "target": "LastChangeTime"
+                  },
+                  {
+                    "source": "BusinessPartnerIsBlocked",
+                    "target": "BusinessPartnerIsBlocked"
+                  },
+                  {
+                    "source": "IsBusinessPurposeCompleted",
+                    "target": "IsBusinessPurposeCompleted"
+                  },
+                  {
+                    "source": "FirstName",
+                    "target": "FirstName"
+                  },
+                  {
+                    "source": "LastName",
+                    "target": "LastName"
+                  },
+                  {
+                    "source": "PersonFullName",
+                    "target": "PersonFullName"
+                  },
+                  {
+                    "source": "OrganizationBPName1",
+                    "target": "OrganizationBPName1"
+                  },
+                  {
+                    "source": "OrganizationBPName2",
+                    "target": "OrganizationBPName2"
+                  },
+                  {
+                    "source": "OrganizationBPName3",
+                    "target": "OrganizationBPName3"
+                  },
+                  {
+                    "source": "OrganizationBPName4",
+                    "target": "OrganizationBPName4"
+                  },
+                  {
+                    "source": "InternationalLocationNumber1",
+                    "target": "InternationalLocationNumber1"
+                  },
+                  {
+                    "source": "InternationalLocationNumber2",
+                    "target": "InternationalLocationNumber2"
+                  },
+                  {
+                    "source": "InternationalLocationNumber3",
+                    "target": "InternationalLocationNumber3"
+                  },
+                  {
+                    "source": "LegalForm",
+                    "target": "LegalForm"
+                  },
+                  {
+                    "source": "OrganizationFoundationDate",
+                    "target": "OrganizationFoundationDate"
+                  },
+                  {
+                    "source": "OrganizationLiquidationDate",
+                    "target": "OrganizationLiquidationDate"
+                  },
+                  {
+                    "source": "Industry",
+                    "target": "Industry"
+                  },
+                  {
+                    "source": "IsNaturalPerson",
+                    "target": "IsNaturalPerson"
+                  },
+                  {
+                    "source": "IsFemale",
+                    "target": "IsFemale"
+                  },
+                  {
+                    "source": "IsMale",
+                    "target": "IsMale"
+                  },
+                  {
+                    "source": "IsSexUnknown",
+                    "target": "IsSexUnknown"
+                  },
+                  {
+                    "source": "FormOfAddress",
+                    "target": "FormOfAddress"
+                  },
+                  {
+                    "source": "AcademicTitle",
+                    "target": "AcademicTitle"
+                  },
+                  {
+                    "source": "AcademicTitle2",
+                    "target": "AcademicTitle2"
+                  },
+                  {
+                    "source": "NameFormat",
+                    "target": "NameFormat"
+                  },
+                  {
+                    "source": "NameCountry",
+                    "target": "NameCountry"
+                  },
+                  {
+                    "source": "BusinessPartnerGrouping",
+                    "target": "BusinessPartnerGrouping"
+                  },
+                  {
+                    "source": "BusinessPartnerType",
+                    "target": "BusinessPartnerType"
+                  },
+                  {
+                    "source": "MiddleName",
+                    "target": "MiddleName"
+                  },
+                  {
+                    "source": "AdditionalLastName",
+                    "target": "AdditionalLastName"
+                  },
+                  {
+                    "source": "GroupBusinessPartnerName1",
+                    "target": "GroupBusinessPartnerName1"
+                  },
+                  {
+                    "source": "GroupBusinessPartnerName2",
+                    "target": "GroupBusinessPartnerName2"
+                  },
+                  {
+                    "source": "CorrespondenceLanguage",
+                    "target": "CorrespondenceLanguage"
+                  },
+                  {
+                    "source": "Language",
+                    "target": "Language"
+                  },
+                  {
+                    "source": "SearchTerm1",
+                    "target": "SearchTerm1"
+                  },
+                  {
+                    "source": "SearchTerm2",
+                    "target": "SearchTerm2"
+                  },
+                  {
+                    "source": "BPLastNameSearchHelp",
+                    "target": "BPLastNameSearchHelp"
+                  },
+                  {
+                    "source": "BPFirstNameSearchHelp",
+                    "target": "BPFirstNameSearchHelp"
+                  },
+                  {
+                    "source": "BusinessPartnerNicknameLabel",
+                    "target": "BusinessPartnerNicknameLabel"
+                  },
+                  {
+                    "source": "IndependentAddressID",
+                    "target": "IndependentAddressID"
+                  },
+                  {
+                    "source": "IsActiveEntity",
+                    "target": "IsActiveEntity"
+                  },
+                  {
+                    "source": "BirthDate",
+                    "target": "BirthDate"
+                  },
+                  {
+                    "source": "IsMarkedForArchiving",
+                    "target": "IsMarkedForArchiving"
+                  },
+                  {
+                    "source": "ContactPermission",
+                    "target": "ContactPermission"
+                  },
+                  {
+                    "source": "BusinessPartnerIDByExtSystem",
+                    "target": "BusinessPartnerIDByExtSystem"
+                  },
+                  {
+                    "source": "LegalEntityOfOrganization",
+                    "target": "LegalEntityOfOrganization"
+                  },
+                  {
+                    "source": "BusinessPartnerPrintFormat",
+                    "target": "BusinessPartnerPrintFormat"
+                  },
+                  {
+                    "source": "BusinessPartnerDataOriginType",
+                    "target": "BusinessPartnerDataOriginType"
+                  },
+                  {
+                    "source": "BusinessPartnerIsNotReleased",
+                    "target": "BusinessPartnerIsNotReleased"
+                  },
+                  {
+                    "source": "IsNotContractuallyCapable",
+                    "target": "IsNotContractuallyCapable"
+                  },
+                  {
+                    "source": "BusinessPartnerOccupation",
+                    "target": "BusinessPartnerOccupation"
+                  },
+                  {
+                    "source": "BusPartMaritalStatus",
+                    "target": "BusPartMaritalStatus"
+                  },
+                  {
+                    "source": "BusPartNationality",
+                    "target": "BusPartNationality"
+                  },
+                  {
+                    "source": "NonResidentCompanyOriginCntry",
+                    "target": "NonResidentCompanyOriginCntry"
+                  },
+                  {
+                    "source": "BusinessPartnerSalutation",
+                    "target": "BusinessPartnerSalutation"
+                  },
+                  {
+                    "source": "BusinessPartnerBirthName",
+                    "target": "BusinessPartnerBirthName"
+                  },
+                  {
+                    "source": "BusinessPartnerSupplementName",
+                    "target": "BusinessPartnerSupplementName"
+                  },
+                  {
+                    "source": "BusinessPartnerBirthplaceName",
+                    "target": "BusinessPartnerBirthplaceName"
+                  },
+                  {
+                    "source": "NaturalPersonEmployerName",
+                    "target": "NaturalPersonEmployerName"
+                  },
+                  {
+                    "source": "BusinessPartnerDeathDate",
+                    "target": "BusinessPartnerDeathDate"
+                  },
+                  {
+                    "source": "BusinessPartnerBirthDateStatus",
+                    "target": "BusinessPartnerBirthDateStatus"
+                  },
+                  {
+                    "source": "BusinessPartnerGroupType",
+                    "target": "BusinessPartnerGroupType"
+                  },
+                  {
+                    "source": "LastNamePrefix",
+                    "target": "LastNamePrefix"
+                  },
+                  {
+                    "source": "LastNameSecondPrefix",
+                    "target": "LastNameSecondPrefix"
+                  },
+                  {
+                    "source": "Initials",
+                    "target": "Initials"
+                  },
+                  {
+                    "source": "GenderCodeName",
+                    "target": "GenderCodeName"
+                  },
+                  {
+                    "source": "DataControllerSet",
+                    "target": "DataControllerSet"
+                  },
+                  {
+                    "source": "DataController1",
+                    "target": "DataController1"
+                  },
+                  {
+                    "source": "DataController2",
+                    "target": "DataController2"
+                  },
+                  {
+                    "source": "DataController3",
+                    "target": "DataController3"
+                  },
+                  {
+                    "source": "DataController4",
+                    "target": "DataController4"
+                  },
+                  {
+                    "source": "DataController5",
+                    "target": "DataController5"
+                  },
+                  {
+                    "source": "DataController6",
+                    "target": "DataController6"
+                  },
+                  {
+                    "source": "DataController7",
+                    "target": "DataController7"
+                  },
+                  {
+                    "source": "DataController8",
+                    "target": "DataController8"
+                  },
+                  {
+                    "source": "DataController9",
+                    "target": "DataController9"
+                  },
+                  {
+                    "source": "DataController10",
+                    "target": "DataController10"
+                  },
+                  {
+                    "source": "BPDataControllerIsNotRequired",
+                    "target": "BPDataControllerIsNotRequired"
+                  },
+                  {
+                    "source": "TrdCmplncLicenseIsMilitarySctr",
+                    "target": "TrdCmplncLicenseIsMilitarySctr"
+                  },
+                  {
+                    "source": "TrdCmplncLicenseIsNuclearSctr",
+                    "target": "TrdCmplncLicenseIsNuclearSctr"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "BusinessPartner": {
+                      "@EndUserText.label": "Business partner number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "BusinessPartnerCategory": {
+                      "@EndUserText.label": "Business partner category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "BusinessPartnerUUID": {
+                      "@EndUserText.label": "Business partner guid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 36
+                    },
+                    "PersonNumber": {
+                      "@EndUserText.label": "Person number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ETag": {
+                      "@EndUserText.label": "ETag",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 26
+                    },
+                    "BusinessPartnerName": {
+                      "@EndUserText.label": "BusinessPartnerName",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 81
+                    },
+                    "BusinessPartnerFullName": {
+                      "@EndUserText.label": "BusinessPartnerFullName",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 81
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "User who created the object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Date on which the object was created",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time at which the object was created",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Last user to change object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Date when object was last changed",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Time at which object was last changed",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "BusinessPartnerIsBlocked": {
+                      "@EndUserText.label": "Central block for business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsBusinessPurposeCompleted": {
+                      "@EndUserText.label": "Business purpose completed flag",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "FirstName": {
+                      "@EndUserText.label": "First name of business partner (person)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "LastName": {
+                      "@EndUserText.label": "Last name of business partner (person)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "PersonFullName": {
+                      "@EndUserText.label": "Full name",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 80
+                    },
+                    "OrganizationBPName1": {
+                      "@EndUserText.label": "Name 1 of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "OrganizationBPName2": {
+                      "@EndUserText.label": "Name 2 of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "OrganizationBPName3": {
+                      "@EndUserText.label": "Name 3 of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "OrganizationBPName4": {
+                      "@EndUserText.label": "Name 4 of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "InternationalLocationNumber1": {
+                      "@EndUserText.label": "International location number  (part 1)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "InternationalLocationNumber2": {
+                      "@EndUserText.label": "International location number (part 2)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "InternationalLocationNumber3": {
+                      "@EndUserText.label": "Check digit for the international location number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "LegalForm": {
+                      "@EndUserText.label": "Bp: legal form of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "OrganizationFoundationDate": {
+                      "@EndUserText.label": "Date organization founded",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "OrganizationLiquidationDate": {
+                      "@EndUserText.label": "Liquidation date of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "Industry": {
+                      "@EndUserText.label": "Industry sector",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "IsNaturalPerson": {
+                      "@EndUserText.label": "Business partner is a natural person under the tax laws",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsFemale": {
+                      "@EndUserText.label": "Selection: business partner is female",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsMale": {
+                      "@EndUserText.label": "Selection: business partner is male",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsSexUnknown": {
+                      "@EndUserText.label": "Selection: sex of business partner is not known",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "FormOfAddress": {
+                      "@EndUserText.label": "Form-of-address key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AcademicTitle": {
+                      "@EndUserText.label": "Academic title: key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AcademicTitle2": {
+                      "@EndUserText.label": "Second academic title (key)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "NameFormat": {
+                      "@EndUserText.label": "Name format",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "NameCountry": {
+                      "@EndUserText.label": "Country/region for name format rule",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "BusinessPartnerGrouping": {
+                      "@EndUserText.label": "Business partner grouping",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "BusinessPartnerType": {
+                      "@EndUserText.label": "Business partner type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "MiddleName": {
+                      "@EndUserText.label": "Middle name or second forename of a person",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "AdditionalLastName": {
+                      "@EndUserText.label": "Other last name of a person",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "GroupBusinessPartnerName1": {
+                      "@EndUserText.label": "Name 1 (group)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "GroupBusinessPartnerName2": {
+                      "@EndUserText.label": "Name 2 (group)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "CorrespondenceLanguage": {
+                      "@EndUserText.label": "Business partner: correspondence language",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "Language": {
+                      "@EndUserText.label": "Business partner: language",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "SearchTerm1": {
+                      "@EndUserText.label": "Search term 1 for business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "SearchTerm2": {
+                      "@EndUserText.label": "Search term 2 for business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "BPLastNameSearchHelp": {
+                      "@EndUserText.label": "Search help field 1 (name 1/last name)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 35
+                    },
+                    "BPFirstNameSearchHelp": {
+                      "@EndUserText.label": "Search help field 2 (name 2/first name)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 35
+                    },
+                    "BusinessPartnerNicknameLabel": {
+                      "@EndUserText.label": "Nickname of business partner (person)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "IndependentAddressID": {
+                      "@EndUserText.label": "Address number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "IsActiveEntity": {
+                      "@EndUserText.label": "Draft - indicator - is active document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BirthDate": {
+                      "@EndUserText.label": "Date of birth of business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "IsMarkedForArchiving": {
+                      "@EndUserText.label": "Central archiving flag",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ContactPermission": {
+                      "@EndUserText.label": "Business partner: contact permission",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BusinessPartnerIDByExtSystem": {
+                      "@EndUserText.label": "Business partner number in external system",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "LegalEntityOfOrganization": {
+                      "@EndUserText.label": "Legal entity of organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "BusinessPartnerPrintFormat": {
+                      "@EndUserText.label": "Business partner print format",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BusinessPartnerDataOriginType": {
+                      "@EndUserText.label": "Data origin types",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "BusinessPartnerIsNotReleased": {
+                      "@EndUserText.label": "Indicator: not released",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsNotContractuallyCapable": {
+                      "@EndUserText.label": "Indicator: not legally competent",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BusinessPartnerOccupation": {
+                      "@EndUserText.label": "Occupation/group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "BusPartMaritalStatus": {
+                      "@EndUserText.label": "Marital status of business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BusPartNationality": {
+                      "@EndUserText.label": "Nationality",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "NonResidentCompanyOriginCntry": {
+                      "@EndUserText.label": "Country/region of origin: non-resident companies",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "BusinessPartnerSalutation": {
+                      "@EndUserText.label": "Salutation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    },
+                    "BusinessPartnerBirthName": {
+                      "@EndUserText.label": "Name at birth of business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "BusinessPartnerSupplementName": {
+                      "@EndUserText.label": "Name supplement, e.g. noble title (key)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "BusinessPartnerBirthplaceName": {
+                      "@EndUserText.label": "Birthplace of business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "NaturalPersonEmployerName": {
+                      "@EndUserText.label": "Name of employer of a natural person",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 35
+                    },
+                    "BusinessPartnerDeathDate": {
+                      "@EndUserText.label": "Date of death of business partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "BusinessPartnerBirthDateStatus": {
+                      "@EndUserText.label": "Date of birth: status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "BusinessPartnerGroupType": {
+                      "@EndUserText.label": "Group type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "LastNamePrefix": {
+                      "@EndUserText.label": "Name prefix (key)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "LastNameSecondPrefix": {
+                      "@EndUserText.label": "2nd name prefix (key)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Initials": {
+                      "@EndUserText.label": "\"middle initial\" or personal initials",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "GenderCodeName": {
+                      "@EndUserText.label": "Gender of business partner (person)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "DataControllerSet": {
+                      "@EndUserText.label": "Bp: data controller set flag",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "DataController1": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController2": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController3": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController4": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController5": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController6": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController7": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController8": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController9": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "DataController10": {
+                      "@EndUserText.label": "Bp: data controller (internal use only)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "BPDataControllerIsNotRequired": {
+                      "@EndUserText.label": "Bp: data controller not required",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "TrdCmplncLicenseIsMilitarySctr": {
+                      "@EndUserText.label": "Id for mainly military use",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "TrdCmplncLicenseIsNuclearSctr": {
+                      "@EndUserText.label": "Nuclear sector (indicator)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_BUSINESSPARTNER_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_BUSINESSPARTNER_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_USVEZENW"
+                    }
+                  }
+                },
+                "name": "2LT_I_BUSINESSPARTNER_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

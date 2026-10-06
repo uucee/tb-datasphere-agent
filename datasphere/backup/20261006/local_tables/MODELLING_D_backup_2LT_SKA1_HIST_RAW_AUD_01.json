@@ -1,0 +1,160 @@
+{
+  "definitions": {
+    "2LT_SKA1_HIST_RAW_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "KTOPL": {
+          "@EndUserText.label": "KTOPL",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "SAKNR": {
+          "@EndUserText.label": "SAKNR",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "XBILK": {
+          "@EndUserText.label": "XBILK",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SAKAN": {
+          "@EndUserText.label": "SAKAN",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "BILKT": {
+          "@EndUserText.label": "BILKT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ERDAT": {
+          "@EndUserText.label": "ERDAT",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ERNAM": {
+          "@EndUserText.label": "ERNAM",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "GVTYP": {
+          "@EndUserText.label": "GVTYP",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "KTOKS": {
+          "@EndUserText.label": "KTOKS",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "MUSTR": {
+          "@EndUserText.label": "MUSTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "VBUND": {
+          "@EndUserText.label": "VBUND",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "XLOEV": {
+          "@EndUserText.label": "XLOEV",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "XSPEA": {
+          "@EndUserText.label": "XSPEA",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "XSPEB": {
+          "@EndUserText.label": "XSPEB",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "XSPEP": {
+          "@EndUserText.label": "XSPEP",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "MCOD1": {
+          "@EndUserText.label": "MCOD1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "FUNC_AREA": {
+          "@EndUserText.label": "FUNC_AREA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ZZKTOKS": {
+          "@EndUserText.label": "ZZKTOKS",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TXT20": {
+          "@EndUserText.label": "TXT20",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "TXT50": {
+          "@EndUserText.label": "TXT50",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_SKA1_HIST_RAW_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_WBDEWMRA"
+        }
+      }
+    }
+  }
+}

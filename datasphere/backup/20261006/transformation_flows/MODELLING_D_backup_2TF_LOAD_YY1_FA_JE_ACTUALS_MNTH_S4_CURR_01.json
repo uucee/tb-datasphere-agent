@@ -1,0 +1,1640 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_YY1_FA_JE_ACTUALS_MNTH_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_YY1_FA_JE_ACTUALS_MNTH_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_YY1_FA_JE_ACTUALS_MNTH_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_YY1_FA_JE_ACTUALS_MNTH_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "SourceLedger": {
+                        "@EndUserText.label": "Source ledger",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 2
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "FiscalYear": {
+                        "@EndUserText.label": "Fiscal year",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "AccountingDocument": {
+                        "@EndUserText.label": "Journal entry",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "LedgerGLLineItem": {
+                        "@EndUserText.label": "General ledger journal entry line item",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 6
+                      },
+                      "Ledger": {
+                        "@EndUserText.label": "Ledger in general ledger accounting",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 2
+                      },
+                      "FiscalPeriod": {
+                        "@EndUserText.label": "Fiscal period",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "PostingDate": {
+                        "@EndUserText.label": "Posting date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AccountingDocumentType": {
+                        "@EndUserText.label": "Journal entry type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "GLAccount": {
+                        "@EndUserText.label": "G/l account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProfitCenter": {
+                        "@EndUserText.label": "Profit center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "CostCenter": {
+                        "@EndUserText.label": "Cost center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "MasterFixedAsset": {
+                        "@EndUserText.label": "Fixed asset (main asset number)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "FixedAsset": {
+                        "@EndUserText.label": "Asset subnumber",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AmountInCompanyCodeCurrency": {
+                        "@EndUserText.label": "Amount in company code currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "AssetTransactionType": {
+                        "@EndUserText.label": "Asset transaction type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "CompanyCodeCurrency": {
+                        "@EndUserText.label": "Company code currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "IsReversed": {
+                        "@EndUserText.label": "Indicator: item is reversed",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ReversalReferenceDocument": {
+                        "@EndUserText.label": "Reversal reference document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "LedgerFiscalYear": {
+                        "@EndUserText.label": "Fiscal year of ledger",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "FiscalYearVariant": {
+                        "@EndUserText.label": "Fiscal year variant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ChartOfAccounts": {
+                        "@EndUserText.label": "Chart of accounts",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ControllingArea": {
+                        "@EndUserText.label": "Controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CalendarMonth": {
+                        "@EndUserText.label": "Calendar month",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "CalendarYear": {
+                        "@EndUserText.label": "Calendar year",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CalendarYearMonth": {
+                        "@EndUserText.label": "CalendarYearMonth",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "CurrentMonthFilter": {
+                        "@EndUserText.label": "CurrentMonthFilter",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "PreviousMonthFilter": {
+                        "@EndUserText.label": "PreviousMonthFilter",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "/SAP/3_ASSETCLASS": {
+                        "@EndUserText.label": "Asset class",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "/SAP/3_COMPANYCODE": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "/SAP/3_CONTROLLINGAREA": {
+                        "@EndUserText.label": "Controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "/SAP/3_COSTCENTER": {
+                        "@EndUserText.label": "Cost center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_DISTRIBUTIONCHANNEL": {
+                        "@EndUserText.label": "Distribution channel",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "/SAP/3_FINANCIALACCOUNTTYPE": {
+                        "@EndUserText.label": "Account type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "/SAP/3_FUNCTIONALAREA": {
+                        "@EndUserText.label": "Functional area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "/SAP/3_GLACCOUNT": {
+                        "@EndUserText.label": "G/l account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_LEDGER": {
+                        "@EndUserText.label": "Ledger in general ledger accounting",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "/SAP/3_ORDERID": {
+                        "@EndUserText.label": "Order id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "/SAP/3_ORGANIZATIONDIVISION": {
+                        "@EndUserText.label": "Division",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "/SAP/3_POSTINGDATE": {
+                        "@EndUserText.label": "Posting date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "/SAP/3_PROFITCENTER": {
+                        "@EndUserText.label": "Profit center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_SALESDOCUMENT": {
+                        "@EndUserText.label": "Sales document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_SALESORGANIZATION": {
+                        "@EndUserText.label": "Sales organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "/SAP/3_SEGMENT": {
+                        "@EndUserText.label": "Segment for segmental reporting",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_VALUATIONAREA": {
+                        "@EndUserText.label": "Valuation area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "/SAP/3_ACCOUNTINGDOCUMENTTYPE": {
+                        "@EndUserText.label": "Journal entry type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "/SAP/3_CUSTOMER": {
+                        "@EndUserText.label": "Customer number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_SERVICEDOCUMENT": {
+                        "@EndUserText.label": "Service document id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "/SAP/3_SERVICEDOCUMENTTYPE": {
+                        "@EndUserText.label": "Service document type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "/SAP/3_SUPPLIER": {
+                        "@EndUserText.label": "Supplier",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_YY1_FA_JE_ACTUALS_MNTH_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "SourceLedger": {
+                      "@EndUserText.label": "Source ledger",
+                      "type": "cds.String",
+                      "length": 2,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FiscalYear": {
+                      "@EndUserText.label": "Fiscal year",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "AccountingDocument": {
+                      "@EndUserText.label": "Journal entry",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "LedgerGLLineItem": {
+                      "@EndUserText.label": "General ledger journal entry line item",
+                      "type": "cds.String",
+                      "length": 6,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "Ledger": {
+                      "@EndUserText.label": "Ledger in general ledger accounting",
+                      "type": "cds.String",
+                      "length": 2,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FiscalPeriod": {
+                      "@EndUserText.label": "Fiscal period",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "PostingDate": {
+                      "@EndUserText.label": "Posting date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AccountingDocumentType": {
+                      "@EndUserText.label": "Journal entry type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "GLAccount": {
+                      "@EndUserText.label": "G/l account",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "CostCenter": {
+                      "@EndUserText.label": "Cost center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Fixed asset (main asset number)",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AmountInCompanyCodeCurrency": {
+                      "@EndUserText.label": "Amount in company code currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "AssetTransactionType": {
+                      "@EndUserText.label": "Asset transaction type",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "CompanyCodeCurrency": {
+                      "@EndUserText.label": "Company code currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "IsReversed": {
+                      "@EndUserText.label": "Indicator: item is reversed",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ReversalReferenceDocument": {
+                      "@EndUserText.label": "Reversal reference document",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "LedgerFiscalYear": {
+                      "@EndUserText.label": "Fiscal year of ledger",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "FiscalYearVariant": {
+                      "@EndUserText.label": "Fiscal year variant",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ChartOfAccounts": {
+                      "@EndUserText.label": "Chart of accounts",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CalendarMonth": {
+                      "@EndUserText.label": "Calendar month",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "CalendarYear": {
+                      "@EndUserText.label": "Calendar year",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CalendarYearMonth": {
+                      "@EndUserText.label": "CalendarYearMonth",
+                      "type": "cds.Integer"
+                    },
+                    "CurrentMonthFilter": {
+                      "@EndUserText.label": "CurrentMonthFilter",
+                      "type": "cds.Integer"
+                    },
+                    "PreviousMonthFilter": {
+                      "@EndUserText.label": "PreviousMonthFilter",
+                      "type": "cds.Integer"
+                    },
+                    "/SAP/3_ASSETCLASS": {
+                      "@EndUserText.label": "Asset class",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "/SAP/3_COMPANYCODE": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "/SAP/3_CONTROLLINGAREA": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "/SAP/3_COSTCENTER": {
+                      "@EndUserText.label": "Cost center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_DISTRIBUTIONCHANNEL": {
+                      "@EndUserText.label": "Distribution channel",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "/SAP/3_FINANCIALACCOUNTTYPE": {
+                      "@EndUserText.label": "Account type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "/SAP/3_FUNCTIONALAREA": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "/SAP/3_GLACCOUNT": {
+                      "@EndUserText.label": "G/l account",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_LEDGER": {
+                      "@EndUserText.label": "Ledger in general ledger accounting",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "/SAP/3_ORDERID": {
+                      "@EndUserText.label": "Order id",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "/SAP/3_ORGANIZATIONDIVISION": {
+                      "@EndUserText.label": "Division",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "/SAP/3_POSTINGDATE": {
+                      "@EndUserText.label": "Posting date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "/SAP/3_PROFITCENTER": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_SALESDOCUMENT": {
+                      "@EndUserText.label": "Sales document",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_SALESORGANIZATION": {
+                      "@EndUserText.label": "Sales organization",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "/SAP/3_SEGMENT": {
+                      "@EndUserText.label": "Segment for segmental reporting",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_VALUATIONAREA": {
+                      "@EndUserText.label": "Valuation area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "/SAP/3_ACCOUNTINGDOCUMENTTYPE": {
+                      "@EndUserText.label": "Journal entry type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "/SAP/3_CUSTOMER": {
+                      "@EndUserText.label": "Customer number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_SERVICEDOCUMENT": {
+                      "@EndUserText.label": "Service document id",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "/SAP/3_SERVICEDOCUMENTTYPE": {
+                      "@EndUserText.label": "Service document type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "/SAP/3_SUPPLIER": {
+                      "@EndUserText.label": "Supplier",
+                      "type": "cds.String",
+                      "length": 10
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_YY1_FA_JE_ACTUALS_MNTH_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "YY1_FA_JE_ACTUALS_MNTH"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SourceLedger"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FiscalYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountingDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LedgerGLLineItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Ledger"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FiscalPeriod"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PostingDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountingDocumentType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CostCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AmountInCompanyCodeCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetTransactionType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCodeCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsReversed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ReversalReferenceDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LedgerFiscalYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FiscalYearVariant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ChartOfAccounts"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CalendarMonth"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CalendarYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CalendarYearMonth"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CurrentMonthFilter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PreviousMonthFilter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_ASSETCLASS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_COMPANYCODE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_CONTROLLINGAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_COSTCENTER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_DISTRIBUTIONCHANNEL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_FINANCIALACCOUNTTYPE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_FUNCTIONALAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_GLACCOUNT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_LEDGER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_ORDERID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_ORGANIZATIONDIVISION"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_POSTINGDATE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_PROFITCENTER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_SALESDOCUMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_SALESORGANIZATION"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_SEGMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_VALUATIONAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_ACCOUNTINGDOCUMENTTYPE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_CUSTOMER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_SERVICEDOCUMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_SERVICEDOCUMENTTYPE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "/SAP/3_SUPPLIER"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"SourceLedger\",\"d\".\"CompanyCode\",\"d\".\"FiscalYear\",\"d\".\"AccountingDocument\",\"d\".\"LedgerGLLineItem\",\"d\".\"Ledger\",\"d\".\"FiscalPeriod\",\"d\".\"PostingDate\",\"d\".\"AccountingDocumentType\",\"d\".\"GLAccount\",\"d\".\"ProfitCenter\",\"d\".\"CostCenter\",\"d\".\"MasterFixedAsset\",\"d\".\"FixedAsset\",\"d\".\"AmountInCompanyCodeCurrency\",\"d\".\"AssetTransactionType\",\"d\".\"CompanyCodeCurrency\",\"d\".\"IsReversed\",\"d\".\"ReversalReferenceDocument\",\"d\".\"LedgerFiscalYear\",\"d\".\"FiscalYearVariant\",\"d\".\"ChartOfAccounts\",\"d\".\"ControllingArea\",\"d\".\"CalendarMonth\",\"d\".\"CalendarYear\",\"d\".\"CalendarYearMonth\",\"d\".\"CurrentMonthFilter\",\"d\".\"PreviousMonthFilter\",\"d\".\"/SAP/3_ASSETCLASS\",\"d\".\"/SAP/3_COMPANYCODE\",\"d\".\"/SAP/3_CONTROLLINGAREA\",\"d\".\"/SAP/3_COSTCENTER\",\"d\".\"/SAP/3_DISTRIBUTIONCHANNEL\",\"d\".\"/SAP/3_FINANCIALACCOUNTTYPE\",\"d\".\"/SAP/3_FUNCTIONALAREA\",\"d\".\"/SAP/3_GLACCOUNT\",\"d\".\"/SAP/3_LEDGER\",\"d\".\"/SAP/3_ORDERID\",\"d\".\"/SAP/3_ORGANIZATIONDIVISION\",\"d\".\"/SAP/3_POSTINGDATE\",\"d\".\"/SAP/3_PROFITCENTER\",\"d\".\"/SAP/3_SALESDOCUMENT\",\"d\".\"/SAP/3_SALESORGANIZATION\",\"d\".\"/SAP/3_SEGMENT\",\"d\".\"/SAP/3_VALUATIONAREA\",\"d\".\"/SAP/3_ACCOUNTINGDOCUMENTTYPE\",\"d\".\"/SAP/3_CUSTOMER\",\"d\".\"/SAP/3_SERVICEDOCUMENT\",\"d\".\"/SAP/3_SERVICEDOCUMENTTYPE\",\"d\".\"/SAP/3_SUPPLIER\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_YY1_FA_JE_ACTUALS_MNTH_S4_CURR\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'YY1_FA_JE_ACTUALS_MNTH'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_YY1_FA_JE_ACTUALS_MNTH_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "SourceLedger",
+                    "target": "SourceLedger"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "FiscalYear",
+                    "target": "FiscalYear"
+                  },
+                  {
+                    "source": "AccountingDocument",
+                    "target": "AccountingDocument"
+                  },
+                  {
+                    "source": "LedgerGLLineItem",
+                    "target": "LedgerGLLineItem"
+                  },
+                  {
+                    "source": "Ledger",
+                    "target": "Ledger"
+                  },
+                  {
+                    "source": "FiscalPeriod",
+                    "target": "FiscalPeriod"
+                  },
+                  {
+                    "source": "PostingDate",
+                    "target": "PostingDate"
+                  },
+                  {
+                    "source": "AccountingDocumentType",
+                    "target": "AccountingDocumentType"
+                  },
+                  {
+                    "source": "GLAccount",
+                    "target": "GLAccount"
+                  },
+                  {
+                    "source": "ProfitCenter",
+                    "target": "ProfitCenter"
+                  },
+                  {
+                    "source": "CostCenter",
+                    "target": "CostCenter"
+                  },
+                  {
+                    "source": "MasterFixedAsset",
+                    "target": "MasterFixedAsset"
+                  },
+                  {
+                    "source": "FixedAsset",
+                    "target": "FixedAsset"
+                  },
+                  {
+                    "source": "AmountInCompanyCodeCurrency",
+                    "target": "AmountInCompanyCodeCurrency"
+                  },
+                  {
+                    "source": "AssetTransactionType",
+                    "target": "AssetTransactionType"
+                  },
+                  {
+                    "source": "CompanyCodeCurrency",
+                    "target": "CompanyCodeCurrency"
+                  },
+                  {
+                    "source": "IsReversed",
+                    "target": "IsReversed"
+                  },
+                  {
+                    "source": "ReversalReferenceDocument",
+                    "target": "ReversalReferenceDocument"
+                  },
+                  {
+                    "source": "LedgerFiscalYear",
+                    "target": "LedgerFiscalYear"
+                  },
+                  {
+                    "source": "FiscalYearVariant",
+                    "target": "FiscalYearVariant"
+                  },
+                  {
+                    "source": "ChartOfAccounts",
+                    "target": "ChartOfAccounts"
+                  },
+                  {
+                    "source": "ControllingArea",
+                    "target": "ControllingArea"
+                  },
+                  {
+                    "source": "CalendarMonth",
+                    "target": "CalendarMonth"
+                  },
+                  {
+                    "source": "CalendarYear",
+                    "target": "CalendarYear"
+                  },
+                  {
+                    "source": "CalendarYearMonth",
+                    "target": "CalendarYearMonth"
+                  },
+                  {
+                    "source": "CurrentMonthFilter",
+                    "target": "CurrentMonthFilter"
+                  },
+                  {
+                    "source": "PreviousMonthFilter",
+                    "target": "PreviousMonthFilter"
+                  },
+                  {
+                    "source": "/SAP/3_ASSETCLASS",
+                    "target": "/SAP/3_ASSETCLASS"
+                  },
+                  {
+                    "source": "/SAP/3_COMPANYCODE",
+                    "target": "/SAP/3_COMPANYCODE"
+                  },
+                  {
+                    "source": "/SAP/3_CONTROLLINGAREA",
+                    "target": "/SAP/3_CONTROLLINGAREA"
+                  },
+                  {
+                    "source": "/SAP/3_COSTCENTER",
+                    "target": "/SAP/3_COSTCENTER"
+                  },
+                  {
+                    "source": "/SAP/3_DISTRIBUTIONCHANNEL",
+                    "target": "/SAP/3_DISTRIBUTIONCHANNEL"
+                  },
+                  {
+                    "source": "/SAP/3_FINANCIALACCOUNTTYPE",
+                    "target": "/SAP/3_FINANCIALACCOUNTTYPE"
+                  },
+                  {
+                    "source": "/SAP/3_FUNCTIONALAREA",
+                    "target": "/SAP/3_FUNCTIONALAREA"
+                  },
+                  {
+                    "source": "/SAP/3_GLACCOUNT",
+                    "target": "/SAP/3_GLACCOUNT"
+                  },
+                  {
+                    "source": "/SAP/3_LEDGER",
+                    "target": "/SAP/3_LEDGER"
+                  },
+                  {
+                    "source": "/SAP/3_ORDERID",
+                    "target": "/SAP/3_ORDERID"
+                  },
+                  {
+                    "source": "/SAP/3_ORGANIZATIONDIVISION",
+                    "target": "/SAP/3_ORGANIZATIONDIVISION"
+                  },
+                  {
+                    "source": "/SAP/3_POSTINGDATE",
+                    "target": "/SAP/3_POSTINGDATE"
+                  },
+                  {
+                    "source": "/SAP/3_PROFITCENTER",
+                    "target": "/SAP/3_PROFITCENTER"
+                  },
+                  {
+                    "source": "/SAP/3_SALESDOCUMENT",
+                    "target": "/SAP/3_SALESDOCUMENT"
+                  },
+                  {
+                    "source": "/SAP/3_SALESORGANIZATION",
+                    "target": "/SAP/3_SALESORGANIZATION"
+                  },
+                  {
+                    "source": "/SAP/3_SEGMENT",
+                    "target": "/SAP/3_SEGMENT"
+                  },
+                  {
+                    "source": "/SAP/3_VALUATIONAREA",
+                    "target": "/SAP/3_VALUATIONAREA"
+                  },
+                  {
+                    "source": "/SAP/3_ACCOUNTINGDOCUMENTTYPE",
+                    "target": "/SAP/3_ACCOUNTINGDOCUMENTTYPE"
+                  },
+                  {
+                    "source": "/SAP/3_CUSTOMER",
+                    "target": "/SAP/3_CUSTOMER"
+                  },
+                  {
+                    "source": "/SAP/3_SERVICEDOCUMENT",
+                    "target": "/SAP/3_SERVICEDOCUMENT"
+                  },
+                  {
+                    "source": "/SAP/3_SERVICEDOCUMENTTYPE",
+                    "target": "/SAP/3_SERVICEDOCUMENTTYPE"
+                  },
+                  {
+                    "source": "/SAP/3_SUPPLIER",
+                    "target": "/SAP/3_SUPPLIER"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "SourceLedger": {
+                      "@EndUserText.label": "Source ledger",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 2,
+                      "notNull": true
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "FiscalYear": {
+                      "@EndUserText.label": "Fiscal year",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "AccountingDocument": {
+                      "@EndUserText.label": "Journal entry",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "LedgerGLLineItem": {
+                      "@EndUserText.label": "General ledger journal entry line item",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 6,
+                      "notNull": true
+                    },
+                    "Ledger": {
+                      "@EndUserText.label": "Ledger in general ledger accounting",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 2,
+                      "notNull": true
+                    },
+                    "FiscalPeriod": {
+                      "@EndUserText.label": "Fiscal period",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "PostingDate": {
+                      "@EndUserText.label": "Posting date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AccountingDocumentType": {
+                      "@EndUserText.label": "Journal entry type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "GLAccount": {
+                      "@EndUserText.label": "G/l account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "CostCenter": {
+                      "@EndUserText.label": "Cost center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Fixed asset (main asset number)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AmountInCompanyCodeCurrency": {
+                      "@EndUserText.label": "Amount in company code currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "AssetTransactionType": {
+                      "@EndUserText.label": "Asset transaction type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "CompanyCodeCurrency": {
+                      "@EndUserText.label": "Company code currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "IsReversed": {
+                      "@EndUserText.label": "Indicator: item is reversed",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ReversalReferenceDocument": {
+                      "@EndUserText.label": "Reversal reference document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "LedgerFiscalYear": {
+                      "@EndUserText.label": "Fiscal year of ledger",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "FiscalYearVariant": {
+                      "@EndUserText.label": "Fiscal year variant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ChartOfAccounts": {
+                      "@EndUserText.label": "Chart of accounts",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CalendarMonth": {
+                      "@EndUserText.label": "Calendar month",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "CalendarYear": {
+                      "@EndUserText.label": "Calendar year",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CalendarYearMonth": {
+                      "@EndUserText.label": "CalendarYearMonth",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "CurrentMonthFilter": {
+                      "@EndUserText.label": "CurrentMonthFilter",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "PreviousMonthFilter": {
+                      "@EndUserText.label": "PreviousMonthFilter",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "/SAP/3_ASSETCLASS": {
+                      "@EndUserText.label": "Asset class",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "/SAP/3_COMPANYCODE": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "/SAP/3_CONTROLLINGAREA": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "/SAP/3_COSTCENTER": {
+                      "@EndUserText.label": "Cost center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_DISTRIBUTIONCHANNEL": {
+                      "@EndUserText.label": "Distribution channel",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "/SAP/3_FINANCIALACCOUNTTYPE": {
+                      "@EndUserText.label": "Account type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "/SAP/3_FUNCTIONALAREA": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "/SAP/3_GLACCOUNT": {
+                      "@EndUserText.label": "G/l account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_LEDGER": {
+                      "@EndUserText.label": "Ledger in general ledger accounting",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "/SAP/3_ORDERID": {
+                      "@EndUserText.label": "Order id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "/SAP/3_ORGANIZATIONDIVISION": {
+                      "@EndUserText.label": "Division",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "/SAP/3_POSTINGDATE": {
+                      "@EndUserText.label": "Posting date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "/SAP/3_PROFITCENTER": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_SALESDOCUMENT": {
+                      "@EndUserText.label": "Sales document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_SALESORGANIZATION": {
+                      "@EndUserText.label": "Sales organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "/SAP/3_SEGMENT": {
+                      "@EndUserText.label": "Segment for segmental reporting",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_VALUATIONAREA": {
+                      "@EndUserText.label": "Valuation area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "/SAP/3_ACCOUNTINGDOCUMENTTYPE": {
+                      "@EndUserText.label": "Journal entry type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "/SAP/3_CUSTOMER": {
+                      "@EndUserText.label": "Customer number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_SERVICEDOCUMENT": {
+                      "@EndUserText.label": "Service document id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "/SAP/3_SERVICEDOCUMENTTYPE": {
+                      "@EndUserText.label": "Service document type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "/SAP/3_SUPPLIER": {
+                      "@EndUserText.label": "Supplier",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_YY1_FA_JE_ACTUALS_MNTH_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_GJYGEXKT"
+                    }
+                  }
+                },
+                "name": "2LT_YY1_FA_JE_ACTUALS_MNTH_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

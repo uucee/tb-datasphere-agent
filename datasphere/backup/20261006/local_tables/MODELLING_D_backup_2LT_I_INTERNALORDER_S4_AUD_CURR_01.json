@@ -1,0 +1,501 @@
+{
+  "definitions": {
+    "2LT_I_INTERNALORDER_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "InternalOrder": {
+          "@EndUserText.label": "Internal order",
+          "type": "cds.String",
+          "key": true,
+          "length": 12,
+          "notNull": true
+        },
+        "InternalOrderDescription": {
+          "@EndUserText.label": "Internal order description",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "OrderCategory": {
+          "@EndUserText.label": "Order category",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "BusinessArea": {
+          "@EndUserText.label": "Business area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "Currency": {
+          "@EndUserText.label": "Order currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "IsStatisticalOrder": {
+          "@EndUserText.label": "Indicates if the int. order has a stats. account assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ReferenceOrder": {
+          "@EndUserText.label": "Reference order number",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "SalesOrder": {
+          "@EndUserText.label": "Sales order number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SalesOrderItem": {
+          "@EndUserText.label": "Item number in sales order",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "WBSElement": {
+          "@EndUserText.label": "Work breakdown structure element (wbs element)",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "RequestingCostCenter": {
+          "@EndUserText.label": "Requesting cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RequestingCompanyCode": {
+          "@EndUserText.label": "Requesting company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RequestingOrder": {
+          "@EndUserText.label": "Requesting order",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "InternalOrderLocation": {
+          "@EndUserText.label": "Plant location for internal order",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LocationPlant": {
+          "@EndUserText.label": "Location plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ExternalOrder": {
+          "@EndUserText.label": "External order number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "ActualPostedCostCenter": {
+          "@EndUserText.label": "Cost center for actual costs posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PlanningWithLineItemsIsActive": {
+          "@EndUserText.label": "Identifier for planning with line items",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "OrdIsUsedInIntegratedPlanning": {
+          "@EndUserText.label": "Indicates if the internal order is plan integrated",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "ResultAnalysisInternalID": {
+          "@EndUserText.label": "Results analysis key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "ConditionUsage": {
+          "@EndUserText.label": "Usage of the condition table",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ConditionApplication": {
+          "@EndUserText.label": "Application",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CostingSheet": {
+          "@EndUserText.label": "Costing sheet",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "OverheadCode": {
+          "@EndUserText.label": "Overhead key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "OrderInterestCalcProfile": {
+          "@EndUserText.label": "Interest profile for order interest calculation",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "IntOrderSettlementCostElement": {
+          "@EndUserText.label": "Settlement cost element",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "BasicSettlementGLAccount": {
+          "@EndUserText.label": "G/l account for basic settlement",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IntOrderIndividualField1Value": {
+          "@EndUserText.label": "Applicant",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "IntOrderIndividualField2Value": {
+          "@EndUserText.label": "Applicant's telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "IntOrderIndividualField3Value": {
+          "@EndUserText.label": "Person responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "IntOrderIndividualField4Value": {
+          "@EndUserText.label": "Telephone number of person in charge",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "IntOrderIndividualField5Amount": {
+          "@EndUserText.label": "Estimated total costs of order",
+          "type": "cds.DecimalFloat",
+          "key": false
+        },
+        "IntOrderIndividualField6Date": {
+          "@EndUserText.label": "Application date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntOrderIndividualField7Value": {
+          "@EndUserText.label": "Department",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "IntOrderIndividualField8Date": {
+          "@EndUserText.label": "Work start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntOrderIndividualField9Date": {
+          "@EndUserText.label": "End of work",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntOrderIndividualField10Value": {
+          "@EndUserText.label": "Identifier for work permit issued",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "OrderProcessingGroup": {
+          "@EndUserText.label": "Processing group",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "InvestmentProfile": {
+          "@EndUserText.label": "Investment measure profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "InvestmentScale": {
+          "@EndUserText.label": "Scale of investment objects",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "InvestmentReason": {
+          "@EndUserText.label": "Reason for investment",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "EnvironmentalInvestmentReason": {
+          "@EndUserText.label": "Reason for environmental investment",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "JointVenture": {
+          "@EndUserText.label": "Joint venture",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "JointVentureRecoveryCode": {
+          "@EndUserText.label": "Recovery indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "JointVentureEquityType": {
+          "@EndUserText.label": "Equity type",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureOriginalCostObject": {
+          "@EndUserText.label": "Jv original cost object",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "JointVentureObjectType": {
+          "@EndUserText.label": "Joint venture object type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "JointVentureClass": {
+          "@EndUserText.label": "Jib/jibe class",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureSubClass": {
+          "@EndUserText.label": "Jib/jibe subclass a",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "IsDeleted": {
+          "@EndUserText.label": "Deletion flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Created on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreationTime": {
+          "@EndUserText.label": "Time created",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Created by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Last changed by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDate": {
+          "@EndUserText.label": "Change date for order master",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LastChangeTime": {
+          "@EndUserText.label": "Changed at",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "ControllingObject": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "ControllingObjectClass": {
+          "@EndUserText.label": "Object class",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "OrderType": {
+          "@EndUserText.label": "Order type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ResponsibleCostCenter": {
+          "@EndUserText.label": "Responsible cost center in internal order",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "InternalOrderResponsibleUser": {
+          "@EndUserText.label": "Responsible user for internal order",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "IntOrderPlannedReleaseDate": {
+          "@EndUserText.label": "Planned release date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntOrderPlannedCompletionDate": {
+          "@EndUserText.label": "Planned completion date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntOrderPlannedClosingDate": {
+          "@EndUserText.label": "Planned closing date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "InternalOrderReleaseDate": {
+          "@EndUserText.label": "Release date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "InternalOrderCompletionDate": {
+          "@EndUserText.label": "Technical completion date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "InternalOrderClosingDate": {
+          "@EndUserText.label": "Close date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CostCollector": {
+          "@EndUserText.label": "Cost collector key",
+          "type": "cds.String",
+          "key": false,
+          "length": 23
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_INTERNALORDER_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LWUFGFID"
+        }
+      }
+    }
+  }
+}

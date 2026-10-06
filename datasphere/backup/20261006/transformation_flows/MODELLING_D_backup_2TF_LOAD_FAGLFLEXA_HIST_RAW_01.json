@@ -1,0 +1,1543 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_FAGLFLEXA_HIST_RAW_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_FAGLFLEXA_HIST_RAW_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_HIST_RAW": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW"
+                  },
+                  "1_INBOUND_HIST_RAW.1LT_FAGLFLEXA_HIST_RAW": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_FAGLFLEXA_HIST_RAW",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "RYEAR": {
+                        "@EndUserText.label": "RYEAR",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "DOCNR": {
+                        "@EndUserText.label": "DOCNR",
+                        "type": "cds.Integer",
+                        "key": true,
+                        "notNull": true
+                      },
+                      "RLDNR": {
+                        "@EndUserText.label": "RLDNR",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 2
+                      },
+                      "RBUKRS": {
+                        "@EndUserText.label": "RBUKRS",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "DOCLN": {
+                        "@EndUserText.label": "DOCLN",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 6
+                      },
+                      "ACTIV": {
+                        "@EndUserText.label": "ACTIV",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RMVCT": {
+                        "@EndUserText.label": "RMVCT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RTCUR": {
+                        "@EndUserText.label": "RTCUR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "RUNIT": {
+                        "@EndUserText.label": "RUNIT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "AWTYP": {
+                        "@EndUserText.label": "AWTYP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RRCTY": {
+                        "@EndUserText.label": "RRCTY",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "RVERS": {
+                        "@EndUserText.label": "RVERS",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "LOGSYS": {
+                        "@EndUserText.label": "LOGSYS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RACCT": {
+                        "@EndUserText.label": "RACCT",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "COST_ELEM": {
+                        "@EndUserText.label": "COST_ELEM",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "RCNTR": {
+                        "@EndUserText.label": "RCNTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PRCTR": {
+                        "@EndUserText.label": "PRCTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RFAREA": {
+                        "@EndUserText.label": "RFAREA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RBUSA": {
+                        "@EndUserText.label": "RBUSA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "KOKRS": {
+                        "@EndUserText.label": "KOKRS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SEGMENT": {
+                        "@EndUserText.label": "SEGMENT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ZZMATNR": {
+                        "@EndUserText.label": "ZZMATNR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "SCNTR": {
+                        "@EndUserText.label": "SCNTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "PPRCTR": {
+                        "@EndUserText.label": "PPRCTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SFAREA": {
+                        "@EndUserText.label": "SFAREA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "SBUSA": {
+                        "@EndUserText.label": "SBUSA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "RASSC": {
+                        "@EndUserText.label": "RASSC",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PSEGMENT": {
+                        "@EndUserText.label": "PSEGMENT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TSL": {
+                        "@EndUserText.label": "TSL",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 2
+                      },
+                      "HSL": {
+                        "@EndUserText.label": "HSL",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 2
+                      },
+                      "KSL": {
+                        "@EndUserText.label": "KSL",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 2
+                      },
+                      "OSL": {
+                        "@EndUserText.label": "OSL",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "MSL": {
+                        "@EndUserText.label": "MSL",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "WSL": {
+                        "@EndUserText.label": "WSL",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 2
+                      },
+                      "DRCRK": {
+                        "@EndUserText.label": "DRCRK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "POPER": {
+                        "@EndUserText.label": "POPER",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "RWCUR": {
+                        "@EndUserText.label": "RWCUR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "GJAHR": {
+                        "@EndUserText.label": "GJAHR",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "BUDAT": {
+                        "@EndUserText.label": "BUDAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "BELNR": {
+                        "@EndUserText.label": "BELNR",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "BUZEI": {
+                        "@EndUserText.label": "BUZEI",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "BSCHL": {
+                        "@EndUserText.label": "BSCHL",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "BSTAT": {
+                        "@EndUserText.label": "BSTAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "LINETYPE": {
+                        "@EndUserText.label": "LINETYPE",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "XSPLITMOD": {
+                        "@EndUserText.label": "XSPLITMOD",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "USNAM": {
+                        "@EndUserText.label": "USNAM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "TIMESTAMP": {
+                        "@EndUserText.label": "TIMESTAMP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.businessName": "1 INBOUND HIST RAW"
+                  }
+                },
+                "name": "2TF_LOAD_FAGLFLEXA_HIST_RAW_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "RYEAR": {
+                      "@EndUserText.label": "RYEAR",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DOCNR": {
+                      "@EndUserText.label": "DOCNR",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RLDNR": {
+                      "@EndUserText.label": "RLDNR",
+                      "type": "cds.String",
+                      "length": 2,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RBUKRS": {
+                      "@EndUserText.label": "RBUKRS",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DOCLN": {
+                      "@EndUserText.label": "DOCLN",
+                      "type": "cds.String",
+                      "length": 6,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ACTIV": {
+                      "@EndUserText.label": "ACTIV",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RMVCT": {
+                      "@EndUserText.label": "RMVCT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RTCUR": {
+                      "@EndUserText.label": "RTCUR",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "RUNIT": {
+                      "@EndUserText.label": "RUNIT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "AWTYP": {
+                      "@EndUserText.label": "AWTYP",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RRCTY": {
+                      "@EndUserText.label": "RRCTY",
+                      "type": "cds.Integer"
+                    },
+                    "RVERS": {
+                      "@EndUserText.label": "RVERS",
+                      "type": "cds.Integer"
+                    },
+                    "LOGSYS": {
+                      "@EndUserText.label": "LOGSYS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RACCT": {
+                      "@EndUserText.label": "RACCT",
+                      "type": "cds.Integer"
+                    },
+                    "COST_ELEM": {
+                      "@EndUserText.label": "COST_ELEM",
+                      "type": "cds.Integer"
+                    },
+                    "RCNTR": {
+                      "@EndUserText.label": "RCNTR",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PRCTR": {
+                      "@EndUserText.label": "PRCTR",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RFAREA": {
+                      "@EndUserText.label": "RFAREA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RBUSA": {
+                      "@EndUserText.label": "RBUSA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "KOKRS": {
+                      "@EndUserText.label": "KOKRS",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SEGMENT": {
+                      "@EndUserText.label": "SEGMENT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ZZMATNR": {
+                      "@EndUserText.label": "ZZMATNR",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "SCNTR": {
+                      "@EndUserText.label": "SCNTR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "PPRCTR": {
+                      "@EndUserText.label": "PPRCTR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SFAREA": {
+                      "@EndUserText.label": "SFAREA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "SBUSA": {
+                      "@EndUserText.label": "SBUSA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "RASSC": {
+                      "@EndUserText.label": "RASSC",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PSEGMENT": {
+                      "@EndUserText.label": "PSEGMENT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TSL": {
+                      "@EndUserText.label": "TSL",
+                      "precision": 15,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "HSL": {
+                      "@EndUserText.label": "HSL",
+                      "precision": 15,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "KSL": {
+                      "@EndUserText.label": "KSL",
+                      "precision": 15,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "OSL": {
+                      "@EndUserText.label": "OSL",
+                      "type": "cds.Integer"
+                    },
+                    "MSL": {
+                      "@EndUserText.label": "MSL",
+                      "type": "cds.Integer"
+                    },
+                    "WSL": {
+                      "@EndUserText.label": "WSL",
+                      "precision": 15,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "DRCRK": {
+                      "@EndUserText.label": "DRCRK",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "POPER": {
+                      "@EndUserText.label": "POPER",
+                      "type": "cds.Integer"
+                    },
+                    "RWCUR": {
+                      "@EndUserText.label": "RWCUR",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "GJAHR": {
+                      "@EndUserText.label": "GJAHR",
+                      "type": "cds.Integer"
+                    },
+                    "BUDAT": {
+                      "@EndUserText.label": "BUDAT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "BELNR": {
+                      "@EndUserText.label": "BELNR",
+                      "type": "cds.Integer"
+                    },
+                    "BUZEI": {
+                      "@EndUserText.label": "BUZEI",
+                      "type": "cds.Integer"
+                    },
+                    "BSCHL": {
+                      "@EndUserText.label": "BSCHL",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "BSTAT": {
+                      "@EndUserText.label": "BSTAT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "LINETYPE": {
+                      "@EndUserText.label": "LINETYPE",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "XSPLITMOD": {
+                      "@EndUserText.label": "XSPLITMOD",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "USNAM": {
+                      "@EndUserText.label": "USNAM",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "TIMESTAMP": {
+                      "@EndUserText.label": "TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 16
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_HIST_RAW.1LT_FAGLFLEXA_HIST_RAW"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_HIST_RAW_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "HIST_RAW"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "FAGLFLEXA"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "HIST_RAW",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RYEAR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DOCNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RLDNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RBUKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DOCLN"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ACTIV"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RMVCT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RTCUR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RUNIT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AWTYP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RRCTY"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RVERS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LOGSYS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RACCT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "COST_ELEM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RCNTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PRCTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RFAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RBUSA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KOKRS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SEGMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZZMATNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SCNTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PPRCTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SFAREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SBUSA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RASSC"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PSEGMENT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TSL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HSL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KSL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OSL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MSL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WSL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DRCRK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "POPER"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RWCUR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GJAHR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BUDAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BELNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BUZEI"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BSCHL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BSTAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LINETYPE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSPLITMOD"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "USNAM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TIMESTAMP"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "  SELECT \r\n    b.\"BATCH_ID\",\r\n    CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n    'HIST_RAW' AS \"SOURCE_SYSTEM\",\r\n    o.\"SOURCE_FILE\",\r\n    \"d\".\"RYEAR\",\"d\".\"DOCNR\",\"d\".\"RLDNR\",\"d\".\"RBUKRS\",\"d\".\"DOCLN\",\"d\".\"ACTIV\",\"d\".\"RMVCT\",\"d\".\"RTCUR\",\"d\".\"RUNIT\",\"d\".\"AWTYP\",\"d\".\"RRCTY\",\"d\".\"RVERS\",\"d\".\"LOGSYS\",\"d\".\"RACCT\",\"d\".\"COST_ELEM\",\"d\".\"RCNTR\",\"d\".\"PRCTR\",\"d\".\"RFAREA\",\"d\".\"RBUSA\",\"d\".\"KOKRS\",\"d\".\"SEGMENT\",\"d\".\"ZZMATNR\",\"d\".\"SCNTR\",\"d\".\"PPRCTR\",\"d\".\"SFAREA\",\"d\".\"SBUSA\",\"d\".\"RASSC\",\"d\".\"PSEGMENT\",\"d\".\"TSL\",\"d\".\"HSL\",\"d\".\"KSL\",\"d\".\"OSL\",\"d\".\"MSL\",\"d\".\"WSL\",\"d\".\"DRCRK\",\"d\".\"POPER\",\"d\".\"RWCUR\",\"d\".\"GJAHR\",\"d\".\"BUDAT\",\"d\".\"BELNR\",\"d\".\"BUZEI\",\"d\".\"BSCHL\",\"d\".\"BSTAT\",\"d\".\"LINETYPE\",\"d\".\"XSPLITMOD\",\"d\".\"USNAM\",\"d\".\"TIMESTAMP\"\r\nFROM \"1_INBOUND_HIST_RAW.1LT_FAGLFLEXA_HIST_RAW\" d\r\n\tCROSS JOIN \"2SV_ACTIVE_BATCH_HIST_RAW_01\" b\r\n\tJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o \r\n\t    ON o.\"BATCH_ID\" = b.\"BATCH_ID\" \r\n\t        AND o.\"SOURCE_SYSTEM\" = 'HIST_RAW' \r\n\t        AND o.\"OBJECT_NAME\" = 'FAGLFLEXA'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_FAGLFLEXA_HIST_RAW_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "RYEAR",
+                    "target": "RYEAR"
+                  },
+                  {
+                    "source": "DOCNR",
+                    "target": "DOCNR"
+                  },
+                  {
+                    "source": "RLDNR",
+                    "target": "RLDNR"
+                  },
+                  {
+                    "source": "RBUKRS",
+                    "target": "RBUKRS"
+                  },
+                  {
+                    "source": "DOCLN",
+                    "target": "DOCLN"
+                  },
+                  {
+                    "source": "ACTIV",
+                    "target": "ACTIV"
+                  },
+                  {
+                    "source": "RMVCT",
+                    "target": "RMVCT"
+                  },
+                  {
+                    "source": "RTCUR",
+                    "target": "RTCUR"
+                  },
+                  {
+                    "source": "RUNIT",
+                    "target": "RUNIT"
+                  },
+                  {
+                    "source": "AWTYP",
+                    "target": "AWTYP"
+                  },
+                  {
+                    "source": "RRCTY",
+                    "target": "RRCTY"
+                  },
+                  {
+                    "source": "RVERS",
+                    "target": "RVERS"
+                  },
+                  {
+                    "source": "LOGSYS",
+                    "target": "LOGSYS"
+                  },
+                  {
+                    "source": "RACCT",
+                    "target": "RACCT"
+                  },
+                  {
+                    "source": "COST_ELEM",
+                    "target": "COST_ELEM"
+                  },
+                  {
+                    "source": "RCNTR",
+                    "target": "RCNTR"
+                  },
+                  {
+                    "source": "PRCTR",
+                    "target": "PRCTR"
+                  },
+                  {
+                    "source": "RFAREA",
+                    "target": "RFAREA"
+                  },
+                  {
+                    "source": "RBUSA",
+                    "target": "RBUSA"
+                  },
+                  {
+                    "source": "KOKRS",
+                    "target": "KOKRS"
+                  },
+                  {
+                    "source": "SEGMENT",
+                    "target": "SEGMENT"
+                  },
+                  {
+                    "source": "ZZMATNR",
+                    "target": "ZZMATNR"
+                  },
+                  {
+                    "source": "SCNTR",
+                    "target": "SCNTR"
+                  },
+                  {
+                    "source": "PPRCTR",
+                    "target": "PPRCTR"
+                  },
+                  {
+                    "source": "SFAREA",
+                    "target": "SFAREA"
+                  },
+                  {
+                    "source": "SBUSA",
+                    "target": "SBUSA"
+                  },
+                  {
+                    "source": "RASSC",
+                    "target": "RASSC"
+                  },
+                  {
+                    "source": "PSEGMENT",
+                    "target": "PSEGMENT"
+                  },
+                  {
+                    "source": "TSL",
+                    "target": "TSL"
+                  },
+                  {
+                    "source": "HSL",
+                    "target": "HSL"
+                  },
+                  {
+                    "source": "KSL",
+                    "target": "KSL"
+                  },
+                  {
+                    "source": "OSL",
+                    "target": "OSL"
+                  },
+                  {
+                    "source": "MSL",
+                    "target": "MSL"
+                  },
+                  {
+                    "source": "WSL",
+                    "target": "WSL"
+                  },
+                  {
+                    "source": "DRCRK",
+                    "target": "DRCRK"
+                  },
+                  {
+                    "source": "POPER",
+                    "target": "POPER"
+                  },
+                  {
+                    "source": "RWCUR",
+                    "target": "RWCUR"
+                  },
+                  {
+                    "source": "GJAHR",
+                    "target": "GJAHR"
+                  },
+                  {
+                    "source": "BUDAT",
+                    "target": "BUDAT"
+                  },
+                  {
+                    "source": "BELNR",
+                    "target": "BELNR"
+                  },
+                  {
+                    "source": "BUZEI",
+                    "target": "BUZEI"
+                  },
+                  {
+                    "source": "BSCHL",
+                    "target": "BSCHL"
+                  },
+                  {
+                    "source": "BSTAT",
+                    "target": "BSTAT"
+                  },
+                  {
+                    "source": "LINETYPE",
+                    "target": "LINETYPE"
+                  },
+                  {
+                    "source": "XSPLITMOD",
+                    "target": "XSPLITMOD"
+                  },
+                  {
+                    "source": "USNAM",
+                    "target": "USNAM"
+                  },
+                  {
+                    "source": "TIMESTAMP",
+                    "target": "TIMESTAMP"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "RYEAR": {
+                      "@EndUserText.label": "RYEAR",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "DOCNR": {
+                      "@EndUserText.label": "DOCNR",
+                      "type": "cds.Integer",
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RLDNR": {
+                      "@EndUserText.label": "RLDNR",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 2,
+                      "notNull": true
+                    },
+                    "RBUKRS": {
+                      "@EndUserText.label": "RBUKRS",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "DOCLN": {
+                      "@EndUserText.label": "DOCLN",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 6,
+                      "notNull": true
+                    },
+                    "ACTIV": {
+                      "@EndUserText.label": "ACTIV",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RMVCT": {
+                      "@EndUserText.label": "RMVCT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RTCUR": {
+                      "@EndUserText.label": "RTCUR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "RUNIT": {
+                      "@EndUserText.label": "RUNIT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "AWTYP": {
+                      "@EndUserText.label": "AWTYP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RRCTY": {
+                      "@EndUserText.label": "RRCTY",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "RVERS": {
+                      "@EndUserText.label": "RVERS",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "LOGSYS": {
+                      "@EndUserText.label": "LOGSYS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RACCT": {
+                      "@EndUserText.label": "RACCT",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "COST_ELEM": {
+                      "@EndUserText.label": "COST_ELEM",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "RCNTR": {
+                      "@EndUserText.label": "RCNTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PRCTR": {
+                      "@EndUserText.label": "PRCTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "RFAREA": {
+                      "@EndUserText.label": "RFAREA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RBUSA": {
+                      "@EndUserText.label": "RBUSA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "KOKRS": {
+                      "@EndUserText.label": "KOKRS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SEGMENT": {
+                      "@EndUserText.label": "SEGMENT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ZZMATNR": {
+                      "@EndUserText.label": "ZZMATNR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "SCNTR": {
+                      "@EndUserText.label": "SCNTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "PPRCTR": {
+                      "@EndUserText.label": "PPRCTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SFAREA": {
+                      "@EndUserText.label": "SFAREA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "SBUSA": {
+                      "@EndUserText.label": "SBUSA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "RASSC": {
+                      "@EndUserText.label": "RASSC",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PSEGMENT": {
+                      "@EndUserText.label": "PSEGMENT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TSL": {
+                      "@EndUserText.label": "TSL",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 2
+                    },
+                    "HSL": {
+                      "@EndUserText.label": "HSL",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 2
+                    },
+                    "KSL": {
+                      "@EndUserText.label": "KSL",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 2
+                    },
+                    "OSL": {
+                      "@EndUserText.label": "OSL",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "MSL": {
+                      "@EndUserText.label": "MSL",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "WSL": {
+                      "@EndUserText.label": "WSL",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 2
+                    },
+                    "DRCRK": {
+                      "@EndUserText.label": "DRCRK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "POPER": {
+                      "@EndUserText.label": "POPER",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "RWCUR": {
+                      "@EndUserText.label": "RWCUR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "GJAHR": {
+                      "@EndUserText.label": "GJAHR",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "BUDAT": {
+                      "@EndUserText.label": "BUDAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "BELNR": {
+                      "@EndUserText.label": "BELNR",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "BUZEI": {
+                      "@EndUserText.label": "BUZEI",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "BSCHL": {
+                      "@EndUserText.label": "BSCHL",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "BSTAT": {
+                      "@EndUserText.label": "BSTAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "LINETYPE": {
+                      "@EndUserText.label": "LINETYPE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "XSPLITMOD": {
+                      "@EndUserText.label": "XSPLITMOD",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "USNAM": {
+                      "@EndUserText.label": "USNAM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "TIMESTAMP": {
+                      "@EndUserText.label": "TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_FAGLFLEXA_HIST_RAW_AUD_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_ATGQGPAH"
+                    }
+                  }
+                },
+                "name": "2LT_FAGLFLEXA_HIST_RAW_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,856 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_CONTROLLINGAREA_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_CONTROLLINGAREA_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_CONTROLLINGAREA_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_CONTROLLINGAREA_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_CONTROLLINGAREA_S4_CURR",
+                    "elements": {
+                      "ControllingArea": {
+                        "@EndUserText.label": "Controlling area",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "FiscalYearVariant": {
+                        "@EndUserText.label": "Fiscal year variant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ControllingAreaName": {
+                        "@EndUserText.label": "Controlling area name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "ControllingAreaCurrency": {
+                        "@EndUserText.label": "Controlling area currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "ChartOfAccounts": {
+                        "@EndUserText.label": "Chart of accounts",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CostCenterStandardHierarchy": {
+                        "@EndUserText.label": "Cost center standard hierarchy",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "OperatingConcern": {
+                        "@EndUserText.label": "Operating concern",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ProfitCenterStandardHierarchy": {
+                        "@EndUserText.label": "Profit center standard hierarchy",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "BusinessProcessStandardHier": {
+                        "@EndUserText.label": "Business process standard hierarchy area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "CreditDownPaymentDefaultGLAcct": {
+                        "@EndUserText.label": "Default general ledger account for supplier down payments",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "DebitDownPaymentDefaultGLAcct": {
+                        "@EndUserText.label": "Default general ledger account for customer down payments",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ControllingAreaCurrencyRole": {
+                        "@EndUserText.label": "Currency type for controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FinancialManagementArea": {
+                        "@EndUserText.label": "Financial management area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ControllingAreaResponsibleUser": {
+                        "@EndUserText.label": "Responsible user of controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "DefaultProfitCenter": {
+                        "@EndUserText.label": "Default profit center for nonassigned processes",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "CtrlgStdFinStatementVersion": {
+                        "@EndUserText.label": "Leading controlling financial statement version",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 42
+                      },
+                      "ProfitCenterAccountingCurrency": {
+                        "@EndUserText.label": "Local currency for profit center accounting",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_CONTROLLINGAREA_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FiscalYearVariant": {
+                      "@EndUserText.label": "Fiscal year variant",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ControllingAreaName": {
+                      "@EndUserText.label": "Controlling area name",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "ControllingAreaCurrency": {
+                      "@EndUserText.label": "Controlling area currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "ChartOfAccounts": {
+                      "@EndUserText.label": "Chart of accounts",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CostCenterStandardHierarchy": {
+                      "@EndUserText.label": "Cost center standard hierarchy",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "OperatingConcern": {
+                      "@EndUserText.label": "Operating concern",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ProfitCenterStandardHierarchy": {
+                      "@EndUserText.label": "Profit center standard hierarchy",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "BusinessProcessStandardHier": {
+                      "@EndUserText.label": "Business process standard hierarchy area",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreditDownPaymentDefaultGLAcct": {
+                      "@EndUserText.label": "Default general ledger account for supplier down payments",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "DebitDownPaymentDefaultGLAcct": {
+                      "@EndUserText.label": "Default general ledger account for customer down payments",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ControllingAreaCurrencyRole": {
+                      "@EndUserText.label": "Currency type for controlling area",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "FinancialManagementArea": {
+                      "@EndUserText.label": "Financial management area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ControllingAreaResponsibleUser": {
+                      "@EndUserText.label": "Responsible user of controlling area",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "DefaultProfitCenter": {
+                      "@EndUserText.label": "Default profit center for nonassigned processes",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "CtrlgStdFinStatementVersion": {
+                      "@EndUserText.label": "Leading controlling financial statement version",
+                      "type": "cds.String",
+                      "length": 42
+                    },
+                    "ProfitCenterAccountingCurrency": {
+                      "@EndUserText.label": "Local currency for profit center accounting",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_CONTROLLINGAREA_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_CONTROLLINGAREA"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FiscalYearVariant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingAreaName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingAreaCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ChartOfAccounts"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CostCenterStandardHierarchy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OperatingConcern"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitCenterStandardHierarchy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessProcessStandardHier"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreditDownPaymentDefaultGLAcct"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DebitDownPaymentDefaultGLAcct"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingAreaCurrencyRole"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FinancialManagementArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingAreaResponsibleUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DefaultProfitCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CtrlgStdFinStatementVersion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitCenterAccountingCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "\n\n SELECT\n  b.\"BATCH_ID\",\n  CURRENT_UTCTIMESTAMP() AS \"LOAD_TIMESTAMP\",\n  'S4_CURR'            AS \"SOURCE_SYSTEM\",\n  o.\"SOURCE_FILE\",\n \"d\".\"ControllingArea\",\"d\".\"FiscalYearVariant\",\"d\".\"ControllingAreaName\",\"d\".\"ControllingAreaCurrency\",\"d\".\"ChartOfAccounts\",\"d\".\"CostCenterStandardHierarchy\",\"d\".\"OperatingConcern\",\"d\".\"ProfitCenterStandardHierarchy\",\"d\".\"BusinessProcessStandardHier\",\"d\".\"CreditDownPaymentDefaultGLAcct\",\"d\".\"DebitDownPaymentDefaultGLAcct\",\"d\".\"ControllingAreaCurrencyRole\",\"d\".\"FinancialManagementArea\",\"d\".\"ControllingAreaResponsibleUser\",\"d\".\"DefaultProfitCenter\",\"d\".\"CtrlgStdFinStatementVersion\",\"d\".\"ProfitCenterAccountingCurrency\",\"d\".\"Change_Type\",\"d\".\"Change_Date\" from \"1_INBOUND_S4_CURR.1LT_I_CONTROLLINGAREA_S4_CURR_Delta\" d\nCROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o\n  ON o.\"BATCH_ID\"      = b.\"BATCH_ID\"\n AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\n AND o.\"OBJECT_NAME\"   = 'I_CONTROLLINGAREA'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_CONTROLLINGAREA_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_CONTROLLINGAREA_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "ControllingArea",
+                    "target": "ControllingArea"
+                  },
+                  {
+                    "source": "FiscalYearVariant",
+                    "target": "FiscalYearVariant"
+                  },
+                  {
+                    "source": "ControllingAreaName",
+                    "target": "ControllingAreaName"
+                  },
+                  {
+                    "source": "ControllingAreaCurrency",
+                    "target": "ControllingAreaCurrency"
+                  },
+                  {
+                    "source": "ChartOfAccounts",
+                    "target": "ChartOfAccounts"
+                  },
+                  {
+                    "source": "CostCenterStandardHierarchy",
+                    "target": "CostCenterStandardHierarchy"
+                  },
+                  {
+                    "source": "OperatingConcern",
+                    "target": "OperatingConcern"
+                  },
+                  {
+                    "source": "ProfitCenterStandardHierarchy",
+                    "target": "ProfitCenterStandardHierarchy"
+                  },
+                  {
+                    "source": "BusinessProcessStandardHier",
+                    "target": "BusinessProcessStandardHier"
+                  },
+                  {
+                    "source": "CreditDownPaymentDefaultGLAcct",
+                    "target": "CreditDownPaymentDefaultGLAcct"
+                  },
+                  {
+                    "source": "DebitDownPaymentDefaultGLAcct",
+                    "target": "DebitDownPaymentDefaultGLAcct"
+                  },
+                  {
+                    "source": "ControllingAreaCurrencyRole",
+                    "target": "ControllingAreaCurrencyRole"
+                  },
+                  {
+                    "source": "FinancialManagementArea",
+                    "target": "FinancialManagementArea"
+                  },
+                  {
+                    "source": "ControllingAreaResponsibleUser",
+                    "target": "ControllingAreaResponsibleUser"
+                  },
+                  {
+                    "source": "DefaultProfitCenter",
+                    "target": "DefaultProfitCenter"
+                  },
+                  {
+                    "source": "CtrlgStdFinStatementVersion",
+                    "target": "CtrlgStdFinStatementVersion"
+                  },
+                  {
+                    "source": "ProfitCenterAccountingCurrency",
+                    "target": "ProfitCenterAccountingCurrency"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "FiscalYearVariant": {
+                      "@EndUserText.label": "Fiscal year variant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ControllingAreaName": {
+                      "@EndUserText.label": "Controlling area name",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "ControllingAreaCurrency": {
+                      "@EndUserText.label": "Controlling area currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "ChartOfAccounts": {
+                      "@EndUserText.label": "Chart of accounts",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CostCenterStandardHierarchy": {
+                      "@EndUserText.label": "Cost center standard hierarchy",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "OperatingConcern": {
+                      "@EndUserText.label": "Operating concern",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ProfitCenterStandardHierarchy": {
+                      "@EndUserText.label": "Profit center standard hierarchy",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "BusinessProcessStandardHier": {
+                      "@EndUserText.label": "Business process standard hierarchy area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "CreditDownPaymentDefaultGLAcct": {
+                      "@EndUserText.label": "Default general ledger account for supplier down payments",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "DebitDownPaymentDefaultGLAcct": {
+                      "@EndUserText.label": "Default general ledger account for customer down payments",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ControllingAreaCurrencyRole": {
+                      "@EndUserText.label": "Currency type for controlling area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "FinancialManagementArea": {
+                      "@EndUserText.label": "Financial management area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ControllingAreaResponsibleUser": {
+                      "@EndUserText.label": "Responsible user of controlling area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "DefaultProfitCenter": {
+                      "@EndUserText.label": "Default profit center for nonassigned processes",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "CtrlgStdFinStatementVersion": {
+                      "@EndUserText.label": "Leading controlling financial statement version",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 42
+                    },
+                    "ProfitCenterAccountingCurrency": {
+                      "@EndUserText.label": "Local currency for profit center accounting",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_CONTROLLINGAREA_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_CONTROLLINGAREA_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_BDXBVPLD"
+                    }
+                  }
+                },
+                "name": "2LT_I_CONTROLLINGAREA_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

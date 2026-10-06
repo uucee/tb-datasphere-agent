@@ -1,0 +1,82 @@
+{
+  "definitions": {
+    "2LT_I_REFLOWTYPE_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "REFlowType": {
+          "@EndUserText.label": "Flow type",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "DebitCreditCode": {
+          "@EndUserText.label": "Debit/credit indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REAnticipatoryAccrualType": {
+          "@EndUserText.label": "Accrual type (for accruals)",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "RETransitoryAccrualType": {
+          "@EndUserText.label": "Accrual type (for deferrals)",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "REFlowTypeForSummary": {
+          "@EndUserText.label": "Summarization flow type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "REFlowTypeIsRlvtForApproval": {
+          "@EndUserText.label": "Relevant for approval",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REFlowTypeIsRlvtForCashMgmt": {
+          "@EndUserText.label": "Relevant to cash management and forecast",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_REFLOWTYPE_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

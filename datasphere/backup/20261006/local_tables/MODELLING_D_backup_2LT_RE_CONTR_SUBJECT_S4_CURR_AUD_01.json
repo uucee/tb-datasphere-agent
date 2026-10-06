@@ -1,0 +1,94 @@
+{
+  "definitions": {
+    "2LT_RE_CONTR_SUBJECT_S4_CURR_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "InternalRealEstateNumber": {
+          "@EndUserText.label": "Internal number for contract item (source object)",
+          "type": "cds.String",
+          "key": true,
+          "length": 13,
+          "notNull": true
+        },
+        "REStatusObject": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "REContractSubjectDescription": {
+          "@EndUserText.label": "Name of contract object",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "REContractSubjectNumber": {
+          "@EndUserText.label": "Contract object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ExternalId": {
+          "@EndUserText.label": "External identification for contract object",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "REAccountingObjectType": {
+          "@EndUserText.label": "Object type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "REAccountingObject": {
+          "@EndUserText.label": "Object number account assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "REContractSubjectType": {
+          "@EndUserText.label": "Type of contract object",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "REContractSubjectClass": {
+          "@EndUserText.label": "Contract object class",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_RE_CONTR_SUBJECT_S4_CURR_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

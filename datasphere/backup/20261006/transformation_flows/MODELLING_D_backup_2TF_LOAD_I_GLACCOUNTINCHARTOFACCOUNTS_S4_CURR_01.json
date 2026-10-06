@@ -1,0 +1,998 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR",
+                    "elements": {
+                      "ChartOfAccounts": {
+                        "@EndUserText.label": "Chart of accounts",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "GLAccount": {
+                        "@EndUserText.label": "G/l account number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "IsBalanceSheetAccount": {
+                        "@EndUserText.label": "Is balance sheet account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GLAccountGroup": {
+                        "@EndUserText.label": "G/l account group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CorporateGroupChartOfAccounts": {
+                        "@EndUserText.label": "Group chart of accts",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CorporateGroupAccount": {
+                        "@EndUserText.label": "Group account number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProfitLossAccountType": {
+                        "@EndUserText.label": "P&l statement account type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "SampleGLAccount": {
+                        "@EndUserText.label": "Number of the sample account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "AccountIsMarkedForDeletion": {
+                        "@EndUserText.label": "Indicator: account marked for deletion?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AccountIsBlockedForCreation": {
+                        "@EndUserText.label": "Indicator: account is blocked for creation ?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AccountIsBlockedForPosting": {
+                        "@EndUserText.label": "Indicator: is account blocked for posting?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AccountIsBlockedForPlanning": {
+                        "@EndUserText.label": "Indicator: account blocked for planning ?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PartnerCompany": {
+                        "@EndUserText.label": "Company id of trading partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "FunctionalArea": {
+                        "@EndUserText.label": "Functional area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "Record created on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Name of person who created the object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDateTime": {
+                        "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 0
+                      },
+                      "GLAccountType": {
+                        "@EndUserText.label": "Type of a general ledger account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GLAccountSubtype": {
+                        "@EndUserText.label": "Subtype of a gl account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GLAccountExternal": {
+                        "@EndUserText.label": "G/l account number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "BankReconciliationAccount": {
+                        "@EndUserText.label": "Bank reconciliation account",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "IsProfitLossAccount": {
+                        "@EndUserText.label": "Indicator: account is a balance sheet account?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "ChartOfAccounts": {
+                      "@EndUserText.label": "Chart of accounts",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "GLAccount": {
+                      "@EndUserText.label": "G/l account number",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "IsBalanceSheetAccount": {
+                      "@EndUserText.label": "Is balance sheet account",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GLAccountGroup": {
+                      "@EndUserText.label": "G/l account group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CorporateGroupChartOfAccounts": {
+                      "@EndUserText.label": "Group chart of accts",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CorporateGroupAccount": {
+                      "@EndUserText.label": "Group account number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProfitLossAccountType": {
+                      "@EndUserText.label": "P&l statement account type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "SampleGLAccount": {
+                      "@EndUserText.label": "Number of the sample account",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "AccountIsMarkedForDeletion": {
+                      "@EndUserText.label": "Indicator: account marked for deletion?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AccountIsBlockedForCreation": {
+                      "@EndUserText.label": "Indicator: account is blocked for creation ?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AccountIsBlockedForPosting": {
+                      "@EndUserText.label": "Indicator: is account blocked for posting?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AccountIsBlockedForPlanning": {
+                      "@EndUserText.label": "Indicator: account blocked for planning ?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PartnerCompany": {
+                      "@EndUserText.label": "Company id of trading partner",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Record created on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person who created the object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                      "precision": 15,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "GLAccountType": {
+                      "@EndUserText.label": "Type of a general ledger account",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GLAccountSubtype": {
+                      "@EndUserText.label": "Subtype of a gl account",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GLAccountExternal": {
+                      "@EndUserText.label": "G/l account number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "BankReconciliationAccount": {
+                      "@EndUserText.label": "Bank reconciliation account",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "IsProfitLossAccount": {
+                      "@EndUserText.label": "Indicator: account is a balance sheet account?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_GLACCOUNTINCHARTOFACCOUNTS"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ChartOfAccounts"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsBalanceSheetAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccountGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CorporateGroupChartOfAccounts"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CorporateGroupAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitLossAccountType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SampleGLAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountIsMarkedForDeletion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountIsBlockedForCreation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountIsBlockedForPosting"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountIsBlockedForPlanning"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PartnerCompany"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FunctionalArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDateTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccountType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccountSubtype"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccountExternal"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BankReconciliationAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsProfitLossAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"ChartOfAccounts\",\"d\".\"GLAccount\",\"d\".\"IsBalanceSheetAccount\",\"d\".\"GLAccountGroup\",\"d\".\"CorporateGroupChartOfAccounts\",\"d\".\"CorporateGroupAccount\",\"d\".\"ProfitLossAccountType\",\"d\".\"SampleGLAccount\",\"d\".\"AccountIsMarkedForDeletion\",\"d\".\"AccountIsBlockedForCreation\",\"d\".\"AccountIsBlockedForPosting\",\"d\".\"AccountIsBlockedForPlanning\",\"d\".\"PartnerCompany\",\"d\".\"FunctionalArea\",\"d\".\"CreationDate\",\"d\".\"CreatedByUser\",\"d\".\"LastChangeDateTime\",\"d\".\"GLAccountType\",\"d\".\"GLAccountSubtype\",\"d\".\"GLAccountExternal\",\"d\".\"BankReconciliationAccount\",\"d\".\"IsProfitLossAccount\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_Delta\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_GLACCOUNTINCHARTOFACCOUNTS'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "ChartOfAccounts",
+                    "target": "ChartOfAccounts"
+                  },
+                  {
+                    "source": "GLAccount",
+                    "target": "GLAccount"
+                  },
+                  {
+                    "source": "IsBalanceSheetAccount",
+                    "target": "IsBalanceSheetAccount"
+                  },
+                  {
+                    "source": "GLAccountGroup",
+                    "target": "GLAccountGroup"
+                  },
+                  {
+                    "source": "CorporateGroupChartOfAccounts",
+                    "target": "CorporateGroupChartOfAccounts"
+                  },
+                  {
+                    "source": "CorporateGroupAccount",
+                    "target": "CorporateGroupAccount"
+                  },
+                  {
+                    "source": "ProfitLossAccountType",
+                    "target": "ProfitLossAccountType"
+                  },
+                  {
+                    "source": "SampleGLAccount",
+                    "target": "SampleGLAccount"
+                  },
+                  {
+                    "source": "AccountIsMarkedForDeletion",
+                    "target": "AccountIsMarkedForDeletion"
+                  },
+                  {
+                    "source": "AccountIsBlockedForCreation",
+                    "target": "AccountIsBlockedForCreation"
+                  },
+                  {
+                    "source": "AccountIsBlockedForPosting",
+                    "target": "AccountIsBlockedForPosting"
+                  },
+                  {
+                    "source": "AccountIsBlockedForPlanning",
+                    "target": "AccountIsBlockedForPlanning"
+                  },
+                  {
+                    "source": "PartnerCompany",
+                    "target": "PartnerCompany"
+                  },
+                  {
+                    "source": "FunctionalArea",
+                    "target": "FunctionalArea"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "LastChangeDateTime",
+                    "target": "LastChangeDateTime"
+                  },
+                  {
+                    "source": "GLAccountType",
+                    "target": "GLAccountType"
+                  },
+                  {
+                    "source": "GLAccountSubtype",
+                    "target": "GLAccountSubtype"
+                  },
+                  {
+                    "source": "GLAccountExternal",
+                    "target": "GLAccountExternal"
+                  },
+                  {
+                    "source": "BankReconciliationAccount",
+                    "target": "BankReconciliationAccount"
+                  },
+                  {
+                    "source": "IsProfitLossAccount",
+                    "target": "IsProfitLossAccount"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "ChartOfAccounts": {
+                      "@EndUserText.label": "Chart of accounts",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "GLAccount": {
+                      "@EndUserText.label": "G/l account number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "IsBalanceSheetAccount": {
+                      "@EndUserText.label": "Is balance sheet account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GLAccountGroup": {
+                      "@EndUserText.label": "G/l account group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CorporateGroupChartOfAccounts": {
+                      "@EndUserText.label": "Group chart of accts",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CorporateGroupAccount": {
+                      "@EndUserText.label": "Group account number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProfitLossAccountType": {
+                      "@EndUserText.label": "P&l statement account type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "SampleGLAccount": {
+                      "@EndUserText.label": "Number of the sample account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "AccountIsMarkedForDeletion": {
+                      "@EndUserText.label": "Indicator: account marked for deletion?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AccountIsBlockedForCreation": {
+                      "@EndUserText.label": "Indicator: account is blocked for creation ?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AccountIsBlockedForPosting": {
+                      "@EndUserText.label": "Indicator: is account blocked for posting?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AccountIsBlockedForPlanning": {
+                      "@EndUserText.label": "Indicator: account blocked for planning ?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PartnerCompany": {
+                      "@EndUserText.label": "Company id of trading partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Record created on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person who created the object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 0
+                    },
+                    "GLAccountType": {
+                      "@EndUserText.label": "Type of a general ledger account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GLAccountSubtype": {
+                      "@EndUserText.label": "Subtype of a gl account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GLAccountExternal": {
+                      "@EndUserText.label": "G/l account number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "BankReconciliationAccount": {
+                      "@EndUserText.label": "Bank reconciliation account",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "IsProfitLossAccount": {
+                      "@EndUserText.label": "Indicator: account is a balance sheet account?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_CODDGANF"
+                    }
+                  }
+                },
+                "name": "2LT_I_GLACCOUNTINCHARTOFACCOUNTS_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

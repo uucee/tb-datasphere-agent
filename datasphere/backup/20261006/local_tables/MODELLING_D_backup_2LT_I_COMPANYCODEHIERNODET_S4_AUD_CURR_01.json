@@ -1,0 +1,79 @@
+{
+  "definitions": {
+    "2LT_I_COMPANYCODEHIERNODET_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "CompanyCodeHierarchy": {
+          "@EndUserText.label": "Company code hierarchy",
+          "type": "cds.String",
+          "key": true,
+          "length": 42,
+          "notNull": true
+        },
+        "HierarchyNode": {
+          "@EndUserText.label": "Hierarchy node",
+          "type": "cds.String",
+          "key": true,
+          "length": 50,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "HierarchyNodeText": {
+          "@EndUserText.label": "Hierarchy node description",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_COMPANYCODEHIERNODET_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ZWUCDVPL"
+        }
+      }
+    }
+  }
+}

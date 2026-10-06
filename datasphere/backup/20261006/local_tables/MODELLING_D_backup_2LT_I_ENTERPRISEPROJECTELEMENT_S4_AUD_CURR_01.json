@@ -1,0 +1,936 @@
+{
+  "definitions": {
+    "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ProjectElementUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "ProjectElement": {
+          "@EndUserText.label": "Project element id",
+          "type": "cds.String",
+          "key": false,
+          "length": 24
+        },
+        "ProjectUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "ProjectElementDescription": {
+          "@EndUserText.label": "Description",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "ProcessingStatus": {
+          "@EndUserText.label": "Object processing status",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PlannedStartDate": {
+          "@EndUserText.label": "Planned start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PlannedEndDate": {
+          "@EndUserText.label": "Planned finish date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualStartDate": {
+          "@EndUserText.label": "Actual start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualFinishDate": {
+          "@EndUserText.label": "Actual finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SortingNumber": {
+          "@EndUserText.label": "Sort number",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "EntProjectElementType": {
+          "@EndUserText.label": "Task type",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "IsProjectMilestone": {
+          "@EndUserText.label": "Milestone flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ForecastedEndDate": {
+          "@EndUserText.label": "Forecasted finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "MilestoneApprovalStatus": {
+          "@EndUserText.label": "Milestone approval status",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "IsMainMilestone": {
+          "@EndUserText.label": "Milestone is essential for project planning",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "FunctionalLocation": {
+          "@EndUserText.label": "Functional location",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "WBSElementIsBillingElement": {
+          "@EndUserText.label": "Indicator: billing element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProjectInternalID": {
+          "@EndUserText.label": "Project (internal)",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ParentObjectUUID": {
+          "@EndUserText.label": "Parent entity guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "ProjectElementOrdinalNumber": {
+          "@EndUserText.label": "Sortnumber",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "WBSIsStatisticalWBSElement": {
+          "@EndUserText.label": "Statistical wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code for wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area for wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center to which costs are actually posted",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CostingSheet": {
+          "@EndUserText.label": "Costing sheet",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "FactoryCalendar": {
+          "@EndUserText.label": "Factory calendar key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "InvestmentProfile": {
+          "@EndUserText.label": "Investment measure profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "Location": {
+          "@EndUserText.label": "Location",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ResponsibleCostCenter": {
+          "@EndUserText.label": "Responsible cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ResultAnalysisInternalID": {
+          "@EndUserText.label": "Results analysis key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "LeadingSalesOrder": {
+          "@EndUserText.label": "Sales document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LeadingSalesOrderItem": {
+          "@EndUserText.label": "Sales document item",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDateTime": {
+          "@EndUserText.label": "Timestamp of object creation",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Name of person who changed object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Timestamp of last object change",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "HierarchyNodeUUID": {
+          "@EndUserText.label": "Hierarchy guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "EntProjectSettlementElement": {
+          "@EndUserText.label": "Enterprise project settlement element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EntProjIsSettlmtRuleInherited": {
+          "@EndUserText.label": "Enterprise project settlement rule inherited",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EntProjProfitabilitySegment": {
+          "@EndUserText.label": "Profitability segment number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectElementUUID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectElement"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectUUID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectElementDescription"
+              ]
+            },
+            {
+              "ref": [
+                "ProcessingStatus"
+              ]
+            },
+            {
+              "ref": [
+                "PlannedStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "PlannedEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "ActualStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "ActualFinishDate"
+              ]
+            },
+            {
+              "ref": [
+                "SortingNumber"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjectElementType"
+              ]
+            },
+            {
+              "ref": [
+                "IsProjectMilestone"
+              ]
+            },
+            {
+              "ref": [
+                "ForecastedEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "MilestoneApprovalStatus"
+              ]
+            },
+            {
+              "ref": [
+                "IsMainMilestone"
+              ]
+            },
+            {
+              "ref": [
+                "TaxJurisdiction"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalLocation"
+              ]
+            },
+            {
+              "ref": [
+                "WBSElementIsBillingElement"
+              ]
+            },
+            {
+              "ref": [
+                "WBSElementInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "ParentObjectUUID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectElementOrdinalNumber"
+              ]
+            },
+            {
+              "ref": [
+                "WBSIsStatisticalWBSElement"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingArea"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "CostingSheet"
+              ]
+            },
+            {
+              "ref": [
+                "FactoryCalendar"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalArea"
+              ]
+            },
+            {
+              "ref": [
+                "InvestmentProfile"
+              ]
+            },
+            {
+              "ref": [
+                "Location"
+              ]
+            },
+            {
+              "ref": [
+                "Plant"
+              ]
+            },
+            {
+              "ref": [
+                "ProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ResponsibleCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ResultAnalysisInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "LeadingSalesOrder"
+              ]
+            },
+            {
+              "ref": [
+                "LeadingSalesOrderItem"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "CreationDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangeDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "HierarchyNodeUUID"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjectSettlementElement"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjIsSettlmtRuleInherited"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjProfitabilitySegment"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LWUFGFID"
+        }
+      }
+    },
+    "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ProjectElementUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "ProjectElement": {
+          "@EndUserText.label": "Project element id",
+          "type": "cds.String",
+          "key": false,
+          "length": 24
+        },
+        "ProjectUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "ProjectElementDescription": {
+          "@EndUserText.label": "Description",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "ProcessingStatus": {
+          "@EndUserText.label": "Object processing status",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PlannedStartDate": {
+          "@EndUserText.label": "Planned start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PlannedEndDate": {
+          "@EndUserText.label": "Planned finish date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualStartDate": {
+          "@EndUserText.label": "Actual start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualFinishDate": {
+          "@EndUserText.label": "Actual finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SortingNumber": {
+          "@EndUserText.label": "Sort number",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "EntProjectElementType": {
+          "@EndUserText.label": "Task type",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "IsProjectMilestone": {
+          "@EndUserText.label": "Milestone flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ForecastedEndDate": {
+          "@EndUserText.label": "Forecasted finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "MilestoneApprovalStatus": {
+          "@EndUserText.label": "Milestone approval status",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "IsMainMilestone": {
+          "@EndUserText.label": "Milestone is essential for project planning",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "FunctionalLocation": {
+          "@EndUserText.label": "Functional location",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "WBSElementIsBillingElement": {
+          "@EndUserText.label": "Indicator: billing element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProjectInternalID": {
+          "@EndUserText.label": "Project (internal)",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ParentObjectUUID": {
+          "@EndUserText.label": "Parent entity guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "ProjectElementOrdinalNumber": {
+          "@EndUserText.label": "Sortnumber",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "WBSIsStatisticalWBSElement": {
+          "@EndUserText.label": "Statistical wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code for wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area for wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center to which costs are actually posted",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CostingSheet": {
+          "@EndUserText.label": "Costing sheet",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "FactoryCalendar": {
+          "@EndUserText.label": "Factory calendar key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "InvestmentProfile": {
+          "@EndUserText.label": "Investment measure profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "Location": {
+          "@EndUserText.label": "Location",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ResponsibleCostCenter": {
+          "@EndUserText.label": "Responsible cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ResultAnalysisInternalID": {
+          "@EndUserText.label": "Results analysis key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "LeadingSalesOrder": {
+          "@EndUserText.label": "Sales document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LeadingSalesOrderItem": {
+          "@EndUserText.label": "Sales document item",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDateTime": {
+          "@EndUserText.label": "Timestamp of object creation",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Name of person who changed object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Timestamp of last object change",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "HierarchyNodeUUID": {
+          "@EndUserText.label": "Hierarchy guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "EntProjectSettlementElement": {
+          "@EndUserText.label": "Enterprise project settlement element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EntProjIsSettlmtRuleInherited": {
+          "@EndUserText.label": "Enterprise project settlement rule inherited",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EntProjProfitabilitySegment": {
+          "@EndUserText.label": "Profitability segment number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_ENTERPRISEPROJECTELEMENT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LWUFGFID"
+        }
+      }
+    }
+  }
+}

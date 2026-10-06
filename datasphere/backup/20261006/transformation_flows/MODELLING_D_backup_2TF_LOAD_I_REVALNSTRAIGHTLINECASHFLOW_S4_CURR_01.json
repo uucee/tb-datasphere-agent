@@ -1,0 +1,2289 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "InternalRealEstateNumber": {
+                        "@EndUserText.label": "Internal key of real estate object",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 13
+                      },
+                      "REValuationRuleUUID": {
+                        "@EndUserText.label": "Guid (raw16) for valuation rule",
+                        "type": "cds.Binary",
+                        "key": true,
+                        "notNull": true,
+                        "length": 16
+                      },
+                      "REValuationProcessUUID": {
+                        "@EndUserText.label": "Guid (raw16) for valuation process",
+                        "type": "cds.Binary",
+                        "key": true,
+                        "notNull": true,
+                        "length": 16
+                      },
+                      "REValuationCashFlowRecordUUID": {
+                        "@EndUserText.label": "Guid (raw16) for valuation cash flow",
+                        "type": "cds.Binary",
+                        "key": true,
+                        "notNull": true,
+                        "length": 16
+                      },
+                      "RETermNumber": {
+                        "@EndUserText.label": "Term number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REValuationRule": {
+                        "@EndUserText.label": "Valuation rule",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RECashFlowType": {
+                        "@EndUserText.label": "Cash flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "CashFlowItemOrigin": {
+                        "@EndUserText.label": "Cash flow origin",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REStatusObject": {
+                        "@EndUserText.label": "Object number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REStatusObjectAsset": {
+                        "@EndUserText.label": "Object number - asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REConditionUUID": {
+                        "@EndUserText.label": "Guid (raw16) for conditions",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "ValidityStartDate": {
+                        "@EndUserText.label": "Date from when condition is valid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CalculationPeriodStartDate": {
+                        "@EndUserText.label": "Start of calculation period",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CalculationPeriodEndDate": {
+                        "@EndUserText.label": "End of calculation period",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "NumberOfDays": {
+                        "@EndUserText.label": "Number of days",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "REPositionDueDate": {
+                        "@EndUserText.label": "Due date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PaymentDueDate": {
+                        "@EndUserText.label": "Due date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CalculationDate": {
+                        "@EndUserText.label": "Calculation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REConditionCurrency": {
+                        "@EndUserText.label": "Currency of condition item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "REInterestRate": {
+                        "@EndUserText.label": "Percentage rate for condition items",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 10
+                      },
+                      "REValuationIsInitialCost": {
+                        "@EndUserText.label": "Initial?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationIsLiabilityDiff": {
+                        "@EndUserText.label": "Liability difference?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsDeferralAdjustment": {
+                        "@EndUserText.label": "Accrual/deferral adjustment?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsAssetRetirementObligation": {
+                        "@EndUserText.label": "Asset retirement obligation?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValnIsCompleteRetirement": {
+                        "@EndUserText.label": "Complete retirement?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REIsRetroActiveChange": {
+                        "@EndUserText.label": "Retroactive change?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationIsReduction": {
+                        "@EndUserText.label": "Reduction?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REDocumentReferenceUUID": {
+                        "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REDocumentReference2UUID": {
+                        "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REDocumentReference3UUID": {
+                        "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REDocumentReference4UUID": {
+                        "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Entered by",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "First entered on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreationTime": {
+                        "@EndUserText.label": "Time of creation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "RESourceOfCreation": {
+                        "@EndUserText.label": "Source of initial entry",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Employee id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Last edited on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangeTime": {
+                        "@EndUserText.label": "Last edited at",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "RESourceOfChange": {
+                        "@EndUserText.label": "Editing source",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "IsReversed": {
+                        "@EndUserText.label": "Reversed?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SplitCashFlowRecordUUID": {
+                        "@EndUserText.label": "Guid (raw16) of cash flow record that was split",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "RecordIsBasisForSplit": {
+                        "@EndUserText.label": "Cash flow record was basis for split",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationEngine": {
+                        "@EndUserText.label": "Evaluation core",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "RECashFlowPositionAmount": {
+                        "@EndUserText.label": "RECashFlowPositionAmount",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "RETaxType": {
+                        "@EndUserText.label": "Tax type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RETaxGroup": {
+                        "@EndUserText.label": "Tax group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "TaxJurisdiction": {
+                        "@EndUserText.label": "Tax jurisdiction",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "REIsConditionGrossAmount": {
+                        "@EndUserText.label": "Condition amount is gross amount",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "TaxCountry": {
+                        "@EndUserText.label": "Alternative tax reporting country/region",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "REFlowType": {
+                        "@EndUserText.label": "Flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REOriginalFlowType": {
+                        "@EndUserText.label": "Original flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RERelshpOriglToFlowType": {
+                        "@EndUserText.label": "Type of relationship between flow type and original flow typ",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "CashFlowPostingStatus": {
+                        "@EndUserText.label": "Indicates status of flow",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsToBeArchived": {
+                        "@EndUserText.label": "Deletion indicator for archiving",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REOriglDueDate": {
+                        "@EndUserText.label": "Original due date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REConditionType": {
+                        "@EndUserText.label": "Condition type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PostingDate": {
+                        "@EndUserText.label": "Posting date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "DocumentDate": {
+                        "@EndUserText.label": "Document date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ExchangeRateDate": {
+                        "@EndUserText.label": "Date for translation of contract currency to local currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REReversalForUUID": {
+                        "@EndUserText.label": "Guid (raw16) for 'reversal for' references",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REReversalByUUID": {
+                        "@EndUserText.label": "Guid (raw16) for 'reversed by' references",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REFollowUpPostingUUID": {
+                        "@EndUserText.label": "Guid (raw16) for 'follow-up posting for' references",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REBookedFlowType": {
+                        "@EndUserText.label": "Booked flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RERelshpBookedToFlowType": {
+                        "@EndUserText.label": "Type of relationship between flow type and booked flow type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "RETaxCalcDate": {
+                        "@EndUserText.label": "Date of calculation of sales/purchase tax",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REModifiedDueDate": {
+                        "@EndUserText.label": "Modified due date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RECalcDueDate": {
+                        "@EndUserText.label": "Calculated due date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RECurrencyTranslationRule": {
+                        "@EndUserText.label": "Currency translation rule",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "REIsPostInConditionCurrency": {
+                        "@EndUserText.label": "Post in condition currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REPlndTranslationDate": {
+                        "@EndUserText.label": "Planned translation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REActlTranslationDate": {
+                        "@EndUserText.label": "Actual translation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REOriglActlTranslationDate": {
+                        "@EndUserText.label": "Actual translation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REIsTranslationDateFrmCashFlow": {
+                        "@EndUserText.label": "Use translation date from cash flow",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "TaxCalculationProcedure": {
+                        "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "REValuationRuleUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation rule",
+                      "type": "cds.Binary",
+                      "length": 16,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "REValuationProcessUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation process",
+                      "type": "cds.Binary",
+                      "length": 16,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "REValuationCashFlowRecordUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation cash flow",
+                      "type": "cds.Binary",
+                      "length": 16,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermNumber": {
+                      "@EndUserText.label": "Term number",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REValuationRule": {
+                      "@EndUserText.label": "Valuation rule",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RECashFlowType": {
+                      "@EndUserText.label": "Cash flow type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CashFlowItemOrigin": {
+                      "@EndUserText.label": "Cash flow origin",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REStatusObjectAsset": {
+                      "@EndUserText.label": "Object number - asset",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REConditionUUID": {
+                      "@EndUserText.label": "Guid (raw16) for conditions",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Date from when condition is valid",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CalculationPeriodStartDate": {
+                      "@EndUserText.label": "Start of calculation period",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CalculationPeriodEndDate": {
+                      "@EndUserText.label": "End of calculation period",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "NumberOfDays": {
+                      "@EndUserText.label": "Number of days",
+                      "type": "cds.Integer"
+                    },
+                    "REPositionDueDate": {
+                      "@EndUserText.label": "Due date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PaymentDueDate": {
+                      "@EndUserText.label": "Due date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CalculationDate": {
+                      "@EndUserText.label": "Calculation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REConditionCurrency": {
+                      "@EndUserText.label": "Currency of condition item",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REInterestRate": {
+                      "@EndUserText.label": "Percentage rate for condition items",
+                      "precision": 15,
+                      "scale": 10,
+                      "type": "cds.Decimal"
+                    },
+                    "REValuationIsInitialCost": {
+                      "@EndUserText.label": "Initial?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationIsLiabilityDiff": {
+                      "@EndUserText.label": "Liability difference?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsDeferralAdjustment": {
+                      "@EndUserText.label": "Accrual/deferral adjustment?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsAssetRetirementObligation": {
+                      "@EndUserText.label": "Asset retirement obligation?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValnIsCompleteRetirement": {
+                      "@EndUserText.label": "Complete retirement?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REIsRetroActiveChange": {
+                      "@EndUserText.label": "Retroactive change?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationIsReduction": {
+                      "@EndUserText.label": "Reduction?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REDocumentReferenceUUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "REDocumentReference2UUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "REDocumentReference3UUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "REDocumentReference4UUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Entered by",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "First entered on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfCreation": {
+                      "@EndUserText.label": "Source of initial entry",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Employee id",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Last edited on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Last edited at",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfChange": {
+                      "@EndUserText.label": "Editing source",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "IsReversed": {
+                      "@EndUserText.label": "Reversed?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SplitCashFlowRecordUUID": {
+                      "@EndUserText.label": "Guid (raw16) of cash flow record that was split",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "RecordIsBasisForSplit": {
+                      "@EndUserText.label": "Cash flow record was basis for split",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationEngine": {
+                      "@EndUserText.label": "Evaluation core",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "RECashFlowPositionAmount": {
+                      "@EndUserText.label": "RECashFlowPositionAmount",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "RETaxType": {
+                      "@EndUserText.label": "Tax type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RETaxGroup": {
+                      "@EndUserText.label": "Tax group",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "REIsConditionGrossAmount": {
+                      "@EndUserText.label": "Condition amount is gross amount",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "TaxCountry": {
+                      "@EndUserText.label": "Alternative tax reporting country/region",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "REFlowType": {
+                      "@EndUserText.label": "Flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REOriginalFlowType": {
+                      "@EndUserText.label": "Original flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RERelshpOriglToFlowType": {
+                      "@EndUserText.label": "Type of relationship between flow type and original flow typ",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "CashFlowPostingStatus": {
+                      "@EndUserText.label": "Indicates status of flow",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsToBeArchived": {
+                      "@EndUserText.label": "Deletion indicator for archiving",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REOriglDueDate": {
+                      "@EndUserText.label": "Original due date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REConditionType": {
+                      "@EndUserText.label": "Condition type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PostingDate": {
+                      "@EndUserText.label": "Posting date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "DocumentDate": {
+                      "@EndUserText.label": "Document date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ExchangeRateDate": {
+                      "@EndUserText.label": "Date for translation of contract currency to local currency",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REReversalForUUID": {
+                      "@EndUserText.label": "Guid (raw16) for 'reversal for' references",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "REReversalByUUID": {
+                      "@EndUserText.label": "Guid (raw16) for 'reversed by' references",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "REFollowUpPostingUUID": {
+                      "@EndUserText.label": "Guid (raw16) for 'follow-up posting for' references",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "REBookedFlowType": {
+                      "@EndUserText.label": "Booked flow type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RERelshpBookedToFlowType": {
+                      "@EndUserText.label": "Type of relationship between flow type and booked flow type",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "RETaxCalcDate": {
+                      "@EndUserText.label": "Date of calculation of sales/purchase tax",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REModifiedDueDate": {
+                      "@EndUserText.label": "Modified due date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECalcDueDate": {
+                      "@EndUserText.label": "Calculated due date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECurrencyTranslationRule": {
+                      "@EndUserText.label": "Currency translation rule",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "REIsPostInConditionCurrency": {
+                      "@EndUserText.label": "Post in condition currency",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REPlndTranslationDate": {
+                      "@EndUserText.label": "Planned translation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REActlTranslationDate": {
+                      "@EndUserText.label": "Actual translation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REOriglActlTranslationDate": {
+                      "@EndUserText.label": "Actual translation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REIsTranslationDateFrmCashFlow": {
+                      "@EndUserText.label": "Use translation date from cash flow",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "TaxCalculationProcedure": {
+                      "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+                      "type": "cds.String",
+                      "length": 6
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_REVALNSTRAIGHTLINECASHFLOW"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternalRealEstateNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationRuleUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationProcessUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationCashFlowRecordUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETermNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CashFlowItemOrigin"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObjectAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CalculationPeriodStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CalculationPeriodEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NumberOfDays"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REPositionDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PaymentDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CalculationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REInterestRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationIsInitialCost"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationIsLiabilityDiff"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsDeferralAdjustment"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsAssetRetirementObligation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValnIsCompleteRetirement"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsRetroActiveChange"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationIsReduction"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDocumentReferenceUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDocumentReference2UUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDocumentReference3UUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDocumentReference4UUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESourceOfCreation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESourceOfChange"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsReversed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SplitCashFlowRecordUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RecordIsBasisForSplit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationEngine"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowPositionAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETaxType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETaxGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxJurisdiction"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsConditionGrossAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxCountry"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFlowType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REOriginalFlowType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RERelshpOriglToFlowType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CashFlowPostingStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsToBeArchived"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REOriglDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PostingDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DocumentDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchangeRateDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REReversalForUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REReversalByUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFollowUpPostingUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REBookedFlowType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RERelshpBookedToFlowType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETaxCalcDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REModifiedDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECalcDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECurrencyTranslationRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsPostInConditionCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REPlndTranslationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REActlTranslationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REOriglActlTranslationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsTranslationDateFrmCashFlow"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxCalculationProcedure"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"InternalRealEstateNumber\",\"d\".\"REValuationRuleUUID\",\"d\".\"REValuationProcessUUID\",\"d\".\"REValuationCashFlowRecordUUID\",\"d\".\"RETermNumber\",\"d\".\"REValuationRule\",\"d\".\"RECashFlowType\",\"d\".\"CashFlowItemOrigin\",\"d\".\"REStatusObject\",\"d\".\"REStatusObjectAsset\",\"d\".\"REConditionUUID\",\"d\".\"ValidityStartDate\",\"d\".\"CalculationPeriodStartDate\",\"d\".\"CalculationPeriodEndDate\",\"d\".\"NumberOfDays\",\"d\".\"REPositionDueDate\",\"d\".\"PaymentDueDate\",\"d\".\"CalculationDate\",\"d\".\"REConditionCurrency\",\"d\".\"REInterestRate\",\"d\".\"REValuationIsInitialCost\",\"d\".\"REValuationIsLiabilityDiff\",\"d\".\"REIsDeferralAdjustment\",\"d\".\"REIsAssetRetirementObligation\",\"d\".\"REValnIsCompleteRetirement\",\"d\".\"REIsRetroActiveChange\",\"d\".\"REValuationIsReduction\",\"d\".\"REDocumentReferenceUUID\",\"d\".\"REDocumentReference2UUID\",\"d\".\"REDocumentReference3UUID\",\"d\".\"REDocumentReference4UUID\",\"d\".\"CreatedByUser\",\"d\".\"CreationDate\",\"d\".\"CreationTime\",\"d\".\"RESourceOfCreation\",\"d\".\"LastChangedByUser\",\"d\".\"LastChangeDate\",\"d\".\"LastChangeTime\",\"d\".\"RESourceOfChange\",\"d\".\"IsReversed\",\"d\".\"SplitCashFlowRecordUUID\",\"d\".\"RecordIsBasisForSplit\",\"d\".\"REValuationEngine\",\"d\".\"RECashFlowPositionAmount\",\"d\".\"RETaxType\",\"d\".\"RETaxGroup\",\"d\".\"TaxJurisdiction\",\"d\".\"REIsConditionGrossAmount\",\"d\".\"TaxCountry\",\"d\".\"REFlowType\",\"d\".\"REOriginalFlowType\",\"d\".\"RERelshpOriglToFlowType\",\"d\".\"CashFlowPostingStatus\",\"d\".\"IsToBeArchived\",\"d\".\"REOriglDueDate\",\"d\".\"REConditionType\",\"d\".\"PostingDate\",\"d\".\"DocumentDate\",\"d\".\"ExchangeRateDate\",\"d\".\"REReversalForUUID\",\"d\".\"REReversalByUUID\",\"d\".\"REFollowUpPostingUUID\",\"d\".\"REBookedFlowType\",\"d\".\"RERelshpBookedToFlowType\",\"d\".\"RETaxCalcDate\",\"d\".\"REModifiedDueDate\",\"d\".\"RECalcDueDate\",\"d\".\"RECurrencyTranslationRule\",\"d\".\"REIsPostInConditionCurrency\",\"d\".\"REPlndTranslationDate\",\"d\".\"REActlTranslationDate\",\"d\".\"REOriglActlTranslationDate\",\"d\".\"REIsTranslationDateFrmCashFlow\",\"d\".\"TaxCalculationProcedure\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_CURR\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_REVALNSTRAIGHTLINECASHFLOW'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "InternalRealEstateNumber",
+                    "target": "InternalRealEstateNumber"
+                  },
+                  {
+                    "source": "REValuationRuleUUID",
+                    "target": "REValuationRuleUUID"
+                  },
+                  {
+                    "source": "REValuationProcessUUID",
+                    "target": "REValuationProcessUUID"
+                  },
+                  {
+                    "source": "REValuationCashFlowRecordUUID",
+                    "target": "REValuationCashFlowRecordUUID"
+                  },
+                  {
+                    "source": "RETermNumber",
+                    "target": "RETermNumber"
+                  },
+                  {
+                    "source": "REValuationRule",
+                    "target": "REValuationRule"
+                  },
+                  {
+                    "source": "RECashFlowType",
+                    "target": "RECashFlowType"
+                  },
+                  {
+                    "source": "CashFlowItemOrigin",
+                    "target": "CashFlowItemOrigin"
+                  },
+                  {
+                    "source": "REStatusObject",
+                    "target": "REStatusObject"
+                  },
+                  {
+                    "source": "REStatusObjectAsset",
+                    "target": "REStatusObjectAsset"
+                  },
+                  {
+                    "source": "REConditionUUID",
+                    "target": "REConditionUUID"
+                  },
+                  {
+                    "source": "ValidityStartDate",
+                    "target": "ValidityStartDate"
+                  },
+                  {
+                    "source": "CalculationPeriodStartDate",
+                    "target": "CalculationPeriodStartDate"
+                  },
+                  {
+                    "source": "CalculationPeriodEndDate",
+                    "target": "CalculationPeriodEndDate"
+                  },
+                  {
+                    "source": "NumberOfDays",
+                    "target": "NumberOfDays"
+                  },
+                  {
+                    "source": "REPositionDueDate",
+                    "target": "REPositionDueDate"
+                  },
+                  {
+                    "source": "PaymentDueDate",
+                    "target": "PaymentDueDate"
+                  },
+                  {
+                    "source": "CalculationDate",
+                    "target": "CalculationDate"
+                  },
+                  {
+                    "source": "REConditionCurrency",
+                    "target": "REConditionCurrency"
+                  },
+                  {
+                    "source": "REInterestRate",
+                    "target": "REInterestRate"
+                  },
+                  {
+                    "source": "REValuationIsInitialCost",
+                    "target": "REValuationIsInitialCost"
+                  },
+                  {
+                    "source": "REValuationIsLiabilityDiff",
+                    "target": "REValuationIsLiabilityDiff"
+                  },
+                  {
+                    "source": "REIsDeferralAdjustment",
+                    "target": "REIsDeferralAdjustment"
+                  },
+                  {
+                    "source": "REIsAssetRetirementObligation",
+                    "target": "REIsAssetRetirementObligation"
+                  },
+                  {
+                    "source": "REValnIsCompleteRetirement",
+                    "target": "REValnIsCompleteRetirement"
+                  },
+                  {
+                    "source": "REIsRetroActiveChange",
+                    "target": "REIsRetroActiveChange"
+                  },
+                  {
+                    "source": "REValuationIsReduction",
+                    "target": "REValuationIsReduction"
+                  },
+                  {
+                    "source": "REDocumentReferenceUUID",
+                    "target": "REDocumentReferenceUUID"
+                  },
+                  {
+                    "source": "REDocumentReference2UUID",
+                    "target": "REDocumentReference2UUID"
+                  },
+                  {
+                    "source": "REDocumentReference3UUID",
+                    "target": "REDocumentReference3UUID"
+                  },
+                  {
+                    "source": "REDocumentReference4UUID",
+                    "target": "REDocumentReference4UUID"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreationTime",
+                    "target": "CreationTime"
+                  },
+                  {
+                    "source": "RESourceOfCreation",
+                    "target": "RESourceOfCreation"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "LastChangeTime",
+                    "target": "LastChangeTime"
+                  },
+                  {
+                    "source": "RESourceOfChange",
+                    "target": "RESourceOfChange"
+                  },
+                  {
+                    "source": "IsReversed",
+                    "target": "IsReversed"
+                  },
+                  {
+                    "source": "SplitCashFlowRecordUUID",
+                    "target": "SplitCashFlowRecordUUID"
+                  },
+                  {
+                    "source": "RecordIsBasisForSplit",
+                    "target": "RecordIsBasisForSplit"
+                  },
+                  {
+                    "source": "REValuationEngine",
+                    "target": "REValuationEngine"
+                  },
+                  {
+                    "source": "RECashFlowPositionAmount",
+                    "target": "RECashFlowPositionAmount"
+                  },
+                  {
+                    "source": "RETaxType",
+                    "target": "RETaxType"
+                  },
+                  {
+                    "source": "RETaxGroup",
+                    "target": "RETaxGroup"
+                  },
+                  {
+                    "source": "TaxJurisdiction",
+                    "target": "TaxJurisdiction"
+                  },
+                  {
+                    "source": "REIsConditionGrossAmount",
+                    "target": "REIsConditionGrossAmount"
+                  },
+                  {
+                    "source": "TaxCountry",
+                    "target": "TaxCountry"
+                  },
+                  {
+                    "source": "REFlowType",
+                    "target": "REFlowType"
+                  },
+                  {
+                    "source": "REOriginalFlowType",
+                    "target": "REOriginalFlowType"
+                  },
+                  {
+                    "source": "RERelshpOriglToFlowType",
+                    "target": "RERelshpOriglToFlowType"
+                  },
+                  {
+                    "source": "CashFlowPostingStatus",
+                    "target": "CashFlowPostingStatus"
+                  },
+                  {
+                    "source": "IsToBeArchived",
+                    "target": "IsToBeArchived"
+                  },
+                  {
+                    "source": "REOriglDueDate",
+                    "target": "REOriglDueDate"
+                  },
+                  {
+                    "source": "REConditionType",
+                    "target": "REConditionType"
+                  },
+                  {
+                    "source": "PostingDate",
+                    "target": "PostingDate"
+                  },
+                  {
+                    "source": "DocumentDate",
+                    "target": "DocumentDate"
+                  },
+                  {
+                    "source": "ExchangeRateDate",
+                    "target": "ExchangeRateDate"
+                  },
+                  {
+                    "source": "REReversalForUUID",
+                    "target": "REReversalForUUID"
+                  },
+                  {
+                    "source": "REReversalByUUID",
+                    "target": "REReversalByUUID"
+                  },
+                  {
+                    "source": "REFollowUpPostingUUID",
+                    "target": "REFollowUpPostingUUID"
+                  },
+                  {
+                    "source": "REBookedFlowType",
+                    "target": "REBookedFlowType"
+                  },
+                  {
+                    "source": "RERelshpBookedToFlowType",
+                    "target": "RERelshpBookedToFlowType"
+                  },
+                  {
+                    "source": "RETaxCalcDate",
+                    "target": "RETaxCalcDate"
+                  },
+                  {
+                    "source": "REModifiedDueDate",
+                    "target": "REModifiedDueDate"
+                  },
+                  {
+                    "source": "RECalcDueDate",
+                    "target": "RECalcDueDate"
+                  },
+                  {
+                    "source": "RECurrencyTranslationRule",
+                    "target": "RECurrencyTranslationRule"
+                  },
+                  {
+                    "source": "REIsPostInConditionCurrency",
+                    "target": "REIsPostInConditionCurrency"
+                  },
+                  {
+                    "source": "REPlndTranslationDate",
+                    "target": "REPlndTranslationDate"
+                  },
+                  {
+                    "source": "REActlTranslationDate",
+                    "target": "REActlTranslationDate"
+                  },
+                  {
+                    "source": "REOriglActlTranslationDate",
+                    "target": "REOriglActlTranslationDate"
+                  },
+                  {
+                    "source": "REIsTranslationDateFrmCashFlow",
+                    "target": "REIsTranslationDateFrmCashFlow"
+                  },
+                  {
+                    "source": "TaxCalculationProcedure",
+                    "target": "TaxCalculationProcedure"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 13,
+                      "notNull": true
+                    },
+                    "REValuationRuleUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation rule",
+                      "type": "cds.Binary",
+                      "key": true,
+                      "length": 16,
+                      "notNull": true
+                    },
+                    "REValuationProcessUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation process",
+                      "type": "cds.Binary",
+                      "key": true,
+                      "length": 16,
+                      "notNull": true
+                    },
+                    "REValuationCashFlowRecordUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation cash flow",
+                      "type": "cds.Binary",
+                      "key": true,
+                      "length": 16,
+                      "notNull": true
+                    },
+                    "RETermNumber": {
+                      "@EndUserText.label": "Term number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REValuationRule": {
+                      "@EndUserText.label": "Valuation rule",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "RECashFlowType": {
+                      "@EndUserText.label": "Cash flow type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "CashFlowItemOrigin": {
+                      "@EndUserText.label": "Cash flow origin",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "REStatusObjectAsset": {
+                      "@EndUserText.label": "Object number - asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "REConditionUUID": {
+                      "@EndUserText.label": "Guid (raw16) for conditions",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Date from when condition is valid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CalculationPeriodStartDate": {
+                      "@EndUserText.label": "Start of calculation period",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CalculationPeriodEndDate": {
+                      "@EndUserText.label": "End of calculation period",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "NumberOfDays": {
+                      "@EndUserText.label": "Number of days",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "REPositionDueDate": {
+                      "@EndUserText.label": "Due date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PaymentDueDate": {
+                      "@EndUserText.label": "Due date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CalculationDate": {
+                      "@EndUserText.label": "Calculation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REConditionCurrency": {
+                      "@EndUserText.label": "Currency of condition item",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "REInterestRate": {
+                      "@EndUserText.label": "Percentage rate for condition items",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 10
+                    },
+                    "REValuationIsInitialCost": {
+                      "@EndUserText.label": "Initial?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REValuationIsLiabilityDiff": {
+                      "@EndUserText.label": "Liability difference?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REIsDeferralAdjustment": {
+                      "@EndUserText.label": "Accrual/deferral adjustment?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REIsAssetRetirementObligation": {
+                      "@EndUserText.label": "Asset retirement obligation?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REValnIsCompleteRetirement": {
+                      "@EndUserText.label": "Complete retirement?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REIsRetroActiveChange": {
+                      "@EndUserText.label": "Retroactive change?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REValuationIsReduction": {
+                      "@EndUserText.label": "Reduction?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REDocumentReferenceUUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "REDocumentReference2UUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "REDocumentReference3UUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "REDocumentReference4UUID": {
+                      "@EndUserText.label": "Guid (raw16) for document references in cash flow",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Entered by",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "First entered on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "RESourceOfCreation": {
+                      "@EndUserText.label": "Source of initial entry",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Employee id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Last edited on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Last edited at",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "RESourceOfChange": {
+                      "@EndUserText.label": "Editing source",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "IsReversed": {
+                      "@EndUserText.label": "Reversed?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SplitCashFlowRecordUUID": {
+                      "@EndUserText.label": "Guid (raw16) of cash flow record that was split",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "RecordIsBasisForSplit": {
+                      "@EndUserText.label": "Cash flow record was basis for split",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REValuationEngine": {
+                      "@EndUserText.label": "Evaluation core",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "RECashFlowPositionAmount": {
+                      "@EndUserText.label": "RECashFlowPositionAmount",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "RETaxType": {
+                      "@EndUserText.label": "Tax type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RETaxGroup": {
+                      "@EndUserText.label": "Tax group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "REIsConditionGrossAmount": {
+                      "@EndUserText.label": "Condition amount is gross amount",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "TaxCountry": {
+                      "@EndUserText.label": "Alternative tax reporting country/region",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "REFlowType": {
+                      "@EndUserText.label": "Flow type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REOriginalFlowType": {
+                      "@EndUserText.label": "Original flow type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RERelshpOriglToFlowType": {
+                      "@EndUserText.label": "Type of relationship between flow type and original flow typ",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "CashFlowPostingStatus": {
+                      "@EndUserText.label": "Indicates status of flow",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsToBeArchived": {
+                      "@EndUserText.label": "Deletion indicator for archiving",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REOriglDueDate": {
+                      "@EndUserText.label": "Original due date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REConditionType": {
+                      "@EndUserText.label": "Condition type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PostingDate": {
+                      "@EndUserText.label": "Posting date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "DocumentDate": {
+                      "@EndUserText.label": "Document date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ExchangeRateDate": {
+                      "@EndUserText.label": "Date for translation of contract currency to local currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REReversalForUUID": {
+                      "@EndUserText.label": "Guid (raw16) for 'reversal for' references",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "REReversalByUUID": {
+                      "@EndUserText.label": "Guid (raw16) for 'reversed by' references",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "REFollowUpPostingUUID": {
+                      "@EndUserText.label": "Guid (raw16) for 'follow-up posting for' references",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "REBookedFlowType": {
+                      "@EndUserText.label": "Booked flow type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RERelshpBookedToFlowType": {
+                      "@EndUserText.label": "Type of relationship between flow type and booked flow type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "RETaxCalcDate": {
+                      "@EndUserText.label": "Date of calculation of sales/purchase tax",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REModifiedDueDate": {
+                      "@EndUserText.label": "Modified due date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "RECalcDueDate": {
+                      "@EndUserText.label": "Calculated due date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "RECurrencyTranslationRule": {
+                      "@EndUserText.label": "Currency translation rule",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "REIsPostInConditionCurrency": {
+                      "@EndUserText.label": "Post in condition currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REPlndTranslationDate": {
+                      "@EndUserText.label": "Planned translation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REActlTranslationDate": {
+                      "@EndUserText.label": "Actual translation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REOriglActlTranslationDate": {
+                      "@EndUserText.label": "Actual translation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REIsTranslationDateFrmCashFlow": {
+                      "@EndUserText.label": "Use translation date from cash flow",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "TaxCalculationProcedure": {
+                      "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_ZCDXIEOA"
+                    }
+                  }
+                },
+                "name": "2LT_I_REVALNSTRAIGHTLINECASHFLOW_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

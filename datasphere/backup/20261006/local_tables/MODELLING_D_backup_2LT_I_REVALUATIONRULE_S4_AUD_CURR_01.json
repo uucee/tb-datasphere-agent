@@ -1,0 +1,154 @@
+{
+  "definitions": {
+    "2LT_I_REVALUATIONRULE_S4_AUD_CURR_01": {
+      "kind": "entity",
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.Timestamp"
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "length": 20
+        },
+        "REValuationRule": {
+          "@EndUserText.label": "Valuation rule",
+          "type": "cds.String",
+          "length": 10,
+          "key": true,
+          "notNull": true
+        },
+        "AccountingPrinciple": {
+          "@EndUserText.label": "Accounting principle",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REValuationType": {
+          "@EndUserText.label": "Valuation type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsValuationPerformAutomatic": {
+          "@EndUserText.label": "Perform automatic valuation?",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsValuationCompleteAutomatic": {
+          "@EndUserText.label": "Automatically set to complete?",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REValuationConditionGroup": {
+          "@EndUserText.label": "Condition valuation group",
+          "type": "cds.String",
+          "length": 10
+        },
+        "REValuationLinearType": {
+          "@EndUserText.label": "Linearization type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REFlowTypeLinear": {
+          "@EndUserText.label": "Linearization flow type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REFlowTypeLinearNegative": {
+          "@EndUserText.label": "Linearization flow type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REFlowTypeInterest": {
+          "@EndUserText.label": "Flow type interest",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REFlowTypeClearing": {
+          "@EndUserText.label": "Clearing flow type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REFlowTypeRepayment": {
+          "@EndUserText.label": "Flow type repayment",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REFlowTypeAsset": {
+          "@EndUserText.label": "Assets flow type",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REFlowTypeDepreciation": {
+          "@EndUserText.label": "Flow type depreciation",
+          "type": "cds.String",
+          "length": 4
+        },
+        "REValuationClassification": {
+          "@EndUserText.label": "Valuation classification",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsCndnAndRmngShareLinearize": {
+          "@EndUserText.label": "Linearize conditions and remaining shares?",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REValuationIntegrationType": {
+          "@EndUserText.label": "Integration type",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsExclForNewAssgmt": {
+          "@EndUserText.label": "No new creation or assignment",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsValuationRuleInformational": {
+          "@EndUserText.label": "Informational valuation rule",
+          "type": "cds.String",
+          "length": 1
+        },
+        "InterestCalculationMethod": {
+          "@EndUserText.label": "Interest calculation method",
+          "type": "cds.String",
+          "length": 1
+        },
+        "BATCH_TYPE": {
+          "@EndUserText.label": "BATCH_TYPE",
+          "type": "cds.String",
+          "length": 20
+        },
+        "LOAD_FLOW": {
+          "@EndUserText.label": "LOAD_FLOW",
+          "type": "cds.String",
+          "length": 120
+        },
+        "OBJECT_NAME": {
+          "@EndUserText.label": "OBJECT_NAME",
+          "type": "cds.String",
+          "length": 120
+        }
+      },
+      "@EndUserText.label": "2LT_I_REVALUATIONRULE_S4_AUD_CURR_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

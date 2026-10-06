@@ -1,0 +1,125 @@
+{
+  "definitions": {
+    "2LT_I_RECONTRACTOBJECTASSGMT_S4_AUD_CURR_01": {
+      "kind": "entity",
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.Timestamp"
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "length": 20
+        },
+        "REStatusObjectSource": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "length": 22,
+          "key": true,
+          "notNull": true
+        },
+        "REObjectAssignmentType": {
+          "@EndUserText.label": "Type of object assignment",
+          "type": "cds.String",
+          "length": 2,
+          "key": true,
+          "notNull": true
+        },
+        "REStatusObjectTarget": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "length": 22,
+          "key": true,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "length": 8,
+          "key": true,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "length": 8
+        },
+        "REOnlyInfoAssgmt": {
+          "@EndUserText.label": "Informational assignment",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REStatusObjectSourceIsArchived": {
+          "@EndUserText.label": "Source object was archived",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REGenerationType": {
+          "@EndUserText.label": "Generation type functional location",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsMainAsset": {
+          "@EndUserText.label": "Asset is leading asset",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REAssignmentHasMultiple": {
+          "@EndUserText.label": "Generated entry for multiple assignment",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REObjectPossessionStartDate": {
+          "@EndUserText.label": "Date from which the object is made available for use",
+          "type": "cds.String",
+          "length": 8
+        },
+        "REObjectPossessionEndDate": {
+          "@EndUserText.label": "Date up to which the object is used",
+          "type": "cds.String",
+          "length": 8
+        },
+        "REIsLeadingObject": {
+          "@EndUserText.label": "Leading object indicator",
+          "type": "cds.String",
+          "length": 1
+        },
+        "BATCH_TYPE": {
+          "@EndUserText.label": "BATCH_TYPE",
+          "type": "cds.String",
+          "length": 20
+        },
+        "LOAD_FLOW": {
+          "@EndUserText.label": "LOAD_FLOW",
+          "type": "cds.String",
+          "length": 120
+        },
+        "OBJECT_NAME": {
+          "@EndUserText.label": "OBJECT_NAME",
+          "type": "cds.String",
+          "length": 120
+        }
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "@EndUserText.label": "2LT_I_RECONTRACTOBJECTASSGMT_S4_AUD_CURR_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

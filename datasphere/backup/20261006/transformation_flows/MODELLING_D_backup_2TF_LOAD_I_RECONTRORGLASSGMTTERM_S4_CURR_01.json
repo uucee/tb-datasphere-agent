@@ -1,0 +1,909 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_RECONTRORGLASSGMTTERM_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_RECONTRORGLASSGMTTERM_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR_D": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D"
+                  },
+                  "1_INBOUND_S4_CURR_D.1LT_I_RECONTRORGLASSGMTTERM_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_RECONTRORGLASSGMTTERM_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "InternalRealEstateNumber": {
+                        "@EndUserText.label": "Internal key of real estate object",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 13
+                      },
+                      "RETermType": {
+                        "@EndUserText.label": "Term category",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "RETermNumber": {
+                        "@EndUserText.label": "Term number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "ValidityStartDate": {
+                        "@EndUserText.label": "Validity start date",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 8
+                      },
+                      "ValidityEndDate": {
+                        "@EndUserText.label": "Validity end date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "BusinessArea": {
+                        "@EndUserText.label": "Business area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ProfitCenter": {
+                        "@EndUserText.label": "Profit center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "REStatusObject": {
+                        "@EndUserText.label": "Object number for additional account assignment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "TaxJurisdiction": {
+                        "@EndUserText.label": "Tax jurisdiction",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "Fund": {
+                        "@EndUserText.label": "Fund",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "FundsCenter": {
+                        "@EndUserText.label": "Funds center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "CommitmentItem": {
+                        "@EndUserText.label": "Commitment item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 24
+                      },
+                      "FunctionalArea": {
+                        "@EndUserText.label": "Functional area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "REFundsManagementGrantID": {
+                        "@EndUserText.label": "Grant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 24
+                      },
+                      "BudgetPeriod": {
+                        "@EndUserText.label": "Budget period",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RealEstateObjectType": {
+                        "@EndUserText.label": "Object type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ControllingArea": {
+                        "@EndUserText.label": "Controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "TaxCalculationProcedure": {
+                        "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "FinancialManagementArea": {
+                        "@EndUserText.label": "Financial management area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.businessName": "1. Inbound S4 Curr (Dev)"
+                  }
+                },
+                "name": "2TF_LOAD_I_RECONTRORGLASSGMTTERM_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20,
+                      "notNull": true,
+                      "default": {
+                        "val": "SCHEDULED"
+                      }
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermType": {
+                      "@EndUserText.label": "Term category",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermNumber": {
+                      "@EndUserText.label": "Term number",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "BusinessArea": {
+                      "@EndUserText.label": "Business area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Object number for additional account assignment",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "Fund": {
+                      "@EndUserText.label": "Fund",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FundsCenter": {
+                      "@EndUserText.label": "Funds center",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "CommitmentItem": {
+                      "@EndUserText.label": "Commitment item",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "REFundsManagementGrantID": {
+                      "@EndUserText.label": "Grant",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "BudgetPeriod": {
+                      "@EndUserText.label": "Budget period",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RealEstateObjectType": {
+                      "@EndUserText.label": "Object type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "TaxCalculationProcedure": {
+                      "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "FinancialManagementArea": {
+                      "@EndUserText.label": "Financial management area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR_D.1LT_I_RECONTRORGLASSGMTTERM_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_CTRL_ACTIVE_BATCH_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_RECONTRORGLASSGMTTERM"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ],
+                          "as": "BATCH_ID"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_TYPE"
+                          ],
+                          "as": "BATCH_TYPE"
+                        },
+                        {
+                          "func": "COALESCE",
+                          "args": [
+                            {
+                              "ref": [
+                                "o",
+                                "LOAD_START_TS"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "b",
+                                "BATCH_OPENED_TS"
+                              ]
+                            }
+                          ],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ],
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "LOAD_FLOW"
+                          ],
+                          "as": "LOAD_FLOW"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "OBJECT_NAME"
+                          ],
+                          "as": "OBJECT_NAME"
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternalRealEstateNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETermType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETermNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxJurisdiction"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Fund"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FundsCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CommitmentItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FunctionalArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFundsManagementGrantID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BudgetPeriod"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RealEstateObjectType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxCalculationProcedure"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FinancialManagementArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        }
+                      ],
+                      "where": [
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ]
+                        },
+                        "=",
+                        {
+                          "val": "S4_CURR"
+                        }
+                      ]
+                    }
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "/* ==========================================================================\r\n   2TF_LOAD_I_RECONTRORGLASSGMTTERM_S4_CURR_01  -  transformation flow source SQL\r\n   Target         : 2LT_I_RECONTRORGLASSGMTTERM_S4_AUD_CURR_01\r\n   Batch control  : revised framework. Stamps rows with the batch open for\r\n                    S4_CURR at load time. Fail-closed: with no open batch, or\r\n                    with I_RECONTRORGLASSGMTTERM not registered in the load\r\n                    manifest for that batch, the flow stages nothing.\r\n   ------------------------------------------------------------------------ */\r\nSELECT\r\n    b.\"BATCH_ID\"                                       AS \"BATCH_ID\",\r\n    b.\"BATCH_TYPE\"                                     AS \"BATCH_TYPE\",\r\n    COALESCE(o.\"LOAD_START_TS\", b.\"BATCH_OPENED_TS\")   AS \"LOAD_TIMESTAMP\",\r\n    b.\"SOURCE_SYSTEM\"                                  AS \"SOURCE_SYSTEM\",\r\n    o.\"LOAD_FLOW\"                                      AS \"LOAD_FLOW\",\r\n    o.\"OBJECT_NAME\"                                    AS \"OBJECT_NAME\",\r\n    d.\"InternalRealEstateNumber\",\r\n    d.\"RETermType\",\r\n    d.\"RETermNumber\",\r\n    d.\"ValidityStartDate\",\r\n    d.\"ValidityEndDate\",\r\n    d.\"BusinessArea\",\r\n    d.\"ProfitCenter\",\r\n    d.\"REStatusObject\",\r\n    d.\"TaxJurisdiction\",\r\n    d.\"Fund\",\r\n    d.\"FundsCenter\",\r\n    d.\"CommitmentItem\",\r\n    d.\"FunctionalArea\",\r\n    d.\"REFundsManagementGrantID\",\r\n    d.\"BudgetPeriod\",\r\n    d.\"RealEstateObjectType\",\r\n    d.\"ControllingArea\",\r\n    d.\"TaxCalculationProcedure\",\r\n    d.\"FinancialManagementArea\",\r\n    d.\"CompanyCode\"\r\nFROM \"1_INBOUND_S4_CURR_D\".\"1LT_I_RECONTRORGLASSGMTTERM_S4_CURR\" AS d\r\nCROSS JOIN \"2SV_CTRL_ACTIVE_BATCH_01\" AS b\r\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" AS o\r\n    ON  o.\"BATCH_ID\"      = b.\"BATCH_ID\"\r\n    AND o.\"SOURCE_SYSTEM\" = b.\"SOURCE_SYSTEM\"\r\n    AND o.\"OBJECT_NAME\"   = 'I_RECONTRORGLASSGMTTERM'\r\nWHERE b.\"SOURCE_SYSTEM\" = 'S4_CURR'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_RECONTRORGLASSGMTTERM_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "InternalRealEstateNumber",
+                    "target": "InternalRealEstateNumber"
+                  },
+                  {
+                    "source": "RETermType",
+                    "target": "RETermType"
+                  },
+                  {
+                    "source": "RETermNumber",
+                    "target": "RETermNumber"
+                  },
+                  {
+                    "source": "ValidityStartDate",
+                    "target": "ValidityStartDate"
+                  },
+                  {
+                    "source": "ValidityEndDate",
+                    "target": "ValidityEndDate"
+                  },
+                  {
+                    "source": "BusinessArea",
+                    "target": "BusinessArea"
+                  },
+                  {
+                    "source": "ProfitCenter",
+                    "target": "ProfitCenter"
+                  },
+                  {
+                    "source": "REStatusObject",
+                    "target": "REStatusObject"
+                  },
+                  {
+                    "source": "TaxJurisdiction",
+                    "target": "TaxJurisdiction"
+                  },
+                  {
+                    "source": "Fund",
+                    "target": "Fund"
+                  },
+                  {
+                    "source": "FundsCenter",
+                    "target": "FundsCenter"
+                  },
+                  {
+                    "source": "CommitmentItem",
+                    "target": "CommitmentItem"
+                  },
+                  {
+                    "source": "FunctionalArea",
+                    "target": "FunctionalArea"
+                  },
+                  {
+                    "source": "REFundsManagementGrantID",
+                    "target": "REFundsManagementGrantID"
+                  },
+                  {
+                    "source": "BudgetPeriod",
+                    "target": "BudgetPeriod"
+                  },
+                  {
+                    "source": "RealEstateObjectType",
+                    "target": "RealEstateObjectType"
+                  },
+                  {
+                    "source": "ControllingArea",
+                    "target": "ControllingArea"
+                  },
+                  {
+                    "source": "TaxCalculationProcedure",
+                    "target": "TaxCalculationProcedure"
+                  },
+                  {
+                    "source": "FinancialManagementArea",
+                    "target": "FinancialManagementArea"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "LOAD_FLOW",
+                    "target": "LOAD_FLOW"
+                  },
+                  {
+                    "source": "BATCH_TYPE",
+                    "target": "BATCH_TYPE"
+                  },
+                  {
+                    "source": "OBJECT_NAME",
+                    "target": "OBJECT_NAME"
+                  }
+                ],
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermType": {
+                      "@EndUserText.label": "Term category",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermNumber": {
+                      "@EndUserText.label": "Term number",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "BusinessArea": {
+                      "@EndUserText.label": "Business area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Object number for additional account assignment",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "Fund": {
+                      "@EndUserText.label": "Fund",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FundsCenter": {
+                      "@EndUserText.label": "Funds center",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "CommitmentItem": {
+                      "@EndUserText.label": "Commitment item",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "REFundsManagementGrantID": {
+                      "@EndUserText.label": "Grant",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "BudgetPeriod": {
+                      "@EndUserText.label": "Budget period",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RealEstateObjectType": {
+                      "@EndUserText.label": "Object type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "TaxCalculationProcedure": {
+                      "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "FinancialManagementArea": {
+                      "@EndUserText.label": "Financial management area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20
+                    }
+                  },
+                  "@EndUserText.label": "2LT_I_RECONTRORGLASSGMTTERM_S4_AUD_CURR_01",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_IJPUIXQL"
+                    }
+                  }
+                },
+                "name": "2LT_I_RECONTRORGLASSGMTTERM_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

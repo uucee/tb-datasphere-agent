@@ -1,0 +1,141 @@
+{
+  "definitions": {
+    "2LT_I_REUSBLOBJECTTOCONTRACTASSGMT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "REStatusObjectSource": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": true,
+          "length": 22,
+          "notNull": true
+        },
+        "REObjectAssignmentType": {
+          "@EndUserText.label": "Type of object assignment",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "RealEstateContract": {
+          "@EndUserText.label": "Real estate contract number",
+          "type": "cds.String",
+          "key": true,
+          "length": 13,
+          "notNull": true
+        },
+        "ValidityStartEndDateValue": {
+          "@EndUserText.label": "Date from to (rap key)",
+          "type": "cds.String",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "RealEstateUsableObjectUUID": {
+          "@EndUserText.label": "Uuid for generic rental object",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REStatusObjectTarget": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REOnlyInfoAssgmt": {
+          "@EndUserText.label": "Informational assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REStatusObjectSourceIsArchived": {
+          "@EndUserText.label": "Source object was archived",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REGenerationType": {
+          "@EndUserText.label": "Generation type functional location",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REIsMainAsset": {
+          "@EndUserText.label": "Asset is leading asset",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REAssignmentHasMultiple": {
+          "@EndUserText.label": "Generated entry for multiple assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "REObjectPossessionStartDate": {
+          "@EndUserText.label": "Date from which the object is made available for use",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REObjectPossessionEndDate": {
+          "@EndUserText.label": "Date up to which the object is used",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_REUSBLOBJECTTOCONTRACTASSGMT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

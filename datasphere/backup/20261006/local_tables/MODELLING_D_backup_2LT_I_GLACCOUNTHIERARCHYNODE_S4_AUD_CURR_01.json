@@ -1,0 +1,133 @@
+{
+  "definitions": {
+    "2LT_I_GLACCOUNTHIERARCHYNODE_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "GLAccountHierarchy": {
+          "@EndUserText.label": "G/l account hierarchy",
+          "type": "cds.String",
+          "key": true,
+          "length": 42,
+          "notNull": true
+        },
+        "HierarchyNode": {
+          "@EndUserText.label": "Hierarchy node",
+          "type": "cds.String",
+          "key": true,
+          "length": 50,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ParentNode": {
+          "@EndUserText.label": "Hierarchy parent node",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "HierarchyVersion": {
+          "@EndUserText.label": "Hierarchy version",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ChartOfAccounts": {
+          "@EndUserText.label": "Chart of accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "GLAccount": {
+          "@EndUserText.label": "General ledger account",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SequenceNumber": {
+          "@EndUserText.label": "SequenceNumber",
+          "type": "cds.String",
+          "key": false,
+          "length": 56
+        },
+        "HierarchyNodeSequence": {
+          "@EndUserText.label": "Hierarchy sequence number",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "HierarchyNodeLevel": {
+          "@EndUserText.label": "Hierarchy level",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "NodeType": {
+          "@EndUserText.label": "Hierarchy node type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SignIsInverted": {
+          "@EndUserText.label": "Hierarchy attribute value",
+          "type": "cds.String",
+          "key": false,
+          "length": 80
+        },
+        "HierarchyNodeVal": {
+          "@EndUserText.label": "Node value",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_GLACCOUNTHIERARCHYNODE_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_CODDGANF"
+        }
+      }
+    }
+  },
+  "sharing": {
+    "2LT_I_GLACCOUNTHIERARCHYNODE_S4_AUD_CURR_01": {
+      "targetSpaces": [
+        "REPORTING_D"
+      ]
+    }
+  }
+}

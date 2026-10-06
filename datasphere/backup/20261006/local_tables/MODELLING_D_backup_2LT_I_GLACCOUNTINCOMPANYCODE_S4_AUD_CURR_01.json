@@ -1,0 +1,887 @@
+{
+  "definitions": {
+    "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "GLAccount": {
+          "@EndUserText.label": "G/l account number",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "AuthorizationGroup": {
+          "@EndUserText.label": "Authorization group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AccountingClerk": {
+          "@EndUserText.label": "Accounting clerk abbreviation",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "LastInterestCalcRunDate": {
+          "@EndUserText.label": "Date of last interest calculation run",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Record created on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created the object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "PlanningLevel": {
+          "@EndUserText.label": "Planning level",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "HouseBank": {
+          "@EndUserText.label": "Short key for a house bank",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "HouseBankAccount": {
+          "@EndUserText.label": "Id for account details",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ExchRateDifferencesAccountDetn": {
+          "@EndUserText.label": "Key for exchange rate differences in foreign currency accts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ReconciliationAccountType": {
+          "@EndUserText.label": "Account is reconciliation account",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxCategory": {
+          "@EndUserText.label": "Tax category in account master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "InterestCalculationCode": {
+          "@EndUserText.label": "Interest indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "GLAccountCurrency": {
+          "@EndUserText.label": "Account currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ReconciliationAcctIsChangeable": {
+          "@EndUserText.label": "Indicator: reconcil.acct ready for input at time of posting?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsManagedExternally": {
+          "@EndUserText.label": "Indicator: account managed in external system",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsAutomaticallyPosted": {
+          "@EndUserText.label": "Indicator: is account only posted to automatically?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LineItemDisplayIsEnabled": {
+          "@EndUserText.label": "Indicator: can line items be displayed by account?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SupplementIsAllowed": {
+          "@EndUserText.label": "Indicator: supplement for automatic postings ?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsOpenItemManaged": {
+          "@EndUserText.label": "Indicator: open item management?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InterestCalculationDate": {
+          "@EndUserText.label": "Key date of last interest calculation",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntrstCalcFrequencyInMonths": {
+          "@EndUserText.label": "Interest calculation frequency in months",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AcctgDocItmDisplaySequenceRule": {
+          "@EndUserText.label": "Key for sorting according to assignment numbers",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "AlternativeGLAccount": {
+          "@EndUserText.label": "Alternative g/l account number in company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "JointVentureRecoveryCode": {
+          "@EndUserText.label": "Recovery indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CommitmentItem": {
+          "@EndUserText.label": "Commitment item",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "CommitmentItemShortID": {
+          "@EndUserText.label": "Commitment item short id",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "TaxCodeIsRequired": {
+          "@EndUserText.label": "Indicator: tax code is not a required field",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BalanceHasLocalCurrency": {
+          "@EndUserText.label": "Indicator: manage balances in local currency only",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ValuationGroup": {
+          "@EndUserText.label": "Valuation group",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "APARToleranceGroup": {
+          "@EndUserText.label": "Tolerance group for g/l accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AccountIsBlockedForPosting": {
+          "@EndUserText.label": "Indicator: is account blocked for posting?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AccountIsMarkedForDeletion": {
+          "@EndUserText.label": "Indicator: account marked for deletion?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ClearingIsLedgerGroupSpecific": {
+          "@EndUserText.label": "Open item management by ledger group",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CashPlanningGroup": {
+          "@EndUserText.label": "Planning group",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IsCashFlowAccount": {
+          "@EndUserText.label": "Cash receipt account / cash disbursement account",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "GLAcctInflationKey": {
+          "@EndUserText.label": "Inflation key",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FieldStatusGroup": {
+          "@EndUserText.label": "Field status group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "MultiCurrencyAccountingCode": {
+          "@EndUserText.label": "Mca key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "IsExtendedOpenItemManaged": {
+          "@EndUserText.label": "Extended open item management",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "GLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "AuthorizationGroup"
+              ]
+            },
+            {
+              "ref": [
+                "AccountingClerk"
+              ]
+            },
+            {
+              "ref": [
+                "LastInterestCalcRunDate"
+              ]
+            },
+            {
+              "ref": [
+                "CreationDate"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangeDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "PlanningLevel"
+              ]
+            },
+            {
+              "ref": [
+                "HouseBank"
+              ]
+            },
+            {
+              "ref": [
+                "HouseBankAccount"
+              ]
+            },
+            {
+              "ref": [
+                "ExchRateDifferencesAccountDetn"
+              ]
+            },
+            {
+              "ref": [
+                "ReconciliationAccountType"
+              ]
+            },
+            {
+              "ref": [
+                "TaxCategory"
+              ]
+            },
+            {
+              "ref": [
+                "InterestCalculationCode"
+              ]
+            },
+            {
+              "ref": [
+                "GLAccountCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "ReconciliationAcctIsChangeable"
+              ]
+            },
+            {
+              "ref": [
+                "IsManagedExternally"
+              ]
+            },
+            {
+              "ref": [
+                "IsAutomaticallyPosted"
+              ]
+            },
+            {
+              "ref": [
+                "LineItemDisplayIsEnabled"
+              ]
+            },
+            {
+              "ref": [
+                "SupplementIsAllowed"
+              ]
+            },
+            {
+              "ref": [
+                "IsOpenItemManaged"
+              ]
+            },
+            {
+              "ref": [
+                "InterestCalculationDate"
+              ]
+            },
+            {
+              "ref": [
+                "IntrstCalcFrequencyInMonths"
+              ]
+            },
+            {
+              "ref": [
+                "AcctgDocItmDisplaySequenceRule"
+              ]
+            },
+            {
+              "ref": [
+                "AlternativeGLAccount"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureRecoveryCode"
+              ]
+            },
+            {
+              "ref": [
+                "CommitmentItem"
+              ]
+            },
+            {
+              "ref": [
+                "CommitmentItemShortID"
+              ]
+            },
+            {
+              "ref": [
+                "TaxCodeIsRequired"
+              ]
+            },
+            {
+              "ref": [
+                "BalanceHasLocalCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "ValuationGroup"
+              ]
+            },
+            {
+              "ref": [
+                "APARToleranceGroup"
+              ]
+            },
+            {
+              "ref": [
+                "AccountIsBlockedForPosting"
+              ]
+            },
+            {
+              "ref": [
+                "AccountIsMarkedForDeletion"
+              ]
+            },
+            {
+              "ref": [
+                "ClearingIsLedgerGroupSpecific"
+              ]
+            },
+            {
+              "ref": [
+                "CashPlanningGroup"
+              ]
+            },
+            {
+              "ref": [
+                "IsCashFlowAccount"
+              ]
+            },
+            {
+              "ref": [
+                "GLAcctInflationKey"
+              ]
+            },
+            {
+              "ref": [
+                "FieldStatusGroup"
+              ]
+            },
+            {
+              "ref": [
+                "MultiCurrencyAccountingCode"
+              ]
+            },
+            {
+              "ref": [
+                "IsExtendedOpenItemManaged"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_CODDGANF"
+        }
+      }
+    },
+    "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "GLAccount": {
+          "@EndUserText.label": "G/l account number",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "AuthorizationGroup": {
+          "@EndUserText.label": "Authorization group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AccountingClerk": {
+          "@EndUserText.label": "Accounting clerk abbreviation",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "LastInterestCalcRunDate": {
+          "@EndUserText.label": "Date of last interest calculation run",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Record created on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created the object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "PlanningLevel": {
+          "@EndUserText.label": "Planning level",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "HouseBank": {
+          "@EndUserText.label": "Short key for a house bank",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "HouseBankAccount": {
+          "@EndUserText.label": "Id for account details",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ExchRateDifferencesAccountDetn": {
+          "@EndUserText.label": "Key for exchange rate differences in foreign currency accts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ReconciliationAccountType": {
+          "@EndUserText.label": "Account is reconciliation account",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxCategory": {
+          "@EndUserText.label": "Tax category in account master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "InterestCalculationCode": {
+          "@EndUserText.label": "Interest indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "GLAccountCurrency": {
+          "@EndUserText.label": "Account currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "ReconciliationAcctIsChangeable": {
+          "@EndUserText.label": "Indicator: reconcil.acct ready for input at time of posting?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsManagedExternally": {
+          "@EndUserText.label": "Indicator: account managed in external system",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsAutomaticallyPosted": {
+          "@EndUserText.label": "Indicator: is account only posted to automatically?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LineItemDisplayIsEnabled": {
+          "@EndUserText.label": "Indicator: can line items be displayed by account?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SupplementIsAllowed": {
+          "@EndUserText.label": "Indicator: supplement for automatic postings ?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsOpenItemManaged": {
+          "@EndUserText.label": "Indicator: open item management?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InterestCalculationDate": {
+          "@EndUserText.label": "Key date of last interest calculation",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IntrstCalcFrequencyInMonths": {
+          "@EndUserText.label": "Interest calculation frequency in months",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AcctgDocItmDisplaySequenceRule": {
+          "@EndUserText.label": "Key for sorting according to assignment numbers",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "AlternativeGLAccount": {
+          "@EndUserText.label": "Alternative g/l account number in company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "JointVentureRecoveryCode": {
+          "@EndUserText.label": "Recovery indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CommitmentItem": {
+          "@EndUserText.label": "Commitment item",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "CommitmentItemShortID": {
+          "@EndUserText.label": "Commitment item short id",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "TaxCodeIsRequired": {
+          "@EndUserText.label": "Indicator: tax code is not a required field",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BalanceHasLocalCurrency": {
+          "@EndUserText.label": "Indicator: manage balances in local currency only",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ValuationGroup": {
+          "@EndUserText.label": "Valuation group",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "APARToleranceGroup": {
+          "@EndUserText.label": "Tolerance group for g/l accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AccountIsBlockedForPosting": {
+          "@EndUserText.label": "Indicator: is account blocked for posting?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AccountIsMarkedForDeletion": {
+          "@EndUserText.label": "Indicator: account marked for deletion?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ClearingIsLedgerGroupSpecific": {
+          "@EndUserText.label": "Open item management by ledger group",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CashPlanningGroup": {
+          "@EndUserText.label": "Planning group",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IsCashFlowAccount": {
+          "@EndUserText.label": "Cash receipt account / cash disbursement account",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "GLAcctInflationKey": {
+          "@EndUserText.label": "Inflation key",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FieldStatusGroup": {
+          "@EndUserText.label": "Field status group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "MultiCurrencyAccountingCode": {
+          "@EndUserText.label": "Mca key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "IsExtendedOpenItemManaged": {
+          "@EndUserText.label": "Extended open item management",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_GLACCOUNTINCOMPANYCODE_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_CODDGANF"
+        }
+      }
+    }
+  }
+}

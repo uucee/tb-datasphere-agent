@@ -1,0 +1,1215 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_REVALUATIONTERM_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_REVALUATIONTERM_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR_D": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D"
+                  },
+                  "1_INBOUND_S4_CURR_D.1LT_I_REVALUATIONTERM_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_REVALUATIONTERM_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "InternalRealEstateNumber": {
+                        "@EndUserText.label": "Internal key of real estate object",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 13
+                      },
+                      "REValuationRuleUUID": {
+                        "@EndUserText.label": "Guid (raw16) for valuation rule",
+                        "type": "cds.Binary",
+                        "key": true,
+                        "notNull": true,
+                        "length": 16
+                      },
+                      "RETermNumber": {
+                        "@EndUserText.label": "Term number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RETermType": {
+                        "@EndUserText.label": "Term category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ValidityStartDate": {
+                        "@EndUserText.label": "Validity start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ValidityEndDate": {
+                        "@EndUserText.label": "Validity end date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REStatusObject": {
+                        "@EndUserText.label": "Valuation object number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "ObjectValidFrom": {
+                        "@EndUserText.label": "Validity start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REValuationRule": {
+                        "@EndUserText.label": "Valuation rule",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "REConsiderationStartDate": {
+                        "@EndUserText.label": "Start of consideration",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RECashFlowPostingFromDate": {
+                        "@EndUserText.label": "Start of consideration",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REStatusObjectAsset": {
+                        "@EndUserText.label": "Asset object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REValuationClassification": {
+                        "@EndUserText.label": "Valuation classification",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REInterestRate": {
+                        "@EndUserText.label": "Interest rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 10
+                      },
+                      "REFrequencyTerm": {
+                        "@EndUserText.label": "Number of frequency term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REDistributionRule": {
+                        "@EndUserText.label": "Distribution formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REDistributionRuleParam1": {
+                        "@EndUserText.label": "Untypified parameter for a distribution formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 70
+                      },
+                      "REDistributionRuleParam2": {
+                        "@EndUserText.label": "Untypified parameter for a distribution formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 70
+                      },
+                      "REProbableEndDate": {
+                        "@EndUserText.label": "Probable end",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REAssetRightOfUseEndDate": {
+                        "@EndUserText.label": "End of usage rou",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REValuationRuleStatus": {
+                        "@EndUserText.label": "Valuation rule status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationStatus": {
+                        "@EndUserText.label": "Valuation status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationStatusReason": {
+                        "@EndUserText.label": "Reason for status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REValuationBehavior": {
+                        "@EndUserText.label": "Valuation behavior",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "RETaxType": {
+                        "@EndUserText.label": "Tax type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "TaxGroup": {
+                        "@EndUserText.label": "Tax group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "REAccountingObject": {
+                        "@EndUserText.label": "Accounting object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REInfoText": {
+                        "@EndUserText.label": "Valuation note",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 100
+                      },
+                      "REValuationFactorNumerator": {
+                        "@EndUserText.label": "Numerator valuation factor",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "REValuationFactorDenominator": {
+                        "@EndUserText.label": "Denominator valuation factor",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "REValuationCurrency": {
+                        "@EndUserText.label": "Valuation currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "REValuationQuestionnaireUUID": {
+                        "@EndUserText.label": "Guid for questionnaire",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "Country": {
+                        "@EndUserText.label": "Country/region key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.businessName": "1. Inbound S4 Curr (Dev)"
+                  }
+                },
+                "name": "2TF_LOAD_I_REVALUATIONTERM_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20,
+                      "notNull": true,
+                      "default": {
+                        "val": "SCHEDULED"
+                      }
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "REValuationRuleUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation rule",
+                      "type": "cds.Binary",
+                      "length": 16,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermNumber": {
+                      "@EndUserText.label": "Term number",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RETermType": {
+                      "@EndUserText.label": "Term category",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Valuation object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "ObjectValidFrom": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REValuationRule": {
+                      "@EndUserText.label": "Valuation rule",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REConsiderationStartDate": {
+                      "@EndUserText.label": "Start of consideration",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowPostingFromDate": {
+                      "@EndUserText.label": "Start of consideration",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REStatusObjectAsset": {
+                      "@EndUserText.label": "Asset object",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REValuationClassification": {
+                      "@EndUserText.label": "Valuation classification",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REInterestRate": {
+                      "@EndUserText.label": "Interest rate",
+                      "precision": 15,
+                      "scale": 10,
+                      "type": "cds.Decimal"
+                    },
+                    "REFrequencyTerm": {
+                      "@EndUserText.label": "Number of frequency term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REDistributionRule": {
+                      "@EndUserText.label": "Distribution formula",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REDistributionRuleParam1": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REDistributionRuleParam2": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REProbableEndDate": {
+                      "@EndUserText.label": "Probable end",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REAssetRightOfUseEndDate": {
+                      "@EndUserText.label": "End of usage rou",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REValuationRuleStatus": {
+                      "@EndUserText.label": "Valuation rule status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationStatus": {
+                      "@EndUserText.label": "Valuation status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationStatusReason": {
+                      "@EndUserText.label": "Reason for status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationBehavior": {
+                      "@EndUserText.label": "Valuation behavior",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "RETaxType": {
+                      "@EndUserText.label": "Tax type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "TaxGroup": {
+                      "@EndUserText.label": "Tax group",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "REAccountingObject": {
+                      "@EndUserText.label": "Accounting object",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REInfoText": {
+                      "@EndUserText.label": "Valuation note",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "REValuationFactorNumerator": {
+                      "@EndUserText.label": "Numerator valuation factor",
+                      "type": "cds.Integer"
+                    },
+                    "REValuationFactorDenominator": {
+                      "@EndUserText.label": "Denominator valuation factor",
+                      "type": "cds.Integer"
+                    },
+                    "REValuationCurrency": {
+                      "@EndUserText.label": "Valuation currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REValuationQuestionnaireUUID": {
+                      "@EndUserText.label": "Guid for questionnaire",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "Country": {
+                      "@EndUserText.label": "Country/region key",
+                      "type": "cds.String",
+                      "length": 3
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR_D.1LT_I_REVALUATIONTERM_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_CTRL_ACTIVE_BATCH_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_REVALUATIONTERM"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ],
+                          "as": "BATCH_ID"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_TYPE"
+                          ],
+                          "as": "BATCH_TYPE"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "LOAD_START_TS"
+                          ],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ],
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "LOAD_FLOW"
+                          ],
+                          "as": "LOAD_FLOW"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "OBJECT_NAME"
+                          ],
+                          "as": "OBJECT_NAME"
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternalRealEstateNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationRuleUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETermNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETermType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ObjectValidFrom"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConsiderationStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowPostingFromDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObjectAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationClassification"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REInterestRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REFrequencyTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionRuleParam1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionRuleParam2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REProbableEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REAssetRightOfUseEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationRuleStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationStatusReason"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationBehavior"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETaxType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REAccountingObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REInfoText"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationFactorNumerator"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationFactorDenominator"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REValuationQuestionnaireUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Country"
+                          ]
+                        }
+                      ],
+                      "where": [
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ]
+                        },
+                        "=",
+                        {
+                          "val": "S4_CURR"
+                        }
+                      ]
+                    }
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "/* ==========================================================================\r\n   2TF_LOAD_I_REVALUATIONTERM_S4_CURR_01  -  transformation flow source SQL\r\n   Target         : 2LT_I_REVALUATIONTERM_S4_AUD_CURR_01\r\n   Batch control  : revised framework. Stamps rows with the batch that is\r\n                    open for S4_CURR at load time. Fail-closed: with no open\r\n                    batch, or with I_REVALUATIONTERM not registered in the\r\n                    load manifest for that batch, the flow stages nothing.\r\n   ------------------------------------------------------------------------ */\r\nSELECT\r\n    b.\"BATCH_ID\"                AS \"BATCH_ID\",\r\n    b.\"BATCH_TYPE\"              AS \"BATCH_TYPE\",\r\n    o.\"LOAD_START_TS\"           AS \"LOAD_TIMESTAMP\",\r\n    b.\"SOURCE_SYSTEM\"           AS \"SOURCE_SYSTEM\",\r\n    o.\"LOAD_FLOW\"               AS \"LOAD_FLOW\",\r\n    o.\"OBJECT_NAME\"             AS \"OBJECT_NAME\",\r\n    d.\"InternalRealEstateNumber\",\r\n    d.\"REValuationRuleUUID\",\r\n    d.\"RETermNumber\",\r\n    d.\"RETermType\",\r\n    d.\"ValidityStartDate\",\r\n    d.\"ValidityEndDate\",\r\n    d.\"REStatusObject\",\r\n    d.\"ObjectValidFrom\",\r\n    d.\"REValuationRule\",\r\n    d.\"REConsiderationStartDate\",\r\n    d.\"RECashFlowPostingFromDate\",\r\n    d.\"REStatusObjectAsset\",\r\n    d.\"REValuationClassification\",\r\n    d.\"REInterestRate\",\r\n    d.\"REFrequencyTerm\",\r\n    d.\"REDistributionRule\",\r\n    d.\"REDistributionRuleParam1\",\r\n    d.\"REDistributionRuleParam2\",\r\n    d.\"REProbableEndDate\",\r\n    d.\"REAssetRightOfUseEndDate\",\r\n    d.\"REValuationRuleStatus\",\r\n    d.\"REValuationStatus\",\r\n    d.\"REValuationStatusReason\",\r\n    d.\"REValuationBehavior\",\r\n    d.\"RETaxType\",\r\n    d.\"TaxGroup\",\r\n    d.\"REAccountingObject\",\r\n    d.\"REInfoText\",\r\n    d.\"REValuationFactorNumerator\",\r\n    d.\"REValuationFactorDenominator\",\r\n    d.\"REValuationCurrency\",\r\n    d.\"REValuationQuestionnaireUUID\",\r\n    d.\"Country\"\r\nFROM \"1_INBOUND_S4_CURR_D\".\"1LT_I_REVALUATIONTERM_S4_CURR\" AS d\r\nCROSS JOIN \"2SV_CTRL_ACTIVE_BATCH_01\" AS b\r\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" AS o\r\n    ON  o.\"BATCH_ID\"      = b.\"BATCH_ID\"\r\n    AND o.\"SOURCE_SYSTEM\" = b.\"SOURCE_SYSTEM\"\r\n    AND o.\"OBJECT_NAME\"   = 'I_REVALUATIONTERM'\r\nWHERE b.\"SOURCE_SYSTEM\" = 'S4_CURR'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_REVALUATIONTERM_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "InternalRealEstateNumber",
+                    "target": "InternalRealEstateNumber"
+                  },
+                  {
+                    "source": "REValuationRuleUUID",
+                    "target": "REValuationRuleUUID"
+                  },
+                  {
+                    "source": "RETermNumber",
+                    "target": "RETermNumber"
+                  },
+                  {
+                    "source": "RETermType",
+                    "target": "RETermType"
+                  },
+                  {
+                    "source": "ValidityStartDate",
+                    "target": "ValidityStartDate"
+                  },
+                  {
+                    "source": "ValidityEndDate",
+                    "target": "ValidityEndDate"
+                  },
+                  {
+                    "source": "REStatusObject",
+                    "target": "REStatusObject"
+                  },
+                  {
+                    "source": "ObjectValidFrom",
+                    "target": "ObjectValidFrom"
+                  },
+                  {
+                    "source": "REValuationRule",
+                    "target": "REValuationRule"
+                  },
+                  {
+                    "source": "REConsiderationStartDate",
+                    "target": "REConsiderationStartDate"
+                  },
+                  {
+                    "source": "RECashFlowPostingFromDate",
+                    "target": "RECashFlowPostingFromDate"
+                  },
+                  {
+                    "source": "REStatusObjectAsset",
+                    "target": "REStatusObjectAsset"
+                  },
+                  {
+                    "source": "REValuationClassification",
+                    "target": "REValuationClassification"
+                  },
+                  {
+                    "source": "REInterestRate",
+                    "target": "REInterestRate"
+                  },
+                  {
+                    "source": "REFrequencyTerm",
+                    "target": "REFrequencyTerm"
+                  },
+                  {
+                    "source": "REDistributionRule",
+                    "target": "REDistributionRule"
+                  },
+                  {
+                    "source": "REDistributionRuleParam1",
+                    "target": "REDistributionRuleParam1"
+                  },
+                  {
+                    "source": "REDistributionRuleParam2",
+                    "target": "REDistributionRuleParam2"
+                  },
+                  {
+                    "source": "REProbableEndDate",
+                    "target": "REProbableEndDate"
+                  },
+                  {
+                    "source": "REAssetRightOfUseEndDate",
+                    "target": "REAssetRightOfUseEndDate"
+                  },
+                  {
+                    "source": "REValuationRuleStatus",
+                    "target": "REValuationRuleStatus"
+                  },
+                  {
+                    "source": "REValuationStatus",
+                    "target": "REValuationStatus"
+                  },
+                  {
+                    "source": "REValuationStatusReason",
+                    "target": "REValuationStatusReason"
+                  },
+                  {
+                    "source": "REValuationBehavior",
+                    "target": "REValuationBehavior"
+                  },
+                  {
+                    "source": "RETaxType",
+                    "target": "RETaxType"
+                  },
+                  {
+                    "source": "TaxGroup",
+                    "target": "TaxGroup"
+                  },
+                  {
+                    "source": "REAccountingObject",
+                    "target": "REAccountingObject"
+                  },
+                  {
+                    "source": "REInfoText",
+                    "target": "REInfoText"
+                  },
+                  {
+                    "source": "REValuationFactorNumerator",
+                    "target": "REValuationFactorNumerator"
+                  },
+                  {
+                    "source": "REValuationFactorDenominator",
+                    "target": "REValuationFactorDenominator"
+                  },
+                  {
+                    "source": "REValuationCurrency",
+                    "target": "REValuationCurrency"
+                  },
+                  {
+                    "source": "REValuationQuestionnaireUUID",
+                    "target": "REValuationQuestionnaireUUID"
+                  },
+                  {
+                    "source": "Country",
+                    "target": "Country"
+                  },
+                  {
+                    "source": "BATCH_TYPE",
+                    "target": "BATCH_TYPE"
+                  },
+                  {
+                    "source": "LOAD_FLOW",
+                    "target": "LOAD_FLOW"
+                  },
+                  {
+                    "source": "OBJECT_NAME",
+                    "target": "OBJECT_NAME"
+                  }
+                ],
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "REValuationRuleUUID": {
+                      "@EndUserText.label": "Guid (raw16) for valuation rule",
+                      "type": "cds.Binary",
+                      "length": 16,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "RETermNumber": {
+                      "@EndUserText.label": "Term number",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RETermType": {
+                      "@EndUserText.label": "Term category",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Valuation object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "ObjectValidFrom": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REValuationRule": {
+                      "@EndUserText.label": "Valuation rule",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REConsiderationStartDate": {
+                      "@EndUserText.label": "Start of consideration",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowPostingFromDate": {
+                      "@EndUserText.label": "Start of consideration",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REStatusObjectAsset": {
+                      "@EndUserText.label": "Asset object",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REValuationClassification": {
+                      "@EndUserText.label": "Valuation classification",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REInterestRate": {
+                      "@EndUserText.label": "Interest rate",
+                      "precision": 15,
+                      "scale": 10,
+                      "type": "cds.Decimal"
+                    },
+                    "REFrequencyTerm": {
+                      "@EndUserText.label": "Number of frequency term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REDistributionRule": {
+                      "@EndUserText.label": "Distribution formula",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REDistributionRuleParam1": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REDistributionRuleParam2": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REProbableEndDate": {
+                      "@EndUserText.label": "Probable end",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REAssetRightOfUseEndDate": {
+                      "@EndUserText.label": "End of usage rou",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REValuationRuleStatus": {
+                      "@EndUserText.label": "Valuation rule status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationStatus": {
+                      "@EndUserText.label": "Valuation status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationStatusReason": {
+                      "@EndUserText.label": "Reason for status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REValuationBehavior": {
+                      "@EndUserText.label": "Valuation behavior",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "RETaxType": {
+                      "@EndUserText.label": "Tax type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "TaxGroup": {
+                      "@EndUserText.label": "Tax group",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "REAccountingObject": {
+                      "@EndUserText.label": "Accounting object",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REInfoText": {
+                      "@EndUserText.label": "Valuation note",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "REValuationFactorNumerator": {
+                      "@EndUserText.label": "Numerator valuation factor",
+                      "type": "cds.Integer"
+                    },
+                    "REValuationFactorDenominator": {
+                      "@EndUserText.label": "Denominator valuation factor",
+                      "type": "cds.Integer"
+                    },
+                    "REValuationCurrency": {
+                      "@EndUserText.label": "Valuation currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REValuationQuestionnaireUUID": {
+                      "@EndUserText.label": "Guid for questionnaire",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "Country": {
+                      "@EndUserText.label": "Country/region key",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120
+                    }
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@EndUserText.label": "2LT_I_REVALUATIONTERM_S4_AUD_CURR_01",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_IJPUIXQL"
+                    }
+                  }
+                },
+                "name": "2LT_I_REVALUATIONTERM_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

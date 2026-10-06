@@ -1,0 +1,745 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "Ledger": {
+                        "@EndUserText.label": "Ledger in general ledger accounting",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 2
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "FiscalYearVariant": {
+                        "@EndUserText.label": "Fiscal year variant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "CompanyCodeCurrencyRole": {
+                        "@EndUserText.label": "Company code currency role",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "GlobalCurrencyRole": {
+                        "@EndUserText.label": "Global currency role",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency1Role": {
+                        "@EndUserText.label": "Freely defined currency 1 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency2Role": {
+                        "@EndUserText.label": "Freely defined currency 2 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency3Role": {
+                        "@EndUserText.label": "Freely defined currency 3 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency4Role": {
+                        "@EndUserText.label": "Freely defined currency 4 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency5Role": {
+                        "@EndUserText.label": "Freely defined currency 5 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency6Role": {
+                        "@EndUserText.label": "Freely defined currency 6 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency7Role": {
+                        "@EndUserText.label": "Freely defined currency 7 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "FreeDefinedCurrency8Role": {
+                        "@EndUserText.label": "Freely defined currency 8 role  (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "AccountingPrinciple": {
+                        "@EndUserText.label": "Accounting principle",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "FunctionalCurrencyRole": {
+                        "@EndUserText.label": "Functional currency role (currency type)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "AdditionalCurrency1Field": {
+                        "@EndUserText.label": "Additional currency 1 field",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AdditionalCurrency2Field": {
+                        "@EndUserText.label": "Additional currency 2 field",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "Ledger": {
+                      "@EndUserText.label": "Ledger in general ledger accounting",
+                      "type": "cds.String",
+                      "length": 100,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 100,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FiscalYearVariant": {
+                      "@EndUserText.label": "Fiscal year variant",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "CompanyCodeCurrencyRole": {
+                      "@EndUserText.label": "Company code currency role",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "GlobalCurrencyRole": {
+                      "@EndUserText.label": "Global currency role",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency1Role": {
+                      "@EndUserText.label": "Freely defined currency 1 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency2Role": {
+                      "@EndUserText.label": "Freely defined currency 2 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency3Role": {
+                      "@EndUserText.label": "Freely defined currency 3 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency4Role": {
+                      "@EndUserText.label": "Freely defined currency 4 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency5Role": {
+                      "@EndUserText.label": "Freely defined currency 5 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency6Role": {
+                      "@EndUserText.label": "Freely defined currency 6 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency7Role": {
+                      "@EndUserText.label": "Freely defined currency 7 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency8Role": {
+                      "@EndUserText.label": "Freely defined currency 8 role  (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "AccountingPrinciple": {
+                      "@EndUserText.label": "Accounting principle",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "FunctionalCurrencyRole": {
+                      "@EndUserText.label": "Functional currency role (currency type)",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "AdditionalCurrency1Field": {
+                      "@EndUserText.label": "Additional currency 1 field",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "AdditionalCurrency2Field": {
+                      "@EndUserText.label": "Additional currency 2 field",
+                      "type": "cds.String",
+                      "length": 100
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_LEDGERCOMPANYCODECRCYROLES"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Ledger"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FiscalYearVariant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCodeCurrencyRole"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GlobalCurrencyRole"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency1Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency2Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency3Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency4Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency5Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency6Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency7Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FreeDefinedCurrency8Role"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountingPrinciple"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FunctionalCurrencyRole"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AdditionalCurrency1Field"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AdditionalCurrency2Field"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "\n \n  SELECT\n  b.\"BATCH_ID\",\n  CURRENT_UTCTIMESTAMP() AS \"LOAD_TIMESTAMP\",\n  'S4_CURR'            AS \"SOURCE_SYSTEM\",\n  o.\"SOURCE_FILE\",\n  \"d\".\"Ledger\",\"d\".\"CompanyCode\",\"d\".\"FiscalYearVariant\",\"d\".\"CompanyCodeCurrencyRole\",\"d\".\"GlobalCurrencyRole\",\"d\".\"FreeDefinedCurrency1Role\",\"d\".\"FreeDefinedCurrency2Role\",\"d\".\"FreeDefinedCurrency3Role\",\"d\".\"FreeDefinedCurrency4Role\",\"d\".\"FreeDefinedCurrency5Role\",\"d\".\"FreeDefinedCurrency6Role\",\"d\".\"FreeDefinedCurrency7Role\",\"d\".\"FreeDefinedCurrency8Role\",\"d\".\"AccountingPrinciple\",\"d\".\"FunctionalCurrencyRole\",\"d\".\"AdditionalCurrency1Field\",\"d\".\"AdditionalCurrency2Field\" from \"1_INBOUND_S4_CURR.1LT_I_LEDGERCOMPANYCODECRCYROLES_S4_CURR\" d\n \nCROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o\n  ON o.\"BATCH_ID\"      = b.\"BATCH_ID\"\n AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\n AND o.\"OBJECT_NAME\"   = 'I_LEDGERCOMPANYCODECRCYROLES'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_LEDGERCOMPANYCODECRCYROLES_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "Ledger",
+                    "target": "Ledger"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "FiscalYearVariant",
+                    "target": "FiscalYearVariant"
+                  },
+                  {
+                    "source": "CompanyCodeCurrencyRole",
+                    "target": "CompanyCodeCurrencyRole"
+                  },
+                  {
+                    "source": "GlobalCurrencyRole",
+                    "target": "GlobalCurrencyRole"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency1Role",
+                    "target": "FreeDefinedCurrency1Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency2Role",
+                    "target": "FreeDefinedCurrency2Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency3Role",
+                    "target": "FreeDefinedCurrency3Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency4Role",
+                    "target": "FreeDefinedCurrency4Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency5Role",
+                    "target": "FreeDefinedCurrency5Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency6Role",
+                    "target": "FreeDefinedCurrency6Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency7Role",
+                    "target": "FreeDefinedCurrency7Role"
+                  },
+                  {
+                    "source": "FreeDefinedCurrency8Role",
+                    "target": "FreeDefinedCurrency8Role"
+                  },
+                  {
+                    "source": "AccountingPrinciple",
+                    "target": "AccountingPrinciple"
+                  },
+                  {
+                    "source": "FunctionalCurrencyRole",
+                    "target": "FunctionalCurrencyRole"
+                  },
+                  {
+                    "source": "AdditionalCurrency1Field",
+                    "target": "AdditionalCurrency1Field"
+                  },
+                  {
+                    "source": "AdditionalCurrency2Field",
+                    "target": "AdditionalCurrency2Field"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "Ledger": {
+                      "@EndUserText.label": "Ledger in general ledger accounting",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 100,
+                      "notNull": true
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 100,
+                      "notNull": true
+                    },
+                    "FiscalYearVariant": {
+                      "@EndUserText.label": "Fiscal year variant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "CompanyCodeCurrencyRole": {
+                      "@EndUserText.label": "Company code currency role",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "GlobalCurrencyRole": {
+                      "@EndUserText.label": "Global currency role",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency1Role": {
+                      "@EndUserText.label": "Freely defined currency 1 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency2Role": {
+                      "@EndUserText.label": "Freely defined currency 2 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency3Role": {
+                      "@EndUserText.label": "Freely defined currency 3 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency4Role": {
+                      "@EndUserText.label": "Freely defined currency 4 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency5Role": {
+                      "@EndUserText.label": "Freely defined currency 5 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency6Role": {
+                      "@EndUserText.label": "Freely defined currency 6 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency7Role": {
+                      "@EndUserText.label": "Freely defined currency 7 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FreeDefinedCurrency8Role": {
+                      "@EndUserText.label": "Freely defined currency 8 role  (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "AccountingPrinciple": {
+                      "@EndUserText.label": "Accounting principle",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "FunctionalCurrencyRole": {
+                      "@EndUserText.label": "Functional currency role (currency type)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "AdditionalCurrency1Field": {
+                      "@EndUserText.label": "Additional currency 1 field",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "AdditionalCurrency2Field": {
+                      "@EndUserText.label": "Additional currency 2 field",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_LEDGERCOMPANYCODECRCYROLES_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_LCJBNTMP"
+                    }
+                  }
+                },
+                "name": "2LT_I_LEDGERCOMPANYCODECRCYROLES_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,817 @@
+{
+  "definitions": {
+    "2LT_FAGLFLEXT_HIST_RAW_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "RYEAR": {
+          "@EndUserText.label": "RYEAR",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR00": {
+          "@EndUserText.label": "OBJNR00",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR01": {
+          "@EndUserText.label": "OBJNR01",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR02": {
+          "@EndUserText.label": "OBJNR02",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR03": {
+          "@EndUserText.label": "OBJNR03",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR04": {
+          "@EndUserText.label": "OBJNR04",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR05": {
+          "@EndUserText.label": "OBJNR05",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR06": {
+          "@EndUserText.label": "OBJNR06",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR07": {
+          "@EndUserText.label": "OBJNR07",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "OBJNR08": {
+          "@EndUserText.label": "OBJNR08",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "DRCRK": {
+          "@EndUserText.label": "DRCRK",
+          "type": "cds.String",
+          "key": true,
+          "length": 1,
+          "notNull": true
+        },
+        "RPMAX": {
+          "@EndUserText.label": "RPMAX",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "ACTIV": {
+          "@EndUserText.label": "ACTIV",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RMVCT": {
+          "@EndUserText.label": "RMVCT",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "RTCUR": {
+          "@EndUserText.label": "RTCUR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "RUNIT": {
+          "@EndUserText.label": "RUNIT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "AWTYP": {
+          "@EndUserText.label": "AWTYP",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "RLDNR": {
+          "@EndUserText.label": "RLDNR",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "RRCTY": {
+          "@EndUserText.label": "RRCTY",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "RVERS": {
+          "@EndUserText.label": "RVERS",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "LOGSYS": {
+          "@EndUserText.label": "LOGSYS",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RACCT": {
+          "@EndUserText.label": "RACCT",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "COST_ELEM": {
+          "@EndUserText.label": "COST_ELEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RBUKRS": {
+          "@EndUserText.label": "RBUKRS",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RCNTR": {
+          "@EndUserText.label": "RCNTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "PRCTR": {
+          "@EndUserText.label": "PRCTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RFAREA": {
+          "@EndUserText.label": "RFAREA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RBUSA": {
+          "@EndUserText.label": "RBUSA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KOKRS": {
+          "@EndUserText.label": "KOKRS",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SEGMENT": {
+          "@EndUserText.label": "SEGMENT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ZZMATNR": {
+          "@EndUserText.label": "ZZMATNR",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "SCNTR": {
+          "@EndUserText.label": "SCNTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "PPRCTR": {
+          "@EndUserText.label": "PPRCTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "SFAREA": {
+          "@EndUserText.label": "SFAREA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "SBUSA": {
+          "@EndUserText.label": "SBUSA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RASSC": {
+          "@EndUserText.label": "RASSC",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "PSEGMENT": {
+          "@EndUserText.label": "PSEGMENT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TSLVT": {
+          "@EndUserText.label": "TSLVT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL01": {
+          "@EndUserText.label": "TSL01",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL02": {
+          "@EndUserText.label": "TSL02",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL03": {
+          "@EndUserText.label": "TSL03",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL04": {
+          "@EndUserText.label": "TSL04",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL05": {
+          "@EndUserText.label": "TSL05",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL06": {
+          "@EndUserText.label": "TSL06",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL07": {
+          "@EndUserText.label": "TSL07",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL08": {
+          "@EndUserText.label": "TSL08",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL09": {
+          "@EndUserText.label": "TSL09",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL10": {
+          "@EndUserText.label": "TSL10",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL11": {
+          "@EndUserText.label": "TSL11",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL12": {
+          "@EndUserText.label": "TSL12",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "TSL13": {
+          "@EndUserText.label": "TSL13",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "TSL14": {
+          "@EndUserText.label": "TSL14",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "TSL15": {
+          "@EndUserText.label": "TSL15",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "TSL16": {
+          "@EndUserText.label": "TSL16",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "HSLVT": {
+          "@EndUserText.label": "HSLVT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL01": {
+          "@EndUserText.label": "HSL01",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL02": {
+          "@EndUserText.label": "HSL02",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL03": {
+          "@EndUserText.label": "HSL03",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL04": {
+          "@EndUserText.label": "HSL04",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL05": {
+          "@EndUserText.label": "HSL05",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL06": {
+          "@EndUserText.label": "HSL06",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL07": {
+          "@EndUserText.label": "HSL07",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL08": {
+          "@EndUserText.label": "HSL08",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL09": {
+          "@EndUserText.label": "HSL09",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL10": {
+          "@EndUserText.label": "HSL10",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL11": {
+          "@EndUserText.label": "HSL11",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL12": {
+          "@EndUserText.label": "HSL12",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "HSL13": {
+          "@EndUserText.label": "HSL13",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "HSL14": {
+          "@EndUserText.label": "HSL14",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "HSL15": {
+          "@EndUserText.label": "HSL15",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "HSL16": {
+          "@EndUserText.label": "HSL16",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "KSLVT": {
+          "@EndUserText.label": "KSLVT",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL01": {
+          "@EndUserText.label": "KSL01",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL02": {
+          "@EndUserText.label": "KSL02",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL03": {
+          "@EndUserText.label": "KSL03",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL04": {
+          "@EndUserText.label": "KSL04",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL05": {
+          "@EndUserText.label": "KSL05",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL06": {
+          "@EndUserText.label": "KSL06",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL07": {
+          "@EndUserText.label": "KSL07",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL08": {
+          "@EndUserText.label": "KSL08",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL09": {
+          "@EndUserText.label": "KSL09",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL10": {
+          "@EndUserText.label": "KSL10",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL11": {
+          "@EndUserText.label": "KSL11",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL12": {
+          "@EndUserText.label": "KSL12",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 23,
+          "scale": 2
+        },
+        "KSL13": {
+          "@EndUserText.label": "KSL13",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "KSL14": {
+          "@EndUserText.label": "KSL14",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "KSL15": {
+          "@EndUserText.label": "KSL15",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "KSL16": {
+          "@EndUserText.label": "KSL16",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSLVT": {
+          "@EndUserText.label": "OSLVT",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL01": {
+          "@EndUserText.label": "OSL01",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL02": {
+          "@EndUserText.label": "OSL02",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL03": {
+          "@EndUserText.label": "OSL03",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL04": {
+          "@EndUserText.label": "OSL04",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL05": {
+          "@EndUserText.label": "OSL05",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL06": {
+          "@EndUserText.label": "OSL06",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL07": {
+          "@EndUserText.label": "OSL07",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL08": {
+          "@EndUserText.label": "OSL08",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL09": {
+          "@EndUserText.label": "OSL09",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL10": {
+          "@EndUserText.label": "OSL10",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL11": {
+          "@EndUserText.label": "OSL11",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL12": {
+          "@EndUserText.label": "OSL12",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL13": {
+          "@EndUserText.label": "OSL13",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL14": {
+          "@EndUserText.label": "OSL14",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL15": {
+          "@EndUserText.label": "OSL15",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "OSL16": {
+          "@EndUserText.label": "OSL16",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSLVT": {
+          "@EndUserText.label": "MSLVT",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL01": {
+          "@EndUserText.label": "MSL01",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL02": {
+          "@EndUserText.label": "MSL02",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL03": {
+          "@EndUserText.label": "MSL03",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL04": {
+          "@EndUserText.label": "MSL04",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL05": {
+          "@EndUserText.label": "MSL05",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL06": {
+          "@EndUserText.label": "MSL06",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL07": {
+          "@EndUserText.label": "MSL07",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL08": {
+          "@EndUserText.label": "MSL08",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL09": {
+          "@EndUserText.label": "MSL09",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL10": {
+          "@EndUserText.label": "MSL10",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL11": {
+          "@EndUserText.label": "MSL11",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL12": {
+          "@EndUserText.label": "MSL12",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL13": {
+          "@EndUserText.label": "MSL13",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL14": {
+          "@EndUserText.label": "MSL14",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL15": {
+          "@EndUserText.label": "MSL15",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "MSL16": {
+          "@EndUserText.label": "MSL16",
+          "type": "cds.String",
+          "key": false,
+          "length": 27
+        },
+        "TIMESTAMP": {
+          "@EndUserText.label": "TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_FAGLFLEXT_HIST_RAW_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ATGQGPAH"
+        }
+      }
+    }
+  }
+}

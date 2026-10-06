@@ -1,0 +1,127 @@
+{
+  "definitions": {
+    "2LT_I_STATISTICALKEYFIGURE_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "StatisticalKeyFigure": {
+          "@EndUserText.label": "Statistical key figure",
+          "type": "cds.String",
+          "key": true,
+          "length": 6,
+          "notNull": true
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "StstcKeyFigQuantityUnit": {
+          "@EndUserText.label": "Unit for statistical key figure",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "StstcKeyFigCategory": {
+          "@EndUserText.label": "Statistical key figure category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "StstclKeyFigCreatedAtDateTime": {
+          "@EndUserText.label": "Time stamp of creation",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "StstclKeyFigLastChgdAtDteTme": {
+          "@EndUserText.label": "Time stamp of last change",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "StstclKeyFigureCreatedByUser": {
+          "@EndUserText.label": "Created by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "StstclKeyFigLastChangedByUser": {
+          "@EndUserText.label": "Last changed by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "StstclKeyFigureOrigin": {
+          "@EndUserText.label": "Flag if indicator is derived from lis or set manually",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LogsInformationSystemTable": {
+          "@EndUserText.label": "Generated ddic table for lis, conditions, messages",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "LogsInfoSystemKeyFigure": {
+          "@EndUserText.label": "Key figure from lis",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "StstclKeyFigureIsCurrency": {
+          "@EndUserText.label": "Indicator if statistical ratio describes a currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "StstclKeyFigProcgPlndValType": {
+          "@EndUserText.label": "Process planned values",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "StstclKeyFigProcgActlValType": {
+          "@EndUserText.label": "Actual value processing",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_STATISTICALKEYFIGURE_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LCJBNTMP"
+        }
+      }
+    }
+  }
+}

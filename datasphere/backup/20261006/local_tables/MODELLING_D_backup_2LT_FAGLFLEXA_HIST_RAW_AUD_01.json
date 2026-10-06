@@ -1,0 +1,318 @@
+{
+  "definitions": {
+    "2LT_FAGLFLEXA_HIST_RAW_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "RYEAR": {
+          "@EndUserText.label": "RYEAR",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "DOCNR": {
+          "@EndUserText.label": "DOCNR",
+          "type": "cds.Integer",
+          "key": true,
+          "notNull": true
+        },
+        "RLDNR": {
+          "@EndUserText.label": "RLDNR",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "RBUKRS": {
+          "@EndUserText.label": "RBUKRS",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "DOCLN": {
+          "@EndUserText.label": "DOCLN",
+          "type": "cds.String",
+          "key": true,
+          "length": 6,
+          "notNull": true
+        },
+        "ACTIV": {
+          "@EndUserText.label": "ACTIV",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RMVCT": {
+          "@EndUserText.label": "RMVCT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RTCUR": {
+          "@EndUserText.label": "RTCUR",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "RUNIT": {
+          "@EndUserText.label": "RUNIT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "AWTYP": {
+          "@EndUserText.label": "AWTYP",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "RRCTY": {
+          "@EndUserText.label": "RRCTY",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "RVERS": {
+          "@EndUserText.label": "RVERS",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "LOGSYS": {
+          "@EndUserText.label": "LOGSYS",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RACCT": {
+          "@EndUserText.label": "RACCT",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "COST_ELEM": {
+          "@EndUserText.label": "COST_ELEM",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "RCNTR": {
+          "@EndUserText.label": "RCNTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PRCTR": {
+          "@EndUserText.label": "PRCTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "RFAREA": {
+          "@EndUserText.label": "RFAREA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RBUSA": {
+          "@EndUserText.label": "RBUSA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KOKRS": {
+          "@EndUserText.label": "KOKRS",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SEGMENT": {
+          "@EndUserText.label": "SEGMENT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ZZMATNR": {
+          "@EndUserText.label": "ZZMATNR",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "SCNTR": {
+          "@EndUserText.label": "SCNTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "PPRCTR": {
+          "@EndUserText.label": "PPRCTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "SFAREA": {
+          "@EndUserText.label": "SFAREA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "SBUSA": {
+          "@EndUserText.label": "SBUSA",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RASSC": {
+          "@EndUserText.label": "RASSC",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "PSEGMENT": {
+          "@EndUserText.label": "PSEGMENT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TSL": {
+          "@EndUserText.label": "TSL",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 2
+        },
+        "HSL": {
+          "@EndUserText.label": "HSL",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 2
+        },
+        "KSL": {
+          "@EndUserText.label": "KSL",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 2
+        },
+        "OSL": {
+          "@EndUserText.label": "OSL",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "MSL": {
+          "@EndUserText.label": "MSL",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "WSL": {
+          "@EndUserText.label": "WSL",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 2
+        },
+        "DRCRK": {
+          "@EndUserText.label": "DRCRK",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "POPER": {
+          "@EndUserText.label": "POPER",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "RWCUR": {
+          "@EndUserText.label": "RWCUR",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "GJAHR": {
+          "@EndUserText.label": "GJAHR",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "BUDAT": {
+          "@EndUserText.label": "BUDAT",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "BELNR": {
+          "@EndUserText.label": "BELNR",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "BUZEI": {
+          "@EndUserText.label": "BUZEI",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "BSCHL": {
+          "@EndUserText.label": "BSCHL",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "BSTAT": {
+          "@EndUserText.label": "BSTAT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "LINETYPE": {
+          "@EndUserText.label": "LINETYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "XSPLITMOD": {
+          "@EndUserText.label": "XSPLITMOD",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "USNAM": {
+          "@EndUserText.label": "USNAM",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "TIMESTAMP": {
+          "@EndUserText.label": "TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_FAGLFLEXA_HIST_RAW_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ATGQGPAH"
+        }
+      }
+    }
+  }
+}

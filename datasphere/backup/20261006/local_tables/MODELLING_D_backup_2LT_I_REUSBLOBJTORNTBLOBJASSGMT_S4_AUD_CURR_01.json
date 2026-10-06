@@ -1,0 +1,76 @@
+{
+  "definitions": {
+    "2LT_I_REUSBLOBJTORNTBLOBJASSGMT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "REUsblObjToRntblAssgmtUUID": {
+          "@EndUserText.label": "Uuid for rentable to usable object assignment",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "RealEstateRentableObjectUUID": {
+          "@EndUserText.label": "Uuid for rentable object",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "RealEstateUsableObjectUUID": {
+          "@EndUserText.label": "Uuid for usable object",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Start of rentable to usable object assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "End of rentable to usable object assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "REIsAssignmentFromUsableObj": {
+          "@EndUserText.label": "Assignment from usable object",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_REUSBLOBJTORNTBLOBJASSGMT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

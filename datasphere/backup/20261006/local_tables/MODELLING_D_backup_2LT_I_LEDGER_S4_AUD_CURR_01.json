@@ -1,0 +1,94 @@
+{
+  "definitions": {
+    "2LT_I_LEDGER_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "Ledger": {
+          "@EndUserText.label": "Ledger in general ledger accounting",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "IsLeadingLedger": {
+          "@EndUserText.label": "Indicator: leading ledger",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LedgerApplication": {
+          "@EndUserText.label": "Owner application",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "LedgerSubApplication": {
+          "@EndUserText.label": "Subapplication",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "AccountingValuationView": {
+          "@EndUserText.label": "Valuation view",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "LedgerType": {
+          "@EndUserText.label": "Ledger type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ExtensionLedgerType": {
+          "@EndUserText.label": "Extension ledger type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ReferenceLedger": {
+          "@EndUserText.label": "Fallback ledger",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TechnicalLedger": {
+          "@EndUserText.label": "Technical ledger",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_LEDGER_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LCJBNTMP"
+        }
+      }
+    }
+  }
+}

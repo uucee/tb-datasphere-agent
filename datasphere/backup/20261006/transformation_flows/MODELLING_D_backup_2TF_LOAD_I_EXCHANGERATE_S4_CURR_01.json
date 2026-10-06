@@ -1,0 +1,903 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_EXCHANGERATE_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_EXCHANGERATE_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_EXCHANGERATE_S4_CURR_01": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_EXCHANGERATE_S4_CURR_01",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "ExchangeRateType": {
+                        "@EndUserText.label": "Exchange rate type",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "SourceCurrency": {
+                        "@EndUserText.label": "From-currency",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 5
+                      },
+                      "TargetCurrency": {
+                        "@EndUserText.label": "To-currency",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 5
+                      },
+                      "ExchangeRateEffectiveDate": {
+                        "@EndUserText.label": "Date as of which the exchange rate is effective",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 8
+                      },
+                      "ExchangeRate": {
+                        "@EndUserText.label": "Exchange rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 5
+                      },
+                      "NumberOfSourceCurrencyUnits": {
+                        "@EndUserText.label": "Ratio for the \"from\" currency units",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 0
+                      },
+                      "NumberOfTargetCurrencyUnits": {
+                        "@EndUserText.label": "Ratio for the \"to\" currency units",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 0
+                      },
+                      "AlternativeExchangeRateType": {
+                        "@EndUserText.label": "Alternative exchange rate type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AltvExchangeRateTypeValdtyDate": {
+                        "@EndUserText.label": "Date from which the alternative exchange rate type is valid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "InvertedExchangeRateIsAllowed": {
+                        "@EndUserText.label": "Indicator: calculation allowed with inverted exchange rate ?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ReferenceCurrency": {
+                        "@EndUserText.label": "Reference currency for currency translation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "BuyingRateAvgExchangeRateType": {
+                        "@EndUserText.label": "Exch. rate type of av. rate used to determine buying rate",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SellingRateAvgExchangeRateType": {
+                        "@EndUserText.label": "Exch.rate type of av. rate used to determine selling rate",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "FixedExchangeRateIsUsed": {
+                        "@EndUserText.label": "Indicator: exchange rate type uses fixed exchange rates",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SpecialConversionIsUsed": {
+                        "@EndUserText.label": "Indicator: exchange rate type uses special translation model",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SourceCurrencyDecimals": {
+                        "@EndUserText.label": "Number of decimal places",
+                        "type": "cds.hana.TINYINT",
+                        "key": false
+                      },
+                      "TargetCurrencyDecimals": {
+                        "@EndUserText.label": "Number of decimal places",
+                        "type": "cds.hana.TINYINT",
+                        "key": false
+                      },
+                      "ExchRateIsIndirectQuotation": {
+                        "@EndUserText.label": "Exchange rate is indirect quotation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AbsoluteExchangeRate": {
+                        "@EndUserText.label": "Absolute exchange rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 5
+                      },
+                      "EffectiveExchangeRate": {
+                        "@EndUserText.label": "Effective exchange rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 5
+                      },
+                      "DirectQuotedEffectiveExchRate": {
+                        "@EndUserText.label": "Direct quoted effective exchange rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 5
+                      },
+                      "IndirectQuotedEffctvExchRate": {
+                        "@EndUserText.label": "Indirect quoted effective exchange rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 5
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_EXCHANGERATE_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "ExchangeRateType": {
+                      "@EndUserText.label": "Exchange rate type",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "SourceCurrency": {
+                      "@EndUserText.label": "From-currency",
+                      "type": "cds.String",
+                      "length": 5,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "TargetCurrency": {
+                      "@EndUserText.label": "To-currency",
+                      "type": "cds.String",
+                      "length": 5,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ExchangeRateEffectiveDate": {
+                      "@EndUserText.label": "Date as of which the exchange rate is effective",
+                      "type": "cds.String",
+                      "length": 8,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ExchangeRate": {
+                      "@EndUserText.label": "Exchange rate",
+                      "precision": 9,
+                      "scale": 5,
+                      "type": "cds.Decimal"
+                    },
+                    "NumberOfSourceCurrencyUnits": {
+                      "@EndUserText.label": "Ratio for the \"from\" currency units",
+                      "precision": 9,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "NumberOfTargetCurrencyUnits": {
+                      "@EndUserText.label": "Ratio for the \"to\" currency units",
+                      "precision": 9,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "AlternativeExchangeRateType": {
+                      "@EndUserText.label": "Alternative exchange rate type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AltvExchangeRateTypeValdtyDate": {
+                      "@EndUserText.label": "Date from which the alternative exchange rate type is valid",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "InvertedExchangeRateIsAllowed": {
+                      "@EndUserText.label": "Indicator: calculation allowed with inverted exchange rate ?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ReferenceCurrency": {
+                      "@EndUserText.label": "Reference currency for currency translation",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "BuyingRateAvgExchangeRateType": {
+                      "@EndUserText.label": "Exch. rate type of av. rate used to determine buying rate",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SellingRateAvgExchangeRateType": {
+                      "@EndUserText.label": "Exch.rate type of av. rate used to determine selling rate",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "FixedExchangeRateIsUsed": {
+                      "@EndUserText.label": "Indicator: exchange rate type uses fixed exchange rates",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SpecialConversionIsUsed": {
+                      "@EndUserText.label": "Indicator: exchange rate type uses special translation model",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SourceCurrencyDecimals": {
+                      "@EndUserText.label": "Number of decimal places",
+                      "type": "cds.hana.TINYINT"
+                    },
+                    "TargetCurrencyDecimals": {
+                      "@EndUserText.label": "Number of decimal places",
+                      "type": "cds.hana.TINYINT"
+                    },
+                    "ExchRateIsIndirectQuotation": {
+                      "@EndUserText.label": "Exchange rate is indirect quotation",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AbsoluteExchangeRate": {
+                      "@EndUserText.label": "Absolute exchange rate",
+                      "precision": 9,
+                      "scale": 5,
+                      "type": "cds.Decimal"
+                    },
+                    "EffectiveExchangeRate": {
+                      "@EndUserText.label": "Effective exchange rate",
+                      "precision": 13,
+                      "scale": 5,
+                      "type": "cds.Decimal"
+                    },
+                    "DirectQuotedEffectiveExchRate": {
+                      "@EndUserText.label": "Direct quoted effective exchange rate",
+                      "precision": 9,
+                      "scale": 5,
+                      "type": "cds.Decimal"
+                    },
+                    "IndirectQuotedEffctvExchRate": {
+                      "@EndUserText.label": "Indirect quoted effective exchange rate",
+                      "precision": 9,
+                      "scale": 5,
+                      "type": "cds.Decimal"
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_EXCHANGERATE_S4_CURR_01"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_EXCHANGERATE"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchangeRateType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SourceCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TargetCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchangeRateEffectiveDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchangeRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NumberOfSourceCurrencyUnits"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NumberOfTargetCurrencyUnits"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AlternativeExchangeRateType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AltvExchangeRateTypeValdtyDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvertedExchangeRateIsAllowed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ReferenceCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BuyingRateAvgExchangeRateType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SellingRateAvgExchangeRateType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedExchangeRateIsUsed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SpecialConversionIsUsed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SourceCurrencyDecimals"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TargetCurrencyDecimals"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchRateIsIndirectQuotation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AbsoluteExchangeRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "EffectiveExchangeRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DirectQuotedEffectiveExchRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IndirectQuotedEffctvExchRate"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"ExchangeRateType\",\"d\".\"SourceCurrency\",\"d\".\"TargetCurrency\",\"d\".\"ExchangeRateEffectiveDate\",\"d\".\"ExchangeRate\",\"d\".\"NumberOfSourceCurrencyUnits\",\"d\".\"NumberOfTargetCurrencyUnits\",\"d\".\"AlternativeExchangeRateType\",\"d\".\"AltvExchangeRateTypeValdtyDate\",\"d\".\"InvertedExchangeRateIsAllowed\",\"d\".\"ReferenceCurrency\",\"d\".\"BuyingRateAvgExchangeRateType\",\"d\".\"SellingRateAvgExchangeRateType\",\"d\".\"FixedExchangeRateIsUsed\",\"d\".\"SpecialConversionIsUsed\",\"d\".\"SourceCurrencyDecimals\",\"d\".\"TargetCurrencyDecimals\",\"d\".\"ExchRateIsIndirectQuotation\",\"d\".\"AbsoluteExchangeRate\",\"d\".\"EffectiveExchangeRate\",\"d\".\"DirectQuotedEffectiveExchRate\",\"d\".\"IndirectQuotedEffctvExchRate\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_I_EXCHANGERATE_S4_CURR_01\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_EXCHANGERATE'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_EXCHANGERATE_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "ExchangeRateType",
+                    "target": "ExchangeRateType"
+                  },
+                  {
+                    "source": "SourceCurrency",
+                    "target": "SourceCurrency"
+                  },
+                  {
+                    "source": "TargetCurrency",
+                    "target": "TargetCurrency"
+                  },
+                  {
+                    "source": "ExchangeRateEffectiveDate",
+                    "target": "ExchangeRateEffectiveDate"
+                  },
+                  {
+                    "source": "ExchangeRate",
+                    "target": "ExchangeRate"
+                  },
+                  {
+                    "source": "NumberOfSourceCurrencyUnits",
+                    "target": "NumberOfSourceCurrencyUnits"
+                  },
+                  {
+                    "source": "NumberOfTargetCurrencyUnits",
+                    "target": "NumberOfTargetCurrencyUnits"
+                  },
+                  {
+                    "source": "AlternativeExchangeRateType",
+                    "target": "AlternativeExchangeRateType"
+                  },
+                  {
+                    "source": "AltvExchangeRateTypeValdtyDate",
+                    "target": "AltvExchangeRateTypeValdtyDate"
+                  },
+                  {
+                    "source": "InvertedExchangeRateIsAllowed",
+                    "target": "InvertedExchangeRateIsAllowed"
+                  },
+                  {
+                    "source": "ReferenceCurrency",
+                    "target": "ReferenceCurrency"
+                  },
+                  {
+                    "source": "BuyingRateAvgExchangeRateType",
+                    "target": "BuyingRateAvgExchangeRateType"
+                  },
+                  {
+                    "source": "SellingRateAvgExchangeRateType",
+                    "target": "SellingRateAvgExchangeRateType"
+                  },
+                  {
+                    "source": "FixedExchangeRateIsUsed",
+                    "target": "FixedExchangeRateIsUsed"
+                  },
+                  {
+                    "source": "SpecialConversionIsUsed",
+                    "target": "SpecialConversionIsUsed"
+                  },
+                  {
+                    "source": "SourceCurrencyDecimals",
+                    "target": "SourceCurrencyDecimals"
+                  },
+                  {
+                    "source": "TargetCurrencyDecimals",
+                    "target": "TargetCurrencyDecimals"
+                  },
+                  {
+                    "source": "ExchRateIsIndirectQuotation",
+                    "target": "ExchRateIsIndirectQuotation"
+                  },
+                  {
+                    "source": "AbsoluteExchangeRate",
+                    "target": "AbsoluteExchangeRate"
+                  },
+                  {
+                    "source": "EffectiveExchangeRate",
+                    "target": "EffectiveExchangeRate"
+                  },
+                  {
+                    "source": "DirectQuotedEffectiveExchRate",
+                    "target": "DirectQuotedEffectiveExchRate"
+                  },
+                  {
+                    "source": "IndirectQuotedEffctvExchRate",
+                    "target": "IndirectQuotedEffctvExchRate"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "ExchangeRateType": {
+                      "@EndUserText.label": "Exchange rate type",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "SourceCurrency": {
+                      "@EndUserText.label": "From-currency",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 5,
+                      "notNull": true
+                    },
+                    "TargetCurrency": {
+                      "@EndUserText.label": "To-currency",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 5,
+                      "notNull": true
+                    },
+                    "ExchangeRateEffectiveDate": {
+                      "@EndUserText.label": "Date as of which the exchange rate is effective",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 8,
+                      "notNull": true
+                    },
+                    "ExchangeRate": {
+                      "@EndUserText.label": "Exchange rate",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 5
+                    },
+                    "NumberOfSourceCurrencyUnits": {
+                      "@EndUserText.label": "Ratio for the \"from\" currency units",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 0
+                    },
+                    "NumberOfTargetCurrencyUnits": {
+                      "@EndUserText.label": "Ratio for the \"to\" currency units",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 0
+                    },
+                    "AlternativeExchangeRateType": {
+                      "@EndUserText.label": "Alternative exchange rate type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AltvExchangeRateTypeValdtyDate": {
+                      "@EndUserText.label": "Date from which the alternative exchange rate type is valid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "InvertedExchangeRateIsAllowed": {
+                      "@EndUserText.label": "Indicator: calculation allowed with inverted exchange rate ?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ReferenceCurrency": {
+                      "@EndUserText.label": "Reference currency for currency translation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "BuyingRateAvgExchangeRateType": {
+                      "@EndUserText.label": "Exch. rate type of av. rate used to determine buying rate",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SellingRateAvgExchangeRateType": {
+                      "@EndUserText.label": "Exch.rate type of av. rate used to determine selling rate",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "FixedExchangeRateIsUsed": {
+                      "@EndUserText.label": "Indicator: exchange rate type uses fixed exchange rates",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SpecialConversionIsUsed": {
+                      "@EndUserText.label": "Indicator: exchange rate type uses special translation model",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SourceCurrencyDecimals": {
+                      "@EndUserText.label": "Number of decimal places",
+                      "type": "cds.hana.TINYINT",
+                      "key": false
+                    },
+                    "TargetCurrencyDecimals": {
+                      "@EndUserText.label": "Number of decimal places",
+                      "type": "cds.hana.TINYINT",
+                      "key": false
+                    },
+                    "ExchRateIsIndirectQuotation": {
+                      "@EndUserText.label": "Exchange rate is indirect quotation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AbsoluteExchangeRate": {
+                      "@EndUserText.label": "Absolute exchange rate",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 5
+                    },
+                    "EffectiveExchangeRate": {
+                      "@EndUserText.label": "Effective exchange rate",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 5
+                    },
+                    "DirectQuotedEffectiveExchRate": {
+                      "@EndUserText.label": "Direct quoted effective exchange rate",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 5
+                    },
+                    "IndirectQuotedEffctvExchRate": {
+                      "@EndUserText.label": "Indirect quoted effective exchange rate",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 5
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_EXCHANGERATE_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_HZYTTGOZ"
+                    }
+                  }
+                },
+                "name": "2LT_I_EXCHANGERATE_S4_AUD_CURR_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

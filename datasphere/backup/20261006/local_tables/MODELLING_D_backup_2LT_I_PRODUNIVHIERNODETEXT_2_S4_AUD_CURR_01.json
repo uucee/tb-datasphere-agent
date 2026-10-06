@@ -1,0 +1,79 @@
+{
+  "definitions": {
+    "2LT_I_PRODUNIVHIERNODETEXT_2_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "ProdUnivHierarchy": {
+          "@EndUserText.label": "Product hierarchy",
+          "type": "cds.String",
+          "key": true,
+          "length": 20,
+          "notNull": true
+        },
+        "HierarchyNode": {
+          "@EndUserText.label": "Hierarchy node",
+          "type": "cds.String",
+          "key": true,
+          "length": 50,
+          "notNull": true
+        },
+        "ProdHierarchyValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ProdHierarchyValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProdUnivHierarchyNodeText": {
+          "@EndUserText.label": "Product hierarchy node value text",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_PRODUNIVHIERNODETEXT_2_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_DGMAVVLL"
+        }
+      }
+    }
+  }
+}

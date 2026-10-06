@@ -1,0 +1,823 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_SKA1_HIST_RAW_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_SKA1_HIST_RAW_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_HIST_RAW": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW"
+                  },
+                  "1_INBOUND_HIST_RAW.1LT_SKA1_HIST_RAW": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_SKA1_HIST_RAW",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "KTOPL": {
+                        "@EndUserText.label": "KTOPL",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "SAKNR": {
+                        "@EndUserText.label": "SAKNR",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "XBILK": {
+                        "@EndUserText.label": "XBILK",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SAKAN": {
+                        "@EndUserText.label": "SAKAN",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "BILKT": {
+                        "@EndUserText.label": "BILKT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ERDAT": {
+                        "@EndUserText.label": "ERDAT",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ERNAM": {
+                        "@EndUserText.label": "ERNAM",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      },
+                      "GVTYP": {
+                        "@EndUserText.label": "GVTYP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "KTOKS": {
+                        "@EndUserText.label": "KTOKS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "MUSTR": {
+                        "@EndUserText.label": "MUSTR",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "VBUND": {
+                        "@EndUserText.label": "VBUND",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "XLOEV": {
+                        "@EndUserText.label": "XLOEV",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "XSPEA": {
+                        "@EndUserText.label": "XSPEA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "XSPEB": {
+                        "@EndUserText.label": "XSPEB",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "XSPEP": {
+                        "@EndUserText.label": "XSPEP",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "MCOD1": {
+                        "@EndUserText.label": "MCOD1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "FUNC_AREA": {
+                        "@EndUserText.label": "FUNC_AREA",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "ZZKTOKS": {
+                        "@EndUserText.label": "ZZKTOKS",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5000
+                      },
+                      "TXT20": {
+                        "@EndUserText.label": "TXT20",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "TXT50": {
+                        "@EndUserText.label": "TXT50",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.schema": "1_INBOUND_HIST_RAW",
+                    "@DataWarehouse.space.businessName": "1 INBOUND HIST RAW"
+                  }
+                },
+                "name": "2TF_LOAD_SKA1_HIST_RAW_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "KTOPL": {
+                      "@EndUserText.label": "KTOPL",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "SAKNR": {
+                      "@EndUserText.label": "SAKNR",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "XBILK": {
+                      "@EndUserText.label": "XBILK",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SAKAN": {
+                      "@EndUserText.label": "SAKAN",
+                      "type": "cds.Integer"
+                    },
+                    "BILKT": {
+                      "@EndUserText.label": "BILKT",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ERDAT": {
+                      "@EndUserText.label": "ERDAT",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ERNAM": {
+                      "@EndUserText.label": "ERNAM",
+                      "type": "cds.String",
+                      "length": 50
+                    },
+                    "GVTYP": {
+                      "@EndUserText.label": "GVTYP",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "KTOKS": {
+                      "@EndUserText.label": "KTOKS",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "MUSTR": {
+                      "@EndUserText.label": "MUSTR",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "VBUND": {
+                      "@EndUserText.label": "VBUND",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "XLOEV": {
+                      "@EndUserText.label": "XLOEV",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "XSPEA": {
+                      "@EndUserText.label": "XSPEA",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "XSPEB": {
+                      "@EndUserText.label": "XSPEB",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "XSPEP": {
+                      "@EndUserText.label": "XSPEP",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "MCOD1": {
+                      "@EndUserText.label": "MCOD1",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "FUNC_AREA": {
+                      "@EndUserText.label": "FUNC_AREA",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "ZZKTOKS": {
+                      "@EndUserText.label": "ZZKTOKS",
+                      "type": "cds.String",
+                      "length": 5000
+                    },
+                    "TXT20": {
+                      "@EndUserText.label": "TXT20",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "TXT50": {
+                      "@EndUserText.label": "TXT50",
+                      "type": "cds.String",
+                      "length": 50
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_HIST_RAW.1LT_SKA1_HIST_RAW"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_HIST_RAW_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "HIST_RAW"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "SKA1"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "HIST_RAW",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KTOPL"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SAKNR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XBILK"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SAKAN"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BILKT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ERDAT"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ERNAM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GVTYP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "KTOKS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MUSTR"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VBUND"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XLOEV"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSPEA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSPEB"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "XSPEP"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MCOD1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FUNC_AREA"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ZZKTOKS"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TXT20"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TXT50"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": " SELECT \r\n    b.\"BATCH_ID\",\r\n    CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n    'HIST_RAW' AS \"SOURCE_SYSTEM\",\r\n    o.\"SOURCE_FILE\",\r\n    \"d\".\"KTOPL\",\"d\".\"SAKNR\",\"d\".\"XBILK\",\"d\".\"SAKAN\",\"d\".\"BILKT\",\"d\".\"ERDAT\",\"d\".\"ERNAM\",\"d\".\"GVTYP\",\"d\".\"KTOKS\",\"d\".\"MUSTR\",\"d\".\"VBUND\",\"d\".\"XLOEV\",\"d\".\"XSPEA\",\"d\".\"XSPEB\",\"d\".\"XSPEP\",\"d\".\"MCOD1\",\"d\".\"FUNC_AREA\",\"d\".\"ZZKTOKS\",\"d\".\"TXT20\",\"d\".\"TXT50\"\r\nFROM \"1_INBOUND_HIST_RAW.1LT_SKA1_HIST_RAW\" d\r\n\tCROSS JOIN \"2SV_ACTIVE_BATCH_HIST_RAW_01\" b\r\n\tJOIN \"2LT_CTRL_LOAD_OBJECT_01\" o \r\n\t    ON o.\"BATCH_ID\" = b.\"BATCH_ID\" \r\n\t        AND o.\"SOURCE_SYSTEM\" = 'HIST_RAW' \r\n\t        AND o.\"OBJECT_NAME\" = 'SKA1'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_SKA1_HIST_RAW_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "KTOPL",
+                    "target": "KTOPL"
+                  },
+                  {
+                    "source": "SAKNR",
+                    "target": "SAKNR"
+                  },
+                  {
+                    "source": "XBILK",
+                    "target": "XBILK"
+                  },
+                  {
+                    "source": "SAKAN",
+                    "target": "SAKAN"
+                  },
+                  {
+                    "source": "BILKT",
+                    "target": "BILKT"
+                  },
+                  {
+                    "source": "ERDAT",
+                    "target": "ERDAT"
+                  },
+                  {
+                    "source": "ERNAM",
+                    "target": "ERNAM"
+                  },
+                  {
+                    "source": "GVTYP",
+                    "target": "GVTYP"
+                  },
+                  {
+                    "source": "KTOKS",
+                    "target": "KTOKS"
+                  },
+                  {
+                    "source": "MUSTR",
+                    "target": "MUSTR"
+                  },
+                  {
+                    "source": "VBUND",
+                    "target": "VBUND"
+                  },
+                  {
+                    "source": "XLOEV",
+                    "target": "XLOEV"
+                  },
+                  {
+                    "source": "XSPEA",
+                    "target": "XSPEA"
+                  },
+                  {
+                    "source": "XSPEB",
+                    "target": "XSPEB"
+                  },
+                  {
+                    "source": "XSPEP",
+                    "target": "XSPEP"
+                  },
+                  {
+                    "source": "MCOD1",
+                    "target": "MCOD1"
+                  },
+                  {
+                    "source": "FUNC_AREA",
+                    "target": "FUNC_AREA"
+                  },
+                  {
+                    "source": "ZZKTOKS",
+                    "target": "ZZKTOKS"
+                  },
+                  {
+                    "source": "TXT20",
+                    "target": "TXT20"
+                  },
+                  {
+                    "source": "TXT50",
+                    "target": "TXT50"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "KTOPL": {
+                      "@EndUserText.label": "KTOPL",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "SAKNR": {
+                      "@EndUserText.label": "SAKNR",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "XBILK": {
+                      "@EndUserText.label": "XBILK",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SAKAN": {
+                      "@EndUserText.label": "SAKAN",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "BILKT": {
+                      "@EndUserText.label": "BILKT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ERDAT": {
+                      "@EndUserText.label": "ERDAT",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ERNAM": {
+                      "@EndUserText.label": "ERNAM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    },
+                    "GVTYP": {
+                      "@EndUserText.label": "GVTYP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "KTOKS": {
+                      "@EndUserText.label": "KTOKS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "MUSTR": {
+                      "@EndUserText.label": "MUSTR",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "VBUND": {
+                      "@EndUserText.label": "VBUND",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "XLOEV": {
+                      "@EndUserText.label": "XLOEV",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "XSPEA": {
+                      "@EndUserText.label": "XSPEA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "XSPEB": {
+                      "@EndUserText.label": "XSPEB",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "XSPEP": {
+                      "@EndUserText.label": "XSPEP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "MCOD1": {
+                      "@EndUserText.label": "MCOD1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "FUNC_AREA": {
+                      "@EndUserText.label": "FUNC_AREA",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "ZZKTOKS": {
+                      "@EndUserText.label": "ZZKTOKS",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5000
+                    },
+                    "TXT20": {
+                      "@EndUserText.label": "TXT20",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "TXT50": {
+                      "@EndUserText.label": "TXT50",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_SKA1_HIST_RAW_AUD_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_OWHVPQRQ"
+                    }
+                  }
+                },
+                "name": "2LT_SKA1_HIST_RAW_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

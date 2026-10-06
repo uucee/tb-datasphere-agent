@@ -1,0 +1,160 @@
+{
+  "definitions": {
+    "2LT_I_RECONTRORGLASSGMTTERM_S4_AUD_CURR_01": {
+      "kind": "entity",
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.Timestamp"
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "length": 20
+        },
+        "InternalRealEstateNumber": {
+          "@EndUserText.label": "Internal key of real estate object",
+          "type": "cds.String",
+          "length": 13,
+          "key": true,
+          "notNull": true
+        },
+        "RETermType": {
+          "@EndUserText.label": "Term category",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "RETermNumber": {
+          "@EndUserText.label": "Term number",
+          "type": "cds.String",
+          "length": 4,
+          "key": true,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Validity start date",
+          "type": "cds.String",
+          "length": 8,
+          "key": true,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Validity end date",
+          "type": "cds.String",
+          "length": 8
+        },
+        "BusinessArea": {
+          "@EndUserText.label": "Business area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "length": 10
+        },
+        "REStatusObject": {
+          "@EndUserText.label": "Object number for additional account assignment",
+          "type": "cds.String",
+          "length": 22
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "length": 15
+        },
+        "Fund": {
+          "@EndUserText.label": "Fund",
+          "type": "cds.String",
+          "length": 10
+        },
+        "FundsCenter": {
+          "@EndUserText.label": "Funds center",
+          "type": "cds.String",
+          "length": 16
+        },
+        "CommitmentItem": {
+          "@EndUserText.label": "Commitment item",
+          "type": "cds.String",
+          "length": 24
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "length": 16
+        },
+        "REFundsManagementGrantID": {
+          "@EndUserText.label": "Grant",
+          "type": "cds.String",
+          "length": 24
+        },
+        "BudgetPeriod": {
+          "@EndUserText.label": "Budget period",
+          "type": "cds.String",
+          "length": 10
+        },
+        "RealEstateObjectType": {
+          "@EndUserText.label": "Object type",
+          "type": "cds.String",
+          "length": 2
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "TaxCalculationProcedure": {
+          "@EndUserText.label": "Procedure (pricing, output control, acct. det., costing,...)",
+          "type": "cds.String",
+          "length": 6
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "length": 4
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "length": 4
+        },
+        "LOAD_FLOW": {
+          "@EndUserText.label": "LOAD_FLOW",
+          "type": "cds.String",
+          "length": 120
+        },
+        "OBJECT_NAME": {
+          "@EndUserText.label": "OBJECT_NAME",
+          "type": "cds.String",
+          "length": 120
+        },
+        "BATCH_TYPE": {
+          "@EndUserText.label": "BATCH_TYPE",
+          "type": "cds.String",
+          "length": 20
+        }
+      },
+      "@EndUserText.label": "2LT_I_RECONTRORGLASSGMTTERM_S4_AUD_CURR_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,520 @@
+{
+  "definitions": {
+    "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "CalendarDate": {
+          "@EndUserText.label": "Calendar date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "FiscalYear": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FiscalYearStartDate": {
+          "@EndUserText.label": "Start date of fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalYearEndDate": {
+          "@EndUserText.label": "End date of fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalPeriod": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "FiscalPeriodStartDate": {
+          "@EndUserText.label": "Start date of fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalPeriodEndDate": {
+          "@EndUserText.label": "End date of fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalQuarter": {
+          "@EndUserText.label": "Fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FiscalQuarterStartDate": {
+          "@EndUserText.label": "Start date of fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalQuarterEndDate": {
+          "@EndUserText.label": "End date of fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalWeek": {
+          "@EndUserText.label": "Fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FiscalWeekStartDate": {
+          "@EndUserText.label": "Start date of fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalWeekEndDate": {
+          "@EndUserText.label": "End date of fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalYearPeriod": {
+          "@EndUserText.label": "Fiscal year + fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "FiscalYearQuarter": {
+          "@EndUserText.label": "Fiscal year + fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "FiscalYearWeek": {
+          "@EndUserText.label": "Fiscal year + fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "FiscalYearConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year (integer)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "FiscalPeriodConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year period (numbering)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "FiscalQuarterConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year quarter (numbering)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "FiscalWeekConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year week (numbering)",
+          "type": "cds.Integer",
+          "key": false
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearVariant"
+              ]
+            },
+            {
+              "ref": [
+                "CalendarDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYear"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalPeriodStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalPeriodEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalQuarter"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalQuarterStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalQuarterEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalWeek"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalWeekStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalWeekEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearPeriod"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearQuarter"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearWeek"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearConsecutiveNumber"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalPeriodConsecutiveNumber"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalQuarterConsecutiveNumber"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalWeekConsecutiveNumber"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ZWUCDVPL"
+        }
+      }
+    },
+    "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "CalendarDate": {
+          "@EndUserText.label": "Calendar date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "FiscalYear": {
+          "@EndUserText.label": "Fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FiscalYearStartDate": {
+          "@EndUserText.label": "Start date of fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalYearEndDate": {
+          "@EndUserText.label": "End date of fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalPeriod": {
+          "@EndUserText.label": "Fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "FiscalPeriodStartDate": {
+          "@EndUserText.label": "Start date of fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalPeriodEndDate": {
+          "@EndUserText.label": "End date of fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalQuarter": {
+          "@EndUserText.label": "Fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FiscalQuarterStartDate": {
+          "@EndUserText.label": "Start date of fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalQuarterEndDate": {
+          "@EndUserText.label": "End date of fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalWeek": {
+          "@EndUserText.label": "Fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FiscalWeekStartDate": {
+          "@EndUserText.label": "Start date of fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalWeekEndDate": {
+          "@EndUserText.label": "End date of fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "FiscalYearPeriod": {
+          "@EndUserText.label": "Fiscal year + fiscal period",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "FiscalYearQuarter": {
+          "@EndUserText.label": "Fiscal year + fiscal quarter",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "FiscalYearWeek": {
+          "@EndUserText.label": "Fiscal year + fiscal week",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "FiscalYearConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year (integer)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "FiscalPeriodConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year period (numbering)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "FiscalQuarterConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year quarter (numbering)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "FiscalWeekConsecutiveNumber": {
+          "@EndUserText.label": "Fiscal year week (numbering)",
+          "type": "cds.Integer",
+          "key": false
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_FISCALCALENDARDATE_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ZWUCDVPL"
+        }
+      }
+    }
+  }
+}

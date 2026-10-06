@@ -1,0 +1,59 @@
+{
+  "definitions": {
+    "2LT_TKA02_HIST_RAW_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "BUKRS": {
+          "@EndUserText.label": "BUKRS",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "GSBER": {
+          "@EndUserText.label": "GSBER",
+          "type": "cds.String",
+          "key": true,
+          "length": 5000,
+          "notNull": true
+        },
+        "KOKRS": {
+          "@EndUserText.label": "KOKRS",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_TKA02_HIST_RAW_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_COLSUGMJ"
+        }
+      }
+    }
+  }
+}

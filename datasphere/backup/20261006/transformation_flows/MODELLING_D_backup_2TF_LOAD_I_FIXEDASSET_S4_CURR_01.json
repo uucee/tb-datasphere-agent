@@ -1,0 +1,3357 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_FIXEDASSET_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_FIXEDASSET_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_FIXEDASSET_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_FIXEDASSET_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_FIXEDASSET_S4_CURR",
+                    "elements": {
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "MasterFixedAsset": {
+                        "@EndUserText.label": "Main asset number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 12
+                      },
+                      "FixedAsset": {
+                        "@EndUserText.label": "Asset subnumber",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "FixedAssetExternalID": {
+                        "@EndUserText.label": "Asset number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 17
+                      },
+                      "AssetClass": {
+                        "@EndUserText.label": "Asset class",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AssetSerialNumber": {
+                        "@EndUserText.label": "Serial number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "Quantity": {
+                        "@EndUserText.label": "Quantity",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "BaseUnit": {
+                        "@EndUserText.label": "Base unit of measure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "Inventory": {
+                        "@EndUserText.label": "Inventory number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "FixedAssetDescription": {
+                        "@EndUserText.label": "Asset description",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      },
+                      "AssetAdditionalDescription": {
+                        "@EndUserText.label": "Additional asset description",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      },
+                      "Currency": {
+                        "@EndUserText.label": "Currency key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "OriglAcqnAmtInCoCodeCrcy": {
+                        "@EndUserText.label": "Original acquisition value",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "PartnerCompany": {
+                        "@EndUserText.label": "Company id of trading partner",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "AssetManufacturerName": {
+                        "@EndUserText.label": "Manufacturer of asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "InHouseProdnPercent": {
+                        "@EndUserText.label": "In-house production percentage",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 5,
+                        "scale": 2
+                      },
+                      "AssetSupplierName": {
+                        "@EndUserText.label": "Name of asset supplier",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "InventoryNote": {
+                        "@EndUserText.label": "Supplementary inventory specifications",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "Group1AssetEvaluationKey": {
+                        "@EndUserText.label": "Evaluation group 1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Group2AssetEvaluationKey": {
+                        "@EndUserText.label": "Evaluation group 2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Group3AssetEvaluationKey": {
+                        "@EndUserText.label": "Evaluation group 3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Group4AssetEvaluationKey": {
+                        "@EndUserText.label": "Evaluation group 4",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "Group5AssetEvaluationKey": {
+                        "@EndUserText.label": "Evaluation group 5",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AssetAccountDetermination": {
+                        "@EndUserText.label": "Account determination",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "HasHistory": {
+                        "@EndUserText.label": "Indicator: historical management",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetCapitalizationDate": {
+                        "@EndUserText.label": "Asset capitalization date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FirstAcquisitionFiscalYear": {
+                        "@EndUserText.label": "Fiscal year in which first acquisition was posted",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "FirstAcquisitionFiscalPeriod": {
+                        "@EndUserText.label": "Period in which first acquisition was posted",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "AssetDeactivationDate": {
+                        "@EndUserText.label": "Deactivation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PlannedRetirementDate": {
+                        "@EndUserText.label": "Planned retirement date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FixedAssetOrderDate": {
+                        "@EndUserText.label": "Asset purchase order date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "OriginalMasterFixedAsset": {
+                        "@EndUserText.label": "Original asset that was transferred",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "FixedAssetGroup": {
+                        "@EndUserText.label": "Asset super number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "InvestmentReason": {
+                        "@EndUserText.label": "Reason for investment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "AssetIsRealEstate": {
+                        "@EndUserText.label": "Indicator: real estate",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AreaSizeUnit": {
+                        "@EndUserText.label": "Area unit",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "InvestmentOrder": {
+                        "@EndUserText.label": "Investment order",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "InvestmentProjectWBSElement_2": {
+                        "@EndUserText.label": "Asset wbs element (internal id)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "InvestmentProjectWBSElement": {
+                        "@EndUserText.label": "Wbs element of investment project",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "InventoryIsCounted": {
+                        "@EndUserText.label": "Inventory indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "LastInventoryDate": {
+                        "@EndUserText.label": "Last inventory date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AssetSynchronizationRule": {
+                        "@EndUserText.label": "Change asset master record from equipment master",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "OriginalAcquisitionFiscalYear": {
+                        "@EndUserText.label": "Fiscal year of original acquisition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AssetTypeName": {
+                        "@EndUserText.label": "Asset type name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "Supplier": {
+                        "@EndUserText.label": "Account number of supplier (other key word)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "AssetCountryOfOrigin": {
+                        "@EndUserText.label": "Asset's country/region of origin",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "NoticeOfAssessmentTaxID": {
+                        "@EndUserText.label": "Tax number of the notice of assessment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "LastAssessmentNoticeDate": {
+                        "@EndUserText.label": "Date of last notice of assessment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "EnvrnmtlInvestmentReason": {
+                        "@EndUserText.label": "Reason for environmental investment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Changed on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "FixedAssetFinDataCmpltns": {
+                        "@EndUserText.label": "Completeness indicator for the asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AccountIsMarkedForDeletion": {
+                        "@EndUserText.label": "Indicator: account marked for deletion?",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AccountIsBlockedForPosting": {
+                        "@EndUserText.label": "Indicator: asset locked to acquisition postings",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AcquisitionValueDate": {
+                        "@EndUserText.label": "Asset value date of the first posting",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "OriginalFixedAssetValueDate": {
+                        "@EndUserText.label": "Original acquisition date of auc/ transferred asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AssetUnderConstIsInvmtMsr": {
+                        "@EndUserText.label": "Asset under construction for investment measures",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "LastRetirementValueDate": {
+                        "@EndUserText.label": "Asset value date for the last retirement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Name of person who changed object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "FixedAssetPropertyType": {
+                        "@EndUserText.label": "Property indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "Record creation date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Name of person responsible for creating the object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "ManualDepreciationReason": {
+                        "@EndUserText.label": "Reason for manual valuation of net assets",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "LastReorganizationDate": {
+                        "@EndUserText.label": "Date of last reorganization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LegacyDataTransferDate": {
+                        "@EndUserText.label": "Legacy data transfer date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "IsGroupAsset": {
+                        "@EndUserText.label": "Indicator: asset is a group asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsLineItemSettled": {
+                        "@EndUserText.label": "Asset under construct. with line item settlement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "OriginalFixedAsset": {
+                        "@EndUserText.label": "Original asset that was transferred",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "MasterFixedAssetSearchTerm": {
+                        "@EndUserText.label": "Search term for matchcode search",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "AssetStatusAtPurchase": {
+                        "@EndUserText.label": "Asset status at purchase: new, used or unknown",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetIsAcquiredUsed": {
+                        "@EndUserText.label": "Asset acquired used",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsMainAsset": {
+                        "@EndUserText.label": "Indicator for main asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetLifecycleStatus": {
+                        "@EndUserText.label": "Lifecycle status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetCompletenessStatus": {
+                        "@EndUserText.label": "Completeness status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetUnderConstructionStatus": {
+                        "@EndUserText.label": "Asset under construction status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetCreationValidityDate": {
+                        "@EndUserText.label": "Validity date from asset class",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreationDateTime": {
+                        "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 0
+                      },
+                      "LastChangeDateTime": {
+                        "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 0
+                      },
+                      "AssetScreenLayout": {
+                        "@EndUserText.label": "Layout for asset master data",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "OriginalAcquisitionAmount": {
+                        "@EndUserText.label": "Original acquisition value",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "OriginalAcquisitionCurrency": {
+                        "@EndUserText.label": "Original acquisition value currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "PropertyClass": {
+                        "@EndUserText.label": "Property classification key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "LocalTaxOffice": {
+                        "@EndUserText.label": "Local tax office",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "Municipality": {
+                        "@EndUserText.label": "Municipality",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "LandRegisterDate": {
+                        "@EndUserText.label": "Land register of",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LandRegisterEntrySequence": {
+                        "@EndUserText.label": "Land register entry: sequence number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "LandRegisterEntryDate": {
+                        "@EndUserText.label": "Land register entry on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LandRegisterVolume": {
+                        "@EndUserText.label": "Land register volume",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "LandRegisterPage": {
+                        "@EndUserText.label": "Land register page",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "LandRegisterMap": {
+                        "@EndUserText.label": "Land register map number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "LandPlot": {
+                        "@EndUserText.label": "Plot number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ConveyanceDate": {
+                        "@EndUserText.label": "Date of conveyance",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AreaSize": {
+                        "@EndUserText.label": "Surface area",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "LeaseSupplier": {
+                        "@EndUserText.label": "Leasing company",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "LeaseAgreement": {
+                        "@EndUserText.label": "Leasing agreement number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "LeaseAgreementDate": {
+                        "@EndUserText.label": "Leasing agreement date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LeaseTermEndDate": {
+                        "@EndUserText.label": "Leasing agreement notice date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LeaseTermStartDate": {
+                        "@EndUserText.label": "Lease start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LeaseDurationInFiscalYears": {
+                        "@EndUserText.label": "Length of lease in years",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "LeaseDurationInFiscalPeriods": {
+                        "@EndUserText.label": "Length of lease in periods",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "LeaseType": {
+                        "@EndUserText.label": "Leasing type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "LeasedAssetNote": {
+                        "@EndUserText.label": "Leasing data text",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 50
+                      },
+                      "LegacyAsset": {
+                        "@EndUserText.label": "Legacy asset number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "LegacyFixedAssetCompanyCode": {
+                        "@EndUserText.label": "Legacy fixed asset company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 80
+                      },
+                      "LegacyMasterFixedAsset": {
+                        "@EndUserText.label": "Legacy main asset number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 80
+                      },
+                      "LegacyFixedAsset": {
+                        "@EndUserText.label": "Legacy asset subnumber",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "LegacyDataTransferSequence": {
+                        "@EndUserText.label": "Legacy data transfer - sequence number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "AssetIsForPostCapitalization": {
+                        "@EndUserText.label": "Fixed asset with post-capitalization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "AssetAuthorizationContext": {
+                        "@EndUserText.label": "Asset authorization context",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ObjectInternalID": {
+                        "@EndUserText.label": "Object number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_FIXEDASSET_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Main asset number",
+                      "type": "cds.String",
+                      "length": 12,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FixedAssetExternalID": {
+                      "@EndUserText.label": "Asset number",
+                      "type": "cds.String",
+                      "length": 17
+                    },
+                    "AssetClass": {
+                      "@EndUserText.label": "Asset class",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AssetSerialNumber": {
+                      "@EndUserText.label": "Serial number",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "Quantity": {
+                      "@EndUserText.label": "Quantity",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "BaseUnit": {
+                      "@EndUserText.label": "Base unit of measure",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "Inventory": {
+                      "@EndUserText.label": "Inventory number",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "FixedAssetDescription": {
+                      "@EndUserText.label": "Asset description",
+                      "type": "cds.String",
+                      "length": 50
+                    },
+                    "AssetAdditionalDescription": {
+                      "@EndUserText.label": "Additional asset description",
+                      "type": "cds.String",
+                      "length": 50
+                    },
+                    "Currency": {
+                      "@EndUserText.label": "Currency key",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "OriglAcqnAmtInCoCodeCrcy": {
+                      "@EndUserText.label": "Original acquisition value",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "PartnerCompany": {
+                      "@EndUserText.label": "Company id of trading partner",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "AssetManufacturerName": {
+                      "@EndUserText.label": "Manufacturer of asset",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "InHouseProdnPercent": {
+                      "@EndUserText.label": "In-house production percentage",
+                      "precision": 5,
+                      "scale": 2,
+                      "type": "cds.Decimal"
+                    },
+                    "AssetSupplierName": {
+                      "@EndUserText.label": "Name of asset supplier",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "InventoryNote": {
+                      "@EndUserText.label": "Supplementary inventory specifications",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "Group1AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 1",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Group2AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 2",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Group3AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 3",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Group4AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 4",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "Group5AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 5",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AssetAccountDetermination": {
+                      "@EndUserText.label": "Account determination",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "HasHistory": {
+                      "@EndUserText.label": "Indicator: historical management",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetCapitalizationDate": {
+                      "@EndUserText.label": "Asset capitalization date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FirstAcquisitionFiscalYear": {
+                      "@EndUserText.label": "Fiscal year in which first acquisition was posted",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "FirstAcquisitionFiscalPeriod": {
+                      "@EndUserText.label": "Period in which first acquisition was posted",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "AssetDeactivationDate": {
+                      "@EndUserText.label": "Deactivation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PlannedRetirementDate": {
+                      "@EndUserText.label": "Planned retirement date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FixedAssetOrderDate": {
+                      "@EndUserText.label": "Asset purchase order date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "OriginalMasterFixedAsset": {
+                      "@EndUserText.label": "Original asset that was transferred",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "FixedAssetGroup": {
+                      "@EndUserText.label": "Asset super number",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "InvestmentReason": {
+                      "@EndUserText.label": "Reason for investment",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "AssetIsRealEstate": {
+                      "@EndUserText.label": "Indicator: real estate",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AreaSizeUnit": {
+                      "@EndUserText.label": "Area unit",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "InvestmentOrder": {
+                      "@EndUserText.label": "Investment order",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "InvestmentProjectWBSElement_2": {
+                      "@EndUserText.label": "Asset wbs element (internal id)",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "InvestmentProjectWBSElement": {
+                      "@EndUserText.label": "Wbs element of investment project",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "InventoryIsCounted": {
+                      "@EndUserText.label": "Inventory indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "LastInventoryDate": {
+                      "@EndUserText.label": "Last inventory date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AssetSynchronizationRule": {
+                      "@EndUserText.label": "Change asset master record from equipment master",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "OriginalAcquisitionFiscalYear": {
+                      "@EndUserText.label": "Fiscal year of original acquisition",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AssetTypeName": {
+                      "@EndUserText.label": "Asset type name",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "Supplier": {
+                      "@EndUserText.label": "Account number of supplier (other key word)",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "AssetCountryOfOrigin": {
+                      "@EndUserText.label": "Asset's country/region of origin",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "NoticeOfAssessmentTaxID": {
+                      "@EndUserText.label": "Tax number of the notice of assessment",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "LastAssessmentNoticeDate": {
+                      "@EndUserText.label": "Date of last notice of assessment",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "EnvrnmtlInvestmentReason": {
+                      "@EndUserText.label": "Reason for environmental investment",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Changed on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "FixedAssetFinDataCmpltns": {
+                      "@EndUserText.label": "Completeness indicator for the asset",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AccountIsMarkedForDeletion": {
+                      "@EndUserText.label": "Indicator: account marked for deletion?",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AccountIsBlockedForPosting": {
+                      "@EndUserText.label": "Indicator: asset locked to acquisition postings",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AcquisitionValueDate": {
+                      "@EndUserText.label": "Asset value date of the first posting",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "OriginalFixedAssetValueDate": {
+                      "@EndUserText.label": "Original acquisition date of auc/ transferred asset",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AssetUnderConstIsInvmtMsr": {
+                      "@EndUserText.label": "Asset under construction for investment measures",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "LastRetirementValueDate": {
+                      "@EndUserText.label": "Asset value date for the last retirement",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Name of person who changed object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "FixedAssetPropertyType": {
+                      "@EndUserText.label": "Property indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Record creation date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person responsible for creating the object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "ManualDepreciationReason": {
+                      "@EndUserText.label": "Reason for manual valuation of net assets",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "LastReorganizationDate": {
+                      "@EndUserText.label": "Date of last reorganization",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LegacyDataTransferDate": {
+                      "@EndUserText.label": "Legacy data transfer date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "IsGroupAsset": {
+                      "@EndUserText.label": "Indicator: asset is a group asset",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsLineItemSettled": {
+                      "@EndUserText.label": "Asset under construct. with line item settlement",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "OriginalFixedAsset": {
+                      "@EndUserText.label": "Original asset that was transferred",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "MasterFixedAssetSearchTerm": {
+                      "@EndUserText.label": "Search term for matchcode search",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "AssetStatusAtPurchase": {
+                      "@EndUserText.label": "Asset status at purchase: new, used or unknown",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetIsAcquiredUsed": {
+                      "@EndUserText.label": "Asset acquired used",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsMainAsset": {
+                      "@EndUserText.label": "Indicator for main asset",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetLifecycleStatus": {
+                      "@EndUserText.label": "Lifecycle status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetCompletenessStatus": {
+                      "@EndUserText.label": "Completeness status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetUnderConstructionStatus": {
+                      "@EndUserText.label": "Asset under construction status",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetCreationValidityDate": {
+                      "@EndUserText.label": "Validity date from asset class",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationDateTime": {
+                      "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                      "precision": 15,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                      "precision": 15,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "AssetScreenLayout": {
+                      "@EndUserText.label": "Layout for asset master data",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "OriginalAcquisitionAmount": {
+                      "@EndUserText.label": "Original acquisition value",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "OriginalAcquisitionCurrency": {
+                      "@EndUserText.label": "Original acquisition value currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "PropertyClass": {
+                      "@EndUserText.label": "Property classification key",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "LocalTaxOffice": {
+                      "@EndUserText.label": "Local tax office",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "Municipality": {
+                      "@EndUserText.label": "Municipality",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "LandRegisterDate": {
+                      "@EndUserText.label": "Land register of",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LandRegisterEntrySequence": {
+                      "@EndUserText.label": "Land register entry: sequence number",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "LandRegisterEntryDate": {
+                      "@EndUserText.label": "Land register entry on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LandRegisterVolume": {
+                      "@EndUserText.label": "Land register volume",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "LandRegisterPage": {
+                      "@EndUserText.label": "Land register page",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "LandRegisterMap": {
+                      "@EndUserText.label": "Land register map number",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "LandPlot": {
+                      "@EndUserText.label": "Plot number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ConveyanceDate": {
+                      "@EndUserText.label": "Date of conveyance",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AreaSize": {
+                      "@EndUserText.label": "Surface area",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "LeaseSupplier": {
+                      "@EndUserText.label": "Leasing company",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "LeaseAgreement": {
+                      "@EndUserText.label": "Leasing agreement number",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "LeaseAgreementDate": {
+                      "@EndUserText.label": "Leasing agreement date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LeaseTermEndDate": {
+                      "@EndUserText.label": "Leasing agreement notice date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LeaseTermStartDate": {
+                      "@EndUserText.label": "Lease start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LeaseDurationInFiscalYears": {
+                      "@EndUserText.label": "Length of lease in years",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "LeaseDurationInFiscalPeriods": {
+                      "@EndUserText.label": "Length of lease in periods",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "LeaseType": {
+                      "@EndUserText.label": "Leasing type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "LeasedAssetNote": {
+                      "@EndUserText.label": "Leasing data text",
+                      "type": "cds.String",
+                      "length": 50
+                    },
+                    "LegacyAsset": {
+                      "@EndUserText.label": "Legacy asset number",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "LegacyFixedAssetCompanyCode": {
+                      "@EndUserText.label": "Legacy fixed asset company code",
+                      "type": "cds.String",
+                      "length": 80
+                    },
+                    "LegacyMasterFixedAsset": {
+                      "@EndUserText.label": "Legacy main asset number",
+                      "type": "cds.String",
+                      "length": 80
+                    },
+                    "LegacyFixedAsset": {
+                      "@EndUserText.label": "Legacy asset subnumber",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "LegacyDataTransferSequence": {
+                      "@EndUserText.label": "Legacy data transfer - sequence number",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "AssetIsForPostCapitalization": {
+                      "@EndUserText.label": "Fixed asset with post-capitalization",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "AssetAuthorizationContext": {
+                      "@EndUserText.label": "Asset authorization context",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ObjectInternalID": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_FIXEDASSET_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_FIXEDASSET"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAssetExternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetClass"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetSerialNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BaseUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Inventory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAssetDescription"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetAdditionalDescription"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Currency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriglAcqnAmtInCoCodeCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PartnerCompany"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetManufacturerName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InHouseProdnPercent"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetSupplierName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InventoryNote"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Group1AssetEvaluationKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Group2AssetEvaluationKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Group3AssetEvaluationKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Group4AssetEvaluationKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Group5AssetEvaluationKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetAccountDetermination"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HasHistory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetCapitalizationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FirstAcquisitionFiscalYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FirstAcquisitionFiscalPeriod"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetDeactivationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PlannedRetirementDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAssetOrderDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriginalMasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAssetGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvestmentReason"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetIsRealEstate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AreaSizeUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvestmentOrder"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvestmentProjectWBSElement_2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvestmentProjectWBSElement"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InventoryIsCounted"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastInventoryDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetSynchronizationRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriginalAcquisitionFiscalYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetTypeName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Supplier"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetCountryOfOrigin"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NoticeOfAssessmentTaxID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastAssessmentNoticeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "EnvrnmtlInvestmentReason"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAssetFinDataCmpltns"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountIsMarkedForDeletion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountIsBlockedForPosting"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AcquisitionValueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriginalFixedAssetValueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetUnderConstIsInvmtMsr"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastRetirementValueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAssetPropertyType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ManualDepreciationReason"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastReorganizationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegacyDataTransferDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsGroupAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsLineItemSettled"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriginalFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MasterFixedAssetSearchTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetStatusAtPurchase"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetIsAcquiredUsed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsMainAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetLifecycleStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetCompletenessStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetUnderConstructionStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetCreationValidityDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDateTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDateTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetScreenLayout"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriginalAcquisitionAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OriginalAcquisitionCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PropertyClass"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LocalTaxOffice"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Municipality"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandRegisterDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandRegisterEntrySequence"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandRegisterEntryDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandRegisterVolume"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandRegisterPage"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandRegisterMap"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LandPlot"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ConveyanceDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AreaSize"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseSupplier"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseAgreement"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseAgreementDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseTermEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseTermStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseDurationInFiscalYears"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseDurationInFiscalPeriods"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeaseType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LeasedAssetNote"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegacyAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegacyFixedAssetCompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegacyMasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegacyFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LegacyDataTransferSequence"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetIsForPostCapitalization"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssetAuthorizationContext"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ObjectInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"CompanyCode\",\"d\".\"MasterFixedAsset\",\"d\".\"FixedAsset\",\"d\".\"FixedAssetExternalID\",\"d\".\"AssetClass\",\"d\".\"AssetSerialNumber\",\"d\".\"Quantity\",\"d\".\"BaseUnit\",\"d\".\"Inventory\",\"d\".\"FixedAssetDescription\",\"d\".\"AssetAdditionalDescription\",\"d\".\"Currency\",\"d\".\"OriglAcqnAmtInCoCodeCrcy\",\"d\".\"PartnerCompany\",\"d\".\"AssetManufacturerName\",\"d\".\"InHouseProdnPercent\",\"d\".\"AssetSupplierName\",\"d\".\"InventoryNote\",\"d\".\"Group1AssetEvaluationKey\",\"d\".\"Group2AssetEvaluationKey\",\"d\".\"Group3AssetEvaluationKey\",\"d\".\"Group4AssetEvaluationKey\",\"d\".\"Group5AssetEvaluationKey\",\"d\".\"AssetAccountDetermination\",\"d\".\"HasHistory\",\"d\".\"AssetCapitalizationDate\",\"d\".\"FirstAcquisitionFiscalYear\",\"d\".\"FirstAcquisitionFiscalPeriod\",\"d\".\"AssetDeactivationDate\",\"d\".\"PlannedRetirementDate\",\"d\".\"FixedAssetOrderDate\",\"d\".\"OriginalMasterFixedAsset\",\"d\".\"FixedAssetGroup\",\"d\".\"InvestmentReason\",\"d\".\"AssetIsRealEstate\",\"d\".\"AreaSizeUnit\",\"d\".\"InvestmentOrder\",\"d\".\"InvestmentProjectWBSElement_2\",\"d\".\"InvestmentProjectWBSElement\",\"d\".\"InventoryIsCounted\",\"d\".\"LastInventoryDate\",\"d\".\"AssetSynchronizationRule\",\"d\".\"OriginalAcquisitionFiscalYear\",\"d\".\"AssetTypeName\",\"d\".\"Supplier\",\"d\".\"AssetCountryOfOrigin\",\"d\".\"NoticeOfAssessmentTaxID\",\"d\".\"LastAssessmentNoticeDate\",\"d\".\"EnvrnmtlInvestmentReason\",\"d\".\"LastChangeDate\",\"d\".\"FixedAssetFinDataCmpltns\",\"d\".\"AccountIsMarkedForDeletion\",\"d\".\"AccountIsBlockedForPosting\",\"d\".\"AcquisitionValueDate\",\"d\".\"OriginalFixedAssetValueDate\",\"d\".\"AssetUnderConstIsInvmtMsr\",\"d\".\"LastRetirementValueDate\",\"d\".\"LastChangedByUser\",\"d\".\"FixedAssetPropertyType\",\"d\".\"CreationDate\",\"d\".\"CreatedByUser\",\"d\".\"ManualDepreciationReason\",\"d\".\"LastReorganizationDate\",\"d\".\"LegacyDataTransferDate\",\"d\".\"IsGroupAsset\",\"d\".\"IsLineItemSettled\",\"d\".\"OriginalFixedAsset\",\"d\".\"MasterFixedAssetSearchTerm\",\"d\".\"AssetStatusAtPurchase\",\"d\".\"AssetIsAcquiredUsed\",\"d\".\"IsMainAsset\",\"d\".\"AssetLifecycleStatus\",\"d\".\"AssetCompletenessStatus\",\"d\".\"AssetUnderConstructionStatus\",\"d\".\"AssetCreationValidityDate\",\"d\".\"CreationDateTime\",\"d\".\"LastChangeDateTime\",\"d\".\"AssetScreenLayout\",\"d\".\"OriginalAcquisitionAmount\",\"d\".\"OriginalAcquisitionCurrency\",\"d\".\"PropertyClass\",\"d\".\"LocalTaxOffice\",\"d\".\"Municipality\",\"d\".\"LandRegisterDate\",\"d\".\"LandRegisterEntrySequence\",\"d\".\"LandRegisterEntryDate\",\"d\".\"LandRegisterVolume\",\"d\".\"LandRegisterPage\",\"d\".\"LandRegisterMap\",\"d\".\"LandPlot\",\"d\".\"ConveyanceDate\",\"d\".\"AreaSize\",\"d\".\"LeaseSupplier\",\"d\".\"LeaseAgreement\",\"d\".\"LeaseAgreementDate\",\"d\".\"LeaseTermEndDate\",\"d\".\"LeaseTermStartDate\",\"d\".\"LeaseDurationInFiscalYears\",\"d\".\"LeaseDurationInFiscalPeriods\",\"d\".\"LeaseType\",\"d\".\"LeasedAssetNote\",\"d\".\"LegacyAsset\",\"d\".\"LegacyFixedAssetCompanyCode\",\"d\".\"LegacyMasterFixedAsset\",\"d\".\"LegacyFixedAsset\",\"d\".\"LegacyDataTransferSequence\",\"d\".\"AssetIsForPostCapitalization\",\"d\".\"AssetAuthorizationContext\",\"d\".\"ObjectInternalID\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_I_FIXEDASSET_S4_CURR_Delta\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_FIXEDASSET'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_FIXEDASSET_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_FIXEDASSET_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "MasterFixedAsset",
+                    "target": "MasterFixedAsset"
+                  },
+                  {
+                    "source": "FixedAsset",
+                    "target": "FixedAsset"
+                  },
+                  {
+                    "source": "FixedAssetExternalID",
+                    "target": "FixedAssetExternalID"
+                  },
+                  {
+                    "source": "AssetClass",
+                    "target": "AssetClass"
+                  },
+                  {
+                    "source": "AssetSerialNumber",
+                    "target": "AssetSerialNumber"
+                  },
+                  {
+                    "source": "Quantity",
+                    "target": "Quantity"
+                  },
+                  {
+                    "source": "BaseUnit",
+                    "target": "BaseUnit"
+                  },
+                  {
+                    "source": "Inventory",
+                    "target": "Inventory"
+                  },
+                  {
+                    "source": "FixedAssetDescription",
+                    "target": "FixedAssetDescription"
+                  },
+                  {
+                    "source": "AssetAdditionalDescription",
+                    "target": "AssetAdditionalDescription"
+                  },
+                  {
+                    "source": "Currency",
+                    "target": "Currency"
+                  },
+                  {
+                    "source": "OriglAcqnAmtInCoCodeCrcy",
+                    "target": "OriglAcqnAmtInCoCodeCrcy"
+                  },
+                  {
+                    "source": "PartnerCompany",
+                    "target": "PartnerCompany"
+                  },
+                  {
+                    "source": "AssetManufacturerName",
+                    "target": "AssetManufacturerName"
+                  },
+                  {
+                    "source": "InHouseProdnPercent",
+                    "target": "InHouseProdnPercent"
+                  },
+                  {
+                    "source": "AssetSupplierName",
+                    "target": "AssetSupplierName"
+                  },
+                  {
+                    "source": "InventoryNote",
+                    "target": "InventoryNote"
+                  },
+                  {
+                    "source": "Group1AssetEvaluationKey",
+                    "target": "Group1AssetEvaluationKey"
+                  },
+                  {
+                    "source": "Group2AssetEvaluationKey",
+                    "target": "Group2AssetEvaluationKey"
+                  },
+                  {
+                    "source": "Group3AssetEvaluationKey",
+                    "target": "Group3AssetEvaluationKey"
+                  },
+                  {
+                    "source": "Group4AssetEvaluationKey",
+                    "target": "Group4AssetEvaluationKey"
+                  },
+                  {
+                    "source": "Group5AssetEvaluationKey",
+                    "target": "Group5AssetEvaluationKey"
+                  },
+                  {
+                    "source": "AssetAccountDetermination",
+                    "target": "AssetAccountDetermination"
+                  },
+                  {
+                    "source": "HasHistory",
+                    "target": "HasHistory"
+                  },
+                  {
+                    "source": "AssetCapitalizationDate",
+                    "target": "AssetCapitalizationDate"
+                  },
+                  {
+                    "source": "FirstAcquisitionFiscalYear",
+                    "target": "FirstAcquisitionFiscalYear"
+                  },
+                  {
+                    "source": "FirstAcquisitionFiscalPeriod",
+                    "target": "FirstAcquisitionFiscalPeriod"
+                  },
+                  {
+                    "source": "AssetDeactivationDate",
+                    "target": "AssetDeactivationDate"
+                  },
+                  {
+                    "source": "PlannedRetirementDate",
+                    "target": "PlannedRetirementDate"
+                  },
+                  {
+                    "source": "FixedAssetOrderDate",
+                    "target": "FixedAssetOrderDate"
+                  },
+                  {
+                    "source": "OriginalMasterFixedAsset",
+                    "target": "OriginalMasterFixedAsset"
+                  },
+                  {
+                    "source": "FixedAssetGroup",
+                    "target": "FixedAssetGroup"
+                  },
+                  {
+                    "source": "InvestmentReason",
+                    "target": "InvestmentReason"
+                  },
+                  {
+                    "source": "AssetIsRealEstate",
+                    "target": "AssetIsRealEstate"
+                  },
+                  {
+                    "source": "AreaSizeUnit",
+                    "target": "AreaSizeUnit"
+                  },
+                  {
+                    "source": "InvestmentOrder",
+                    "target": "InvestmentOrder"
+                  },
+                  {
+                    "source": "InvestmentProjectWBSElement_2",
+                    "target": "InvestmentProjectWBSElement_2"
+                  },
+                  {
+                    "source": "InvestmentProjectWBSElement",
+                    "target": "InvestmentProjectWBSElement"
+                  },
+                  {
+                    "source": "InventoryIsCounted",
+                    "target": "InventoryIsCounted"
+                  },
+                  {
+                    "source": "LastInventoryDate",
+                    "target": "LastInventoryDate"
+                  },
+                  {
+                    "source": "AssetSynchronizationRule",
+                    "target": "AssetSynchronizationRule"
+                  },
+                  {
+                    "source": "OriginalAcquisitionFiscalYear",
+                    "target": "OriginalAcquisitionFiscalYear"
+                  },
+                  {
+                    "source": "AssetTypeName",
+                    "target": "AssetTypeName"
+                  },
+                  {
+                    "source": "Supplier",
+                    "target": "Supplier"
+                  },
+                  {
+                    "source": "AssetCountryOfOrigin",
+                    "target": "AssetCountryOfOrigin"
+                  },
+                  {
+                    "source": "NoticeOfAssessmentTaxID",
+                    "target": "NoticeOfAssessmentTaxID"
+                  },
+                  {
+                    "source": "LastAssessmentNoticeDate",
+                    "target": "LastAssessmentNoticeDate"
+                  },
+                  {
+                    "source": "EnvrnmtlInvestmentReason",
+                    "target": "EnvrnmtlInvestmentReason"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "FixedAssetFinDataCmpltns",
+                    "target": "FixedAssetFinDataCmpltns"
+                  },
+                  {
+                    "source": "AccountIsMarkedForDeletion",
+                    "target": "AccountIsMarkedForDeletion"
+                  },
+                  {
+                    "source": "AccountIsBlockedForPosting",
+                    "target": "AccountIsBlockedForPosting"
+                  },
+                  {
+                    "source": "AcquisitionValueDate",
+                    "target": "AcquisitionValueDate"
+                  },
+                  {
+                    "source": "OriginalFixedAssetValueDate",
+                    "target": "OriginalFixedAssetValueDate"
+                  },
+                  {
+                    "source": "AssetUnderConstIsInvmtMsr",
+                    "target": "AssetUnderConstIsInvmtMsr"
+                  },
+                  {
+                    "source": "LastRetirementValueDate",
+                    "target": "LastRetirementValueDate"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "FixedAssetPropertyType",
+                    "target": "FixedAssetPropertyType"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "ManualDepreciationReason",
+                    "target": "ManualDepreciationReason"
+                  },
+                  {
+                    "source": "LastReorganizationDate",
+                    "target": "LastReorganizationDate"
+                  },
+                  {
+                    "source": "LegacyDataTransferDate",
+                    "target": "LegacyDataTransferDate"
+                  },
+                  {
+                    "source": "IsGroupAsset",
+                    "target": "IsGroupAsset"
+                  },
+                  {
+                    "source": "IsLineItemSettled",
+                    "target": "IsLineItemSettled"
+                  },
+                  {
+                    "source": "OriginalFixedAsset",
+                    "target": "OriginalFixedAsset"
+                  },
+                  {
+                    "source": "MasterFixedAssetSearchTerm",
+                    "target": "MasterFixedAssetSearchTerm"
+                  },
+                  {
+                    "source": "AssetStatusAtPurchase",
+                    "target": "AssetStatusAtPurchase"
+                  },
+                  {
+                    "source": "AssetIsAcquiredUsed",
+                    "target": "AssetIsAcquiredUsed"
+                  },
+                  {
+                    "source": "IsMainAsset",
+                    "target": "IsMainAsset"
+                  },
+                  {
+                    "source": "AssetLifecycleStatus",
+                    "target": "AssetLifecycleStatus"
+                  },
+                  {
+                    "source": "AssetCompletenessStatus",
+                    "target": "AssetCompletenessStatus"
+                  },
+                  {
+                    "source": "AssetUnderConstructionStatus",
+                    "target": "AssetUnderConstructionStatus"
+                  },
+                  {
+                    "source": "AssetCreationValidityDate",
+                    "target": "AssetCreationValidityDate"
+                  },
+                  {
+                    "source": "CreationDateTime",
+                    "target": "CreationDateTime"
+                  },
+                  {
+                    "source": "LastChangeDateTime",
+                    "target": "LastChangeDateTime"
+                  },
+                  {
+                    "source": "AssetScreenLayout",
+                    "target": "AssetScreenLayout"
+                  },
+                  {
+                    "source": "OriginalAcquisitionAmount",
+                    "target": "OriginalAcquisitionAmount"
+                  },
+                  {
+                    "source": "OriginalAcquisitionCurrency",
+                    "target": "OriginalAcquisitionCurrency"
+                  },
+                  {
+                    "source": "PropertyClass",
+                    "target": "PropertyClass"
+                  },
+                  {
+                    "source": "LocalTaxOffice",
+                    "target": "LocalTaxOffice"
+                  },
+                  {
+                    "source": "Municipality",
+                    "target": "Municipality"
+                  },
+                  {
+                    "source": "LandRegisterDate",
+                    "target": "LandRegisterDate"
+                  },
+                  {
+                    "source": "LandRegisterEntrySequence",
+                    "target": "LandRegisterEntrySequence"
+                  },
+                  {
+                    "source": "LandRegisterEntryDate",
+                    "target": "LandRegisterEntryDate"
+                  },
+                  {
+                    "source": "LandRegisterVolume",
+                    "target": "LandRegisterVolume"
+                  },
+                  {
+                    "source": "LandRegisterPage",
+                    "target": "LandRegisterPage"
+                  },
+                  {
+                    "source": "LandRegisterMap",
+                    "target": "LandRegisterMap"
+                  },
+                  {
+                    "source": "LandPlot",
+                    "target": "LandPlot"
+                  },
+                  {
+                    "source": "ConveyanceDate",
+                    "target": "ConveyanceDate"
+                  },
+                  {
+                    "source": "AreaSize",
+                    "target": "AreaSize"
+                  },
+                  {
+                    "source": "LeaseSupplier",
+                    "target": "LeaseSupplier"
+                  },
+                  {
+                    "source": "LeaseAgreement",
+                    "target": "LeaseAgreement"
+                  },
+                  {
+                    "source": "LeaseAgreementDate",
+                    "target": "LeaseAgreementDate"
+                  },
+                  {
+                    "source": "LeaseTermEndDate",
+                    "target": "LeaseTermEndDate"
+                  },
+                  {
+                    "source": "LeaseTermStartDate",
+                    "target": "LeaseTermStartDate"
+                  },
+                  {
+                    "source": "LeaseDurationInFiscalYears",
+                    "target": "LeaseDurationInFiscalYears"
+                  },
+                  {
+                    "source": "LeaseDurationInFiscalPeriods",
+                    "target": "LeaseDurationInFiscalPeriods"
+                  },
+                  {
+                    "source": "LeaseType",
+                    "target": "LeaseType"
+                  },
+                  {
+                    "source": "LeasedAssetNote",
+                    "target": "LeasedAssetNote"
+                  },
+                  {
+                    "source": "LegacyAsset",
+                    "target": "LegacyAsset"
+                  },
+                  {
+                    "source": "LegacyFixedAssetCompanyCode",
+                    "target": "LegacyFixedAssetCompanyCode"
+                  },
+                  {
+                    "source": "LegacyMasterFixedAsset",
+                    "target": "LegacyMasterFixedAsset"
+                  },
+                  {
+                    "source": "LegacyFixedAsset",
+                    "target": "LegacyFixedAsset"
+                  },
+                  {
+                    "source": "LegacyDataTransferSequence",
+                    "target": "LegacyDataTransferSequence"
+                  },
+                  {
+                    "source": "AssetIsForPostCapitalization",
+                    "target": "AssetIsForPostCapitalization"
+                  },
+                  {
+                    "source": "AssetAuthorizationContext",
+                    "target": "AssetAuthorizationContext"
+                  },
+                  {
+                    "source": "ObjectInternalID",
+                    "target": "ObjectInternalID"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Main asset number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 12,
+                      "notNull": true
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "FixedAssetExternalID": {
+                      "@EndUserText.label": "Asset number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 17
+                    },
+                    "AssetClass": {
+                      "@EndUserText.label": "Asset class",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AssetSerialNumber": {
+                      "@EndUserText.label": "Serial number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "Quantity": {
+                      "@EndUserText.label": "Quantity",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "BaseUnit": {
+                      "@EndUserText.label": "Base unit of measure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "Inventory": {
+                      "@EndUserText.label": "Inventory number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "FixedAssetDescription": {
+                      "@EndUserText.label": "Asset description",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    },
+                    "AssetAdditionalDescription": {
+                      "@EndUserText.label": "Additional asset description",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    },
+                    "Currency": {
+                      "@EndUserText.label": "Currency key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "OriglAcqnAmtInCoCodeCrcy": {
+                      "@EndUserText.label": "Original acquisition value",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "PartnerCompany": {
+                      "@EndUserText.label": "Company id of trading partner",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "AssetManufacturerName": {
+                      "@EndUserText.label": "Manufacturer of asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "InHouseProdnPercent": {
+                      "@EndUserText.label": "In-house production percentage",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 5,
+                      "scale": 2
+                    },
+                    "AssetSupplierName": {
+                      "@EndUserText.label": "Name of asset supplier",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "InventoryNote": {
+                      "@EndUserText.label": "Supplementary inventory specifications",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "Group1AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Group2AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Group3AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Group4AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 4",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "Group5AssetEvaluationKey": {
+                      "@EndUserText.label": "Evaluation group 5",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AssetAccountDetermination": {
+                      "@EndUserText.label": "Account determination",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "HasHistory": {
+                      "@EndUserText.label": "Indicator: historical management",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetCapitalizationDate": {
+                      "@EndUserText.label": "Asset capitalization date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FirstAcquisitionFiscalYear": {
+                      "@EndUserText.label": "Fiscal year in which first acquisition was posted",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "FirstAcquisitionFiscalPeriod": {
+                      "@EndUserText.label": "Period in which first acquisition was posted",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "AssetDeactivationDate": {
+                      "@EndUserText.label": "Deactivation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PlannedRetirementDate": {
+                      "@EndUserText.label": "Planned retirement date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FixedAssetOrderDate": {
+                      "@EndUserText.label": "Asset purchase order date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "OriginalMasterFixedAsset": {
+                      "@EndUserText.label": "Original asset that was transferred",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "FixedAssetGroup": {
+                      "@EndUserText.label": "Asset super number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "InvestmentReason": {
+                      "@EndUserText.label": "Reason for investment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "AssetIsRealEstate": {
+                      "@EndUserText.label": "Indicator: real estate",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AreaSizeUnit": {
+                      "@EndUserText.label": "Area unit",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "InvestmentOrder": {
+                      "@EndUserText.label": "Investment order",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "InvestmentProjectWBSElement_2": {
+                      "@EndUserText.label": "Asset wbs element (internal id)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "InvestmentProjectWBSElement": {
+                      "@EndUserText.label": "Wbs element of investment project",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "InventoryIsCounted": {
+                      "@EndUserText.label": "Inventory indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "LastInventoryDate": {
+                      "@EndUserText.label": "Last inventory date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AssetSynchronizationRule": {
+                      "@EndUserText.label": "Change asset master record from equipment master",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "OriginalAcquisitionFiscalYear": {
+                      "@EndUserText.label": "Fiscal year of original acquisition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AssetTypeName": {
+                      "@EndUserText.label": "Asset type name",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "Supplier": {
+                      "@EndUserText.label": "Account number of supplier (other key word)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "AssetCountryOfOrigin": {
+                      "@EndUserText.label": "Asset's country/region of origin",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "NoticeOfAssessmentTaxID": {
+                      "@EndUserText.label": "Tax number of the notice of assessment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "LastAssessmentNoticeDate": {
+                      "@EndUserText.label": "Date of last notice of assessment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "EnvrnmtlInvestmentReason": {
+                      "@EndUserText.label": "Reason for environmental investment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Changed on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "FixedAssetFinDataCmpltns": {
+                      "@EndUserText.label": "Completeness indicator for the asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AccountIsMarkedForDeletion": {
+                      "@EndUserText.label": "Indicator: account marked for deletion?",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AccountIsBlockedForPosting": {
+                      "@EndUserText.label": "Indicator: asset locked to acquisition postings",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AcquisitionValueDate": {
+                      "@EndUserText.label": "Asset value date of the first posting",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "OriginalFixedAssetValueDate": {
+                      "@EndUserText.label": "Original acquisition date of auc/ transferred asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AssetUnderConstIsInvmtMsr": {
+                      "@EndUserText.label": "Asset under construction for investment measures",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "LastRetirementValueDate": {
+                      "@EndUserText.label": "Asset value date for the last retirement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Name of person who changed object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "FixedAssetPropertyType": {
+                      "@EndUserText.label": "Property indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Record creation date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person responsible for creating the object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "ManualDepreciationReason": {
+                      "@EndUserText.label": "Reason for manual valuation of net assets",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "LastReorganizationDate": {
+                      "@EndUserText.label": "Date of last reorganization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LegacyDataTransferDate": {
+                      "@EndUserText.label": "Legacy data transfer date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "IsGroupAsset": {
+                      "@EndUserText.label": "Indicator: asset is a group asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsLineItemSettled": {
+                      "@EndUserText.label": "Asset under construct. with line item settlement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "OriginalFixedAsset": {
+                      "@EndUserText.label": "Original asset that was transferred",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "MasterFixedAssetSearchTerm": {
+                      "@EndUserText.label": "Search term for matchcode search",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "AssetStatusAtPurchase": {
+                      "@EndUserText.label": "Asset status at purchase: new, used or unknown",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetIsAcquiredUsed": {
+                      "@EndUserText.label": "Asset acquired used",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsMainAsset": {
+                      "@EndUserText.label": "Indicator for main asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetLifecycleStatus": {
+                      "@EndUserText.label": "Lifecycle status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetCompletenessStatus": {
+                      "@EndUserText.label": "Completeness status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetUnderConstructionStatus": {
+                      "@EndUserText.label": "Asset under construction status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetCreationValidityDate": {
+                      "@EndUserText.label": "Validity date from asset class",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreationDateTime": {
+                      "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 0
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Utc time stamp in short form (yyyymmddhhmmss)",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 0
+                    },
+                    "AssetScreenLayout": {
+                      "@EndUserText.label": "Layout for asset master data",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "OriginalAcquisitionAmount": {
+                      "@EndUserText.label": "Original acquisition value",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "OriginalAcquisitionCurrency": {
+                      "@EndUserText.label": "Original acquisition value currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "PropertyClass": {
+                      "@EndUserText.label": "Property classification key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "LocalTaxOffice": {
+                      "@EndUserText.label": "Local tax office",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "Municipality": {
+                      "@EndUserText.label": "Municipality",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "LandRegisterDate": {
+                      "@EndUserText.label": "Land register of",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LandRegisterEntrySequence": {
+                      "@EndUserText.label": "Land register entry: sequence number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "LandRegisterEntryDate": {
+                      "@EndUserText.label": "Land register entry on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LandRegisterVolume": {
+                      "@EndUserText.label": "Land register volume",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "LandRegisterPage": {
+                      "@EndUserText.label": "Land register page",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "LandRegisterMap": {
+                      "@EndUserText.label": "Land register map number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "LandPlot": {
+                      "@EndUserText.label": "Plot number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ConveyanceDate": {
+                      "@EndUserText.label": "Date of conveyance",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AreaSize": {
+                      "@EndUserText.label": "Surface area",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "LeaseSupplier": {
+                      "@EndUserText.label": "Leasing company",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "LeaseAgreement": {
+                      "@EndUserText.label": "Leasing agreement number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "LeaseAgreementDate": {
+                      "@EndUserText.label": "Leasing agreement date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LeaseTermEndDate": {
+                      "@EndUserText.label": "Leasing agreement notice date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LeaseTermStartDate": {
+                      "@EndUserText.label": "Lease start date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LeaseDurationInFiscalYears": {
+                      "@EndUserText.label": "Length of lease in years",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "LeaseDurationInFiscalPeriods": {
+                      "@EndUserText.label": "Length of lease in periods",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "LeaseType": {
+                      "@EndUserText.label": "Leasing type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "LeasedAssetNote": {
+                      "@EndUserText.label": "Leasing data text",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 50
+                    },
+                    "LegacyAsset": {
+                      "@EndUserText.label": "Legacy asset number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "LegacyFixedAssetCompanyCode": {
+                      "@EndUserText.label": "Legacy fixed asset company code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 80
+                    },
+                    "LegacyMasterFixedAsset": {
+                      "@EndUserText.label": "Legacy main asset number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 80
+                    },
+                    "LegacyFixedAsset": {
+                      "@EndUserText.label": "Legacy asset subnumber",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "LegacyDataTransferSequence": {
+                      "@EndUserText.label": "Legacy data transfer - sequence number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "AssetIsForPostCapitalization": {
+                      "@EndUserText.label": "Fixed asset with post-capitalization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "AssetAuthorizationContext": {
+                      "@EndUserText.label": "Asset authorization context",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ObjectInternalID": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_FIXEDASSET_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_FIXEDASSET_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_GVXKEDUZ"
+                    }
+                  }
+                },
+                "name": "2LT_I_FIXEDASSET_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

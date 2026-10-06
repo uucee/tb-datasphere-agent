@@ -1,0 +1,210 @@
+{
+  "definitions": {
+    "2LT_I_CLFNOBJECTCHARCVALUEDEX_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ClfnObjectID": {
+          "@EndUserText.label": "Key of object to be classified",
+          "type": "cds.String",
+          "key": true,
+          "length": 90,
+          "notNull": true
+        },
+        "CharcInternalID": {
+          "@EndUserText.label": "Characteristic internal id",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "ClfnCharcValuePositionNumber": {
+          "@EndUserText.label": "Characteristic value counter",
+          "type": "cds.String",
+          "key": true,
+          "length": 3,
+          "notNull": true
+        },
+        "ClfnObjectType": {
+          "@EndUserText.label": "Indicator: object/class",
+          "type": "cds.String",
+          "key": true,
+          "length": 1,
+          "notNull": true
+        },
+        "ClassType": {
+          "@EndUserText.label": "Class type",
+          "type": "cds.String",
+          "key": true,
+          "length": 3,
+          "notNull": true
+        },
+        "TimeIntervalNumber": {
+          "@EndUserText.label": "Internal counter for archiving objects by ecm",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "ClfnObjectTable": {
+          "@EndUserText.label": "Classification object",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "CharcValueIntervalType": {
+          "@EndUserText.label": "Code for value dependency",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CharcValue": {
+          "@EndUserText.label": "Characteristic value",
+          "type": "cds.String",
+          "key": false,
+          "length": 70
+        },
+        "CharcFromNumericValue": {
+          "@EndUserText.label": "Internal floating point from",
+          "type": "cds.Double",
+          "key": false
+        },
+        "CharcFromNumericValueUnit": {
+          "@EndUserText.label": "Unit of measurement",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CharcToNumericValue": {
+          "@EndUserText.label": "Internal floating point value to",
+          "type": "cds.Double",
+          "key": false
+        },
+        "CharcToNumericValueUnit": {
+          "@EndUserText.label": "Unit of measurement",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CharcFromDecimalValue": {
+          "@EndUserText.label": "Lower boundary for numeric field",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 31,
+          "scale": 14
+        },
+        "CharcToDecimalValue": {
+          "@EndUserText.label": "Upper boundary for numeric field",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 31,
+          "scale": 14
+        },
+        "CharcFromAmount": {
+          "@EndUserText.label": "Lower boundary for currency field",
+          "type": "cds.DecimalFloat",
+          "key": false
+        },
+        "CharcToAmount": {
+          "@EndUserText.label": "Upper boundary for currency field",
+          "type": "cds.DecimalFloat",
+          "key": false
+        },
+        "Currency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "CharcFromDate": {
+          "@EndUserText.label": "Lower boundary for date-interval",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CharcToDate": {
+          "@EndUserText.label": "Upper boundary for date-interval",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CharcFromTime": {
+          "@EndUserText.label": "Lower boundary for time-interval",
+          "type": "cds.Time",
+          "key": false
+        },
+        "CharcToTime": {
+          "@EndUserText.label": "Upper boundary for time-interval",
+          "type": "cds.Time",
+          "key": false
+        },
+        "CharcAuthor": {
+          "@EndUserText.label": "Classification author",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsDeleted": {
+          "@EndUserText.label": "Deletion indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ChangeNumber": {
+          "@EndUserText.label": "Change number",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CharcValueSortPosition": {
+          "@EndUserText.label": "Sort field for ausp char. values",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Valid-from date",
+          "type": "cds.Date",
+          "key": false
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Valid-to date",
+          "type": "cds.Date",
+          "key": false
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Utc time stamp in long form (yyyymmddhhmmssmmmuuun)",
+          "type": "cds.Timestamp",
+          "key": false
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_CLFNOBJECTCHARCVALUEDEX_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_DGMAVVLL"
+        }
+      }
+    }
+  }
+}

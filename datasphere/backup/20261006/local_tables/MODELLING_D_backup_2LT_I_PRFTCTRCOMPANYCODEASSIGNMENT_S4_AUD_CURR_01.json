@@ -1,0 +1,96 @@
+{
+  "definitions": {
+    "2LT_I_PRFTCTRCOMPANYCODEASSIGNMENT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "CompanyCode",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "JointVentureObjectType": {
+          "@EndUserText.label": "Joint venture object type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "JointVentureClass": {
+          "@EndUserText.label": "Jib/jibe class",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureSubClass": {
+          "@EndUserText.label": "Jib/jibe subclass a",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "JointVenture": {
+          "@EndUserText.label": "Joint venture",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "JointVentureRecoveryCode": {
+          "@EndUserText.label": "Recovery indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "JointVentureEquityType": {
+          "@EndUserText.label": "Equity type",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_PRFTCTRCOMPANYCODEASSIGNMENT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LCJBNTMP"
+        }
+      }
+    }
+  }
+}

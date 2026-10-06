@@ -1,0 +1,270 @@
+{
+  "definitions": {
+    "2LT_I_PROFITCENTER_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Valid to date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ProfitCtrResponsiblePersonName": {
+          "@EndUserText.label": "Person responsible for profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ProfitCtrResponsibleUser": {
+          "@EndUserText.label": "User responsible for the profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Valid-from date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "Department": {
+          "@EndUserText.label": "Department",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ProfitCenterStandardHierarchy": {
+          "@EndUserText.label": "Profit center area",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "Segment": {
+          "@EndUserText.label": "Segment for segmental reporting",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ProfitCenterIsBlocked": {
+          "@EndUserText.label": "Lock indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FormulaPlanningTemplate": {
+          "@EndUserText.label": "Template for formula planning in profit centers",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "FormOfAddress": {
+          "@EndUserText.label": "Title",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "AddressName": {
+          "@EndUserText.label": "Name",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "AdditionalName": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "ProfitCenterAddrName3": {
+          "@EndUserText.label": "Name 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "ProfitCenterAddrName4": {
+          "@EndUserText.label": "Name 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "StreetAddressName": {
+          "@EndUserText.label": "Street and house number",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "POBox": {
+          "@EndUserText.label": "Po box",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "PostalCode": {
+          "@EndUserText.label": "Postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "POBoxPostalCode": {
+          "@EndUserText.label": "Po box postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "District": {
+          "@EndUserText.label": "District",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "Region": {
+          "@EndUserText.label": "Region (state, province, county)",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PhoneNumber1": {
+          "@EndUserText.label": "First telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "PhoneNumber2": {
+          "@EndUserText.label": "Second telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "TeleboxNumber": {
+          "@EndUserText.label": "Telebox number",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "TelexNumber": {
+          "@EndUserText.label": "Telex number",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "Fax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 31
+        },
+        "TeletexNumber": {
+          "@EndUserText.label": "Teletex number",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataCommunicationPhoneNumber": {
+          "@EndUserText.label": "Data communication line no.",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "ProfitCenterPrinterName": {
+          "@EndUserText.label": "Printer name for profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ProfitCenterCreatedByUser": {
+          "@EndUserText.label": "Entered by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ProfitCenterCreationDate": {
+          "@EndUserText.label": "Entered on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_PROFITCENTER_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_VJTFCJJQ"
+        }
+      }
+    }
+  }
+}

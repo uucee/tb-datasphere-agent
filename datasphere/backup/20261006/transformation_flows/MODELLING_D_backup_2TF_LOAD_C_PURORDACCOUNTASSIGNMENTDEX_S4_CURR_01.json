@@ -1,0 +1,2622 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 197.99999904632568,
+              "y": 114.5,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR",
+                    "elements": {
+                      "PurchaseOrder": {
+                        "@EndUserText.label": "Purchasing document number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "PurchaseOrderItem": {
+                        "@EndUserText.label": "Item number of purchasing document",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 5
+                      },
+                      "AccountAssignmentNumber": {
+                        "@EndUserText.label": "Sequential number of account assignment",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 2
+                      },
+                      "CostCenter": {
+                        "@EndUserText.label": "Cost center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "MasterFixedAsset": {
+                        "@EndUserText.label": "Main asset number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "ProjectNetwork": {
+                        "@EndUserText.label": "Network number for account assignment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "Quantity": {
+                        "@EndUserText.label": "Quantity",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "PurchaseOrderQuantityUnit": {
+                        "@EndUserText.label": "Purchase order unit of measure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "MultipleAcctAssgmtDistrPercent": {
+                        "@EndUserText.label": "Distribution percentage in the case of multiple acct assgt",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 3,
+                        "scale": 1
+                      },
+                      "PurgDocNetAmount": {
+                        "@EndUserText.label": "Net order value in po currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "DocumentCurrency": {
+                        "@EndUserText.label": "Currency key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "IsDeleted": {
+                        "@EndUserText.label": "Deletion indicator: purchasing document account assignment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GLAccount": {
+                        "@EndUserText.label": "G/l account number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "BusinessArea": {
+                        "@EndUserText.label": "Business area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SalesOrder": {
+                        "@EndUserText.label": "Sales and distribution document number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "SalesOrderItem": {
+                        "@EndUserText.label": "Sales document item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "SalesOrderScheduleLine": {
+                        "@EndUserText.label": "Schedule line number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "FixedAsset": {
+                        "@EndUserText.label": "Asset subnumber",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "OrderID": {
+                        "@EndUserText.label": "Order number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "UnloadingPointName": {
+                        "@EndUserText.label": "Unloading point",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "ControllingArea": {
+                        "@EndUserText.label": "Controlling area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CostObject": {
+                        "@EndUserText.label": "Cost object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "ProfitabilitySegment": {
+                        "@EndUserText.label": "Deprecated: profitability segment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProfitabilitySegment_2": {
+                        "@EndUserText.label": "Profitability segment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProfitCenter": {
+                        "@EndUserText.label": "Profit center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "WBSElementInternalID": {
+                        "@EndUserText.label": "Wbs element",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ProjectNetworkInternalID": {
+                        "@EndUserText.label": "Routing number of operations in the order",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "CommitmentItem": {
+                        "@EndUserText.label": "CommitmentItem",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 24
+                      },
+                      "CommitmentItemShortID": {
+                        "@EndUserText.label": "Commitment item short id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 14
+                      },
+                      "FundsCenter": {
+                        "@EndUserText.label": "Funds center",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "Fund": {
+                        "@EndUserText.label": "Fund",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "FunctionalArea": {
+                        "@EndUserText.label": "Functional area",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "GoodsRecipientName": {
+                        "@EndUserText.label": "Goods recipient",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "IsFinallyInvoiced": {
+                        "@EndUserText.label": "Final invoice indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "RealEstateObject": {
+                        "@EndUserText.label": "Internal key for real estate object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "NetworkActivityInternalID": {
+                        "@EndUserText.label": "Internal counter",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PartnerAccountNumber": {
+                        "@EndUserText.label": "Partner account number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "JointVentureRecoveryCode": {
+                        "@EndUserText.label": "Recovery indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "SettlementReferenceDate": {
+                        "@EndUserText.label": "Reference date for settlement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "OrderInternalID": {
+                        "@EndUserText.label": "Routing number of operations in the order",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "OrderIntBillOfOperationsItem": {
+                        "@EndUserText.label": "General counter for order",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "TaxCode": {
+                        "@EndUserText.label": "Tax on sales/purchases code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "TaxJurisdiction": {
+                        "@EndUserText.label": "Tax jurisdiction",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "NonDeductibleInputTaxAmount": {
+                        "@EndUserText.label": "Non-deductible input tax",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "CostCtrActivityType": {
+                        "@EndUserText.label": "Activity type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "BusinessProcess": {
+                        "@EndUserText.label": "Business process",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "GrantID": {
+                        "@EndUserText.label": "Grant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "BudgetPeriod": {
+                        "@EndUserText.label": "Budget period",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "EarmarkedFundsDocument": {
+                        "@EndUserText.label": "Document number for earmarked funds",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "EarmarkedFundsDocumentItem": {
+                        "@EndUserText.label": "Earmarked funds: document item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ServiceDocumentType": {
+                        "@EndUserText.label": "Service document type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ServiceDocument": {
+                        "@EndUserText.label": "Service document id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ServiceDocumentItem": {
+                        "@EndUserText.label": "Service document item id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "PurchaseOrderType": {
+                        "@EndUserText.label": "Purchasing document type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PurchasingOrganization": {
+                        "@EndUserText.label": "Purchasing organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PurchasingGroup": {
+                        "@EndUserText.label": "Purchasing group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "Creation date of purchasing document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangeDateTime": {
+                        "@EndUserText.label": "Change time stamp",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 21,
+                        "scale": 7
+                      },
+                      "Plant": {
+                        "@EndUserText.label": "Plant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AccountAssignmentCategory": {
+                        "@EndUserText.label": "Account assignment category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "IsReturnsItem": {
+                        "@EndUserText.label": "Returns item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SupplyingPlant": {
+                        "@EndUserText.label": "Supplying (issuing) plant in case of stock transport order",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PurchaseOrderItemCategory": {
+                        "@EndUserText.label": "Item category in purchasing document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "Material": {
+                        "@EndUserText.label": "Material number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "MaterialGroup": {
+                        "@EndUserText.label": "Material group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 9
+                      },
+                      "PurchaseOrderDate": {
+                        "@EndUserText.label": "Purchase order date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "StorageLocation": {
+                        "@EndUserText.label": "Storage location",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "IsCompletelyDelivered": {
+                        "@EndUserText.label": "\"delivery completed\" indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchasingInfoRecord": {
+                        "@EndUserText.label": "Purchasing info record number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RequirementTracking": {
+                        "@EndUserText.label": "Requirement tracking number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "PurchaseOrderItemText": {
+                        "@EndUserText.label": "Short text",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "PurgDocumentItemDeletionCode": {
+                        "@EndUserText.label": "Deletion indicator in purchasing document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchasingDocumentDeletionCode": {
+                        "@EndUserText.label": "Purchase order deletion code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "InvoiceIsExpected": {
+                        "@EndUserText.label": "Invoice receipt indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GoodsReceiptIsExpected": {
+                        "@EndUserText.label": "Goods receipt indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProductTypeCode": {
+                        "@EndUserText.label": "Product type group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "IsStatisticalItem": {
+                        "@EndUserText.label": "Item is statistical",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ReleaseIsNotCompleted": {
+                        "@EndUserText.label": "Release not yet completely effected",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchasingCompletenessStatus": {
+                        "@EndUserText.label": "Purchase order not yet complete",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchaseContract": {
+                        "@EndUserText.label": "Number of principal purchase agreement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "PurchaseContractItem": {
+                        "@EndUserText.label": "Item number of principal purchase agreement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_01$TRF_TV_sqltransform1",
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "PurchaseOrder": {
+                      "@EndUserText.label": "Purchasing document number",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchaseOrderItem": {
+                      "@EndUserText.label": "Item number of purchasing document",
+                      "type": "cds.String",
+                      "length": 5,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "AccountAssignmentNumber": {
+                      "@EndUserText.label": "Sequential number of account assignment",
+                      "type": "cds.String",
+                      "length": 2,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "CostCenter": {
+                      "@EndUserText.label": "Cost center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Main asset number",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "ProjectNetwork": {
+                      "@EndUserText.label": "Network number for account assignment",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "Quantity": {
+                      "@EndUserText.label": "Quantity",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "PurchaseOrderQuantityUnit": {
+                      "@EndUserText.label": "Purchase order unit of measure",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "MultipleAcctAssgmtDistrPercent": {
+                      "@EndUserText.label": "Distribution percentage in the case of multiple acct assgt",
+                      "precision": 3,
+                      "scale": 1,
+                      "type": "cds.Decimal"
+                    },
+                    "PurgDocNetAmount": {
+                      "@EndUserText.label": "Net order value in po currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "DocumentCurrency": {
+                      "@EndUserText.label": "Currency key",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "IsDeleted": {
+                      "@EndUserText.label": "Deletion indicator: purchasing document account assignment",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GLAccount": {
+                      "@EndUserText.label": "G/l account number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "BusinessArea": {
+                      "@EndUserText.label": "Business area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SalesOrder": {
+                      "@EndUserText.label": "Sales and distribution document number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "SalesOrderItem": {
+                      "@EndUserText.label": "Sales document item",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "SalesOrderScheduleLine": {
+                      "@EndUserText.label": "Schedule line number",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "OrderID": {
+                      "@EndUserText.label": "Order number",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "UnloadingPointName": {
+                      "@EndUserText.label": "Unloading point",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CostObject": {
+                      "@EndUserText.label": "Cost object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "ProfitabilitySegment": {
+                      "@EndUserText.label": "Deprecated: profitability segment",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProfitabilitySegment_2": {
+                      "@EndUserText.label": "Profitability segment",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "WBSElementInternalID": {
+                      "@EndUserText.label": "Wbs element",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ProjectNetworkInternalID": {
+                      "@EndUserText.label": "Routing number of operations in the order",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "CommitmentItem": {
+                      "@EndUserText.label": "CommitmentItem",
+                      "type": "cds.String",
+                      "length": 24
+                    },
+                    "CommitmentItemShortID": {
+                      "@EndUserText.label": "Commitment item short id",
+                      "type": "cds.String",
+                      "length": 14
+                    },
+                    "FundsCenter": {
+                      "@EndUserText.label": "Funds center",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "Fund": {
+                      "@EndUserText.label": "Fund",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "GoodsRecipientName": {
+                      "@EndUserText.label": "Goods recipient",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "IsFinallyInvoiced": {
+                      "@EndUserText.label": "Final invoice indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "RealEstateObject": {
+                      "@EndUserText.label": "Internal key for real estate object",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "NetworkActivityInternalID": {
+                      "@EndUserText.label": "Internal counter",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PartnerAccountNumber": {
+                      "@EndUserText.label": "Partner account number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "JointVentureRecoveryCode": {
+                      "@EndUserText.label": "Recovery indicator",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "SettlementReferenceDate": {
+                      "@EndUserText.label": "Reference date for settlement",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "OrderInternalID": {
+                      "@EndUserText.label": "Routing number of operations in the order",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "OrderIntBillOfOperationsItem": {
+                      "@EndUserText.label": "General counter for order",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "TaxCode": {
+                      "@EndUserText.label": "Tax on sales/purchases code",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "NonDeductibleInputTaxAmount": {
+                      "@EndUserText.label": "Non-deductible input tax",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "CostCtrActivityType": {
+                      "@EndUserText.label": "Activity type",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "BusinessProcess": {
+                      "@EndUserText.label": "Business process",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "GrantID": {
+                      "@EndUserText.label": "Grant",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "BudgetPeriod": {
+                      "@EndUserText.label": "Budget period",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "EarmarkedFundsDocument": {
+                      "@EndUserText.label": "Document number for earmarked funds",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "EarmarkedFundsDocumentItem": {
+                      "@EndUserText.label": "Earmarked funds: document item",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ServiceDocumentType": {
+                      "@EndUserText.label": "Service document type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ServiceDocument": {
+                      "@EndUserText.label": "Service document id",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ServiceDocumentItem": {
+                      "@EndUserText.label": "Service document item id",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "PurchaseOrderType": {
+                      "@EndUserText.label": "Purchasing document type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PurchasingOrganization": {
+                      "@EndUserText.label": "Purchasing organization",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PurchasingGroup": {
+                      "@EndUserText.label": "Purchasing group",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Creation date of purchasing document",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Change time stamp",
+                      "precision": 21,
+                      "scale": 7,
+                      "type": "cds.Decimal"
+                    },
+                    "Plant": {
+                      "@EndUserText.label": "Plant",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AccountAssignmentCategory": {
+                      "@EndUserText.label": "Account assignment category",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "IsReturnsItem": {
+                      "@EndUserText.label": "Returns item",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SupplyingPlant": {
+                      "@EndUserText.label": "Supplying (issuing) plant in case of stock transport order",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PurchaseOrderItemCategory": {
+                      "@EndUserText.label": "Item category in purchasing document",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "Material": {
+                      "@EndUserText.label": "Material number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "MaterialGroup": {
+                      "@EndUserText.label": "Material group",
+                      "type": "cds.String",
+                      "length": 9
+                    },
+                    "PurchaseOrderDate": {
+                      "@EndUserText.label": "Purchase order date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "StorageLocation": {
+                      "@EndUserText.label": "Storage location",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "IsCompletelyDelivered": {
+                      "@EndUserText.label": "\"delivery completed\" indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchasingInfoRecord": {
+                      "@EndUserText.label": "Purchasing info record number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RequirementTracking": {
+                      "@EndUserText.label": "Requirement tracking number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "PurchaseOrderItemText": {
+                      "@EndUserText.label": "Short text",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "PurgDocumentItemDeletionCode": {
+                      "@EndUserText.label": "Deletion indicator in purchasing document",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchasingDocumentDeletionCode": {
+                      "@EndUserText.label": "Purchase order deletion code",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "InvoiceIsExpected": {
+                      "@EndUserText.label": "Invoice receipt indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GoodsReceiptIsExpected": {
+                      "@EndUserText.label": "Goods receipt indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProductTypeCode": {
+                      "@EndUserText.label": "Product type group",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "IsStatisticalItem": {
+                      "@EndUserText.label": "Item is statistical",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ReleaseIsNotCompleted": {
+                      "@EndUserText.label": "Release not yet completely effected",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchasingCompletenessStatus": {
+                      "@EndUserText.label": "Purchase order not yet complete",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchaseContract": {
+                      "@EndUserText.label": "Number of principal purchase agreement",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "PurchaseContractItem": {
+                      "@EndUserText.label": "Item number of principal purchase agreement",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "C_PURORDACCOUNTASSIGNMENTDEX"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrder"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountAssignmentNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CostCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectNetwork"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderQuantityUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MultipleAcctAssgmtDistrPercent"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurgDocNetAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DocumentCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsDeleted"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GLAccount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesOrder"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesOrderItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesOrderScheduleLine"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrderID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "UnloadingPointName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ControllingArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CostObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitabilitySegment"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitabilitySegment_2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProfitCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WBSElementInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProjectNetworkInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CommitmentItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CommitmentItemShortID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FundsCenter"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Fund"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FunctionalArea"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GoodsRecipientName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsFinallyInvoiced"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RealEstateObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NetworkActivityInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PartnerAccountNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JointVentureRecoveryCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SettlementReferenceDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrderInternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrderIntBillOfOperationsItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxJurisdiction"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NonDeductibleInputTaxAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CostCtrActivityType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BusinessProcess"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GrantID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BudgetPeriod"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "EarmarkedFundsDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "EarmarkedFundsDocumentItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ServiceDocumentType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ServiceDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ServiceDocumentItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingOrganization"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDateTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Plant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountAssignmentCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsReturnsItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SupplyingPlant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderItemCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Material"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaterialGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "StorageLocation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsCompletelyDelivered"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingInfoRecord"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RequirementTracking"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderItemText"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurgDocumentItemDeletionCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingDocumentDeletionCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvoiceIsExpected"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GoodsReceiptIsExpected"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductTypeCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsStatisticalItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ReleaseIsNotCompleted"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingCompletenessStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseContract"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseContractItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"PurchaseOrder\",\"d\".\"PurchaseOrderItem\",\"d\".\"AccountAssignmentNumber\",\"d\".\"CostCenter\",\"d\".\"MasterFixedAsset\",\"d\".\"ProjectNetwork\",\"d\".\"Quantity\",\"d\".\"PurchaseOrderQuantityUnit\",\"d\".\"MultipleAcctAssgmtDistrPercent\",\"d\".\"PurgDocNetAmount\",\"d\".\"DocumentCurrency\",\"d\".\"IsDeleted\",\"d\".\"GLAccount\",\"d\".\"BusinessArea\",\"d\".\"SalesOrder\",\"d\".\"SalesOrderItem\",\"d\".\"SalesOrderScheduleLine\",\"d\".\"FixedAsset\",\"d\".\"OrderID\",\"d\".\"UnloadingPointName\",\"d\".\"ControllingArea\",\"d\".\"CostObject\",\"d\".\"ProfitabilitySegment\",\"d\".\"ProfitabilitySegment_2\",\"d\".\"ProfitCenter\",\"d\".\"WBSElementInternalID\",\"d\".\"ProjectNetworkInternalID\",\"d\".\"CommitmentItem\",\"d\".\"CommitmentItemShortID\",\"d\".\"FundsCenter\",\"d\".\"Fund\",\"d\".\"FunctionalArea\",\"d\".\"GoodsRecipientName\",\"d\".\"IsFinallyInvoiced\",\"d\".\"RealEstateObject\",\"d\".\"NetworkActivityInternalID\",\"d\".\"PartnerAccountNumber\",\"d\".\"JointVentureRecoveryCode\",\"d\".\"SettlementReferenceDate\",\"d\".\"OrderInternalID\",\"d\".\"OrderIntBillOfOperationsItem\",\"d\".\"TaxCode\",\"d\".\"TaxJurisdiction\",\"d\".\"NonDeductibleInputTaxAmount\",\"d\".\"CostCtrActivityType\",\"d\".\"BusinessProcess\",\"d\".\"GrantID\",\"d\".\"BudgetPeriod\",\"d\".\"EarmarkedFundsDocument\",\"d\".\"EarmarkedFundsDocumentItem\",\"d\".\"ServiceDocumentType\",\"d\".\"ServiceDocument\",\"d\".\"ServiceDocumentItem\",\"d\".\"PurchaseOrderType\",\"d\".\"PurchasingOrganization\",\"d\".\"PurchasingGroup\",\"d\".\"CreationDate\",\"d\".\"LastChangeDateTime\",\"d\".\"Plant\",\"d\".\"AccountAssignmentCategory\",\"d\".\"CompanyCode\",\"d\".\"IsReturnsItem\",\"d\".\"SupplyingPlant\",\"d\".\"PurchaseOrderItemCategory\",\"d\".\"Material\",\"d\".\"MaterialGroup\",\"d\".\"PurchaseOrderDate\",\"d\".\"StorageLocation\",\"d\".\"IsCompletelyDelivered\",\"d\".\"PurchasingInfoRecord\",\"d\".\"RequirementTracking\",\"d\".\"PurchaseOrderItemText\",\"d\".\"PurgDocumentItemDeletionCode\",\"d\".\"PurchasingDocumentDeletionCode\",\"d\".\"InvoiceIsExpected\",\"d\".\"GoodsReceiptIsExpected\",\"d\".\"ProductTypeCode\",\"d\".\"IsStatisticalItem\",\"d\".\"ReleaseIsNotCompleted\",\"d\".\"PurchasingCompletenessStatus\",\"d\".\"PurchaseContract\",\"d\".\"PurchaseContractItem\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_Delta\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'C_PURORDACCOUNTASSIGNMENTDEX'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_AUD_CURR_01",
+              "x": 367.9999990463257,
+              "y": 114.5,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "PurchaseOrder",
+                    "target": "PurchaseOrder"
+                  },
+                  {
+                    "source": "PurchaseOrderItem",
+                    "target": "PurchaseOrderItem"
+                  },
+                  {
+                    "source": "AccountAssignmentNumber",
+                    "target": "AccountAssignmentNumber"
+                  },
+                  {
+                    "source": "CostCenter",
+                    "target": "CostCenter"
+                  },
+                  {
+                    "source": "MasterFixedAsset",
+                    "target": "MasterFixedAsset"
+                  },
+                  {
+                    "source": "ProjectNetwork",
+                    "target": "ProjectNetwork"
+                  },
+                  {
+                    "source": "Quantity",
+                    "target": "Quantity"
+                  },
+                  {
+                    "source": "PurchaseOrderQuantityUnit",
+                    "target": "PurchaseOrderQuantityUnit"
+                  },
+                  {
+                    "source": "MultipleAcctAssgmtDistrPercent",
+                    "target": "MultipleAcctAssgmtDistrPercent"
+                  },
+                  {
+                    "source": "PurgDocNetAmount",
+                    "target": "PurgDocNetAmount"
+                  },
+                  {
+                    "source": "DocumentCurrency",
+                    "target": "DocumentCurrency"
+                  },
+                  {
+                    "source": "IsDeleted",
+                    "target": "IsDeleted"
+                  },
+                  {
+                    "source": "GLAccount",
+                    "target": "GLAccount"
+                  },
+                  {
+                    "source": "BusinessArea",
+                    "target": "BusinessArea"
+                  },
+                  {
+                    "source": "SalesOrder",
+                    "target": "SalesOrder"
+                  },
+                  {
+                    "source": "SalesOrderItem",
+                    "target": "SalesOrderItem"
+                  },
+                  {
+                    "source": "SalesOrderScheduleLine",
+                    "target": "SalesOrderScheduleLine"
+                  },
+                  {
+                    "source": "FixedAsset",
+                    "target": "FixedAsset"
+                  },
+                  {
+                    "source": "OrderID",
+                    "target": "OrderID"
+                  },
+                  {
+                    "source": "UnloadingPointName",
+                    "target": "UnloadingPointName"
+                  },
+                  {
+                    "source": "ControllingArea",
+                    "target": "ControllingArea"
+                  },
+                  {
+                    "source": "CostObject",
+                    "target": "CostObject"
+                  },
+                  {
+                    "source": "ProfitabilitySegment",
+                    "target": "ProfitabilitySegment"
+                  },
+                  {
+                    "source": "ProfitabilitySegment_2",
+                    "target": "ProfitabilitySegment_2"
+                  },
+                  {
+                    "source": "ProfitCenter",
+                    "target": "ProfitCenter"
+                  },
+                  {
+                    "source": "WBSElementInternalID",
+                    "target": "WBSElementInternalID"
+                  },
+                  {
+                    "source": "ProjectNetworkInternalID",
+                    "target": "ProjectNetworkInternalID"
+                  },
+                  {
+                    "source": "CommitmentItem",
+                    "target": "CommitmentItem"
+                  },
+                  {
+                    "source": "CommitmentItemShortID",
+                    "target": "CommitmentItemShortID"
+                  },
+                  {
+                    "source": "FundsCenter",
+                    "target": "FundsCenter"
+                  },
+                  {
+                    "source": "Fund",
+                    "target": "Fund"
+                  },
+                  {
+                    "source": "FunctionalArea",
+                    "target": "FunctionalArea"
+                  },
+                  {
+                    "source": "GoodsRecipientName",
+                    "target": "GoodsRecipientName"
+                  },
+                  {
+                    "source": "IsFinallyInvoiced",
+                    "target": "IsFinallyInvoiced"
+                  },
+                  {
+                    "source": "RealEstateObject",
+                    "target": "RealEstateObject"
+                  },
+                  {
+                    "source": "NetworkActivityInternalID",
+                    "target": "NetworkActivityInternalID"
+                  },
+                  {
+                    "source": "PartnerAccountNumber",
+                    "target": "PartnerAccountNumber"
+                  },
+                  {
+                    "source": "JointVentureRecoveryCode",
+                    "target": "JointVentureRecoveryCode"
+                  },
+                  {
+                    "source": "SettlementReferenceDate",
+                    "target": "SettlementReferenceDate"
+                  },
+                  {
+                    "source": "OrderInternalID",
+                    "target": "OrderInternalID"
+                  },
+                  {
+                    "source": "OrderIntBillOfOperationsItem",
+                    "target": "OrderIntBillOfOperationsItem"
+                  },
+                  {
+                    "source": "TaxCode",
+                    "target": "TaxCode"
+                  },
+                  {
+                    "source": "TaxJurisdiction",
+                    "target": "TaxJurisdiction"
+                  },
+                  {
+                    "source": "NonDeductibleInputTaxAmount",
+                    "target": "NonDeductibleInputTaxAmount"
+                  },
+                  {
+                    "source": "CostCtrActivityType",
+                    "target": "CostCtrActivityType"
+                  },
+                  {
+                    "source": "BusinessProcess",
+                    "target": "BusinessProcess"
+                  },
+                  {
+                    "source": "GrantID",
+                    "target": "GrantID"
+                  },
+                  {
+                    "source": "BudgetPeriod",
+                    "target": "BudgetPeriod"
+                  },
+                  {
+                    "source": "EarmarkedFundsDocument",
+                    "target": "EarmarkedFundsDocument"
+                  },
+                  {
+                    "source": "EarmarkedFundsDocumentItem",
+                    "target": "EarmarkedFundsDocumentItem"
+                  },
+                  {
+                    "source": "ServiceDocumentType",
+                    "target": "ServiceDocumentType"
+                  },
+                  {
+                    "source": "ServiceDocument",
+                    "target": "ServiceDocument"
+                  },
+                  {
+                    "source": "ServiceDocumentItem",
+                    "target": "ServiceDocumentItem"
+                  },
+                  {
+                    "source": "PurchaseOrderType",
+                    "target": "PurchaseOrderType"
+                  },
+                  {
+                    "source": "PurchasingOrganization",
+                    "target": "PurchasingOrganization"
+                  },
+                  {
+                    "source": "PurchasingGroup",
+                    "target": "PurchasingGroup"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "LastChangeDateTime",
+                    "target": "LastChangeDateTime"
+                  },
+                  {
+                    "source": "Plant",
+                    "target": "Plant"
+                  },
+                  {
+                    "source": "AccountAssignmentCategory",
+                    "target": "AccountAssignmentCategory"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "IsReturnsItem",
+                    "target": "IsReturnsItem"
+                  },
+                  {
+                    "source": "SupplyingPlant",
+                    "target": "SupplyingPlant"
+                  },
+                  {
+                    "source": "PurchaseOrderItemCategory",
+                    "target": "PurchaseOrderItemCategory"
+                  },
+                  {
+                    "source": "Material",
+                    "target": "Material"
+                  },
+                  {
+                    "source": "MaterialGroup",
+                    "target": "MaterialGroup"
+                  },
+                  {
+                    "source": "PurchaseOrderDate",
+                    "target": "PurchaseOrderDate"
+                  },
+                  {
+                    "source": "StorageLocation",
+                    "target": "StorageLocation"
+                  },
+                  {
+                    "source": "IsCompletelyDelivered",
+                    "target": "IsCompletelyDelivered"
+                  },
+                  {
+                    "source": "PurchasingInfoRecord",
+                    "target": "PurchasingInfoRecord"
+                  },
+                  {
+                    "source": "RequirementTracking",
+                    "target": "RequirementTracking"
+                  },
+                  {
+                    "source": "PurchaseOrderItemText",
+                    "target": "PurchaseOrderItemText"
+                  },
+                  {
+                    "source": "PurgDocumentItemDeletionCode",
+                    "target": "PurgDocumentItemDeletionCode"
+                  },
+                  {
+                    "source": "PurchasingDocumentDeletionCode",
+                    "target": "PurchasingDocumentDeletionCode"
+                  },
+                  {
+                    "source": "InvoiceIsExpected",
+                    "target": "InvoiceIsExpected"
+                  },
+                  {
+                    "source": "GoodsReceiptIsExpected",
+                    "target": "GoodsReceiptIsExpected"
+                  },
+                  {
+                    "source": "ProductTypeCode",
+                    "target": "ProductTypeCode"
+                  },
+                  {
+                    "source": "IsStatisticalItem",
+                    "target": "IsStatisticalItem"
+                  },
+                  {
+                    "source": "ReleaseIsNotCompleted",
+                    "target": "ReleaseIsNotCompleted"
+                  },
+                  {
+                    "source": "PurchasingCompletenessStatus",
+                    "target": "PurchasingCompletenessStatus"
+                  },
+                  {
+                    "source": "PurchaseContract",
+                    "target": "PurchaseContract"
+                  },
+                  {
+                    "source": "PurchaseContractItem",
+                    "target": "PurchaseContractItem"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "PurchaseOrder": {
+                      "@EndUserText.label": "Purchasing document number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "PurchaseOrderItem": {
+                      "@EndUserText.label": "Item number of purchasing document",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 5,
+                      "notNull": true
+                    },
+                    "AccountAssignmentNumber": {
+                      "@EndUserText.label": "Sequential number of account assignment",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 2,
+                      "notNull": true
+                    },
+                    "CostCenter": {
+                      "@EndUserText.label": "Cost center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Main asset number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "ProjectNetwork": {
+                      "@EndUserText.label": "Network number for account assignment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "Quantity": {
+                      "@EndUserText.label": "Quantity",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "PurchaseOrderQuantityUnit": {
+                      "@EndUserText.label": "Purchase order unit of measure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "MultipleAcctAssgmtDistrPercent": {
+                      "@EndUserText.label": "Distribution percentage in the case of multiple acct assgt",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 3,
+                      "scale": 1
+                    },
+                    "PurgDocNetAmount": {
+                      "@EndUserText.label": "Net order value in po currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "DocumentCurrency": {
+                      "@EndUserText.label": "Currency key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "IsDeleted": {
+                      "@EndUserText.label": "Deletion indicator: purchasing document account assignment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GLAccount": {
+                      "@EndUserText.label": "G/l account number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "BusinessArea": {
+                      "@EndUserText.label": "Business area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SalesOrder": {
+                      "@EndUserText.label": "Sales and distribution document number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "SalesOrderItem": {
+                      "@EndUserText.label": "Sales document item",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "SalesOrderScheduleLine": {
+                      "@EndUserText.label": "Schedule line number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "OrderID": {
+                      "@EndUserText.label": "Order number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "UnloadingPointName": {
+                      "@EndUserText.label": "Unloading point",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "ControllingArea": {
+                      "@EndUserText.label": "Controlling area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CostObject": {
+                      "@EndUserText.label": "Cost object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "ProfitabilitySegment": {
+                      "@EndUserText.label": "Deprecated: profitability segment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProfitabilitySegment_2": {
+                      "@EndUserText.label": "Profitability segment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProfitCenter": {
+                      "@EndUserText.label": "Profit center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "WBSElementInternalID": {
+                      "@EndUserText.label": "Wbs element",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ProjectNetworkInternalID": {
+                      "@EndUserText.label": "Routing number of operations in the order",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "CommitmentItem": {
+                      "@EndUserText.label": "CommitmentItem",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 24
+                    },
+                    "CommitmentItemShortID": {
+                      "@EndUserText.label": "Commitment item short id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 14
+                    },
+                    "FundsCenter": {
+                      "@EndUserText.label": "Funds center",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "Fund": {
+                      "@EndUserText.label": "Fund",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "FunctionalArea": {
+                      "@EndUserText.label": "Functional area",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "GoodsRecipientName": {
+                      "@EndUserText.label": "Goods recipient",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "IsFinallyInvoiced": {
+                      "@EndUserText.label": "Final invoice indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "RealEstateObject": {
+                      "@EndUserText.label": "Internal key for real estate object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "NetworkActivityInternalID": {
+                      "@EndUserText.label": "Internal counter",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PartnerAccountNumber": {
+                      "@EndUserText.label": "Partner account number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "JointVentureRecoveryCode": {
+                      "@EndUserText.label": "Recovery indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "SettlementReferenceDate": {
+                      "@EndUserText.label": "Reference date for settlement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "OrderInternalID": {
+                      "@EndUserText.label": "Routing number of operations in the order",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "OrderIntBillOfOperationsItem": {
+                      "@EndUserText.label": "General counter for order",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "TaxCode": {
+                      "@EndUserText.label": "Tax on sales/purchases code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "TaxJurisdiction": {
+                      "@EndUserText.label": "Tax jurisdiction",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "NonDeductibleInputTaxAmount": {
+                      "@EndUserText.label": "Non-deductible input tax",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "CostCtrActivityType": {
+                      "@EndUserText.label": "Activity type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "BusinessProcess": {
+                      "@EndUserText.label": "Business process",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "GrantID": {
+                      "@EndUserText.label": "Grant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 20
+                    },
+                    "BudgetPeriod": {
+                      "@EndUserText.label": "Budget period",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "EarmarkedFundsDocument": {
+                      "@EndUserText.label": "Document number for earmarked funds",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "EarmarkedFundsDocumentItem": {
+                      "@EndUserText.label": "Earmarked funds: document item",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ServiceDocumentType": {
+                      "@EndUserText.label": "Service document type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ServiceDocument": {
+                      "@EndUserText.label": "Service document id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ServiceDocumentItem": {
+                      "@EndUserText.label": "Service document item id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "PurchaseOrderType": {
+                      "@EndUserText.label": "Purchasing document type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PurchasingOrganization": {
+                      "@EndUserText.label": "Purchasing organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PurchasingGroup": {
+                      "@EndUserText.label": "Purchasing group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Creation date of purchasing document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Change time stamp",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 21,
+                      "scale": 7
+                    },
+                    "Plant": {
+                      "@EndUserText.label": "Plant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AccountAssignmentCategory": {
+                      "@EndUserText.label": "Account assignment category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "IsReturnsItem": {
+                      "@EndUserText.label": "Returns item",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SupplyingPlant": {
+                      "@EndUserText.label": "Supplying (issuing) plant in case of stock transport order",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PurchaseOrderItemCategory": {
+                      "@EndUserText.label": "Item category in purchasing document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "Material": {
+                      "@EndUserText.label": "Material number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "MaterialGroup": {
+                      "@EndUserText.label": "Material group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 9
+                    },
+                    "PurchaseOrderDate": {
+                      "@EndUserText.label": "Purchase order date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "StorageLocation": {
+                      "@EndUserText.label": "Storage location",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "IsCompletelyDelivered": {
+                      "@EndUserText.label": "\"delivery completed\" indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchasingInfoRecord": {
+                      "@EndUserText.label": "Purchasing info record number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "RequirementTracking": {
+                      "@EndUserText.label": "Requirement tracking number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "PurchaseOrderItemText": {
+                      "@EndUserText.label": "Short text",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "PurgDocumentItemDeletionCode": {
+                      "@EndUserText.label": "Deletion indicator in purchasing document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchasingDocumentDeletionCode": {
+                      "@EndUserText.label": "Purchase order deletion code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "InvoiceIsExpected": {
+                      "@EndUserText.label": "Invoice receipt indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GoodsReceiptIsExpected": {
+                      "@EndUserText.label": "Goods receipt indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProductTypeCode": {
+                      "@EndUserText.label": "Product type group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "IsStatisticalItem": {
+                      "@EndUserText.label": "Item is statistical",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ReleaseIsNotCompleted": {
+                      "@EndUserText.label": "Release not yet completely effected",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchasingCompletenessStatus": {
+                      "@EndUserText.label": "Purchase order not yet complete",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchaseContract": {
+                      "@EndUserText.label": "Number of principal purchase agreement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "PurchaseContractItem": {
+                      "@EndUserText.label": "Item number of principal purchase agreement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_IMLOFJCA"
+                    }
+                  }
+                },
+                "name": "2LT_C_PURORDACCOUNTASSIGNMENTDEX_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "317.9999990463257,134.5 364.4999990463257,134.5"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "definitions": {
+    "2LT_I_REVALUATIONRULECONDITION_S4_AUD_CURR_01": {
+      "kind": "entity",
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.Timestamp"
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "length": 20
+        },
+        "InternalRealEstateNumber": {
+          "@EndUserText.label": "Internal key of real estate object",
+          "type": "cds.String",
+          "length": 13,
+          "key": true,
+          "notNull": true
+        },
+        "REValuationRuleUUID": {
+          "@EndUserText.label": "Guid (raw16) for valuation rule",
+          "type": "cds.Binary",
+          "length": 16,
+          "key": true,
+          "notNull": true
+        },
+        "REConditionUUID": {
+          "@EndUserText.label": "Guid (raw16) for conditions",
+          "type": "cds.Binary",
+          "length": 16,
+          "key": true,
+          "notNull": true
+        },
+        "REValuationCndnProperty": {
+          "@EndUserText.label": "Condition valuation property",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REValuationCndnConsdtn": {
+          "@EndUserText.label": "Condition consideration",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REIsValuationCndnConsdtn": {
+          "@EndUserText.label": "Indicator: consider condition?",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REValuationCndnSharePercent": {
+          "@EndUserText.label": "Percentage share of condition",
+          "precision": 7,
+          "scale": 4,
+          "type": "cds.Decimal"
+        },
+        "REValuationCndnShareAbsltAmt": {
+          "@EndUserText.label": "Absolute share of condition",
+          "type": "cds.DecimalFloat"
+        },
+        "REValuationCurrency": {
+          "@EndUserText.label": "Condition currency",
+          "type": "cds.String",
+          "length": 5
+        },
+        "REValuationCndnStatus": {
+          "@EndUserText.label": "Status of condition-specific valuation rule",
+          "type": "cds.String",
+          "length": 1
+        },
+        "REInfoText": {
+          "@EndUserText.label": "Valuation note",
+          "type": "cds.String",
+          "length": 100
+        },
+        "REValuationRule": {
+          "@EndUserText.label": "Valuation rule",
+          "type": "cds.String",
+          "length": 10
+        },
+        "BATCH_TYPE": {
+          "@EndUserText.label": "BATCH_TYPE",
+          "type": "cds.String",
+          "length": 20
+        },
+        "LOAD_FLOW": {
+          "@EndUserText.label": "LOAD_FLOW",
+          "type": "cds.String",
+          "length": 120
+        },
+        "OBJECT_NAME": {
+          "@EndUserText.label": "OBJECT_NAME",
+          "type": "cds.String",
+          "length": 120
+        }
+      },
+      "@EndUserText.label": "2LT_I_REVALUATIONRULECONDITION_S4_AUD_CURR_01",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1008 @@
+{
+  "definitions": {
+    "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ProjectUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "ProjectInternalID": {
+          "@EndUserText.label": "Project (internal)",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CustomerUUID": {
+          "@EndUserText.label": "Business partner guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "EnterpriseProjectServiceOrg": {
+          "@EndUserText.label": "Service organization",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "EntProjectIsConfidential": {
+          "@EndUserText.label": "Enterprise project is confidential",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "RestrictedTimePosting": {
+          "@EndUserText.label": "Restrict unstaffed posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ProjectCategory": {
+          "@EndUserText.label": "Project category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ProjectSummaryTaskUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "Project": {
+          "@EndUserText.label": "Project id",
+          "type": "cds.String",
+          "key": false,
+          "length": 24
+        },
+        "ProjectDescription": {
+          "@EndUserText.label": "Description",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "ProcessingStatus": {
+          "@EndUserText.label": "Object processing status",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PlannedStartDate": {
+          "@EndUserText.label": "Earliest planned start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PlannedEndDate": {
+          "@EndUserText.label": "Earliest planned finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualStartDate": {
+          "@EndUserText.label": "Actual start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualFinishDate": {
+          "@EndUserText.label": "Actual finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PriorityCode": {
+          "@EndUserText.label": "Priority",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "EntProjIsMultiSlsOrdItmsEnbld": {
+          "@EndUserText.label": "Enterprise project assigned to multiple so items",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ProjectStartDate": {
+          "@EndUserText.label": "Planned start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProjectEndDate": {
+          "@EndUserText.label": "Planned finish date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProjectProfileCode": {
+          "@EndUserText.label": "Project profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code for the project",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area for the project",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "Location": {
+          "@EndUserText.label": "Location",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "Currency": {
+          "@EndUserText.label": "Project currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AvailabilityControlProfile": {
+          "@EndUserText.label": "Budget availability control: profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "AvailabilityControlIsActive": {
+          "@EndUserText.label": "Availability control indicator(avc)",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InvestmentProfile": {
+          "@EndUserText.label": "Investment measure profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "EnterpriseProjectType": {
+          "@EndUserText.label": "Project type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ResponsibleCostCenter": {
+          "@EndUserText.label": "Responsible cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "FunctionalLocation": {
+          "@EndUserText.label": "Functional location",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "IsBillingRelevant": {
+          "@EndUserText.label": "Indicator: billing element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ResultAnalysisInternalID": {
+          "@EndUserText.label": "Results analysis key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "LeadingSalesOrder": {
+          "@EndUserText.label": "Sales document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LeadingSalesOrderItem": {
+          "@EndUserText.label": "Sales document item",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDateTime": {
+          "@EndUserText.label": "Timestamp of object creation",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Name of person who changed object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Timestamp of last object change",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "ProjectLastChangedByUser": {
+          "@EndUserText.label": "User who changed project data last",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ProjectLastChangedDateTime": {
+          "@EndUserText.label": "Timestamp on which project data was changed last",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "EntProjHasProjectStockEnabled": {
+          "@EndUserText.label": "Project stock",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EntProjectSettlementType": {
+          "@EndUserText.label": "Enterprise project settlement type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "EntProjectSettlementElement": {
+          "@EndUserText.label": "Enterprise project settlement element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InventorySpecialStockValnType": {
+          "@EndUserText.label": "Valuation of special stock",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectUUID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "CustomerUUID"
+              ]
+            },
+            {
+              "ref": [
+                "EnterpriseProjectServiceOrg"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjectIsConfidential"
+              ]
+            },
+            {
+              "ref": [
+                "RestrictedTimePosting"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectCategory"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectSummaryTaskUUID"
+              ]
+            },
+            {
+              "ref": [
+                "Project"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectDescription"
+              ]
+            },
+            {
+              "ref": [
+                "ProcessingStatus"
+              ]
+            },
+            {
+              "ref": [
+                "PlannedStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "PlannedEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "ActualStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "ActualFinishDate"
+              ]
+            },
+            {
+              "ref": [
+                "PriorityCode"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjIsMultiSlsOrdItmsEnbld"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "WBSElementInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectProfileCode"
+              ]
+            },
+            {
+              "ref": [
+                "ProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingArea"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalArea"
+              ]
+            },
+            {
+              "ref": [
+                "Location"
+              ]
+            },
+            {
+              "ref": [
+                "Plant"
+              ]
+            },
+            {
+              "ref": [
+                "Currency"
+              ]
+            },
+            {
+              "ref": [
+                "AvailabilityControlProfile"
+              ]
+            },
+            {
+              "ref": [
+                "AvailabilityControlIsActive"
+              ]
+            },
+            {
+              "ref": [
+                "InvestmentProfile"
+              ]
+            },
+            {
+              "ref": [
+                "TaxJurisdiction"
+              ]
+            },
+            {
+              "ref": [
+                "EnterpriseProjectType"
+              ]
+            },
+            {
+              "ref": [
+                "ResponsibleCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalLocation"
+              ]
+            },
+            {
+              "ref": [
+                "IsBillingRelevant"
+              ]
+            },
+            {
+              "ref": [
+                "ResultAnalysisInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "LeadingSalesOrder"
+              ]
+            },
+            {
+              "ref": [
+                "LeadingSalesOrderItem"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "CreationDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "LastChangeDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectLastChangedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "ProjectLastChangedDateTime"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjHasProjectStockEnabled"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjectSettlementType"
+              ]
+            },
+            {
+              "ref": [
+                "EntProjectSettlementElement"
+              ]
+            },
+            {
+              "ref": [
+                "InventorySpecialStockValnType"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LWUFGFID"
+        }
+      }
+    },
+    "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ProjectUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": true,
+          "length": 16,
+          "notNull": true
+        },
+        "ProjectInternalID": {
+          "@EndUserText.label": "Project (internal)",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CustomerUUID": {
+          "@EndUserText.label": "Business partner guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "EnterpriseProjectServiceOrg": {
+          "@EndUserText.label": "Service organization",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "EntProjectIsConfidential": {
+          "@EndUserText.label": "Enterprise project is confidential",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "RestrictedTimePosting": {
+          "@EndUserText.label": "Restrict unstaffed posting",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ProjectCategory": {
+          "@EndUserText.label": "Project category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ProjectSummaryTaskUUID": {
+          "@EndUserText.label": "Entity guid",
+          "type": "cds.Binary",
+          "key": false,
+          "length": 16
+        },
+        "Project": {
+          "@EndUserText.label": "Project id",
+          "type": "cds.String",
+          "key": false,
+          "length": 24
+        },
+        "ProjectDescription": {
+          "@EndUserText.label": "Description",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "ProcessingStatus": {
+          "@EndUserText.label": "Object processing status",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PlannedStartDate": {
+          "@EndUserText.label": "Earliest planned start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PlannedEndDate": {
+          "@EndUserText.label": "Earliest planned finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualStartDate": {
+          "@EndUserText.label": "Actual start",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ActualFinishDate": {
+          "@EndUserText.label": "Actual finish",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "PriorityCode": {
+          "@EndUserText.label": "Priority",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "EntProjIsMultiSlsOrdItmsEnbld": {
+          "@EndUserText.label": "Enterprise project assigned to multiple so items",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ProjectStartDate": {
+          "@EndUserText.label": "Planned start date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProjectEndDate": {
+          "@EndUserText.label": "Planned finish date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "WBSElementInternalID": {
+          "@EndUserText.label": "Wbs element",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "ProjectProfileCode": {
+          "@EndUserText.label": "Project profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code for the project",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area for the project",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "Location": {
+          "@EndUserText.label": "Location",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "Currency": {
+          "@EndUserText.label": "Project currency",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "AvailabilityControlProfile": {
+          "@EndUserText.label": "Budget availability control: profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "AvailabilityControlIsActive": {
+          "@EndUserText.label": "Availability control indicator(avc)",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InvestmentProfile": {
+          "@EndUserText.label": "Investment measure profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "EnterpriseProjectType": {
+          "@EndUserText.label": "Project type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ResponsibleCostCenter": {
+          "@EndUserText.label": "Responsible cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "FunctionalLocation": {
+          "@EndUserText.label": "Functional location",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "IsBillingRelevant": {
+          "@EndUserText.label": "Indicator: billing element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ResultAnalysisInternalID": {
+          "@EndUserText.label": "Results analysis key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "LeadingSalesOrder": {
+          "@EndUserText.label": "Sales document",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "LeadingSalesOrderItem": {
+          "@EndUserText.label": "Sales document item",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDateTime": {
+          "@EndUserText.label": "Timestamp of object creation",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "LastChangedByUser": {
+          "@EndUserText.label": "Name of person who changed object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "LastChangeDateTime": {
+          "@EndUserText.label": "Timestamp of last object change",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "ProjectLastChangedByUser": {
+          "@EndUserText.label": "User who changed project data last",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "ProjectLastChangedDateTime": {
+          "@EndUserText.label": "Timestamp on which project data was changed last",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 15,
+          "scale": 0
+        },
+        "EntProjHasProjectStockEnabled": {
+          "@EndUserText.label": "Project stock",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "EntProjectSettlementType": {
+          "@EndUserText.label": "Enterprise project settlement type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "EntProjectSettlementElement": {
+          "@EndUserText.label": "Enterprise project settlement element",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InventorySpecialStockValnType": {
+          "@EndUserText.label": "Valuation of special stock",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_ENTERPRISEPROJECT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_LWUFGFID"
+        }
+      }
+    }
+  }
+}

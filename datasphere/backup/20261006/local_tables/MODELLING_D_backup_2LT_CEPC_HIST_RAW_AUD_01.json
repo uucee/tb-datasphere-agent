@@ -1,0 +1,342 @@
+{
+  "definitions": {
+    "2LT_CEPC_HIST_RAW_AUD_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "PRCTR": {
+          "@EndUserText.label": "PRCTR",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "DATBI": {
+          "@EndUserText.label": "DATBI",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "KOKRS": {
+          "@EndUserText.label": "KOKRS",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "DATAB": {
+          "@EndUserText.label": "DATAB",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ERSDA": {
+          "@EndUserText.label": "ERSDA",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "USNAM": {
+          "@EndUserText.label": "USNAM",
+          "type": "cds.String",
+          "key": false,
+          "length": 50
+        },
+        "MERKMAL": {
+          "@EndUserText.label": "MERKMAL",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ABTEI": {
+          "@EndUserText.label": "ABTEI",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "VERAK": {
+          "@EndUserText.label": "VERAK",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "VERAK_USER": {
+          "@EndUserText.label": "VERAK_USER",
+          "type": "cds.String",
+          "key": false,
+          "length": 9
+        },
+        "WAERS": {
+          "@EndUserText.label": "WAERS",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "NPRCTR": {
+          "@EndUserText.label": "NPRCTR",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "LAND1": {
+          "@EndUserText.label": "LAND1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ANRED": {
+          "@EndUserText.label": "ANRED",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "NAME1": {
+          "@EndUserText.label": "NAME1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "NAME2": {
+          "@EndUserText.label": "NAME2",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "NAME3": {
+          "@EndUserText.label": "NAME3",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "NAME4": {
+          "@EndUserText.label": "NAME4",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ORT01": {
+          "@EndUserText.label": "ORT01",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ORT02": {
+          "@EndUserText.label": "ORT02",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "STRAS": {
+          "@EndUserText.label": "STRAS",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "PFACH": {
+          "@EndUserText.label": "PFACH",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "PSTLZ": {
+          "@EndUserText.label": "PSTLZ",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "PSTL2": {
+          "@EndUserText.label": "PSTL2",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "SPRAS": {
+          "@EndUserText.label": "SPRAS",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TELBX": {
+          "@EndUserText.label": "TELBX",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TELF1": {
+          "@EndUserText.label": "TELF1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TELF2": {
+          "@EndUserText.label": "TELF2",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TELFX": {
+          "@EndUserText.label": "TELFX",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TELTX": {
+          "@EndUserText.label": "TELTX",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TELX1": {
+          "@EndUserText.label": "TELX1",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "DATLT": {
+          "@EndUserText.label": "DATLT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "DRNAM": {
+          "@EndUserText.label": "DRNAM",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KHINR": {
+          "@EndUserText.label": "KHINR",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "BUKRS": {
+          "@EndUserText.label": "BUKRS",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "VNAME": {
+          "@EndUserText.label": "VNAME",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "RECID": {
+          "@EndUserText.label": "RECID",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "ETYPE": {
+          "@EndUserText.label": "ETYPE",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "TXJCD": {
+          "@EndUserText.label": "TXJCD",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "REGIO": {
+          "@EndUserText.label": "REGIO",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KVEWE": {
+          "@EndUserText.label": "KVEWE",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KAPPL": {
+          "@EndUserText.label": "KAPPL",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KALSM": {
+          "@EndUserText.label": "KALSM",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "LOGSYSTEM": {
+          "@EndUserText.label": "LOGSYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "LOCK_IND": {
+          "@EndUserText.label": "LOCK_IND",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PCA_TEMPLATE": {
+          "@EndUserText.label": "PCA_TEMPLATE",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "SEGMENT": {
+          "@EndUserText.label": "SEGMENT",
+          "type": "cds.String",
+          "key": false,
+          "length": 5000
+        },
+        "KTEXT": {
+          "@EndUserText.label": "KTEXT",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "LTEXT": {
+          "@EndUserText.label": "LTEXT",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "MCTXT": {
+          "@EndUserText.label": "MCTXT",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_CEPC_HIST_RAW_AUD_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_OMKJNCAM"
+        }
+      }
+    }
+  }
+}

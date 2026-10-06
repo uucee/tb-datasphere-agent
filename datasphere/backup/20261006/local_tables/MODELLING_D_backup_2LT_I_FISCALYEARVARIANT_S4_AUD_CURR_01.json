@@ -1,0 +1,82 @@
+{
+  "definitions": {
+    "2LT_I_FISCALYEARVARIANT_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "key": true,
+          "length": 2,
+          "notNull": true
+        },
+        "FiscalPeriodIsEqualMonth": {
+          "@EndUserText.label": "Indicator: fiscal period is equal calendar month",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsYearDependent": {
+          "@EndUserText.label": "Indicator: fiscal year variants year-dependent ?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PostingPeriodsNumberVal": {
+          "@EndUserText.label": "Number of posting periods",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "NumberOfSpecialPeriods": {
+          "@EndUserText.label": "Number of special periods",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FsclWeekStartIsFsclYearStart": {
+          "@EndUserText.label": "Flag: fiscal weeks calculated from start of fiscal year",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FiscalCalendarIsWeekBased": {
+          "@EndUserText.label": "Flag: fiscal year variant as week calendar",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_FISCALYEARVARIANT_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ZWUCDVPL"
+        }
+      }
+    }
+  }
+}

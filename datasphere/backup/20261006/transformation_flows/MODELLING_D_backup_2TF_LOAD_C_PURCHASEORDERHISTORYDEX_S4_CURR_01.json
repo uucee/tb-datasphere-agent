@@ -1,0 +1,2527 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_C_PURCHASEORDERHISTORYDEX_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_C_PURCHASEORDERHISTORYDEX_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_C_PURCHASEORDERHISTORYDEX_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_C_PURCHASEORDERHISTORYDEX_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_C_PURCHASEORDERHISTORYDEX_S4_CURR",
+                    "elements": {
+                      "PurchaseOrder": {
+                        "@EndUserText.label": "Purchasing document number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "PurchaseOrderItem": {
+                        "@EndUserText.label": "Item number of purchase order",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 5
+                      },
+                      "AccountAssignmentNumber": {
+                        "@EndUserText.label": "Sequential number of account assignment",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 2
+                      },
+                      "PurchasingHistoryDocumentType": {
+                        "@EndUserText.label": "Transaction/event type, purchase order history",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 1
+                      },
+                      "PurchasingHistoryDocumentYear": {
+                        "@EndUserText.label": "Material document year",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "PurchasingHistoryDocument": {
+                        "@EndUserText.label": "Number of material document",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 10
+                      },
+                      "PurchasingHistoryDocumentItem": {
+                        "@EndUserText.label": "Item in material document",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "PurchasingHistoryCategory": {
+                        "@EndUserText.label": "Purchase order history category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GoodsMovementType": {
+                        "@EndUserText.label": "Movement type (inventory management)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "PostingDate": {
+                        "@EndUserText.label": "Posting date in the document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "Currency": {
+                        "@EndUserText.label": "Currency key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "DebitCreditCode": {
+                        "@EndUserText.label": "Debit/credit indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsCompletelyDelivered": {
+                        "@EndUserText.label": "\"delivery completed\" indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ReferenceDocumentFiscalYear": {
+                        "@EndUserText.label": "Fiscal year of a reference document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ReferenceDocument": {
+                        "@EndUserText.label": "Document no. of a reference document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "Material": {
+                        "@EndUserText.label": "Material number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "Plant": {
+                        "@EndUserText.label": "Plant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RvslOfGoodsReceiptIsAllowed": {
+                        "@EndUserText.label": "Reversal of gr allowed for gr-based iv despite invoice",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PricingDocument": {
+                        "@EndUserText.label": "Number of the document condition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "TaxCode": {
+                        "@EndUserText.label": "Tax on sales/purchases code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "DocumentDate": {
+                        "@EndUserText.label": "Document date in document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "InventoryValuationType": {
+                        "@EndUserText.label": "Valuation type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "DocumentReferenceID": {
+                        "@EndUserText.label": "Reference document number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 16
+                      },
+                      "DeliveryQuantityUnit": {
+                        "@EndUserText.label": "Unit of measure from delivery note",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ManufacturerMaterial": {
+                        "@EndUserText.label": "Material number corresponding to manufacturer part number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "AccountingDocumentCreationDate": {
+                        "@EndUserText.label": "Day on which accounting document was entered",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "Quantity": {
+                        "@EndUserText.label": "Quantity",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "PurOrdAmountInCompanyCodeCrcy": {
+                        "@EndUserText.label": "Amount in local currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "PurchaseOrderAmount": {
+                        "@EndUserText.label": "Amount in document currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "QtyInPurchaseOrderPriceUnit": {
+                        "@EndUserText.label": "Quantity in purchase order price unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "GRIRAcctClrgAmtInCoCodeCrcy": {
+                        "@EndUserText.label": "Gr/ir account clearing value in local currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "GdsRcptBlkdStkQtyInOrdQtyUnit": {
+                        "@EndUserText.label": "Goods receipt blocked stock in order unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "GdsRcptBlkdStkQtyInOrdPrcUnit": {
+                        "@EndUserText.label": "Quantity in gr blocked stock in order price unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "InvoiceAmtInCoCodeCrcy": {
+                        "@EndUserText.label": "Invoice value entered (in local currency)",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "ShipgInstrnSupplierCompliance": {
+                        "@EndUserText.label": "Compliance with shipping instructions",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "InvoiceAmountInFrgnCurrency": {
+                        "@EndUserText.label": "Invoice value in foreign currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "QuantityInDeliveryQtyUnit": {
+                        "@EndUserText.label": "Quantity in unit of measure from delivery note",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "GRIRAcctClrgAmtInTransacCrcy": {
+                        "@EndUserText.label": "Clearing value on gr/ir clearing account (transac. currency)",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "QuantityInBaseUnit": {
+                        "@EndUserText.label": "Quantity",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "GRIRAcctClrgAmtInOrdTrnsacCrcy": {
+                        "@EndUserText.label": "Clearing value on gr/ir account in po currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "InvoiceAmtInPurOrdTransacCrcy": {
+                        "@EndUserText.label": "Invoice amount in po currency",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "VltdGdsRcptBlkdStkQtyInOrdUnit": {
+                        "@EndUserText.label": "Valuated goods receipt blocked stock in order unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "VltdGdsRcptBlkdQtyInOrdPrcUnit": {
+                        "@EndUserText.label": "Quantity in valuated gr blocked stock in order price unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "IsToBeAcceptedAtOrigin": {
+                        "@EndUserText.label": "Acceptance at origin",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ExchangeRateDifferenceAmount": {
+                        "@EndUserText.label": "Exchange rate difference amount",
+                        "type": "cds.DecimalFloat",
+                        "key": false
+                      },
+                      "ExchangeRate": {
+                        "@EndUserText.label": "Exchange rate",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 9,
+                        "scale": 5
+                      },
+                      "DeliveryDocument": {
+                        "@EndUserText.label": "Delivery",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "DeliveryDocumentItem": {
+                        "@EndUserText.label": "Delivery document item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "OrderPriceUnit": {
+                        "@EndUserText.label": "Order price unit (purchasing)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "PurchaseOrderQuantityUnit": {
+                        "@EndUserText.label": "Purchase order unit of measure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "BaseUnit": {
+                        "@EndUserText.label": "Base unit of measure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "DocumentCurrency": {
+                        "@EndUserText.label": "Document currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "CompanyCodeCurrency": {
+                        "@EndUserText.label": "Company code currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "ProductTypeCode": {
+                        "@EndUserText.label": "Product type group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "IsStatisticalItem": {
+                        "@EndUserText.label": "Item is statistical",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsReturnsItem": {
+                        "@EndUserText.label": "Returns item",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GoodsReceiptIsExpected": {
+                        "@EndUserText.label": "Goods receipt indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "GoodsReceiptIsNonValuated": {
+                        "@EndUserText.label": "Goods receipt, non-valuated",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsFinallyInvoiced": {
+                        "@EndUserText.label": "Final invoice indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "InvoiceIsExpected": {
+                        "@EndUserText.label": "Invoice receipt indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchaseContract": {
+                        "@EndUserText.label": "Number of principal purchase agreement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "PurchaseContractItem": {
+                        "@EndUserText.label": "Item number of principal purchase agreement",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "AccountAssignmentCategory": {
+                        "@EndUserText.label": "Account assignment category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchaseRequisition": {
+                        "@EndUserText.label": "Purchase requisition number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "PurchaseRequisitionItem": {
+                        "@EndUserText.label": "Item number of purchase requisition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "PurchaseOrderItemCategory": {
+                        "@EndUserText.label": "Item category in purchasing document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ServicePerformer": {
+                        "@EndUserText.label": "Service performer",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProductGroup": {
+                        "@EndUserText.label": "Material group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 9
+                      },
+                      "MultipleAcctAssgmtDistribution": {
+                        "@EndUserText.label": "Distribution indicator for multiple account assignment",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurgDocumentItemDeletionCode": {
+                        "@EndUserText.label": "Deletion indicator in purchasing document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "Supplier": {
+                        "@EndUserText.label": "Supplier",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "PurchasingOrganization": {
+                        "@EndUserText.label": "Purchasing organization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PurchasingGroup": {
+                        "@EndUserText.label": "Purchasing group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PurchaseOrderType": {
+                        "@EndUserText.label": "Purchasing document type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "PurchasingDocumentDeletionCode": {
+                        "@EndUserText.label": "Purchase order deletion code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ReleaseIsNotCompleted": {
+                        "@EndUserText.label": "Release not yet completely effected",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PurchasingCompletenessStatus": {
+                        "@EndUserText.label": "Purchase order not yet complete",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_C_PURCHASEORDERHISTORYDEX_S4_CURR_01$TRF_TV_sqltransform1",
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "PurchaseOrder": {
+                      "@EndUserText.label": "Purchasing document number",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchaseOrderItem": {
+                      "@EndUserText.label": "Item number of purchase order",
+                      "type": "cds.String",
+                      "length": 5,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "AccountAssignmentNumber": {
+                      "@EndUserText.label": "Sequential number of account assignment",
+                      "type": "cds.String",
+                      "length": 2,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocumentType": {
+                      "@EndUserText.label": "Transaction/event type, purchase order history",
+                      "type": "cds.String",
+                      "length": 1,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocumentYear": {
+                      "@EndUserText.label": "Material document year",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocument": {
+                      "@EndUserText.label": "Number of material document",
+                      "type": "cds.String",
+                      "length": 10,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocumentItem": {
+                      "@EndUserText.label": "Item in material document",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryCategory": {
+                      "@EndUserText.label": "Purchase order history category",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GoodsMovementType": {
+                      "@EndUserText.label": "Movement type (inventory management)",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "PostingDate": {
+                      "@EndUserText.label": "Posting date in the document",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "Currency": {
+                      "@EndUserText.label": "Currency key",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "DebitCreditCode": {
+                      "@EndUserText.label": "Debit/credit indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsCompletelyDelivered": {
+                      "@EndUserText.label": "\"delivery completed\" indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ReferenceDocumentFiscalYear": {
+                      "@EndUserText.label": "Fiscal year of a reference document",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ReferenceDocument": {
+                      "@EndUserText.label": "Document no. of a reference document",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "Material": {
+                      "@EndUserText.label": "Material number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "Plant": {
+                      "@EndUserText.label": "Plant",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RvslOfGoodsReceiptIsAllowed": {
+                      "@EndUserText.label": "Reversal of gr allowed for gr-based iv despite invoice",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PricingDocument": {
+                      "@EndUserText.label": "Number of the document condition",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "TaxCode": {
+                      "@EndUserText.label": "Tax on sales/purchases code",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "DocumentDate": {
+                      "@EndUserText.label": "Document date in document",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "InventoryValuationType": {
+                      "@EndUserText.label": "Valuation type",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "DocumentReferenceID": {
+                      "@EndUserText.label": "Reference document number",
+                      "type": "cds.String",
+                      "length": 16
+                    },
+                    "DeliveryQuantityUnit": {
+                      "@EndUserText.label": "Unit of measure from delivery note",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ManufacturerMaterial": {
+                      "@EndUserText.label": "Material number corresponding to manufacturer part number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "AccountingDocumentCreationDate": {
+                      "@EndUserText.label": "Day on which accounting document was entered",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "Quantity": {
+                      "@EndUserText.label": "Quantity",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "PurOrdAmountInCompanyCodeCrcy": {
+                      "@EndUserText.label": "Amount in local currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "PurchaseOrderAmount": {
+                      "@EndUserText.label": "Amount in document currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "QtyInPurchaseOrderPriceUnit": {
+                      "@EndUserText.label": "Quantity in purchase order price unit",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "GRIRAcctClrgAmtInCoCodeCrcy": {
+                      "@EndUserText.label": "Gr/ir account clearing value in local currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "GdsRcptBlkdStkQtyInOrdQtyUnit": {
+                      "@EndUserText.label": "Goods receipt blocked stock in order unit",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "GdsRcptBlkdStkQtyInOrdPrcUnit": {
+                      "@EndUserText.label": "Quantity in gr blocked stock in order price unit",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "InvoiceAmtInCoCodeCrcy": {
+                      "@EndUserText.label": "Invoice value entered (in local currency)",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "ShipgInstrnSupplierCompliance": {
+                      "@EndUserText.label": "Compliance with shipping instructions",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "InvoiceAmountInFrgnCurrency": {
+                      "@EndUserText.label": "Invoice value in foreign currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "QuantityInDeliveryQtyUnit": {
+                      "@EndUserText.label": "Quantity in unit of measure from delivery note",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "GRIRAcctClrgAmtInTransacCrcy": {
+                      "@EndUserText.label": "Clearing value on gr/ir clearing account (transac. currency)",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "QuantityInBaseUnit": {
+                      "@EndUserText.label": "Quantity",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "GRIRAcctClrgAmtInOrdTrnsacCrcy": {
+                      "@EndUserText.label": "Clearing value on gr/ir account in po currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "InvoiceAmtInPurOrdTransacCrcy": {
+                      "@EndUserText.label": "Invoice amount in po currency",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "VltdGdsRcptBlkdStkQtyInOrdUnit": {
+                      "@EndUserText.label": "Valuated goods receipt blocked stock in order unit",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "VltdGdsRcptBlkdQtyInOrdPrcUnit": {
+                      "@EndUserText.label": "Quantity in valuated gr blocked stock in order price unit",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "IsToBeAcceptedAtOrigin": {
+                      "@EndUserText.label": "Acceptance at origin",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ExchangeRateDifferenceAmount": {
+                      "@EndUserText.label": "Exchange rate difference amount",
+                      "type": "cds.DecimalFloat"
+                    },
+                    "ExchangeRate": {
+                      "@EndUserText.label": "Exchange rate",
+                      "precision": 9,
+                      "scale": 5,
+                      "type": "cds.Decimal"
+                    },
+                    "DeliveryDocument": {
+                      "@EndUserText.label": "Delivery",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "DeliveryDocumentItem": {
+                      "@EndUserText.label": "Delivery document item",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "OrderPriceUnit": {
+                      "@EndUserText.label": "Order price unit (purchasing)",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "PurchaseOrderQuantityUnit": {
+                      "@EndUserText.label": "Purchase order unit of measure",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "BaseUnit": {
+                      "@EndUserText.label": "Base unit of measure",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "DocumentCurrency": {
+                      "@EndUserText.label": "Document currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "CompanyCodeCurrency": {
+                      "@EndUserText.label": "Company code currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "ProductTypeCode": {
+                      "@EndUserText.label": "Product type group",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "IsStatisticalItem": {
+                      "@EndUserText.label": "Item is statistical",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsReturnsItem": {
+                      "@EndUserText.label": "Returns item",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GoodsReceiptIsExpected": {
+                      "@EndUserText.label": "Goods receipt indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "GoodsReceiptIsNonValuated": {
+                      "@EndUserText.label": "Goods receipt, non-valuated",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsFinallyInvoiced": {
+                      "@EndUserText.label": "Final invoice indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "InvoiceIsExpected": {
+                      "@EndUserText.label": "Invoice receipt indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchaseContract": {
+                      "@EndUserText.label": "Number of principal purchase agreement",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "PurchaseContractItem": {
+                      "@EndUserText.label": "Item number of principal purchase agreement",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "AccountAssignmentCategory": {
+                      "@EndUserText.label": "Account assignment category",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchaseRequisition": {
+                      "@EndUserText.label": "Purchase requisition number",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "PurchaseRequisitionItem": {
+                      "@EndUserText.label": "Item number of purchase requisition",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "PurchaseOrderItemCategory": {
+                      "@EndUserText.label": "Item category in purchasing document",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ServicePerformer": {
+                      "@EndUserText.label": "Service performer",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProductGroup": {
+                      "@EndUserText.label": "Material group",
+                      "type": "cds.String",
+                      "length": 9
+                    },
+                    "MultipleAcctAssgmtDistribution": {
+                      "@EndUserText.label": "Distribution indicator for multiple account assignment",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurgDocumentItemDeletionCode": {
+                      "@EndUserText.label": "Deletion indicator in purchasing document",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "Supplier": {
+                      "@EndUserText.label": "Supplier",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "PurchasingOrganization": {
+                      "@EndUserText.label": "Purchasing organization",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PurchasingGroup": {
+                      "@EndUserText.label": "Purchasing group",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PurchaseOrderType": {
+                      "@EndUserText.label": "Purchasing document type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "PurchasingDocumentDeletionCode": {
+                      "@EndUserText.label": "Purchase order deletion code",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ReleaseIsNotCompleted": {
+                      "@EndUserText.label": "Release not yet completely effected",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PurchasingCompletenessStatus": {
+                      "@EndUserText.label": "Purchase order not yet complete",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_C_PURCHASEORDERHISTORYDEX_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "C_PURCHASEORDERHISTORYDEX"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrder"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountAssignmentNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingHistoryDocumentType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingHistoryDocumentYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingHistoryDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingHistoryDocumentItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingHistoryCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GoodsMovementType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PostingDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Currency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DebitCreditCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsCompletelyDelivered"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ReferenceDocumentFiscalYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ReferenceDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Material"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Plant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RvslOfGoodsReceiptIsAllowed"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PricingDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DocumentDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InventoryValuationType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DocumentReferenceID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DeliveryQuantityUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ManufacturerMaterial"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountingDocumentCreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Quantity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurOrdAmountInCompanyCodeCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "QtyInPurchaseOrderPriceUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GRIRAcctClrgAmtInCoCodeCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GdsRcptBlkdStkQtyInOrdQtyUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GdsRcptBlkdStkQtyInOrdPrcUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvoiceAmtInCoCodeCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ShipgInstrnSupplierCompliance"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvoiceAmountInFrgnCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "QuantityInDeliveryQtyUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GRIRAcctClrgAmtInTransacCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "QuantityInBaseUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GRIRAcctClrgAmtInOrdTrnsacCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvoiceAmtInPurOrdTransacCrcy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VltdGdsRcptBlkdStkQtyInOrdUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VltdGdsRcptBlkdQtyInOrdPrcUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsToBeAcceptedAtOrigin"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchangeRateDifferenceAmount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExchangeRate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DeliveryDocument"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DeliveryDocumentItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OrderPriceUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderQuantityUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BaseUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DocumentCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCodeCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductTypeCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsStatisticalItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsReturnsItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GoodsReceiptIsExpected"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GoodsReceiptIsNonValuated"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsFinallyInvoiced"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InvoiceIsExpected"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseContract"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseContractItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AccountAssignmentCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseRequisition"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseRequisitionItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderItemCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ServicePerformer"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MultipleAcctAssgmtDistribution"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurgDocumentItemDeletionCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Supplier"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingOrganization"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingDocumentDeletionCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ReleaseIsNotCompleted"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchasingCompletenessStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"PurchaseOrder\",\"d\".\"PurchaseOrderItem\",\"d\".\"AccountAssignmentNumber\",\"d\".\"PurchasingHistoryDocumentType\",\"d\".\"PurchasingHistoryDocumentYear\",\"d\".\"PurchasingHistoryDocument\",\"d\".\"PurchasingHistoryDocumentItem\",\"d\".\"PurchasingHistoryCategory\",\"d\".\"GoodsMovementType\",\"d\".\"PostingDate\",\"d\".\"Currency\",\"d\".\"DebitCreditCode\",\"d\".\"IsCompletelyDelivered\",\"d\".\"ReferenceDocumentFiscalYear\",\"d\".\"ReferenceDocument\",\"d\".\"Material\",\"d\".\"Plant\",\"d\".\"RvslOfGoodsReceiptIsAllowed\",\"d\".\"PricingDocument\",\"d\".\"TaxCode\",\"d\".\"DocumentDate\",\"d\".\"InventoryValuationType\",\"d\".\"DocumentReferenceID\",\"d\".\"DeliveryQuantityUnit\",\"d\".\"ManufacturerMaterial\",\"d\".\"AccountingDocumentCreationDate\",\"d\".\"Quantity\",\"d\".\"PurOrdAmountInCompanyCodeCrcy\",\"d\".\"PurchaseOrderAmount\",\"d\".\"QtyInPurchaseOrderPriceUnit\",\"d\".\"GRIRAcctClrgAmtInCoCodeCrcy\",\"d\".\"GdsRcptBlkdStkQtyInOrdQtyUnit\",\"d\".\"GdsRcptBlkdStkQtyInOrdPrcUnit\",\"d\".\"InvoiceAmtInCoCodeCrcy\",\"d\".\"ShipgInstrnSupplierCompliance\",\"d\".\"InvoiceAmountInFrgnCurrency\",\"d\".\"QuantityInDeliveryQtyUnit\",\"d\".\"GRIRAcctClrgAmtInTransacCrcy\",\"d\".\"QuantityInBaseUnit\",\"d\".\"GRIRAcctClrgAmtInOrdTrnsacCrcy\",\"d\".\"InvoiceAmtInPurOrdTransacCrcy\",\"d\".\"VltdGdsRcptBlkdStkQtyInOrdUnit\",\"d\".\"VltdGdsRcptBlkdQtyInOrdPrcUnit\",\"d\".\"IsToBeAcceptedAtOrigin\",\"d\".\"ExchangeRateDifferenceAmount\",\"d\".\"ExchangeRate\",\"d\".\"DeliveryDocument\",\"d\".\"DeliveryDocumentItem\",\"d\".\"OrderPriceUnit\",\"d\".\"PurchaseOrderQuantityUnit\",\"d\".\"BaseUnit\",\"d\".\"DocumentCurrency\",\"d\".\"CompanyCodeCurrency\",\"d\".\"ProductTypeCode\",\"d\".\"IsStatisticalItem\",\"d\".\"IsReturnsItem\",\"d\".\"GoodsReceiptIsExpected\",\"d\".\"GoodsReceiptIsNonValuated\",\"d\".\"IsFinallyInvoiced\",\"d\".\"InvoiceIsExpected\",\"d\".\"PurchaseContract\",\"d\".\"PurchaseContractItem\",\"d\".\"AccountAssignmentCategory\",\"d\".\"PurchaseRequisition\",\"d\".\"PurchaseRequisitionItem\",\"d\".\"PurchaseOrderItemCategory\",\"d\".\"ServicePerformer\",\"d\".\"ProductGroup\",\"d\".\"MultipleAcctAssgmtDistribution\",\"d\".\"PurgDocumentItemDeletionCode\",\"d\".\"Supplier\",\"d\".\"PurchasingOrganization\",\"d\".\"PurchasingGroup\",\"d\".\"CompanyCode\",\"d\".\"PurchaseOrderType\",\"d\".\"PurchasingDocumentDeletionCode\",\"d\".\"ReleaseIsNotCompleted\",\"d\".\"PurchasingCompletenessStatus\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_C_PURCHASEORDERHISTORYDEX_S4_CURR_Delta\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'C_PURCHASEORDERHISTORYDEX'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_C_PURCHASEORDERHISTORYDEX_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_C_PURCHASEORDERHISTORYDEX_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "PurchaseOrder",
+                    "target": "PurchaseOrder"
+                  },
+                  {
+                    "source": "PurchaseOrderItem",
+                    "target": "PurchaseOrderItem"
+                  },
+                  {
+                    "source": "AccountAssignmentNumber",
+                    "target": "AccountAssignmentNumber"
+                  },
+                  {
+                    "source": "PurchasingHistoryDocumentType",
+                    "target": "PurchasingHistoryDocumentType"
+                  },
+                  {
+                    "source": "PurchasingHistoryDocumentYear",
+                    "target": "PurchasingHistoryDocumentYear"
+                  },
+                  {
+                    "source": "PurchasingHistoryDocument",
+                    "target": "PurchasingHistoryDocument"
+                  },
+                  {
+                    "source": "PurchasingHistoryDocumentItem",
+                    "target": "PurchasingHistoryDocumentItem"
+                  },
+                  {
+                    "source": "PurchasingHistoryCategory",
+                    "target": "PurchasingHistoryCategory"
+                  },
+                  {
+                    "source": "GoodsMovementType",
+                    "target": "GoodsMovementType"
+                  },
+                  {
+                    "source": "PostingDate",
+                    "target": "PostingDate"
+                  },
+                  {
+                    "source": "Currency",
+                    "target": "Currency"
+                  },
+                  {
+                    "source": "DebitCreditCode",
+                    "target": "DebitCreditCode"
+                  },
+                  {
+                    "source": "IsCompletelyDelivered",
+                    "target": "IsCompletelyDelivered"
+                  },
+                  {
+                    "source": "ReferenceDocumentFiscalYear",
+                    "target": "ReferenceDocumentFiscalYear"
+                  },
+                  {
+                    "source": "ReferenceDocument",
+                    "target": "ReferenceDocument"
+                  },
+                  {
+                    "source": "Material",
+                    "target": "Material"
+                  },
+                  {
+                    "source": "Plant",
+                    "target": "Plant"
+                  },
+                  {
+                    "source": "RvslOfGoodsReceiptIsAllowed",
+                    "target": "RvslOfGoodsReceiptIsAllowed"
+                  },
+                  {
+                    "source": "PricingDocument",
+                    "target": "PricingDocument"
+                  },
+                  {
+                    "source": "TaxCode",
+                    "target": "TaxCode"
+                  },
+                  {
+                    "source": "DocumentDate",
+                    "target": "DocumentDate"
+                  },
+                  {
+                    "source": "InventoryValuationType",
+                    "target": "InventoryValuationType"
+                  },
+                  {
+                    "source": "DocumentReferenceID",
+                    "target": "DocumentReferenceID"
+                  },
+                  {
+                    "source": "DeliveryQuantityUnit",
+                    "target": "DeliveryQuantityUnit"
+                  },
+                  {
+                    "source": "ManufacturerMaterial",
+                    "target": "ManufacturerMaterial"
+                  },
+                  {
+                    "source": "AccountingDocumentCreationDate",
+                    "target": "AccountingDocumentCreationDate"
+                  },
+                  {
+                    "source": "Quantity",
+                    "target": "Quantity"
+                  },
+                  {
+                    "source": "PurOrdAmountInCompanyCodeCrcy",
+                    "target": "PurOrdAmountInCompanyCodeCrcy"
+                  },
+                  {
+                    "source": "PurchaseOrderAmount",
+                    "target": "PurchaseOrderAmount"
+                  },
+                  {
+                    "source": "QtyInPurchaseOrderPriceUnit",
+                    "target": "QtyInPurchaseOrderPriceUnit"
+                  },
+                  {
+                    "source": "GRIRAcctClrgAmtInCoCodeCrcy",
+                    "target": "GRIRAcctClrgAmtInCoCodeCrcy"
+                  },
+                  {
+                    "source": "GdsRcptBlkdStkQtyInOrdQtyUnit",
+                    "target": "GdsRcptBlkdStkQtyInOrdQtyUnit"
+                  },
+                  {
+                    "source": "GdsRcptBlkdStkQtyInOrdPrcUnit",
+                    "target": "GdsRcptBlkdStkQtyInOrdPrcUnit"
+                  },
+                  {
+                    "source": "InvoiceAmtInCoCodeCrcy",
+                    "target": "InvoiceAmtInCoCodeCrcy"
+                  },
+                  {
+                    "source": "ShipgInstrnSupplierCompliance",
+                    "target": "ShipgInstrnSupplierCompliance"
+                  },
+                  {
+                    "source": "InvoiceAmountInFrgnCurrency",
+                    "target": "InvoiceAmountInFrgnCurrency"
+                  },
+                  {
+                    "source": "QuantityInDeliveryQtyUnit",
+                    "target": "QuantityInDeliveryQtyUnit"
+                  },
+                  {
+                    "source": "GRIRAcctClrgAmtInTransacCrcy",
+                    "target": "GRIRAcctClrgAmtInTransacCrcy"
+                  },
+                  {
+                    "source": "QuantityInBaseUnit",
+                    "target": "QuantityInBaseUnit"
+                  },
+                  {
+                    "source": "GRIRAcctClrgAmtInOrdTrnsacCrcy",
+                    "target": "GRIRAcctClrgAmtInOrdTrnsacCrcy"
+                  },
+                  {
+                    "source": "InvoiceAmtInPurOrdTransacCrcy",
+                    "target": "InvoiceAmtInPurOrdTransacCrcy"
+                  },
+                  {
+                    "source": "VltdGdsRcptBlkdStkQtyInOrdUnit",
+                    "target": "VltdGdsRcptBlkdStkQtyInOrdUnit"
+                  },
+                  {
+                    "source": "VltdGdsRcptBlkdQtyInOrdPrcUnit",
+                    "target": "VltdGdsRcptBlkdQtyInOrdPrcUnit"
+                  },
+                  {
+                    "source": "IsToBeAcceptedAtOrigin",
+                    "target": "IsToBeAcceptedAtOrigin"
+                  },
+                  {
+                    "source": "ExchangeRateDifferenceAmount",
+                    "target": "ExchangeRateDifferenceAmount"
+                  },
+                  {
+                    "source": "ExchangeRate",
+                    "target": "ExchangeRate"
+                  },
+                  {
+                    "source": "DeliveryDocument",
+                    "target": "DeliveryDocument"
+                  },
+                  {
+                    "source": "DeliveryDocumentItem",
+                    "target": "DeliveryDocumentItem"
+                  },
+                  {
+                    "source": "OrderPriceUnit",
+                    "target": "OrderPriceUnit"
+                  },
+                  {
+                    "source": "PurchaseOrderQuantityUnit",
+                    "target": "PurchaseOrderQuantityUnit"
+                  },
+                  {
+                    "source": "BaseUnit",
+                    "target": "BaseUnit"
+                  },
+                  {
+                    "source": "DocumentCurrency",
+                    "target": "DocumentCurrency"
+                  },
+                  {
+                    "source": "CompanyCodeCurrency",
+                    "target": "CompanyCodeCurrency"
+                  },
+                  {
+                    "source": "ProductTypeCode",
+                    "target": "ProductTypeCode"
+                  },
+                  {
+                    "source": "IsStatisticalItem",
+                    "target": "IsStatisticalItem"
+                  },
+                  {
+                    "source": "IsReturnsItem",
+                    "target": "IsReturnsItem"
+                  },
+                  {
+                    "source": "GoodsReceiptIsExpected",
+                    "target": "GoodsReceiptIsExpected"
+                  },
+                  {
+                    "source": "GoodsReceiptIsNonValuated",
+                    "target": "GoodsReceiptIsNonValuated"
+                  },
+                  {
+                    "source": "IsFinallyInvoiced",
+                    "target": "IsFinallyInvoiced"
+                  },
+                  {
+                    "source": "InvoiceIsExpected",
+                    "target": "InvoiceIsExpected"
+                  },
+                  {
+                    "source": "PurchaseContract",
+                    "target": "PurchaseContract"
+                  },
+                  {
+                    "source": "PurchaseContractItem",
+                    "target": "PurchaseContractItem"
+                  },
+                  {
+                    "source": "AccountAssignmentCategory",
+                    "target": "AccountAssignmentCategory"
+                  },
+                  {
+                    "source": "PurchaseRequisition",
+                    "target": "PurchaseRequisition"
+                  },
+                  {
+                    "source": "PurchaseRequisitionItem",
+                    "target": "PurchaseRequisitionItem"
+                  },
+                  {
+                    "source": "PurchaseOrderItemCategory",
+                    "target": "PurchaseOrderItemCategory"
+                  },
+                  {
+                    "source": "ServicePerformer",
+                    "target": "ServicePerformer"
+                  },
+                  {
+                    "source": "ProductGroup",
+                    "target": "ProductGroup"
+                  },
+                  {
+                    "source": "MultipleAcctAssgmtDistribution",
+                    "target": "MultipleAcctAssgmtDistribution"
+                  },
+                  {
+                    "source": "PurgDocumentItemDeletionCode",
+                    "target": "PurgDocumentItemDeletionCode"
+                  },
+                  {
+                    "source": "Supplier",
+                    "target": "Supplier"
+                  },
+                  {
+                    "source": "PurchasingOrganization",
+                    "target": "PurchasingOrganization"
+                  },
+                  {
+                    "source": "PurchasingGroup",
+                    "target": "PurchasingGroup"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "PurchaseOrderType",
+                    "target": "PurchaseOrderType"
+                  },
+                  {
+                    "source": "PurchasingDocumentDeletionCode",
+                    "target": "PurchasingDocumentDeletionCode"
+                  },
+                  {
+                    "source": "ReleaseIsNotCompleted",
+                    "target": "ReleaseIsNotCompleted"
+                  },
+                  {
+                    "source": "PurchasingCompletenessStatus",
+                    "target": "PurchasingCompletenessStatus"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "PurchaseOrder": {
+                      "@EndUserText.label": "Purchasing document number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "PurchaseOrderItem": {
+                      "@EndUserText.label": "Item number of purchase order",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 5,
+                      "notNull": true
+                    },
+                    "AccountAssignmentNumber": {
+                      "@EndUserText.label": "Sequential number of account assignment",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 2,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocumentType": {
+                      "@EndUserText.label": "Transaction/event type, purchase order history",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 1,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocumentYear": {
+                      "@EndUserText.label": "Material document year",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocument": {
+                      "@EndUserText.label": "Number of material document",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 10,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryDocumentItem": {
+                      "@EndUserText.label": "Item in material document",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "PurchasingHistoryCategory": {
+                      "@EndUserText.label": "Purchase order history category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GoodsMovementType": {
+                      "@EndUserText.label": "Movement type (inventory management)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "PostingDate": {
+                      "@EndUserText.label": "Posting date in the document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "Currency": {
+                      "@EndUserText.label": "Currency key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "DebitCreditCode": {
+                      "@EndUserText.label": "Debit/credit indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsCompletelyDelivered": {
+                      "@EndUserText.label": "\"delivery completed\" indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ReferenceDocumentFiscalYear": {
+                      "@EndUserText.label": "Fiscal year of a reference document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ReferenceDocument": {
+                      "@EndUserText.label": "Document no. of a reference document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "Material": {
+                      "@EndUserText.label": "Material number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "Plant": {
+                      "@EndUserText.label": "Plant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RvslOfGoodsReceiptIsAllowed": {
+                      "@EndUserText.label": "Reversal of gr allowed for gr-based iv despite invoice",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PricingDocument": {
+                      "@EndUserText.label": "Number of the document condition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "TaxCode": {
+                      "@EndUserText.label": "Tax on sales/purchases code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "DocumentDate": {
+                      "@EndUserText.label": "Document date in document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "InventoryValuationType": {
+                      "@EndUserText.label": "Valuation type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "DocumentReferenceID": {
+                      "@EndUserText.label": "Reference document number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 16
+                    },
+                    "DeliveryQuantityUnit": {
+                      "@EndUserText.label": "Unit of measure from delivery note",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ManufacturerMaterial": {
+                      "@EndUserText.label": "Material number corresponding to manufacturer part number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "AccountingDocumentCreationDate": {
+                      "@EndUserText.label": "Day on which accounting document was entered",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "Quantity": {
+                      "@EndUserText.label": "Quantity",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "PurOrdAmountInCompanyCodeCrcy": {
+                      "@EndUserText.label": "Amount in local currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "PurchaseOrderAmount": {
+                      "@EndUserText.label": "Amount in document currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "QtyInPurchaseOrderPriceUnit": {
+                      "@EndUserText.label": "Quantity in purchase order price unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "GRIRAcctClrgAmtInCoCodeCrcy": {
+                      "@EndUserText.label": "Gr/ir account clearing value in local currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "GdsRcptBlkdStkQtyInOrdQtyUnit": {
+                      "@EndUserText.label": "Goods receipt blocked stock in order unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "GdsRcptBlkdStkQtyInOrdPrcUnit": {
+                      "@EndUserText.label": "Quantity in gr blocked stock in order price unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "InvoiceAmtInCoCodeCrcy": {
+                      "@EndUserText.label": "Invoice value entered (in local currency)",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "ShipgInstrnSupplierCompliance": {
+                      "@EndUserText.label": "Compliance with shipping instructions",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "InvoiceAmountInFrgnCurrency": {
+                      "@EndUserText.label": "Invoice value in foreign currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "QuantityInDeliveryQtyUnit": {
+                      "@EndUserText.label": "Quantity in unit of measure from delivery note",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "GRIRAcctClrgAmtInTransacCrcy": {
+                      "@EndUserText.label": "Clearing value on gr/ir clearing account (transac. currency)",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "QuantityInBaseUnit": {
+                      "@EndUserText.label": "Quantity",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "GRIRAcctClrgAmtInOrdTrnsacCrcy": {
+                      "@EndUserText.label": "Clearing value on gr/ir account in po currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "InvoiceAmtInPurOrdTransacCrcy": {
+                      "@EndUserText.label": "Invoice amount in po currency",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "VltdGdsRcptBlkdStkQtyInOrdUnit": {
+                      "@EndUserText.label": "Valuated goods receipt blocked stock in order unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "VltdGdsRcptBlkdQtyInOrdPrcUnit": {
+                      "@EndUserText.label": "Quantity in valuated gr blocked stock in order price unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "IsToBeAcceptedAtOrigin": {
+                      "@EndUserText.label": "Acceptance at origin",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ExchangeRateDifferenceAmount": {
+                      "@EndUserText.label": "Exchange rate difference amount",
+                      "type": "cds.DecimalFloat",
+                      "key": false
+                    },
+                    "ExchangeRate": {
+                      "@EndUserText.label": "Exchange rate",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 9,
+                      "scale": 5
+                    },
+                    "DeliveryDocument": {
+                      "@EndUserText.label": "Delivery",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "DeliveryDocumentItem": {
+                      "@EndUserText.label": "Delivery document item",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "OrderPriceUnit": {
+                      "@EndUserText.label": "Order price unit (purchasing)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "PurchaseOrderQuantityUnit": {
+                      "@EndUserText.label": "Purchase order unit of measure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "BaseUnit": {
+                      "@EndUserText.label": "Base unit of measure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "DocumentCurrency": {
+                      "@EndUserText.label": "Document currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "CompanyCodeCurrency": {
+                      "@EndUserText.label": "Company code currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "ProductTypeCode": {
+                      "@EndUserText.label": "Product type group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "IsStatisticalItem": {
+                      "@EndUserText.label": "Item is statistical",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsReturnsItem": {
+                      "@EndUserText.label": "Returns item",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GoodsReceiptIsExpected": {
+                      "@EndUserText.label": "Goods receipt indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "GoodsReceiptIsNonValuated": {
+                      "@EndUserText.label": "Goods receipt, non-valuated",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsFinallyInvoiced": {
+                      "@EndUserText.label": "Final invoice indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "InvoiceIsExpected": {
+                      "@EndUserText.label": "Invoice receipt indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchaseContract": {
+                      "@EndUserText.label": "Number of principal purchase agreement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "PurchaseContractItem": {
+                      "@EndUserText.label": "Item number of principal purchase agreement",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "AccountAssignmentCategory": {
+                      "@EndUserText.label": "Account assignment category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchaseRequisition": {
+                      "@EndUserText.label": "Purchase requisition number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "PurchaseRequisitionItem": {
+                      "@EndUserText.label": "Item number of purchase requisition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "PurchaseOrderItemCategory": {
+                      "@EndUserText.label": "Item category in purchasing document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ServicePerformer": {
+                      "@EndUserText.label": "Service performer",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProductGroup": {
+                      "@EndUserText.label": "Material group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 9
+                    },
+                    "MultipleAcctAssgmtDistribution": {
+                      "@EndUserText.label": "Distribution indicator for multiple account assignment",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurgDocumentItemDeletionCode": {
+                      "@EndUserText.label": "Deletion indicator in purchasing document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "Supplier": {
+                      "@EndUserText.label": "Supplier",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "PurchasingOrganization": {
+                      "@EndUserText.label": "Purchasing organization",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PurchasingGroup": {
+                      "@EndUserText.label": "Purchasing group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PurchaseOrderType": {
+                      "@EndUserText.label": "Purchasing document type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "PurchasingDocumentDeletionCode": {
+                      "@EndUserText.label": "Purchase order deletion code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ReleaseIsNotCompleted": {
+                      "@EndUserText.label": "Release not yet completely effected",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PurchasingCompletenessStatus": {
+                      "@EndUserText.label": "Purchase order not yet complete",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_C_PURCHASEORDERHISTORYDEX_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_C_PURCHASEORDERHISTORYDEX_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_IMLOFJCA"
+                    }
+                  }
+                },
+                "name": "2LT_C_PURCHASEORDERHISTORYDEX_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

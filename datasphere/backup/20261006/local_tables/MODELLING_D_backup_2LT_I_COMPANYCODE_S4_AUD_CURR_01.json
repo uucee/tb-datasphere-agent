@@ -1,0 +1,543 @@
+{
+  "definitions": {
+    "2LT_I_COMPANYCODE_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "CompanyCodeName": {
+          "@EndUserText.label": "Name of company code or company",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "Currency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ChartOfAccounts": {
+          "@EndUserText.label": "Chart of accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "Company": {
+          "@EndUserText.label": "Company",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreditControlArea": {
+          "@EndUserText.label": "Credit control area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CountryChartOfAccounts": {
+          "@EndUserText.label": "Alternative chart of accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AddressID": {
+          "@EndUserText.label": "Address",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "TaxableEntity": {
+          "@EndUserText.label": "Taxes on sales/purchases group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "VATRegistration": {
+          "@EndUserText.label": "Vat registration number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "ExtendedWhldgTaxIsActive": {
+          "@EndUserText.label": "Indicator: extended withholding tax active",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FieldStatusVariant": {
+          "@EndUserText.label": "Field status variant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "NonTaxableTransactionTaxCode": {
+          "@EndUserText.label": "Output tax code for non-taxable transactions",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "DocDateIsUsedForTaxDetn": {
+          "@EndUserText.label": "Indicator: document date as the basis for tax determination",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxRptgDateIsActive": {
+          "@EndUserText.label": "Tax reporting date active in documents",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CashDiscountBaseAmtIsNetAmt": {
+          "@EndUserText.label": "Indicator: discount base amount is the net value",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_COMPANYCODE_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_COMPANYCODE_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_COMPANYCODE_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCodeName"
+              ]
+            },
+            {
+              "ref": [
+                "CityName"
+              ]
+            },
+            {
+              "ref": [
+                "Country"
+              ]
+            },
+            {
+              "ref": [
+                "Currency"
+              ]
+            },
+            {
+              "ref": [
+                "Language"
+              ]
+            },
+            {
+              "ref": [
+                "ChartOfAccounts"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalYearVariant"
+              ]
+            },
+            {
+              "ref": [
+                "Company"
+              ]
+            },
+            {
+              "ref": [
+                "CreditControlArea"
+              ]
+            },
+            {
+              "ref": [
+                "CountryChartOfAccounts"
+              ]
+            },
+            {
+              "ref": [
+                "FinancialManagementArea"
+              ]
+            },
+            {
+              "ref": [
+                "AddressID"
+              ]
+            },
+            {
+              "ref": [
+                "TaxableEntity"
+              ]
+            },
+            {
+              "ref": [
+                "VATRegistration"
+              ]
+            },
+            {
+              "ref": [
+                "ExtendedWhldgTaxIsActive"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingArea"
+              ]
+            },
+            {
+              "ref": [
+                "FieldStatusVariant"
+              ]
+            },
+            {
+              "ref": [
+                "NonTaxableTransactionTaxCode"
+              ]
+            },
+            {
+              "ref": [
+                "DocDateIsUsedForTaxDetn"
+              ]
+            },
+            {
+              "ref": [
+                "TaxRptgDateIsActive"
+              ]
+            },
+            {
+              "ref": [
+                "CashDiscountBaseAmtIsNetAmt"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ZWUCDVPL"
+        }
+      }
+    },
+    "2LT_I_COMPANYCODE_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "CompanyCodeName": {
+          "@EndUserText.label": "Name of company code or company",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "Currency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ChartOfAccounts": {
+          "@EndUserText.label": "Chart of accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FiscalYearVariant": {
+          "@EndUserText.label": "Fiscal year variant",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "Company": {
+          "@EndUserText.label": "Company",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CreditControlArea": {
+          "@EndUserText.label": "Credit control area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CountryChartOfAccounts": {
+          "@EndUserText.label": "Alternative chart of accounts",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FinancialManagementArea": {
+          "@EndUserText.label": "Financial management area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "AddressID": {
+          "@EndUserText.label": "Address",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "TaxableEntity": {
+          "@EndUserText.label": "Taxes on sales/purchases group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "VATRegistration": {
+          "@EndUserText.label": "Vat registration number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "ExtendedWhldgTaxIsActive": {
+          "@EndUserText.label": "Indicator: extended withholding tax active",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FieldStatusVariant": {
+          "@EndUserText.label": "Field status variant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "NonTaxableTransactionTaxCode": {
+          "@EndUserText.label": "Output tax code for non-taxable transactions",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "DocDateIsUsedForTaxDetn": {
+          "@EndUserText.label": "Indicator: document date as the basis for tax determination",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxRptgDateIsActive": {
+          "@EndUserText.label": "Tax reporting date active in documents",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CashDiscountBaseAmtIsNetAmt": {
+          "@EndUserText.label": "Indicator: discount base amount is the net value",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_COMPANYCODE_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_COMPANYCODE_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_ZWUCDVPL"
+        }
+      }
+    }
+  }
+}

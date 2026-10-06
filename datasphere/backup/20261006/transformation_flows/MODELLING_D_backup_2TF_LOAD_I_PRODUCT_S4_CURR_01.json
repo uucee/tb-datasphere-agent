@@ -1,0 +1,4255 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_PRODUCT_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_PRODUCT_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_PRODUCT_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_PRODUCT_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_PRODUCT_S4_CURR",
+                    "elements": {
+                      "Product": {
+                        "@EndUserText.label": "Product",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 40
+                      },
+                      "ProductExternalID": {
+                        "@EndUserText.label": "External representation of material number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "ProductOID": {
+                        "@EndUserText.label": "Data element for oid of product",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 128
+                      },
+                      "ProductType": {
+                        "@EndUserText.label": "Product type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "Created on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreationTime": {
+                        "@EndUserText.label": "Time of creation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "CreationDateTime": {
+                        "@EndUserText.label": "Product created on",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 21,
+                        "scale": 7
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Name of person responsible for creating the object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Date of last change",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Name of person who changed object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "IsMarkedForDeletion": {
+                        "@EndUserText.label": "Deletion indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "CrossPlantStatus": {
+                        "@EndUserText.label": "Cross-plant product status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "CrossPlantStatusValidityDate": {
+                        "@EndUserText.label": "Date from which the cross-plant material status is valid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ProductOldID": {
+                        "@EndUserText.label": "Old product number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "GrossWeight": {
+                        "@EndUserText.label": "Gross weight",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "PurchaseOrderQuantityUnit": {
+                        "@EndUserText.label": "Purchase order unit of measure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "SourceOfSupply": {
+                        "@EndUserText.label": "Source of supply",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "WeightUnit": {
+                        "@EndUserText.label": "Unit of weight",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "CountryOfOrigin": {
+                        "@EndUserText.label": "Country/region of origin of material (non-preferential ori.)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "CompetitorID": {
+                        "@EndUserText.label": "Competitor",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProductGroup": {
+                        "@EndUserText.label": "Product group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 9
+                      },
+                      "BaseUnit": {
+                        "@EndUserText.label": "Base unit of measure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ItemCategoryGroup": {
+                        "@EndUserText.label": "General item category group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "NetWeight": {
+                        "@EndUserText.label": "Net weight",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "ProductHierarchy": {
+                        "@EndUserText.label": "Product hierarchy",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "Division": {
+                        "@EndUserText.label": "Division",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "VarblPurOrdUnitIsActive": {
+                        "@EndUserText.label": "Variable purchase order unit active",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "VolumeUnit": {
+                        "@EndUserText.label": "Volume unit",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "MaterialVolume": {
+                        "@EndUserText.label": "Volume",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "SalesStatus": {
+                        "@EndUserText.label": "Cross-distribution-chain material status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "TransportationGroup": {
+                        "@EndUserText.label": "Transportation group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SalesStatusValidityDate": {
+                        "@EndUserText.label": "Date from which the x-distr.-chain material status is valid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AuthorizationGroup": {
+                        "@EndUserText.label": "Authorization group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ANPCode": {
+                        "@EndUserText.label": "Anp code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 9
+                      },
+                      "ProductCategory": {
+                        "@EndUserText.label": "Product category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "Brand": {
+                        "@EndUserText.label": "Brand",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ProcurementRule": {
+                        "@EndUserText.label": "Procurement rule",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ValidityStartDate": {
+                        "@EndUserText.label": "Valid-from date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LowLevelCode": {
+                        "@EndUserText.label": "Low-level code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ProdNoInGenProdInPrepackProd": {
+                        "@EndUserText.label": "Material number of the generic material in prepack materials",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "SerialIdentifierAssgmtProfile": {
+                        "@EndUserText.label": "Serial number profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SizeOrDimensionText": {
+                        "@EndUserText.label": "Size/dimensions",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 32
+                      },
+                      "IndustryStandardName": {
+                        "@EndUserText.label": "Industry standard description (such as ansi or iso)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "ProductStandardID": {
+                        "@EndUserText.label": "Global trade item number (ean/upc/gtin)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "InternationalArticleNumberCat": {
+                        "@EndUserText.label": "Category of international article number (ean)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ProductIsConfigurable": {
+                        "@EndUserText.label": "Product is configurable",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsBatchManagementRequired": {
+                        "@EndUserText.label": "Batch management requirement indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "HasEmptiesBOM": {
+                        "@EndUserText.label": "Empties bill of material",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ExternalProductGroup": {
+                        "@EndUserText.label": "External product group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "CrossPlantConfigurableProduct": {
+                        "@EndUserText.label": "Cross-plant configurable product",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "SerialNoExplicitnessLevel": {
+                        "@EndUserText.label": "Level of explicitness for serial number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProductManufacturerNumber": {
+                        "@EndUserText.label": "Manufacturer part number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "ManufacturerNumber": {
+                        "@EndUserText.label": "Number of a manufacturer",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ManufacturerPartProfile": {
+                        "@EndUserText.label": "Mfr part profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "QltyMgmtInProcmtIsActive": {
+                        "@EndUserText.label": "Qm in procurement is active",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsApprovedBatchRecordReqd": {
+                        "@EndUserText.label": "Approved batch record required",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "HandlingIndicator": {
+                        "@EndUserText.label": "Handling indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "WarehouseProductGroup": {
+                        "@EndUserText.label": "Warehouse material group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "WarehouseStorageCondition": {
+                        "@EndUserText.label": "Warehouse storage condition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "StandardHandlingUnitType": {
+                        "@EndUserText.label": "Standard hu type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "SerialNumberProfile": {
+                        "@EndUserText.label": "Serial number profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "AdjustmentProfile": {
+                        "@EndUserText.label": "Adjustment profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "PreferredUnitOfMeasure": {
+                        "@EndUserText.label": "Preferred alternative uom for warehouse operations",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "IsPilferable": {
+                        "@EndUserText.label": "Pilferable",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsRelevantForHzdsSubstances": {
+                        "@EndUserText.label": "Relevant for hazardous substances",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "QuarantinePeriod": {
+                        "@EndUserText.label": "Quarantine period",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 3,
+                        "scale": 0
+                      },
+                      "TimeUnitForQuarantinePeriod": {
+                        "@EndUserText.label": "Time unit for quarantine period",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "QualityInspectionGroup": {
+                        "@EndUserText.label": "Quality inspection group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "HandlingUnitType": {
+                        "@EndUserText.label": "Handling unit type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "HasVariableTareWeight": {
+                        "@EndUserText.label": "Variable tare weight",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "MaximumPackagingLength": {
+                        "@EndUserText.label": "Maximum packing length of packaging material",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 3
+                      },
+                      "MaximumPackagingWidth": {
+                        "@EndUserText.label": "Maximum packing width of packaging material",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 3
+                      },
+                      "MaximumPackagingHeight": {
+                        "@EndUserText.label": "Maximum packing height of packaging material",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 3
+                      },
+                      "MaximumCapacity": {
+                        "@EndUserText.label": "Maximum allowed capacity of packaging material",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 15,
+                        "scale": 3
+                      },
+                      "OvercapacityTolerance": {
+                        "@EndUserText.label": "Overcapacity tolerance of the handling unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 3,
+                        "scale": 1
+                      },
+                      "UnitForMaxPackagingDimensions": {
+                        "@EndUserText.label": "Unit of measure for maximum packing length/width/height",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "BaseUnitSpecificProductLength": {
+                        "@EndUserText.label": "Length",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "BaseUnitSpecificProductWidth": {
+                        "@EndUserText.label": "Width",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "BaseUnitSpecificProductHeight": {
+                        "@EndUserText.label": "Height",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "ProductMeasurementUnit": {
+                        "@EndUserText.label": "Unit of dimension for length/width/height",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ProductValidStartDate": {
+                        "@EndUserText.label": "Valid-from date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ArticleCategory": {
+                        "@EndUserText.label": "Product category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ContentUnit": {
+                        "@EndUserText.label": "Content unit",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "NetContent": {
+                        "@EndUserText.label": "Net contents",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "ComparisonPriceQuantity": {
+                        "@EndUserText.label": "Comparison price unit",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 5,
+                        "scale": 0
+                      },
+                      "GrossContent": {
+                        "@EndUserText.label": "Gross contents",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 13,
+                        "scale": 3
+                      },
+                      "ProductValidEndDate": {
+                        "@EndUserText.label": "Deletion date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "AssortmentListType": {
+                        "@EndUserText.label": "Assortment list type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "HasTextilePartsWthAnimalOrigin": {
+                        "@EndUserText.label": "Indicator: contains non-textile parts of animal origin",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProductSeasonUsageCategory": {
+                        "@EndUserText.label": "Indicator: use of season",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IndustrySector": {
+                        "@EndUserText.label": "Industry",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ChangeNumber": {
+                        "@EndUserText.label": "Change number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "MaterialRevisionLevel": {
+                        "@EndUserText.label": "Revision level",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "IsActiveEntity": {
+                        "@EndUserText.label": "Draft - indicator - is active document",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "LastChangeDateTime": {
+                        "@EndUserText.label": "Change time stamp",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 21,
+                        "scale": 7
+                      },
+                      "LastChangeTime": {
+                        "@EndUserText.label": "Time of last change",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "DangerousGoodsIndProfile": {
+                        "@EndUserText.label": "Dangerous goods indicator profile",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ProductUUID": {
+                        "@EndUserText.label": "Internal key for product",
+                        "type": "cds.Binary",
+                        "key": false,
+                        "length": 16
+                      },
+                      "ProdSupChnMgmtUUID22": {
+                        "@EndUserText.label": "Internal number (uid) for product",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "ProductDocumentChangeNumber": {
+                        "@EndUserText.label": "Document change number (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "ProductDocumentPageCount": {
+                        "@EndUserText.label": "Number of sheets (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ProductDocumentPageNumber": {
+                        "@EndUserText.label": "Page number of document (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "OwnInventoryManagedProduct": {
+                        "@EndUserText.label": "Number of firm's own (internal) inventory-managed material",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "DocumentIsCreatedByCAD": {
+                        "@EndUserText.label": "Cad indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProductionOrInspectionMemoTxt": {
+                        "@EndUserText.label": "Production/inspection memo",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "ProductionMemoPageFormat": {
+                        "@EndUserText.label": "Page format of production memo",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "GlobalTradeItemNumberVariant": {
+                        "@EndUserText.label": "Global trade item number variant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ProductIsHighlyViscous": {
+                        "@EndUserText.label": "Indicator: highly viscous",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "TransportIsInBulk": {
+                        "@EndUserText.label": "Indicator: in bulk/liquid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProdAllocDetnProcedure": {
+                        "@EndUserText.label": "Product allocation determination procedure",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "ProdEffctyParamValsAreAssigned": {
+                        "@EndUserText.label": "Assign effectivity parameter values/ override change numbers",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProdIsEnvironmentallyRelevant": {
+                        "@EndUserText.label": "Environmentally relevant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "LaboratoryOrDesignOffice": {
+                        "@EndUserText.label": "Laboratory/design office",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "PackagingMaterialGroup": {
+                        "@EndUserText.label": "Material group: packaging materials",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ProductIsLocked": {
+                        "@EndUserText.label": "Product is locked",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "DiscountInKindEligibility": {
+                        "@EndUserText.label": "Material qualifies for discount in kind",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SmartFormName": {
+                        "@EndUserText.label": "Form name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "PackingReferenceProduct": {
+                        "@EndUserText.label": "Reference material for materials packed in same way",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "BasicMaterial": {
+                        "@EndUserText.label": "Basic material",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 48
+                      },
+                      "ProductDocumentNumber": {
+                        "@EndUserText.label": "Document number (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "ProductDocumentVersion": {
+                        "@EndUserText.label": "Document version (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "ProductDocumentType": {
+                        "@EndUserText.label": "Document type (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "ProductDocumentPageFormat": {
+                        "@EndUserText.label": "Page format of document (without document management system)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ProductConfiguration": {
+                        "@EndUserText.label": "Internal object number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "SegmentationStrategy": {
+                        "@EndUserText.label": "Segmentation strategy",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "SegmentationIsRelevant": {
+                        "@EndUserText.label": "Segmentation relevant",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ProductCompositionIsRelevant": {
+                        "@EndUserText.label": "Indicator: product composition printed on packaging",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IsChemicalComplianceRelevant": {
+                        "@EndUserText.label": "Chemical compliance relevance indicator",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ManufacturerBookPartNumber": {
+                        "@EndUserText.label": "Manufacturer book part number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "LogisticalProductCategory": {
+                        "@EndUserText.label": "Category of a logistical material",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "SalesProduct": {
+                        "@EndUserText.label": "Material number of a sales material",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "ProdCharc1InternalNumber": {
+                        "@EndUserText.label": "Internal charactieristic number for color characteristics",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProdCharc2InternalNumber": {
+                        "@EndUserText.label": "Internal char. number for characteristics for main sizes",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProdCharc3InternalNumber": {
+                        "@EndUserText.label": "Internal char. number for characteristics for second sizes",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "ProductCharacteristic1": {
+                        "@EndUserText.label": "Characteristic value for colors of variants",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "ProductCharacteristic2": {
+                        "@EndUserText.label": "Characteristic value for main sizes of variants",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "ProductCharacteristic3": {
+                        "@EndUserText.label": "Characteristic value for second size for variants",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 18
+                      },
+                      "MaintenanceStatus": {
+                        "@EndUserText.label": "Maintenance status",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "FashionProdInformationField1": {
+                        "@EndUserText.label": "Fashion information field: 1",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "FashionProdInformationField2": {
+                        "@EndUserText.label": "Fashion information field: 2",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "FashionProdInformationField3": {
+                        "@EndUserText.label": "Fashion information field: 3",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_PRODUCT_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "Product": {
+                      "@EndUserText.label": "Product",
+                      "type": "cds.String",
+                      "length": 40,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "ProductExternalID": {
+                      "@EndUserText.label": "External representation of material number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "ProductOID": {
+                      "@EndUserText.label": "Data element for oid of product",
+                      "type": "cds.String",
+                      "length": 128
+                    },
+                    "ProductType": {
+                      "@EndUserText.label": "Product type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Created on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "CreationDateTime": {
+                      "@EndUserText.label": "Product created on",
+                      "precision": 21,
+                      "scale": 7,
+                      "type": "cds.Decimal"
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person responsible for creating the object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Date of last change",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Name of person who changed object",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "IsMarkedForDeletion": {
+                      "@EndUserText.label": "Deletion indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CrossPlantStatus": {
+                      "@EndUserText.label": "Cross-plant product status",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "CrossPlantStatusValidityDate": {
+                      "@EndUserText.label": "Date from which the cross-plant material status is valid",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ProductOldID": {
+                      "@EndUserText.label": "Old product number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "GrossWeight": {
+                      "@EndUserText.label": "Gross weight",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "PurchaseOrderQuantityUnit": {
+                      "@EndUserText.label": "Purchase order unit of measure",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "SourceOfSupply": {
+                      "@EndUserText.label": "Source of supply",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "WeightUnit": {
+                      "@EndUserText.label": "Unit of weight",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "CountryOfOrigin": {
+                      "@EndUserText.label": "Country/region of origin of material (non-preferential ori.)",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "CompetitorID": {
+                      "@EndUserText.label": "Competitor",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProductGroup": {
+                      "@EndUserText.label": "Product group",
+                      "type": "cds.String",
+                      "length": 9
+                    },
+                    "BaseUnit": {
+                      "@EndUserText.label": "Base unit of measure",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ItemCategoryGroup": {
+                      "@EndUserText.label": "General item category group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "NetWeight": {
+                      "@EndUserText.label": "Net weight",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "ProductHierarchy": {
+                      "@EndUserText.label": "Product hierarchy",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "Division": {
+                      "@EndUserText.label": "Division",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "VarblPurOrdUnitIsActive": {
+                      "@EndUserText.label": "Variable purchase order unit active",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "VolumeUnit": {
+                      "@EndUserText.label": "Volume unit",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "MaterialVolume": {
+                      "@EndUserText.label": "Volume",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "SalesStatus": {
+                      "@EndUserText.label": "Cross-distribution-chain material status",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "TransportationGroup": {
+                      "@EndUserText.label": "Transportation group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SalesStatusValidityDate": {
+                      "@EndUserText.label": "Date from which the x-distr.-chain material status is valid",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ANPCode": {
+                      "@EndUserText.label": "Anp code",
+                      "type": "cds.String",
+                      "length": 9
+                    },
+                    "ProductCategory": {
+                      "@EndUserText.label": "Product category",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "Brand": {
+                      "@EndUserText.label": "Brand",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ProcurementRule": {
+                      "@EndUserText.label": "Procurement rule",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Valid-from date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LowLevelCode": {
+                      "@EndUserText.label": "Low-level code",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ProdNoInGenProdInPrepackProd": {
+                      "@EndUserText.label": "Material number of the generic material in prepack materials",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "SerialIdentifierAssgmtProfile": {
+                      "@EndUserText.label": "Serial number profile",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SizeOrDimensionText": {
+                      "@EndUserText.label": "Size/dimensions",
+                      "type": "cds.String",
+                      "length": 32
+                    },
+                    "IndustryStandardName": {
+                      "@EndUserText.label": "Industry standard description (such as ansi or iso)",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "ProductStandardID": {
+                      "@EndUserText.label": "Global trade item number (ean/upc/gtin)",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "InternationalArticleNumberCat": {
+                      "@EndUserText.label": "Category of international article number (ean)",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ProductIsConfigurable": {
+                      "@EndUserText.label": "Product is configurable",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsBatchManagementRequired": {
+                      "@EndUserText.label": "Batch management requirement indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "HasEmptiesBOM": {
+                      "@EndUserText.label": "Empties bill of material",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ExternalProductGroup": {
+                      "@EndUserText.label": "External product group",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "CrossPlantConfigurableProduct": {
+                      "@EndUserText.label": "Cross-plant configurable product",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "SerialNoExplicitnessLevel": {
+                      "@EndUserText.label": "Level of explicitness for serial number",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProductManufacturerNumber": {
+                      "@EndUserText.label": "Manufacturer part number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "ManufacturerNumber": {
+                      "@EndUserText.label": "Number of a manufacturer",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ManufacturerPartProfile": {
+                      "@EndUserText.label": "Mfr part profile",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "QltyMgmtInProcmtIsActive": {
+                      "@EndUserText.label": "Qm in procurement is active",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsApprovedBatchRecordReqd": {
+                      "@EndUserText.label": "Approved batch record required",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "HandlingIndicator": {
+                      "@EndUserText.label": "Handling indicator",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "WarehouseProductGroup": {
+                      "@EndUserText.label": "Warehouse material group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "WarehouseStorageCondition": {
+                      "@EndUserText.label": "Warehouse storage condition",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "StandardHandlingUnitType": {
+                      "@EndUserText.label": "Standard hu type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "SerialNumberProfile": {
+                      "@EndUserText.label": "Serial number profile",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "AdjustmentProfile": {
+                      "@EndUserText.label": "Adjustment profile",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "PreferredUnitOfMeasure": {
+                      "@EndUserText.label": "Preferred alternative uom for warehouse operations",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "IsPilferable": {
+                      "@EndUserText.label": "Pilferable",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsRelevantForHzdsSubstances": {
+                      "@EndUserText.label": "Relevant for hazardous substances",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "QuarantinePeriod": {
+                      "@EndUserText.label": "Quarantine period",
+                      "precision": 3,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "TimeUnitForQuarantinePeriod": {
+                      "@EndUserText.label": "Time unit for quarantine period",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "QualityInspectionGroup": {
+                      "@EndUserText.label": "Quality inspection group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "HandlingUnitType": {
+                      "@EndUserText.label": "Handling unit type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "HasVariableTareWeight": {
+                      "@EndUserText.label": "Variable tare weight",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "MaximumPackagingLength": {
+                      "@EndUserText.label": "Maximum packing length of packaging material",
+                      "precision": 15,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "MaximumPackagingWidth": {
+                      "@EndUserText.label": "Maximum packing width of packaging material",
+                      "precision": 15,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "MaximumPackagingHeight": {
+                      "@EndUserText.label": "Maximum packing height of packaging material",
+                      "precision": 15,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "MaximumCapacity": {
+                      "@EndUserText.label": "Maximum allowed capacity of packaging material",
+                      "precision": 15,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "OvercapacityTolerance": {
+                      "@EndUserText.label": "Overcapacity tolerance of the handling unit",
+                      "precision": 3,
+                      "scale": 1,
+                      "type": "cds.Decimal"
+                    },
+                    "UnitForMaxPackagingDimensions": {
+                      "@EndUserText.label": "Unit of measure for maximum packing length/width/height",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "BaseUnitSpecificProductLength": {
+                      "@EndUserText.label": "Length",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "BaseUnitSpecificProductWidth": {
+                      "@EndUserText.label": "Width",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "BaseUnitSpecificProductHeight": {
+                      "@EndUserText.label": "Height",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "ProductMeasurementUnit": {
+                      "@EndUserText.label": "Unit of dimension for length/width/height",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ProductValidStartDate": {
+                      "@EndUserText.label": "Valid-from date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ArticleCategory": {
+                      "@EndUserText.label": "Product category",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ContentUnit": {
+                      "@EndUserText.label": "Content unit",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "NetContent": {
+                      "@EndUserText.label": "Net contents",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "ComparisonPriceQuantity": {
+                      "@EndUserText.label": "Comparison price unit",
+                      "precision": 5,
+                      "scale": 0,
+                      "type": "cds.Decimal"
+                    },
+                    "GrossContent": {
+                      "@EndUserText.label": "Gross contents",
+                      "precision": 13,
+                      "scale": 3,
+                      "type": "cds.Decimal"
+                    },
+                    "ProductValidEndDate": {
+                      "@EndUserText.label": "Deletion date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "AssortmentListType": {
+                      "@EndUserText.label": "Assortment list type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "HasTextilePartsWthAnimalOrigin": {
+                      "@EndUserText.label": "Indicator: contains non-textile parts of animal origin",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProductSeasonUsageCategory": {
+                      "@EndUserText.label": "Indicator: use of season",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IndustrySector": {
+                      "@EndUserText.label": "Industry",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ChangeNumber": {
+                      "@EndUserText.label": "Change number",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "MaterialRevisionLevel": {
+                      "@EndUserText.label": "Revision level",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "IsActiveEntity": {
+                      "@EndUserText.label": "Draft - indicator - is active document",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Change time stamp",
+                      "precision": 21,
+                      "scale": 7,
+                      "type": "cds.Decimal"
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Time of last change",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "DangerousGoodsIndProfile": {
+                      "@EndUserText.label": "Dangerous goods indicator profile",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ProductUUID": {
+                      "@EndUserText.label": "Internal key for product",
+                      "type": "cds.Binary",
+                      "length": 16
+                    },
+                    "ProdSupChnMgmtUUID22": {
+                      "@EndUserText.label": "Internal number (uid) for product",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "ProductDocumentChangeNumber": {
+                      "@EndUserText.label": "Document change number (without document management system)",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "ProductDocumentPageCount": {
+                      "@EndUserText.label": "Number of sheets (without document management system)",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ProductDocumentPageNumber": {
+                      "@EndUserText.label": "Page number of document (without document management system)",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "OwnInventoryManagedProduct": {
+                      "@EndUserText.label": "Number of firm's own (internal) inventory-managed material",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "DocumentIsCreatedByCAD": {
+                      "@EndUserText.label": "Cad indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProductionOrInspectionMemoTxt": {
+                      "@EndUserText.label": "Production/inspection memo",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "ProductionMemoPageFormat": {
+                      "@EndUserText.label": "Page format of production memo",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "GlobalTradeItemNumberVariant": {
+                      "@EndUserText.label": "Global trade item number variant",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ProductIsHighlyViscous": {
+                      "@EndUserText.label": "Indicator: highly viscous",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "TransportIsInBulk": {
+                      "@EndUserText.label": "Indicator: in bulk/liquid",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProdAllocDetnProcedure": {
+                      "@EndUserText.label": "Product allocation determination procedure",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "ProdEffctyParamValsAreAssigned": {
+                      "@EndUserText.label": "Assign effectivity parameter values/ override change numbers",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProdIsEnvironmentallyRelevant": {
+                      "@EndUserText.label": "Environmentally relevant",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "LaboratoryOrDesignOffice": {
+                      "@EndUserText.label": "Laboratory/design office",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "PackagingMaterialGroup": {
+                      "@EndUserText.label": "Material group: packaging materials",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ProductIsLocked": {
+                      "@EndUserText.label": "Product is locked",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "DiscountInKindEligibility": {
+                      "@EndUserText.label": "Material qualifies for discount in kind",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SmartFormName": {
+                      "@EndUserText.label": "Form name",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "PackingReferenceProduct": {
+                      "@EndUserText.label": "Reference material for materials packed in same way",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "BasicMaterial": {
+                      "@EndUserText.label": "Basic material",
+                      "type": "cds.String",
+                      "length": 48
+                    },
+                    "ProductDocumentNumber": {
+                      "@EndUserText.label": "Document number (without document management system)",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "ProductDocumentVersion": {
+                      "@EndUserText.label": "Document version (without document management system)",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "ProductDocumentType": {
+                      "@EndUserText.label": "Document type (without document management system)",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "ProductDocumentPageFormat": {
+                      "@EndUserText.label": "Page format of document (without document management system)",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ProductConfiguration": {
+                      "@EndUserText.label": "Internal object number",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "SegmentationStrategy": {
+                      "@EndUserText.label": "Segmentation strategy",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "SegmentationIsRelevant": {
+                      "@EndUserText.label": "Segmentation relevant",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ProductCompositionIsRelevant": {
+                      "@EndUserText.label": "Indicator: product composition printed on packaging",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IsChemicalComplianceRelevant": {
+                      "@EndUserText.label": "Chemical compliance relevance indicator",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ManufacturerBookPartNumber": {
+                      "@EndUserText.label": "Manufacturer book part number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "LogisticalProductCategory": {
+                      "@EndUserText.label": "Category of a logistical material",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "SalesProduct": {
+                      "@EndUserText.label": "Material number of a sales material",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "ProdCharc1InternalNumber": {
+                      "@EndUserText.label": "Internal charactieristic number for color characteristics",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProdCharc2InternalNumber": {
+                      "@EndUserText.label": "Internal char. number for characteristics for main sizes",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProdCharc3InternalNumber": {
+                      "@EndUserText.label": "Internal char. number for characteristics for second sizes",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "ProductCharacteristic1": {
+                      "@EndUserText.label": "Characteristic value for colors of variants",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "ProductCharacteristic2": {
+                      "@EndUserText.label": "Characteristic value for main sizes of variants",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "ProductCharacteristic3": {
+                      "@EndUserText.label": "Characteristic value for second size for variants",
+                      "type": "cds.String",
+                      "length": 18
+                    },
+                    "MaintenanceStatus": {
+                      "@EndUserText.label": "Maintenance status",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "FashionProdInformationField1": {
+                      "@EndUserText.label": "Fashion information field: 1",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FashionProdInformationField2": {
+                      "@EndUserText.label": "Fashion information field: 2",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "FashionProdInformationField3": {
+                      "@EndUserText.label": "Fashion information field: 3",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_PRODUCT_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_PRODUCT"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Product"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductExternalID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductOID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDateTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsMarkedForDeletion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CrossPlantStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CrossPlantStatusValidityDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductOldID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GrossWeight"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PurchaseOrderQuantityUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SourceOfSupply"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WeightUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CountryOfOrigin"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompetitorID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BaseUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ItemCategoryGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NetWeight"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductHierarchy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Division"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VarblPurOrdUnitIsActive"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "VolumeUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaterialVolume"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TransportationGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesStatusValidityDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AuthorizationGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ANPCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Brand"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProcurementRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LowLevelCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdNoInGenProdInPrepackProd"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SerialIdentifierAssgmtProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SizeOrDimensionText"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IndustryStandardName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductStandardID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternationalArticleNumberCat"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductIsConfigurable"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsBatchManagementRequired"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HasEmptiesBOM"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ExternalProductGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CrossPlantConfigurableProduct"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SerialNoExplicitnessLevel"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductManufacturerNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ManufacturerNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ManufacturerPartProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "QltyMgmtInProcmtIsActive"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsApprovedBatchRecordReqd"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HandlingIndicator"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WarehouseProductGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "WarehouseStorageCondition"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "StandardHandlingUnitType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SerialNumberProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AdjustmentProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PreferredUnitOfMeasure"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsPilferable"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsRelevantForHzdsSubstances"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "QuarantinePeriod"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TimeUnitForQuarantinePeriod"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "QualityInspectionGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HandlingUnitType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HasVariableTareWeight"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaximumPackagingLength"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaximumPackagingWidth"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaximumPackagingHeight"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaximumCapacity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OvercapacityTolerance"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "UnitForMaxPackagingDimensions"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BaseUnitSpecificProductLength"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BaseUnitSpecificProductWidth"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BaseUnitSpecificProductHeight"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductMeasurementUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductValidStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ArticleCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ContentUnit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NetContent"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ComparisonPriceQuantity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GrossContent"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductValidEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "AssortmentListType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "HasTextilePartsWthAnimalOrigin"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductSeasonUsageCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IndustrySector"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ChangeNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaterialRevisionLevel"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsActiveEntity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDateTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DangerousGoodsIndProfile"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductUUID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdSupChnMgmtUUID22"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentChangeNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentPageCount"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentPageNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "OwnInventoryManagedProduct"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DocumentIsCreatedByCAD"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductionOrInspectionMemoTxt"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductionMemoPageFormat"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "GlobalTradeItemNumberVariant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductIsHighlyViscous"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TransportIsInBulk"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdAllocDetnProcedure"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdEffctyParamValsAreAssigned"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdIsEnvironmentallyRelevant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LaboratoryOrDesignOffice"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PackagingMaterialGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductIsLocked"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "DiscountInKindEligibility"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SmartFormName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PackingReferenceProduct"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "BasicMaterial"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentVersion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductDocumentPageFormat"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductConfiguration"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SegmentationStrategy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SegmentationIsRelevant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductCompositionIsRelevant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IsChemicalComplianceRelevant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ManufacturerBookPartNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LogisticalProductCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "SalesProduct"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdCharc1InternalNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdCharc2InternalNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProdCharc3InternalNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductCharacteristic1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductCharacteristic2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ProductCharacteristic3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MaintenanceStatus"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FashionProdInformationField1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FashionProdInformationField2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FashionProdInformationField3"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"Product\",\"d\".\"ProductExternalID\",\"d\".\"ProductOID\",\"d\".\"ProductType\",\"d\".\"CreationDate\",\"d\".\"CreationTime\",\"d\".\"CreationDateTime\",\"d\".\"CreatedByUser\",\"d\".\"LastChangeDate\",\"d\".\"LastChangedByUser\",\"d\".\"IsMarkedForDeletion\",\"d\".\"CrossPlantStatus\",\"d\".\"CrossPlantStatusValidityDate\",\"d\".\"ProductOldID\",\"d\".\"GrossWeight\",\"d\".\"PurchaseOrderQuantityUnit\",\"d\".\"SourceOfSupply\",\"d\".\"WeightUnit\",\"d\".\"CountryOfOrigin\",\"d\".\"CompetitorID\",\"d\".\"ProductGroup\",\"d\".\"BaseUnit\",\"d\".\"ItemCategoryGroup\",\"d\".\"NetWeight\",\"d\".\"ProductHierarchy\",\"d\".\"Division\",\"d\".\"VarblPurOrdUnitIsActive\",\"d\".\"VolumeUnit\",\"d\".\"MaterialVolume\",\"d\".\"SalesStatus\",\"d\".\"TransportationGroup\",\"d\".\"SalesStatusValidityDate\",\"d\".\"AuthorizationGroup\",\"d\".\"ANPCode\",\"d\".\"ProductCategory\",\"d\".\"Brand\",\"d\".\"ProcurementRule\",\"d\".\"ValidityStartDate\",\"d\".\"LowLevelCode\",\"d\".\"ProdNoInGenProdInPrepackProd\",\"d\".\"SerialIdentifierAssgmtProfile\",\"d\".\"SizeOrDimensionText\",\"d\".\"IndustryStandardName\",\"d\".\"ProductStandardID\",\"d\".\"InternationalArticleNumberCat\",\"d\".\"ProductIsConfigurable\",\"d\".\"IsBatchManagementRequired\",\"d\".\"HasEmptiesBOM\",\"d\".\"ExternalProductGroup\",\"d\".\"CrossPlantConfigurableProduct\",\"d\".\"SerialNoExplicitnessLevel\",\"d\".\"ProductManufacturerNumber\",\"d\".\"ManufacturerNumber\",\"d\".\"ManufacturerPartProfile\",\"d\".\"QltyMgmtInProcmtIsActive\",\"d\".\"IsApprovedBatchRecordReqd\",\"d\".\"HandlingIndicator\",\"d\".\"WarehouseProductGroup\",\"d\".\"WarehouseStorageCondition\",\"d\".\"StandardHandlingUnitType\",\"d\".\"SerialNumberProfile\",\"d\".\"AdjustmentProfile\",\"d\".\"PreferredUnitOfMeasure\",\"d\".\"IsPilferable\",\"d\".\"IsRelevantForHzdsSubstances\",\"d\".\"QuarantinePeriod\",\"d\".\"TimeUnitForQuarantinePeriod\",\"d\".\"QualityInspectionGroup\",\"d\".\"HandlingUnitType\",\"d\".\"HasVariableTareWeight\",\"d\".\"MaximumPackagingLength\",\"d\".\"MaximumPackagingWidth\",\"d\".\"MaximumPackagingHeight\",\"d\".\"MaximumCapacity\",\"d\".\"OvercapacityTolerance\",\"d\".\"UnitForMaxPackagingDimensions\",\"d\".\"BaseUnitSpecificProductLength\",\"d\".\"BaseUnitSpecificProductWidth\",\"d\".\"BaseUnitSpecificProductHeight\",\"d\".\"ProductMeasurementUnit\",\"d\".\"ProductValidStartDate\",\"d\".\"ArticleCategory\",\"d\".\"ContentUnit\",\"d\".\"NetContent\",\"d\".\"ComparisonPriceQuantity\",\"d\".\"GrossContent\",\"d\".\"ProductValidEndDate\",\"d\".\"AssortmentListType\",\"d\".\"HasTextilePartsWthAnimalOrigin\",\"d\".\"ProductSeasonUsageCategory\",\"d\".\"IndustrySector\",\"d\".\"ChangeNumber\",\"d\".\"MaterialRevisionLevel\",\"d\".\"IsActiveEntity\",\"d\".\"LastChangeDateTime\",\"d\".\"LastChangeTime\",\"d\".\"DangerousGoodsIndProfile\",\"d\".\"ProductUUID\",\"d\".\"ProdSupChnMgmtUUID22\",\"d\".\"ProductDocumentChangeNumber\",\"d\".\"ProductDocumentPageCount\",\"d\".\"ProductDocumentPageNumber\",\"d\".\"OwnInventoryManagedProduct\",\"d\".\"DocumentIsCreatedByCAD\",\"d\".\"ProductionOrInspectionMemoTxt\",\"d\".\"ProductionMemoPageFormat\",\"d\".\"GlobalTradeItemNumberVariant\",\"d\".\"ProductIsHighlyViscous\",\"d\".\"TransportIsInBulk\",\"d\".\"ProdAllocDetnProcedure\",\"d\".\"ProdEffctyParamValsAreAssigned\",\"d\".\"ProdIsEnvironmentallyRelevant\",\"d\".\"LaboratoryOrDesignOffice\",\"d\".\"PackagingMaterialGroup\",\"d\".\"ProductIsLocked\",\"d\".\"DiscountInKindEligibility\",\"d\".\"SmartFormName\",\"d\".\"PackingReferenceProduct\",\"d\".\"BasicMaterial\",\"d\".\"ProductDocumentNumber\",\"d\".\"ProductDocumentVersion\",\"d\".\"ProductDocumentType\",\"d\".\"ProductDocumentPageFormat\",\"d\".\"ProductConfiguration\",\"d\".\"SegmentationStrategy\",\"d\".\"SegmentationIsRelevant\",\"d\".\"ProductCompositionIsRelevant\",\"d\".\"IsChemicalComplianceRelevant\",\"d\".\"ManufacturerBookPartNumber\",\"d\".\"LogisticalProductCategory\",\"d\".\"SalesProduct\",\"d\".\"ProdCharc1InternalNumber\",\"d\".\"ProdCharc2InternalNumber\",\"d\".\"ProdCharc3InternalNumber\",\"d\".\"ProductCharacteristic1\",\"d\".\"ProductCharacteristic2\",\"d\".\"ProductCharacteristic3\",\"d\".\"MaintenanceStatus\",\"d\".\"FashionProdInformationField1\",\"d\".\"FashionProdInformationField2\",\"d\".\"FashionProdInformationField3\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_I_PRODUCT_S4_CURR_Delta\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_PRODUCT'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_PRODUCT_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_PRODUCT_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "Product",
+                    "target": "Product"
+                  },
+                  {
+                    "source": "ProductExternalID",
+                    "target": "ProductExternalID"
+                  },
+                  {
+                    "source": "ProductOID",
+                    "target": "ProductOID"
+                  },
+                  {
+                    "source": "ProductType",
+                    "target": "ProductType"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreationTime",
+                    "target": "CreationTime"
+                  },
+                  {
+                    "source": "CreationDateTime",
+                    "target": "CreationDateTime"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "IsMarkedForDeletion",
+                    "target": "IsMarkedForDeletion"
+                  },
+                  {
+                    "source": "CrossPlantStatus",
+                    "target": "CrossPlantStatus"
+                  },
+                  {
+                    "source": "CrossPlantStatusValidityDate",
+                    "target": "CrossPlantStatusValidityDate"
+                  },
+                  {
+                    "source": "ProductOldID",
+                    "target": "ProductOldID"
+                  },
+                  {
+                    "source": "GrossWeight",
+                    "target": "GrossWeight"
+                  },
+                  {
+                    "source": "PurchaseOrderQuantityUnit",
+                    "target": "PurchaseOrderQuantityUnit"
+                  },
+                  {
+                    "source": "SourceOfSupply",
+                    "target": "SourceOfSupply"
+                  },
+                  {
+                    "source": "WeightUnit",
+                    "target": "WeightUnit"
+                  },
+                  {
+                    "source": "CountryOfOrigin",
+                    "target": "CountryOfOrigin"
+                  },
+                  {
+                    "source": "CompetitorID",
+                    "target": "CompetitorID"
+                  },
+                  {
+                    "source": "ProductGroup",
+                    "target": "ProductGroup"
+                  },
+                  {
+                    "source": "BaseUnit",
+                    "target": "BaseUnit"
+                  },
+                  {
+                    "source": "ItemCategoryGroup",
+                    "target": "ItemCategoryGroup"
+                  },
+                  {
+                    "source": "NetWeight",
+                    "target": "NetWeight"
+                  },
+                  {
+                    "source": "ProductHierarchy",
+                    "target": "ProductHierarchy"
+                  },
+                  {
+                    "source": "Division",
+                    "target": "Division"
+                  },
+                  {
+                    "source": "VarblPurOrdUnitIsActive",
+                    "target": "VarblPurOrdUnitIsActive"
+                  },
+                  {
+                    "source": "VolumeUnit",
+                    "target": "VolumeUnit"
+                  },
+                  {
+                    "source": "MaterialVolume",
+                    "target": "MaterialVolume"
+                  },
+                  {
+                    "source": "SalesStatus",
+                    "target": "SalesStatus"
+                  },
+                  {
+                    "source": "TransportationGroup",
+                    "target": "TransportationGroup"
+                  },
+                  {
+                    "source": "SalesStatusValidityDate",
+                    "target": "SalesStatusValidityDate"
+                  },
+                  {
+                    "source": "AuthorizationGroup",
+                    "target": "AuthorizationGroup"
+                  },
+                  {
+                    "source": "ANPCode",
+                    "target": "ANPCode"
+                  },
+                  {
+                    "source": "ProductCategory",
+                    "target": "ProductCategory"
+                  },
+                  {
+                    "source": "Brand",
+                    "target": "Brand"
+                  },
+                  {
+                    "source": "ProcurementRule",
+                    "target": "ProcurementRule"
+                  },
+                  {
+                    "source": "ValidityStartDate",
+                    "target": "ValidityStartDate"
+                  },
+                  {
+                    "source": "LowLevelCode",
+                    "target": "LowLevelCode"
+                  },
+                  {
+                    "source": "ProdNoInGenProdInPrepackProd",
+                    "target": "ProdNoInGenProdInPrepackProd"
+                  },
+                  {
+                    "source": "SerialIdentifierAssgmtProfile",
+                    "target": "SerialIdentifierAssgmtProfile"
+                  },
+                  {
+                    "source": "SizeOrDimensionText",
+                    "target": "SizeOrDimensionText"
+                  },
+                  {
+                    "source": "IndustryStandardName",
+                    "target": "IndustryStandardName"
+                  },
+                  {
+                    "source": "ProductStandardID",
+                    "target": "ProductStandardID"
+                  },
+                  {
+                    "source": "InternationalArticleNumberCat",
+                    "target": "InternationalArticleNumberCat"
+                  },
+                  {
+                    "source": "ProductIsConfigurable",
+                    "target": "ProductIsConfigurable"
+                  },
+                  {
+                    "source": "IsBatchManagementRequired",
+                    "target": "IsBatchManagementRequired"
+                  },
+                  {
+                    "source": "HasEmptiesBOM",
+                    "target": "HasEmptiesBOM"
+                  },
+                  {
+                    "source": "ExternalProductGroup",
+                    "target": "ExternalProductGroup"
+                  },
+                  {
+                    "source": "CrossPlantConfigurableProduct",
+                    "target": "CrossPlantConfigurableProduct"
+                  },
+                  {
+                    "source": "SerialNoExplicitnessLevel",
+                    "target": "SerialNoExplicitnessLevel"
+                  },
+                  {
+                    "source": "ProductManufacturerNumber",
+                    "target": "ProductManufacturerNumber"
+                  },
+                  {
+                    "source": "ManufacturerNumber",
+                    "target": "ManufacturerNumber"
+                  },
+                  {
+                    "source": "ManufacturerPartProfile",
+                    "target": "ManufacturerPartProfile"
+                  },
+                  {
+                    "source": "QltyMgmtInProcmtIsActive",
+                    "target": "QltyMgmtInProcmtIsActive"
+                  },
+                  {
+                    "source": "IsApprovedBatchRecordReqd",
+                    "target": "IsApprovedBatchRecordReqd"
+                  },
+                  {
+                    "source": "HandlingIndicator",
+                    "target": "HandlingIndicator"
+                  },
+                  {
+                    "source": "WarehouseProductGroup",
+                    "target": "WarehouseProductGroup"
+                  },
+                  {
+                    "source": "WarehouseStorageCondition",
+                    "target": "WarehouseStorageCondition"
+                  },
+                  {
+                    "source": "StandardHandlingUnitType",
+                    "target": "StandardHandlingUnitType"
+                  },
+                  {
+                    "source": "SerialNumberProfile",
+                    "target": "SerialNumberProfile"
+                  },
+                  {
+                    "source": "AdjustmentProfile",
+                    "target": "AdjustmentProfile"
+                  },
+                  {
+                    "source": "PreferredUnitOfMeasure",
+                    "target": "PreferredUnitOfMeasure"
+                  },
+                  {
+                    "source": "IsPilferable",
+                    "target": "IsPilferable"
+                  },
+                  {
+                    "source": "IsRelevantForHzdsSubstances",
+                    "target": "IsRelevantForHzdsSubstances"
+                  },
+                  {
+                    "source": "QuarantinePeriod",
+                    "target": "QuarantinePeriod"
+                  },
+                  {
+                    "source": "TimeUnitForQuarantinePeriod",
+                    "target": "TimeUnitForQuarantinePeriod"
+                  },
+                  {
+                    "source": "QualityInspectionGroup",
+                    "target": "QualityInspectionGroup"
+                  },
+                  {
+                    "source": "HandlingUnitType",
+                    "target": "HandlingUnitType"
+                  },
+                  {
+                    "source": "HasVariableTareWeight",
+                    "target": "HasVariableTareWeight"
+                  },
+                  {
+                    "source": "MaximumPackagingLength",
+                    "target": "MaximumPackagingLength"
+                  },
+                  {
+                    "source": "MaximumPackagingWidth",
+                    "target": "MaximumPackagingWidth"
+                  },
+                  {
+                    "source": "MaximumPackagingHeight",
+                    "target": "MaximumPackagingHeight"
+                  },
+                  {
+                    "source": "MaximumCapacity",
+                    "target": "MaximumCapacity"
+                  },
+                  {
+                    "source": "OvercapacityTolerance",
+                    "target": "OvercapacityTolerance"
+                  },
+                  {
+                    "source": "UnitForMaxPackagingDimensions",
+                    "target": "UnitForMaxPackagingDimensions"
+                  },
+                  {
+                    "source": "BaseUnitSpecificProductLength",
+                    "target": "BaseUnitSpecificProductLength"
+                  },
+                  {
+                    "source": "BaseUnitSpecificProductWidth",
+                    "target": "BaseUnitSpecificProductWidth"
+                  },
+                  {
+                    "source": "BaseUnitSpecificProductHeight",
+                    "target": "BaseUnitSpecificProductHeight"
+                  },
+                  {
+                    "source": "ProductMeasurementUnit",
+                    "target": "ProductMeasurementUnit"
+                  },
+                  {
+                    "source": "ProductValidStartDate",
+                    "target": "ProductValidStartDate"
+                  },
+                  {
+                    "source": "ArticleCategory",
+                    "target": "ArticleCategory"
+                  },
+                  {
+                    "source": "ContentUnit",
+                    "target": "ContentUnit"
+                  },
+                  {
+                    "source": "NetContent",
+                    "target": "NetContent"
+                  },
+                  {
+                    "source": "ComparisonPriceQuantity",
+                    "target": "ComparisonPriceQuantity"
+                  },
+                  {
+                    "source": "GrossContent",
+                    "target": "GrossContent"
+                  },
+                  {
+                    "source": "ProductValidEndDate",
+                    "target": "ProductValidEndDate"
+                  },
+                  {
+                    "source": "AssortmentListType",
+                    "target": "AssortmentListType"
+                  },
+                  {
+                    "source": "HasTextilePartsWthAnimalOrigin",
+                    "target": "HasTextilePartsWthAnimalOrigin"
+                  },
+                  {
+                    "source": "ProductSeasonUsageCategory",
+                    "target": "ProductSeasonUsageCategory"
+                  },
+                  {
+                    "source": "IndustrySector",
+                    "target": "IndustrySector"
+                  },
+                  {
+                    "source": "ChangeNumber",
+                    "target": "ChangeNumber"
+                  },
+                  {
+                    "source": "MaterialRevisionLevel",
+                    "target": "MaterialRevisionLevel"
+                  },
+                  {
+                    "source": "IsActiveEntity",
+                    "target": "IsActiveEntity"
+                  },
+                  {
+                    "source": "LastChangeDateTime",
+                    "target": "LastChangeDateTime"
+                  },
+                  {
+                    "source": "LastChangeTime",
+                    "target": "LastChangeTime"
+                  },
+                  {
+                    "source": "DangerousGoodsIndProfile",
+                    "target": "DangerousGoodsIndProfile"
+                  },
+                  {
+                    "source": "ProductUUID",
+                    "target": "ProductUUID"
+                  },
+                  {
+                    "source": "ProdSupChnMgmtUUID22",
+                    "target": "ProdSupChnMgmtUUID22"
+                  },
+                  {
+                    "source": "ProductDocumentChangeNumber",
+                    "target": "ProductDocumentChangeNumber"
+                  },
+                  {
+                    "source": "ProductDocumentPageCount",
+                    "target": "ProductDocumentPageCount"
+                  },
+                  {
+                    "source": "ProductDocumentPageNumber",
+                    "target": "ProductDocumentPageNumber"
+                  },
+                  {
+                    "source": "OwnInventoryManagedProduct",
+                    "target": "OwnInventoryManagedProduct"
+                  },
+                  {
+                    "source": "DocumentIsCreatedByCAD",
+                    "target": "DocumentIsCreatedByCAD"
+                  },
+                  {
+                    "source": "ProductionOrInspectionMemoTxt",
+                    "target": "ProductionOrInspectionMemoTxt"
+                  },
+                  {
+                    "source": "ProductionMemoPageFormat",
+                    "target": "ProductionMemoPageFormat"
+                  },
+                  {
+                    "source": "GlobalTradeItemNumberVariant",
+                    "target": "GlobalTradeItemNumberVariant"
+                  },
+                  {
+                    "source": "ProductIsHighlyViscous",
+                    "target": "ProductIsHighlyViscous"
+                  },
+                  {
+                    "source": "TransportIsInBulk",
+                    "target": "TransportIsInBulk"
+                  },
+                  {
+                    "source": "ProdAllocDetnProcedure",
+                    "target": "ProdAllocDetnProcedure"
+                  },
+                  {
+                    "source": "ProdEffctyParamValsAreAssigned",
+                    "target": "ProdEffctyParamValsAreAssigned"
+                  },
+                  {
+                    "source": "ProdIsEnvironmentallyRelevant",
+                    "target": "ProdIsEnvironmentallyRelevant"
+                  },
+                  {
+                    "source": "LaboratoryOrDesignOffice",
+                    "target": "LaboratoryOrDesignOffice"
+                  },
+                  {
+                    "source": "PackagingMaterialGroup",
+                    "target": "PackagingMaterialGroup"
+                  },
+                  {
+                    "source": "ProductIsLocked",
+                    "target": "ProductIsLocked"
+                  },
+                  {
+                    "source": "DiscountInKindEligibility",
+                    "target": "DiscountInKindEligibility"
+                  },
+                  {
+                    "source": "SmartFormName",
+                    "target": "SmartFormName"
+                  },
+                  {
+                    "source": "PackingReferenceProduct",
+                    "target": "PackingReferenceProduct"
+                  },
+                  {
+                    "source": "BasicMaterial",
+                    "target": "BasicMaterial"
+                  },
+                  {
+                    "source": "ProductDocumentNumber",
+                    "target": "ProductDocumentNumber"
+                  },
+                  {
+                    "source": "ProductDocumentVersion",
+                    "target": "ProductDocumentVersion"
+                  },
+                  {
+                    "source": "ProductDocumentType",
+                    "target": "ProductDocumentType"
+                  },
+                  {
+                    "source": "ProductDocumentPageFormat",
+                    "target": "ProductDocumentPageFormat"
+                  },
+                  {
+                    "source": "ProductConfiguration",
+                    "target": "ProductConfiguration"
+                  },
+                  {
+                    "source": "SegmentationStrategy",
+                    "target": "SegmentationStrategy"
+                  },
+                  {
+                    "source": "SegmentationIsRelevant",
+                    "target": "SegmentationIsRelevant"
+                  },
+                  {
+                    "source": "ProductCompositionIsRelevant",
+                    "target": "ProductCompositionIsRelevant"
+                  },
+                  {
+                    "source": "IsChemicalComplianceRelevant",
+                    "target": "IsChemicalComplianceRelevant"
+                  },
+                  {
+                    "source": "ManufacturerBookPartNumber",
+                    "target": "ManufacturerBookPartNumber"
+                  },
+                  {
+                    "source": "LogisticalProductCategory",
+                    "target": "LogisticalProductCategory"
+                  },
+                  {
+                    "source": "SalesProduct",
+                    "target": "SalesProduct"
+                  },
+                  {
+                    "source": "ProdCharc1InternalNumber",
+                    "target": "ProdCharc1InternalNumber"
+                  },
+                  {
+                    "source": "ProdCharc2InternalNumber",
+                    "target": "ProdCharc2InternalNumber"
+                  },
+                  {
+                    "source": "ProdCharc3InternalNumber",
+                    "target": "ProdCharc3InternalNumber"
+                  },
+                  {
+                    "source": "ProductCharacteristic1",
+                    "target": "ProductCharacteristic1"
+                  },
+                  {
+                    "source": "ProductCharacteristic2",
+                    "target": "ProductCharacteristic2"
+                  },
+                  {
+                    "source": "ProductCharacteristic3",
+                    "target": "ProductCharacteristic3"
+                  },
+                  {
+                    "source": "MaintenanceStatus",
+                    "target": "MaintenanceStatus"
+                  },
+                  {
+                    "source": "FashionProdInformationField1",
+                    "target": "FashionProdInformationField1"
+                  },
+                  {
+                    "source": "FashionProdInformationField2",
+                    "target": "FashionProdInformationField2"
+                  },
+                  {
+                    "source": "FashionProdInformationField3",
+                    "target": "FashionProdInformationField3"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "Product": {
+                      "@EndUserText.label": "Product",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 40,
+                      "notNull": true
+                    },
+                    "ProductExternalID": {
+                      "@EndUserText.label": "External representation of material number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "ProductOID": {
+                      "@EndUserText.label": "Data element for oid of product",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 128
+                    },
+                    "ProductType": {
+                      "@EndUserText.label": "Product type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "Created on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "CreationDateTime": {
+                      "@EndUserText.label": "Product created on",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 21,
+                      "scale": 7
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Name of person responsible for creating the object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Date of last change",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Name of person who changed object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "IsMarkedForDeletion": {
+                      "@EndUserText.label": "Deletion indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "CrossPlantStatus": {
+                      "@EndUserText.label": "Cross-plant product status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "CrossPlantStatusValidityDate": {
+                      "@EndUserText.label": "Date from which the cross-plant material status is valid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ProductOldID": {
+                      "@EndUserText.label": "Old product number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "GrossWeight": {
+                      "@EndUserText.label": "Gross weight",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "PurchaseOrderQuantityUnit": {
+                      "@EndUserText.label": "Purchase order unit of measure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "SourceOfSupply": {
+                      "@EndUserText.label": "Source of supply",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "WeightUnit": {
+                      "@EndUserText.label": "Unit of weight",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "CountryOfOrigin": {
+                      "@EndUserText.label": "Country/region of origin of material (non-preferential ori.)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "CompetitorID": {
+                      "@EndUserText.label": "Competitor",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProductGroup": {
+                      "@EndUserText.label": "Product group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 9
+                    },
+                    "BaseUnit": {
+                      "@EndUserText.label": "Base unit of measure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ItemCategoryGroup": {
+                      "@EndUserText.label": "General item category group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "NetWeight": {
+                      "@EndUserText.label": "Net weight",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "ProductHierarchy": {
+                      "@EndUserText.label": "Product hierarchy",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "Division": {
+                      "@EndUserText.label": "Division",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "VarblPurOrdUnitIsActive": {
+                      "@EndUserText.label": "Variable purchase order unit active",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "VolumeUnit": {
+                      "@EndUserText.label": "Volume unit",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "MaterialVolume": {
+                      "@EndUserText.label": "Volume",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "SalesStatus": {
+                      "@EndUserText.label": "Cross-distribution-chain material status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "TransportationGroup": {
+                      "@EndUserText.label": "Transportation group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SalesStatusValidityDate": {
+                      "@EndUserText.label": "Date from which the x-distr.-chain material status is valid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ANPCode": {
+                      "@EndUserText.label": "Anp code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 9
+                    },
+                    "ProductCategory": {
+                      "@EndUserText.label": "Product category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "Brand": {
+                      "@EndUserText.label": "Brand",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ProcurementRule": {
+                      "@EndUserText.label": "Procurement rule",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Valid-from date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LowLevelCode": {
+                      "@EndUserText.label": "Low-level code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ProdNoInGenProdInPrepackProd": {
+                      "@EndUserText.label": "Material number of the generic material in prepack materials",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "SerialIdentifierAssgmtProfile": {
+                      "@EndUserText.label": "Serial number profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SizeOrDimensionText": {
+                      "@EndUserText.label": "Size/dimensions",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 32
+                    },
+                    "IndustryStandardName": {
+                      "@EndUserText.label": "Industry standard description (such as ansi or iso)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "ProductStandardID": {
+                      "@EndUserText.label": "Global trade item number (ean/upc/gtin)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "InternationalArticleNumberCat": {
+                      "@EndUserText.label": "Category of international article number (ean)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ProductIsConfigurable": {
+                      "@EndUserText.label": "Product is configurable",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsBatchManagementRequired": {
+                      "@EndUserText.label": "Batch management requirement indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "HasEmptiesBOM": {
+                      "@EndUserText.label": "Empties bill of material",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ExternalProductGroup": {
+                      "@EndUserText.label": "External product group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "CrossPlantConfigurableProduct": {
+                      "@EndUserText.label": "Cross-plant configurable product",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "SerialNoExplicitnessLevel": {
+                      "@EndUserText.label": "Level of explicitness for serial number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProductManufacturerNumber": {
+                      "@EndUserText.label": "Manufacturer part number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "ManufacturerNumber": {
+                      "@EndUserText.label": "Number of a manufacturer",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ManufacturerPartProfile": {
+                      "@EndUserText.label": "Mfr part profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "QltyMgmtInProcmtIsActive": {
+                      "@EndUserText.label": "Qm in procurement is active",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsApprovedBatchRecordReqd": {
+                      "@EndUserText.label": "Approved batch record required",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "HandlingIndicator": {
+                      "@EndUserText.label": "Handling indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "WarehouseProductGroup": {
+                      "@EndUserText.label": "Warehouse material group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "WarehouseStorageCondition": {
+                      "@EndUserText.label": "Warehouse storage condition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "StandardHandlingUnitType": {
+                      "@EndUserText.label": "Standard hu type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "SerialNumberProfile": {
+                      "@EndUserText.label": "Serial number profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "AdjustmentProfile": {
+                      "@EndUserText.label": "Adjustment profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "PreferredUnitOfMeasure": {
+                      "@EndUserText.label": "Preferred alternative uom for warehouse operations",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "IsPilferable": {
+                      "@EndUserText.label": "Pilferable",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsRelevantForHzdsSubstances": {
+                      "@EndUserText.label": "Relevant for hazardous substances",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "QuarantinePeriod": {
+                      "@EndUserText.label": "Quarantine period",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 3,
+                      "scale": 0
+                    },
+                    "TimeUnitForQuarantinePeriod": {
+                      "@EndUserText.label": "Time unit for quarantine period",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "QualityInspectionGroup": {
+                      "@EndUserText.label": "Quality inspection group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "HandlingUnitType": {
+                      "@EndUserText.label": "Handling unit type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "HasVariableTareWeight": {
+                      "@EndUserText.label": "Variable tare weight",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "MaximumPackagingLength": {
+                      "@EndUserText.label": "Maximum packing length of packaging material",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 3
+                    },
+                    "MaximumPackagingWidth": {
+                      "@EndUserText.label": "Maximum packing width of packaging material",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 3
+                    },
+                    "MaximumPackagingHeight": {
+                      "@EndUserText.label": "Maximum packing height of packaging material",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 3
+                    },
+                    "MaximumCapacity": {
+                      "@EndUserText.label": "Maximum allowed capacity of packaging material",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 15,
+                      "scale": 3
+                    },
+                    "OvercapacityTolerance": {
+                      "@EndUserText.label": "Overcapacity tolerance of the handling unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 3,
+                      "scale": 1
+                    },
+                    "UnitForMaxPackagingDimensions": {
+                      "@EndUserText.label": "Unit of measure for maximum packing length/width/height",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "BaseUnitSpecificProductLength": {
+                      "@EndUserText.label": "Length",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "BaseUnitSpecificProductWidth": {
+                      "@EndUserText.label": "Width",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "BaseUnitSpecificProductHeight": {
+                      "@EndUserText.label": "Height",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "ProductMeasurementUnit": {
+                      "@EndUserText.label": "Unit of dimension for length/width/height",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ProductValidStartDate": {
+                      "@EndUserText.label": "Valid-from date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "ArticleCategory": {
+                      "@EndUserText.label": "Product category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ContentUnit": {
+                      "@EndUserText.label": "Content unit",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "NetContent": {
+                      "@EndUserText.label": "Net contents",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "ComparisonPriceQuantity": {
+                      "@EndUserText.label": "Comparison price unit",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 5,
+                      "scale": 0
+                    },
+                    "GrossContent": {
+                      "@EndUserText.label": "Gross contents",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 13,
+                      "scale": 3
+                    },
+                    "ProductValidEndDate": {
+                      "@EndUserText.label": "Deletion date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "AssortmentListType": {
+                      "@EndUserText.label": "Assortment list type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "HasTextilePartsWthAnimalOrigin": {
+                      "@EndUserText.label": "Indicator: contains non-textile parts of animal origin",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProductSeasonUsageCategory": {
+                      "@EndUserText.label": "Indicator: use of season",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IndustrySector": {
+                      "@EndUserText.label": "Industry",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ChangeNumber": {
+                      "@EndUserText.label": "Change number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "MaterialRevisionLevel": {
+                      "@EndUserText.label": "Revision level",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "IsActiveEntity": {
+                      "@EndUserText.label": "Draft - indicator - is active document",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "LastChangeDateTime": {
+                      "@EndUserText.label": "Change time stamp",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 21,
+                      "scale": 7
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Time of last change",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "DangerousGoodsIndProfile": {
+                      "@EndUserText.label": "Dangerous goods indicator profile",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ProductUUID": {
+                      "@EndUserText.label": "Internal key for product",
+                      "type": "cds.Binary",
+                      "key": false,
+                      "length": 16
+                    },
+                    "ProdSupChnMgmtUUID22": {
+                      "@EndUserText.label": "Internal number (uid) for product",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "ProductDocumentChangeNumber": {
+                      "@EndUserText.label": "Document change number (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "ProductDocumentPageCount": {
+                      "@EndUserText.label": "Number of sheets (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ProductDocumentPageNumber": {
+                      "@EndUserText.label": "Page number of document (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "OwnInventoryManagedProduct": {
+                      "@EndUserText.label": "Number of firm's own (internal) inventory-managed material",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "DocumentIsCreatedByCAD": {
+                      "@EndUserText.label": "Cad indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProductionOrInspectionMemoTxt": {
+                      "@EndUserText.label": "Production/inspection memo",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "ProductionMemoPageFormat": {
+                      "@EndUserText.label": "Page format of production memo",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "GlobalTradeItemNumberVariant": {
+                      "@EndUserText.label": "Global trade item number variant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ProductIsHighlyViscous": {
+                      "@EndUserText.label": "Indicator: highly viscous",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "TransportIsInBulk": {
+                      "@EndUserText.label": "Indicator: in bulk/liquid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProdAllocDetnProcedure": {
+                      "@EndUserText.label": "Product allocation determination procedure",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "ProdEffctyParamValsAreAssigned": {
+                      "@EndUserText.label": "Assign effectivity parameter values/ override change numbers",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProdIsEnvironmentallyRelevant": {
+                      "@EndUserText.label": "Environmentally relevant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "LaboratoryOrDesignOffice": {
+                      "@EndUserText.label": "Laboratory/design office",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "PackagingMaterialGroup": {
+                      "@EndUserText.label": "Material group: packaging materials",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ProductIsLocked": {
+                      "@EndUserText.label": "Product is locked",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "DiscountInKindEligibility": {
+                      "@EndUserText.label": "Material qualifies for discount in kind",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SmartFormName": {
+                      "@EndUserText.label": "Form name",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "PackingReferenceProduct": {
+                      "@EndUserText.label": "Reference material for materials packed in same way",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "BasicMaterial": {
+                      "@EndUserText.label": "Basic material",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 48
+                    },
+                    "ProductDocumentNumber": {
+                      "@EndUserText.label": "Document number (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "ProductDocumentVersion": {
+                      "@EndUserText.label": "Document version (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "ProductDocumentType": {
+                      "@EndUserText.label": "Document type (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "ProductDocumentPageFormat": {
+                      "@EndUserText.label": "Page format of document (without document management system)",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "ProductConfiguration": {
+                      "@EndUserText.label": "Internal object number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "SegmentationStrategy": {
+                      "@EndUserText.label": "Segmentation strategy",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "SegmentationIsRelevant": {
+                      "@EndUserText.label": "Segmentation relevant",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ProductCompositionIsRelevant": {
+                      "@EndUserText.label": "Indicator: product composition printed on packaging",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IsChemicalComplianceRelevant": {
+                      "@EndUserText.label": "Chemical compliance relevance indicator",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ManufacturerBookPartNumber": {
+                      "@EndUserText.label": "Manufacturer book part number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "LogisticalProductCategory": {
+                      "@EndUserText.label": "Category of a logistical material",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "SalesProduct": {
+                      "@EndUserText.label": "Material number of a sales material",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "ProdCharc1InternalNumber": {
+                      "@EndUserText.label": "Internal charactieristic number for color characteristics",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProdCharc2InternalNumber": {
+                      "@EndUserText.label": "Internal char. number for characteristics for main sizes",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProdCharc3InternalNumber": {
+                      "@EndUserText.label": "Internal char. number for characteristics for second sizes",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "ProductCharacteristic1": {
+                      "@EndUserText.label": "Characteristic value for colors of variants",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "ProductCharacteristic2": {
+                      "@EndUserText.label": "Characteristic value for main sizes of variants",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "ProductCharacteristic3": {
+                      "@EndUserText.label": "Characteristic value for second size for variants",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 18
+                    },
+                    "MaintenanceStatus": {
+                      "@EndUserText.label": "Maintenance status",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "FashionProdInformationField1": {
+                      "@EndUserText.label": "Fashion information field: 1",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "FashionProdInformationField2": {
+                      "@EndUserText.label": "Fashion information field: 2",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "FashionProdInformationField3": {
+                      "@EndUserText.label": "Fashion information field: 3",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_PRODUCT_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_PRODUCT_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_DGMAVVLL"
+                    }
+                  }
+                },
+                "name": "2LT_I_PRODUCT_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

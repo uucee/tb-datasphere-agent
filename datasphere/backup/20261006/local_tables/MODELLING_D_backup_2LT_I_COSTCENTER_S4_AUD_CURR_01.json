@@ -1,0 +1,1618 @@
+{
+  "definitions": {
+    "2LT_I_COSTCENTER_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Valid to date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Valid-from date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IsBlkdForPrimaryCostsPosting": {
+          "@EndUserText.label": "Lock indicator for actual primary postings",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForPlanPrimaryCosts": {
+          "@EndUserText.label": "Lock indicator for plan primary costs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "BusinessArea": {
+          "@EndUserText.label": "Business area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CostCenterCategory": {
+          "@EndUserText.label": "Cost center category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCtrResponsiblePersonName": {
+          "@EndUserText.label": "Person responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "CostCtrResponsibleUser": {
+          "@EndUserText.label": "User responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CostCenterCurrency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "CostingSheet": {
+          "@EndUserText.label": "Costing sheet",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CostCenterCreationDate": {
+          "@EndUserText.label": "Entered on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CostCenterCreatedByUser": {
+          "@EndUserText.label": "Entered by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "IsBlkdForSecondaryCostsPosting": {
+          "@EndUserText.label": "Lock indicator for actual secondary costs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForRevenuePosting": {
+          "@EndUserText.label": "Lock indicator for actual revenue postings",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForCommitmentPosting": {
+          "@EndUserText.label": "Lock indicator for commitment update",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForPlanSecondaryCosts": {
+          "@EndUserText.label": "Lock indicator for plan secondary costs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForPlanRevenues": {
+          "@EndUserText.label": "Lock indicator for planning revenues",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCenterAllocationMethod": {
+          "@EndUserText.label": "Indicator for allowed allocation methods",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ConsumptionQtyIsRecorded": {
+          "@EndUserText.label": "Indicator for recording consumption quantities",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Department": {
+          "@EndUserText.label": "Department",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "SubsequentCostCenter": {
+          "@EndUserText.label": "Subsequent cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ConditionUsage": {
+          "@EndUserText.label": "Usage of the condition table",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ConditionApplication": {
+          "@EndUserText.label": "Application",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CostCenterAccountingOverhead": {
+          "@EndUserText.label": "Co-cca overhead key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "FormOfAddress": {
+          "@EndUserText.label": "Title",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "AddressName": {
+          "@EndUserText.label": "Name",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "AddressAdditionalName": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CostCenterAddrName3": {
+          "@EndUserText.label": "Name 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CostCenterAddrName4": {
+          "@EndUserText.label": "Name 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "District": {
+          "@EndUserText.label": "District",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "StreetAddressName": {
+          "@EndUserText.label": "Street and house number",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "POBox": {
+          "@EndUserText.label": "Po box",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PostalCode": {
+          "@EndUserText.label": "Postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "POBoxPostalCode": {
+          "@EndUserText.label": "Po box postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Region": {
+          "@EndUserText.label": "Region (state, province, county)",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TeleboxNumber": {
+          "@EndUserText.label": "Telebox number",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "PhoneNumber1": {
+          "@EndUserText.label": "First telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "PhoneNumber2": {
+          "@EndUserText.label": "Second telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "Fax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 31
+        },
+        "TeletexNumber": {
+          "@EndUserText.label": "Teletex number",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "TelexNumber": {
+          "@EndUserText.label": "Telex number",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataCommunicationPhoneNumber": {
+          "@EndUserText.label": "Data communication line no.",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "CostCenterPrinterDestination": {
+          "@EndUserText.label": "Printer destination for cctr report",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CostCenterStandardHierArea": {
+          "@EndUserText.label": "Standard hierarchy area",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CostCollector": {
+          "@EndUserText.label": "Cost collector key",
+          "type": "cds.String",
+          "key": false,
+          "length": 23
+        },
+        "CostCenterIsComplete": {
+          "@EndUserText.label": "Completion flag for the cost center master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsStatisticalCostCenter": {
+          "@EndUserText.label": "Indicator: cost center is statistical account assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ObjectInternalID": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "CostCenterFunction": {
+          "@EndUserText.label": "Function of cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CostCenterAlternativeFunction": {
+          "@EndUserText.label": "Alternative function of cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "ActyIndepFormulaPlanningTmpl": {
+          "@EndUserText.label": "Template for activity-independent formula planning",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActyDepdntFormulaPlanningTmpl": {
+          "@EndUserText.label": "Template for activity-dependent formula planning",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActyIndependentAllocationTmpl": {
+          "@EndUserText.label": "Template: activity-independent allocation to cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActyDependentAllocationTmpl": {
+          "@EndUserText.label": "Template: activity-dependent allocation to cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActlIndepStatisticalKeyFigures": {
+          "@EndUserText.label": "Cca_templ_ski",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActlDepStatisticalKeyFigures": {
+          "@EndUserText.label": "Template: act. stat. key figure - cost center/activity type",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "JointVenture": {
+          "@EndUserText.label": "Joint venture",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "JointVentureRecoveryCode": {
+          "@EndUserText.label": "Recovery indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "JointVentureEquityType": {
+          "@EndUserText.label": "Equity type",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureObjectType": {
+          "@EndUserText.label": "Joint venture object type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "JointVentureClass": {
+          "@EndUserText.label": "Jib/jibe class",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureSubClass": {
+          "@EndUserText.label": "Jib/jibe subclass a",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "BudgetCarryingCostCenter": {
+          "@EndUserText.label": "Budget-carrying cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "AvailabilityControlProfile": {
+          "@EndUserText.label": "Budget availability control: profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "AvailabilityControlIsActive": {
+          "@EndUserText.label": "Budget availability control for cost centers is active",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Fund": {
+          "@EndUserText.label": "Fund",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "GrantID": {
+          "@EndUserText.label": "Grant",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "FundIsFixAssigned": {
+          "@EndUserText.label": "Indicator for fund with fixed assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "GrantIDIsFixAssigned": {
+          "@EndUserText.label": "Indicator for grant with fixed assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FunctionalAreaIsFixAssigned": {
+          "@EndUserText.label": "Indicator for functional area with fixed assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCenterCreationTime": {
+          "@EndUserText.label": "Created at",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CostCenterLastChangedByUser": {
+          "@EndUserText.label": "Last changed by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CostCenterLastChangedOnDate": {
+          "@EndUserText.label": "Last changed on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CostCenterLastChangedAtTime": {
+          "@EndUserText.label": "Last changed at",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_COSTCENTER_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_COSTCENTER_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_COSTCENTER_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "ControllingArea"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ValidityEndDate"
+              ]
+            },
+            {
+              "ref": [
+                "ValidityStartDate"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlkdForPrimaryCostsPosting"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlockedForPlanPrimaryCosts"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyCode"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessArea"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterCategory"
+              ]
+            },
+            {
+              "ref": [
+                "CostCtrResponsiblePersonName"
+              ]
+            },
+            {
+              "ref": [
+                "CostCtrResponsibleUser"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterCurrency"
+              ]
+            },
+            {
+              "ref": [
+                "CostingSheet"
+              ]
+            },
+            {
+              "ref": [
+                "TaxJurisdiction"
+              ]
+            },
+            {
+              "ref": [
+                "ProfitCenter"
+              ]
+            },
+            {
+              "ref": [
+                "Plant"
+              ]
+            },
+            {
+              "ref": [
+                "LogicalSystem"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterCreationDate"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterCreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlkdForSecondaryCostsPosting"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlockedForRevenuePosting"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlockedForCommitmentPosting"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlockedForPlanSecondaryCosts"
+              ]
+            },
+            {
+              "ref": [
+                "IsBlockedForPlanRevenues"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterAllocationMethod"
+              ]
+            },
+            {
+              "ref": [
+                "ConsumptionQtyIsRecorded"
+              ]
+            },
+            {
+              "ref": [
+                "Department"
+              ]
+            },
+            {
+              "ref": [
+                "SubsequentCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ConditionUsage"
+              ]
+            },
+            {
+              "ref": [
+                "ConditionApplication"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterAccountingOverhead"
+              ]
+            },
+            {
+              "ref": [
+                "Country"
+              ]
+            },
+            {
+              "ref": [
+                "FormOfAddress"
+              ]
+            },
+            {
+              "ref": [
+                "AddressName"
+              ]
+            },
+            {
+              "ref": [
+                "AddressAdditionalName"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterAddrName3"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterAddrName4"
+              ]
+            },
+            {
+              "ref": [
+                "CityName"
+              ]
+            },
+            {
+              "ref": [
+                "District"
+              ]
+            },
+            {
+              "ref": [
+                "StreetAddressName"
+              ]
+            },
+            {
+              "ref": [
+                "POBox"
+              ]
+            },
+            {
+              "ref": [
+                "PostalCode"
+              ]
+            },
+            {
+              "ref": [
+                "POBoxPostalCode"
+              ]
+            },
+            {
+              "ref": [
+                "Region"
+              ]
+            },
+            {
+              "ref": [
+                "Language"
+              ]
+            },
+            {
+              "ref": [
+                "TeleboxNumber"
+              ]
+            },
+            {
+              "ref": [
+                "PhoneNumber1"
+              ]
+            },
+            {
+              "ref": [
+                "PhoneNumber2"
+              ]
+            },
+            {
+              "ref": [
+                "FaxNumber"
+              ]
+            },
+            {
+              "ref": [
+                "TeletexNumber"
+              ]
+            },
+            {
+              "ref": [
+                "TelexNumber"
+              ]
+            },
+            {
+              "ref": [
+                "DataCommunicationPhoneNumber"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterPrinterDestination"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterStandardHierArea"
+              ]
+            },
+            {
+              "ref": [
+                "CostCollector"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterIsComplete"
+              ]
+            },
+            {
+              "ref": [
+                "IsStatisticalCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "ObjectInternalID"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterFunction"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterAlternativeFunction"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalArea"
+              ]
+            },
+            {
+              "ref": [
+                "ActyIndepFormulaPlanningTmpl"
+              ]
+            },
+            {
+              "ref": [
+                "ActyDepdntFormulaPlanningTmpl"
+              ]
+            },
+            {
+              "ref": [
+                "ActyIndependentAllocationTmpl"
+              ]
+            },
+            {
+              "ref": [
+                "ActyDependentAllocationTmpl"
+              ]
+            },
+            {
+              "ref": [
+                "ActlIndepStatisticalKeyFigures"
+              ]
+            },
+            {
+              "ref": [
+                "ActlDepStatisticalKeyFigures"
+              ]
+            },
+            {
+              "ref": [
+                "JointVenture"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureRecoveryCode"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureEquityType"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureObjectType"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureClass"
+              ]
+            },
+            {
+              "ref": [
+                "JointVentureSubClass"
+              ]
+            },
+            {
+              "ref": [
+                "BudgetCarryingCostCenter"
+              ]
+            },
+            {
+              "ref": [
+                "AvailabilityControlProfile"
+              ]
+            },
+            {
+              "ref": [
+                "AvailabilityControlIsActive"
+              ]
+            },
+            {
+              "ref": [
+                "Fund"
+              ]
+            },
+            {
+              "ref": [
+                "GrantID"
+              ]
+            },
+            {
+              "ref": [
+                "FundIsFixAssigned"
+              ]
+            },
+            {
+              "ref": [
+                "GrantIDIsFixAssigned"
+              ]
+            },
+            {
+              "ref": [
+                "FunctionalAreaIsFixAssigned"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterCreationTime"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterLastChangedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterLastChangedOnDate"
+              ]
+            },
+            {
+              "ref": [
+                "CostCenterLastChangedAtTime"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_BDXBVPLD"
+        }
+      }
+    },
+    "2LT_I_COSTCENTER_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "ControllingArea": {
+          "@EndUserText.label": "Controlling area",
+          "type": "cds.String",
+          "key": true,
+          "length": 4,
+          "notNull": true
+        },
+        "CostCenter": {
+          "@EndUserText.label": "Cost center",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "ValidityEndDate": {
+          "@EndUserText.label": "Valid to date",
+          "type": "cds.String",
+          "key": true,
+          "length": 8,
+          "notNull": true
+        },
+        "ValidityStartDate": {
+          "@EndUserText.label": "Valid-from date",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "IsBlkdForPrimaryCostsPosting": {
+          "@EndUserText.label": "Lock indicator for actual primary postings",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForPlanPrimaryCosts": {
+          "@EndUserText.label": "Lock indicator for plan primary costs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CompanyCode": {
+          "@EndUserText.label": "Company code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "BusinessArea": {
+          "@EndUserText.label": "Business area",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CostCenterCategory": {
+          "@EndUserText.label": "Cost center category",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCtrResponsiblePersonName": {
+          "@EndUserText.label": "Person responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "CostCtrResponsibleUser": {
+          "@EndUserText.label": "User responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CostCenterCurrency": {
+          "@EndUserText.label": "Currency key",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "CostingSheet": {
+          "@EndUserText.label": "Costing sheet",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "ProfitCenter": {
+          "@EndUserText.label": "Profit center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Plant": {
+          "@EndUserText.label": "Plant",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "LogicalSystem": {
+          "@EndUserText.label": "Logical system",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "CostCenterCreationDate": {
+          "@EndUserText.label": "Entered on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CostCenterCreatedByUser": {
+          "@EndUserText.label": "Entered by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "IsBlkdForSecondaryCostsPosting": {
+          "@EndUserText.label": "Lock indicator for actual secondary costs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForRevenuePosting": {
+          "@EndUserText.label": "Lock indicator for actual revenue postings",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForCommitmentPosting": {
+          "@EndUserText.label": "Lock indicator for commitment update",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForPlanSecondaryCosts": {
+          "@EndUserText.label": "Lock indicator for plan secondary costs",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsBlockedForPlanRevenues": {
+          "@EndUserText.label": "Lock indicator for planning revenues",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCenterAllocationMethod": {
+          "@EndUserText.label": "Indicator for allowed allocation methods",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "ConsumptionQtyIsRecorded": {
+          "@EndUserText.label": "Indicator for recording consumption quantities",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Department": {
+          "@EndUserText.label": "Department",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "SubsequentCostCenter": {
+          "@EndUserText.label": "Subsequent cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ConditionUsage": {
+          "@EndUserText.label": "Usage of the condition table",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ConditionApplication": {
+          "@EndUserText.label": "Application",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "CostCenterAccountingOverhead": {
+          "@EndUserText.label": "Co-cca overhead key",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "FormOfAddress": {
+          "@EndUserText.label": "Title",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "AddressName": {
+          "@EndUserText.label": "Name",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "AddressAdditionalName": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CostCenterAddrName3": {
+          "@EndUserText.label": "Name 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CostCenterAddrName4": {
+          "@EndUserText.label": "Name 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "District": {
+          "@EndUserText.label": "District",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "StreetAddressName": {
+          "@EndUserText.label": "Street and house number",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "POBox": {
+          "@EndUserText.label": "Po box",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PostalCode": {
+          "@EndUserText.label": "Postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "POBoxPostalCode": {
+          "@EndUserText.label": "Po box postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Region": {
+          "@EndUserText.label": "Region (state, province, county)",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "Language": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TeleboxNumber": {
+          "@EndUserText.label": "Telebox number",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "PhoneNumber1": {
+          "@EndUserText.label": "First telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "PhoneNumber2": {
+          "@EndUserText.label": "Second telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "Fax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 31
+        },
+        "TeletexNumber": {
+          "@EndUserText.label": "Teletex number",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "TelexNumber": {
+          "@EndUserText.label": "Telex number",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataCommunicationPhoneNumber": {
+          "@EndUserText.label": "Data communication line no.",
+          "type": "cds.String",
+          "key": false,
+          "length": 14
+        },
+        "CostCenterPrinterDestination": {
+          "@EndUserText.label": "Printer destination for cctr report",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "CostCenterStandardHierArea": {
+          "@EndUserText.label": "Standard hierarchy area",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CostCollector": {
+          "@EndUserText.label": "Cost collector key",
+          "type": "cds.String",
+          "key": false,
+          "length": 23
+        },
+        "CostCenterIsComplete": {
+          "@EndUserText.label": "Completion flag for the cost center master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsStatisticalCostCenter": {
+          "@EndUserText.label": "Indicator: cost center is statistical account assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ObjectInternalID": {
+          "@EndUserText.label": "Object number",
+          "type": "cds.String",
+          "key": false,
+          "length": 22
+        },
+        "CostCenterFunction": {
+          "@EndUserText.label": "Function of cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "CostCenterAlternativeFunction": {
+          "@EndUserText.label": "Alternative function of cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "FunctionalArea": {
+          "@EndUserText.label": "Functional area",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "ActyIndepFormulaPlanningTmpl": {
+          "@EndUserText.label": "Template for activity-independent formula planning",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActyDepdntFormulaPlanningTmpl": {
+          "@EndUserText.label": "Template for activity-dependent formula planning",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActyIndependentAllocationTmpl": {
+          "@EndUserText.label": "Template: activity-independent allocation to cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActyDependentAllocationTmpl": {
+          "@EndUserText.label": "Template: activity-dependent allocation to cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActlIndepStatisticalKeyFigures": {
+          "@EndUserText.label": "Cca_templ_ski",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "ActlDepStatisticalKeyFigures": {
+          "@EndUserText.label": "Template: act. stat. key figure - cost center/activity type",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "JointVenture": {
+          "@EndUserText.label": "Joint venture",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "JointVentureRecoveryCode": {
+          "@EndUserText.label": "Recovery indicator",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "JointVentureEquityType": {
+          "@EndUserText.label": "Equity type",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureObjectType": {
+          "@EndUserText.label": "Joint venture object type",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "JointVentureClass": {
+          "@EndUserText.label": "Jib/jibe class",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "JointVentureSubClass": {
+          "@EndUserText.label": "Jib/jibe subclass a",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "BudgetCarryingCostCenter": {
+          "@EndUserText.label": "Budget-carrying cost center",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "AvailabilityControlProfile": {
+          "@EndUserText.label": "Budget availability control: profile",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "AvailabilityControlIsActive": {
+          "@EndUserText.label": "Budget availability control for cost centers is active",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "Fund": {
+          "@EndUserText.label": "Fund",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "GrantID": {
+          "@EndUserText.label": "Grant",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "FundIsFixAssigned": {
+          "@EndUserText.label": "Indicator for fund with fixed assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "GrantIDIsFixAssigned": {
+          "@EndUserText.label": "Indicator for grant with fixed assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FunctionalAreaIsFixAssigned": {
+          "@EndUserText.label": "Indicator for functional area with fixed assignment",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CostCenterCreationTime": {
+          "@EndUserText.label": "Created at",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "CostCenterLastChangedByUser": {
+          "@EndUserText.label": "Last changed by",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CostCenterLastChangedOnDate": {
+          "@EndUserText.label": "Last changed on",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "CostCenterLastChangedAtTime": {
+          "@EndUserText.label": "Last changed at",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_COSTCENTER_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_COSTCENTER_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_BDXBVPLD"
+        }
+      }
+    }
+  }
+}

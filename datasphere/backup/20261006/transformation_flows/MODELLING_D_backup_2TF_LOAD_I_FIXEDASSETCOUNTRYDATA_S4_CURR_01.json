@@ -1,0 +1,1728 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_FIXEDASSETCOUNTRYDATA_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_FIXEDASSETCOUNTRYDATA_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_AND_DELTA",
+          "deltaEnabled": true
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_I_FIXEDASSETCOUNTRYDATA_S4_CURR_Delta": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_FIXEDASSETCOUNTRYDATA_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "@DataWarehouse.delta": {
+                      "type": {
+                        "#": "UPSERT"
+                      },
+                      "dateTimeElement": {
+                        "=": "Change_Date"
+                      },
+                      "modeElement": {
+                        "=": "Change_Type"
+                      }
+                    },
+                    "@DataWarehouse.enclosingObject": "1LT_I_FIXEDASSETCOUNTRYDATA_S4_CURR",
+                    "elements": {
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "MasterFixedAsset": {
+                        "@EndUserText.label": "Main asset number",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 12
+                      },
+                      "FixedAsset": {
+                        "@EndUserText.label": "Asset subnumber",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 4
+                      },
+                      "NationalClassification": {
+                        "@EndUserText.label": "National classification code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "TaxDepreciationGroup": {
+                        "@EndUserText.label": "Tax depreciation group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RU_LongSerialNumber": {
+                        "@EndUserText.label": "Russia: serial number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 32
+                      },
+                      "RU_WorkwearMaterial": {
+                        "@EndUserText.label": "Material number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "RU_RetiredMasterFixedAsset": {
+                        "@EndUserText.label": "Number of retired asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "RU_RetiredFixedAsset": {
+                        "@EndUserText.label": "Subnumber of retired asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RU_ProdTraceabilityStartDate": {
+                        "@EndUserText.label": "Start date of traceability",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RU_ProdTraceabilityEndDate": {
+                        "@EndUserText.label": "End date of traceability",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RU_AssetTNVED": {
+                        "@EndUserText.label": "Foreign trade goods classification code of the customs union",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 17
+                      },
+                      "RU_AssetTransportType": {
+                        "@EndUserText.label": "Transport type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "RU_VehicleIdNumber": {
+                        "@EndUserText.label": "Manufacturer vehicle identification number for fleet object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 30
+                      },
+                      "RU_ManufacturingDate": {
+                        "@EndUserText.label": "Manufacturing date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RU_VehicleEcologicalClass": {
+                        "@EndUserText.label": "Ecological class",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "RU_PropertyAddress": {
+                        "@EndUserText.label": "Russia: property address",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RU_PropertyOwnershipRegnDate": {
+                        "@EndUserText.label": "Registration date of real estate ownership rights",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RU_PropertyOwnershipTermnDate": {
+                        "@EndUserText.label": "Termination date of real estate ownership rights",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "JP_Annex16AssetStructure": {
+                        "@EndUserText.label": "Japan: asset structure of annex16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "JP_Annex16AssetItem": {
+                        "@EndUserText.label": "Japan: asset item of annex16",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "JP_Annex16LeasingAgrmtDate": {
+                        "@EndUserText.label": "Japan: leasing agreement date of annex16-4 report",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "JP_PrptyTxRptCity": {
+                        "@EndUserText.label": "Japan: city code of property tax report",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "JP_PrptyTxRptClassfctnKey": {
+                        "@EndUserText.label": "Japan: classification key of property tax report",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "JP_PrptyTxRptSpclDepr": {
+                        "@EndUserText.label": "Japan: special depreciation code of property tax report",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "JP_PrptyTxRptAddlDepr": {
+                        "@EndUserText.label": "Additional depreciation code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "IN_AssetBlock": {
+                        "@EndUserText.label": "India: block key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "IN_AssetPutToUseDate": {
+                        "@EndUserText.label": "India: put to use date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "IN_AdditionalAssetBlock": {
+                        "@EndUserText.label": "India: additional depreciation block key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "IN_AssetIsResearchAndDev": {
+                        "@EndUserText.label": "India: r & d asset",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IN_AssetIsPriorYear": {
+                        "@EndUserText.label": "India: prior year transaction",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PT_VehicleTypeByEnergy": {
+                        "@EndUserText.label": "Portugal: vehicle type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "PT_VehicleIsWithoutLimit": {
+                        "@EndUserText.label": "Portugal: is vehicle without limit",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PT_BigRepairAssetLink": {
+                        "@EndUserText.label": "Portugal: repair asset link",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PT_LandAssetLink": {
+                        "@EndUserText.label": "Portugal: land asset link",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PT_AssetReportFormCategory": {
+                        "@EndUserText.label": "Portugal: asset report form category",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PT_AmortizedAssetIsReevaluated": {
+                        "@EndUserText.label": "Portugal: is amortized asset revaluated",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "IL_InvmtCtrInternalCode": {
+                        "@EndUserText.label": "Israel: internal code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "IL_InvmtCtrApprovalDocNmbr": {
+                        "@EndUserText.label": "Israel: approval document number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 15
+                      },
+                      "IL_InvmtCtrApprovalVersion": {
+                        "@EndUserText.label": "Israel: approval version",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "IL_InvmtCtrBogusAssetNumber": {
+                        "@EndUserText.label": "Israel: bogus asset number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "IL_InvmtCtrAssetVersion": {
+                        "@EndUserText.label": "Israel: asset version",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "RS_GroupDeprExclusionYear": {
+                        "@EndUserText.label": "Exclusion year",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RS_AssetLastInvoiceDate": {
+                        "@EndUserText.label": "Last invoice date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PL_AcquisitionProductionDate": {
+                        "@EndUserText.label": "Fixed asset acquisition/production date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "PL_AcquisitionDocumentType": {
+                        "@EndUserText.label": "Acquisition document type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "PL_AcquisitionFormNumber": {
+                        "@EndUserText.label": "Asset acquisition form/ot document number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 25
+                      },
+                      "PL_AssetTaxGroup": {
+                        "@EndUserText.label": "Saft asset tax group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "Country": {
+                        "@EndUserText.label": "Country/region key",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 3
+                      },
+                      "Change_Type": {
+                        "@EndUserText.label": "Change Type",
+                        "type": "cds.String",
+                        "key": false,
+                        "notNull": true,
+                        "length": 1,
+                        "default": {
+                          "val": "I"
+                        }
+                      },
+                      "Change_Date": {
+                        "@EndUserText.label": "Change Date",
+                        "type": "cds.Timestamp",
+                        "key": false,
+                        "notNull": true,
+                        "default": {
+                          "func": "CURRENT_UTCTIMESTAMP"
+                        }
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_FIXEDASSETCOUNTRYDATA_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Main asset number",
+                      "type": "cds.String",
+                      "length": 12,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "length": 4,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "NationalClassification": {
+                      "@EndUserText.label": "National classification code",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "TaxDepreciationGroup": {
+                      "@EndUserText.label": "Tax depreciation group",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RU_LongSerialNumber": {
+                      "@EndUserText.label": "Russia: serial number",
+                      "type": "cds.String",
+                      "length": 32
+                    },
+                    "RU_WorkwearMaterial": {
+                      "@EndUserText.label": "Material number",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "RU_RetiredMasterFixedAsset": {
+                      "@EndUserText.label": "Number of retired asset",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "RU_RetiredFixedAsset": {
+                      "@EndUserText.label": "Subnumber of retired asset",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RU_ProdTraceabilityStartDate": {
+                      "@EndUserText.label": "Start date of traceability",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RU_ProdTraceabilityEndDate": {
+                      "@EndUserText.label": "End date of traceability",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RU_AssetTNVED": {
+                      "@EndUserText.label": "Foreign trade goods classification code of the customs union",
+                      "type": "cds.String",
+                      "length": 17
+                    },
+                    "RU_AssetTransportType": {
+                      "@EndUserText.label": "Transport type",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "RU_VehicleIdNumber": {
+                      "@EndUserText.label": "Manufacturer vehicle identification number for fleet object",
+                      "type": "cds.String",
+                      "length": 30
+                    },
+                    "RU_ManufacturingDate": {
+                      "@EndUserText.label": "Manufacturing date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RU_VehicleEcologicalClass": {
+                      "@EndUserText.label": "Ecological class",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "RU_PropertyAddress": {
+                      "@EndUserText.label": "Russia: property address",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RU_PropertyOwnershipRegnDate": {
+                      "@EndUserText.label": "Registration date of real estate ownership rights",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RU_PropertyOwnershipTermnDate": {
+                      "@EndUserText.label": "Termination date of real estate ownership rights",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "JP_Annex16AssetStructure": {
+                      "@EndUserText.label": "Japan: asset structure of annex16",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "JP_Annex16AssetItem": {
+                      "@EndUserText.label": "Japan: asset item of annex16",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "JP_Annex16LeasingAgrmtDate": {
+                      "@EndUserText.label": "Japan: leasing agreement date of annex16-4 report",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "JP_PrptyTxRptCity": {
+                      "@EndUserText.label": "Japan: city code of property tax report",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "JP_PrptyTxRptClassfctnKey": {
+                      "@EndUserText.label": "Japan: classification key of property tax report",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "JP_PrptyTxRptSpclDepr": {
+                      "@EndUserText.label": "Japan: special depreciation code of property tax report",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "JP_PrptyTxRptAddlDepr": {
+                      "@EndUserText.label": "Additional depreciation code",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "IN_AssetBlock": {
+                      "@EndUserText.label": "India: block key",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "IN_AssetPutToUseDate": {
+                      "@EndUserText.label": "India: put to use date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "IN_AdditionalAssetBlock": {
+                      "@EndUserText.label": "India: additional depreciation block key",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "IN_AssetIsResearchAndDev": {
+                      "@EndUserText.label": "India: r & d asset",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IN_AssetIsPriorYear": {
+                      "@EndUserText.label": "India: prior year transaction",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PT_VehicleTypeByEnergy": {
+                      "@EndUserText.label": "Portugal: vehicle type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "PT_VehicleIsWithoutLimit": {
+                      "@EndUserText.label": "Portugal: is vehicle without limit",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PT_BigRepairAssetLink": {
+                      "@EndUserText.label": "Portugal: repair asset link",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PT_LandAssetLink": {
+                      "@EndUserText.label": "Portugal: land asset link",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PT_AssetReportFormCategory": {
+                      "@EndUserText.label": "Portugal: asset report form category",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PT_AmortizedAssetIsReevaluated": {
+                      "@EndUserText.label": "Portugal: is amortized asset revaluated",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "IL_InvmtCtrInternalCode": {
+                      "@EndUserText.label": "Israel: internal code",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "IL_InvmtCtrApprovalDocNmbr": {
+                      "@EndUserText.label": "Israel: approval document number",
+                      "type": "cds.String",
+                      "length": 15
+                    },
+                    "IL_InvmtCtrApprovalVersion": {
+                      "@EndUserText.label": "Israel: approval version",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "IL_InvmtCtrBogusAssetNumber": {
+                      "@EndUserText.label": "Israel: bogus asset number",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "IL_InvmtCtrAssetVersion": {
+                      "@EndUserText.label": "Israel: asset version",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "RS_GroupDeprExclusionYear": {
+                      "@EndUserText.label": "Exclusion year",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RS_AssetLastInvoiceDate": {
+                      "@EndUserText.label": "Last invoice date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PL_AcquisitionProductionDate": {
+                      "@EndUserText.label": "Fixed asset acquisition/production date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "PL_AcquisitionDocumentType": {
+                      "@EndUserText.label": "Acquisition document type",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "PL_AcquisitionFormNumber": {
+                      "@EndUserText.label": "Asset acquisition form/ot document number",
+                      "type": "cds.String",
+                      "length": 25
+                    },
+                    "PL_AssetTaxGroup": {
+                      "@EndUserText.label": "Saft asset tax group",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "Country": {
+                      "@EndUserText.label": "Country/region key",
+                      "type": "cds.String",
+                      "length": 3
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "notNull": true
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_I_FIXEDASSETCOUNTRYDATA_S4_CURR_Delta"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_FIXEDASSETCOUNTRYDATA"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "MasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "FixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "NationalClassification"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "TaxDepreciationGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_LongSerialNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_WorkwearMaterial"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_RetiredMasterFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_RetiredFixedAsset"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_ProdTraceabilityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_ProdTraceabilityEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_AssetTNVED"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_AssetTransportType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_VehicleIdNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_ManufacturingDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_VehicleEcologicalClass"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_PropertyAddress"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_PropertyOwnershipRegnDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RU_PropertyOwnershipTermnDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_Annex16AssetStructure"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_Annex16AssetItem"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_Annex16LeasingAgrmtDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_PrptyTxRptCity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_PrptyTxRptClassfctnKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_PrptyTxRptSpclDepr"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "JP_PrptyTxRptAddlDepr"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IN_AssetBlock"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IN_AssetPutToUseDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IN_AdditionalAssetBlock"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IN_AssetIsResearchAndDev"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IN_AssetIsPriorYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PT_VehicleTypeByEnergy"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PT_VehicleIsWithoutLimit"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PT_BigRepairAssetLink"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PT_LandAssetLink"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PT_AssetReportFormCategory"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PT_AmortizedAssetIsReevaluated"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IL_InvmtCtrInternalCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IL_InvmtCtrApprovalDocNmbr"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IL_InvmtCtrApprovalVersion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IL_InvmtCtrBogusAssetNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "IL_InvmtCtrAssetVersion"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RS_GroupDeprExclusionYear"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RS_AssetLastInvoiceDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PL_AcquisitionProductionDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PL_AcquisitionDocumentType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PL_AcquisitionFormNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "PL_AssetTaxGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Country"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Type"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Change_Date"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  \"d\".\"CompanyCode\",\"d\".\"MasterFixedAsset\",\"d\".\"FixedAsset\",\"d\".\"NationalClassification\",\"d\".\"TaxDepreciationGroup\",\"d\".\"RU_LongSerialNumber\",\"d\".\"RU_WorkwearMaterial\",\"d\".\"RU_RetiredMasterFixedAsset\",\"d\".\"RU_RetiredFixedAsset\",\"d\".\"RU_ProdTraceabilityStartDate\",\"d\".\"RU_ProdTraceabilityEndDate\",\"d\".\"RU_AssetTNVED\",\"d\".\"RU_AssetTransportType\",\"d\".\"RU_VehicleIdNumber\",\"d\".\"RU_ManufacturingDate\",\"d\".\"RU_VehicleEcologicalClass\",\"d\".\"RU_PropertyAddress\",\"d\".\"RU_PropertyOwnershipRegnDate\",\"d\".\"RU_PropertyOwnershipTermnDate\",\"d\".\"JP_Annex16AssetStructure\",\"d\".\"JP_Annex16AssetItem\",\"d\".\"JP_Annex16LeasingAgrmtDate\",\"d\".\"JP_PrptyTxRptCity\",\"d\".\"JP_PrptyTxRptClassfctnKey\",\"d\".\"JP_PrptyTxRptSpclDepr\",\"d\".\"JP_PrptyTxRptAddlDepr\",\"d\".\"IN_AssetBlock\",\"d\".\"IN_AssetPutToUseDate\",\"d\".\"IN_AdditionalAssetBlock\",\"d\".\"IN_AssetIsResearchAndDev\",\"d\".\"IN_AssetIsPriorYear\",\"d\".\"PT_VehicleTypeByEnergy\",\"d\".\"PT_VehicleIsWithoutLimit\",\"d\".\"PT_BigRepairAssetLink\",\"d\".\"PT_LandAssetLink\",\"d\".\"PT_AssetReportFormCategory\",\"d\".\"PT_AmortizedAssetIsReevaluated\",\"d\".\"IL_InvmtCtrInternalCode\",\"d\".\"IL_InvmtCtrApprovalDocNmbr\",\"d\".\"IL_InvmtCtrApprovalVersion\",\"d\".\"IL_InvmtCtrBogusAssetNumber\",\"d\".\"IL_InvmtCtrAssetVersion\",\"d\".\"RS_GroupDeprExclusionYear\",\"d\".\"RS_AssetLastInvoiceDate\",\"d\".\"PL_AcquisitionProductionDate\",\"d\".\"PL_AcquisitionDocumentType\",\"d\".\"PL_AcquisitionFormNumber\",\"d\".\"PL_AssetTaxGroup\",\"d\".\"Country\",\"d\".\"Change_Type\",\"d\".\"Change_Date\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_I_FIXEDASSETCOUNTRYDATA_S4_CURR_Delta\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_FIXEDASSETCOUNTRYDATA'",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    },
+                    "deltaFromEntities": [
+                      "1_INBOUND_S4_CURR.1LT_I_FIXEDASSETCOUNTRYDATA_S4_CURR_Delta"
+                    ]
+                  }
+                },
+                "cdcColumns": [
+                  "Change_Type",
+                  "Change_Date"
+                ],
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_I_FIXEDASSETCOUNTRYDATA_S4_AUD_CURR_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "MasterFixedAsset",
+                    "target": "MasterFixedAsset"
+                  },
+                  {
+                    "source": "FixedAsset",
+                    "target": "FixedAsset"
+                  },
+                  {
+                    "source": "NationalClassification",
+                    "target": "NationalClassification"
+                  },
+                  {
+                    "source": "TaxDepreciationGroup",
+                    "target": "TaxDepreciationGroup"
+                  },
+                  {
+                    "source": "RU_LongSerialNumber",
+                    "target": "RU_LongSerialNumber"
+                  },
+                  {
+                    "source": "RU_WorkwearMaterial",
+                    "target": "RU_WorkwearMaterial"
+                  },
+                  {
+                    "source": "RU_RetiredMasterFixedAsset",
+                    "target": "RU_RetiredMasterFixedAsset"
+                  },
+                  {
+                    "source": "RU_RetiredFixedAsset",
+                    "target": "RU_RetiredFixedAsset"
+                  },
+                  {
+                    "source": "RU_ProdTraceabilityStartDate",
+                    "target": "RU_ProdTraceabilityStartDate"
+                  },
+                  {
+                    "source": "RU_ProdTraceabilityEndDate",
+                    "target": "RU_ProdTraceabilityEndDate"
+                  },
+                  {
+                    "source": "RU_AssetTNVED",
+                    "target": "RU_AssetTNVED"
+                  },
+                  {
+                    "source": "RU_AssetTransportType",
+                    "target": "RU_AssetTransportType"
+                  },
+                  {
+                    "source": "RU_VehicleIdNumber",
+                    "target": "RU_VehicleIdNumber"
+                  },
+                  {
+                    "source": "RU_ManufacturingDate",
+                    "target": "RU_ManufacturingDate"
+                  },
+                  {
+                    "source": "RU_VehicleEcologicalClass",
+                    "target": "RU_VehicleEcologicalClass"
+                  },
+                  {
+                    "source": "RU_PropertyAddress",
+                    "target": "RU_PropertyAddress"
+                  },
+                  {
+                    "source": "RU_PropertyOwnershipRegnDate",
+                    "target": "RU_PropertyOwnershipRegnDate"
+                  },
+                  {
+                    "source": "RU_PropertyOwnershipTermnDate",
+                    "target": "RU_PropertyOwnershipTermnDate"
+                  },
+                  {
+                    "source": "JP_Annex16AssetStructure",
+                    "target": "JP_Annex16AssetStructure"
+                  },
+                  {
+                    "source": "JP_Annex16AssetItem",
+                    "target": "JP_Annex16AssetItem"
+                  },
+                  {
+                    "source": "JP_Annex16LeasingAgrmtDate",
+                    "target": "JP_Annex16LeasingAgrmtDate"
+                  },
+                  {
+                    "source": "JP_PrptyTxRptCity",
+                    "target": "JP_PrptyTxRptCity"
+                  },
+                  {
+                    "source": "JP_PrptyTxRptClassfctnKey",
+                    "target": "JP_PrptyTxRptClassfctnKey"
+                  },
+                  {
+                    "source": "JP_PrptyTxRptSpclDepr",
+                    "target": "JP_PrptyTxRptSpclDepr"
+                  },
+                  {
+                    "source": "JP_PrptyTxRptAddlDepr",
+                    "target": "JP_PrptyTxRptAddlDepr"
+                  },
+                  {
+                    "source": "IN_AssetBlock",
+                    "target": "IN_AssetBlock"
+                  },
+                  {
+                    "source": "IN_AssetPutToUseDate",
+                    "target": "IN_AssetPutToUseDate"
+                  },
+                  {
+                    "source": "IN_AdditionalAssetBlock",
+                    "target": "IN_AdditionalAssetBlock"
+                  },
+                  {
+                    "source": "IN_AssetIsResearchAndDev",
+                    "target": "IN_AssetIsResearchAndDev"
+                  },
+                  {
+                    "source": "IN_AssetIsPriorYear",
+                    "target": "IN_AssetIsPriorYear"
+                  },
+                  {
+                    "source": "PT_VehicleTypeByEnergy",
+                    "target": "PT_VehicleTypeByEnergy"
+                  },
+                  {
+                    "source": "PT_VehicleIsWithoutLimit",
+                    "target": "PT_VehicleIsWithoutLimit"
+                  },
+                  {
+                    "source": "PT_BigRepairAssetLink",
+                    "target": "PT_BigRepairAssetLink"
+                  },
+                  {
+                    "source": "PT_LandAssetLink",
+                    "target": "PT_LandAssetLink"
+                  },
+                  {
+                    "source": "PT_AssetReportFormCategory",
+                    "target": "PT_AssetReportFormCategory"
+                  },
+                  {
+                    "source": "PT_AmortizedAssetIsReevaluated",
+                    "target": "PT_AmortizedAssetIsReevaluated"
+                  },
+                  {
+                    "source": "IL_InvmtCtrInternalCode",
+                    "target": "IL_InvmtCtrInternalCode"
+                  },
+                  {
+                    "source": "IL_InvmtCtrApprovalDocNmbr",
+                    "target": "IL_InvmtCtrApprovalDocNmbr"
+                  },
+                  {
+                    "source": "IL_InvmtCtrApprovalVersion",
+                    "target": "IL_InvmtCtrApprovalVersion"
+                  },
+                  {
+                    "source": "IL_InvmtCtrBogusAssetNumber",
+                    "target": "IL_InvmtCtrBogusAssetNumber"
+                  },
+                  {
+                    "source": "IL_InvmtCtrAssetVersion",
+                    "target": "IL_InvmtCtrAssetVersion"
+                  },
+                  {
+                    "source": "RS_GroupDeprExclusionYear",
+                    "target": "RS_GroupDeprExclusionYear"
+                  },
+                  {
+                    "source": "RS_AssetLastInvoiceDate",
+                    "target": "RS_AssetLastInvoiceDate"
+                  },
+                  {
+                    "source": "PL_AcquisitionProductionDate",
+                    "target": "PL_AcquisitionProductionDate"
+                  },
+                  {
+                    "source": "PL_AcquisitionDocumentType",
+                    "target": "PL_AcquisitionDocumentType"
+                  },
+                  {
+                    "source": "PL_AcquisitionFormNumber",
+                    "target": "PL_AcquisitionFormNumber"
+                  },
+                  {
+                    "source": "PL_AssetTaxGroup",
+                    "target": "PL_AssetTaxGroup"
+                  },
+                  {
+                    "source": "Country",
+                    "target": "Country"
+                  },
+                  {
+                    "source": "Change_Type",
+                    "target": "Change_Type"
+                  },
+                  {
+                    "source": "Change_Date",
+                    "target": "Change_Date"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "MasterFixedAsset": {
+                      "@EndUserText.label": "Main asset number",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 12,
+                      "notNull": true
+                    },
+                    "FixedAsset": {
+                      "@EndUserText.label": "Asset subnumber",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 4,
+                      "notNull": true
+                    },
+                    "NationalClassification": {
+                      "@EndUserText.label": "National classification code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "TaxDepreciationGroup": {
+                      "@EndUserText.label": "Tax depreciation group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RU_LongSerialNumber": {
+                      "@EndUserText.label": "Russia: serial number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 32
+                    },
+                    "RU_WorkwearMaterial": {
+                      "@EndUserText.label": "Material number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 40
+                    },
+                    "RU_RetiredMasterFixedAsset": {
+                      "@EndUserText.label": "Number of retired asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "RU_RetiredFixedAsset": {
+                      "@EndUserText.label": "Subnumber of retired asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RU_ProdTraceabilityStartDate": {
+                      "@EndUserText.label": "Start date of traceability",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "RU_ProdTraceabilityEndDate": {
+                      "@EndUserText.label": "End date of traceability",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "RU_AssetTNVED": {
+                      "@EndUserText.label": "Foreign trade goods classification code of the customs union",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 17
+                    },
+                    "RU_AssetTransportType": {
+                      "@EndUserText.label": "Transport type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "RU_VehicleIdNumber": {
+                      "@EndUserText.label": "Manufacturer vehicle identification number for fleet object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 30
+                    },
+                    "RU_ManufacturingDate": {
+                      "@EndUserText.label": "Manufacturing date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "RU_VehicleEcologicalClass": {
+                      "@EndUserText.label": "Ecological class",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "RU_PropertyAddress": {
+                      "@EndUserText.label": "Russia: property address",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "RU_PropertyOwnershipRegnDate": {
+                      "@EndUserText.label": "Registration date of real estate ownership rights",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "RU_PropertyOwnershipTermnDate": {
+                      "@EndUserText.label": "Termination date of real estate ownership rights",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "JP_Annex16AssetStructure": {
+                      "@EndUserText.label": "Japan: asset structure of annex16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "JP_Annex16AssetItem": {
+                      "@EndUserText.label": "Japan: asset item of annex16",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "JP_Annex16LeasingAgrmtDate": {
+                      "@EndUserText.label": "Japan: leasing agreement date of annex16-4 report",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "JP_PrptyTxRptCity": {
+                      "@EndUserText.label": "Japan: city code of property tax report",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "JP_PrptyTxRptClassfctnKey": {
+                      "@EndUserText.label": "Japan: classification key of property tax report",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "JP_PrptyTxRptSpclDepr": {
+                      "@EndUserText.label": "Japan: special depreciation code of property tax report",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "JP_PrptyTxRptAddlDepr": {
+                      "@EndUserText.label": "Additional depreciation code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "IN_AssetBlock": {
+                      "@EndUserText.label": "India: block key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "IN_AssetPutToUseDate": {
+                      "@EndUserText.label": "India: put to use date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "IN_AdditionalAssetBlock": {
+                      "@EndUserText.label": "India: additional depreciation block key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "IN_AssetIsResearchAndDev": {
+                      "@EndUserText.label": "India: r & d asset",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IN_AssetIsPriorYear": {
+                      "@EndUserText.label": "India: prior year transaction",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PT_VehicleTypeByEnergy": {
+                      "@EndUserText.label": "Portugal: vehicle type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "PT_VehicleIsWithoutLimit": {
+                      "@EndUserText.label": "Portugal: is vehicle without limit",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PT_BigRepairAssetLink": {
+                      "@EndUserText.label": "Portugal: repair asset link",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PT_LandAssetLink": {
+                      "@EndUserText.label": "Portugal: land asset link",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PT_AssetReportFormCategory": {
+                      "@EndUserText.label": "Portugal: asset report form category",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PT_AmortizedAssetIsReevaluated": {
+                      "@EndUserText.label": "Portugal: is amortized asset revaluated",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "IL_InvmtCtrInternalCode": {
+                      "@EndUserText.label": "Israel: internal code",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "IL_InvmtCtrApprovalDocNmbr": {
+                      "@EndUserText.label": "Israel: approval document number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 15
+                    },
+                    "IL_InvmtCtrApprovalVersion": {
+                      "@EndUserText.label": "Israel: approval version",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "IL_InvmtCtrBogusAssetNumber": {
+                      "@EndUserText.label": "Israel: bogus asset number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "IL_InvmtCtrAssetVersion": {
+                      "@EndUserText.label": "Israel: asset version",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "RS_GroupDeprExclusionYear": {
+                      "@EndUserText.label": "Exclusion year",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RS_AssetLastInvoiceDate": {
+                      "@EndUserText.label": "Last invoice date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PL_AcquisitionProductionDate": {
+                      "@EndUserText.label": "Fixed asset acquisition/production date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "PL_AcquisitionDocumentType": {
+                      "@EndUserText.label": "Acquisition document type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "PL_AcquisitionFormNumber": {
+                      "@EndUserText.label": "Asset acquisition form/ot document number",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 25
+                    },
+                    "PL_AssetTaxGroup": {
+                      "@EndUserText.label": "Saft asset tax group",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "Country": {
+                      "@EndUserText.label": "Country/region key",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 3
+                    },
+                    "Change_Type": {
+                      "@EndUserText.label": "Change Type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1,
+                      "notNull": true,
+                      "default": {
+                        "val": "I"
+                      }
+                    },
+                    "Change_Date": {
+                      "@EndUserText.label": "Change Date",
+                      "type": "cds.Timestamp",
+                      "key": false,
+                      "notNull": true,
+                      "default": {
+                        "func": "CURRENT_UTCTIMESTAMP"
+                      }
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_I_FIXEDASSETCOUNTRYDATA_S4_AUD_CURR_01",
+                  "@DataWarehouse.delta": {
+                    "type": {
+                      "#": "UPSERT"
+                    },
+                    "dateTimeElement": {
+                      "=": "Change_Date"
+                    },
+                    "modeElement": {
+                      "=": "Change_Type"
+                    }
+                  },
+                  "@DataWarehouse.enclosingObject": "2LT_I_FIXEDASSETCOUNTRYDATA_S4_AUD_CURR_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_GVXKEDUZ"
+                    }
+                  }
+                },
+                "name": "2LT_I_FIXEDASSETCOUNTRYDATA_S4_AUD_CURR_01_Delta",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      }
+    }
+  }
+}

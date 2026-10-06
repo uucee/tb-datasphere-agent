@@ -1,0 +1,2441 @@
+{
+  "definitions": {
+    "2LT_I_SUPPLIER_S4_AUD_CURR_01": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "Supplier": {
+          "@EndUserText.label": "Account number of supplier",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "SupplierAccountGroup": {
+          "@EndUserText.label": "Supplier account group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierName": {
+          "@EndUserText.label": "Name of supplier",
+          "type": "cds.String",
+          "key": false,
+          "length": 80
+        },
+        "SupplierFullName": {
+          "@EndUserText.label": "Supplier full name",
+          "type": "cds.String",
+          "key": false,
+          "length": 220
+        },
+        "BPSupplierName": {
+          "@EndUserText.label": "Supplier name",
+          "type": "cds.String",
+          "key": false,
+          "length": 81
+        },
+        "BPSupplierFullName": {
+          "@EndUserText.label": "Supplier full name",
+          "type": "cds.String",
+          "key": false,
+          "length": 163
+        },
+        "BusinessPartnerName1": {
+          "@EndUserText.label": "Name 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerName2": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerName3": {
+          "@EndUserText.label": "Name 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerName4": {
+          "@EndUserText.label": "Name 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPAddrCityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPAddrStreetName": {
+          "@EndUserText.label": "Street",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "AddressSearchTerm1": {
+          "@EndUserText.label": "Search term 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "AddressSearchTerm2": {
+          "@EndUserText.label": "Search term 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "DistrictName": {
+          "@EndUserText.label": "District",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "POBoxDeviatingCityName": {
+          "@EndUserText.label": "Po box city",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerFormOfAddress": {
+          "@EndUserText.label": "Form-of-address key",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "IsBusinessPurposeCompleted": {
+          "@EndUserText.label": "Business purpose completed flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created the object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Record created on",
+          "type": "cds.Date",
+          "key": false
+        },
+        "IsOneTimeAccount": {
+          "@EndUserText.label": "Indicator: is the account a one-time account?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AuthorizationGroup": {
+          "@EndUserText.label": "Authorization group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "VATRegistration": {
+          "@EndUserText.label": "Vat registration number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "AccountIsBlockedForPosting": {
+          "@EndUserText.label": "Central posting block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "SupplierStandardCarrierAccess": {
+          "@EndUserText.label": "Standard carrier access code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierFwdAgentFreightGroup": {
+          "@EndUserText.label": "Forwarding agent freight group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierAgentProcedureGroup": {
+          "@EndUserText.label": "Service agent procedure group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplIsSocialInsuranceRegtrd": {
+          "@EndUserText.label": "Registered for social insurance",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SocialInsuranceActivityCode": {
+          "@EndUserText.label": "Activity code for social insurance",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "SupplierCorporateGroup": {
+          "@EndUserText.label": "Group key",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Customer": {
+          "@EndUserText.label": "Customer number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Industry": {
+          "@EndUserText.label": "Industry key",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "TaxNumber1": {
+          "@EndUserText.label": "Tax number 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "TaxNumber2": {
+          "@EndUserText.label": "Tax number 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "TaxNumber3": {
+          "@EndUserText.label": "Tax number 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "TaxNumber4": {
+          "@EndUserText.label": "Tax number 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "TaxNumber5": {
+          "@EndUserText.label": "Tax number 5",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "TaxNumber6": {
+          "@EndUserText.label": "Tax number 6",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "PostingIsBlocked": {
+          "@EndUserText.label": "Central posting block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PurchasingIsBlocked": {
+          "@EndUserText.label": "Centrally imposed purchasing block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InternationalLocationNumber1": {
+          "@EndUserText.label": "International location number  (part 1)",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "InternationalLocationNumber2": {
+          "@EndUserText.label": "International location number (part 2)",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "InternationalLocationNumber3": {
+          "@EndUserText.label": "Check digit for the international location number",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AddressID": {
+          "@EndUserText.label": "Address",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Region": {
+          "@EndUserText.label": "Region (state, province, county)",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "OrganizationBPName1": {
+          "@EndUserText.label": "Name",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "OrganizationBPName2": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "PostalCode": {
+          "@EndUserText.label": "Postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "StreetName": {
+          "@EndUserText.label": "Street and house number",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "ConcatenatedInternationalLocNo": {
+          "@EndUserText.label": "Cocatenated international location number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "SupplierProcurementBlock": {
+          "@EndUserText.label": "Function that will be blocked",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SuplrQualityManagementSystem": {
+          "@EndUserText.label": "Actual qm system of supplier",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SuplrQltyInProcmtCertfnValidTo": {
+          "@EndUserText.label": "Validity date of certification",
+          "type": "cds.Date",
+          "key": false
+        },
+        "SupplierLanguage": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AlternativePayeeAccountNumber": {
+          "@EndUserText.label": "Account number of the alternative payee",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PhoneNumber1": {
+          "@EndUserText.label": "First telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "Fax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 31
+        },
+        "IsNaturalPerson": {
+          "@EndUserText.label": "Natural person",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxNumberResponsible": {
+          "@EndUserText.label": "Tax number at responsible tax authority",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "UK_ContractorBusinessType": {
+          "@EndUserText.label": "Subcontractor's business type",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "UK_PartnerTradingName": {
+          "@EndUserText.label": "Partner's trading name",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "UK_PartnerTaxReference": {
+          "@EndUserText.label": "Partner's unique tax reference (utr)",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "UK_VerificationStatus": {
+          "@EndUserText.label": "Verification status",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "UK_VerificationNumber": {
+          "@EndUserText.label": "Verification number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "UK_CompanyRegistrationNumber": {
+          "@EndUserText.label": "Companies house registration number",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "UK_VerifiedTaxStatus": {
+          "@EndUserText.label": "Tax status of the verified subcontractor",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FormOfAddress": {
+          "@EndUserText.label": "Title",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "ReferenceAccountGroup": {
+          "@EndUserText.label": "Reference account group for one-time account (vendor)",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "VATLiability": {
+          "@EndUserText.label": "Liable for vat",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ResponsibleType": {
+          "@EndUserText.label": "Tax type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TaxNumberType": {
+          "@EndUserText.label": "Tax number type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FiscalAddress": {
+          "@EndUserText.label": "Account number of the master record with fiscal address",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "BusinessType": {
+          "@EndUserText.label": "Type of business",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "BirthDate": {
+          "@EndUserText.label": "Date of birth of the person subject to withholding tax",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CreditorInformationNumber": {
+          "@EndUserText.label": "Credit information number",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "PaymentIsBlockedForSupplier": {
+          "@EndUserText.label": "Payment block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SortField": {
+          "@EndUserText.label": "Sort field",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PhoneNumber2": {
+          "@EndUserText.label": "Second telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "DeletionIndicator": {
+          "@EndUserText.label": "Central deletion flag for master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxInvoiceRepresentativeName": {
+          "@EndUserText.label": "Name of representative",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IndustryType": {
+          "@EndUserText.label": "Type of industry",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "IN_GSTSupplierClassification": {
+          "@EndUserText.label": "Vendor classification for gst",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SuplrProofOfDelivRlvtCode": {
+          "@EndUserText.label": "Supplier indicator relevant for proof of delivery",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TradingPartner": {
+          "@EndUserText.label": "Company id of trading partner",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "BR_TaxIsSplit": {
+          "@EndUserText.label": "Tax split",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PayerIsPayingToCarryOnEnt": {
+          "@EndUserText.label": "Is payer making payment in course of carrying on enterprise",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_IndividualIsUnder18": {
+          "@EndUserText.label": "Is an individual under 18 and payment does not exceed $350",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PaymentIsExceeding75": {
+          "@EndUserText.label": "The payment does not exceed $75, excl. gst",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PaymentIsWhollyInputTaxed": {
+          "@EndUserText.label": "The supply that the payment relates to is wholly input taxed",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PartnerIsSupplyWithoutGain": {
+          "@EndUserText.label": "The supply is made by an individual without gain",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_SupplierIsEntitledToABN": {
+          "@EndUserText.label": "The supplier is not entitled to an abn",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PaymentIsIncomeExempted": {
+          "@EndUserText.label": "The whole of the payment is exempt income.",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_SupplyIsMadeAsPrivateHobby": {
+          "@EndUserText.label": "An activity done as a private recreational pursuit",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_SupplyMadeIsOfDmstcNature": {
+          "@EndUserText.label": "Wholly of a private or domestic nature",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsToBeAcceptedAtOrigin": {
+          "@EndUserText.label": "Acceptance at origin",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BPIsEqualizationTaxSubject": {
+          "@EndUserText.label": "Checkbox",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BRSpcfcTaxBasePercentageCode": {
+          "@EndUserText.label": "Tax base in percentage",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SupplierProfession": {
+          "@EndUserText.label": "Profession",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "SuplrManufacturerExternalName": {
+          "@EndUserText.label": "External manufacturer code name or number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "DataMediumExchangeIndicator": {
+          "@EndUserText.label": "Recipient code for data medium exchange",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DataExchangeInstructionKey": {
+          "@EndUserText.label": "Instruction key for data medium exchange",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SupplierIsSubRangeRelevant": {
+          "@EndUserText.label": "Indicator: vendor sub-range relevant",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TrainStationName": {
+          "@EndUserText.label": "Train station",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "AlternativePayeeIsAllowed": {
+          "@EndUserText.label": "Indicator: alternative payee in document allowed?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PaytSlipWthRefSubscriber": {
+          "@EndUserText.label": "Isr subscriber number",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "TranspServiceAgentStstcGrp": {
+          "@EndUserText.label": "Shipment: statistics group, transportation service agent",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SupplierIsPlantRelevant": {
+          "@EndUserText.label": "Indicator: plant level relevant",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SuplrTaxAuthorityAccountNumber": {
+          "@EndUserText.label": "Account number of master record of tax office responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SuplrCarrierConfirmIsExpected": {
+          "@EndUserText.label": "Carrier confirmation is expected",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SupplierPlant": {
+          "@EndUserText.label": "Plant (own or external)",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FactoryCalendar": {
+          "@EndUserText.label": "Factory calendar key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PaymentReason": {
+          "@EndUserText.label": "Payment reason",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierCentralDeletionIsBlock": {
+          "@EndUserText.label": "Central deletion block for master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DataControllerSet": {
+          "@EndUserText.label": "Bp: data controller set flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DataController1": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController2": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController3": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController4": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController5": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController6": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController7": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController8": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController9": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController10": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "SupplierTransportationChain": {
+          "@EndUserText.label": "Transportation chain",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SupplierStagingTimeInDays": {
+          "@EndUserText.label": "Staging time in days",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 3,
+          "scale": 0
+        },
+        "SupplierSchedulingProcedure": {
+          "@EndUserText.label": "Scheduling procedure",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CollectiveNumberingIsRelevant": {
+          "@EndUserText.label": "Cross docking: relevant for collective numbering",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BusinessPartnerPanNumber": {
+          "@EndUserText.label": "Permanent account number",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPPanReferenceNumber": {
+          "@EndUserText.label": "Pan reference number",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPPanValidFromDate": {
+          "@EndUserText.label": "Pan valid from date",
+          "type": "cds.Date",
+          "key": false
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_SUPPLIER_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "2LT_I_SUPPLIER_S4_AUD_CURR_01_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "2LT_I_SUPPLIER_S4_AUD_CURR_01_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "BATCH_ID"
+              ]
+            },
+            {
+              "ref": [
+                "LOAD_TIMESTAMP"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_SYSTEM"
+              ]
+            },
+            {
+              "ref": [
+                "SOURCE_FILE"
+              ]
+            },
+            {
+              "ref": [
+                "Supplier"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierAccountGroup"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierName"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierFullName"
+              ]
+            },
+            {
+              "ref": [
+                "BPSupplierName"
+              ]
+            },
+            {
+              "ref": [
+                "BPSupplierFullName"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartnerName1"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartnerName2"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartnerName3"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartnerName4"
+              ]
+            },
+            {
+              "ref": [
+                "BPAddrCityName"
+              ]
+            },
+            {
+              "ref": [
+                "BPAddrStreetName"
+              ]
+            },
+            {
+              "ref": [
+                "AddressSearchTerm1"
+              ]
+            },
+            {
+              "ref": [
+                "AddressSearchTerm2"
+              ]
+            },
+            {
+              "ref": [
+                "DistrictName"
+              ]
+            },
+            {
+              "ref": [
+                "POBoxDeviatingCityName"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartnerFormOfAddress"
+              ]
+            },
+            {
+              "ref": [
+                "IsBusinessPurposeCompleted"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedByUser"
+              ]
+            },
+            {
+              "ref": [
+                "CreationDate"
+              ]
+            },
+            {
+              "ref": [
+                "IsOneTimeAccount"
+              ]
+            },
+            {
+              "ref": [
+                "AuthorizationGroup"
+              ]
+            },
+            {
+              "ref": [
+                "VATRegistration"
+              ]
+            },
+            {
+              "ref": [
+                "AccountIsBlockedForPosting"
+              ]
+            },
+            {
+              "ref": [
+                "TaxJurisdiction"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierStandardCarrierAccess"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierFwdAgentFreightGroup"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierAgentProcedureGroup"
+              ]
+            },
+            {
+              "ref": [
+                "SupplIsSocialInsuranceRegtrd"
+              ]
+            },
+            {
+              "ref": [
+                "SocialInsuranceActivityCode"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierCorporateGroup"
+              ]
+            },
+            {
+              "ref": [
+                "Customer"
+              ]
+            },
+            {
+              "ref": [
+                "Industry"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumber1"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumber2"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumber3"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumber4"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumber5"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumber6"
+              ]
+            },
+            {
+              "ref": [
+                "PostingIsBlocked"
+              ]
+            },
+            {
+              "ref": [
+                "PurchasingIsBlocked"
+              ]
+            },
+            {
+              "ref": [
+                "InternationalLocationNumber1"
+              ]
+            },
+            {
+              "ref": [
+                "InternationalLocationNumber2"
+              ]
+            },
+            {
+              "ref": [
+                "InternationalLocationNumber3"
+              ]
+            },
+            {
+              "ref": [
+                "AddressID"
+              ]
+            },
+            {
+              "ref": [
+                "Region"
+              ]
+            },
+            {
+              "ref": [
+                "OrganizationBPName1"
+              ]
+            },
+            {
+              "ref": [
+                "OrganizationBPName2"
+              ]
+            },
+            {
+              "ref": [
+                "CityName"
+              ]
+            },
+            {
+              "ref": [
+                "PostalCode"
+              ]
+            },
+            {
+              "ref": [
+                "StreetName"
+              ]
+            },
+            {
+              "ref": [
+                "Country"
+              ]
+            },
+            {
+              "ref": [
+                "ConcatenatedInternationalLocNo"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierProcurementBlock"
+              ]
+            },
+            {
+              "ref": [
+                "SuplrQualityManagementSystem"
+              ]
+            },
+            {
+              "ref": [
+                "SuplrQltyInProcmtCertfnValidTo"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierLanguage"
+              ]
+            },
+            {
+              "ref": [
+                "AlternativePayeeAccountNumber"
+              ]
+            },
+            {
+              "ref": [
+                "PhoneNumber1"
+              ]
+            },
+            {
+              "ref": [
+                "FaxNumber"
+              ]
+            },
+            {
+              "ref": [
+                "IsNaturalPerson"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumberResponsible"
+              ]
+            },
+            {
+              "ref": [
+                "UK_ContractorBusinessType"
+              ]
+            },
+            {
+              "ref": [
+                "UK_PartnerTradingName"
+              ]
+            },
+            {
+              "ref": [
+                "UK_PartnerTaxReference"
+              ]
+            },
+            {
+              "ref": [
+                "UK_VerificationStatus"
+              ]
+            },
+            {
+              "ref": [
+                "UK_VerificationNumber"
+              ]
+            },
+            {
+              "ref": [
+                "UK_CompanyRegistrationNumber"
+              ]
+            },
+            {
+              "ref": [
+                "UK_VerifiedTaxStatus"
+              ]
+            },
+            {
+              "ref": [
+                "FormOfAddress"
+              ]
+            },
+            {
+              "ref": [
+                "ReferenceAccountGroup"
+              ]
+            },
+            {
+              "ref": [
+                "VATLiability"
+              ]
+            },
+            {
+              "ref": [
+                "ResponsibleType"
+              ]
+            },
+            {
+              "ref": [
+                "TaxNumberType"
+              ]
+            },
+            {
+              "ref": [
+                "FiscalAddress"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessType"
+              ]
+            },
+            {
+              "ref": [
+                "BirthDate"
+              ]
+            },
+            {
+              "ref": [
+                "CreditorInformationNumber"
+              ]
+            },
+            {
+              "ref": [
+                "PaymentIsBlockedForSupplier"
+              ]
+            },
+            {
+              "ref": [
+                "SortField"
+              ]
+            },
+            {
+              "ref": [
+                "PhoneNumber2"
+              ]
+            },
+            {
+              "ref": [
+                "DeletionIndicator"
+              ]
+            },
+            {
+              "ref": [
+                "TaxInvoiceRepresentativeName"
+              ]
+            },
+            {
+              "ref": [
+                "IndustryType"
+              ]
+            },
+            {
+              "ref": [
+                "IN_GSTSupplierClassification"
+              ]
+            },
+            {
+              "ref": [
+                "SuplrProofOfDelivRlvtCode"
+              ]
+            },
+            {
+              "ref": [
+                "TradingPartner"
+              ]
+            },
+            {
+              "ref": [
+                "BR_TaxIsSplit"
+              ]
+            },
+            {
+              "ref": [
+                "AU_PayerIsPayingToCarryOnEnt"
+              ]
+            },
+            {
+              "ref": [
+                "AU_IndividualIsUnder18"
+              ]
+            },
+            {
+              "ref": [
+                "AU_PaymentIsExceeding75"
+              ]
+            },
+            {
+              "ref": [
+                "AU_PaymentIsWhollyInputTaxed"
+              ]
+            },
+            {
+              "ref": [
+                "AU_PartnerIsSupplyWithoutGain"
+              ]
+            },
+            {
+              "ref": [
+                "AU_SupplierIsEntitledToABN"
+              ]
+            },
+            {
+              "ref": [
+                "AU_PaymentIsIncomeExempted"
+              ]
+            },
+            {
+              "ref": [
+                "AU_SupplyIsMadeAsPrivateHobby"
+              ]
+            },
+            {
+              "ref": [
+                "AU_SupplyMadeIsOfDmstcNature"
+              ]
+            },
+            {
+              "ref": [
+                "IsToBeAcceptedAtOrigin"
+              ]
+            },
+            {
+              "ref": [
+                "BPIsEqualizationTaxSubject"
+              ]
+            },
+            {
+              "ref": [
+                "BRSpcfcTaxBasePercentageCode"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierProfession"
+              ]
+            },
+            {
+              "ref": [
+                "SuplrManufacturerExternalName"
+              ]
+            },
+            {
+              "ref": [
+                "DataMediumExchangeIndicator"
+              ]
+            },
+            {
+              "ref": [
+                "DataExchangeInstructionKey"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierIsSubRangeRelevant"
+              ]
+            },
+            {
+              "ref": [
+                "TrainStationName"
+              ]
+            },
+            {
+              "ref": [
+                "AlternativePayeeIsAllowed"
+              ]
+            },
+            {
+              "ref": [
+                "PaytSlipWthRefSubscriber"
+              ]
+            },
+            {
+              "ref": [
+                "TranspServiceAgentStstcGrp"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierIsPlantRelevant"
+              ]
+            },
+            {
+              "ref": [
+                "SuplrTaxAuthorityAccountNumber"
+              ]
+            },
+            {
+              "ref": [
+                "SuplrCarrierConfirmIsExpected"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierPlant"
+              ]
+            },
+            {
+              "ref": [
+                "FactoryCalendar"
+              ]
+            },
+            {
+              "ref": [
+                "PaymentReason"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierCentralDeletionIsBlock"
+              ]
+            },
+            {
+              "ref": [
+                "DataControllerSet"
+              ]
+            },
+            {
+              "ref": [
+                "DataController1"
+              ]
+            },
+            {
+              "ref": [
+                "DataController2"
+              ]
+            },
+            {
+              "ref": [
+                "DataController3"
+              ]
+            },
+            {
+              "ref": [
+                "DataController4"
+              ]
+            },
+            {
+              "ref": [
+                "DataController5"
+              ]
+            },
+            {
+              "ref": [
+                "DataController6"
+              ]
+            },
+            {
+              "ref": [
+                "DataController7"
+              ]
+            },
+            {
+              "ref": [
+                "DataController8"
+              ]
+            },
+            {
+              "ref": [
+                "DataController9"
+              ]
+            },
+            {
+              "ref": [
+                "DataController10"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierTransportationChain"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierStagingTimeInDays"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierSchedulingProcedure"
+              ]
+            },
+            {
+              "ref": [
+                "CollectiveNumberingIsRelevant"
+              ]
+            },
+            {
+              "ref": [
+                "BusinessPartnerPanNumber"
+              ]
+            },
+            {
+              "ref": [
+                "BPPanReferenceNumber"
+              ]
+            },
+            {
+              "ref": [
+                "BPPanValidFromDate"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@DataWarehouse.repository.technicalType": {
+        "#": "DWC_LOCAL_TABLE"
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_EDFWMQWN"
+        }
+      }
+    },
+    "2LT_I_SUPPLIER_S4_AUD_CURR_01_Delta": {
+      "elements": {
+        "BATCH_ID": {
+          "@EndUserText.label": "BATCH_ID",
+          "type": "cds.Integer64",
+          "key": false,
+          "notNull": true
+        },
+        "LOAD_TIMESTAMP": {
+          "@EndUserText.label": "LOAD_TIMESTAMP",
+          "type": "cds.String",
+          "key": false,
+          "length": 100
+        },
+        "SOURCE_SYSTEM": {
+          "@EndUserText.label": "SOURCE_SYSTEM",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "SOURCE_FILE": {
+          "@EndUserText.label": "SOURCE_FILE",
+          "type": "cds.String",
+          "key": false,
+          "length": 500
+        },
+        "Supplier": {
+          "@EndUserText.label": "Account number of supplier",
+          "type": "cds.String",
+          "key": true,
+          "length": 10,
+          "notNull": true
+        },
+        "SupplierAccountGroup": {
+          "@EndUserText.label": "Supplier account group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierName": {
+          "@EndUserText.label": "Name of supplier",
+          "type": "cds.String",
+          "key": false,
+          "length": 80
+        },
+        "SupplierFullName": {
+          "@EndUserText.label": "Supplier full name",
+          "type": "cds.String",
+          "key": false,
+          "length": 220
+        },
+        "BPSupplierName": {
+          "@EndUserText.label": "Supplier name",
+          "type": "cds.String",
+          "key": false,
+          "length": 81
+        },
+        "BPSupplierFullName": {
+          "@EndUserText.label": "Supplier full name",
+          "type": "cds.String",
+          "key": false,
+          "length": 163
+        },
+        "BusinessPartnerName1": {
+          "@EndUserText.label": "Name 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerName2": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerName3": {
+          "@EndUserText.label": "Name 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerName4": {
+          "@EndUserText.label": "Name 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPAddrCityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPAddrStreetName": {
+          "@EndUserText.label": "Street",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "AddressSearchTerm1": {
+          "@EndUserText.label": "Search term 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "AddressSearchTerm2": {
+          "@EndUserText.label": "Search term 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "DistrictName": {
+          "@EndUserText.label": "District",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "POBoxDeviatingCityName": {
+          "@EndUserText.label": "Po box city",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BusinessPartnerFormOfAddress": {
+          "@EndUserText.label": "Form-of-address key",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "IsBusinessPurposeCompleted": {
+          "@EndUserText.label": "Business purpose completed flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CreatedByUser": {
+          "@EndUserText.label": "Name of person who created the object",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "CreationDate": {
+          "@EndUserText.label": "Record created on",
+          "type": "cds.Date",
+          "key": false
+        },
+        "IsOneTimeAccount": {
+          "@EndUserText.label": "Indicator: is the account a one-time account?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AuthorizationGroup": {
+          "@EndUserText.label": "Authorization group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "VATRegistration": {
+          "@EndUserText.label": "Vat registration number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "AccountIsBlockedForPosting": {
+          "@EndUserText.label": "Central posting block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxJurisdiction": {
+          "@EndUserText.label": "Tax jurisdiction",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "SupplierStandardCarrierAccess": {
+          "@EndUserText.label": "Standard carrier access code",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierFwdAgentFreightGroup": {
+          "@EndUserText.label": "Forwarding agent freight group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierAgentProcedureGroup": {
+          "@EndUserText.label": "Service agent procedure group",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplIsSocialInsuranceRegtrd": {
+          "@EndUserText.label": "Registered for social insurance",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SocialInsuranceActivityCode": {
+          "@EndUserText.label": "Activity code for social insurance",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "SupplierCorporateGroup": {
+          "@EndUserText.label": "Group key",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Customer": {
+          "@EndUserText.label": "Customer number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Industry": {
+          "@EndUserText.label": "Industry key",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "TaxNumber1": {
+          "@EndUserText.label": "Tax number 1",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "TaxNumber2": {
+          "@EndUserText.label": "Tax number 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "TaxNumber3": {
+          "@EndUserText.label": "Tax number 3",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "TaxNumber4": {
+          "@EndUserText.label": "Tax number 4",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "TaxNumber5": {
+          "@EndUserText.label": "Tax number 5",
+          "type": "cds.String",
+          "key": false,
+          "length": 60
+        },
+        "TaxNumber6": {
+          "@EndUserText.label": "Tax number 6",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "PostingIsBlocked": {
+          "@EndUserText.label": "Central posting block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PurchasingIsBlocked": {
+          "@EndUserText.label": "Centrally imposed purchasing block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "InternationalLocationNumber1": {
+          "@EndUserText.label": "International location number  (part 1)",
+          "type": "cds.String",
+          "key": false,
+          "length": 7
+        },
+        "InternationalLocationNumber2": {
+          "@EndUserText.label": "International location number (part 2)",
+          "type": "cds.String",
+          "key": false,
+          "length": 5
+        },
+        "InternationalLocationNumber3": {
+          "@EndUserText.label": "Check digit for the international location number",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AddressID": {
+          "@EndUserText.label": "Address",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "Region": {
+          "@EndUserText.label": "Region (state, province, county)",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "OrganizationBPName1": {
+          "@EndUserText.label": "Name",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "OrganizationBPName2": {
+          "@EndUserText.label": "Name 2",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "CityName": {
+          "@EndUserText.label": "City",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "PostalCode": {
+          "@EndUserText.label": "Postal code",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "StreetName": {
+          "@EndUserText.label": "Street and house number",
+          "type": "cds.String",
+          "key": false,
+          "length": 35
+        },
+        "Country": {
+          "@EndUserText.label": "Country/region key",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "ConcatenatedInternationalLocNo": {
+          "@EndUserText.label": "Cocatenated international location number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "SupplierProcurementBlock": {
+          "@EndUserText.label": "Function that will be blocked",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SuplrQualityManagementSystem": {
+          "@EndUserText.label": "Actual qm system of supplier",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SuplrQltyInProcmtCertfnValidTo": {
+          "@EndUserText.label": "Validity date of certification",
+          "type": "cds.Date",
+          "key": false
+        },
+        "SupplierLanguage": {
+          "@EndUserText.label": "Language key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "AlternativePayeeAccountNumber": {
+          "@EndUserText.label": "Account number of the alternative payee",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PhoneNumber1": {
+          "@EndUserText.label": "First telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "Fax number",
+          "type": "cds.String",
+          "key": false,
+          "length": 31
+        },
+        "IsNaturalPerson": {
+          "@EndUserText.label": "Natural person",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxNumberResponsible": {
+          "@EndUserText.label": "Tax number at responsible tax authority",
+          "type": "cds.String",
+          "key": false,
+          "length": 18
+        },
+        "UK_ContractorBusinessType": {
+          "@EndUserText.label": "Subcontractor's business type",
+          "type": "cds.String",
+          "key": false,
+          "length": 12
+        },
+        "UK_PartnerTradingName": {
+          "@EndUserText.label": "Partner's trading name",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "UK_PartnerTaxReference": {
+          "@EndUserText.label": "Partner's unique tax reference (utr)",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "UK_VerificationStatus": {
+          "@EndUserText.label": "Verification status",
+          "type": "cds.String",
+          "key": false,
+          "length": 3
+        },
+        "UK_VerificationNumber": {
+          "@EndUserText.label": "Verification number",
+          "type": "cds.String",
+          "key": false,
+          "length": 20
+        },
+        "UK_CompanyRegistrationNumber": {
+          "@EndUserText.label": "Companies house registration number",
+          "type": "cds.String",
+          "key": false,
+          "length": 8
+        },
+        "UK_VerifiedTaxStatus": {
+          "@EndUserText.label": "Tax status of the verified subcontractor",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "FormOfAddress": {
+          "@EndUserText.label": "Title",
+          "type": "cds.String",
+          "key": false,
+          "length": 15
+        },
+        "ReferenceAccountGroup": {
+          "@EndUserText.label": "Reference account group for one-time account (vendor)",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "VATLiability": {
+          "@EndUserText.label": "Liable for vat",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "ResponsibleType": {
+          "@EndUserText.label": "Tax type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "TaxNumberType": {
+          "@EndUserText.label": "Tax number type",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "FiscalAddress": {
+          "@EndUserText.label": "Account number of the master record with fiscal address",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "BusinessType": {
+          "@EndUserText.label": "Type of business",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "BirthDate": {
+          "@EndUserText.label": "Date of birth of the person subject to withholding tax",
+          "type": "cds.Date",
+          "key": false
+        },
+        "CreditorInformationNumber": {
+          "@EndUserText.label": "Credit information number",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "PaymentIsBlockedForSupplier": {
+          "@EndUserText.label": "Payment block",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SortField": {
+          "@EndUserText.label": "Sort field",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "PhoneNumber2": {
+          "@EndUserText.label": "Second telephone number",
+          "type": "cds.String",
+          "key": false,
+          "length": 16
+        },
+        "DeletionIndicator": {
+          "@EndUserText.label": "Central deletion flag for master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TaxInvoiceRepresentativeName": {
+          "@EndUserText.label": "Name of representative",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "IndustryType": {
+          "@EndUserText.label": "Type of industry",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "IN_GSTSupplierClassification": {
+          "@EndUserText.label": "Vendor classification for gst",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SuplrProofOfDelivRlvtCode": {
+          "@EndUserText.label": "Supplier indicator relevant for proof of delivery",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TradingPartner": {
+          "@EndUserText.label": "Company id of trading partner",
+          "type": "cds.String",
+          "key": false,
+          "length": 6
+        },
+        "BR_TaxIsSplit": {
+          "@EndUserText.label": "Tax split",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PayerIsPayingToCarryOnEnt": {
+          "@EndUserText.label": "Is payer making payment in course of carrying on enterprise",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_IndividualIsUnder18": {
+          "@EndUserText.label": "Is an individual under 18 and payment does not exceed $350",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PaymentIsExceeding75": {
+          "@EndUserText.label": "The payment does not exceed $75, excl. gst",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PaymentIsWhollyInputTaxed": {
+          "@EndUserText.label": "The supply that the payment relates to is wholly input taxed",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PartnerIsSupplyWithoutGain": {
+          "@EndUserText.label": "The supply is made by an individual without gain",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_SupplierIsEntitledToABN": {
+          "@EndUserText.label": "The supplier is not entitled to an abn",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_PaymentIsIncomeExempted": {
+          "@EndUserText.label": "The whole of the payment is exempt income.",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_SupplyIsMadeAsPrivateHobby": {
+          "@EndUserText.label": "An activity done as a private recreational pursuit",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "AU_SupplyMadeIsOfDmstcNature": {
+          "@EndUserText.label": "Wholly of a private or domestic nature",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "IsToBeAcceptedAtOrigin": {
+          "@EndUserText.label": "Acceptance at origin",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BPIsEqualizationTaxSubject": {
+          "@EndUserText.label": "Checkbox",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BRSpcfcTaxBasePercentageCode": {
+          "@EndUserText.label": "Tax base in percentage",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SupplierProfession": {
+          "@EndUserText.label": "Profession",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "SuplrManufacturerExternalName": {
+          "@EndUserText.label": "External manufacturer code name or number",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "DataMediumExchangeIndicator": {
+          "@EndUserText.label": "Recipient code for data medium exchange",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DataExchangeInstructionKey": {
+          "@EndUserText.label": "Instruction key for data medium exchange",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SupplierIsSubRangeRelevant": {
+          "@EndUserText.label": "Indicator: vendor sub-range relevant",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "TrainStationName": {
+          "@EndUserText.label": "Train station",
+          "type": "cds.String",
+          "key": false,
+          "length": 25
+        },
+        "AlternativePayeeIsAllowed": {
+          "@EndUserText.label": "Indicator: alternative payee in document allowed?",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "PaytSlipWthRefSubscriber": {
+          "@EndUserText.label": "Isr subscriber number",
+          "type": "cds.String",
+          "key": false,
+          "length": 11
+        },
+        "TranspServiceAgentStstcGrp": {
+          "@EndUserText.label": "Shipment: statistics group, transportation service agent",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "SupplierIsPlantRelevant": {
+          "@EndUserText.label": "Indicator: plant level relevant",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SuplrTaxAuthorityAccountNumber": {
+          "@EndUserText.label": "Account number of master record of tax office responsible",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SuplrCarrierConfirmIsExpected": {
+          "@EndUserText.label": "Carrier confirmation is expected",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "SupplierPlant": {
+          "@EndUserText.label": "Plant (own or external)",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "FactoryCalendar": {
+          "@EndUserText.label": "Factory calendar key",
+          "type": "cds.String",
+          "key": false,
+          "length": 2
+        },
+        "PaymentReason": {
+          "@EndUserText.label": "Payment reason",
+          "type": "cds.String",
+          "key": false,
+          "length": 4
+        },
+        "SupplierCentralDeletionIsBlock": {
+          "@EndUserText.label": "Central deletion block for master record",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DataControllerSet": {
+          "@EndUserText.label": "Bp: data controller set flag",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "DataController1": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController2": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController3": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController4": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController5": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController6": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController7": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController8": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController9": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "DataController10": {
+          "@EndUserText.label": "Bp: data controller (internal use only)",
+          "type": "cds.String",
+          "key": false,
+          "length": 30
+        },
+        "SupplierTransportationChain": {
+          "@EndUserText.label": "Transportation chain",
+          "type": "cds.String",
+          "key": false,
+          "length": 10
+        },
+        "SupplierStagingTimeInDays": {
+          "@EndUserText.label": "Staging time in days",
+          "type": "cds.Decimal",
+          "key": false,
+          "precision": 3,
+          "scale": 0
+        },
+        "SupplierSchedulingProcedure": {
+          "@EndUserText.label": "Scheduling procedure",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "CollectiveNumberingIsRelevant": {
+          "@EndUserText.label": "Cross docking: relevant for collective numbering",
+          "type": "cds.String",
+          "key": false,
+          "length": 1
+        },
+        "BusinessPartnerPanNumber": {
+          "@EndUserText.label": "Permanent account number",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPPanReferenceNumber": {
+          "@EndUserText.label": "Pan reference number",
+          "type": "cds.String",
+          "key": false,
+          "length": 40
+        },
+        "BPPanValidFromDate": {
+          "@EndUserText.label": "Pan valid from date",
+          "type": "cds.Date",
+          "key": false
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change Type",
+          "type": "cds.String",
+          "key": false,
+          "length": 1,
+          "notNull": true,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change Date",
+          "type": "cds.Timestamp",
+          "key": false,
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "kind": "entity",
+      "@EndUserText.label": "2LT_I_SUPPLIER_S4_AUD_CURR_01",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "2LT_I_SUPPLIER_S4_AUD_CURR_01",
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_EDFWMQWN"
+        }
+      }
+    }
+  }
+}
