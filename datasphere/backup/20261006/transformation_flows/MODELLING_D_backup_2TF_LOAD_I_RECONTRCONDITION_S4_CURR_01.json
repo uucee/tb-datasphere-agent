@@ -1,0 +1,1667 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_RECONTRCONDITION_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_RECONTRCONDITION_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR.1LT_RE_CONTR_CONDITION_S4_CURR_01": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_RE_CONTR_CONDITION_S4_CURR_01",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "REConditionUUID": {
+                        "@EndUserText.label": "Guid (raw16) for conditions",
+                        "type": "cds.Binary",
+                        "key": true,
+                        "notNull": true,
+                        "length": 16
+                      },
+                      "InternalRealEstateNumber": {
+                        "@EndUserText.label": "Internal key of real estate object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 13
+                      },
+                      "REConditionType": {
+                        "@EndUserText.label": "Condition type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REStatusObjectCalculation": {
+                        "@EndUserText.label": "Object number for calculation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "ValidityStartDate": {
+                        "@EndUserText.label": "Validity start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REStatusObjectDistribution": {
+                        "@EndUserText.label": "Object number for distribution",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REObjectTypeDistribution": {
+                        "@EndUserText.label": "Object type for distribution",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REObjectTypePosting": {
+                        "@EndUserText.label": "Object type for posting",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "ValidityEndDate": {
+                        "@EndUserText.label": "Validity end date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Entered by",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "First entered on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreationTime": {
+                        "@EndUserText.label": "Time of creation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "RESourceOfCreation": {
+                        "@EndUserText.label": "Source of initial entry",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Employee id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Last edited on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangeTime": {
+                        "@EndUserText.label": "Last edited at",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "RESourceOfChange": {
+                        "@EndUserText.label": "Editing source",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "REIsOneTimeCondition": {
+                        "@EndUserText.label": "Condition is one-time condition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REConditionIsStatistical": {
+                        "@EndUserText.label": "Statistical or informational condition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REPostingTerm": {
+                        "@EndUserText.label": "Number of posting term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RERhythmTerm": {
+                        "@EndUserText.label": "Number of rhythm term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REAdjustmentNumber": {
+                        "@EndUserText.label": "Number of adjustment term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REOrglAssignmentTerm": {
+                        "@EndUserText.label": "Number of organizational assignment term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RESalesTerm": {
+                        "@EndUserText.label": "Number of sales term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REPeakSalesTerm": {
+                        "@EndUserText.label": "Number of peak sales term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RESrvcChrgSettlementPostingTrm": {
+                        "@EndUserText.label": "Service charge settlement posting term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REWithholdingTaxTerm": {
+                        "@EndUserText.label": "Number of withholding tax term",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RECalculationRule": {
+                        "@EndUserText.label": "Calculation formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REUnitPrice": {
+                        "@EndUserText.label": "Unit price",
+                        "type": "cds.Decimal",
+                        "key": false,
+                        "precision": 19,
+                        "scale": 6
+                      },
+                      "REConditionCurrency": {
+                        "@EndUserText.label": "Condition currency",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "RECalculationRuleParam1": {
+                        "@EndUserText.label": "Untypified parameter for a calculation formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 70
+                      },
+                      "RECalculationRuleParam2": {
+                        "@EndUserText.label": "Untypified parameter for a calculation formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 70
+                      },
+                      "REDistributionRule": {
+                        "@EndUserText.label": "Distribution formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REDistributionRuleParam1": {
+                        "@EndUserText.label": "Untypified parameter for a distribution formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 70
+                      },
+                      "REDistributionRuleParam2": {
+                        "@EndUserText.label": "Untypified parameter for a distribution formula",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 70
+                      },
+                      "REExtConditionPurpose": {
+                        "@EndUserText.label": "Conditions - external purpos",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REReasonForChange": {
+                        "@EndUserText.label": "Reason for change",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "REStsObjectParamCalculation": {
+                        "@EndUserText.label": "Object number in calculation/distribution parameter",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REStsObjectParamDistribution": {
+                        "@EndUserText.label": "Object number in calculation/distribution parameter",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REDueDateTotNumberOfCrrtnDays": {
+                        "@EndUserText.label": "Total number of days due date is corrected",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "REDueDateNumberOfCrrtnDays": {
+                        "@EndUserText.label": "Number of days for correcting due date",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "REDueDateNumberOfCrrtnMonths": {
+                        "@EndUserText.label": "Number of months for correcting due date",
+                        "type": "cds.Integer",
+                        "key": false
+                      },
+                      "RECashFlowPostingFromDate": {
+                        "@EndUserText.label": "First posting from",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REConditionExceptionalDueDate": {
+                        "@EndUserText.label": "Different due date of one-time condition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REConditionFollowUpDueDate": {
+                        "@EndUserText.label": "Due date for follow-up postings",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REConditionCalcIsInvalid": {
+                        "@EndUserText.label": "Calculation invalid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REDistributionIsInvalid": {
+                        "@EndUserText.label": "Distribution is invalid",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REServiceChrgSettlementIsActv": {
+                        "@EndUserText.label": "Posting term for service charge settlement is active",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REConditionIsToBeDeleted": {
+                        "@EndUserText.label": "Deletion indicator for condition",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REConditionObjTypeCalculation": {
+                        "@EndUserText.label": "Business object type of contract object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "REConditionObjTypeDistribution": {
+                        "@EndUserText.label": "Business object type of contract object",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.businessName": "1 INBOUND S4 CURR"
+                  }
+                },
+                "name": "2TF_LOAD_I_RECONTRCONDITION_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "length": 500
+                    },
+                    "REConditionUUID": {
+                      "@EndUserText.label": "Guid (raw16) for conditions",
+                      "type": "cds.String",
+                      "length": 500,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "REConditionType": {
+                      "@EndUserText.label": "Condition type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REStatusObjectCalculation": {
+                      "@EndUserText.label": "Object number for calculation",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REStatusObjectDistribution": {
+                      "@EndUserText.label": "Object number for distribution",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REObjectTypeDistribution": {
+                      "@EndUserText.label": "Object type for distribution",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REObjectTypePosting": {
+                      "@EndUserText.label": "Object type for posting",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Entered by",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "First entered on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfCreation": {
+                      "@EndUserText.label": "Source of initial entry",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Employee id",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Last edited on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Last edited at",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfChange": {
+                      "@EndUserText.label": "Editing source",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REIsOneTimeCondition": {
+                      "@EndUserText.label": "Condition is one-time condition",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REConditionIsStatistical": {
+                      "@EndUserText.label": "Statistical or informational condition",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REPostingTerm": {
+                      "@EndUserText.label": "Number of posting term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RERhythmTerm": {
+                      "@EndUserText.label": "Number of rhythm term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REAdjustmentNumber": {
+                      "@EndUserText.label": "Number of adjustment term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REOrglAssignmentTerm": {
+                      "@EndUserText.label": "Number of organizational assignment term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RESalesTerm": {
+                      "@EndUserText.label": "Number of sales term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REPeakSalesTerm": {
+                      "@EndUserText.label": "Number of peak sales term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RESrvcChrgSettlementPostingTrm": {
+                      "@EndUserText.label": "Service charge settlement posting term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REWithholdingTaxTerm": {
+                      "@EndUserText.label": "Number of withholding tax term",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RECalculationRule": {
+                      "@EndUserText.label": "Calculation formula",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REUnitPrice": {
+                      "@EndUserText.label": "Unit price",
+                      "precision": 19,
+                      "scale": 6,
+                      "type": "cds.Decimal"
+                    },
+                    "REConditionCurrency": {
+                      "@EndUserText.label": "Condition currency",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "RECalculationRuleParam1": {
+                      "@EndUserText.label": "Untypified parameter for a calculation formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "RECalculationRuleParam2": {
+                      "@EndUserText.label": "Untypified parameter for a calculation formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REDistributionRule": {
+                      "@EndUserText.label": "Distribution formula",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REDistributionRuleParam1": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REDistributionRuleParam2": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "length": 70
+                    },
+                    "REExtConditionPurpose": {
+                      "@EndUserText.label": "Conditions - external purpos",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REReasonForChange": {
+                      "@EndUserText.label": "Reason for change",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REStsObjectParamCalculation": {
+                      "@EndUserText.label": "Object number in calculation/distribution parameter",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REStsObjectParamDistribution": {
+                      "@EndUserText.label": "Object number in calculation/distribution parameter",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REDueDateTotNumberOfCrrtnDays": {
+                      "@EndUserText.label": "Total number of days due date is corrected",
+                      "type": "cds.Integer"
+                    },
+                    "REDueDateNumberOfCrrtnDays": {
+                      "@EndUserText.label": "Number of days for correcting due date",
+                      "type": "cds.Integer"
+                    },
+                    "REDueDateNumberOfCrrtnMonths": {
+                      "@EndUserText.label": "Number of months for correcting due date",
+                      "type": "cds.Integer"
+                    },
+                    "RECashFlowPostingFromDate": {
+                      "@EndUserText.label": "First posting from",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REConditionExceptionalDueDate": {
+                      "@EndUserText.label": "Different due date of one-time condition",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REConditionFollowUpDueDate": {
+                      "@EndUserText.label": "Due date for follow-up postings",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REConditionCalcIsInvalid": {
+                      "@EndUserText.label": "Calculation invalid",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REDistributionIsInvalid": {
+                      "@EndUserText.label": "Distribution is invalid",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REServiceChrgSettlementIsActv": {
+                      "@EndUserText.label": "Posting term for service charge settlement is active",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REConditionIsToBeDeleted": {
+                      "@EndUserText.label": "Deletion indicator for condition",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REConditionObjTypeCalculation": {
+                      "@EndUserText.label": "Business object type of contract object",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "REConditionObjTypeDistribution": {
+                      "@EndUserText.label": "Business object type of contract object",
+                      "type": "cds.String",
+                      "length": 2
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR.1LT_RE_CONTR_CONDITION_S4_CURR_01"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_ACTIVE_BATCH_S4_CURR_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "S4_CURR"
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_RECONTRCONDITION"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ]
+                        },
+                        {
+                          "func": "CURRENT_UTCTIMESTAMP",
+                          "args": [],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "val": "S4_CURR",
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "SOURCE_FILE"
+                          ]
+                        },
+                        {
+                          "xpr": [
+                            {
+                              "ref": [
+                                "d",
+                                "REConditionUUID"
+                              ],
+                              "cast": {
+                                "type": "cds.String",
+                                "length": 500
+                              }
+                            }
+                          ],
+                          "as": "REConditionUUID"
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternalRealEstateNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObjectCalculation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObjectDistribution"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REObjectTypeDistribution"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REObjectTypePosting"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValidityEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESourceOfCreation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESourceOfChange"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsOneTimeCondition"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionIsStatistical"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REPostingTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RERhythmTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REAdjustmentNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REOrglAssignmentTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESalesTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REPeakSalesTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESrvcChrgSettlementPostingTrm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REWithholdingTaxTerm"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECalculationRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REUnitPrice"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECalculationRuleParam1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECalculationRuleParam2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionRule"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionRuleParam1"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionRuleParam2"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REExtConditionPurpose"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REReasonForChange"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStsObjectParamCalculation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStsObjectParamDistribution"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDueDateTotNumberOfCrrtnDays"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDueDateNumberOfCrrtnDays"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDueDateNumberOfCrrtnMonths"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowPostingFromDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionExceptionalDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionFollowUpDueDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionCalcIsInvalid"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REDistributionIsInvalid"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REServiceChrgSettlementIsActv"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionIsToBeDeleted"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionObjTypeCalculation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REConditionObjTypeDistribution"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "SELECT\r\n  b.\"BATCH_ID\",\r\n  CURRENT_UTCTIMESTAMP () AS \"LOAD_TIMESTAMP\",\r\n  'S4_CURR' AS \"SOURCE_SYSTEM\",\r\n  o.\"SOURCE_FILE\",\r\n  CAST(\"d\".\"REConditionUUID\" AS NVARCHAR(500)) as \"REConditionUUID\",\r\n  \"d\".\"InternalRealEstateNumber\",\"d\".\"REConditionType\",\"d\".\"REStatusObjectCalculation\",\"d\".\"ValidityStartDate\",\"d\".\"REStatusObjectDistribution\",\"d\".\"REObjectTypeDistribution\",\"d\".\"REObjectTypePosting\",\"d\".\"ValidityEndDate\",\"d\".\"CreatedByUser\",\"d\".\"CreationDate\",\"d\".\"CreationTime\",\"d\".\"RESourceOfCreation\",\"d\".\"LastChangedByUser\",\"d\".\"LastChangeDate\",\"d\".\"LastChangeTime\",\"d\".\"RESourceOfChange\",\"d\".\"REIsOneTimeCondition\",\"d\".\"REConditionIsStatistical\",\"d\".\"REPostingTerm\",\"d\".\"RERhythmTerm\",\"d\".\"REAdjustmentNumber\",\"d\".\"REOrglAssignmentTerm\",\"d\".\"RESalesTerm\",\"d\".\"REPeakSalesTerm\",\"d\".\"RESrvcChrgSettlementPostingTrm\",\"d\".\"REWithholdingTaxTerm\",\"d\".\"RECalculationRule\",\"d\".\"REUnitPrice\",\"d\".\"REConditionCurrency\",\"d\".\"RECalculationRuleParam1\",\"d\".\"RECalculationRuleParam2\",\"d\".\"REDistributionRule\",\"d\".\"REDistributionRuleParam1\",\"d\".\"REDistributionRuleParam2\",\"d\".\"REExtConditionPurpose\",\"d\".\"REReasonForChange\",\"d\".\"REStsObjectParamCalculation\",\"d\".\"REStsObjectParamDistribution\",\"d\".\"REDueDateTotNumberOfCrrtnDays\",\"d\".\"REDueDateNumberOfCrrtnDays\",\"d\".\"REDueDateNumberOfCrrtnMonths\",\"d\".\"RECashFlowPostingFromDate\",\"d\".\"REConditionExceptionalDueDate\",\"d\".\"REConditionFollowUpDueDate\",\"d\".\"REConditionCalcIsInvalid\",\"d\".\"REDistributionIsInvalid\",\"d\".\"REServiceChrgSettlementIsActv\",\"d\".\"REConditionIsToBeDeleted\",\"d\".\"REConditionObjTypeCalculation\",\"d\".\"REConditionObjTypeDistribution\"\r\nFROM\r\n  \"1_INBOUND_S4_CURR.1LT_RE_CONTR_CONDITION_S4_CURR_01\" d\r\n  CROSS JOIN \"2SV_ACTIVE_BATCH_S4_CURR_01\" b\r\n  JOIN \"2LT_CTRL_LOAD_OBJECT_01\" o ON o.\"BATCH_ID\" = b.\"BATCH_ID\"\r\n  AND o.\"SOURCE_SYSTEM\" = 'S4_CURR'\r\n  AND o.\"OBJECT_NAME\" = 'I_RECONTRCONDITION'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_RE_CONTR_CONDITION_S4_CURR_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "SOURCE_FILE",
+                    "target": "SOURCE_FILE"
+                  },
+                  {
+                    "source": "REConditionUUID",
+                    "target": "REConditionUUID"
+                  },
+                  {
+                    "source": "InternalRealEstateNumber",
+                    "target": "InternalRealEstateNumber"
+                  },
+                  {
+                    "source": "REConditionType",
+                    "target": "REConditionType"
+                  },
+                  {
+                    "source": "REStatusObjectCalculation",
+                    "target": "REStatusObjectCalculation"
+                  },
+                  {
+                    "source": "ValidityStartDate",
+                    "target": "ValidityStartDate"
+                  },
+                  {
+                    "source": "REStatusObjectDistribution",
+                    "target": "REStatusObjectDistribution"
+                  },
+                  {
+                    "source": "REObjectTypeDistribution",
+                    "target": "REObjectTypeDistribution"
+                  },
+                  {
+                    "source": "REObjectTypePosting",
+                    "target": "REObjectTypePosting"
+                  },
+                  {
+                    "source": "ValidityEndDate",
+                    "target": "ValidityEndDate"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreationTime",
+                    "target": "CreationTime"
+                  },
+                  {
+                    "source": "RESourceOfCreation",
+                    "target": "RESourceOfCreation"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "LastChangeTime",
+                    "target": "LastChangeTime"
+                  },
+                  {
+                    "source": "RESourceOfChange",
+                    "target": "RESourceOfChange"
+                  },
+                  {
+                    "source": "REIsOneTimeCondition",
+                    "target": "REIsOneTimeCondition"
+                  },
+                  {
+                    "source": "REConditionIsStatistical",
+                    "target": "REConditionIsStatistical"
+                  },
+                  {
+                    "source": "REPostingTerm",
+                    "target": "REPostingTerm"
+                  },
+                  {
+                    "source": "RERhythmTerm",
+                    "target": "RERhythmTerm"
+                  },
+                  {
+                    "source": "REAdjustmentNumber",
+                    "target": "REAdjustmentNumber"
+                  },
+                  {
+                    "source": "REOrglAssignmentTerm",
+                    "target": "REOrglAssignmentTerm"
+                  },
+                  {
+                    "source": "RESalesTerm",
+                    "target": "RESalesTerm"
+                  },
+                  {
+                    "source": "REPeakSalesTerm",
+                    "target": "REPeakSalesTerm"
+                  },
+                  {
+                    "source": "RESrvcChrgSettlementPostingTrm",
+                    "target": "RESrvcChrgSettlementPostingTrm"
+                  },
+                  {
+                    "source": "REWithholdingTaxTerm",
+                    "target": "REWithholdingTaxTerm"
+                  },
+                  {
+                    "source": "RECalculationRule",
+                    "target": "RECalculationRule"
+                  },
+                  {
+                    "source": "REUnitPrice",
+                    "target": "REUnitPrice"
+                  },
+                  {
+                    "source": "REConditionCurrency",
+                    "target": "REConditionCurrency"
+                  },
+                  {
+                    "source": "RECalculationRuleParam1",
+                    "target": "RECalculationRuleParam1"
+                  },
+                  {
+                    "source": "RECalculationRuleParam2",
+                    "target": "RECalculationRuleParam2"
+                  },
+                  {
+                    "source": "REDistributionRule",
+                    "target": "REDistributionRule"
+                  },
+                  {
+                    "source": "REDistributionRuleParam1",
+                    "target": "REDistributionRuleParam1"
+                  },
+                  {
+                    "source": "REDistributionRuleParam2",
+                    "target": "REDistributionRuleParam2"
+                  },
+                  {
+                    "source": "REExtConditionPurpose",
+                    "target": "REExtConditionPurpose"
+                  },
+                  {
+                    "source": "REReasonForChange",
+                    "target": "REReasonForChange"
+                  },
+                  {
+                    "source": "REStsObjectParamCalculation",
+                    "target": "REStsObjectParamCalculation"
+                  },
+                  {
+                    "source": "REStsObjectParamDistribution",
+                    "target": "REStsObjectParamDistribution"
+                  },
+                  {
+                    "source": "REDueDateTotNumberOfCrrtnDays",
+                    "target": "REDueDateTotNumberOfCrrtnDays"
+                  },
+                  {
+                    "source": "REDueDateNumberOfCrrtnDays",
+                    "target": "REDueDateNumberOfCrrtnDays"
+                  },
+                  {
+                    "source": "REDueDateNumberOfCrrtnMonths",
+                    "target": "REDueDateNumberOfCrrtnMonths"
+                  },
+                  {
+                    "source": "RECashFlowPostingFromDate",
+                    "target": "RECashFlowPostingFromDate"
+                  },
+                  {
+                    "source": "REConditionExceptionalDueDate",
+                    "target": "REConditionExceptionalDueDate"
+                  },
+                  {
+                    "source": "REConditionFollowUpDueDate",
+                    "target": "REConditionFollowUpDueDate"
+                  },
+                  {
+                    "source": "REConditionCalcIsInvalid",
+                    "target": "REConditionCalcIsInvalid"
+                  },
+                  {
+                    "source": "REDistributionIsInvalid",
+                    "target": "REDistributionIsInvalid"
+                  },
+                  {
+                    "source": "REServiceChrgSettlementIsActv",
+                    "target": "REServiceChrgSettlementIsActv"
+                  },
+                  {
+                    "source": "REConditionIsToBeDeleted",
+                    "target": "REConditionIsToBeDeleted"
+                  },
+                  {
+                    "source": "REConditionObjTypeCalculation",
+                    "target": "REConditionObjTypeCalculation"
+                  },
+                  {
+                    "source": "REConditionObjTypeDistribution",
+                    "target": "REConditionObjTypeDistribution"
+                  }
+                ],
+                "definition": {
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "key": false,
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 100
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 7
+                    },
+                    "SOURCE_FILE": {
+                      "@EndUserText.label": "SOURCE_FILE",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 500
+                    },
+                    "REConditionUUID": {
+                      "@EndUserText.label": "Guid (raw16) for conditions",
+                      "type": "cds.String",
+                      "key": true,
+                      "length": 500,
+                      "notNull": true
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 13
+                    },
+                    "REConditionType": {
+                      "@EndUserText.label": "Condition type",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REStatusObjectCalculation": {
+                      "@EndUserText.label": "Object number for calculation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "ValidityStartDate": {
+                      "@EndUserText.label": "Validity start date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REStatusObjectDistribution": {
+                      "@EndUserText.label": "Object number for distribution",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "REObjectTypeDistribution": {
+                      "@EndUserText.label": "Object type for distribution",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REObjectTypePosting": {
+                      "@EndUserText.label": "Object type for posting",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "ValidityEndDate": {
+                      "@EndUserText.label": "Validity end date",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Entered by",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "First entered on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "RESourceOfCreation": {
+                      "@EndUserText.label": "Source of initial entry",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Employee id",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Last edited on",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Last edited at",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 6
+                    },
+                    "RESourceOfChange": {
+                      "@EndUserText.label": "Editing source",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "REIsOneTimeCondition": {
+                      "@EndUserText.label": "Condition is one-time condition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REConditionIsStatistical": {
+                      "@EndUserText.label": "Statistical or informational condition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REPostingTerm": {
+                      "@EndUserText.label": "Number of posting term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RERhythmTerm": {
+                      "@EndUserText.label": "Number of rhythm term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REAdjustmentNumber": {
+                      "@EndUserText.label": "Number of adjustment term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REOrglAssignmentTerm": {
+                      "@EndUserText.label": "Number of organizational assignment term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RESalesTerm": {
+                      "@EndUserText.label": "Number of sales term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REPeakSalesTerm": {
+                      "@EndUserText.label": "Number of peak sales term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RESrvcChrgSettlementPostingTrm": {
+                      "@EndUserText.label": "Service charge settlement posting term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REWithholdingTaxTerm": {
+                      "@EndUserText.label": "Number of withholding tax term",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "RECalculationRule": {
+                      "@EndUserText.label": "Calculation formula",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REUnitPrice": {
+                      "@EndUserText.label": "Unit price",
+                      "type": "cds.Decimal",
+                      "key": false,
+                      "precision": 19,
+                      "scale": 6
+                    },
+                    "REConditionCurrency": {
+                      "@EndUserText.label": "Condition currency",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 5
+                    },
+                    "RECalculationRuleParam1": {
+                      "@EndUserText.label": "Untypified parameter for a calculation formula",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 70
+                    },
+                    "RECalculationRuleParam2": {
+                      "@EndUserText.label": "Untypified parameter for a calculation formula",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 70
+                    },
+                    "REDistributionRule": {
+                      "@EndUserText.label": "Distribution formula",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REDistributionRuleParam1": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 70
+                    },
+                    "REDistributionRuleParam2": {
+                      "@EndUserText.label": "Untypified parameter for a distribution formula",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 70
+                    },
+                    "REExtConditionPurpose": {
+                      "@EndUserText.label": "Conditions - external purpos",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 4
+                    },
+                    "REReasonForChange": {
+                      "@EndUserText.label": "Reason for change",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 10
+                    },
+                    "REStsObjectParamCalculation": {
+                      "@EndUserText.label": "Object number in calculation/distribution parameter",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "REStsObjectParamDistribution": {
+                      "@EndUserText.label": "Object number in calculation/distribution parameter",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 22
+                    },
+                    "REDueDateTotNumberOfCrrtnDays": {
+                      "@EndUserText.label": "Total number of days due date is corrected",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "REDueDateNumberOfCrrtnDays": {
+                      "@EndUserText.label": "Number of days for correcting due date",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "REDueDateNumberOfCrrtnMonths": {
+                      "@EndUserText.label": "Number of months for correcting due date",
+                      "type": "cds.Integer",
+                      "key": false
+                    },
+                    "RECashFlowPostingFromDate": {
+                      "@EndUserText.label": "First posting from",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REConditionExceptionalDueDate": {
+                      "@EndUserText.label": "Different due date of one-time condition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REConditionFollowUpDueDate": {
+                      "@EndUserText.label": "Due date for follow-up postings",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 8
+                    },
+                    "REConditionCalcIsInvalid": {
+                      "@EndUserText.label": "Calculation invalid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REDistributionIsInvalid": {
+                      "@EndUserText.label": "Distribution is invalid",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REServiceChrgSettlementIsActv": {
+                      "@EndUserText.label": "Posting term for service charge settlement is active",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REConditionIsToBeDeleted": {
+                      "@EndUserText.label": "Deletion indicator for condition",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 1
+                    },
+                    "REConditionObjTypeCalculation": {
+                      "@EndUserText.label": "Business object type of contract object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    },
+                    "REConditionObjTypeDistribution": {
+                      "@EndUserText.label": "Business object type of contract object",
+                      "type": "cds.String",
+                      "key": false,
+                      "length": 2
+                    }
+                  },
+                  "kind": "entity",
+                  "@EndUserText.label": "2LT_RE_CONTR_CONDITION_S4_CURR_AUD_01",
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_CUVKHKRP"
+                    }
+                  }
+                },
+                "name": "2LT_RE_CONTR_CONDITION_S4_CURR_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

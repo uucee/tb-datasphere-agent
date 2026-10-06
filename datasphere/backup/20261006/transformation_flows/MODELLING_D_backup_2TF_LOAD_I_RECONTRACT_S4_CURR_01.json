@@ -1,0 +1,1757 @@
+{
+  "transformationflows": {
+    "2TF_LOAD_I_RECONTRACT_S4_CURR_01": {
+      "kind": "sap.dis.transformationflow",
+      "@EndUserText.label": "2TF_LOAD_I_RECONTRACT_S4_CURR_01",
+      "contents": {
+        "properties": {},
+        "metadata": {
+          "loadType": "INITIAL_ONLY"
+        },
+        "parameters": {},
+        "description": "Transformation Flow 1",
+        "processes": {
+          "sqltransform1": {
+            "component": "com.sap.dwc.sqltransform",
+            "metadata": {
+              "label": "View Transform",
+              "x": 0,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "additionalDefinition": {
+                  "1_INBOUND_S4_CURR": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR"
+                  },
+                  "1_INBOUND_S4_CURR_D": {
+                    "kind": "context",
+                    "@EndUserText.label": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D"
+                  },
+                  "1_INBOUND_S4_CURR_D.1LT_I_RECONTRACT_S4_CURR": {
+                    "kind": "entity",
+                    "@EndUserText.label": "1LT_I_RECONTRACT_S4_CURR",
+                    "@ObjectModel.modelingPattern": {
+                      "#": "DATA_STRUCTURE"
+                    },
+                    "@ObjectModel.supportedCapabilities": [
+                      {
+                        "#": "DATA_STRUCTURE"
+                      }
+                    ],
+                    "elements": {
+                      "InternalRealEstateNumber": {
+                        "@EndUserText.label": "Internal key of real estate object",
+                        "type": "cds.String",
+                        "key": true,
+                        "notNull": true,
+                        "length": 13
+                      },
+                      "CompanyCode": {
+                        "@EndUserText.label": "Company code",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "RealEstateContract": {
+                        "@EndUserText.label": "Real estate contract number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 13
+                      },
+                      "REStatusObject": {
+                        "@EndUserText.label": "Object number",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 22
+                      },
+                      "REInternalFinNumber": {
+                        "@EndUserText.label": "Internal key of real estate object (fi)",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RealEstateContractOID": {
+                        "@EndUserText.label": "One domain model id for real estate contract",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 128
+                      },
+                      "REContractAlternativeID": {
+                        "@EndUserText.label": "Alternative id for contract",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 13
+                      },
+                      "RECreationType": {
+                        "@EndUserText.label": "How the object was created",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "CreatedByUser": {
+                        "@EndUserText.label": "Entered by",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "CreationDate": {
+                        "@EndUserText.label": "First entered on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "CreationTime": {
+                        "@EndUserText.label": "Time of creation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "RESourceOfCreation": {
+                        "@EndUserText.label": "Source of initial entry",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "LastChangedByUser": {
+                        "@EndUserText.label": "Employee id",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "LastChangeDate": {
+                        "@EndUserText.label": "Last edited on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "LastChangeTime": {
+                        "@EndUserText.label": "Last edited at",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      },
+                      "RESourceOfChange": {
+                        "@EndUserText.label": "Editing source",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "Responsible": {
+                        "@EndUserText.label": "Person responsible",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "REUserExclusive": {
+                        "@EndUserText.label": "User with exclusive change authorization",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 12
+                      },
+                      "REAuthorizationGroup": {
+                        "@EndUserText.label": "Authorization group",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 40
+                      },
+                      "REContractType": {
+                        "@EndUserText.label": "Contract type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "ContractStartDate": {
+                        "@EndUserText.label": "Contract start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ContractEndDate": {
+                        "@EndUserText.label": "Contract end date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContractName": {
+                        "@EndUserText.label": "Contract name",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 80
+                      },
+                      "REContractActivateDate": {
+                        "@EndUserText.label": "Active from",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RETenancyLaw": {
+                        "@EndUserText.label": "Tenancy law",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "REContractNumberOld": {
+                        "@EndUserText.label": "Number of old contract",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 20
+                      },
+                      "REMainContractCompanyCode": {
+                        "@EndUserText.label": "Company code of main contract",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REMainContract": {
+                        "@EndUserText.label": "Number of real estate main contract",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 13
+                      },
+                      "REContractCurrency": {
+                        "@EndUserText.label": "Currency for contract",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 5
+                      },
+                      "REIndustrySector": {
+                        "@EndUserText.label": "Industry",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "REIsSalesRelevant": {
+                        "@EndUserText.label": "Indicator: relevant to sales",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REContractDepositType": {
+                        "@EndUserText.label": "Contract security deposit type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 4
+                      },
+                      "REContractSignDate": {
+                        "@EndUserText.label": "Date of contract conclusion",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContract2SignDate": {
+                        "@EndUserText.label": "Date of second signature",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContractCashFlowDate": {
+                        "@EndUserText.label": "Cash flow generated starting on",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContractFirstEndDate": {
+                        "@EndUserText.label": "Date of first contract end",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContractNoticeDate": {
+                        "@EndUserText.label": "Contract notice per",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContractNoticeInDate": {
+                        "@EndUserText.label": "Date of receipt of notice",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REContractNoticeReason": {
+                        "@EndUserText.label": "Reason for notice",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "REContractNoticeActivationDate": {
+                        "@EndUserText.label": "Notice: date of activation",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RECashFlowArchivedToDate": {
+                        "@EndUserText.label": "Date up to which the cash flow is archived",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RECashFlowLockedToDate": {
+                        "@EndUserText.label": "Date until which the cash flow is locked",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "RECashFlowPostingFromDate": {
+                        "@EndUserText.label": "First posting from",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REBusinessEntity": {
+                        "@EndUserText.label": "Re business entity",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REObjectAvailableFromDate": {
+                        "@EndUserText.label": "Transfer of possession start date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REObjectAvailableToDate": {
+                        "@EndUserText.label": "Transfer of possession end date",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REHasMultipleAssignments": {
+                        "@EndUserText.label": "Multiple assignment of object to group allowed",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 1
+                      },
+                      "REPossessionStartDate": {
+                        "@EndUserText.label": "Date from which the object is made available for use",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "REPossessionEndDate": {
+                        "@EndUserText.label": "Date up to which the object is used",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 8
+                      },
+                      "ValuationRelevance": {
+                        "@EndUserText.label": "Valuation relevance",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 10
+                      },
+                      "RealEstateObjectType": {
+                        "@EndUserText.label": "Object type",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 2
+                      },
+                      "REIdentificationKey": {
+                        "@EndUserText.label": "Id part key, for example \"1000/123\"",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 45
+                      },
+                      "REBusinessPartnerRole1": {
+                        "@EndUserText.label": "Business partner: role",
+                        "type": "cds.String",
+                        "key": false,
+                        "length": 6
+                      }
+                    },
+                    "@cds.persistence.exists": true,
+                    "@DataWarehouse.space.name": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.schema": "1_INBOUND_S4_CURR_D",
+                    "@DataWarehouse.space.businessName": "1. Inbound S4 Curr (Dev)"
+                  }
+                },
+                "name": "2TF_LOAD_I_RECONTRACT_S4_CURR_01$TRF_TV_sqltransform1",
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20,
+                      "notNull": true,
+                      "default": {
+                        "val": "SCHEDULED"
+                      }
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RealEstateContract": {
+                      "@EndUserText.label": "Real estate contract number",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REInternalFinNumber": {
+                      "@EndUserText.label": "Internal key of real estate object (fi)",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RealEstateContractOID": {
+                      "@EndUserText.label": "One domain model id for real estate contract",
+                      "type": "cds.String",
+                      "length": 128
+                    },
+                    "REContractAlternativeID": {
+                      "@EndUserText.label": "Alternative id for contract",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "RECreationType": {
+                      "@EndUserText.label": "How the object was created",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Entered by",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "First entered on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfCreation": {
+                      "@EndUserText.label": "Source of initial entry",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Employee id",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Last edited on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Last edited at",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfChange": {
+                      "@EndUserText.label": "Editing source",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "Responsible": {
+                      "@EndUserText.label": "Person responsible",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "REUserExclusive": {
+                      "@EndUserText.label": "User with exclusive change authorization",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "REAuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "REContractType": {
+                      "@EndUserText.label": "Contract type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ContractStartDate": {
+                      "@EndUserText.label": "Contract start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ContractEndDate": {
+                      "@EndUserText.label": "Contract end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractName": {
+                      "@EndUserText.label": "Contract name",
+                      "type": "cds.String",
+                      "length": 80
+                    },
+                    "REContractActivateDate": {
+                      "@EndUserText.label": "Active from",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RETenancyLaw": {
+                      "@EndUserText.label": "Tenancy law",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REContractNumberOld": {
+                      "@EndUserText.label": "Number of old contract",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "REMainContractCompanyCode": {
+                      "@EndUserText.label": "Company code of main contract",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REMainContract": {
+                      "@EndUserText.label": "Number of real estate main contract",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "REContractCurrency": {
+                      "@EndUserText.label": "Currency for contract",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REIndustrySector": {
+                      "@EndUserText.label": "Industry",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REIsSalesRelevant": {
+                      "@EndUserText.label": "Indicator: relevant to sales",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REContractDepositType": {
+                      "@EndUserText.label": "Contract security deposit type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REContractSignDate": {
+                      "@EndUserText.label": "Date of contract conclusion",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContract2SignDate": {
+                      "@EndUserText.label": "Date of second signature",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractCashFlowDate": {
+                      "@EndUserText.label": "Cash flow generated starting on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractFirstEndDate": {
+                      "@EndUserText.label": "Date of first contract end",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractNoticeDate": {
+                      "@EndUserText.label": "Contract notice per",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractNoticeInDate": {
+                      "@EndUserText.label": "Date of receipt of notice",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractNoticeReason": {
+                      "@EndUserText.label": "Reason for notice",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "REContractNoticeActivationDate": {
+                      "@EndUserText.label": "Notice: date of activation",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowArchivedToDate": {
+                      "@EndUserText.label": "Date up to which the cash flow is archived",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowLockedToDate": {
+                      "@EndUserText.label": "Date until which the cash flow is locked",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowPostingFromDate": {
+                      "@EndUserText.label": "First posting from",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REBusinessEntity": {
+                      "@EndUserText.label": "Re business entity",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REObjectAvailableFromDate": {
+                      "@EndUserText.label": "Transfer of possession start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REObjectAvailableToDate": {
+                      "@EndUserText.label": "Transfer of possession end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REHasMultipleAssignments": {
+                      "@EndUserText.label": "Multiple assignment of object to group allowed",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REPossessionStartDate": {
+                      "@EndUserText.label": "Date from which the object is made available for use",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REPossessionEndDate": {
+                      "@EndUserText.label": "Date up to which the object is used",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ValuationRelevance": {
+                      "@EndUserText.label": "Valuation relevance",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RealEstateObjectType": {
+                      "@EndUserText.label": "Object type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "REIdentificationKey": {
+                      "@EndUserText.label": "Id part key, for example \"1000/123\"",
+                      "type": "cds.String",
+                      "length": 45
+                    },
+                    "REBusinessPartnerRole1": {
+                      "@EndUserText.label": "Business partner: role",
+                      "type": "cds.String",
+                      "length": 6
+                    }
+                  },
+                  "query": {
+                    "SELECT": {
+                      "from": {
+                        "join": "inner",
+                        "args": [
+                          {
+                            "join": "cross",
+                            "args": [
+                              {
+                                "ref": [
+                                  "1_INBOUND_S4_CURR_D.1LT_I_RECONTRACT_S4_CURR"
+                                ],
+                                "as": "d"
+                              },
+                              {
+                                "ref": [
+                                  "2SV_CTRL_ACTIVE_BATCH_01"
+                                ],
+                                "as": "b"
+                              }
+                            ]
+                          },
+                          {
+                            "ref": [
+                              "2LT_CTRL_LOAD_OBJECT_01"
+                            ],
+                            "as": "o"
+                          }
+                        ],
+                        "on": [
+                          {
+                            "ref": [
+                              "o",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "BATCH_ID"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "=",
+                          {
+                            "ref": [
+                              "b",
+                              "SOURCE_SYSTEM"
+                            ]
+                          },
+                          "and",
+                          {
+                            "ref": [
+                              "o",
+                              "OBJECT_NAME"
+                            ]
+                          },
+                          "=",
+                          {
+                            "val": "I_RECONTRACT"
+                          }
+                        ]
+                      },
+                      "columns": [
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_ID"
+                          ],
+                          "as": "BATCH_ID"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "BATCH_TYPE"
+                          ],
+                          "as": "BATCH_TYPE"
+                        },
+                        {
+                          "func": "COALESCE",
+                          "args": [
+                            {
+                              "ref": [
+                                "o",
+                                "LOAD_START_TS"
+                              ]
+                            },
+                            {
+                              "ref": [
+                                "b",
+                                "BATCH_OPENED_TS"
+                              ]
+                            }
+                          ],
+                          "as": "LOAD_TIMESTAMP"
+                        },
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ],
+                          "as": "SOURCE_SYSTEM"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "LOAD_FLOW"
+                          ],
+                          "as": "LOAD_FLOW"
+                        },
+                        {
+                          "ref": [
+                            "o",
+                            "OBJECT_NAME"
+                          ],
+                          "as": "OBJECT_NAME"
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "InternalRealEstateNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RealEstateContract"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REStatusObject"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REInternalFinNumber"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RealEstateContractOID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractAlternativeID"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECreationType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreatedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "CreationTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESourceOfCreation"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangedByUser"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "LastChangeTime"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RESourceOfChange"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "Responsible"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REUserExclusive"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REAuthorizationGroup"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ContractStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ContractEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractName"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractActivateDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RETenancyLaw"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractNumberOld"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REMainContractCompanyCode"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REMainContract"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractCurrency"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIndustrySector"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIsSalesRelevant"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractDepositType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractSignDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContract2SignDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractCashFlowDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractFirstEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractNoticeDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractNoticeInDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractNoticeReason"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REContractNoticeActivationDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowArchivedToDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowLockedToDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RECashFlowPostingFromDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REBusinessEntity"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REObjectAvailableFromDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REObjectAvailableToDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REHasMultipleAssignments"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REPossessionStartDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REPossessionEndDate"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "ValuationRelevance"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "RealEstateObjectType"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REIdentificationKey"
+                          ]
+                        },
+                        {
+                          "ref": [
+                            "d",
+                            "REBusinessPartnerRole1"
+                          ]
+                        }
+                      ],
+                      "where": [
+                        {
+                          "ref": [
+                            "b",
+                            "SOURCE_SYSTEM"
+                          ]
+                        },
+                        "=",
+                        {
+                          "val": "S4_CURR"
+                        }
+                      ]
+                    }
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "@EndUserText.label": "View 1",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@DataWarehouse.consumption.external": false,
+                  "@DataWarehouse.sqlEditor.query": "/* ==========================================================================\r\n   2TF_LOAD_I_RECONTRACT_S4_CURR_01  -  transformation flow source SQL\r\n   Target         : 2LT_RE_CONTRACT_S4_CURR_AUD_01\r\n   Batch control  : revised framework. Stamps rows with the batch open for\r\n                    S4_CURR at load time. Fail-closed: with no open batch, or\r\n                    with I_RECONTRACT not registered in the load manifest for\r\n                    that batch, the flow stages nothing.\r\n   ------------------------------------------------------------------------ */\r\nSELECT\r\n    b.\"BATCH_ID\"                                       AS \"BATCH_ID\",\r\n    b.\"BATCH_TYPE\"                                     AS \"BATCH_TYPE\",\r\n    COALESCE(o.\"LOAD_START_TS\", b.\"BATCH_OPENED_TS\")   AS \"LOAD_TIMESTAMP\",\r\n    b.\"SOURCE_SYSTEM\"                                  AS \"SOURCE_SYSTEM\",\r\n    o.\"LOAD_FLOW\"                                      AS \"LOAD_FLOW\",\r\n    o.\"OBJECT_NAME\"                                    AS \"OBJECT_NAME\",\r\n    d.\"InternalRealEstateNumber\",\r\n    d.\"CompanyCode\",\r\n    d.\"RealEstateContract\",\r\n    d.\"REStatusObject\",\r\n    d.\"REInternalFinNumber\",\r\n    d.\"RealEstateContractOID\",\r\n    d.\"REContractAlternativeID\",\r\n    d.\"RECreationType\",\r\n    d.\"CreatedByUser\",\r\n    d.\"CreationDate\",\r\n    d.\"CreationTime\",\r\n    d.\"RESourceOfCreation\",\r\n    d.\"LastChangedByUser\",\r\n    d.\"LastChangeDate\",\r\n    d.\"LastChangeTime\",\r\n    d.\"RESourceOfChange\",\r\n    d.\"Responsible\",\r\n    d.\"REUserExclusive\",\r\n    d.\"REAuthorizationGroup\",\r\n    d.\"REContractType\",\r\n    d.\"ContractStartDate\",\r\n    d.\"ContractEndDate\",\r\n    d.\"REContractName\",\r\n    d.\"REContractActivateDate\",\r\n    d.\"RETenancyLaw\",\r\n    d.\"REContractNumberOld\",\r\n    d.\"REMainContractCompanyCode\",\r\n    d.\"REMainContract\",\r\n    d.\"REContractCurrency\",\r\n    d.\"REIndustrySector\",\r\n    d.\"REIsSalesRelevant\",\r\n    d.\"REContractDepositType\",\r\n    d.\"REContractSignDate\",\r\n    d.\"REContract2SignDate\",\r\n    d.\"REContractCashFlowDate\",\r\n    d.\"REContractFirstEndDate\",\r\n    d.\"REContractNoticeDate\",\r\n    d.\"REContractNoticeInDate\",\r\n    d.\"REContractNoticeReason\",\r\n    d.\"REContractNoticeActivationDate\",\r\n    d.\"RECashFlowArchivedToDate\",\r\n    d.\"RECashFlowLockedToDate\",\r\n    d.\"RECashFlowPostingFromDate\",\r\n    d.\"REBusinessEntity\",\r\n    d.\"REObjectAvailableFromDate\",\r\n    d.\"REObjectAvailableToDate\",\r\n    d.\"REHasMultipleAssignments\",\r\n    d.\"REPossessionStartDate\",\r\n    d.\"REPossessionEndDate\",\r\n    d.\"ValuationRelevance\",\r\n    d.\"RealEstateObjectType\",\r\n    d.\"REIdentificationKey\",\r\n    d.\"REBusinessPartnerRole1\"\r\nFROM \"1_INBOUND_S4_CURR_D\".\"1LT_I_RECONTRACT_S4_CURR\" AS d\r\nCROSS JOIN \"2SV_CTRL_ACTIVE_BATCH_01\" AS b\r\nJOIN \"2LT_CTRL_LOAD_OBJECT_01\" AS o\r\n    ON  o.\"BATCH_ID\"      = b.\"BATCH_ID\"\r\n    AND o.\"SOURCE_SYSTEM\" = b.\"SOURCE_SYSTEM\"\r\n    AND o.\"OBJECT_NAME\"   = 'I_RECONTRACT'\r\nWHERE b.\"SOURCE_SYSTEM\" = 'S4_CURR'"
+                },
+                "version": {
+                  "csn": "1.0"
+                },
+                "meta": {
+                  "creator": "View Editor",
+                  "kind": "sap.dwc.viewmodel"
+                },
+                "$version": "1.0"
+              }
+            }
+          },
+          "target1": {
+            "component": "com.sap.dwc.target",
+            "metadata": {
+              "label": "2LT_RE_CONTRACT_S4_CURR_AUD_01",
+              "x": 200,
+              "y": 12,
+              "height": 40,
+              "width": 120,
+              "config": {
+                "attributeMappings": [
+                  {
+                    "source": "BATCH_ID",
+                    "target": "BATCH_ID"
+                  },
+                  {
+                    "source": "LOAD_TIMESTAMP",
+                    "target": "LOAD_TIMESTAMP"
+                  },
+                  {
+                    "source": "SOURCE_SYSTEM",
+                    "target": "SOURCE_SYSTEM"
+                  },
+                  {
+                    "source": "InternalRealEstateNumber",
+                    "target": "InternalRealEstateNumber"
+                  },
+                  {
+                    "source": "CompanyCode",
+                    "target": "CompanyCode"
+                  },
+                  {
+                    "source": "RealEstateContract",
+                    "target": "RealEstateContract"
+                  },
+                  {
+                    "source": "REStatusObject",
+                    "target": "REStatusObject"
+                  },
+                  {
+                    "source": "REInternalFinNumber",
+                    "target": "REInternalFinNumber"
+                  },
+                  {
+                    "source": "RealEstateContractOID",
+                    "target": "RealEstateContractOID"
+                  },
+                  {
+                    "source": "REContractAlternativeID",
+                    "target": "REContractAlternativeID"
+                  },
+                  {
+                    "source": "RECreationType",
+                    "target": "RECreationType"
+                  },
+                  {
+                    "source": "CreatedByUser",
+                    "target": "CreatedByUser"
+                  },
+                  {
+                    "source": "CreationDate",
+                    "target": "CreationDate"
+                  },
+                  {
+                    "source": "CreationTime",
+                    "target": "CreationTime"
+                  },
+                  {
+                    "source": "RESourceOfCreation",
+                    "target": "RESourceOfCreation"
+                  },
+                  {
+                    "source": "LastChangedByUser",
+                    "target": "LastChangedByUser"
+                  },
+                  {
+                    "source": "LastChangeDate",
+                    "target": "LastChangeDate"
+                  },
+                  {
+                    "source": "LastChangeTime",
+                    "target": "LastChangeTime"
+                  },
+                  {
+                    "source": "RESourceOfChange",
+                    "target": "RESourceOfChange"
+                  },
+                  {
+                    "source": "Responsible",
+                    "target": "Responsible"
+                  },
+                  {
+                    "source": "REUserExclusive",
+                    "target": "REUserExclusive"
+                  },
+                  {
+                    "source": "REAuthorizationGroup",
+                    "target": "REAuthorizationGroup"
+                  },
+                  {
+                    "source": "REContractType",
+                    "target": "REContractType"
+                  },
+                  {
+                    "source": "ContractStartDate",
+                    "target": "ContractStartDate"
+                  },
+                  {
+                    "source": "ContractEndDate",
+                    "target": "ContractEndDate"
+                  },
+                  {
+                    "source": "REContractName",
+                    "target": "REContractName"
+                  },
+                  {
+                    "source": "REContractActivateDate",
+                    "target": "REContractActivateDate"
+                  },
+                  {
+                    "source": "RETenancyLaw",
+                    "target": "RETenancyLaw"
+                  },
+                  {
+                    "source": "REContractNumberOld",
+                    "target": "REContractNumberOld"
+                  },
+                  {
+                    "source": "REMainContractCompanyCode",
+                    "target": "REMainContractCompanyCode"
+                  },
+                  {
+                    "source": "REMainContract",
+                    "target": "REMainContract"
+                  },
+                  {
+                    "source": "REContractCurrency",
+                    "target": "REContractCurrency"
+                  },
+                  {
+                    "source": "REIndustrySector",
+                    "target": "REIndustrySector"
+                  },
+                  {
+                    "source": "REIsSalesRelevant",
+                    "target": "REIsSalesRelevant"
+                  },
+                  {
+                    "source": "REContractDepositType",
+                    "target": "REContractDepositType"
+                  },
+                  {
+                    "source": "REContractSignDate",
+                    "target": "REContractSignDate"
+                  },
+                  {
+                    "source": "REContract2SignDate",
+                    "target": "REContract2SignDate"
+                  },
+                  {
+                    "source": "REContractCashFlowDate",
+                    "target": "REContractCashFlowDate"
+                  },
+                  {
+                    "source": "REContractFirstEndDate",
+                    "target": "REContractFirstEndDate"
+                  },
+                  {
+                    "source": "REContractNoticeDate",
+                    "target": "REContractNoticeDate"
+                  },
+                  {
+                    "source": "REContractNoticeInDate",
+                    "target": "REContractNoticeInDate"
+                  },
+                  {
+                    "source": "REContractNoticeReason",
+                    "target": "REContractNoticeReason"
+                  },
+                  {
+                    "source": "REContractNoticeActivationDate",
+                    "target": "REContractNoticeActivationDate"
+                  },
+                  {
+                    "source": "RECashFlowArchivedToDate",
+                    "target": "RECashFlowArchivedToDate"
+                  },
+                  {
+                    "source": "RECashFlowLockedToDate",
+                    "target": "RECashFlowLockedToDate"
+                  },
+                  {
+                    "source": "RECashFlowPostingFromDate",
+                    "target": "RECashFlowPostingFromDate"
+                  },
+                  {
+                    "source": "REBusinessEntity",
+                    "target": "REBusinessEntity"
+                  },
+                  {
+                    "source": "REObjectAvailableFromDate",
+                    "target": "REObjectAvailableFromDate"
+                  },
+                  {
+                    "source": "REObjectAvailableToDate",
+                    "target": "REObjectAvailableToDate"
+                  },
+                  {
+                    "source": "REHasMultipleAssignments",
+                    "target": "REHasMultipleAssignments"
+                  },
+                  {
+                    "source": "REPossessionStartDate",
+                    "target": "REPossessionStartDate"
+                  },
+                  {
+                    "source": "REPossessionEndDate",
+                    "target": "REPossessionEndDate"
+                  },
+                  {
+                    "source": "ValuationRelevance",
+                    "target": "ValuationRelevance"
+                  },
+                  {
+                    "source": "RealEstateObjectType",
+                    "target": "RealEstateObjectType"
+                  },
+                  {
+                    "source": "REIdentificationKey",
+                    "target": "REIdentificationKey"
+                  },
+                  {
+                    "source": "REBusinessPartnerRole1",
+                    "target": "REBusinessPartnerRole1"
+                  },
+                  {
+                    "source": "BATCH_TYPE",
+                    "target": "BATCH_TYPE"
+                  },
+                  {
+                    "source": "LOAD_FLOW",
+                    "target": "LOAD_FLOW"
+                  },
+                  {
+                    "source": "OBJECT_NAME",
+                    "target": "OBJECT_NAME"
+                  }
+                ],
+                "definition": {
+                  "kind": "entity",
+                  "elements": {
+                    "BATCH_ID": {
+                      "@EndUserText.label": "BATCH_ID",
+                      "type": "cds.Integer64",
+                      "notNull": true
+                    },
+                    "LOAD_TIMESTAMP": {
+                      "@EndUserText.label": "LOAD_TIMESTAMP",
+                      "type": "cds.Timestamp"
+                    },
+                    "SOURCE_SYSTEM": {
+                      "@EndUserText.label": "SOURCE_SYSTEM",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "InternalRealEstateNumber": {
+                      "@EndUserText.label": "Internal key of real estate object",
+                      "type": "cds.String",
+                      "length": 13,
+                      "key": true,
+                      "notNull": true
+                    },
+                    "CompanyCode": {
+                      "@EndUserText.label": "Company code",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "RealEstateContract": {
+                      "@EndUserText.label": "Real estate contract number",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "REStatusObject": {
+                      "@EndUserText.label": "Object number",
+                      "type": "cds.String",
+                      "length": 22
+                    },
+                    "REInternalFinNumber": {
+                      "@EndUserText.label": "Internal key of real estate object (fi)",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RealEstateContractOID": {
+                      "@EndUserText.label": "One domain model id for real estate contract",
+                      "type": "cds.String",
+                      "length": 128
+                    },
+                    "REContractAlternativeID": {
+                      "@EndUserText.label": "Alternative id for contract",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "RECreationType": {
+                      "@EndUserText.label": "How the object was created",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "CreatedByUser": {
+                      "@EndUserText.label": "Entered by",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "CreationDate": {
+                      "@EndUserText.label": "First entered on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "CreationTime": {
+                      "@EndUserText.label": "Time of creation",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfCreation": {
+                      "@EndUserText.label": "Source of initial entry",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "LastChangedByUser": {
+                      "@EndUserText.label": "Employee id",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "LastChangeDate": {
+                      "@EndUserText.label": "Last edited on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "LastChangeTime": {
+                      "@EndUserText.label": "Last edited at",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "RESourceOfChange": {
+                      "@EndUserText.label": "Editing source",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "Responsible": {
+                      "@EndUserText.label": "Person responsible",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "REUserExclusive": {
+                      "@EndUserText.label": "User with exclusive change authorization",
+                      "type": "cds.String",
+                      "length": 12
+                    },
+                    "REAuthorizationGroup": {
+                      "@EndUserText.label": "Authorization group",
+                      "type": "cds.String",
+                      "length": 40
+                    },
+                    "REContractType": {
+                      "@EndUserText.label": "Contract type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "ContractStartDate": {
+                      "@EndUserText.label": "Contract start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ContractEndDate": {
+                      "@EndUserText.label": "Contract end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractName": {
+                      "@EndUserText.label": "Contract name",
+                      "type": "cds.String",
+                      "length": 80
+                    },
+                    "REContractActivateDate": {
+                      "@EndUserText.label": "Active from",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RETenancyLaw": {
+                      "@EndUserText.label": "Tenancy law",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REContractNumberOld": {
+                      "@EndUserText.label": "Number of old contract",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "REMainContractCompanyCode": {
+                      "@EndUserText.label": "Company code of main contract",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REMainContract": {
+                      "@EndUserText.label": "Number of real estate main contract",
+                      "type": "cds.String",
+                      "length": 13
+                    },
+                    "REContractCurrency": {
+                      "@EndUserText.label": "Currency for contract",
+                      "type": "cds.String",
+                      "length": 5
+                    },
+                    "REIndustrySector": {
+                      "@EndUserText.label": "Industry",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "REIsSalesRelevant": {
+                      "@EndUserText.label": "Indicator: relevant to sales",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REContractDepositType": {
+                      "@EndUserText.label": "Contract security deposit type",
+                      "type": "cds.String",
+                      "length": 4
+                    },
+                    "REContractSignDate": {
+                      "@EndUserText.label": "Date of contract conclusion",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContract2SignDate": {
+                      "@EndUserText.label": "Date of second signature",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractCashFlowDate": {
+                      "@EndUserText.label": "Cash flow generated starting on",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractFirstEndDate": {
+                      "@EndUserText.label": "Date of first contract end",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractNoticeDate": {
+                      "@EndUserText.label": "Contract notice per",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractNoticeInDate": {
+                      "@EndUserText.label": "Date of receipt of notice",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REContractNoticeReason": {
+                      "@EndUserText.label": "Reason for notice",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "REContractNoticeActivationDate": {
+                      "@EndUserText.label": "Notice: date of activation",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowArchivedToDate": {
+                      "@EndUserText.label": "Date up to which the cash flow is archived",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowLockedToDate": {
+                      "@EndUserText.label": "Date until which the cash flow is locked",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "RECashFlowPostingFromDate": {
+                      "@EndUserText.label": "First posting from",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REBusinessEntity": {
+                      "@EndUserText.label": "Re business entity",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REObjectAvailableFromDate": {
+                      "@EndUserText.label": "Transfer of possession start date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REObjectAvailableToDate": {
+                      "@EndUserText.label": "Transfer of possession end date",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REHasMultipleAssignments": {
+                      "@EndUserText.label": "Multiple assignment of object to group allowed",
+                      "type": "cds.String",
+                      "length": 1
+                    },
+                    "REPossessionStartDate": {
+                      "@EndUserText.label": "Date from which the object is made available for use",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "REPossessionEndDate": {
+                      "@EndUserText.label": "Date up to which the object is used",
+                      "type": "cds.String",
+                      "length": 8
+                    },
+                    "ValuationRelevance": {
+                      "@EndUserText.label": "Valuation relevance",
+                      "type": "cds.String",
+                      "length": 10
+                    },
+                    "RealEstateObjectType": {
+                      "@EndUserText.label": "Object type",
+                      "type": "cds.String",
+                      "length": 2
+                    },
+                    "REIdentificationKey": {
+                      "@EndUserText.label": "Id part key, for example \"1000/123\"",
+                      "type": "cds.String",
+                      "length": 45
+                    },
+                    "REBusinessPartnerRole1": {
+                      "@EndUserText.label": "Business partner: role",
+                      "type": "cds.String",
+                      "length": 6
+                    },
+                    "BATCH_TYPE": {
+                      "@EndUserText.label": "BATCH_TYPE",
+                      "type": "cds.String",
+                      "length": 20
+                    },
+                    "LOAD_FLOW": {
+                      "@EndUserText.label": "LOAD_FLOW",
+                      "type": "cds.String",
+                      "length": 120
+                    },
+                    "OBJECT_NAME": {
+                      "@EndUserText.label": "OBJECT_NAME",
+                      "type": "cds.String",
+                      "length": 120
+                    }
+                  },
+                  "@EndUserText.label": "2LT_RE_CONTRACT_S4_CURR_AUD_01",
+                  "@ObjectModel.modelingPattern": {
+                    "#": "DATA_STRUCTURE"
+                  },
+                  "@ObjectModel.supportedCapabilities": [
+                    {
+                      "#": "DATA_STRUCTURE"
+                    }
+                  ],
+                  "_meta": {
+                    "dependencies": {
+                      "folderAssignment": "Folder_IJPUIXQL"
+                    }
+                  }
+                },
+                "name": "2LT_RE_CONTRACT_S4_CURR_AUD_01",
+                "truncate": false
+              }
+            }
+          }
+        },
+        "groups": [],
+        "connections": [
+          {
+            "metadata": {
+              "points": "125,32 195,32"
+            },
+            "src": {
+              "port": "outTable",
+              "process": "sqltransform1"
+            },
+            "tgt": {
+              "port": "inTable",
+              "process": "target1"
+            }
+          }
+        ],
+        "inports": {},
+        "outports": {}
+      },
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": "Folder_IJPUIXQL"
+        }
+      }
+    }
+  }
+}

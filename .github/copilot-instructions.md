@@ -96,12 +96,14 @@ These rules override any earlier restrictions that limit write activity to a sin
 
 ### Approved spaces
 - Read and write work may be performed across these NON-PROD spaces when required:
-  - 1_INBOUND_HIST_MIGR
+  
   - 1_INBOUND_HIST_RAW
   - 1_INBOUND_S4_CURR
-  - INBOUND
   - MODELLING
   - REPORTING
+  - 1_INBOUND_S4_CURR_D
+  - MODELLING_D
+  - REPORTING_D
   - SAP_CONTENT
 - Operate only where the authenticated user has the required Datasphere privileges.
 
@@ -172,7 +174,7 @@ content in chat instead.
 
 ### After APPLY
 - Execute only the approved plan.
-- Stop immediately on the first error or unexpected state.
+- For an approved batch migration, record a failed object and continue with the next; stop only on authentication, scope or verification failures.
 - Do not retry a write operation, substitute an object, or broaden the scope
   without a new PLAN ONLY response and a new APPLY approval.
 - Summarise every successful and failed action, including changed objects and
